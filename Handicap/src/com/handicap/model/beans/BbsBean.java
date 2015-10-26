@@ -12,7 +12,13 @@ public class BbsBean {
 	private int bad;
 	private int star;
 	private String region;
-		
+	private int boardno;	
+	public int getBoardno() {
+		return boardno;
+	}
+	public void setBoardno(int boardno) {
+		this.boardno = boardno;
+	}
 	public int getNo() {
 		return no;
 	}
