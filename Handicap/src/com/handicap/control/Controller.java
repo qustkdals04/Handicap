@@ -10,25 +10,97 @@ import com.handicap.model.beans.BbsBean;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.dao.BbsDAO;
 import com.handicap.model.dao.MessageDAO;
+import com.handicap.model.dao.UserDAO;
 
 public class Controller {
-
-	// °øÁö»çÇ×
-	private BbsDAO bd;
-	// °øÁö»çÇ× Input_Form
-
+	UserDAO dao;
+	//ê³µì§€ì‚¬í•­
+	private BbsDAO bd;	
+	
+	//íšŒì›ê´€ë ¨
+	
+	@RequestMapping("/register") //íšŒì›ê°€ì…ì •ë³´ ì–»ì–´ì˜¤ê¸°
+	public boolean register(@RequestParam String userid,
+							@RequestParam String passwd,
+							@RequestParam String name,
+							@RequestParam String nickname,
+							@RequestParam int phone,
+							@RequestParam String email,
+							@RequestParam String pquestion,
+							@RequestParam String panswer,
+							@RequestParam int usergrade,
+							@RequestParam int companyno,
+							@RequestParam String companyaddr,
+							@RequestParam String companytype){
+		//ìœ íš¨ì„± ê²€ì‚¬
+		return false;
+	}
+	@RequestMapping("/login") //ë¡œê·¸ì¸ ì²˜ë¦¬
+	public boolean login(@RequestParam String userid,
+						 @RequestParam String passwd
+												){
+		
+		return false;
+	}
+	@RequestMapping("/logout") //ë¡œê·¸ì•„ì›ƒ í–ˆì„ë•Œ
+	public boolean logout(){
+		return false;
+	}
+	
+	@RequestMapping("/idcheck") //ì¤‘ë³µí™•ì¸ (ì•„ì´ë””)
+	public boolean idcheck(@RequestParam String userid){
+		//ìˆì„ë• 1 ì—†ì„ë•0  List í˜•ì‹ì˜ ë³€ìˆ˜ì— ë„£ì–´ì„œ ModelAndView í˜•íƒœë¡œ ë‚˜íƒ€ëƒ„
+		return false;
+	}
+	@RequestMapping("/nickcheck") //ì¤‘ë³µí™•ì¸ (ë‹‰ë„¤ì„)
+	public boolean nickcheck(@RequestParam String nickname){
+		//ìˆì„ë• 1 ì—†ì„ë•0  List í˜•ì‹ì˜ ë³€ìˆ˜ì— ë„£ì–´ì„œ ModelAndView í˜•íƒœë¡œ ë‚˜íƒ€ëƒ„
+		return false;
+	}
+	
+	@RequestMapping("/memberdelete") //íšŒì›íƒˆí‡´
+	public boolean memberdelete(@RequestParam String passwd){
+		//ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜ì‹œ 1 í‹€ë¦¬ë©´0  
+		return false;
+	}
+	
+	@RequestMapping("/memberupdate") //íšŒì›ìˆ˜ì •
+	public boolean memberupdate(@RequestParam String userid,
+								@RequestParam String passwd,
+								@RequestParam String name,
+								@RequestParam String nickname,
+								@RequestParam int phone,
+								@RequestParam String email,
+								@RequestParam String pquestion,
+								@RequestParam String panswer,
+								@RequestParam int usergrade,
+								@RequestParam int companyno,
+								@RequestParam String companyaddr,
+								@RequestParam String companytype){
+		return false;
+	}
+	
+	@RequestMapping("/mypage") //ë§ˆì´í˜ì´ì§€
+	public boolean mypage(@RequestParam String nickname){
+		//ë‹‰ë„¤ì„ìœ¼ë¡œ í™œë™ë‚´ì—­ì„ ê°€ì ¸ì˜¤ëŠ”ë° ìˆì„ì‹œ ì¡°íšŒ
+		return false;
+	}	
+	
+	//ê²Œì‹œíŒê´€ë ¨	
+	// ê³µì§€ì‚¬í•­	
+	// ê³µì§€ì‚¬í•­ Input_Form
 	@RequestMapping("/noticeinputForm")
 	public String noticenputForm() {
 		return "noticeinput_form";
 	}
 
-	// °øÁö»çÇ× insert
+	// ê³µì§€ì‚¬í•­ insert
 	@RequestMapping("/noticeinsert")
 	public String noticeinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", "°øÁö»çÇ× °Ô½Ã±ÛÀÌ ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", "ê³µì§€ì‚¬í•­ ê²Œì‹œê¸€ì´ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "noticeresult";
 			}
 		} catch (SQLException e) {
@@ -50,14 +122,14 @@ public class Controller {
 		return "noticelist";
 	}
 
-	// ¼öÁ¤ Æû
+	// ìˆ˜ì • í¼
 	@RequestMapping("noticeupdateform")
 	public String noticeupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "noticeupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("noticeupdate")
 	public String noticeinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -65,7 +137,7 @@ public class Controller {
 		else
 			return "noticeupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("noticedeleteform")
 	public String noticedeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -81,24 +153,24 @@ public class Controller {
 			return "noticedeleteform";
 	}
 
-	// °øÁö»çÇ× ³¡
+	// ê³µì§€ì‚¬í•­ ë
 
-	// ´º½º
+	// ë‰´ìŠ¤
 
-	// ´º½º Input_Form
+	// ë‰´ìŠ¤ Input_Form
 
 	@RequestMapping("/newsinputForm")
 	public String newsinputForm() {
 		return "newsinput_form";
 	}
 
-	// ´º½º insert
+	// ë‰´ìŠ¤ insert
 	@RequestMapping("/newsinsert")
 	public String newsinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "newsresult";
 			}
 		} catch (SQLException e) {
@@ -108,7 +180,7 @@ public class Controller {
 		return "redirect:newsinput";
 	}
 
-	// ´º½º List
+	// ë‰´ìŠ¤ List
 	@RequestMapping("newslist")
 	public String newslist(@RequestParam int no, int boardno, Model model) {
 
@@ -120,14 +192,14 @@ public class Controller {
 		return "newslist";
 	}
 
-	// ´º½º ¼öÁ¤ Æû
+	// ë‰´ìŠ¤ ìˆ˜ì • í¼
 	@RequestMapping("newsupdateform")
 	public String newsupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "newsupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("newsupdate")
 	public String newsinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -135,7 +207,7 @@ public class Controller {
 		else
 			return "newsupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("newsdeleteform")
 	public String newsdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -151,9 +223,9 @@ public class Controller {
 			return "newsdeleteform";
 	}
 
-	// ´º½º ³¡
+	// ë‰´ìŠ¤ ë
 
-	// ÀÏÀÚ¸® Á¤º¸
+	// ì¼ìë¦¬ ì •ë³´
 	// Input_Form
 
 	@RequestMapping("/jobinputForm")
@@ -161,13 +233,13 @@ public class Controller {
 		return "jobinput_form";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ insert
+	// ì¼ìë¦¬ì •ë³´ insert
 	@RequestMapping("/jobinsert")
 	public String jobinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "jobresult";
 			}
 		} catch (SQLException e) {
@@ -177,7 +249,7 @@ public class Controller {
 		return "redirect:jobinput";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ List
+	// ì¼ìë¦¬ì •ë³´ List
 	@RequestMapping("joblist")
 	public String joblist(@RequestParam int no, int boardno, Model model) {
 
@@ -189,14 +261,14 @@ public class Controller {
 		return "joblist";
 	}
 
-	// ´º½º ¼öÁ¤ Æû
+	// ë‰´ìŠ¤ ìˆ˜ì • í¼
 	@RequestMapping("jobupdateform")
 	public String jobupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "jobupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("jobupdate")
 	public String jobinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -204,7 +276,7 @@ public class Controller {
 		else
 			return "jobupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("jobdeleteform")
 	public String jobdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -220,9 +292,9 @@ public class Controller {
 			return "jobdeleteform";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ ³¡
+	// ì¼ìë¦¬ì •ë³´ ë
 
-	// ÀÇ·á-°Å·¡
+	// ì˜ë£Œ-ê±°ë˜
 	// Input_Form
 
 	@RequestMapping("/tradeinputForm")
@@ -230,13 +302,13 @@ public class Controller {
 		return "tradeinput_form";
 	}
 
-	// ÀÇ·á-°Å·¡ insert
+	// ì˜ë£Œ-ê±°ë˜ insert
 	@RequestMapping("/tradeinsert")
 	public String tradeinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "traderesult";
 			}
 		} catch (SQLException e) {
@@ -246,7 +318,7 @@ public class Controller {
 		return "redirect:tradeinput";
 	}
 
-	// ÀÇ·á-°Å·¡ List
+	// ì˜ë£Œ-ê±°ë˜ List
 	@RequestMapping("tradelist")
 	public String tradelist(@RequestParam int no, int boardno, Model model) {
 
@@ -258,14 +330,14 @@ public class Controller {
 		return "tradelist";
 	}
 
-	// ÀÇ·á-°Å·¡ ¼öÁ¤ Æû
+	// ì˜ë£Œ-ê±°ë˜ ìˆ˜ì • í¼
 	@RequestMapping("tradeupdateform")
 	public String tradeupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "tradeupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("tradeupdate")
 	public String tradeinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -273,7 +345,7 @@ public class Controller {
 		else
 			return "tradeupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("tradedeleteform")
 	public String tradedeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -289,9 +361,9 @@ public class Controller {
 			return "tradedeleteform";
 	}
 
-	// ÀÇ·á-°Å·¡ ³¡
+	// ì˜ë£Œ-ê±°ë˜ ë
 
-	// ÀÇ·á-Áú¹®
+	// ì˜ë£Œ-ì§ˆë¬¸
 	// Input_Form
 
 	@RequestMapping("/questioninputForm")
@@ -299,13 +371,13 @@ public class Controller {
 		return "questioninput_form";
 	}
 
-	// ÀÇ·á-Áú¹® insert
+	// ì˜ë£Œ-ì§ˆë¬¸ insert
 	@RequestMapping("/questioninsert")
 	public String questioninsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "questionresult";
 			}
 		} catch (SQLException e) {
@@ -315,7 +387,7 @@ public class Controller {
 		return "redirect:questioninput";
 	}
 
-	// ÀÇ·á-Áú¹® List
+	// ì˜ë£Œ-ì§ˆë¬¸ List
 	@RequestMapping("questionlist")
 	public String questionlist(@RequestParam int no, int boardno, Model model) {
 
@@ -327,14 +399,14 @@ public class Controller {
 		return "questionlist";
 	}
 
-	// ÀÇ·á-Áú¹® ¼öÁ¤ Æû
+	// ì˜ë£Œ-ì§ˆë¬¸ ìˆ˜ì • í¼
 	@RequestMapping("questionupdateform")
 	public String questionupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "questionupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("questionupdate")
 	public String questioninsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -342,7 +414,7 @@ public class Controller {
 		else
 			return "questionupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("questiondeleteform")
 	public String questiondeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -358,9 +430,9 @@ public class Controller {
 			return "questiondeleteform";
 	}
 
-	// ÀÇ·á-Áú¹® ³¡
+	// ì˜ë£Œ-ì§ˆë¬¸ ë
 
-	// ÀÇ·á-ÈÄ±â
+	// ì˜ë£Œ-í›„ê¸°
 	// Input_Form
 
 	@RequestMapping("/reviewinputForm")
@@ -368,13 +440,13 @@ public class Controller {
 		return "reviewinput_form";
 	}
 
-	// ÀÇ·á-°Å·¡ insert
+	// ì˜ë£Œ-ê±°ë˜ insert
 	@RequestMapping("/reviewinsert")
 	public String reviewinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "reviewresult";
 			}
 		} catch (SQLException e) {
@@ -384,7 +456,7 @@ public class Controller {
 		return "redirect:reviewinput";
 	}
 
-	// ÀÇ·á-ÈÄ±â List
+	// ì˜ë£Œ-í›„ê¸° List
 	@RequestMapping("reviewlist")
 	public String reviewlist(@RequestParam int no, int boardno, Model model) {
 
@@ -396,14 +468,14 @@ public class Controller {
 		return "reviewlist";
 	}
 
-	// ÀÇ·á-ÈÄ±â ¼öÁ¤ Æû
+	// ì˜ë£Œ-í›„ê¸° ìˆ˜ì • í¼
 	@RequestMapping("reviewupdateform")
 	public String reviewupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "reviewupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("reviewupdate")
 	public String reviewinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -411,7 +483,7 @@ public class Controller {
 		else
 			return "reviewupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("reviewdeleteform")
 	public String reviewdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -427,9 +499,9 @@ public class Controller {
 			return "reviewdeleteform";
 	}
 
-	// ÀÇ·á-ÈÄ±â ³¡
+	// ì˜ë£Œ-í›„ê¸° ë
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì• 
 	// Input_Form
 
 	@RequestMapping("/bodyinputForm")
@@ -437,13 +509,13 @@ public class Controller {
 		return "bodyinput_form";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö insert
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  insert
 	@RequestMapping("/bodyinsert")
 	public String bodyinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "bodyresult";
 			}
 		} catch (SQLException e) {
@@ -453,7 +525,7 @@ public class Controller {
 		return "redirect:bodyinput";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö List
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  List
 	@RequestMapping("bodylist")
 	public String bodylist(@RequestParam int no, int boardno, Model model) {
 
@@ -465,14 +537,14 @@ public class Controller {
 		return "bodylist";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ìˆ˜ì • í¼
 	@RequestMapping("bodyupdateform")
 	public String bodyupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bodyupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("bodyupdate")
 	public String bodyinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -480,7 +552,7 @@ public class Controller {
 		else
 			return "bodyupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("bodydeleteform")
 	public String bodydeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -496,9 +568,9 @@ public class Controller {
 			return "bodydeleteform";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ³¡
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì• 
 	// Input_Form
 
 	@RequestMapping("/mentalinputForm")
@@ -506,13 +578,13 @@ public class Controller {
 		return "mentalinput_form";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö insert
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  insert
 	@RequestMapping("/mentalinsert")
 	public String mentalinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "mentalresult";
 			}
 		} catch (SQLException e) {
@@ -522,7 +594,7 @@ public class Controller {
 		return "redirect:mentalinput";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö List
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  List
 	@RequestMapping("mentallist")
 	public String mentallist(@RequestParam int no, int boardno, Model model) {
 
@@ -534,14 +606,14 @@ public class Controller {
 		return "mentallist";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ìˆ˜ì • í¼
 	@RequestMapping("mentalupdateform")
 	public String mentalupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "mentalupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("mentalupdate")
 	public String mentalinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -549,7 +621,7 @@ public class Controller {
 		else
 			return "mentalupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("mentaldeleteform")
 	public String mentaldeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -565,9 +637,9 @@ public class Controller {
 			return "mentaldeleteform";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ³¡
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë
 
-	// °Ô½ÃÆÇ-µ¿È£È¸
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ
 	// Input_Form
 
 	@RequestMapping("/clubinputForm")
@@ -575,13 +647,13 @@ public class Controller {
 		return "clubinput_form";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ insert
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ insert
 	@RequestMapping("/clubinsert")
 	public String clubinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "clubresult";
 			}
 		} catch (SQLException e) {
@@ -591,7 +663,7 @@ public class Controller {
 		return "redirect:clubinput";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ List
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ List
 	@RequestMapping("clublist")
 	public String clublist(@RequestParam int no, int boardno, Model model) {
 
@@ -603,14 +675,14 @@ public class Controller {
 		return "clublist";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ìˆ˜ì • í¼
 	@RequestMapping("clubupdateform")
 	public String clubupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "clubupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("clubupdate")
 	public String clubinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -618,7 +690,7 @@ public class Controller {
 		else
 			return "clubupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("clubdeleteform")
 	public String clubdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -634,9 +706,9 @@ public class Controller {
 			return "clubdeleteform";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ³¡
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë
 
-	// °Ô½ÃÆÇ-¿©Çà
+	// ê²Œì‹œíŒ-ì—¬í–‰
 	// Input_Form
 
 	@RequestMapping("/travelinputForm")
@@ -644,13 +716,13 @@ public class Controller {
 		return "travelinput_form";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà insert
+	// ê²Œì‹œíŒ-ì—¬í–‰ insert
 	@RequestMapping("/travelinsert")
 	public String travelinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "travelresult";
 			}
 		} catch (SQLException e) {
@@ -660,7 +732,7 @@ public class Controller {
 		return "redirect:travelinput";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà List
+	// ê²Œì‹œíŒ-ì—¬í–‰ List
 	@RequestMapping("travellist")
 	public String travellist(@RequestParam int no, int boardno, Model model) {
 
@@ -672,14 +744,14 @@ public class Controller {
 		return "travellist";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì—¬í–‰ ìˆ˜ì • í¼
 	@RequestMapping("travelupdateform")
 	public String travelupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "travelupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("travelupdate")
 	public String travelinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -687,7 +759,7 @@ public class Controller {
 		else
 			return "travelupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("traveldeleteform")
 	public String traveldeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -703,9 +775,9 @@ public class Controller {
 			return "traveldeleteform";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ³¡
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë
 
-	// °í°´¼¾ÅÍ-Q&A
+	// ê³ ê°ì„¼í„°-Q&A
 	// Input_Form
 
 	@RequestMapping("/qnainputForm")
@@ -713,13 +785,13 @@ public class Controller {
 		return "qnainput_form";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A insert
+	// ê³ ê°ì„¼í„°-Q&A insert
 	@RequestMapping("/qnainsert")
 	public String qnainsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "qnaresult";
 			}
 		} catch (SQLException e) {
@@ -729,7 +801,7 @@ public class Controller {
 		return "redirect:qnainput";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A List
+	// ê³ ê°ì„¼í„°-Q&A List
 	@RequestMapping("qnalist")
 	public String qnalist(@RequestParam int no, int boardno, Model model) {
 
@@ -741,14 +813,14 @@ public class Controller {
 		return "qnalist";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A ¼öÁ¤ Æû
+	// ê³ ê°ì„¼í„°-Q&A ìˆ˜ì • í¼
 	@RequestMapping("qnaupdateform")
 	public String qnaupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "qnaupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("qnaupdate")
 	public String qnainsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -756,7 +828,7 @@ public class Controller {
 		else
 			return "qnaupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("qnadeleteform")
 	public String qnadeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -772,9 +844,9 @@ public class Controller {
 			return "qnadeleteform";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A ³¡
+	// ê³ ê°ì„¼í„°-Q&A ë
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ»
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­
 	// Input_Form
 
 	@RequestMapping("/bbsrequestinputForm")
@@ -782,13 +854,13 @@ public class Controller {
 		return "bbsrequestinput_form";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» insert
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ insert
 	@RequestMapping("/bbsrequestinsert")
 	public String bbsrequestinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "bbsrequestresult";
 			}
 		} catch (SQLException e) {
@@ -798,7 +870,7 @@ public class Controller {
 		return "redirect:bbsrequestinput";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» List
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ List
 	@RequestMapping("bbsrequestlist")
 	public String bbsrequestlist(@RequestParam int no, int boardno, Model model) {
 
@@ -810,14 +882,14 @@ public class Controller {
 		return "bbsrequestlist";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¼öÁ¤ Æû
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ìˆ˜ì • í¼
 	@RequestMapping("bbsrequestupdateform")
 	public String bbsrequestupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bbsrequestupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("bbsrequestupdate")
 	public String bbsrequestinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -825,7 +897,7 @@ public class Controller {
 		else
 			return "bbsrequestupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("bbsrequestdeleteform")
 	public String bbsrequestdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -841,24 +913,24 @@ public class Controller {
 			return "bbsrequestdeleteform";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ³¡
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë
 
-	// °øÁö»çÇ× ¸®ÇÃ
+	// ê³µì§€ì‚¬í•­ ë¦¬í”Œ
 
-	// °øÁö»çÇ× ¸®ÇÃ Input_Form
+	// ê³µì§€ì‚¬í•­ ë¦¬í”Œ Input_Form
 
 	@RequestMapping("/noticecommentinputForm")
 	public String noticecommentnputForm() {
 		return "noticecommentinput_form";
 	}
 
-	// °øÁö»çÇ× ¸®ÇÃ insert
+	// ê³µì§€ì‚¬í•­ ë¦¬í”Œ insert
 	@RequestMapping("/noticecommentinsert")
 	public String noticecommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", "°øÁö»çÇ× ¸®ÇÃ °Ô½Ã±ÛÀÌ ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", "ê³µì§€ì‚¬í•­ ë¦¬í”Œ ê²Œì‹œê¸€ì´ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "noticecommentresult";
 			}
 		} catch (SQLException e) {
@@ -880,14 +952,14 @@ public class Controller {
 		return "noticecommentlist";
 	}
 
-	// ¼öÁ¤ Æû
+	// ìˆ˜ì • í¼
 	@RequestMapping("noticecommentupdateform")
 	public String noticecommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "noticecommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("noticecommentupdate")
 	public String noticecommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -895,7 +967,7 @@ public class Controller {
 		else
 			return "noticecommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("noticecommentdeleteform")
 	public String noticecommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -911,24 +983,24 @@ public class Controller {
 			return "noticecommentdeleteform";
 	}
 
-	// °øÁö»çÇ× ¸®ÇÃ ³¡
+	// ê³µì§€ì‚¬í•­ ë¦¬í”Œ ë
 
-	// ´º½º ¸®ÇÃ
+	// ë‰´ìŠ¤ ë¦¬í”Œ
 
-	// ´º½º ¸®ÇÃ Input_Form
+	// ë‰´ìŠ¤ ë¦¬í”Œ Input_Form
 
 	@RequestMapping("/newscommentinputForm")
 	public String newscommentinputForm() {
 		return "newscommentinput_form";
 	}
 
-	// ´º½º ¸®ÇÃ insert
+	// ë‰´ìŠ¤ ë¦¬í”Œ insert
 	@RequestMapping("/newscommentinsert")
 	public String newscommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¸®ÇÃ ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ë¦¬í”Œ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "newscommentresult";
 			}
 		} catch (SQLException e) {
@@ -938,7 +1010,7 @@ public class Controller {
 		return "redirect:newscommentinput";
 	}
 
-	// ´º½º ¸®ÇÃ List
+	// ë‰´ìŠ¤ ë¦¬í”Œ List
 	@RequestMapping("newscommentlist")
 	public String newscommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -950,14 +1022,14 @@ public class Controller {
 		return "newscommentlist";
 	}
 
-	// ´º½º ¸®ÇÃ ¼öÁ¤ Æû
+	// ë‰´ìŠ¤ ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("newscommentupdateform")
 	public String newscommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "newscommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("newscommentupdate")
 	public String newscommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -965,7 +1037,7 @@ public class Controller {
 		else
 			return "newscommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("newscommentdeleteform")
 	public String newscommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -981,9 +1053,9 @@ public class Controller {
 			return "newscommentdeleteform";
 	}
 
-	// ´º½º ¸®ÇÃ ³¡
+	// ë‰´ìŠ¤ ë¦¬í”Œ ë
 
-	// ÀÏÀÚ¸® Á¤º¸ ¸®ÇÃ
+	// ì¼ìë¦¬ ì •ë³´ ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/jobcommentinputForm")
@@ -991,13 +1063,13 @@ public class Controller {
 		return "jobcommentinput_form";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ insert
+	// ì¼ìë¦¬ì •ë³´ insert
 	@RequestMapping("/jobcommentinsert")
 	public String jobcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "jobcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1007,7 +1079,7 @@ public class Controller {
 		return "redirect:jobcommentinput";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ List
+	// ì¼ìë¦¬ì •ë³´ List
 	@RequestMapping("jobcommentlist")
 	public String jobcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1019,14 +1091,14 @@ public class Controller {
 		return "jobcommentlist";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ ¼öÁ¤ Æû
+	// ì¼ìë¦¬ì •ë³´ ìˆ˜ì • í¼
 	@RequestMapping("jobcommentupdateform")
 	public String jobcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "jobcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("jobcommentupdate")
 	public String jobcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1034,7 +1106,7 @@ public class Controller {
 		else
 			return "jobcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("jobcommentdeleteform")
 	public String jobcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1050,9 +1122,9 @@ public class Controller {
 			return "jobcommentdeleteform";
 	}
 
-	// ÀÏÀÚ¸®Á¤º¸ ³¡
+	// ì¼ìë¦¬ì •ë³´ ë
 
-	// ÀÇ·á-°Å·¡ ¸®ÇÃ
+	// ì˜ë£Œ-ê±°ë˜ ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/tradecommentinputForm")
@@ -1060,13 +1132,13 @@ public class Controller {
 		return "tradecommentinput_form";
 	}
 
-	// ÀÇ·á-°Å·¡ ¸®ÇÃ insert
+	// ì˜ë£Œ-ê±°ë˜ ë¦¬í”Œ insert
 	@RequestMapping("/tradecommentinsert")
 	public String tradecommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "tradecommentresult";
 			}
 		} catch (SQLException e) {
@@ -1076,7 +1148,7 @@ public class Controller {
 		return "redirect:tradecommentinput";
 	}
 
-	// ÀÇ·á-°Å·¡ ¸®ÇÃ List
+	// ì˜ë£Œ-ê±°ë˜ ë¦¬í”Œ List
 	@RequestMapping("tradecommentlist")
 	public String tradecommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1088,14 +1160,14 @@ public class Controller {
 		return "tradecommentlist";
 	}
 
-	// ÀÇ·á-°Å·¡ ¸®ÇÃ ¼öÁ¤ Æû
+	// ì˜ë£Œ-ê±°ë˜ ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("tradecommentupdateform")
 	public String tradecommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "tradecommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("tradecommentupdate")
 	public String tradecommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1103,7 +1175,7 @@ public class Controller {
 		else
 			return "tradecommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("tradecommentdeleteform")
 	public String tradecommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1119,9 +1191,9 @@ public class Controller {
 			return "tradecommentdeleteform";
 	}
 
-	// ÀÇ·á-°Å·¡ ¸®ÇÃ ³¡
+	// ì˜ë£Œ-ê±°ë˜ ë¦¬í”Œ ë
 
-	// ÀÇ·á-Áú¹®¸®ÇÃ
+	// ì˜ë£Œ-ì§ˆë¬¸ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/questioncommentinputForm")
@@ -1129,13 +1201,13 @@ public class Controller {
 		return "questioncommentinput_form";
 	}
 
-	// ÀÇ·á-Áú¹®¸®ÇÃ insert
+	// ì˜ë£Œ-ì§ˆë¬¸ë¦¬í”Œ insert
 	@RequestMapping("/questioncommentinsert")
 	public String questioncommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "questioncommentresult";
 			}
 		} catch (SQLException e) {
@@ -1145,7 +1217,7 @@ public class Controller {
 		return "redirect:questioncommentinput";
 	}
 
-	// ÀÇ·á-Áú¹®¸®ÇÃ List
+	// ì˜ë£Œ-ì§ˆë¬¸ë¦¬í”Œ List
 	@RequestMapping("questioncommentlist")
 	public String questioncommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1157,14 +1229,14 @@ public class Controller {
 		return "questioncommentlist";
 	}
 
-	// ÀÇ·á-Áú¹®¸®ÇÃ ¼öÁ¤ Æû
+	// ì˜ë£Œ-ì§ˆë¬¸ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("questioncommentupdateform")
 	public String questioncommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "questioncommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("questioncommentupdate")
 	public String questioncommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1172,7 +1244,7 @@ public class Controller {
 		else
 			return "questioncommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("questioncommentdeleteform")
 	public String questioncommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1188,9 +1260,9 @@ public class Controller {
 			return "questioncommentdeleteform";
 	}
 
-	// ÀÇ·á-Áú¹®¸®ÇÃ ³¡
+	// ì˜ë£Œ-ì§ˆë¬¸ë¦¬í”Œ ë
 
-	// ÀÇ·á-ÈÄ±â ¸®ÇÃ
+	// ì˜ë£Œ-í›„ê¸° ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/reviewcommentinputForm")
@@ -1198,13 +1270,13 @@ public class Controller {
 		return "reviewcommentinput_form";
 	}
 
-	// ÀÇ·á-°Å·¡ insert
+	// ì˜ë£Œ-ê±°ë˜ insert
 	@RequestMapping("/reviewcommentinsert")
 	public String reviewcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "reviewcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1214,7 +1286,7 @@ public class Controller {
 		return "redirect:reviewcommentinput";
 	}
 
-	// ÀÇ·á-ÈÄ±â ¸®ÇÃ List
+	// ì˜ë£Œ-í›„ê¸° ë¦¬í”Œ List
 	@RequestMapping("reviewcommentlist")
 	public String reviewcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1226,14 +1298,14 @@ public class Controller {
 		return "reviewcommentlist";
 	}
 
-	// ÀÇ·á-ÈÄ±â ¸®ÇÃ ¼öÁ¤ Æû
+	// ì˜ë£Œ-í›„ê¸° ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("reviewcommentupdateform")
 	public String reviewcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "reviewcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("reviewcommentupdate")
 	public String reviewcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1241,7 +1313,7 @@ public class Controller {
 		else
 			return "reviewcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("reviewcommentdeleteform")
 	public String reviewcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1257,9 +1329,9 @@ public class Controller {
 			return "reviewcommentdeleteform";
 	}
 
-	// ÀÇ·á-ÈÄ±â ¸®ÇÃ ³¡
+	// ì˜ë£Œ-í›„ê¸° ë¦¬í”Œ ë
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¸®ÇÃ
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/bodycommentinputForm")
@@ -1267,13 +1339,13 @@ public class Controller {
 		return "bodycommentinput_form";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¸®ÇÃ insert
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë¦¬í”Œ insert
 	@RequestMapping("/bodycommentinsert")
 	public String bodycommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "bodycommentresult";
 			}
 		} catch (SQLException e) {
@@ -1283,7 +1355,7 @@ public class Controller {
 		return "redirect:bodycommentinput";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¸®ÇÃ List
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë¦¬í”Œ List
 	@RequestMapping("bodycommentlist")
 	public String bodycommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1295,14 +1367,14 @@ public class Controller {
 		return "bodycommentlist";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¸®ÇÃ ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("bodycommentupdateform")
 	public String bodycommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bodycommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("bodycommentupdate")
 	public String bodycommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1310,7 +1382,7 @@ public class Controller {
 		else
 			return "bodycommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("bodycommentdeleteform")
 	public String bodycommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1326,9 +1398,9 @@ public class Controller {
 			return "bodycommentdeleteform";
 	}
 
-	// °Ô½ÃÆÇ-½ÅÃ¼Àå¾Ö ¸®ÇÃ ³¡
+	// ê²Œì‹œíŒ-ì‹ ì²´ì¥ì•  ë¦¬í”Œ ë
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¸®ÇÃ
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/headinputForm")
@@ -1336,13 +1408,13 @@ public class Controller {
 		return "headinput_form";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¸®ÇÃ insert
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë¦¬í”Œ insert
 	@RequestMapping("/mentalcommentinsert")
 	public String mentalcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "mentalcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1352,7 +1424,7 @@ public class Controller {
 		return "redirect:mentalcommentinput";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¸®ÇÃ List
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë¦¬í”Œ List
 	@RequestMapping("mentalcommentlist")
 	public String mentalcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1364,14 +1436,14 @@ public class Controller {
 		return "mentalcommentlist";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¸®ÇÃ ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("mentalcommentupdateform")
 	public String mentalcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "mentalcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("mentalcommentupdate")
 	public String mentalcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1379,7 +1451,7 @@ public class Controller {
 		else
 			return "mentalcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("mentalcommentdeleteform")
 	public String mentalcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1395,9 +1467,9 @@ public class Controller {
 			return "mentalcommentdeleteform";
 	}
 
-	// °Ô½ÃÆÇ-Á¤½ÅÀå¾Ö ¸®ÇÃ ³¡
+	// ê²Œì‹œíŒ-ì •ì‹ ì¥ì•  ë¦¬í”Œ ë
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¸®ÇÃ
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/clubcommentinputForm")
@@ -1405,13 +1477,13 @@ public class Controller {
 		return "clubcommentinput_form";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¸®ÇÃ insert
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë¦¬í”Œ insert
 	@RequestMapping("/clubcommentinsert")
 	public String clubcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "clubcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1421,7 +1493,7 @@ public class Controller {
 		return "redirect:clubcommentinput";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¸®ÇÃ List
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë¦¬í”Œ List
 	@RequestMapping("clubcommentlist")
 	public String clubcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1433,14 +1505,14 @@ public class Controller {
 		return "clubcommentlist";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¸®ÇÃ ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("clubcommentupdateform")
 	public String clubcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "clubcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("clubcommentupdate")
 	public String clubcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1448,7 +1520,7 @@ public class Controller {
 		else
 			return "clubcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("clubcommentdeleteform")
 	public String clubcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1464,9 +1536,9 @@ public class Controller {
 			return "clubcommentdeleteform";
 	}
 
-	// °Ô½ÃÆÇ-µ¿È£È¸ ¸®ÇÃ ³¡
+	// ê²Œì‹œíŒ-ë™í˜¸íšŒ ë¦¬í”Œ ë
 
-	// °Ô½ÃÆÇ-¿©Çà ¸®ÇÃ
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/travelcommentinputForm")
@@ -1474,13 +1546,13 @@ public class Controller {
 		return "travelcommentinput_form";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ¸®ÇÃ insert
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë¦¬í”Œ insert
 	@RequestMapping("/travelcommentinsert")
 	public String travelcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "travelcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1490,7 +1562,7 @@ public class Controller {
 		return "redirect:travelcommentinput";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ¸®ÇÃ List
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë¦¬í”Œ List
 	@RequestMapping("travelcommentlist")
 	public String travelcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1502,14 +1574,14 @@ public class Controller {
 		return "travelcommentlist";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ¸®ÇÃ ¼öÁ¤ Æû
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("travelcommentupdateform")
 	public String travelcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "travelcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("travelcommentupdate")
 	public String travelcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1517,7 +1589,7 @@ public class Controller {
 		else
 			return "travelcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("travelcommentdeleteform")
 	public String travelcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1533,9 +1605,9 @@ public class Controller {
 			return "travelcommentdeleteform";
 	}
 
-	// °Ô½ÃÆÇ-¿©Çà ¸®ÇÃ ³¡
+	// ê²Œì‹œíŒ-ì—¬í–‰ ë¦¬í”Œ ë
 
-	// °í°´¼¾ÅÍ-Q&A¸®ÇÃ
+	// ê³ ê°ì„¼í„°-Q&Aë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/qnacommentinputForm")
@@ -1543,13 +1615,13 @@ public class Controller {
 		return "qnacommentinput_form";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A¸®ÇÃ insert
+	// ê³ ê°ì„¼í„°-Q&Aë¦¬í”Œ insert
 	@RequestMapping("/qnacommentinsert")
 	public String qnacommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "qnacommentresult";
 			}
 		} catch (SQLException e) {
@@ -1559,7 +1631,7 @@ public class Controller {
 		return "redirect:qnacommentinput";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A¸®ÇÃ List
+	// ê³ ê°ì„¼í„°-Q&Aë¦¬í”Œ List
 	@RequestMapping("qnacommentlist")
 	public String qnacommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1571,14 +1643,14 @@ public class Controller {
 		return "qnacommentlist";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A¸®ÇÃ ¼öÁ¤ Æû
+	// ê³ ê°ì„¼í„°-Q&Aë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("qnacommentupdateform")
 	public String qnacommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "qnacommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("qnacommentupdate")
 	public String qnacommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1586,7 +1658,7 @@ public class Controller {
 		else
 			return "qnacommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("qnacommentdeleteform")
 	public String qnacommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1602,9 +1674,9 @@ public class Controller {
 			return "qnacommentdeleteform";
 	}
 
-	// °í°´¼¾ÅÍ-Q&A¸®ÇÃ ³¡
+	// ê³ ê°ì„¼í„°-Q&Aë¦¬í”Œ ë
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¸®ÇÃ
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë¦¬í”Œ
 	// Input_Form
 
 	@RequestMapping("/bbsrequestcommentinputForm")
@@ -1612,13 +1684,13 @@ public class Controller {
 		return "bbsrequestcommentinput_form";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¸®ÇÃ insert
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë¦¬í”Œ insert
 	@RequestMapping("/bbsrequestcommentinsert")
 	public String bbsrequestcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ´º½º ¿Ã¶ó°¬½À´Ï´Ù.");
+				m.addAttribute("msg", " ë‰´ìŠ¤ ì˜¬ë¼ê°”ìŠµë‹ˆë‹¤.");
 				return "bbsrequestcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1628,7 +1700,7 @@ public class Controller {
 		return "redirect:bbsrequestcommentinput";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¸®ÇÃ List
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë¦¬í”Œ List
 	@RequestMapping("bbsrequestcommentlist")
 	public String bbsrequestcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1640,14 +1712,14 @@ public class Controller {
 		return "bbsrequestcommentlist";
 	}
 
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¸®ÇÃ ¼öÁ¤ Æû
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë¦¬í”Œ ìˆ˜ì • í¼
 	@RequestMapping("bbsrequestcommentupdateform")
 	public String bbsrequestcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bbsrequestcommentupdate";
 	}
 
-	// ¼öÁ¤
+	// ìˆ˜ì •
 	@RequestMapping("bbsrequestcommentupdate")
 	public String bbsrequestcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1655,7 +1727,7 @@ public class Controller {
 		else
 			return "bbsrequestcommentupdateform";
 	}
-	// »èÁ¦
+	// ì‚­ì œ
 
 	@RequestMapping("bbsrequestcommentdeleteform")
 	public String bbsrequestcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1672,12 +1744,12 @@ public class Controller {
 	}
   
 	
-	// °í°´¼¾ÅÍ-°Ô½ÃÆÇ ¿äÃ» ¸®ÇÃ ³¡
+	// ê³ ê°ì„¼í„°-ê²Œì‹œíŒ ìš”ì²­ ë¦¬í”Œ ë
 	
 	private MessageDAO mv;
-	// ¸Ş½ÅÀú
+	// ë©”ì‹ ì €
 	
-	//¸Ş½ÅÀú ÀÛ¼º
+	//ë©”ì‹ ì € ì‘ì„±
 	
 	// Input_Form
 
@@ -1692,7 +1764,7 @@ public class Controller {
 
 			try {
 				if (mv.insert(mvo)) {
-					m.addAttribute("msg", " Àü¼Û ¼º°ø.");
+					m.addAttribute("msg", " ì „ì†¡ ì„±ê³µ.");
 					return "messageresult";
 				}
 			} catch (SQLException e) {
@@ -1702,7 +1774,7 @@ public class Controller {
 			return "redirect:messagetinput";
 		}
 		
-	// ¸ñ·Ï
+	// ëª©ë¡
 		
 		@RequestMapping("messagelist")
 		public String messagelist(@RequestParam  String recipient, Model model) {
@@ -1714,7 +1786,7 @@ public class Controller {
 			
 			return "messagelist";
 		}
-	// »èÁ¦
+	// ì‚­ì œ
 		
 		@RequestMapping("messagedeleteform")
 		public String messagedeleteForm(@RequestParam int messageno, Model model) {
@@ -1723,6 +1795,7 @@ public class Controller {
 		}
 		
 
-	//Message ³¡
+	//Message ë
 		
+
 }
