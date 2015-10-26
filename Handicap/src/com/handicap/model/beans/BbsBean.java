@@ -12,7 +12,7 @@ public class BbsBean {
 	private int bad;
 	private int star;
 	private String region;
-	
+		
 	public int getNo() {
 		return no;
 	}
