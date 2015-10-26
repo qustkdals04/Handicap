@@ -1,6 +1,6 @@
 package com.handicap.model.beans;
 
-public class GradeBean {
+public class GradeVO {
 
 	/*
 	 회원등급 – usergrade - number
@@ -21,7 +21,4 @@ public class GradeBean {
 	public void setGradeinfo(String gradeinfo) {
 		this.gradeinfo = gradeinfo;
 	}
-	
-	
-
 }

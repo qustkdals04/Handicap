@@ -1,6 +1,7 @@
 package com.handicap.model.beans;
 
-public class FileBean {
+public class FileVO {
+
 	/*
 	 파일 – fileid - number
 	파일명 – filename - varchar2(20)
@@ -28,7 +29,4 @@ public class FileBean {
 	public void setFilesize(int filesize) {
 		this.filesize = filesize;
 	}
-	
-	
-	
 }

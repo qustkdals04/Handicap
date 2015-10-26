@@ -1,6 +1,6 @@
 package com.handicap.model.beans;
 
-public class BbsCommentBean {
+public class BbsCommentVO {
 
 	private int comno;
 	private String comment;
@@ -31,6 +31,4 @@ public class BbsCommentBean {
 	public void setBad(int bad) {
 		this.bad = bad;
 	}
-	
-	
 }

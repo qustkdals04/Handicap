@@ -1,6 +1,7 @@
 package com.handicap.model.beans;
 
-public class BbsBean {
+public class BbsVO {
+	
 	private int no;
 	private String category;
 	private String title;
@@ -85,7 +86,5 @@ public class BbsBean {
 	public void setRegion(String region) {
 		this.region = region;
 	}
-	
-	
 	
 }

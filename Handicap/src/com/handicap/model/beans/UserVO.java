@@ -1,7 +1,7 @@
 package com.handicap.model.beans;
 
-public class UserBean {
-		
+public class UserVO {
+
 	private String userid;
 	private String passwd;
 	private String name;
@@ -95,6 +95,5 @@ public class UserBean {
 	public void setCompanytype(String companytype) {
 		this.companytype = companytype;
 	}
-	
 	
 }
