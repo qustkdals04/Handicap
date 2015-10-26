@@ -70,4 +70,10 @@ public class Controller2  {
 													@RequestParam String companytype){
 		return false;
 	}
+	
+	@RequestMapping("/mypage") //마이페이지
+	public boolean mypage(@RequestParam String nickname){
+		//닉네임으로 활동내역을 가져오는데 있을시 조회
+		return false;
+	}
 }
