@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.handicap.model.beans.BbsBean;
+import com.handicap.model.beans.MessageVO;
 import com.handicap.model.dao.BbsDAO;
+import com.handicap.model.dao.MessageDAO;
 
 public class Controller {
 
@@ -1672,9 +1674,55 @@ public class Controller {
 	
 	// 고객센터-게시판 요청 리플 끝
 	
-	
+	private MessageDAO mv;
 	// 메신저
 	
+	//메신저 작성
 	
-	//
+	// Input_Form
+
+		@RequestMapping("messageinputForm")
+		public String messageInputForm()  {
+			return "messageinput_form";
+		}
+
+	// Insert
+		@RequestMapping("/messageinsert")
+		public String messageinsert(Model m, MessageVO mvo) {
+
+			try {
+				if (mv.insert(mvo)) {
+					m.addAttribute("msg", " 전송 성공.");
+					return "messageresult";
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return "redirect:messagetinput";
+		}
+		
+	// 목록
+		
+		@RequestMapping("messagelist")
+		public String messagelist(@RequestParam  String recipient, Model model) {
+
+				
+				List<MessageVO> list = mv.selectAll(recipient);
+				model.addAttribute("messagelist", list);
+				
+			
+			return "messagelist";
+		}
+	// 삭제
+		
+		@RequestMapping("messagedeleteform")
+		public String messagedeleteForm(@RequestParam int messageno, Model model) {
+			model.addAttribute("messageVO", mv.select(messageno));
+			return "messagedeleteform";
+		}
+		
+
+	//Message 끝
+		
 }

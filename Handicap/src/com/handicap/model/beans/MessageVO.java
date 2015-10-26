@@ -7,6 +7,7 @@ public class MessageVO {
 	String contents;
 	String date;
 	int status;
+	
 	public int getMessageno() {
 		return messageno;
 	}
