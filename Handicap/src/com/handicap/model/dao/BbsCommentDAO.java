@@ -3,22 +3,23 @@ package com.handicap.model.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.handicap.model.beans.BbsCommentBean;
+
+import com.handicap.model.beans.BbsCommentVO;
 
 public class BbsCommentDAO {
-	public boolean insert(BbsCommentBean comment)throws SQLException{
+	public boolean insert(BbsCommentVO comment)throws SQLException{
 		return false;
 	}
     public boolean delete(int comno, int boardno, int no)throws SQLException{
     	return false;
     }
-    public boolean update(BbsCommentBean comment)throws SQLException{
+    public boolean update(BbsCommentVO comment)throws SQLException{
     	return false;
     }
-    public BbsCommentBean select(int comno, int boardno, int no){//throws SQLException;
+    public BbsCommentVO select(int comno, int boardno, int no){//throws SQLException;
     	return null;
     }
-    public List<BbsCommentBean> selectAll(){
+    public List<BbsCommentVO> selectAll(){
     	return null;
     }
 }

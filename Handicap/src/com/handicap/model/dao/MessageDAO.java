@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 
-import com.handicap.model.beans.BbsBean;
 import com.handicap.model.beans.MessageVO;
 
 public class MessageDAO {

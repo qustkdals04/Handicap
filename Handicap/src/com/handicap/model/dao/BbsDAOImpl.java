@@ -3,12 +3,12 @@ package com.handicap.model.dao;
 import java.sql.SQLException;
 import java.util.List;
 
-import com.handicap.model.beans.BbsBean;
+import com.handicap.model.beans.BbsVO;
 
 public class BbsDAOImpl implements BbsDAO {
 
 	@Override
-	public boolean insert(BbsBean bbs) throws SQLException {
+	public boolean insert(BbsVO bbs) throws SQLException {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -20,26 +20,26 @@ public class BbsDAOImpl implements BbsDAO {
 	}
 
 	@Override
-	public boolean update(BbsBean bbs) throws SQLException {
+	public boolean update(BbsVO bbs) throws SQLException {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public BbsBean select(int no, int boardno) {
+	public BbsVO select(int no, int boardno) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<BbsBean> selectAll() {
+	public List<BbsVO> selectAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	public List<BbsBean> selectAll(String region) {
+	public List<BbsVO> selectAll(String region) {
 		// TODO Auto-generated method stub
-		//일자리정보 지역별 리스트출력
+		//�씪�옄由ъ젙蹂� 吏��뿭蹂� 由ъ뒪�듃異쒕젰
 		return null;
 	}
 
