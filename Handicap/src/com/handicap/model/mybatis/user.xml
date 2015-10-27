@@ -42,7 +42,7 @@
    	delete from person where name=#{name}
    </delete> -->
 </mapper>
-<!-- person.xml -->
+<!-- user.xml -->
 
 
 

@@ -16,7 +16,7 @@
    
    <!-- 뷰리졸버 정의 -->
    <mvc:view-resolvers>
-      <mvc:jsp prefix="/WEB-INF/view/"/>
+      <mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp"/>
       <!-- SpringMVC/WEB-INF/view/ 전달될 뷰이름 .jsp  -->
    </mvc:view-resolvers> 
    
@@ -37,7 +37,7 @@
          id="sqlSessionFactoryBean">
      <property name="dataSource" ref="driverManagerDataSource"/>
      <property name="mapperLocations" 
-               value="classpath:com/handicap/model/mybatis/user.xml">
+               value="classpath:com/handicap/model/mybatis/*.xml">
        <!-- <list>
           <value>classpath:kr/ac/doowon/model/mybatis/person.xml</value>
           <value>classpath:kr/ac/doowon/model/mybatis/emp.xml</value>

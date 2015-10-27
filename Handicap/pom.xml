@@ -70,14 +70,8 @@
         <groupId>org.springframework</groupId>
         <artifactId>spring-tx</artifactId>
         <version>4.2.0.RELEASE</version>
-     </dependency>     
-   <dependency>
-    <groupId>com.oracle</groupId>
-    <artifactId>ojdbc6</artifactId>
-    <version>11.1.0.7.0</version>
-</dependency>
-
-     <dependency>
+     </dependency>    
+          <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>jstl</artifactId>
         <version>1.2</version>
