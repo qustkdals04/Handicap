@@ -8,13 +8,18 @@
    <select id="selectAll" resultType="com.handicap.model.beans.UserVO">
      select * from member where usergrade=1
    </select>
-   <!-- 
+  
    수정폼에 출력할 데이터 조회
-   <select id="select" parameterType="string"
+   <select id="isCheckId" parameterType="string"
            resultType="com.handicap.model.beans.UserVO">
-     select name,age,job from person where name=#{name}
+     select userid from member
    </select>
    
+   <select id="isCheckNick" parameterType="string"
+           resultType="com.handicap.model.beans.UserVO">
+     select nickname from member
+   </select>
+   <!-- 
    <update id="update" parameterType="com.handicap.model.beans.UserVO">
      update person set age=#{age}, job=#{job} where name=#{name}
    </update>
