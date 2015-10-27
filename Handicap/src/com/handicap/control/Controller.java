@@ -282,7 +282,7 @@ public class Controller {
 	// 일자리 정보 삭제폼
 	@RequestMapping("jobdeleteform")
 	public String jobdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "jobdeleteform";
 	}
 
@@ -335,7 +335,7 @@ public class Controller {
 	// 의료-거래 글수정폼
 	@RequestMapping("tradeupdateform")
 	public String tradeupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "tradeupdate";
 	}
 
@@ -351,7 +351,7 @@ public class Controller {
 	// 의료-거래 글삭제폼
 	@RequestMapping("tradedeleteform")
 	public String tradedeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "tradedeleteform";
 	}
 
@@ -404,7 +404,7 @@ public class Controller {
 	// 의료-질문 글수정폼
 	@RequestMapping("questionupdateform")
 	public String questionupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "questionupdate";
 	}
 
@@ -420,7 +420,7 @@ public class Controller {
 	// 의료-질문 글삭제폼
 	@RequestMapping("questiondeleteform")
 	public String questiondeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "questiondeleteform";
 	}
 
@@ -473,7 +473,7 @@ public class Controller {
 	// 의료-후기 글수정폼
 	@RequestMapping("reviewupdateform")
 	public String reviewupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "reviewupdate";
 	}
 
@@ -489,7 +489,7 @@ public class Controller {
 	// 의료-후기 삭제폼
 	@RequestMapping("reviewdeleteform")
 	public String reviewdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "reviewdeleteform";
 	}
 
@@ -542,7 +542,7 @@ public class Controller {
 	// 게시판-신체장애 글수정폼
 	@RequestMapping("bodyupdateform")
 	public String bodyupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "bodyupdate";
 	}
 
@@ -558,7 +558,7 @@ public class Controller {
 	// 게시판-신체장애 글삭제폼
 	@RequestMapping("bodydeleteform")
 	public String bodydeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "bodydeleteform";
 	}
 
@@ -611,7 +611,7 @@ public class Controller {
 	// 게시판-정신장애 글수정폼
 	@RequestMapping("mentalupdateform")
 	public String mentalupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "mentalupdate";
 	}
 
@@ -627,7 +627,7 @@ public class Controller {
 	// 게시판-정신장애 글삭제폼
 	@RequestMapping("mentaldeleteform")
 	public String mentaldeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "mentaldeleteform";
 	}
 
@@ -680,7 +680,7 @@ public class Controller {
 	// 게시판-동호회 글수정폼
 	@RequestMapping("clubupdateform")
 	public String clubupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "clubupdate";
 	}
 
@@ -696,7 +696,7 @@ public class Controller {
 	// 게시판-동호회 글삭제폼
 	@RequestMapping("clubdeleteform")
 	public String clubdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "clubdeleteform";
 	}
 
@@ -749,7 +749,7 @@ public class Controller {
 	// 게시판-여행 글수정폼
 	@RequestMapping("travelupdateform")
 	public String travelupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "travelupdate";
 	}
 
@@ -765,7 +765,7 @@ public class Controller {
 	// 게시판-여행 글삭제폼
 	@RequestMapping("traveldeleteform")
 	public String traveldeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "traveldeleteform";
 	}
 
@@ -818,7 +818,7 @@ public class Controller {
 	// 고객센터-Q&A 수정폼
 	@RequestMapping("qnaupdateform")
 	public String qnaupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "qnaupdate";
 	}
 
@@ -834,7 +834,7 @@ public class Controller {
 	// 고객센터-Q&A 삭제폼
 	@RequestMapping("qnadeleteform")
 	public String qnadeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "qnadeleteform";
 	}
 
@@ -887,7 +887,7 @@ public class Controller {
 	// 고객센터-게시판 요청 글수정폼
 	@RequestMapping("bbsrequestupdateform")
 	public String bbsrequestupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "bbsrequestupdate";
 	}
 
@@ -903,7 +903,7 @@ public class Controller {
 	// 고객센터-게시판 요청 삭제폼
 	@RequestMapping("bbsrequestdeleteform")
 	public String bbsrequestdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "bbsrequestdeleteform";
 	}
 
@@ -959,15 +959,16 @@ public class Controller {
 
 	// 공지사항 리플 글수정폼
 	@RequestMapping("noticecommentupdateform")
-	public String noticecommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String noticecommentupdateForm(@RequestParam int no, int commentno, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, boardno, no));
 		return "noticecommentupdate";
 	}
 
 	// 공지사항 리플 글수정
 	@RequestMapping("noticecommentupdate")
-	public String noticecommentinsert(BbsVO bb) throws SQLException {
-		if (bd.update(bb))
+	public String noticecommentinsert(BbsCommentVO bbs) throws SQLException {
+	
+		if (bcd.update(bbs))
 			return "redirect:/noticecommentlist";
 		else
 			return "noticecommentupdateform";
@@ -975,15 +976,15 @@ public class Controller {
 	
 	// 공지사항 리플 삭제폼
 	@RequestMapping("noticecommentdeleteform")
-	public String noticecommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String noticecommentdeleteForm(@RequestParam int commentno,int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, boardno, no));
 		return "noticecommentdeleteform";
 	}
 
 	// 공지사항 리플 삭제
 	@RequestMapping("noticecommentdelete")
-	public String noticecommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String noticecommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, boardno, no))
 			return "redirect:/noticecommentlist";
 		else
 			return "noticecommentdeleteform";
@@ -1000,10 +1001,10 @@ public class Controller {
 
 	// 뉴스 리플 글쓰기
 	@RequestMapping("/newscommentinsert")
-	public String newscommentinsert(Model m, BbsVO b) {
+	public String newscommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "뉴스 리플 글씀");
 				return "newscommentresult";
 			}
@@ -1019,7 +1020,7 @@ public class Controller {
 	public String newscommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsVO> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("newscommentlist", list);
 
 		}
@@ -1028,15 +1029,15 @@ public class Controller {
 
 	// 뉴스 리플 글수정폼
 	@RequestMapping("newscommentupdateform")
-	public String newscommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String newscommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "newscommentupdate";
 	}
 
 	// 뉴스 리플 글수정
 	@RequestMapping("newscommentupdate")
-	public String newscommentinsert(BbsVO bb) throws SQLException {
-		if (bd.update(bb))
+	public String newscommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/newscommentlist";
 		else
 			return "newscommentupdateform";
@@ -1044,15 +1045,15 @@ public class Controller {
 	
 	// 뉴스 리플 글삭제폼
 	@RequestMapping("newscommentdeleteform")
-	public String newscommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String newscommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, boardno, no));
 		return "newscommentdeleteform";
 	}
 
 	// 뉴스 리플 글삭제
 	@RequestMapping("newscommentdelete")
-	public String newscommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String newscommentdelete(int no, int boardno, int commentno) throws SQLException {
+		if (bcd.delete(commentno, boardno, no))
 			return "redirect:/newscommentlist";
 		else
 			return "newscommentdeleteform";
@@ -1069,10 +1070,10 @@ public class Controller {
 
 	// 일자리 정보 리플 글쓰기
 	@RequestMapping("/jobcommentinsert")
-	public String jobcommentinsert(Model m, BbsVO b) {
+	public String jobcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "일자리 정보 리플 글씀");
 				return "jobcommentresult";
 			}
@@ -1085,10 +1086,10 @@ public class Controller {
 
 	// 일자리 정보 리플 글목록
 	@RequestMapping("jobcommentlist")
-	public String jobcommentlist(@RequestParam int no, int boardno, Model model) {
+	public String jobcommentlist(@RequestParam int commnetno, int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsVO> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("jobcommentlist", list);
 
 		}
@@ -1097,8 +1098,8 @@ public class Controller {
 
 	// 일자리 정보 리플 글수정폼
 	@RequestMapping("jobcommentupdateform")
-	public String jobcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String jobcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, boardno, no));
 		return "jobcommentupdate";
 	}
 
@@ -1235,15 +1236,15 @@ public class Controller {
 
 	// 의료-질문리플 글수정폼
 	@RequestMapping("questioncommentupdateform")
-	public String questioncommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String questioncommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "questioncommentupdate";
 	}
 
 	// 의료-질문리플 글수정
 	@RequestMapping("questioncommentupdate")
-	public String questioncommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String questioncommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/questioncommentlist";
 		else
 			return "questioncommentupdateform";
@@ -1251,15 +1252,15 @@ public class Controller {
 	
 	// 의료-질문리플 글삭제폼
 	@RequestMapping("questioncommentdeleteform")
-	public String questioncommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String questioncommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, boardno, no));
 		return "questioncommentdeleteform";
 	}
 
 	// 의료-질문리플 글삭제
 	@RequestMapping("questioncommentdelete")
-	public String questioncommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String questioncommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, boardno, no))
 			return "redirect:/questioncommentlist";
 		else
 			return "questioncommentdeleteform";
@@ -1276,10 +1277,10 @@ public class Controller {
 
 	// 의료-후기 리플 글쓰기
 	@RequestMapping("/reviewcommentinsert")
-	public String reviewcommentinsert(Model m, BbsBean b) {
+	public String reviewcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "의료-후기 리플 글씀");
 				return "reviewcommentresult";
 			}
@@ -1295,7 +1296,7 @@ public class Controller {
 	public String reviewcommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("reviewcommentlist", list);
 
 		}
@@ -1304,15 +1305,15 @@ public class Controller {
 
 	// 의료-후기 리플 글수정폼
 	@RequestMapping("reviewcommentupdateform")
-	public String reviewcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String reviewcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "reviewcommentupdate";
 	}
 
 	// 의료-후기 리플 글수정
 	@RequestMapping("reviewcommentupdate")
-	public String reviewcommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String reviewcommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/reviewcommentlist";
 		else
 			return "reviewcommentupdateform";
@@ -1320,15 +1321,15 @@ public class Controller {
 	
 	// 의료-후기 리플 글삭제폼
 	@RequestMapping("reviewcommentdeleteform")
-	public String reviewcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String reviewcommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno,no, boardno));
 		return "reviewcommentdeleteform";
 	}
 
 	// 의료-후기 리플 글삭제
 	@RequestMapping("reviewcommentdelete")
-	public String reviewcommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String reviewcommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/reviewcommentlist";
 		else
 			return "reviewcommentdeleteform";
@@ -1345,10 +1346,10 @@ public class Controller {
 
 	// 게시판-신체장애 리플 글씀
 	@RequestMapping("/bodycommentinsert")
-	public String bodycommentinsert(Model m, BbsBean b) {
+	public String bodycommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "게시판-신체장애 리플 글씀");
 				return "bodycommentresult";
 			}
@@ -1364,7 +1365,7 @@ public class Controller {
 	public String bodycommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("bodycommentlist", list);
 
 		}
@@ -1373,15 +1374,15 @@ public class Controller {
 
 	// 게시판-신체장애 리플 글수정폼
 	@RequestMapping("bodycommentupdateform")
-	public String bodycommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String bodycommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "bodycommentupdate";
 	}
 
 	// 게시판-신체장애 리플 글수정
 	@RequestMapping("bodycommentupdate")
-	public String bodycommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String bodycommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/bodycommentlist";
 		else
 			return "bodycommentupdateform";
@@ -1389,15 +1390,15 @@ public class Controller {
 	
 	// 게시판-신체장애 리플 삭제폼
 	@RequestMapping("bodycommentdeleteform")
-	public String bodycommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String bodycommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno,no, boardno));
 		return "bodycommentdeleteform";
 	}
 
 	// 게시판-신체장애 리플 삭제
 	@RequestMapping("bodycommentdelete")
-	public String bodycommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String bodycommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno,no, boardno))
 			return "redirect:/bodycommentlist";
 		else
 			return "bodycommentdeleteform";
@@ -1414,10 +1415,10 @@ public class Controller {
 
 	// 게시판-정신장애 글쓰기
 	@RequestMapping("/mentalcommentinsert")
-	public String mentalcommentinsert(Model m, BbsBean b) {
+	public String mentalcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "게시판-정신장애 글씀");
 				return "mentalcommentresult";
 			}
@@ -1433,7 +1434,7 @@ public class Controller {
 	public String mentalcommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("mentalcommentlist", list);
 
 		}
@@ -1442,15 +1443,15 @@ public class Controller {
 
 	// 게시판-정신장애 글수정폼
 	@RequestMapping("mentalcommentupdateform")
-	public String mentalcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String mentalcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "mentalcommentupdate";
 	}
 
 	// 게시판-정신장애 글수정
 	@RequestMapping("mentalcommentupdate")
-	public String mentalcommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String mentalcommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/mentalcommentlist";
 		else
 			return "mentalcommentupdateform";
@@ -1458,15 +1459,15 @@ public class Controller {
 	
 	// 게시판-정신장애 삭제폼
 	@RequestMapping("mentalcommentdeleteform")
-	public String mentalcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String mentalcommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "mentalcommentdeleteform";
 	}
 
 	// 게시판-정신장애 삭제
 	@RequestMapping("mentalcommentdelete")
-	public String mentalcommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String mentalcommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/mentalcommentlist";
 		else
 			return "mentalcommentdeleteform";
@@ -1483,10 +1484,10 @@ public class Controller {
 
 	// 게시판-동호회 글쓰기
 	@RequestMapping("/clubcommentinsert")
-	public String clubcommentinsert(Model m, BbsBean b) {
+	public String clubcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "게시판 - 동호회 글씀");
 				return "clubcommentresult";
 			}
@@ -1499,10 +1500,10 @@ public class Controller {
 
 	// 게시판-동호회 글목록
 	@RequestMapping("clubcommentlist")
-	public String clubcommentlist(@RequestParam int no, int boardno, Model model) {
+	public String clubcommentlist(@RequestParam  int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("clubcommentlist", list);
 
 		}
@@ -1511,15 +1512,15 @@ public class Controller {
 
 	// 게시판-동호회 글수정폼
 	@RequestMapping("clubcommentupdateform")
-	public String clubcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String clubcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "clubcommentupdate";
 	}
 
 	// 게시판-동호회 글수정
 	@RequestMapping("clubcommentupdate")
-	public String clubcommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String clubcommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/clubcommentlist";
 		else
 			return "clubcommentupdateform";
@@ -1527,15 +1528,15 @@ public class Controller {
 	
 	// 게시판-동호회 글삭제폼
 	@RequestMapping("clubcommentdeleteform")
-	public String clubcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String clubcommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "clubcommentdeleteform";
 	}
 
 	// 게시판-동호회 글삭제
 	@RequestMapping("clubcommentdelete")
-	public String clubcommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String clubcommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/clubcommentlist";
 		else
 			return "clubcommentdeleteform";
@@ -1552,10 +1553,10 @@ public class Controller {
 
 	// 게시판-여행 글쓰기
 	@RequestMapping("/travelcommentinsert")
-	public String travelcommentinsert(Model m, BbsBean b) {
+	public String travelcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "게시판-여행 글씀");
 				return "travelcommentresult";
 			}
@@ -1571,7 +1572,7 @@ public class Controller {
 	public String travelcommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("travelcommentlist", list);
 
 		}
@@ -1580,15 +1581,15 @@ public class Controller {
 
 	// 게시판-여행 글수정폼
 	@RequestMapping("travelcommentupdateform")
-	public String travelcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String travelcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "travelcommentupdate";
 	}
 
 	// 게시판-여행 글수정
 	@RequestMapping("travelcommentupdate")
-	public String travelcommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String travelcommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/travelcommentlist";
 		else
 			return "travelcommentupdateform";
@@ -1596,15 +1597,15 @@ public class Controller {
 	
 	// 게시판-여행 글삭제폼
 	@RequestMapping("travelcommentdeleteform")
-	public String travelcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String travelcommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "travelcommentdeleteform";
 	}
 
 	// 게시판-여행 글삭제
 	@RequestMapping("travelcommentdelete")
-	public String travelcommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String travelcommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/travelcommentlist";
 		else
 			return "travelcommentdeleteform";
@@ -1621,10 +1622,10 @@ public class Controller {
 
 	// 고객센터-Q&A 글쓰기
 	@RequestMapping("/qnacommentinsert")
-	public String qnacommentinsert(Model m, BbsBean b) {
+	public String qnacommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "고객센터-Q&A 글씀");
 				return "qnacommentresult";
 			}
@@ -1640,7 +1641,7 @@ public class Controller {
 	public String qnacommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("qnacommentlist", list);
 
 		}
@@ -1656,8 +1657,8 @@ public class Controller {
 
 	// 고객센터-Q&A 글수정
 	@RequestMapping("qnacommentupdate")
-	public String qnacommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String qnacommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/qnacommentlist";
 		else
 			return "qnacommentupdateform";
@@ -1665,15 +1666,15 @@ public class Controller {
 	
 	// 고객센터-Q&A 삭제폼
 	@RequestMapping("qnacommentdeleteform")
-	public String qnacommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String qnacommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "qnacommentdeleteform";
 	}
 
 	// 고객센터-Q&A 삭제
 	@RequestMapping("qnacommentdelete")
-	public String qnacommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String qnacommentdelete(int commentno, int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/qnacommentlist";
 		else
 			return "qnacommentdeleteform";
@@ -1690,10 +1691,10 @@ public class Controller {
 
 	// 고객센터-게시판 요청 글쓰기
 	@RequestMapping("/bbsrequestcommentinsert")
-	public String bbsrequestcommentinsert(Model m, BbsBean b) {
+	public String bbsrequestcommentinsert(Model m, BbsCommentVO b) {
 
 		try {
-			if (bd.insert(b)) {
+			if (bcd.insert(b)) {
 				m.addAttribute("msg", "고객센터-게시판 요청 글씀");
 				return "bbsrequestcommentresult";
 			}
@@ -1709,7 +1710,7 @@ public class Controller {
 	public String bbsrequestcommentlist(@RequestParam int no, int boardno, Model model) {
 
 		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("bbsrequestcommentlist", list);
 
 		}
@@ -1718,15 +1719,15 @@ public class Controller {
 
 	// 고객센터-게시판 요청 글수정폼
 	@RequestMapping("bbsrequestcommentupdateform")
-	public String bbsrequestcommentupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String bbsrequestcommentupdateForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno,no, boardno));
 		return "bbsrequestcommentupdate";
 	}
 
 	// 고객센터-게시판 요청 글수정
 	@RequestMapping("bbsrequestcommentupdate")
-	public String bbsrequestcommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String bbsrequestcommentinsert(BbsCommentVO bb) throws SQLException {
+		if (bcd.update(bb))
 			return "redirect:/bbsrequestcommentlist";
 		else
 			return "bbsrequestcommentupdateform";
@@ -1734,15 +1735,15 @@ public class Controller {
 	
 	// 고객센터-게시판 요청 글삭제폼
 	@RequestMapping("bbsrequestcommentdeleteform")
-	public String bbsrequestcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+	public String bbsrequestcommentdeleteForm(@RequestParam int commentno, int no, int boardno, Model model) {
+		model.addAttribute("BbsCommentVO", bcd.select(commentno, no, boardno));
 		return "bbsrequestcommentdeleteform";
 	}
 
 	// 고객센터-게시판 요청 글삭제
 	@RequestMapping("bbsrequestcommentdelete")
-	public String bbsrequestcommentdelete(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
+	public String bbsrequestcommentdelete(int commentno,int no, int boardno) throws SQLException {
+		if (bcd.delete(commentno, no, boardno))
 			return "redirect:/bbsrequestcommentlist";
 		else
 			return "bbsrequestcommentdeleteform";

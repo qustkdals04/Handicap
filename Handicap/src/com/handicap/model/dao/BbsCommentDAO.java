@@ -10,13 +10,13 @@ public class BbsCommentDAO {
 	public boolean insert(BbsCommentVO comment)throws SQLException{
 		return false;
 	}
-    public boolean delete(int comno, int boardno, int no)throws SQLException{
+    public boolean delete(int commentno, int boardno, int no)throws SQLException{
     	return false;
     }
     public boolean update(BbsCommentVO comment)throws SQLException{
     	return false;
     }
-    public BbsCommentVO select(int comno, int boardno, int no){//throws SQLException;
+    public BbsCommentVO select(int commentno, int boardno, int no){//throws SQLException;
     	return null;
     }
     public List<BbsCommentVO> selectAll(){
