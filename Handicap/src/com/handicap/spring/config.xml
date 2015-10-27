@@ -37,7 +37,7 @@
          id="sqlSessionFactoryBean">
      <property name="dataSource" ref="driverManagerDataSource"/>
      <property name="mapperLocations" 
-               value="classpath:com/handicap/model/mybatis/*.xml">
+               value="classpath:com/handicap/model/mybatis/user.xml">
        <!-- <list>
           <value>classpath:kr/ac/doowon/model/mybatis/person.xml</value>
           <value>classpath:kr/ac/doowon/model/mybatis/emp.xml</value>

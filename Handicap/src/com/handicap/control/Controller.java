@@ -24,6 +24,17 @@ public class Controller {
 	@Autowired
 	private BbsCommentDAO bcd;
 	
+	
+	@RequestMapping("/test")
+	public String test(){
+		return "test";
+	}
+	@RequestMapping("/main")//main페이지
+	public String main(){
+		return "main2";
+	}
+	
+	
 	//회원가입
 	
 	@RequestMapping("/register") //회원가입정보 얻어오기
