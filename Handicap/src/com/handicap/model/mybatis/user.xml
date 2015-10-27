@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="User">    
+   <insert id="insert" parameterType="com.handicap.model.beans.UserVO">
+     insert into member (userid,passwd,email,name,nickname,phone,pquestion,panswer,usergrade) 
+     values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade}, 1)
+   </insert>
+   <select id="selectAll" resultType="com.handicap.model.beans.UserVO">
+     select * from member where usergrade=1
+   </select>
+   <!-- 
+   수정폼에 출력할 데이터 조회
+   <select id="select" parameterType="string"
+           resultType="com.handicap.model.beans.UserVO">
+     select name,age,job from person where name=#{name}
+   </select>
+   
+   <update id="update" parameterType="com.handicap.model.beans.UserVO">
+     update person set age=#{age}, job=#{job} where name=#{name}
+   </update>
+   
+   <delete id="delete" parameterType="String">
+   	delete from person where name=#{name}
+   </delete> -->
+</mapper>
+<!-- person.xml -->
+
+
+
+
+
+
