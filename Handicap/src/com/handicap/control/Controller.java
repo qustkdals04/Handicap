@@ -1806,5 +1806,4 @@ public class Controller {
 			else
 				return "messagedeleteform";
 		}	
-
 }
