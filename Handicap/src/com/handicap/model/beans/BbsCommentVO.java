@@ -1,17 +1,17 @@
 package com.handicap.model.beans;
 
 public class BbsCommentVO {
-
-	private int comno;
+	private int commentno;
 	private String comment;
 	private String author;
-	private int bad;
+	private int status;
 	
-	public int getComno() {
-		return comno;
+	
+	public int getCommentno() {
+		return commentno;
 	}
-	public void setComno(int comno) {
-		this.comno = comno;
+	public void setCommentno(int commentno) {
+		this.commentno = commentno;
 	}
 	public String getComment() {
 		return comment;
@@ -25,10 +25,10 @@ public class BbsCommentVO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public int getBad() {
-		return bad;
+	public int getStatus() {
+		return status;
 	}
-	public void setBad(int bad) {
-		this.bad = bad;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 }
