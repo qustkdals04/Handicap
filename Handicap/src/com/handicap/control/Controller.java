@@ -16,13 +16,13 @@ import com.handicap.model.dao.UserDAO;
 
 public class Controller {
 	UserDAO dao;
-	//怨듭??궗?빆
+	//�⑤벊??沅�?鍮�
 	private BbsDAO bd;	
 	private BbsCommentDAO bcd;
 	
-	//?쉶?썝愿??젴
+	//?�돳?�뜚�꽴??�졃
 	
-	@RequestMapping("/register") //?쉶?썝媛??엯?젙蹂? ?뼸?뼱?삤湲?
+	@RequestMapping("/register") //?�돳?�뜚揶�??�뿯?�젟癰�? ?堉�?堉�?�궎疫�?
 	public boolean register(@RequestParam String userid,
 							@RequestParam String passwd,
 							@RequestParam String name,
@@ -35,39 +35,39 @@ public class Controller {
 							@RequestParam int companyno,
 							@RequestParam String companyaddr,
 							@RequestParam String companytype){
-		//?쑀?슚?꽦 寃??궗
+		//?��?�뒞?苑� 野�??沅�
 		return false;
 	}
-	@RequestMapping("/login") //濡쒓렇?씤 泥섎━
+	@RequestMapping("/login") //嚥≪뮄�젃?�뵥 筌ｌ꼶�봺
 	public boolean login(@RequestParam String userid,
 						 @RequestParam String passwd
 												){
 		
 		return false;
 	}
-	@RequestMapping("/logout") //濡쒓렇?븘?썐 ?뻽?쓣?븣
+	@RequestMapping("/logout") //嚥≪뮄�젃?釉�?�뜍 ?六�?�뱽?釉�
 	public boolean logout(){
 		return false;
 	}
 	
-	@RequestMapping("/idcheck") //以묐났?솗?씤 (?븘?씠?뵒)
+	@RequestMapping("/idcheck") //餓λ쵎�궗?�넇?�뵥 (?釉�?�뵠?逾�)
 	public boolean idcheck(@RequestParam String userid){
-		//?엳?쓣?븧 1 ?뾾?쓣?븧0  List ?삎?떇?쓽 蹂??닔?뿉 ?꽔?뼱?꽌 ModelAndView ?삎?깭濡? ?굹???깂
+		//?�뿳?�뱽?釉� 1 ?毓�?�뱽?釉�0  List ?�굨?�뻼?�벥 癰�??�땾?肉� ?苑�?堉�?苑� ModelAndView ?�굨?源�嚥�? ?援�???源�
 		return false;
 	}
-	@RequestMapping("/nickcheck") //以묐났?솗?씤 (?땳?꽕?엫)
+	@RequestMapping("/nickcheck") //餓λ쵎�궗?�넇?�뵥 (?�빏?苑�?�뿫)
 	public boolean nickcheck(@RequestParam String nickname){
-		//?엳?쓣?븧 1 ?뾾?쓣?븧0  List ?삎?떇?쓽 蹂??닔?뿉 ?꽔?뼱?꽌 ModelAndView ?삎?깭濡? ?굹???깂
+		//?�뿳?�뱽?釉� 1 ?毓�?�뱽?釉�0  List ?�굨?�뻼?�벥 癰�??�땾?肉� ?苑�?堉�?苑� ModelAndView ?�굨?源�嚥�? ?援�???源�
 		return false;
 	}
 	
-	@RequestMapping("/memberdelete") //?쉶?썝?깉?눜
+	@RequestMapping("/memberdelete") //?�돳?�뜚?源�?�닚
 	public boolean memberdelete(@RequestParam String passwd){
-		//鍮꾨?踰덊샇媛? ?씪移섏떆 1 ??由щ㈃0  
+		//�뜮袁�?甕곕뜇�깈揶�? ?�뵬燁살꼷�뻻 1 ??�뵳�됥늺0  
 		return false;
 	}
 	
-	@RequestMapping("/memberupdate") //?쉶?썝?닔?젙
+	@RequestMapping("/memberupdate") //?�돳?�뜚?�땾?�젟
 	public boolean memberupdate(@RequestParam String userid,
 								@RequestParam String passwd,
 								@RequestParam String name,
@@ -83,27 +83,27 @@ public class Controller {
 		return false;
 	}
 	
-	@RequestMapping("/mypage") //留덉씠?럹?씠吏?
+	@RequestMapping("/mypage") //筌띾뜆�뵠?�읂?�뵠筌�?
 	public boolean mypage(@RequestParam String nickname){
-		//?땳?꽕?엫?쑝濡? ?솢?룞?궡?뿭?쓣 媛??졇?삤?뒗?뜲 ?엳?쓣?떆 議고쉶
+		//?�빏?苑�?�뿫?�몵嚥�? ?�넞?猷�?沅�?肉�?�뱽 揶�??議�?�궎?�뮉?�쑓 ?�뿳?�뱽?�뻻 鈺곌퀬�돳
 		return false;
 	}	
 	
-	//寃뚯떆?뙋愿??젴	
-	// 怨듭??궗?빆	
-	// 怨듭??궗?빆 Input_Form
+	//野껊슣�뻻?�솇�꽴??�졃	
+	// �⑤벊??沅�?鍮�	
+	// �⑤벊??沅�?鍮� Input_Form
 	@RequestMapping("/noticeinputForm")
 	public String noticenputForm() {
 		return "noticeinput_form";
 	}
 
-	// 怨듭??궗?빆 insert
+	// �⑤벊??沅�?鍮� insert
 	@RequestMapping("/noticeinsert")
 	public String noticeinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", "怨듭??궗?빆 寃뚯떆湲??씠 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", "�⑤벊??沅�?鍮� 野껊슣�뻻疫�??�뵠 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "noticeresult";
 			}
 		} catch (SQLException e) {
@@ -125,14 +125,14 @@ public class Controller {
 		return "noticelist";
 	}
 
-	// ?닔?젙 ?뤌
+	// ?�땾?�젟 ?琉�
 	@RequestMapping("noticeupdateform")
 	public String noticeupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "noticeupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("noticeupdate")
 	public String noticeinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -140,7 +140,7 @@ public class Controller {
 		else
 			return "noticeupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("noticedeleteform")
 	public String noticedeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -156,24 +156,24 @@ public class Controller {
 			return "noticedeleteform";
 	}
 
-	// 怨듭??궗?빆 ?걹
+	// �⑤벊??沅�?鍮� ?嫄�
 
-	// ?돱?뒪
+	// ?�뤀?�뮞
 
-	// ?돱?뒪 Input_Form
+	// ?�뤀?�뮞 Input_Form
 
 	@RequestMapping("/newsinputForm")
 	public String newsinputForm() {
 		return "newsinput_form";
 	}
 
-	// ?돱?뒪 insert
+	// ?�뤀?�뮞 insert
 	@RequestMapping("/newsinsert")
 	public String newsinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "newsresult";
 			}
 		} catch (SQLException e) {
@@ -183,7 +183,7 @@ public class Controller {
 		return "redirect:newsinput";
 	}
 
-	// ?돱?뒪 List
+	// ?�뤀?�뮞 List
 	@RequestMapping("newslist")
 	public String newslist(@RequestParam int no, int boardno, Model model) {
 
@@ -195,14 +195,14 @@ public class Controller {
 		return "newslist";
 	}
 
-	// ?돱?뒪 ?닔?젙 ?뤌
+	// ?�뤀?�뮞 ?�땾?�젟 ?琉�
 	@RequestMapping("newsupdateform")
 	public String newsupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "newsupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("newsupdate")
 	public String newsinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -210,7 +210,7 @@ public class Controller {
 		else
 			return "newsupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("newsdeleteform")
 	public String newsdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -226,9 +226,9 @@ public class Controller {
 			return "newsdeleteform";
 	}
 
-	// ?돱?뒪 ?걹
+	// ?�뤀?�뮞 ?嫄�
 
-	// ?씪?옄由? ?젙蹂?
+	// ?�뵬?�쁽�뵳? ?�젟癰�?
 	// Input_Form
 
 	@RequestMapping("/jobinputForm")
@@ -236,13 +236,13 @@ public class Controller {
 		return "jobinput_form";
 	}
 
-	// ?씪?옄由ъ젙蹂? insert
+	// ?�뵬?�쁽�뵳�딆젟癰�? insert
 	@RequestMapping("/jobinsert")
 	public String jobinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "jobresult";
 			}
 		} catch (SQLException e) {
@@ -252,7 +252,7 @@ public class Controller {
 		return "redirect:jobinput";
 	}
 
-	// ?씪?옄由ъ젙蹂? List
+	// ?�뵬?�쁽�뵳�딆젟癰�? List
 	@RequestMapping("joblist")
 	public String joblist(@RequestParam int no, int boardno, Model model) {
 
@@ -264,14 +264,14 @@ public class Controller {
 		return "joblist";
 	}
 
-	// ?돱?뒪 ?닔?젙 ?뤌
+	// ?�뤀?�뮞 ?�땾?�젟 ?琉�
 	@RequestMapping("jobupdateform")
 	public String jobupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "jobupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("jobupdate")
 	public String jobinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -279,7 +279,7 @@ public class Controller {
 		else
 			return "jobupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("jobdeleteform")
 	public String jobdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -295,9 +295,9 @@ public class Controller {
 			return "jobdeleteform";
 	}
 
-	// ?씪?옄由ъ젙蹂? ?걹
+	// ?�뵬?�쁽�뵳�딆젟癰�? ?嫄�
 
-	// ?쓽猷?-嫄곕옒
+	// ?�벥�뙴?-椰꾧퀡�삋
 	// Input_Form
 
 	@RequestMapping("/tradeinputForm")
@@ -305,13 +305,13 @@ public class Controller {
 		return "tradeinput_form";
 	}
 
-	// ?쓽猷?-嫄곕옒 insert
+	// ?�벥�뙴?-椰꾧퀡�삋 insert
 	@RequestMapping("/tradeinsert")
 	public String tradeinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "traderesult";
 			}
 		} catch (SQLException e) {
@@ -321,7 +321,7 @@ public class Controller {
 		return "redirect:tradeinput";
 	}
 
-	// ?쓽猷?-嫄곕옒 List
+	// ?�벥�뙴?-椰꾧퀡�삋 List
 	@RequestMapping("tradelist")
 	public String tradelist(@RequestParam int no, int boardno, Model model) {
 
@@ -333,14 +333,14 @@ public class Controller {
 		return "tradelist";
 	}
 
-	// ?쓽猷?-嫄곕옒 ?닔?젙 ?뤌
+	// ?�벥�뙴?-椰꾧퀡�삋 ?�땾?�젟 ?琉�
 	@RequestMapping("tradeupdateform")
 	public String tradeupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "tradeupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("tradeupdate")
 	public String tradeinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -348,7 +348,7 @@ public class Controller {
 		else
 			return "tradeupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("tradedeleteform")
 	public String tradedeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -364,9 +364,9 @@ public class Controller {
 			return "tradedeleteform";
 	}
 
-	// ?쓽猷?-嫄곕옒 ?걹
+	// ?�벥�뙴?-椰꾧퀡�삋 ?嫄�
 
-	// ?쓽猷?-吏덈Ц
+	// ?�벥�뙴?-筌욌뜄揆
 	// Input_Form
 
 	@RequestMapping("/questioninputForm")
@@ -374,13 +374,13 @@ public class Controller {
 		return "questioninput_form";
 	}
 
-	// ?쓽猷?-吏덈Ц insert
+	// ?�벥�뙴?-筌욌뜄揆 insert
 	@RequestMapping("/questioninsert")
 	public String questioninsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "questionresult";
 			}
 		} catch (SQLException e) {
@@ -390,7 +390,7 @@ public class Controller {
 		return "redirect:questioninput";
 	}
 
-	// ?쓽猷?-吏덈Ц List
+	// ?�벥�뙴?-筌욌뜄揆 List
 	@RequestMapping("questionlist")
 	public String questionlist(@RequestParam int no, int boardno, Model model) {
 
@@ -402,14 +402,14 @@ public class Controller {
 		return "questionlist";
 	}
 
-	// ?쓽猷?-吏덈Ц ?닔?젙 ?뤌
+	// ?�벥�뙴?-筌욌뜄揆 ?�땾?�젟 ?琉�
 	@RequestMapping("questionupdateform")
 	public String questionupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "questionupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("questionupdate")
 	public String questioninsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -417,7 +417,7 @@ public class Controller {
 		else
 			return "questionupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("questiondeleteform")
 	public String questiondeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -433,9 +433,9 @@ public class Controller {
 			return "questiondeleteform";
 	}
 
-	// ?쓽猷?-吏덈Ц ?걹
+	// ?�벥�뙴?-筌욌뜄揆 ?嫄�
 
-	// ?쓽猷?-?썑湲?
+	// ?�벥�뙴?-?�뜎疫�?
 	// Input_Form
 
 	@RequestMapping("/reviewinputForm")
@@ -443,13 +443,13 @@ public class Controller {
 		return "reviewinput_form";
 	}
 
-	// ?쓽猷?-嫄곕옒 insert
+	// ?�벥�뙴?-椰꾧퀡�삋 insert
 	@RequestMapping("/reviewinsert")
 	public String reviewinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "reviewresult";
 			}
 		} catch (SQLException e) {
@@ -459,7 +459,7 @@ public class Controller {
 		return "redirect:reviewinput";
 	}
 
-	// ?쓽猷?-?썑湲? List
+	// ?�벥�뙴?-?�뜎疫�? List
 	@RequestMapping("reviewlist")
 	public String reviewlist(@RequestParam int no, int boardno, Model model) {
 
@@ -471,14 +471,14 @@ public class Controller {
 		return "reviewlist";
 	}
 
-	// ?쓽猷?-?썑湲? ?닔?젙 ?뤌
+	// ?�벥�뙴?-?�뜎疫�? ?�땾?�젟 ?琉�
 	@RequestMapping("reviewupdateform")
 	public String reviewupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "reviewupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("reviewupdate")
 	public String reviewinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -486,7 +486,7 @@ public class Controller {
 		else
 			return "reviewupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("reviewdeleteform")
 	public String reviewdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -502,9 +502,9 @@ public class Controller {
 			return "reviewdeleteform";
 	}
 
-	// ?쓽猷?-?썑湲? ?걹
+	// ?�벥�뙴?-?�뜎疫�? ?嫄�
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉�
 	// Input_Form
 
 	@RequestMapping("/bodyinputForm")
@@ -512,13 +512,13 @@ public class Controller {
 		return "bodyinput_form";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 insert
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� insert
 	@RequestMapping("/bodyinsert")
 	public String bodyinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "bodyresult";
 			}
 		} catch (SQLException e) {
@@ -528,7 +528,7 @@ public class Controller {
 		return "redirect:bodyinput";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 List
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� List
 	@RequestMapping("bodylist")
 	public String bodylist(@RequestParam int no, int boardno, Model model) {
 
@@ -540,14 +540,14 @@ public class Controller {
 		return "bodylist";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� ?�땾?�젟 ?琉�
 	@RequestMapping("bodyupdateform")
 	public String bodyupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bodyupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("bodyupdate")
 	public String bodyinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -555,7 +555,7 @@ public class Controller {
 		else
 			return "bodyupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("bodydeleteform")
 	public String bodydeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -571,9 +571,9 @@ public class Controller {
 			return "bodydeleteform";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 ?걹
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� ?嫄�
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉�
 	// Input_Form
 
 	@RequestMapping("/mentalinputForm")
@@ -581,13 +581,13 @@ public class Controller {
 		return "mentalinput_form";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 insert
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� insert
 	@RequestMapping("/mentalinsert")
 	public String mentalinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "mentalresult";
 			}
 		} catch (SQLException e) {
@@ -597,7 +597,7 @@ public class Controller {
 		return "redirect:mentalinput";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 List
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� List
 	@RequestMapping("mentallist")
 	public String mentallist(@RequestParam int no, int boardno, Model model) {
 
@@ -609,14 +609,14 @@ public class Controller {
 		return "mentallist";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� ?�땾?�젟 ?琉�
 	@RequestMapping("mentalupdateform")
 	public String mentalupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "mentalupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("mentalupdate")
 	public String mentalinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -624,7 +624,7 @@ public class Controller {
 		else
 			return "mentalupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("mentaldeleteform")
 	public String mentaldeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -640,9 +640,9 @@ public class Controller {
 			return "mentaldeleteform";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 ?걹
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� ?嫄�
 
-	// 寃뚯떆?뙋-?룞?샇?쉶
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳
 	// Input_Form
 
 	@RequestMapping("/clubinputForm")
@@ -650,13 +650,13 @@ public class Controller {
 		return "clubinput_form";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 insert
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 insert
 	@RequestMapping("/clubinsert")
 	public String clubinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "clubresult";
 			}
 		} catch (SQLException e) {
@@ -666,7 +666,7 @@ public class Controller {
 		return "redirect:clubinput";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 List
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 List
 	@RequestMapping("clublist")
 	public String clublist(@RequestParam int no, int boardno, Model model) {
 
@@ -678,14 +678,14 @@ public class Controller {
 		return "clublist";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 ?�땾?�젟 ?琉�
 	@RequestMapping("clubupdateform")
 	public String clubupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "clubupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("clubupdate")
 	public String clubinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -693,7 +693,7 @@ public class Controller {
 		else
 			return "clubupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("clubdeleteform")
 	public String clubdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -709,9 +709,9 @@ public class Controller {
 			return "clubdeleteform";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 ?걹
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 ?嫄�
 
-	// 寃뚯떆?뙋-?뿬?뻾
+	// 野껊슣�뻻?�솇-?肉�?六�
 	// Input_Form
 
 	@RequestMapping("/travelinputForm")
@@ -719,13 +719,13 @@ public class Controller {
 		return "travelinput_form";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 insert
+	// 野껊슣�뻻?�솇-?肉�?六� insert
 	@RequestMapping("/travelinsert")
 	public String travelinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "travelresult";
 			}
 		} catch (SQLException e) {
@@ -735,7 +735,7 @@ public class Controller {
 		return "redirect:travelinput";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 List
+	// 野껊슣�뻻?�솇-?肉�?六� List
 	@RequestMapping("travellist")
 	public String travellist(@RequestParam int no, int boardno, Model model) {
 
@@ -747,14 +747,14 @@ public class Controller {
 		return "travellist";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?肉�?六� ?�땾?�젟 ?琉�
 	@RequestMapping("travelupdateform")
 	public String travelupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "travelupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("travelupdate")
 	public String travelinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -762,7 +762,7 @@ public class Controller {
 		else
 			return "travelupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("traveldeleteform")
 	public String traveldeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -778,9 +778,9 @@ public class Controller {
 			return "traveldeleteform";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 ?걹
+	// 野껊슣�뻻?�솇-?肉�?六� ?嫄�
 
-	// 怨좉컼?꽱?꽣-Q&A
+	// �⑥쥒而�?苑�?苑�-Q&A
 	// Input_Form
 
 	@RequestMapping("/qnainputForm")
@@ -788,13 +788,13 @@ public class Controller {
 		return "qnainput_form";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A insert
+	// �⑥쥒而�?苑�?苑�-Q&A insert
 	@RequestMapping("/qnainsert")
 	public String qnainsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "qnaresult";
 			}
 		} catch (SQLException e) {
@@ -804,7 +804,7 @@ public class Controller {
 		return "redirect:qnainput";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A List
+	// �⑥쥒而�?苑�?苑�-Q&A List
 	@RequestMapping("qnalist")
 	public String qnalist(@RequestParam int no, int boardno, Model model) {
 
@@ -816,14 +816,14 @@ public class Controller {
 		return "qnalist";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A ?닔?젙 ?뤌
+	// �⑥쥒而�?苑�?苑�-Q&A ?�땾?�젟 ?琉�
 	@RequestMapping("qnaupdateform")
 	public String qnaupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "qnaupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("qnaupdate")
 	public String qnainsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -831,7 +831,7 @@ public class Controller {
 		else
 			return "qnaupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("qnadeleteform")
 	public String qnadeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -847,9 +847,9 @@ public class Controller {
 			return "qnadeleteform";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A ?걹
+	// �⑥쥒而�?苑�?苑�-Q&A ?嫄�
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥?
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�?
 	// Input_Form
 
 	@RequestMapping("/bbsrequestinputForm")
@@ -857,13 +857,13 @@ public class Controller {
 		return "bbsrequestinput_form";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? insert
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? insert
 	@RequestMapping("/bbsrequestinsert")
 	public String bbsrequestinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "bbsrequestresult";
 			}
 		} catch (SQLException e) {
@@ -873,7 +873,7 @@ public class Controller {
 		return "redirect:bbsrequestinput";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? List
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? List
 	@RequestMapping("bbsrequestlist")
 	public String bbsrequestlist(@RequestParam int no, int boardno, Model model) {
 
@@ -885,14 +885,14 @@ public class Controller {
 		return "bbsrequestlist";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? ?닔?젙 ?뤌
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? ?�땾?�젟 ?琉�
 	@RequestMapping("bbsrequestupdateform")
 	public String bbsrequestupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bbsrequestupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("bbsrequestupdate")
 	public String bbsrequestinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -900,7 +900,7 @@ public class Controller {
 		else
 			return "bbsrequestupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("bbsrequestdeleteform")
 	public String bbsrequestdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -917,10 +917,10 @@ public class Controller {
 	}
  // ------------------bbs end ------------------------------------------------
  // ---------------------------------- comment -------------------------------
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? ?걹	
-	// 怨듭??궗?빆 由ы뵆
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? ?嫄�	
+	// �⑤벊??沅�?鍮� �뵳�뗫탣
 
-	// 怨듭??궗?빆 由ы뵆 Input_Form
+	// �⑤벊??沅�?鍮� �뵳�뗫탣 Input_Form
 	
 	
 	@RequestMapping("/noticecommentinputForm")
@@ -928,13 +928,13 @@ public class Controller {
 		return "noticecommentinput_form";
 	}
 
-	// 怨듭??궗?빆 由ы뵆 insert
+	// �⑤벊??沅�?鍮� �뵳�뗫탣 insert
 	@RequestMapping("/noticecommentinsert")
 	public String noticecommentinsert(Model m, BbsCommentVO b) {
 
 		try {
 			if (bcd.insert(b)) {
-				m.addAttribute("msg", "怨듭??궗?빆 由ы뵆 寃뚯떆湲??씠 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", "�⑤벊??沅�?鍮� �뵳�뗫탣 野껊슣�뻻疫�??�뵠 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "noticecommentresult";
 			}
 		} catch (SQLException e) {
@@ -956,14 +956,14 @@ public class Controller {
 		return "noticecommentlist";
 	}
 
-	// ?닔?젙 ?뤌
+	// ?�땾?�젟 ?琉�
 	@RequestMapping("noticecommentupdateform")
 	public String noticecommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "noticecommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("noticecommentupdate")
 	public String noticecommentinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -971,7 +971,7 @@ public class Controller {
 		else
 			return "noticecommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("noticecommentdeleteform")
 	public String noticecommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -987,24 +987,24 @@ public class Controller {
 			return "noticecommentdeleteform";
 	}
 
-	// 怨듭??궗?빆 由ы뵆 ?걹
+	// �⑤벊??沅�?鍮� �뵳�뗫탣 ?嫄�
 
-	// ?돱?뒪 由ы뵆
+	// ?�뤀?�뮞 �뵳�뗫탣
 
-	// ?돱?뒪 由ы뵆 Input_Form
+	// ?�뤀?�뮞 �뵳�뗫탣 Input_Form
 
 	@RequestMapping("/newscommentinputForm")
 	public String newscommentinputForm() {
 		return "newscommentinput_form";
 	}
 
-	// ?돱?뒪 由ы뵆 insert
+	// ?�뤀?�뮞 �뵳�뗫탣 insert
 	@RequestMapping("/newscommentinsert")
 	public String newscommentinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 由ы뵆 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 �뵳�뗫탣 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "newscommentresult";
 			}
 		} catch (SQLException e) {
@@ -1014,7 +1014,7 @@ public class Controller {
 		return "redirect:newscommentinput";
 	}
 
-	// ?돱?뒪 由ы뵆 List
+	// ?�뤀?�뮞 �뵳�뗫탣 List
 	@RequestMapping("newscommentlist")
 	public String newscommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1026,14 +1026,14 @@ public class Controller {
 		return "newscommentlist";
 	}
 
-	// ?돱?뒪 由ы뵆 ?닔?젙 ?뤌
+	// ?�뤀?�뮞 �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("newscommentupdateform")
 	public String newscommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "newscommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("newscommentupdate")
 	public String newscommentinsert(BbsVO bb) throws SQLException {
 		if (bd.update(bb))
@@ -1041,7 +1041,7 @@ public class Controller {
 		else
 			return "newscommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("newscommentdeleteform")
 	public String newscommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1057,9 +1057,9 @@ public class Controller {
 			return "newscommentdeleteform";
 	}
 
-	// ?돱?뒪 由ы뵆 ?걹
+	// ?�뤀?�뮞 �뵳�뗫탣 ?嫄�
 
-	// ?씪?옄由? ?젙蹂? 由ы뵆
+	// ?�뵬?�쁽�뵳? ?�젟癰�? �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/jobcommentinputForm")
@@ -1067,13 +1067,13 @@ public class Controller {
 		return "jobcommentinput_form";
 	}
 
-	// ?씪?옄由ъ젙蹂? insert
+	// ?�뵬?�쁽�뵳�딆젟癰�? insert
 	@RequestMapping("/jobcommentinsert")
 	public String jobcommentinsert(Model m, BbsVO b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "jobcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1083,7 +1083,7 @@ public class Controller {
 		return "redirect:jobcommentinput";
 	}
 
-	// ?씪?옄由ъ젙蹂? List
+	// ?�뵬?�쁽�뵳�딆젟癰�? List
 	@RequestMapping("jobcommentlist")
 	public String jobcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1095,14 +1095,14 @@ public class Controller {
 		return "jobcommentlist";
 	}
 
-	// ?씪?옄由ъ젙蹂? ?닔?젙 ?뤌
+	// ?�뵬?�쁽�뵳�딆젟癰�? ?�땾?�젟 ?琉�
 	@RequestMapping("jobcommentupdateform")
 	public String jobcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "jobcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("jobcommentupdate")
 	public String jobcommentinsert(BbsCommentVO bb) throws SQLException {
 		if (bcd.update(bb))
@@ -1110,7 +1110,7 @@ public class Controller {
 		else
 			return "jobcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("jobcommentdeleteform")
 	public String jobcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1126,9 +1126,9 @@ public class Controller {
 			return "jobcommentdeleteform";
 	}
 
-	// ?씪?옄由ъ젙蹂? ?걹
+	// ?�뵬?�쁽�뵳�딆젟癰�? ?嫄�
 
-	// ?쓽猷?-嫄곕옒 由ы뵆
+	// ?�벥�뙴?-椰꾧퀡�삋 �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/tradecommentinputForm")
@@ -1136,13 +1136,13 @@ public class Controller {
 		return "tradecommentinput_form";
 	}
 
-	// ?쓽猷?-嫄곕옒 由ы뵆 insert
+	// ?�벥�뙴?-椰꾧퀡�삋 �뵳�뗫탣 insert
 	@RequestMapping("/tradecommentinsert")
-	public String tradecommentinsert(Model m, BbsBean b) {
+	public String tradecommentinsert(Model m, BbsCommentVO bcv) {
 
 		try {
-			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+			if (bcd.insert(bcv)) {
+				m.addAttribute("msg", "ok");
 				return "tradecommentresult";
 			}
 		} catch (SQLException e) {
@@ -1152,34 +1152,34 @@ public class Controller {
 		return "redirect:tradecommentinput";
 	}
 
-	// ?쓽猷?-嫄곕옒 由ы뵆 List
+	// ?�벥�뙴?-椰꾧퀡�삋 �뵳�뗫탣 List
 	@RequestMapping("tradecommentlist")
-	public String tradecommentlist(@RequestParam int no, int boardno, Model model) {
+	public String tradecommentlist(@RequestParam int boardno, int no, Model model) {
 
-		if (boardno == 12) {
-			List<BbsBean> list = bd.selectAll();
+		if () {
+			List<BbsCommentVO> list = bcd.selectAll();
 			model.addAttribute("tradecommentlist", list);
-
+			
 		}
 		return "tradecommentlist";
 	}
 
-	// ?쓽猷?-嫄곕옒 由ы뵆 ?닔?젙 ?뤌
+	// ?�벥�뙴?-椰꾧퀡�삋 �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("tradecommentupdateform")
 	public String tradecommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "tradecommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("tradecommentupdate")
-	public String tradecommentinsert(BbsBean bb) throws SQLException {
-		if (bd.update(bb))
+	public String tradecommentinsert(BbsCommentVO bvo) throws SQLException {
+		if (bcd.update(bvo))
 			return "redirect:/tradecommentlist";
 		else
 			return "tradecommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("tradecommentdeleteform")
 	public String tradecommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1195,9 +1195,9 @@ public class Controller {
 			return "tradecommentdeleteform";
 	}
 
-	// ?쓽猷?-嫄곕옒 由ы뵆 ?걹
+	// ?�벥�뙴?-椰꾧퀡�삋 �뵳�뗫탣 ?嫄�
 
-	// ?쓽猷?-吏덈Ц由ы뵆
+	// ?�벥�뙴?-筌욌뜄揆�뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/questioncommentinputForm")
@@ -1205,13 +1205,13 @@ public class Controller {
 		return "questioncommentinput_form";
 	}
 
-	// ?쓽猷?-吏덈Ц由ы뵆 insert
+	// ?�벥�뙴?-筌욌뜄揆�뵳�뗫탣 insert
 	@RequestMapping("/questioncommentinsert")
 	public String questioncommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "questioncommentresult";
 			}
 		} catch (SQLException e) {
@@ -1221,7 +1221,7 @@ public class Controller {
 		return "redirect:questioncommentinput";
 	}
 
-	// ?쓽猷?-吏덈Ц由ы뵆 List
+	// ?�벥�뙴?-筌욌뜄揆�뵳�뗫탣 List
 	@RequestMapping("questioncommentlist")
 	public String questioncommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1233,14 +1233,14 @@ public class Controller {
 		return "questioncommentlist";
 	}
 
-	// ?쓽猷?-吏덈Ц由ы뵆 ?닔?젙 ?뤌
+	// ?�벥�뙴?-筌욌뜄揆�뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("questioncommentupdateform")
 	public String questioncommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "questioncommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("questioncommentupdate")
 	public String questioncommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1248,7 +1248,7 @@ public class Controller {
 		else
 			return "questioncommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("questioncommentdeleteform")
 	public String questioncommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1264,9 +1264,9 @@ public class Controller {
 			return "questioncommentdeleteform";
 	}
 
-	// ?쓽猷?-吏덈Ц由ы뵆 ?걹
+	// ?�벥�뙴?-筌욌뜄揆�뵳�뗫탣 ?嫄�
 
-	// ?쓽猷?-?썑湲? 由ы뵆
+	// ?�벥�뙴?-?�뜎疫�? �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/reviewcommentinputForm")
@@ -1274,13 +1274,13 @@ public class Controller {
 		return "reviewcommentinput_form";
 	}
 
-	// ?쓽猷?-嫄곕옒 insert
+	// ?�벥�뙴?-椰꾧퀡�삋 insert
 	@RequestMapping("/reviewcommentinsert")
 	public String reviewcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "reviewcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1290,7 +1290,7 @@ public class Controller {
 		return "redirect:reviewcommentinput";
 	}
 
-	// ?쓽猷?-?썑湲? 由ы뵆 List
+	// ?�벥�뙴?-?�뜎疫�? �뵳�뗫탣 List
 	@RequestMapping("reviewcommentlist")
 	public String reviewcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1302,14 +1302,14 @@ public class Controller {
 		return "reviewcommentlist";
 	}
 
-	// ?쓽猷?-?썑湲? 由ы뵆 ?닔?젙 ?뤌
+	// ?�벥�뙴?-?�뜎疫�? �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("reviewcommentupdateform")
 	public String reviewcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "reviewcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("reviewcommentupdate")
 	public String reviewcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1317,7 +1317,7 @@ public class Controller {
 		else
 			return "reviewcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("reviewcommentdeleteform")
 	public String reviewcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1333,9 +1333,9 @@ public class Controller {
 			return "reviewcommentdeleteform";
 	}
 
-	// ?쓽猷?-?썑湲? 由ы뵆 ?걹
+	// ?�벥�뙴?-?�뜎疫�? �뵳�뗫탣 ?嫄�
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 由ы뵆
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/bodycommentinputForm")
@@ -1343,13 +1343,13 @@ public class Controller {
 		return "bodycommentinput_form";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 由ы뵆 insert
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� �뵳�뗫탣 insert
 	@RequestMapping("/bodycommentinsert")
 	public String bodycommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "bodycommentresult";
 			}
 		} catch (SQLException e) {
@@ -1359,7 +1359,7 @@ public class Controller {
 		return "redirect:bodycommentinput";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 由ы뵆 List
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� �뵳�뗫탣 List
 	@RequestMapping("bodycommentlist")
 	public String bodycommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1371,14 +1371,14 @@ public class Controller {
 		return "bodycommentlist";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 由ы뵆 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("bodycommentupdateform")
 	public String bodycommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bodycommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("bodycommentupdate")
 	public String bodycommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1386,7 +1386,7 @@ public class Controller {
 		else
 			return "bodycommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("bodycommentdeleteform")
 	public String bodycommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1402,9 +1402,9 @@ public class Controller {
 			return "bodycommentdeleteform";
 	}
 
-	// 寃뚯떆?뙋-?떊泥댁옣?븷 由ы뵆 ?걹
+	// 野껊슣�뻻?�솇-?�뻿筌ｋ똻�삢?釉� �뵳�뗫탣 ?嫄�
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 由ы뵆
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/headinputForm")
@@ -1412,13 +1412,13 @@ public class Controller {
 		return "headinput_form";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 由ы뵆 insert
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� �뵳�뗫탣 insert
 	@RequestMapping("/mentalcommentinsert")
 	public String mentalcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "mentalcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1428,7 +1428,7 @@ public class Controller {
 		return "redirect:mentalcommentinput";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 由ы뵆 List
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� �뵳�뗫탣 List
 	@RequestMapping("mentalcommentlist")
 	public String mentalcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1440,14 +1440,14 @@ public class Controller {
 		return "mentalcommentlist";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 由ы뵆 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("mentalcommentupdateform")
 	public String mentalcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "mentalcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("mentalcommentupdate")
 	public String mentalcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1455,7 +1455,7 @@ public class Controller {
 		else
 			return "mentalcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("mentalcommentdeleteform")
 	public String mentalcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1471,9 +1471,9 @@ public class Controller {
 			return "mentalcommentdeleteform";
 	}
 
-	// 寃뚯떆?뙋-?젙?떊?옣?븷 由ы뵆 ?걹
+	// 野껊슣�뻻?�솇-?�젟?�뻿?�삢?釉� �뵳�뗫탣 ?嫄�
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 由ы뵆
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/clubcommentinputForm")
@@ -1481,13 +1481,13 @@ public class Controller {
 		return "clubcommentinput_form";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 由ы뵆 insert
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 �뵳�뗫탣 insert
 	@RequestMapping("/clubcommentinsert")
 	public String clubcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "clubcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1497,7 +1497,7 @@ public class Controller {
 		return "redirect:clubcommentinput";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 由ы뵆 List
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 �뵳�뗫탣 List
 	@RequestMapping("clubcommentlist")
 	public String clubcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1509,14 +1509,14 @@ public class Controller {
 		return "clubcommentlist";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 由ы뵆 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("clubcommentupdateform")
 	public String clubcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "clubcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("clubcommentupdate")
 	public String clubcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1524,7 +1524,7 @@ public class Controller {
 		else
 			return "clubcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("clubcommentdeleteform")
 	public String clubcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1540,9 +1540,9 @@ public class Controller {
 			return "clubcommentdeleteform";
 	}
 
-	// 寃뚯떆?뙋-?룞?샇?쉶 由ы뵆 ?걹
+	// 野껊슣�뻻?�솇-?猷�?�깈?�돳 �뵳�뗫탣 ?嫄�
 
-	// 寃뚯떆?뙋-?뿬?뻾 由ы뵆
+	// 野껊슣�뻻?�솇-?肉�?六� �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/travelcommentinputForm")
@@ -1550,13 +1550,13 @@ public class Controller {
 		return "travelcommentinput_form";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 由ы뵆 insert
+	// 野껊슣�뻻?�솇-?肉�?六� �뵳�뗫탣 insert
 	@RequestMapping("/travelcommentinsert")
 	public String travelcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "travelcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1566,7 +1566,7 @@ public class Controller {
 		return "redirect:travelcommentinput";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 由ы뵆 List
+	// 野껊슣�뻻?�솇-?肉�?六� �뵳�뗫탣 List
 	@RequestMapping("travelcommentlist")
 	public String travelcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1578,14 +1578,14 @@ public class Controller {
 		return "travelcommentlist";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 由ы뵆 ?닔?젙 ?뤌
+	// 野껊슣�뻻?�솇-?肉�?六� �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("travelcommentupdateform")
 	public String travelcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "travelcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("travelcommentupdate")
 	public String travelcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1593,7 +1593,7 @@ public class Controller {
 		else
 			return "travelcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("travelcommentdeleteform")
 	public String travelcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1609,9 +1609,9 @@ public class Controller {
 			return "travelcommentdeleteform";
 	}
 
-	// 寃뚯떆?뙋-?뿬?뻾 由ы뵆 ?걹
+	// 野껊슣�뻻?�솇-?肉�?六� �뵳�뗫탣 ?嫄�
 
-	// 怨좉컼?꽱?꽣-Q&A由ы뵆
+	// �⑥쥒而�?苑�?苑�-Q&A�뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/qnacommentinputForm")
@@ -1619,13 +1619,13 @@ public class Controller {
 		return "qnacommentinput_form";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A由ы뵆 insert
+	// �⑥쥒而�?苑�?苑�-Q&A�뵳�뗫탣 insert
 	@RequestMapping("/qnacommentinsert")
 	public String qnacommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "qnacommentresult";
 			}
 		} catch (SQLException e) {
@@ -1635,7 +1635,7 @@ public class Controller {
 		return "redirect:qnacommentinput";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A由ы뵆 List
+	// �⑥쥒而�?苑�?苑�-Q&A�뵳�뗫탣 List
 	@RequestMapping("qnacommentlist")
 	public String qnacommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1647,14 +1647,14 @@ public class Controller {
 		return "qnacommentlist";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A由ы뵆 ?닔?젙 ?뤌
+	// �⑥쥒而�?苑�?苑�-Q&A�뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("qnacommentupdateform")
 	public String qnacommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "qnacommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("qnacommentupdate")
 	public String qnacommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1662,7 +1662,7 @@ public class Controller {
 		else
 			return "qnacommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("qnacommentdeleteform")
 	public String qnacommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1678,9 +1678,9 @@ public class Controller {
 			return "qnacommentdeleteform";
 	}
 
-	// 怨좉컼?꽱?꽣-Q&A由ы뵆 ?걹
+	// �⑥쥒而�?苑�?苑�-Q&A�뵳�뗫탣 ?嫄�
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? 由ы뵆
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? �뵳�뗫탣
 	// Input_Form
 
 	@RequestMapping("/bbsrequestcommentinputForm")
@@ -1688,13 +1688,13 @@ public class Controller {
 		return "bbsrequestcommentinput_form";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? 由ы뵆 insert
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? �뵳�뗫탣 insert
 	@RequestMapping("/bbsrequestcommentinsert")
 	public String bbsrequestcommentinsert(Model m, BbsBean b) {
 
 		try {
 			if (bd.insert(b)) {
-				m.addAttribute("msg", " ?돱?뒪 ?삱?씪媛붿뒿?땲?떎.");
+				m.addAttribute("msg", " ?�뤀?�뮞 ?�궞?�뵬揶쏅뗄�뮸?�빍?�뼄.");
 				return "bbsrequestcommentresult";
 			}
 		} catch (SQLException e) {
@@ -1704,7 +1704,7 @@ public class Controller {
 		return "redirect:bbsrequestcommentinput";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? 由ы뵆 List
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? �뵳�뗫탣 List
 	@RequestMapping("bbsrequestcommentlist")
 	public String bbsrequestcommentlist(@RequestParam int no, int boardno, Model model) {
 
@@ -1716,14 +1716,14 @@ public class Controller {
 		return "bbsrequestcommentlist";
 	}
 
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? 由ы뵆 ?닔?젙 ?뤌
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? �뵳�뗫탣 ?�땾?�젟 ?琉�
 	@RequestMapping("bbsrequestcommentupdateform")
 	public String bbsrequestcommentupdateForm(@RequestParam int no, int boardno, Model model) {
 		model.addAttribute("bbsBean", bd.select(no, boardno));
 		return "bbsrequestcommentupdate";
 	}
 
-	// ?닔?젙
+	// ?�땾?�젟
 	@RequestMapping("bbsrequestcommentupdate")
 	public String bbsrequestcommentinsert(BbsBean bb) throws SQLException {
 		if (bd.update(bb))
@@ -1731,7 +1731,7 @@ public class Controller {
 		else
 			return "bbsrequestcommentupdateform";
 	}
-	// ?궘?젣
+	// ?沅�?�젫
 
 	@RequestMapping("bbsrequestcommentdeleteform")
 	public String bbsrequestcommentdeleteForm(@RequestParam int no, int boardno, Model model) {
@@ -1748,12 +1748,12 @@ public class Controller {
 	}
   
 	
-	// 怨좉컼?꽱?꽣-寃뚯떆?뙋 ?슂泥? 由ы뵆 ?걹
+	// �⑥쥒而�?苑�?苑�-野껊슣�뻻?�솇 ?�뒄筌�? �뵳�뗫탣 ?嫄�
 	
 	private MessageDAO mv;
-	// 硫붿떊??
+	// 筌롫뗄�뻿??
 	
-	//硫붿떊?? ?옉?꽦
+	//筌롫뗄�뻿?? ?�삂?苑�
 	
 	// Input_Form
 
@@ -1768,7 +1768,7 @@ public class Controller {
 
 			try {
 				if (mv.insert(mvo)) {
-					m.addAttribute("msg", " ?쟾?넚 ?꽦怨?.");
+					m.addAttribute("msg", " ?�읈?�꽊 ?苑���?.");
 					return "messageresult";
 				}
 			} catch (SQLException e) {
@@ -1778,7 +1778,7 @@ public class Controller {
 			return "redirect:messagetinput";
 		}
 		
-	// 紐⑸줉
+	// 筌뤴뫖以�
 		
 		@RequestMapping("messagelist")
 		public String messagelist(@RequestParam  String recipient, Model model) {
@@ -1790,7 +1790,7 @@ public class Controller {
 			
 			return "messagelist";
 		}
-	// ?궘?젣
+	// ?沅�?�젫
 		
 		@RequestMapping("messagedeleteform")
 		public String messagedeleteForm(@RequestParam int messageno, Model model) {
@@ -1799,7 +1799,7 @@ public class Controller {
 		}
 		
 
-	//Message ?걹
+	//Message ?嫄�
 		
 
 }
