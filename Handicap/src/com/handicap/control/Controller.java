@@ -127,7 +127,7 @@ public class Controller {
 	// 공지사항 글수정 폼
 	@RequestMapping("noticeupdateform")
 	public String noticeupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "noticeupdate";
 	}
 
@@ -143,7 +143,7 @@ public class Controller {
 	// 공지사항 글삭제 폼
 	@RequestMapping("noticedeleteform")
 	public String noticedeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "noticedeleteform";
 	}
 	
@@ -197,7 +197,7 @@ public class Controller {
 	// 뉴스 글수정 폼
 	@RequestMapping("newsupdateform")
 	public String newsupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "newsupdate";
 	}
 
@@ -213,7 +213,7 @@ public class Controller {
 	// 뉴스 글삭제 폼
 	@RequestMapping("newsdeleteform")
 	public String newsdeleteForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "newsdeleteform";
 	}
 
@@ -266,7 +266,7 @@ public class Controller {
 	// 일자리 정보 글수정 폼
 	@RequestMapping("jobupdateform")
 	public String jobupdateForm(@RequestParam int no, int boardno, Model model) {
-		model.addAttribute("bbsBean", bd.select(no, boardno));
+		model.addAttribute("BbsVO", bd.select(no, boardno));
 		return "jobupdate";
 	}
 
