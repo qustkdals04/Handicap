@@ -3,39 +3,46 @@ package com.handicap.model.dao;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.handicap.model.beans.UserVO;
 
 public class UserDAOImpl implements UserDAO {
 
+	@Autowired
+	private SqlSession sqlSession;
+	
 	@Override
 	public boolean insert(UserVO user) throws SQLException {
-		// TODO Auto-generated method stub
+		int t = sqlSession.insert("user.insert", user);
+		if(t==1) return true;
 		return false;
 	}
 
 	@Override
 	public boolean delete(String userid) throws SQLException {
-		// TODO Auto-generated method stub
+		int t = sqlSession.delete("user.delete",userid);
+		if(t>0) return true;//name�� primary key��� if(t==1)
 		return false;
 	}
 
 	@Override
 	public boolean update(UserVO user) throws SQLException {
-		// TODO Auto-generated method stub
+		int t = sqlSession.update("user.update",user);
+		if(t>0) return true;
 		return false;
 	}
 
 	@Override
 	public UserVO select(String userid) {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("user.select", userid);
 	}
 
 	@Override
-	public List<UserVO> selectAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<UserVO> selectAll() {		
+		return sqlSession.selectList("user.selectAll");
 	}
 
 }

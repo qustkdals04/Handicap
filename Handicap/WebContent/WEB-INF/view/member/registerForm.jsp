@@ -8,10 +8,14 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#register").click(function(){
-			if($("#userid").val()==""){
-				$("#userid").focus();
+			var userid = $("#userid").val();
+			var passwd = $("#passwd").val()
+			var reg_pw = /^[a-z0-9_]{5,12}$/;
+			
+			if(userid==""){
+				$("userid").focus();
 				alert("아이디를 입력해주세요..");
-			}else if($("#passwd").val()==""){
+			}else if(reg_pw.test(passwd)!=true){
 				$("#passwd").focus();
 				alert("비밀번호를 입력해주세요..");
 			}else if($("#passwd2").val()==""){
@@ -49,7 +53,7 @@
 <body>
 	<center>
 		<h3>일반회원가입폼</h3>
-		<form action="" method="post" name="registForm" id="registForm">
+		<form method="post" name="registForm" id="registForm">
 		<table border="1">
 			<tr>
 				<td>아이디 : </td>

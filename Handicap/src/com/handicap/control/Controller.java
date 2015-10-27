@@ -2,6 +2,8 @@ package com.handicap.control;
 
 import java.sql.SQLException;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,8 +17,11 @@ import com.handicap.model.dao.MessageDAO;
 import com.handicap.model.dao.UserDAO;
 
 public class Controller {
+	@Autowired
 	UserDAO dao;
+	@Autowired
 	private BbsDAO bd;	
+	@Autowired
 	private BbsCommentDAO bcd;
 	
 	//회원가입

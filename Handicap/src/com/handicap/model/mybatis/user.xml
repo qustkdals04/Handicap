@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="User">    
-   <insert id="insert" parameterType="com.handicap.model.beans.UserVO">
+<mapper namespace="user">   
+	<!-- 회원가입(일반) --> 
+   <insert id="insertuser" parameterType="com.handicap.model.beans.UserVO">
      insert into member (userid,passwd,email,name,nickname,phone,pquestion,panswer,usergrade) 
-     values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade}, 1)
+     values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 1)
    </insert>
-   <select id="selectAll" resultType="com.handicap.model.beans.UserVO">
-     select * from member where usergrade=1
-   </select>
-  
-  <!--  수정폼에 출력할 데이터 조회 -->
+   
+   <!-- 회원가입(기업) --> 
+   <insert id="insertcompany" parameterType="com.handicap.model.beans.UserVO">
+   	insert into member values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 2,#{companyno},#{companyceoname},#{companyaddr},#{companytype})
+   </insert>   
+   
+   <!-- 아이디목록 -->
    <select id="selectId" parameterType="string"
            resultType="com.handicap.model.beans.UserVO">
      select userid from member
    </select>
    
+   <!-- 닉네임목록 -->
    <select id="selectNick" parameterType="string"
-           resultType="com.handicap.model.beans.UserVO">
+           resultType="com.handicap.model.beans.UserVO" >
      select nickname from member
    </select>
+   
+   <!-- ID에 맞는 닉네임찾기 -->
+   <select id="findNick" parameterType="string" resultType="string">
+   	select nickname from member where userid=#{userid}
+   </select>
+   
+   <!-- 로그인 -->
+   <select id="login" parameterType="">
+   </select>
+   
    <!-- 
    <update id="update" parameterType="com.handicap.model.beans.UserVO">
      update person set age=#{age}, job=#{job} where name=#{name}
