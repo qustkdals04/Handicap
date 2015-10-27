@@ -1,0 +1,38 @@
+body{
+margin: 0px;
+padding: 0px; 
+background: #FFD6ED;
+} 
+
+
+#wrapper{
+
+width:1400px; 
+padding: 10px; 
+position: absolute;
+top: 10px;
+left: 50%;
+margin-left: -538px;
+}
+
+#contents{
+
+width:1050px;
+float: left;
+padding: 10px;
+}
+
+#content{
+
+width:1200px;
+float: left;
+padding: 10px;
+}
+
+#sidebar{
+
+width:200px;
+float: left;
+padding: 10px;
+margin-left: 10px;
+}

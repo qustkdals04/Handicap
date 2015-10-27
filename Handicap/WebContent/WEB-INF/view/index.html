@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <title>Glide.js Content Slider Demo - Template Monster</title>
+  <meta name="author" content="Jake Rocheleau">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+  <link rel="shortcut icon" href="http://www.templatemonster.com/favicon.ico">
+  <link rel="icon" href="http://www.templatemonster.com/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.glide.min.js"></script>
+</head>
+
+<body>
+  <div id="w">
+    <header>
+      <h1>&nbsp;</h1>
+    </header>
+    
+    <div class="slider">
+      <ul class="slides">
+        <li class="slide">
+          <figure><img src="img/img1.jpg">
+          </figure>
+        </li>
+        <li class="slide">
+          <figure>           
+            <img src="img/searing-mountain.png" >
+          </figure>
+        </li>
+        <li class="slide">
+          <figure>
+            <img src="img/taipei-fireworks.png">
+          </figure>
+        </li>
+        <li class="slide">
+          <figure>
+           
+            <img src="img/iphone-mockup.png" >
+          </figure>
+        </li>
+        <li class="slide">
+          <figure>            
+            <img src="img/super-squirrel.png" alt="flying super squirrel">
+          </figure>
+        </li>
+      </ul>
+    </div><!-- @end .slider -->
+  </div><!-- @end #w -->
+<script type="text/javascript">
+$(function(){
+  $('.slider').glide({
+    autoplay: 3500,
+    hoverpause: true, // set to false for nonstop rotate
+    arrowRightText: '&rarr;',
+    arrowLeftText: '&larr;'
+  });
+});
+</script>
+</body>
+</html>

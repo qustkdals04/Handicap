@@ -9,13 +9,13 @@
      select * from member where usergrade=1
    </select>
   
-   수정폼에 출력할 데이터 조회
-   <select id="isCheckId" parameterType="string"
+  <!--  수정폼에 출력할 데이터 조회 -->
+   <select id="selectId" parameterType="string"
            resultType="com.handicap.model.beans.UserVO">
      select userid from member
    </select>
    
-   <select id="isCheckNick" parameterType="string"
+   <select id="selectNick" parameterType="string"
            resultType="com.handicap.model.beans.UserVO">
      select nickname from member
    </select>
