@@ -1776,7 +1776,7 @@ public class MyController {
 	}
   
 	
-	// 고객센터-게시판 요청 끝
+	// 고객센터-게시판 요청 끝*/
 	
 //-------------------------리플끝----------------------------------//
 
@@ -1785,9 +1785,9 @@ public class MyController {
 	
 	// 메시지 글쓰기폼
 
-		@RequestMapping("messageinputForm")
+		@RequestMapping("messageWrite")
 		public String messageInputForm()  {
-			return "messageinput_form";
+			return "message/messageWrite";
 		}
 
 	// 메시지 글쓰기
@@ -1833,4 +1833,4 @@ public class MyController {
 			else
 				return "messagedeleteform";
 		}	
-*/}
+}
