@@ -64,11 +64,21 @@ public class MyController {
 		return false;
 	}
 	@RequestMapping("/login") //로그인 처리
-	public boolean login(@RequestParam String userid,
+	public int login(@RequestParam String userid,
 						 @RequestParam String passwd
 												){
-		
-		return false;
+		if(dao.findPasswd(userid) == null)
+		{
+			return 0; //아이디가 존재 하지않습니다.
+		}
+		else if(dao.findPasswd(userid) == passwd)
+		{
+			return 1; // 비밀번호가 틀립니다.
+		}
+		else
+		{
+			return 2; // 성공
+		}
 	}
 	@RequestMapping("/logout")  //로그아웃 했을때
 	public boolean logout(){

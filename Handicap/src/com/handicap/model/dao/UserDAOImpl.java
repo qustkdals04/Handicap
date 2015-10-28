@@ -44,5 +44,11 @@ public class UserDAOImpl implements UserDAO {
 	public List<UserVO> selectAll() {		
 		return sqlSession.selectList("user.selectAll");
 	}
+	
+	@Override
+	public String findPasswd(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.findPasswd", userid);
+	}
 
 }

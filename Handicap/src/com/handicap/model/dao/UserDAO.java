@@ -9,6 +9,7 @@ public interface UserDAO {
 	public boolean insert(UserVO user)throws SQLException;
     public boolean delete(String userid)throws SQLException;
     public boolean update(UserVO user)throws SQLException;
-    public UserVO select(String userid);//throws SQLException;
+    public UserVO select(String userid);
+    public String findPasswd(String userid);//throws SQLException;
     public List<UserVO> selectAll();
 }
