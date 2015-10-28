@@ -1795,37 +1795,37 @@ public class MyController {
 	
 	// 메시지 글쓰기폼
 
-		@RequestMapping("messageWrite")
+		@RequestMapping("/messageWrite")
 		public String messageInputForm()  {
 			return "message/messageWrite";
 		}
 
 	// 메시지 글쓰기
-		@RequestMapping("/messageinsert")
+		@RequestMapping("/messageWriteAction")
 		public String messageinsert(Model m, MessageVO mvo) {
 
 			try {
 				if (mv.insert(mvo)) {
-					m.addAttribute("msg", "메시지 글씀");
-					return "messageresult";
+					m.addAttribute("msg", "메시지 전송 완료!!");
+					return "messagelist";
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			return "redirect:messagetinput";
+			return "message/messagelist";
 		}
 		
 	// 메시지 리스트		
-		@RequestMapping("messagelist")
+		@RequestMapping("/messagelist")
 		public String messagelist(@RequestParam  String recipient, Model model) {
 
-				
+				/*
 				List<MessageVO> list = mv.selectAll(recipient);
 				model.addAttribute("messagelist", list);
-				
+				*/
 			
-			return "messagelist";
+			return "message/messageList";
 		}
 	// 메시지 삭제폼		
 		@RequestMapping("messagedeleteform")

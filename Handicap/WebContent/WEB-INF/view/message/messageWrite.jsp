@@ -16,7 +16,7 @@
 				alert("내용을 입력해주세요..");
 				$("#contents").focus();
 			} else{
-				$("#messageWrite").attr({action:'/messagelist', method:'post'});
+				$("#messageWrite").attr({action:'/messageWriteAction', method:'post'});
 	            $("#messageWrite").submit();
 			}
 		})
@@ -42,6 +42,7 @@
 				</td>
 			</tr>
 		</table>
+		<input type="hidden" name="userid" value="${userid }">
 	</form>
 </body>
 </html>
