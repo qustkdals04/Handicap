@@ -9,10 +9,13 @@
 <body>
 <table align="top" width="1050">	
 	<tr>
-		<td width="300" height="163"><img src="../img/logo1.jpg" width="276" height="157"></td>
+		<td width="300" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157"></td>
+	
 		<td width="300" >
+	
 	   
-    <p>검색</p></td>
+   		 <p>검색</p></td>
+    
 		<td width="300" align="right"> 
 	   
 	    <p><font size="4"><a href="">로그인</a> <a href="">회원가입</a> <a href="">ID/PW찾기</a></font></p></td>

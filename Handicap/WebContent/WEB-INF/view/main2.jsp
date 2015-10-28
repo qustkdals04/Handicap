@@ -4,23 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" media="all" href="css/main.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
 
 
 
 <title>Insert title here</title>
 </head>
 <body >	
-<div id="wrapper" >
-	<%@include file="top.jsp" %>
+	<div id="wrapper" >
+		<%@include file="top.jsp" %>
 	<div id="content" align="center">
+	
+	
 		<%@include file="menu.jsp" %>
 	</div>
   <div id="contents">
 	<%@include file="index.html" %>
   </div >
   <div id="sidebar" >
- 		<img  src="img/kei.jpg">
+ 		<img  src="/Handicap/img/kei.jpg">
   </div>
 </div>
 </body>

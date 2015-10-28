@@ -66,7 +66,7 @@
 			<tr>
 				<td>아이디 : </td>
 				<td><input type="text" name="userid" id="userid" style="width:100; height:22"></td>
-				<td><button>중복체크</button></td>
+				<td><button type="button">중복체크</button></td>
 			</tr>
 			<tr>
 				<td>비밀번호 : </td>
@@ -86,7 +86,7 @@
 			<tr>
 				<td>닉네임 : </td>
 				<td><input type="text" name="nickname" id="nickname" style="width:100; height:22"></td>
-				<td><button>중복체크</button></td>
+				<td><button type="button">중복체크</button></td>
 			</tr>
 			<tr>
 				<td>연락처 : </td>
