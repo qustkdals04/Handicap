@@ -25,19 +25,27 @@ public class MyController {
 	private BbsDAO bd;	
 	@Autowired
 	private BbsCommentDAO bcd;
-	
-	
-	@RequestMapping("/test")
-	public String test(){
-		return "test";
-	}
+		
+	//메인페이지
 	@RequestMapping("/main")//main페이지
 	public String main(){
 		return "main2";
 	}
 	
-	/*
 	//회원가입
+	
+	//회원가입폼띄우기
+	@RequestMapping("/registerForm")
+	public String register_form(){
+		return "registerForm";
+	}
+	
+	//로그인폼띄우기
+	@RequestMapping("/login")
+	public String login(){
+		return "login";
+	}
+	
 	
 	@RequestMapping("/register") //회원가입정보 얻어오기
 	public boolean register(@RequestParam String userid,
@@ -77,7 +85,7 @@ public class MyController {
 		//있을땐 1 없을땐0  List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
 		return false;
 	}
-	
+	/*
 	@RequestMapping("/memberdelete") //회원탈퇴
 	public boolean memberdelete(@RequestParam String passwd){
 		//비밀번호가 일치시 1 틀리면0 
