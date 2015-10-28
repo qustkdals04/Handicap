@@ -30,8 +30,8 @@
    </select>
    
    <!-- 로그인 -->
-   <select id="login" parameterType="">
-   </select>
+   <!-- <select id="login" parameterType="">
+   </select> -->
    
    <!-- 
    <update id="update" parameterType="com.handicap.model.beans.UserVO">

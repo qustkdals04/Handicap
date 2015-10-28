@@ -16,7 +16,7 @@
    
    <!-- 뷰리졸버 정의 -->
    <mvc:view-resolvers>
-      <mvc:jsp prefix="/WEB-INF/view/" suffix=".jsp"/>
+      <mvc:jsp prefix="/WEB-INF/view/"/>
       <!-- SpringMVC/WEB-INF/view/ 전달될 뷰이름 .jsp  -->
    </mvc:view-resolvers> 
    
