@@ -41,7 +41,7 @@ public class MyController {
 	}
 	
 	//로그인폼띄우기
-	@RequestMapping("/login")
+	@RequestMapping("/loginForm")
 	public String login(){
 		return "login";
 	}
