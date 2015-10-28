@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- <!-- 상세보기 -->
-	
+	<!-- 삭제 페이지 -->
+
 </body>
 </html>

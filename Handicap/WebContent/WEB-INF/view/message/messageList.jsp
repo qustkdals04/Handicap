@@ -5,8 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<action name="letter_write" class="com/handicap/model/beans/MessageVO.java">
+ 				
+ 		 			<result type="redirectAction" name="success">message/messageList</result>
+ 		 			
+ </action>
 </head>
 <body>
-	메시지입력완료
+
+	<!-- 메세지 리스트 뿌림 -->
+	List<>
 </body>
 </html>

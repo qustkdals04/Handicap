@@ -15,12 +15,14 @@ public class MessageDAO {
 	
 	public boolean insert(MessageVO mvo) throws SQLException {
 		// TODO Auto-generated method stub
+		//메세지 입력 
 		return false;
 	}
 
 	
 	public boolean delete(int messageno) throws SQLException {
 		// TODO Auto-generated method stub
+		//메세지 삭제
 		return false;
 	}
 
@@ -29,12 +31,14 @@ public class MessageDAO {
 	
 	public MessageVO select(int messageno) {
 		// TODO Auto-generated method stub
+		//메세지 상세보기
 		return null;
 	}
 
 	
 	public List<MessageVO> selectAll(String recipient) {
 		// TODO Auto-generated method stub
+		//받은 메세지 list 형식으로 뿌림 
 		return null;
 	}
 	
