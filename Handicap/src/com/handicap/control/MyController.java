@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,8 @@ import com.handicap.model.dao.BbsDAO;
 import com.handicap.model.dao.MessageDAO;
 import com.handicap.model.dao.UserDAO;
 
-public class Controller {
+@Controller
+public class MyController {
 	@Autowired
 	UserDAO dao;
 	@Autowired
@@ -34,7 +36,7 @@ public class Controller {
 		return "main2";
 	}
 	
-	
+	/*
 	//회원가입
 	
 	@RequestMapping("/register") //회원가입정보 얻어오기
@@ -1823,4 +1825,4 @@ public class Controller {
 			else
 				return "messagedeleteform";
 		}	
-}
+*/}

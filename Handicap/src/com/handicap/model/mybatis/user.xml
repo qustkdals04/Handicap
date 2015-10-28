@@ -9,7 +9,8 @@
    
    <!-- 회원가입(기업)  -->
    <insert id="insertcompany" parameterType="com.handicap.model.beans.UserVO">
-   	insert into member values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 2,#{companyno},#{companyceoname},#{companyaddr},#{companytype})
+   	insert into member 
+   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 2,#{companyno},#{companyceoname},#{companyaddr},#{companytype})
    </insert>   
    
    <!-- 아이디목록 -->

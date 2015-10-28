@@ -3,11 +3,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
   <!-- beans.xml (빈 관리) -->
-  <bean class="com.handicap.model.dao.BbsDAOImpl" id="BbsDAO"/>
-  <!-- <bean class="com.handicap.model.dao.UserDAOImpl" id="UserDAO"/>
+ <bean class="com.handicap.model.dao.BbsDAOImpl" id="BbsDAO"/>
+  <bean class="com.handicap.model.dao.UserDAOImpl" id="UserDAO"/>  
   <bean class="com.handicap.model.dao.MessageDAO" id="MessageDAO"/>
   <bean class="com.handicap.model.dao.BbsCommentDAO" id="BbsCommentDAO"/>
-  <bean class="com.handicap.model.dao.IntergrationDAO" id="IntergrationDAO"/> -->
-  
+  <bean class="com.handicap.model.dao.IntergrationDAO" id="IntergrationDAO"/>  
 
 </beans>
