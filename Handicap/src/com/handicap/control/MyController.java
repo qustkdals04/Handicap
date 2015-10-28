@@ -37,9 +37,14 @@ public class MyController {
 	}
 
 	// 회원가입
+	 //중복체크팝업
+    @RequestMapping("/idCheck")
+    public String IdCheck(){
+       return "member/IdCheck";
+    }
 
 	// 회원가입폼띄우기
-	@RequestMapping("registerForm")
+	@RequestMapping("/registerForm")
 	public String register_form() {
 		return "member/registerForm";
 	}
@@ -83,11 +88,19 @@ public class MyController {
 		return "main2";
 	}
 
-	@RequestMapping("/idcheck") // 중복확인 (아이디)
-	public boolean idcheck(@RequestParam String userid) {
-		// 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
-		return false;
-	}
+	@RequestMapping("/idCheckAction") //중복확인 (아이디)
+	   public String idcheck(@RequestParam String userid, String passwd, HttpSession session){
+	      //있을땐 1 없을땐0  List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
+	       if(dao.findPasswd(userid).equals(userid))
+	      {
+	          session.getAttribute("idcheck");
+	         return "registerForm";
+	      }
+	      else
+	      {
+	         return "registerForm";
+	      }
+	   }
 
 	@RequestMapping("/nickcheck") // 중복확인 (닉네임)
 	public boolean nickcheck(@RequestParam String nickname) {
