@@ -4,32 +4,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){	
-	$("#login").click(function(){
-		if (login == 2)
-		{
-			$("#loginform").attr({action:"/main", method:'post'});
-	        $("#loginform").submit();
-		}
-		else if (login == 0)
-		{
-			alert("아이디가 존재하지 않습니다.");
-		}
-		else if(login == 1)
-	   {
-			alert("비밀번호가 맞지 않습니다.");
-    	}
+	$("#login").click(function(){		
+			$("#loginform").attr({action:"/Handicap/memberlogin", method:'post'});
+	        $("#loginform").submit();				
 	});
-	
-
 });
 </script>
 
 
     </HEAD>
     <BODY>
-       <form name = "login"action="sessionLogin.jsp" method="post"id="loginform">
+    <%@include file="../top.jsp" %>
+	<%@include file="../menu.jsp" %>
+	<center>
+	<br>		
+	<h3>로그인</h3>
+       <form name = "login" id="loginform">
     <table border="0" width="200" height="100">
         <tr>
             <td align=right><font size="2">아이디 : </font></td>
@@ -47,5 +40,6 @@ $(document).ready(function(){
         </tr>
     </table>
 </form>
+</center>
 </body>
 </html>
