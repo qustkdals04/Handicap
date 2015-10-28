@@ -10,6 +10,7 @@
 
 	<center>
 	<table>
+	
 		<tr>
 			<td style="width: 60px; ">카테고리 </td>
 			<td>

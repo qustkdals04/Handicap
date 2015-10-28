@@ -42,6 +42,7 @@
 		<tr >
 			<td align="center" colspan="2"> <input type="submit" value="확인" > <input type="reset" value="취소" ></td>
 		</tr>
+		
 	</table>
 	</center>
 </body>
