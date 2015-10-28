@@ -35,9 +35,9 @@ public class MyController {
 	//회원가입
 	
 	//회원가입폼띄우기
-	@RequestMapping("/registerForm")
+	@RequestMapping("registerForm")
 	public String register_form(){
-		return "registerForm";
+		return "member/registerForm";
 	}
 	
 	//로그인폼띄우기

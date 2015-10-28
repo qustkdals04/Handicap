@@ -9,7 +9,7 @@
 <body>
 <table align="top" width="1050">	
 	<tr>
-		<td width="300" height="163"><img src="img/logo1.jpg" width="276" height="157"></td>
+		<td width="300" height="163"><img src="../img/logo1.jpg" width="276" height="157"></td>
 		<td width="300" >
 	   
     <p>검색</p></td>

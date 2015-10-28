@@ -5,16 +5,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	
+
+	$(document).ready(function(){	
+		
+		
 		$("#register").click(function(){
 			var userid = $("#userid").val();
-			var passwd = $("#passwd").val()
+			var passwd = $("#passwd").val();
 			var reg_pw = /^[a-z0-9_]{5,12}$/;
 			
-			if(userid==""){
-				$("userid").focus();
+			if(userid==""){			
 				alert("아이디를 입력해주세요..");
+				$("#userid").focus();
 			}else if(reg_pw.test(passwd)!=true){
 				$("#passwd").focus();
 				alert("비밀번호를 입력해주세요..");
@@ -43,9 +48,12 @@
 				$("#panswer").focus();
 				alert("비밀번호답을 입력해주세요..");
 			}else{
-				$("#registForm").submit();
+				$("#registForm").attr({action:"/Handicap/main", method:'post'});
+	            $("#registForm").submit();
 			}			
 		});
+		
+	
 	});
 </script>
 </head>
@@ -111,7 +119,7 @@
 			</tr>
 			<tr>
 				<td></td>
-				<td><button id="register">회원가입</button><button id="cancel">가입취소</button></td>
+				<td><button type="button" id="register" >회원가입</button><button id="cancel">가입취소</button></td>
 				<td></td>
 			</tr>
 		</table>
