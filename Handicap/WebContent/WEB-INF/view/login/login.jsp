@@ -9,7 +9,7 @@ $(document).ready(function(){
 	$("#login").click(function(){
 		if (login == 2)
 		{
-			$("#loginform").attr({action:"/Handicap/main", method:'post'});
+			$("#loginform").attr({action:"/main", method:'post'});
 	        $("#loginform").submit();
 		}
 		else if (login == 0)

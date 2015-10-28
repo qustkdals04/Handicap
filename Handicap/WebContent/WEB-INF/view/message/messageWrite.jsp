@@ -14,9 +14,9 @@
 				$("#recipient").focus();
 			} else if($("#contents").val()==""){
 				alert("내용을 입력해주세요..");
-				$("content").focus();
+				$("#contents").focus();
 			} else{
-				$("#messageWrite").attr({action:'messageList', method:'post'});
+				$("#messageWrite").attr({action:'/messagelist', method:'post'});
 	            $("#messageWrite").submit();
 			}
 		})
