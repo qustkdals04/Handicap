@@ -19,7 +19,7 @@
    </select>
    
    <!-- 중복ID체크 -->
-   <select id="checkId" parameterType="string" resultType="boolean">
+   <select id="checkId" parameterType="string" resultType="string">
    	select userid from member where userid=#{userid}
    </select>
    

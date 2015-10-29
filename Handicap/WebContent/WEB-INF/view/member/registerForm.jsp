@@ -53,26 +53,25 @@
 			}			
 		});
 		$("#idCheck").click(function(){
-			var checkid = $("#userid").val()
+			
 			if($("#userid").val()==""){
 				alert("아이디를 입력해주세요");
 				$("#userid").focus();
 			}
 			$.ajax({
-				url:"idCheck",
-				type:'post',
-				/* data:checkid, */
-				success:function(data){
-					if(data!=true){
-						alert("사용가능한 아이디입니다.");
-						$("#passwd").focus();
-					}else{						
-						alert("이미 존재하는 아이디입니다.");
-						$("#userid").focus();
-					}
-				}
-				
-			});
+	              type:"GET",
+	             url:"IdCheck",
+	             data:({
+	                userid: $("input[name=id]").val()
+	             
+	             }),
+	             success:function(data){
+	                if($.trim(data)=="YES"){
+	                   alert("사용가능합니다");
+	                }else{
+	                   alert("사용불가능합니다");
+	                }
+	             }});
 		});
 	
 	});
