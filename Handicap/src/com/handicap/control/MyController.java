@@ -40,14 +40,14 @@ public class MyController {
 	}
 
 	// 회원가입	 
-	// 중복체크팝업
-	   @RequestMapping("/IdCheck")
+	/*// 중복체크팝업
+	   @RequestMapping("IdCheck")
 	   public String IdCheck() {
 	      return "member/IdCheck";
 	   }
-
+*/
     
-    @RequestMapping("/idcheck") // 중복확인 (아이디)
+    @RequestMapping("idcheck") // 중복확인 (아이디)
     public String idcheck(@RequestParam String userid, HttpSession session) {
        // 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
        if (dao.findPasswd(userid)!=null) {

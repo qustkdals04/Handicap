@@ -62,8 +62,7 @@
 	              type:"GET",
 	             url:"IdCheck",
 	             data:({
-	                userid: $("input[name=id]").val()
-	             
+	                userid: $("#userid").val()	             
 	             }),
 	             success:function(data){
 	                if($.trim(data)=="YES"){
