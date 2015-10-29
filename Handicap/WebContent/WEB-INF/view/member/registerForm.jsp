@@ -9,71 +9,74 @@
 <script type="text/javascript">
 	
 
-	$(document).ready(function(){	
+$(document).ready(function() {
+
+	$("#register").click(function() {
+		var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
+		var userid = $("#userid").val();
+		var passwd = $("#passwd").val();
+		var reg_pw = /^[a-z0-9_]{5,12}$/;
+		var email = $("#email").val();
+		var phone2 = $("#phone2").val();
+		var phone3 = $("#phone3").val();
+		var regPhone2 = /[^0-9]$/g;
+		var regPhone3 = /[^0-9]$/g;
+		var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 		
-		
-		$("#register").click(function(){
-			var userid = $("#userid").val();
-			var passwd = $("#passwd").val();
-			var reg_pw = /^[a-z0-9_]{5,12}$/;
-			
-			if(userid==""){			
-				alert("아이디를 입력해주세요..");
-				$("#userid").focus();
-			}else if(reg_pw.test(passwd)!=true){
-				$("#passwd").focus();
-				alert("비밀번호를 입력해주세요..");
-			}else if($("#passwd2").val()==""){
-				$("#passwd2").focus();
-				alert("비밀번호확인을 입력해주세요..");
-			}else if($("#name").val()==""){
-				$("#name").focus();
-				alert("이름을 입력해주세요..");
-			}else if($("#nickname").val()==""){
-				$("#nickname").focus();
-				alert("닉네임을 입력해주세요..");
-			}else if($("#phone2").val()==""){
-				$("#phone2").focus();
-				alert("연락처를 입력해주세요..");
-			}else if($("#phone3").val()==""){
-				$("#phone3").focus();
-				alert("연락처를 입력해주세요..");
-			}else if($("#email").val()==""){
-				$("#email").focus();
-				alert("이메일을 입력해주세요..");
-			}else if($("#pquestion").val()==""){
-				$("#pquestion").focus();
-				alert("비밀번호 질문을 입력해주세요..");
-			}else if($("#panswer").val()==""){
-				$("#panswer").focus();
-				alert("비밀번호답을 입력해주세요..");
-			}else{
-				$("#registForm").attr({action:"/Handicap/main", method:'post'});
-	            $("#registForm").submit();
-			}			
-		});
-		$("#idCheck").click(function(){
-			
-			if($("#userid").val()==""){
-				alert("아이디를 입력해주세요");
-				$("#userid").focus();
-			}
-			$.ajax({
-	              type:"GET",
-	             url:"IdCheck",
-	             data:({
-	                userid: $("#userid").val()	             
-	             }),
-	             success:function(data){
-	                if($.trim(data)=="YES"){
-	                   alert("사용가능합니다");
-	                }else{
-	                   alert("사용불가능합니다");
-	                }
-	             }});
-		});
-	
+		if (userid == "") {
+			alert("아이디를 입력해주세요..");
+			$("#userid").focus();
+		}else if(regId.test(userid) != true){
+			alert("아이디는 4자~12자영문과 숫자로 입력해주세요");
+			$("#userid").focus();
+		}else if (reg_pw.test(passwd) != true) {
+			$("#passwd").focus();
+			alert("비밀번호를 입력해주세요..");
+		} else if ($("#passwd2").val() == "") {
+			$("#passwd2").focus();
+			alert("비밀번호확인을 입력해주세요..");
+		} else if ($("#passwd").val() != $("#passwd2").val()){
+			alert("비밀번호를 확인해주세요..")
+		}	else if ($("#name").val() == "") {
+			$("#name").focus();
+			alert("이름을 입력해주세요..");
+		} else if ($("#nickname").val() == "") {
+			$("#nickname").focus();
+			alert("닉네임을 입력해주세요..");
+		} else if ($("#phone2").val() == "") {
+			$("#phone2").focus();
+			alert("연락처를 입력해주세요..");
+		}else if(regPhone2.test(phone2) == true){
+			$("#phone2").focus();
+			alert("전화번호는 숫자만 입력해주세요")
+		}else if(regPhone3.test(phone3) == true){
+			$("#phone3").focus();
+			alert("전화번호는 숫자만 입력해주세요")
+		}else if ($("#phone2").val() == "") {
+			$("#phone3").focus();
+			alert("연락처를 입력해주세요..");
+		}else if ($("#email").val() == "") {
+			$("#email").focus();
+			alert("이메일을 입력해주세요..");
+		} else if (regEmail.test(email) != true) {
+			$("#email").focus();
+			alert("이메일 형식이 올바르지 않습니다.");
+		} else if ($("#pquestion").val() == "") {
+			$("#pquestion").focus();
+			alert("비밀번호 질문을 입력해주세요..");
+		} else if ($("#panswer").val() == "") {
+			$("#panswer").focus();
+			alert("비밀번호답을 입력해주세요..");
+		} else {
+			$("#registForm").attr({
+				action : "/Handicap/main",
+				method : 'post'
+			});
+			$("#registForm").submit();
+		}
 	});
+
+});
 </script>
 </head>
 <!-- registerForm.jsp -->
