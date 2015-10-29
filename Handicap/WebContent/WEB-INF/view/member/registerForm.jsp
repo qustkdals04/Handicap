@@ -119,8 +119,8 @@ $(document).ready(function() {
 						<option value="016">016</option>
 						<option value="019">019</option>
 					</select>
-					<input type="text" name="phone2" id="phone2" style="width:45; height:22">
-					<input type="text" name="phone3" id="phone3" style="width:45; height:22">
+					<input type="text" name="phone2" id="phone2" style="width:45; height:22" maxlength="4">
+					<input type="text" name="phone3" id="phone3" style="width:45; height:22" maxlength="4">
 				</td>
 				<td></td>
 			</tr>
