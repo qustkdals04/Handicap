@@ -52,7 +52,28 @@
 	            $("#registForm").submit();
 			}			
 		});
-		
+		$("#idCheck").click(function(){
+			var checkid = $("#userid").val()
+			if($("#userid").val()==""){
+				alert("아이디를 입력해주세요");
+				$("#userid").focus();
+			}
+			$.ajax({
+				url:"idCheck",
+				type:'post',
+				/* data:checkid, */
+				success:function(data){
+					if(data!=true){
+						alert("사용가능한 아이디입니다.");
+						$("#passwd").focus();
+					}else{						
+						alert("이미 존재하는 아이디입니다.");
+						$("#userid").focus();
+					}
+				}
+				
+			});
+		});
 	
 	});
 </script>
@@ -66,7 +87,7 @@
 			<tr>
 				<td>아이디 : </td>
 				<td><input type="text" name="userid" id="userid" style="width:100; height:22"></td>
-				<td><button type="button">중복체크</button></td>
+				<td><button type="button" id="idCheck">중복체크</button></td>
 			</tr>
 			<tr>
 				<td>비밀번호 : </td>

@@ -23,13 +23,12 @@ public class IntergrationDAO {
 	
 	public boolean checkId(String id){
 		//입력한 아이디가 DB에 있는지 체크(ID 중복체크)
-		if(true){
-			//id.equals();
-			System.out.println("동일한 id가 존재합니다.");
+		boolean check = sqlSession.selectOne("user.checkId", id);
+		if(check==true){
+			return true;
 		}else{
-			System.out.println("사용가능한 아이디 입니다.");
-		}
-		return false;
+			return false;
+		}		
 	}
 	
 	public List zipCode(String area3){

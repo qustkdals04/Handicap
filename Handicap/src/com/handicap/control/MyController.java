@@ -18,6 +18,7 @@ import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.dao.BbsCommentDAO;
 import com.handicap.model.dao.BbsDAO;
+import com.handicap.model.dao.IntergrationDAO;
 import com.handicap.model.dao.MessageDAO;
 import com.handicap.model.dao.UserDAO;
 
@@ -29,6 +30,8 @@ public class MyController {
 	private BbsDAO bd;
 	@Autowired
 	private BbsCommentDAO bcd;
+	@Autowired
+	private IntergrationDAO interdao;
 
 	// 메인페이지
 	@RequestMapping("/main") // main페이지
@@ -39,7 +42,8 @@ public class MyController {
 	// 회원가입
 	 //중복체크팝업
     @RequestMapping("/idCheck")
-    public String IdCheck(){
+    public String IdCheck(@RequestParam String userid, Model model){
+    	model.addAttribute("check", interdao.checkId(userid));
        return "member/IdCheck";
     }
 

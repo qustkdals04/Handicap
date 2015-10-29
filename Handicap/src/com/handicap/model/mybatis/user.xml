@@ -14,9 +14,13 @@
    </insert>   
    
    <!-- 아이디목록 -->
-   <select id="selectId" parameterType="string"
-           resultType="com.handicap.model.beans.UserVO">
+   <select id="selectId" resultType="com.handicap.model.beans.UserVO">
      select userid from member
+   </select>
+   
+   <!-- 중복ID체크 -->
+   <select id="checkId" parameterType="string" resultType="boolean">
+   	select userid from member where userid=#{userid}
    </select>
    
    <!-- 닉네임목록 -->

@@ -56,11 +56,11 @@ int rcnt;
 			BoardBean boardBean = (BoardBean)listVector.elementAt(k);
 	--%>
 	<tr>
-		<td>&nbsp;<%=boardBean.getIdx() %></td>
+		<%-- <td>&nbsp;<%=boardBean.getIdx() %></td>
 		<td>&nbsp;<%=boardBean.getWdate() %></td>
 		<td>&nbsp;<a href="content.jsp?idx=<%= boardBean.getIdx() %>"><%= boardBean.getTitle() %></a></td>
 		<td>&nbsp;<%=boardBean.getName() %></td>
-		<td>&nbsp;<%=boardBean.getHit() %></td>
+		<td>&nbsp;<%=boardBean.getHit() %></td> --%>
 	</tr>
 	<%-- <%
 		} //for문 끝
@@ -68,9 +68,9 @@ int rcnt;
 </table>
 <%
 	//페이지 처리하기
-	PagingCount pc = new PagingCount(rcnt);
+	/* PagingCount pc = new PagingCount(rcnt); */
 %>
-<%= pc.showPaging(pagelink,"list.jsp") %>
+<%= /* pc.showPaging(pagelink,"list.jsp") */ %>
 
 <br>
 <!-- ////////////////////////////// -->
