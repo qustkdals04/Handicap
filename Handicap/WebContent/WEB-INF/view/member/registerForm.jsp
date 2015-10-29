@@ -11,7 +11,8 @@
 
 	$(document).ready(function(){	
 		
-		
+		var chkid = false;
+		var chknick = false;
 		$("#register").click(function(){
 			var userid = $("#userid").val();
 			var passwd = $("#passwd").val();
@@ -52,23 +53,42 @@
 	            $("#registForm").submit();
 			}			
 		});
-		$("#idCheck").click(function(){
-			
+		$("#idCheck").click(function(){	
+			var checkId = "userid="+$("#userid").val();
 			if($("#userid").val()==""){
 				alert("아이디를 입력해주세요");
 				$("#userid").focus();
 			}
 			$.ajax({
-	              type:"GET",
-	             url:"IdCheck",
-	             data:({
-	                userid: $("#userid").val()	             
-	             }),
+	             type:"GET",
+	             url:"idcheck",
+	             data:checkId,	             
 	             success:function(data){
-	                if($.trim(data)=="YES"){
-	                   alert("사용가능합니다");
+	                if($.trim(data)!=""){	                	
+	                   alert("사용불가능합니다"+chkid);
 	                }else{
+	                	chkid = true;
+	                   alert("사용가능합니다"+chkid);	                   
+	                }
+	             }});
+		});
+		
+		$("#nickCheck").click(function(){	
+			var checkNick = "nickname="+$("#nickname").val();
+			if($("#nickname").val()==""){
+				alert("닉네임을 입력해주세요");
+				$("#nickname").focus();
+			}
+			$.ajax({
+	             type:"GET",
+	             url:"nickcheck",
+	             data:checkNick,	             
+	             success:function(data){
+	                if($.trim(data)!=""){	                	
 	                   alert("사용불가능합니다");
+	                }else{
+	                	chkNick = true;
+	                   alert("사용가능합니다");	                   
 	                }
 	             }});
 		});
@@ -105,7 +125,7 @@
 			<tr>
 				<td>닉네임 : </td>
 				<td><input type="text" name="nickname" id="nickname" style="width:100; height:22"></td>
-				<td><button type="button">중복체크</button></td>
+				<td><button type="button" id="nickCheck">중복체크</button></td>
 			</tr>
 			<tr>
 				<td>연락처 : </td>

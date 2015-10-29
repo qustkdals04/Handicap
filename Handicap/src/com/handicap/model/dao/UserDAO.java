@@ -11,5 +11,6 @@ public interface UserDAO {
     public boolean update(UserVO user)throws SQLException;
     public UserVO select(String userid);
     public String findPasswd(String userid);//throws SQLException;
-    public List<UserVO> selectAll();
+    public List<UserVO> selectAllId();
+    public List<UserVO> selectAllNick();   
 }

@@ -38,17 +38,23 @@ public class UserDAOImpl implements UserDAO {
 	public UserVO select(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.select", userid);
-	}
-
-	@Override
-	public List<UserVO> selectAll() {		
-		return sqlSession.selectList("user.selectAll");
-	}
-	
+	}	
 	@Override
 	public String findPasswd(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.findPasswd", userid);
+	}
+
+	@Override
+	public List<UserVO> selectAllNick() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.selectNick");
+	}
+
+	@Override
+	public List<UserVO> selectAllId() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.selectId");
 	}
 
 }

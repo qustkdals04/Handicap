@@ -16,16 +16,10 @@
    <!-- 아이디목록 -->
    <select id="selectId" resultType="com.handicap.model.beans.UserVO">
      select userid from member
-   </select>
-   
-   <!-- 중복ID체크 -->
-   <select id="checkId" parameterType="string" resultType="string">
-   	select userid from member where userid=#{userid}
-   </select>
+   </select>  
    
    <!-- 닉네임목록 -->
-   <select id="selectNick" parameterType="string"
-           resultType="com.handicap.model.beans.UserVO" >
+   <select id="selectNick" resultType="com.handicap.model.beans.UserVO" >
      select nickname from member
    </select>
    

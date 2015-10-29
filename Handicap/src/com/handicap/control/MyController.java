@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.MessageVO;
+import com.handicap.model.beans.UserVO;
 import com.handicap.model.dao.BbsCommentDAO;
 import com.handicap.model.dao.BbsDAO;
 import com.handicap.model.dao.IntergrationDAO;
@@ -47,16 +48,40 @@ public class MyController {
 	   }
 */
     
-    @RequestMapping("idcheck") // 중복확인 (아이디)
-    public String idcheck(@RequestParam String userid, HttpSession session) {
+    @RequestMapping("/idcheck") // 중복확인 (아이디)
+    public String idcheck(@RequestParam String userid, Model model) {
        // 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
-       if (dao.findPasswd(userid)!=null) {
-          session.setAttribute("idcheck", userid);
-          return "member/IdCheck";
-       } else {
-          return "member/IdCheck";
-       }
-       
+       List<UserVO> list = dao.selectAllId();
+       String id = null;
+       for (int i = 0; i < list.size(); i++) {
+			id = list.get(i).getUserid();	
+			if(id.equals(userid)){	
+				model.addAttribute("checkId", id);
+				break;			
+			} else{
+				model.addAttribute("checkId", "");
+			}
+    	}
+    	
+    	return "member/idCheck";      
+    }
+    
+    @RequestMapping("/nickcheck") // 중복확인 (닉네임)
+    public String nickcheck(@RequestParam String nickname, Model model) {
+       // 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
+       List<UserVO> list = dao.selectAllNick();
+       String nick = null;
+       for (int i = 0; i < list.size(); i++) {
+			nick = list.get(i).getNickname();	
+			if(nick.equals(nickname)){	
+				model.addAttribute("checkNick", nick);
+				break;			
+			} else{
+				model.addAttribute("checkNick", "");
+			}
+    	}
+    	
+    	return "member/nickCheck";      
     }
 
     
@@ -91,7 +116,6 @@ public class MyController {
 				session.setAttribute("memberid", userid);
 				return "main2"; // 로그인성공 main페이지로 이동
 			} else {
-
 				// model.addAttribute("loginresult", "alert('로그인실패')");
 				model.addAttribute("status", "로그인실패");
 				return "login/login"; // 로그인실패
@@ -107,21 +131,7 @@ public class MyController {
 		session.invalidate();
 		return "main2";
 	}
-
-	@RequestMapping("/idCheckAction") //중복확인 (아이디)
-	   public String idcheck(@RequestParam String userid, String passwd, HttpSession session){
-	      //있을땐 1 없을땐0  List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
-	       if(dao.findPasswd(userid).equals(userid))
-	      {
-	          session.getAttribute("idcheck");
-	         return "registerForm";
-	      }
-	      else
-	      {
-	         return "registerForm";
-	      }
-	   }
-
+	
 	@RequestMapping("/nickcheck") // 중복확인 (닉네임)
 	public boolean nickcheck(@RequestParam String nickname) {
 		// 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
