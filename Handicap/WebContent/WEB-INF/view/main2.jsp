@@ -11,19 +11,26 @@
 <title>Insert title here</title>
 </head>
 <body >	
+<table>
+<tr>
+<td>	
 	<div id="wrapper" >
 		<%@include file="top.jsp" %>
-	<div id="content" align="center">
-	
-	
+	<div id="content" align="center">	
 		<%@include file="menu.jsp" %>
 	</div>
   <div id="contents">
 	<%@include file="index.html" %>
-  </div >
-  <div id="sidebar" >
- 		<img  src="/Handicap/img/kei.jpg">
-  </div>
+  </div >   
 </div>
+</td>
+<td id="sidebar">
+<img src="/Handicap/img/kei.jpg" width="100">
+<!-- <div id="sidebar" align="right" >
+ 		
+  </div> -->
+  </td>
+  </tr>
+  </table>
 </body>
 </html>

@@ -27,11 +27,11 @@ if(pagelink_get==null){
 } else {
 	pagelink = Integer.parseInt(pagelink_get);
 }
-
+int rcnt;
 ///////////////////////////////글검색
 %>
 <body>
-<table width="550" align="center" border="1">
+<table width="800" align="center" border="1">
 	<tr>
 		<td align="left" width="20%">&nbsp;[글수:<%= rcnt %>]</td>
 			<td align="center" width="60%">
@@ -40,12 +40,12 @@ if(pagelink_get==null){
 			<td align="right" width="20%"></td>
 	</tr>
 </table><br>
-<table width="550" align="center" border="1">
+<table width="800" align="center" border="1">
 	<tr>
 		<td width="10%" bgcolor="#cccccc">&nbsp;번호</td>
-		<td width="17%" bgcolor="#cccccc">&nbsp;일자</td>
-		<td width="50%" bgcolor="#cccccc">&nbsp;제목</td>
-		<td width="13%" bgcolor="#cccccc">&nbsp;이름</td>
+		<td width="17%" bgcolor="#cccccc">&nbsp;제목</td>
+		<td width="50%" bgcolor="#cccccc">&nbsp;작성자</td>
+		<td width="13%" bgcolor="#cccccc">&nbsp;작성일</td>
 		<td width="10%" bgcolor="#cccccc">&nbsp;조회</td>
 	</tr>
 	<%--
@@ -62,9 +62,9 @@ if(pagelink_get==null){
 		<td>&nbsp;<%=boardBean.getName() %></td>
 		<td>&nbsp;<%=boardBean.getHit() %></td>
 	</tr>
-	<%
+	<%-- <%
 		} //for문 끝
-	%>
+	%> --%>
 </table>
 <%
 	//페이지 처리하기
@@ -75,7 +75,7 @@ if(pagelink_get==null){
 <br>
 <!-- ////////////////////////////// -->
   <form action="search.jsp" method=post name="sform">
-	<table width="550" align="center" border="1">
+	<table width="800" align="center" border="1">
 		<tr>
 			<td align="center">
 				<select name=find>
@@ -87,13 +87,12 @@ if(pagelink_get==null){
 				<input type="button" value="글찾기" onclick="send(this.form);">	
 			</td>
 		</tr>
+		<tr>
+			<td align="right">
+				<button type="button">글쓰기</button>
+			</td>
+		</tr>
 	</table>
 </form>
-<table width="550" align="center">
-	<tr>
-		<td align="right"><button type="button" name="bbsWrite" id="bbsWrite">글쓰기</button></td>
-	</tr>
-</table>
-
 </body>
 </html>

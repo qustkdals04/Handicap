@@ -5,6 +5,29 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="Handicap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(".a1").mouseenter(function(){
+			$(".a1").css("background-color", "yellow");
+		});
+		$(".a1").mouseleave(function(){
+			$(".a1").css("background-color", "white");
+		});
+		$(".a2").mouseenter(function(){
+			$(".a2").css("background-color", "yellow");
+		});
+		$(".a2").mouseleave(function(){
+			$(".a2").css("background-color", "white");
+		});
+		$(".a3").mouseenter(function(){
+			$(".a3").css("background-color", "yellow");
+		});
+		$(".a3").mouseleave(function(){
+			$(".a3").css("background-color", "white");
+		});
+	});
+</script>
 </head>
 <body>
 <%
@@ -23,7 +46,7 @@
     
 		<td width="300" align="right"> 
 	   
-	    <p><font size="4"><a href="/Handicap/logout">로그아웃</a> <a href="/Handicap/registerForm">회원가입</a> <a href="">ID/PW찾기</a></font></p></td>
+	    <p><font size="2"><a href="" class="a1">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
 	</tr> 
 </table>
 <%
@@ -40,7 +63,7 @@
 	    
 			<td width="300" align="right"> 
 		   
-		    <p><font size="4"><a href="/Handicap/loginForm">로그인</a> <a href="/Handicap/registerForm">회원가입</a> <a href="">ID/PW찾기</a></font></p></td>
+		    <p><font size="2"><a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a href="/Handicap/registerForm" class="a2">회원가입</a>&nbsp;<a href="" class="a3">ID/PW찾기</a></font></p></td>
 		</tr> 
 	</table>
 <%

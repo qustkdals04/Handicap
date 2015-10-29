@@ -67,7 +67,8 @@ public class MyController {
 	@RequestMapping("/memberlogin") // 로그인 처리
 	public String login(@RequestParam String userid,
 			@RequestParam String passwd,
-			HttpSession session) {
+			HttpSession session,
+			Model model) {
 		if (dao.findPasswd(userid) != null) {
 			if (dao.findPasswd(userid).equals(passwd)) {
 				session.setAttribute("memberid", userid);
@@ -75,9 +76,11 @@ public class MyController {
 			} else {
 
 				// model.addAttribute("loginresult", "alert('로그인실패')");
+				model.addAttribute("status", "로그인실패");
 				return "login/login"; // 로그인실패
 			}
 		} else {
+			model.addAttribute("status", "로그인실패");
 			return "login/login";
 		}
 	}
