@@ -34,17 +34,6 @@ if(pagelink_get==null){
 int rcnt;
 ///////////////////////////////메시지검색
 %>
-<script type="text/javascript">
-		function send(theform){
-		if(theform.search.value==""){
-			alert("검색을 제대로 입력해주세요.");
-			theform.search.focus();
-			return false;
-		}
-		theform.submit();
-}
-</script>
-
 <body>
 <table width="800" align="center" border="1">           <!-- 메세지 리스트 제목창 -->
 	<tr>
@@ -73,24 +62,7 @@ int rcnt;
   	 </c:forEach>
 	</tr>
 </table>
-
-<br>
-<!-- ////////////////////////////// -->
-  <form action="search.jsp" method=post name="sform">
-	<table width="800" align="center" border="1">
-		<tr>
-			<td align="center">
-				<select name="find">
-					<option value=name>이 름</option>
-					<option value=title selected>제 목</option>
-					<option value=content>내 용</option>
-				</select>	
-				<input type="text" name="search" size="20">
-				<input type="button" value="찾기" onclick="send(this.form);">	
-			</td>
-		</tr>
-
-	</table>
+ 
 </form>
 </body>
 </html>

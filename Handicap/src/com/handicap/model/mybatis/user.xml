@@ -41,13 +41,23 @@
    
    <!-- 메시지 리스트 -->
    <select id="messagelist" parameterType="string" resultType="com.handicap.model.beans.MessageVO">
-   		select * from message where recipient=#{recipient}
+   		select * from message where recipient=#{recipient} order by senddate desc
    </select>
    
    <!-- 메시지 상세보기 -->
    <select id="messagecontent" parameterType="int" resultType="com.handicap.model.beans.MessageVO">
-   	select * from message where messageno=#{messageno}
+   	select * from message where messageno=#{messageno}   	
    </select>
+   <update id="messageupdate" parameterType="int">
+   	update message set status=2 where messageno=#{messageno}
+   </update>
+   
+   <!--  -->
+   
+   <!-- 메시지 삭제 -->
+   <delete id="messagedelete" parameterType="int">
+   	delete message where messageno=#{messageno}
+   </delete>
    
 </mapper>
 <!-- user.xml -->

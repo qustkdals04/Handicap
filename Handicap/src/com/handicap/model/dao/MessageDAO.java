@@ -25,6 +25,14 @@ public class MessageDAO {
 	public boolean delete(int messageno) throws SQLException {
 		// TODO Auto-generated method stub
 		//메세지 삭제
+		int t = sqlSession.delete("user.messagedelete", messageno);
+		if(t==1) return true;
+	    return false;
+	}
+	
+	public boolean update(int messageno) {
+		int t = sqlSession.update("user.messageupdate", messageno);
+		if(t==1) return true;
 		return false;
 	}
 

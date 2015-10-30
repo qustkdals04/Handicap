@@ -1522,22 +1522,16 @@ public class MyController {
 	@RequestMapping("messagecontent")
 	public String messagecontent(@RequestParam String messageno,Model model){
 		model.addAttribute("messageContent", md.select(Integer.parseInt(messageno)));
+		md.update(Integer.parseInt(messageno));
 		return "message/messageContent";
-	}
-
-	// 메시지 삭제폼
-	@RequestMapping("messagedeleteform")
-	public String messagedeleteForm(@RequestParam int messageno, Model model) {
-		model.addAttribute("messageVO", md.select(messageno));
-		return "messagedeleteform";
 	}
 
 	// 메시지 삭제
 	@RequestMapping("messagedelete")
-	public String messagedeleteForm(int no, int boardno) throws SQLException {
-		if (bd.delete(no, boardno))
-			return "redirect:/messagelist";
-		else
-			return "messagedeleteform";
+	public String messagedeleteForm(@RequestParam String messageno) throws SQLException {
+		if(md.delete(Integer.parseInt(messageno))){
+			return "message/messageList";
+		}
+		return "message/messageList";				
 	}
 }
