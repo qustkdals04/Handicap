@@ -6,7 +6,7 @@ public class UserVO {
 	private String passwd;
 	private String name;
 	private String nickname;
-	private int phone;
+	private String phone;
 	private String email;
 	private String pquestion;
 	private String panswer;
@@ -41,10 +41,10 @@ public class UserVO {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public String getEmail() {

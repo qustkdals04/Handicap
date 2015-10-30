@@ -9,7 +9,53 @@
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-
+	$("#idCheck").click(function(){	
+		var checkId = "userid="+$("#userid").val();
+		if($("#userid").val()==""){
+			alert("아이디를 입력해주세요");
+			$("#userid").focus();
+		}else{
+		$.ajax({
+             type:"GET",
+             url:"idcheck",
+             data:checkId,	             
+             success:function(data){
+                if($.trim(data)!=""){
+                	chkid=false;
+                   alert("사용불가능합니다");
+                   $("#userid").val()=="";
+                   $("#userid").focus();
+                }else{
+                	chkid = true;
+                   alert("사용가능합니다");
+                   $("#passwd").focus();
+                }
+             }});
+		}
+	});
+	
+	$("#nickCheck").click(function(){	
+		var checkNick = "nickname="+$("#nickname").val();
+		if($("#nickname").val()==""){
+			alert("닉네임을 입력해주세요");
+			$("#nickname").focus();
+		}else{
+		$.ajax({
+             type:"GET",
+             url:"nickcheck",
+             data:checkNick,	             
+             success:function(data){
+                if($.trim(data)!=""){	                	
+                   alert("사용불가능합니다");
+                   chkid=false;
+                }else{
+                	chkNick = true;
+                   alert("사용가능합니다");	                   
+                }
+             }});
+		}
+	});
+	
 	$("#register").click(function() {
 		var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
 		var userid = $("#userid").val();
@@ -70,62 +116,19 @@ $(document).ready(function() {
 				alert("비밀번호답을 입력해주세요..");
 				$("#panswer").focus();				
 			} else {
-				if(chkid==false || chknick==false){
+				/* if(chkid==false || chknick==false){
 					alert("ID중복체크와 닉네임중복체크를 해주세요");
-				}else{
+				}else{ */
 				$("#registForm").attr({
 					action : "register",
 					method : 'post'
 				});
 				$("#registForm").submit();
 				}
-			}
+			/* } */
 		})
 		});
 		
-		$("#idCheck").click(function(){	
-			var checkId = "userid="+$("#userid").val();
-			if($("#userid").val()==""){
-				alert("아이디를 입력해주세요");
-				$("#userid").focus();
-			}else{
-			$.ajax({
-	             type:"GET",
-	             url:"idcheck",
-	             data:checkId,	             
-	             success:function(data){
-	                if($.trim(data)!=""){	                	
-	                   alert("사용불가능합니다");
-	                   chkid=false;
-	                }else{
-	                	chkid = true;
-	                   alert("사용가능합니다");	                   
-	                }
-	             }});
-			}
-		});
-		
-		$("#nickCheck").click(function(){	
-			var checkNick = "nickname="+$("#nickname").val();
-			if($("#nickname").val()==""){
-				alert("닉네임을 입력해주세요");
-				$("#nickname").focus();
-			}else{
-			$.ajax({
-	             type:"GET",
-	             url:"nickcheck",
-	             data:checkNick,	             
-	             success:function(data){
-	                if($.trim(data)!=""){	                	
-	                   alert("사용불가능합니다");
-	                   chkid=false;
-	                }else{
-	                	chkNick = true;
-	                   alert("사용가능합니다");	                   
-	                }
-	             }});
-			}
-		});
 });
 </script>
 </head>
@@ -169,7 +172,7 @@ $(document).ready(function() {
 				</tr>
 				<tr>
 					<td>연락처 :</td>
-					<td><select id="phone1">
+					<td><select name="phone1" id="phone1">
 							<option value="010">010</option>
 							<option value="011">011</option>
 							<option value="016">016</option>

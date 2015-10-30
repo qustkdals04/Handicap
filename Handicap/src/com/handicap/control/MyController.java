@@ -98,13 +98,13 @@ public class MyController {
 	}
 
 	@RequestMapping("/register") // 일반회원가입정보 얻어오기
-	public String register(/*@RequestParam String userid, @RequestParam String passwd, @RequestParam String name,
-			@RequestParam String nickname, @RequestParam int phone, @RequestParam String email,
-			@RequestParam String pquestion, @RequestParam String panswer, @RequestParam int usergrade,
-			@RequestParam int companyno, @RequestParam String companyaddr, @RequestParam String companytype,*/
+	public String register(@RequestParam String phone1,
+			@RequestParam String phone2,
+			@RequestParam String phone3,
 			@RequestParam String flag, UserVO uv) {
 		if(flag.equals("member")){
 			try {
+				uv.setPhone(phone1+phone2+phone3);
 				if(dao.insert(uv)){
 					return "main2";
 				}else{
@@ -114,7 +114,9 @@ public class MyController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		}/*else(flag.equals("company")){
+			return "member/registerForm";
+		}*/
 		return "member/registerForm";
 	}
 
