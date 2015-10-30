@@ -12,5 +12,6 @@ public interface UserDAO {
     public UserVO select(String userid);
     public String findPasswd(String userid);//throws SQLException;
     public List<UserVO> selectAllId();
-    public List<UserVO> selectAllNick();   
+    public List<UserVO> selectAllNick();
+    public String selectNick(String userid);
 }

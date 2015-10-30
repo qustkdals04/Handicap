@@ -9,19 +9,19 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$(".a1").mouseenter(function(){
-			$(".a1").css("background-color", "yellow");
+			$(".a1").css("background-color", "#dddddd");
 		});
 		$(".a1").mouseleave(function(){
 			$(".a1").css("background-color", "white");
 		});
 		$(".a2").mouseenter(function(){
-			$(".a2").css("background-color", "yellow");
+			$(".a2").css("background-color", "#dddddd");
 		});
 		$(".a2").mouseleave(function(){
 			$(".a2").css("background-color", "white");
 		});
 		$(".a3").mouseenter(function(){
-			$(".a3").css("background-color", "yellow");
+			$(".a3").css("background-color", "#dddddd");
 		});
 		$(".a3").mouseleave(function(){
 			$(".a3").css("background-color", "white");
@@ -46,7 +46,7 @@
     
 		<td width="300" align="right"> 
 	   
-	    <p><font size="2"><a href="" class="a1">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
+	    <p><font size="2"><a href="/Handicap/messagelist" class="a1">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
 	</tr> 
 </table>
 <%

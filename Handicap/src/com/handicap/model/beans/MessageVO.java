@@ -5,7 +5,7 @@ public class MessageVO {
 	String sender;
 	String recipient;
 	String contents;
-	String date;
+	String senddate;
 	int status;
 	
 	public int getMessageno() {
@@ -32,11 +32,11 @@ public class MessageVO {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
-	public String getDate() {
-		return date;
+	public String getSenddate() {
+		return senddate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setSenddate(String senddate) {
+		this.senddate = senddate;
 	}
 	public int getStatus() {
 		return status;

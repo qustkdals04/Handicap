@@ -16,6 +16,8 @@ public class MessageDAO {
 	public boolean insert(MessageVO mvo) throws SQLException {
 		// TODO Auto-generated method stub
 		//메세지 입력 
+		int t = sqlSession.insert("user.messageinsert", mvo);
+		if(t==1) return true;
 		return false;
 	}
 
@@ -37,9 +39,7 @@ public class MessageDAO {
 
 	
 	public List<MessageVO> selectAll(String recipient) {
-		// TODO Auto-generated method stub
-		//받은 메세지 list 형식으로 뿌림 
-		return null;
+		return sqlSession.selectList("user.messagelist", recipient);
 	}
 	
 	

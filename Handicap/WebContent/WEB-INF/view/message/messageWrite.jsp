@@ -8,7 +8,7 @@
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#send").click(function(){			
+		$("#send").click(function(){			 //보내기버튼
 			if($("#recipient").val()==""){
 				alert("받는사람을 입력해주세요..");
 				$("#recipient").focus();
@@ -16,10 +16,10 @@
 				alert("내용을 입력해주세요..");
 				$("#contents").focus();
 			} else{
-				$("#messageWrite").attr({action:'/messageWriteAction', method:'post'});
+				$("#messageWrite").attr({action:'messageWriteAction', method:'post'});
 	            $("#messageWrite").submit();
 			}
-		})
+		});
 	});
 </script>
 </head>
@@ -28,7 +28,7 @@
 		<table>
 			<tr>
 				<td>받는사람 : </td>
-				<td><input type="text" name="recipient" id="recipient" style="width: 150px;height:22px; "></td>
+				<td><input type="text" name="recipient" id="recipient" style="width: 144px;height:22px; "></td>
 			</tr>
 			<tr>
 				<td>내	용 : </td>
@@ -37,6 +37,7 @@
 			<tr>
 				<td></td>
 				<td align="right">
+					
 					<button type="button" style="width:70px;height: 20px;" id="send">보내기</button>
 					<button type="button" style="width:70px;height: 20px;" id="cancel">취소</button>
 				</td>

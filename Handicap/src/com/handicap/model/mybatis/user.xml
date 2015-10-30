@@ -36,8 +36,13 @@
    <!-- 메시지전송 -->
    <insert id="messageinsert" parameterType="com.handicap.model.beans.MessageVO">
    	insert into message (sender,recipient,contents,senddate)
-   	values (#{sender},#{recipient},#{contents},#{senddate})
+   	values (#{sender},#{recipient},#{contents},sysdate)
    </insert>
+   
+   <!-- 메시지 리스트 -->
+   <select id="messagelist" parameterType="string" resultType="com.handicap.model.beans.MessageVO">
+   		select * from message where recipient=#{recipient}
+   </select>
    
    
 </mapper>

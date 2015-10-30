@@ -33,6 +33,8 @@ public class MyController {
 	private BbsCommentDAO bcd;
 	@Autowired
 	private IntergrationDAO interdao;
+	@Autowired
+	private MessageDAO md;
 
 	// 메인페이지
 	@RequestMapping("/main") // main페이지
@@ -1474,7 +1476,7 @@ public class MyController {
 	// -------------------------리플끝----------------------------------//
 
 	// -------------------------메시지---------------------------------//
-	private MessageDAO mv;
+	
 
 	// 메시지 글쓰기폼
 
@@ -1485,36 +1487,41 @@ public class MyController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(Model m, MessageVO mvo) {
-
+	public String messageinsert(HttpSession session,Model m, MessageVO mvo) {
+		String userid = session.getAttribute("memberid").toString();
+		String sender = dao.selectNick(userid);
+		mvo.setSender(sender);
 		try {
-			if (mv.insert(mvo)) {
+			if (md.insert(mvo)) {
 				m.addAttribute("msg", "메시지 전송 완료!!");
-				return "messagelist";
+				return "message/messageList";
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "message/messagelist";
+		return "message/messageList";
 	}
 
 	// 메시지 리스트
-	@RequestMapping("/messagelist")
-	public String messagelist(@RequestParam String recipient, Model model) {
+		@RequestMapping("/messagelist")
+		public String messagelist(HttpSession session, Model model) {
+			String userid = session.getAttribute("memberid").toString();
+			String recipient = dao.selectNick(userid);
+			List<MessageVO> list = md.selectAll(recipient);
+			model.addAttribute("messageList", list);
+			/*
+			 * List<MessageVO> list = mv.selectAll(recipient);
+			 * model.addAttribute("messagelist", list);
+			 */
 
-		/*
-		 * List<MessageVO> list = mv.selectAll(recipient);
-		 * model.addAttribute("messagelist", list);
-		 */
-
-		return "message/messageList";
-	}
+			return "message/messageList";
+		}
 
 	// 메시지 삭제폼
 	@RequestMapping("messagedeleteform")
 	public String messagedeleteForm(@RequestParam int messageno, Model model) {
-		model.addAttribute("messageVO", mv.select(messageno));
+		model.addAttribute("messageVO", md.select(messageno));
 		return "messagedeleteform";
 	}
 
