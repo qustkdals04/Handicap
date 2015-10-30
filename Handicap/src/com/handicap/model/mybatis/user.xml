@@ -44,6 +44,10 @@
    		select * from message where recipient=#{recipient}
    </select>
    
+   <!-- 메시지 상세보기 -->
+   <select id="messagecontent" parameterType="int" resultType="com.handicap.model.beans.MessageVO">
+   	select * from message where messageno=#{messageno}
+   </select>
    
 </mapper>
 <!-- user.xml -->

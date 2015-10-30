@@ -51,7 +51,7 @@ int rcnt;
 			<td align="center" width="85%">
 			<font size="4" color="">메세지 리스트</font>
 			</td>
-			<td align="center" width="15%"><a href="/messageWrite">쪽지보내기</a></td>
+			<td align="center" width="15%"><a href="/Handicap/messageWrite">쪽지보내기</a></td>
 	</tr>
 </table>
 <br>
@@ -66,7 +66,7 @@ int rcnt;
 	 		<c:forEach var="message" items="${messageList}" >
 	 		<tr>  	 		
   	 		<td>${message.sender }</td>
-  	 		<td>${message.contents }</td>
+  	 		<td><a href="/Handicap/messagecontent?messageno=${message.messageno }">${message.contents }</a></td>
   	 		<td>${message.senddate }</td>
   	 		<td>${message.status }</td>
   	 		</tr>

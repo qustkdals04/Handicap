@@ -1517,6 +1517,13 @@ public class MyController {
 
 			return "message/messageList";
 		}
+		
+	//메시지 상세보기
+	@RequestMapping("messagecontent")
+	public String messagecontent(@RequestParam String messageno,Model model){
+		model.addAttribute("messageContent", md.select(Integer.parseInt(messageno)));
+		return "message/messageContent";
+	}
 
 	// 메시지 삭제폼
 	@RequestMapping("messagedeleteform")

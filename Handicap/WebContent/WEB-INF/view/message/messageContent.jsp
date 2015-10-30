@@ -28,15 +28,15 @@
 <table style="width: 618px; ">
 			<tr style="width: 495px; ">
 				<td align = "center">보낸사람 : </td>
-				<td style="width: 150px;height:22px;">&nbsp;<%=MessageVO.getSender() %></td> <!-- 보낸사람 -->
-				<td align="right"><%=MessageVO.getDate() %></td>   <!-- 현재시간 -->
+				<td style="width: 150px;height:22px;">&nbsp;${messageContent.sender}</td> <!-- 보낸사람 -->
+				<td align="right">${messageContent.senddate }</td>   <!-- 현재시간 -->
 				
 			</tr>
 			
 			<tr>
 				<td align = "center">내	용 : </td>
 				
-				<td  colspan="2"><textarea style="width: 490px; height: 172px"><%=MessageVO.getContents()%></textarea></td>
+				<td  colspan="2"><textarea style="width: 490px; height: 172px" readonly="readonly">${messageContent.contents }</textarea></td>
 
 				<%-- <td style="width: 150px;height:22px;">&nbsp;<%=MessageVO.getContents()%></td> --%>
 			</tr>

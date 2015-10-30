@@ -28,13 +28,11 @@ public class MessageDAO {
 		return false;
 	}
 
-
-
 	
 	public MessageVO select(int messageno) {
 		// TODO Auto-generated method stub
 		//메세지 상세보기
-		return null;
+		return sqlSession.selectOne("user.messagecontent",messageno);
 	}
 
 	
