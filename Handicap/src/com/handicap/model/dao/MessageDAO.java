@@ -30,12 +30,15 @@ public class MessageDAO {
 	    return false;
 	}
 	
-	public boolean update(int messageno) {
+	public boolean update(int messageno) {//메시지 읽으면 상태 읽음으로 변경
 		int t = sqlSession.update("user.messageupdate", messageno);
 		if(t==1) return true;
 		return false;
 	}
 
+	public int selectCount(String recipient){		
+		return sqlSession.selectOne("user.messagecount", recipient);
+	}
 	
 	public MessageVO select(int messageno) {
 		// TODO Auto-generated method stub
@@ -44,7 +47,7 @@ public class MessageDAO {
 	}
 
 	
-	public List<MessageVO> selectAll(String recipient) {
+	public List<MessageVO> selectAll(String recipient) {//메시지리스트뿌리기
 		return sqlSession.selectList("user.messagelist", recipient);
 	}
 	

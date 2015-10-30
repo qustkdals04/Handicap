@@ -44,7 +44,7 @@
    		select * from message where recipient=#{recipient} order by senddate desc
    </select>
    
-   <!-- 메시지 상세보기 -->
+   <!-- 메시지 상세보기 + 상세보기시 상태 읽음으로 변경-->
    <select id="messagecontent" parameterType="int" resultType="com.handicap.model.beans.MessageVO">
    	select * from message where messageno=#{messageno}   	
    </select>
@@ -52,12 +52,21 @@
    	update message set status=2 where messageno=#{messageno}
    </update>
    
-   <!--  -->
-   
+   <!-- 받은사람에따른 총메시지 갯수 구하기 -->
+ 	
+   <select id="messagecount" parameterType="string" resultType="int">
+   	select count(*) from message where recipient=#{recipient}
+   </select>
+     
    <!-- 메시지 삭제 -->
    <delete id="messagedelete" parameterType="int">
    	delete message where messageno=#{messageno}
    </delete>
+   
+   <!-- 주소찾기 -->
+   <select id="findAddress" parameterType="string" resultType="com.handicap.model.beans.ZipcodeVO">
+   	select * from zipcode where area3 like #{area3}
+   </select>
    
 </mapper>
 <!-- user.xml -->

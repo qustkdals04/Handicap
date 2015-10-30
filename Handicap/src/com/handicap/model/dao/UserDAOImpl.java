@@ -63,4 +63,9 @@ public class UserDAOImpl implements UserDAO {
 		return sqlSession.selectOne("user.findNick", userid);
 	}
 
+	@Override
+	public String findNick(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.findNick", userid);
+	}
 }

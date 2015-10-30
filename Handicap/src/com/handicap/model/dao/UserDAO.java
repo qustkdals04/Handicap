@@ -14,4 +14,5 @@ public interface UserDAO {
     public List<UserVO> selectAllId();
     public List<UserVO> selectAllNick();
     public String selectNick(String userid);
+    public String findNick(String userid);
 }

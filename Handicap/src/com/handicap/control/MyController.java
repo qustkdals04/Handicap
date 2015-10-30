@@ -17,11 +17,13 @@ import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.UserVO;
+import com.handicap.model.beans.ZipcodeVO;
 import com.handicap.model.dao.BbsCommentDAO;
 import com.handicap.model.dao.BbsDAO;
 import com.handicap.model.dao.IntergrationDAO;
 import com.handicap.model.dao.MessageDAO;
 import com.handicap.model.dao.UserDAO;
+import com.handicap.model.dao.ZipcodeDAO;
 
 @Controller
 public class MyController {
@@ -35,13 +37,40 @@ public class MyController {
 	private IntergrationDAO interdao;
 	@Autowired
 	private MessageDAO md;
+	@Autowired
+	private ZipcodeDAO zd;
 
 	// 메인페이지
 	@RequestMapping("/main") // main페이지
 	public String main() {
 		return "main2";
 	}
+	
+	//장애인복지법
+	@RequestMapping("/handicaplaw")
+	public String handicaplaw(){
+		return "handicapLaw";
+	}
 
+	//ID.PW찾기
+	@RequestMapping("/findNick") // id로 nickname 찾기
+    public String findNick(@RequestParam String userid, HttpSession Session) {
+       
+	   String nick = dao.findNick(userid);
+      Session.setAttribute("checkNick", nick);
+       return "bbs/idsearchForm";   
+   
+	}
+	
+	@RequestMapping("/findPasswd") // id로 pw찾기
+    public String findPasswd(@RequestParam String userid, HttpSession Session) {
+     
+	   String pw = dao.findPasswd(userid);
+      Session.setAttribute("checkpw", pw);
+       return "bbs/pwsearchForm";   
+   
+	}
+	
 	// 회원가입	 
 	/*// 중복체크팝업
 	   @RequestMapping("IdCheck")
@@ -49,6 +78,7 @@ public class MyController {
 	      return "member/IdCheck";
 	   }
 */
+	
     
     @RequestMapping("/idcheck") // 중복확인 (아이디)
     public String idcheck(@RequestParam String userid, Model model) {
@@ -86,11 +116,32 @@ public class MyController {
     	return "member/nickCheck";      
     }
 
+    //주소가저오기
+    @RequestMapping("/addressList")
+	public String addressList(HttpSession session, Model model) {
+		String area3 = session.getAttribute("area3").toString();
+		List<ZipcodeVO> list = zd.findAddress(area3);
+		model.addAttribute("addressList", list);
+
+		return "member/addressForm";
+	}
     
-	// 회원가입폼띄우기
+	// 일반회원가입폼띄우기
 	@RequestMapping("/registerForm")
-	public String register_form() {
+	public String registerForm() {
 		return "member/registerForm";
+	}
+	
+	//기업회원가입폼띄우기
+	@RequestMapping("/registerForm_C")
+	public String registerForm_C(){
+		return "member/registerForm_C";
+	}
+	
+	//주소검색창띄우기
+	@RequestMapping("/addressForm")
+	public String addressForm(){
+		return "member/addressForm";
 	}
 
 	// 로그인폼띄우기
@@ -116,9 +167,9 @@ public class MyController {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}/*else(flag.equals("company")){
+		}else{
 			return "member/registerForm";
-		}*/
+		}
 		return "member/registerForm";
 	}
 
@@ -1505,15 +1556,23 @@ public class MyController {
 
 	// 메시지 리스트
 		@RequestMapping("/messagelist")
-		public String messagelist(HttpSession session, Model model) {
+		public String messagelist(HttpSession session, Model model,
+								@RequestParam String pageNum) {
 			String userid = session.getAttribute("memberid").toString();
 			String recipient = dao.selectNick(userid);
 			List<MessageVO> list = md.selectAll(recipient);
+			if(pageNum == null){
+				pageNum="1";
+			}
+			int pageSize = 5;
+			int currentPage = Integer.parseInt(pageNum);
+			int startRow = (currentPage  - 1) * pageSize + 1;//한 페이지의 시작글 번호
+			int endRow = currentPage * pageSize;//한 페이지의 마지막 글번호
+			int count = 0;
+			int number = 0;		
+			
 			model.addAttribute("messageList", list);
-			/*
-			 * List<MessageVO> list = mv.selectAll(recipient);
-			 * model.addAttribute("messagelist", list);
-			 */
+			
 
 			return "message/messageList";
 		}

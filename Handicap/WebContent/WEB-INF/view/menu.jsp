@@ -89,7 +89,7 @@
             </li>
 			<li><font size="+4">|</font></li>
             <li class="topMenuLi">
-                <a class="menuLink" href="">장애인 복지법</a>
+                <a class="menuLink" href="/Handicap/handicaplaw">장애인 복지법</a>
                 <ul class="submenu">
                     
                 </ul>

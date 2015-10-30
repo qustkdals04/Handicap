@@ -4,7 +4,7 @@ public class BbsCommentVO {
 	private int commentno;
 	private String comment;
 	private String author;
-	private int status;
+	private int bad;
 	
 	
 	public int getCommentno() {
@@ -25,10 +25,10 @@ public class BbsCommentVO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public int getStatus() {
-		return status;
+	public int getBad() {
+		return bad;
 	}
-	public void setStatus(int status) {
-		this.status = status;
+	public void setBad(int bad) {
+		this.bad = bad;
 	}
 }

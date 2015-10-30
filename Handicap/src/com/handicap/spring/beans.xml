@@ -8,5 +8,5 @@
   <bean class="com.handicap.model.dao.MessageDAO" id="MessageDAO"/>
   <bean class="com.handicap.model.dao.BbsCommentDAO" id="BbsCommentDAO"/>
   <bean class="com.handicap.model.dao.IntergrationDAO" id="IntergrationDAO"/>  
-
+  <bean class="com.handicap.model.dao.ZipcodeDAO" id="ZipcodeDAO"/>
 </beans>
