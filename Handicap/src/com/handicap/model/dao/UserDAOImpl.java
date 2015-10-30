@@ -15,7 +15,7 @@ public class UserDAOImpl implements UserDAO {
 	
 	@Override
 	public boolean insert(UserVO user) throws SQLException {
-		int t = sqlSession.insert("user.insert", user);
+		int t = sqlSession.insert("user.insertuser", user);
 		if(t==1) return true;
 		return false;
 	}

@@ -97,13 +97,25 @@ public class MyController {
 		return "login/login";
 	}
 
-	@RequestMapping("/register") // 회원가입정보 얻어오기
-	public boolean register(@RequestParam String userid, @RequestParam String passwd, @RequestParam String name,
+	@RequestMapping("/register") // 일반회원가입정보 얻어오기
+	public String register(/*@RequestParam String userid, @RequestParam String passwd, @RequestParam String name,
 			@RequestParam String nickname, @RequestParam int phone, @RequestParam String email,
 			@RequestParam String pquestion, @RequestParam String panswer, @RequestParam int usergrade,
-			@RequestParam int companyno, @RequestParam String companyaddr, @RequestParam String companytype) {
-		// 유효성 검사
-		return false;
+			@RequestParam int companyno, @RequestParam String companyaddr, @RequestParam String companytype,*/
+			@RequestParam String flag, UserVO uv) {
+		if(flag.equals("member")){
+			try {
+				if(dao.insert(uv)){
+					return "main2";
+				}else{
+					return "member/registerForm";
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return "member/registerForm";
 	}
 
 	@RequestMapping("/memberlogin") // 로그인 처리
@@ -130,13 +142,8 @@ public class MyController {
 	public String logout(HttpSession session) {
 		session.invalidate();
 		return "main2";
-	}
+	}	
 	
-	@RequestMapping("/nickcheck") // 중복확인 (닉네임)
-	public boolean nickcheck(@RequestParam String nickname) {
-		// 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
-		return false;
-	}
 	/*
 	 * @RequestMapping("/memberdelete") //회원탈퇴 public boolean
 	 * memberdelete(@RequestParam String passwd){ //비밀번호가 일치시 1 틀리면0 return
