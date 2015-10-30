@@ -3,12 +3,57 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+	<script src="../js/jquery.js"></script>
+	<script type="text/javascript">
+		//jQuery 문법 : $()
+		//$(document).ready(); --> HTML문서가 브라우저에 로딩이 끝마쳤을때 window.onload();
+		//$(document).ready(function(){로딩이 끝난 후 실행할 문장});
+		$(document).ready(function(){
+			//alert('JQuery안녕~!!');
+			//$("p").click(function(){//모든 p태그에 대해 클릭 이벤트
+			//$(".test").click(function(){//class속성값이 test인 태그에 대해 클릭 이벤트
+			$("#test").click(function(){//id속성값이 test인 태그에 대해 클릭 이벤트
+				$(this).hide();
+			});
+			$("button").click(function(){
+				//$("#test2").hide();
+				//$(this).hide();
+				//$("*").hide();
+				//$("p.test").hide();
+				//$("h3.test").hide();
+				$("p:last").hide();
+			});		
+			$("input").click(function(){
+				//$("ul li:first-child").hide();
+				$(":button").hide();
+			});			
+		});
+	</script>
 </head>
 <!-- jquery_test.html -->
 <body>
-	<h3>jQuery 테스트</h3>
-	<p>라면</p>
-	<p>도라지</p>
-	<p>양꼬치</p>
+	<h3 class="test">jQuery 테스트</h3>
+	<p class="test">라면</p>
+	<p class="test">도라지</p>
+	<p class="test">양꼬치</p>
+	<p id="test">참치</p>
+	<p id="test2">대하</p>
+	<ul>
+		<li>아침</li>
+		<li>점심</li>
+		<li>저녁</li>
+	</ul>
+	<ul>
+		<li>사과</li>
+		<li>딸기</li>
+		<li>자몽</li>
+	</ul>
+	<ol>
+		<li>HTML</li>
+		<li>Ajax</li>
+		<li>JQuery</li>
+	</ol>
+	<input type="button" value="지우개1">
+	<button>지우개2</button>
 </body>
 </html>

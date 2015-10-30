@@ -26,38 +26,38 @@ public class MyController {
 	@Autowired
 	private PersonDAO dao;
 	
-	@RequestMapping("hello")//1.¿äÃ»ºĞ¼®
+	@RequestMapping("hello")//1.ìš”ì²­ë¶„ì„
 	public ModelAndView hello(){
 	   ModelAndView mav = new ModelAndView();
-	      //mav.addObject("Å°°ª", µ¥ÀÌÅÍ);
-	      // mav.setViewName(ºä¸í);
-	      mav.addObject("k1","±èÁÖ¿ø");//3.¿µ¿ªÀúÀå
-	      mav.setViewName("hello");//4.ÆäÀÌÁö ÁöÁ¤
+	      //mav.addObject("í‚¤ê°’", ë°ì´í„°);
+	      // mav.setViewName(ë·°ëª…);
+	      mav.addObject("k1","ê¹€ì£¼ì›");//3.ì˜ì—­ì €ì¥
+	      mav.setViewName("hello");//4.í˜ì´ì§€ ì§€ì •
 	   return mav;
 	}
 //-------------------------------------------------------------	
-	//´Ü¼øÆäÀÌÁö ÀÌµ¿
+	//ë‹¨ìˆœí˜ì´ì§€ ì´ë™
 	@RequestMapping("/a/gildong")
 	public String hello2(){
 	  return "hello2";	
 	}
 	
 	
-	//¸ğµ¨È£ÃâÈÄ °á°ú¸¦ Ãâ·ÂÇÒ ÆäÀÌÁö·Î ÀÌµ¿
-	@RequestMapping("/print") //URL¿äÃ» SpringMVC/print¿äÃ»
+	//ëª¨ë¸í˜¸ì¶œí›„ ê²°ê³¼ë¥¼ ì¶œë ¥í•  í˜ì´ì§€ë¡œ ì´ë™
+	@RequestMapping("/print") //URLìš”ì²­ SpringMVC/printìš”ì²­
 	public String print(Model model){
 	   Calculator c = new Calculator(123, 456, "+");//3.	
 	   model.addAttribute("key", c.getResult());//3.	   
 	   return "print";	
 	}
 	
-	//°è»ê±âÆû
+	//ê³„ì‚°ê¸°í¼
 	@RequestMapping("/calcForm")
 	public String calcForm(){
 	  return "calcForm";	
 	}
 	
-	//°è»ê
+	//ê³„ì‚°
 	@RequestMapping("/calc")
 	public String calc(HttpServletRequest request,
 			           HttpSession session,
@@ -65,7 +65,7 @@ public class MyController {
 			           @RequestParam int su2,
 			           @RequestParam String oper,
 			           Model model){
-	  //»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ µ¥ÀÌÅÍ ¾ò¾î¿À±â
+	  //ì‚¬ìš©ìê°€ ì…ë ¥í•œ ë°ì´í„° ì–»ì–´ì˜¤ê¸°
 //	  int num1 = Integer.parseInt(request.getParameter("su1"));
 	  
 //	  System.out.println("num1: "+ num1);
@@ -76,14 +76,14 @@ public class MyController {
 	}
 	
 	/*
-	 »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ µ¥ÀÌÅÍ ¾ò¾î¿À±â
+	 ì‚¬ìš©ìê°€ ì…ë ¥í•œ ë°ì´í„° ì–»ì–´ì˜¤ê¸°
 	 case1)
 	    public String m1(HttpServletRequest request){
 	      String name = request.getParameter("name");
 	    }
 	 case2)
 	    public String m1(@RequestParam String name){}
-	                                   ----> Æû³»ÀÇ ÀÌ¸§°ú ÀÏÄ¡ÇÏ´Â º¯¼ö¸í
+	                                   ----> í¼ë‚´ì˜ ì´ë¦„ê³¼ ì¼ì¹˜í•˜ëŠ” ë³€ìˆ˜ëª…
 	 */
 	
 	 @RequestMapping("/form")		
@@ -93,32 +93,32 @@ public class MyController {
 	
 	
 	 @RequestMapping(value="/submitName",method=RequestMethod.GET)
-	 public String getName1(Model model){//GET¿äÃ»
-	    model.addAttribute("key", "GET¿äÃ»!!");
+	 public String getName1(Model model){//GETìš”ì²­
+	    model.addAttribute("key", "GETìš”ì²­!!");
 	   return "print";
 	 }
 	 
 	 @RequestMapping(value="/submitName",method=RequestMethod.POST)
-	 public String getName2(Model model,HttpSession session){//POST¿äÃ»
-		 model.addAttribute("key", "POST¿äÃ»!!");
-		 session.setAttribute("key", "¼¼¼Ç¿¡ ÀúÀåµÈ µ¥ÀÌÅÍ!!");
-	   //return "redirect:print";	//@RequestMapping("/print")È£Ãâ 
+	 public String getName2(Model model,HttpSession session){//POSTìš”ì²­
+		 model.addAttribute("key", "POSTìš”ì²­!!");
+		 session.setAttribute("key", "ì„¸ì…˜ì— ì €ì¥ëœ ë°ì´í„°!!");
+	   //return "redirect:print";	//@RequestMapping("/print")í˜¸ì¶œ 
 	   return "redirect:/view1/t1.jsp";
 	 }
 
-	 @RequestMapping("/inputForm")//¿äÃ»URL
+	 @RequestMapping("/inputForm")//ìš”ì²­URL
 	 public String inputForm(){
-		return "input_form";//½ÇÁ¦ ÆäÀÌÁö Á¤º¸ /WEB-INF/view/input_form.jsp 
+		return "input_form";//ì‹¤ì œ í˜ì´ì§€ ì •ë³´ /WEB-INF/view/input_form.jsp 
 	 }
 	 
 	 
 	 
 	 @RequestMapping("/insert")
 	 public String insert(Person p, Model m){
-		//DBÀÔ·Â		
+		//DBì…ë ¥		
 		try {
 			if(dao.insert(p)){
-				m.addAttribute("msg","°¡ÀÔÀ» ÃàÇÏÇÕ´Ï´Ù!!^^*");
+				m.addAttribute("msg","ê°€ì…ì„ ì¶•í•˜í•©ë‹ˆë‹¤!!^^*");
 				return "result";
 			}
 		} catch (SQLException e) {
@@ -128,45 +128,58 @@ public class MyController {
 		return "redirect:inputForm";
 	 }
 	 
-	 @RequestMapping("list")
+	 @RequestMapping("/list")
 	 public String list(Model model){
 		List<Person> list = dao.selectAll(); 
-		  //model¿µ¿ª == request¿µ¿ª
+		  //modelì˜ì—­ == requestì˜ì—­
 		 model.addAttribute("list", list); 		
 		return "1023/list"; 
 	 }
 	 
-	 @RequestMapping("/updateForm")
+	 @RequestMapping("/updateForm")//ìˆ˜ì •í¼ìš”ì²­ì´ ë“¤ì–´ì˜¨ë‹¤ë©´
 	 public String updateForm(@RequestParam String name,Model model){
-	          //(@RequestParam(name="nas",required=false,defaultValue="¹«¸í") 
-	           //                   String userName){//¼öÁ¤Æû: µ¥ÀÌÅÍÃâ·ÂÇÑ »óÅÂ
-		  //System.out.println("¼öÁ¤ ÀÌ¸§: "+ userName);
-		 
-		model.addAttribute("person", dao.select(name)); 
-		 
+	          //(@RequestParam(name="nas",required=false,defaultValue="ë¬´ëª…") 
+	           //                   String userName){//ìˆ˜ì •í¼: ë°ì´í„°ì¶œë ¥í•œ ìƒíƒœ
+		  //System.out.println("ìˆ˜ì • ì´ë¦„: "+ userName);		 
+		model.addAttribute("person", dao.select(name)); 		 
 		return "1023/update_form"; 
 	 }
 	 
-	 @RequestMapping("/update")//¼öÁ¤¿äÃ»ÀÌ µé¾î¿Â´Ù¸é
-	 public String update(Person p) throws SQLException{
-		 if(dao.update(p))
-			 return "redirect:/list";
-		 else return "1023/update_form"; 
+	 @RequestMapping("/update")//ìˆ˜ì •ìš”ì²­ì´ ë“¤ì–´ì˜¨ë‹¤ë©´
+	 public String update(Person person) throws SQLException{
+		if(dao.update(person)) return "redirect:/list";
+		 else return "1023/update_form";
 	 }
 	 
-	 @RequestMapping("/deleteForm")
-	 public String deleteForm(@RequestParam String name,Model model){
-		model.addAttribute("person", dao.select(name)); 
-		return "1023/delete_form"; 
+	 @RequestMapping("/1029/result1")
+	 public String result1(){
+		return "1029/result1"; 
 	 }
 	 
-	 @RequestMapping("/delete")
-	 public String delete(String name) throws SQLException{
-		 if(dao.delete(name)) return "redirect:/list";
-		 else return "1023/delete_form"; 
+	 @RequestMapping("/1029/result2") //ê°€ìƒê²½ë¡œ, ìš”ì²­ê²½ë¡œ
+	 public String result2(){
+		return "1029/result2";//ì‹¤ì œê²½ë¡œ
 	 }
 	 
+	 
+	 @RequestMapping("/1029/result4")
+	 public String result4(){
+		 return "1029/result4";
+	 }
+	 @RequestMapping("/1029/result5")
+	 public String result5(){
+		 return "1029/result5";
+	 }
+	 @RequestMapping("/1029/result6")
+	 public String result6(){
+		 return "1029/result6";
+	 }
+	 @RequestMapping("/1029/result7")
+	 public String result7(){
+		 return "1029/result7";
+	 }
 }
+
 
 
 
