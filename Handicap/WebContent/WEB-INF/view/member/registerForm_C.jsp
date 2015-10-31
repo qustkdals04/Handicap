@@ -131,8 +131,17 @@ $(document).ready(function() {
 			/* } */
 		})
 		});		
-	$("#findAddress").click(function(){		
-		var address = window.showModalDialog('addressForm', '', 'status:no;;help:no;dialogWidth:350px;dialogHeight:250px;center:yes;scroll:yes');
+	$("#findAddress").click(function(){
+		var dong = "dong="+$("#companyceoname").val();
+ 	    $.ajax({
+ 		  type:'GET',
+ 		  url:'addressList',
+ 		  data:dong,
+ 		  success:function(data){
+ 			 $('div').html(data);
+ 			 //var address = window.showModalDialog('addressForm', data, 'status:no;;help:no;dialogWidth:350px;dialogHeight:250px;center:yes;scroll:yes');
+ 		  }
+ 	    });
 	});
 });
 </script>
@@ -142,6 +151,7 @@ $(document).ready(function() {
 	<center>
 		<h3>기업회원가입폼</h3>
 		<form method="post" name="registForm_C" id="registForm_C">
+			<div></div>
 			<table border="1">
 				<tr>
 					<td>아이디 :</td>

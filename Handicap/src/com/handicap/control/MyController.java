@@ -3,10 +3,13 @@ package com.handicap.control;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -118,12 +121,11 @@ public class MyController {
 
     //주소가저오기
     @RequestMapping("/addressList")
-	public String addressList(HttpSession session, Model model) {
-		String area3 = session.getAttribute("area3").toString();
-		List<ZipcodeVO> list = zd.findAddress(area3);
+	public String addressList(Model model,@RequestParam String dong) {    	
+    	List<ZipcodeVO> list = zd.findAddress(dong);
 		model.addAttribute("addressList", list);
-
-		return "member/addressForm";
+		
+		return "member/addressForm3";
 	}
     
 	// 일반회원가입폼띄우기

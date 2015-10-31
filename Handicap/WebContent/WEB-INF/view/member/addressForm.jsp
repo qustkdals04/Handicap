@@ -1,3 +1,4 @@
+<%@page import="java.awt.Window"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -22,13 +23,17 @@ $(document).ready(function() {
                 self.close();
            }
            
-           $("#findAddressIn").click(function(){
-        	   $("#addressForm").attr({
-					action : "addressList",
-					method : 'post'
-				});
-        	   $("#addressForm").submit();
-           });
+           /* $("#findAddressIn").click(function(){
+        	   var dong = "dong="+$("#dong").val();
+        	   $.ajax({
+        		  type:"get",
+        		  url:"addressList",
+        		  data:dong,
+        		  success:function(data){
+        			   
+        		  }
+        	   });
+           }); */
 });
 </script>
 </head>
@@ -38,21 +43,14 @@ $(document).ready(function() {
 		<form method="post" name="addressForm" id="addressForm">
 			<table border="1">
 				<tr>
-					<td>주소 : </td>
-					<td><input type="text" name="area3" id="area3"
-						style="width: 100; height: 22">(동/면/읍)</td>
-					<td><button type="button" id="findAddressIn">검색</button></td>
-				</tr>
-				<tr>
+					<%-- <c:set var="testArray" value="${window.dialogArguments}"/> --%>
 					<c:forEach var="address" items="${addressList}">
-						<tr>
-							<td>
-								<tt onclick="addchoice(${address.address});">${address.address}</tt>
-							</td>
-						</tr>
+						<td>
+							<tt onclick="addchoice(${address.zipcode}${address.sido }${address.gugun }${address.dong }${address.bunji });">${address.zipcode}+${address.sido }+${address.gugun }+${address.dong }+${address.bunji }</tt>
+						</td>
 					</c:forEach>
 				</tr>
-			</table>
+			</table>			
 		</form>
 	</center>
 </body>

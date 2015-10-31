@@ -65,7 +65,7 @@
    
    <!-- 주소찾기 -->
    <select id="findAddress" parameterType="string" resultType="com.handicap.model.beans.ZipcodeVO">
-   	select * from zipcode where area3 like #{area3}
+   	select * from zipcode where dong=#{dong}
    </select>
    
 </mapper>

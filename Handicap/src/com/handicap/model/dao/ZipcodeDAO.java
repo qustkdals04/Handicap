@@ -15,8 +15,8 @@ public class ZipcodeDAO {
 	@Autowired
 	private SqlSession sqlSession;
 	
-	public List<ZipcodeVO> findAddress(String area3) {
+	public List<ZipcodeVO> findAddress(String dong) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("user.findAddress", area3);
+		return sqlSession.selectList("user.findAddress", dong);
 	}
 }

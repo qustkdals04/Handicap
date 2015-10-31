@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#btn1').click(function(){
+    	  //$.get('../result1',function(data,statusTxt){
+    	  $.get('result1',function(data,statusTxt){
+    		  //data:응답데이터  statusTxt:서버상태 메시지
+            /*$('div').html();
+    		  $('div').text();
+    		  ---->엘리먼트 사이의 컨텐트(내용) 얻어올때
+    		  
+    		  $('div').val(); 
+    		  ---->폼내의 <input>의 value를 얻어올때 
+    		  */
+    		  $('div').text(data);
+    	  });
+      });//get버튼 
+      jQuery('#btn2').click(function(){
+    	  //alert($('#name').val());
+          //alert($('input[name="name"]').val());
+          var nameTxt = $('input[name="name"]').val();
+          var ageTxt = $('input[name="age"]').val();
+          
+          //jQuery.post('result2', 'name=gildong', 
+          jQuery.post('result2', {name:nameTxt, age:ageTxt}, 
+        		 function(data, statusTxt){
+        	     $('div').html(data);          
+          });
+          
+      });//post버튼
+      $('#btn3').click(function(){
+    	  var nameTxt = $('input[name="name"]').val();
+          var ageTxt = $('input[name="age"]').val();
+          
+          $.ajax({
+        	  url:'result2',
+        	  //success(result,status,xhr)
+        	  type:'POST'
+        	  ,
+        	  data:{name:nameTxt, age:ageTxt}
+        	  ,
+        	  success:function(data){
+        		  $('div').text(data); 
+        	  },
+        	  //error(xhr,status,error)
+        	  error:function(a,b,c){
+        		  
+        	  }
+          });
+      });//ajax버튼
+      
+      $('#btn4').click(function(){
+    	 $.ajax({
+                 url:'result4',
+                 type:'GET',
+                 //success(result데이터,status서버상태,xhr)
+                 success:function(data){
+                    $('div').html(data);
+                 }
+    	 });    	 
+      });//버튼4
+      $('#btn5').click(function(){
+    	 $.ajax({
+                 url:'result5',
+                 type:'GET',
+                 //dataType:'xml',  //응답형식'text','html','json','xml'
+                 //success(result데이터,status서버상태,xhr)
+                 success:function(data,xhr){
+                    //루트엘리먼트출력?
+                     //data==Document객체
+                   $('div').text(data.documentElement.tagName);
+                    //책이름출력?
+                 }
+    	 });    	 
+      });//버튼5
+      $('#btn6').click(function(){
+    	 $.ajax({
+                 url:'result6',
+                 type:'GET',
+                 //success(result데이터,status서버상태,xhr)
+                 
+                 success:function(data){
+                    $('div').html(data);
+                 }
+    	 });    	 
+      });//버튼6
+      $('#btn7').click(function(){
+    	 $.ajax({
+                 url:'result7',
+                 type:'GET',
+                 //success(result데이터,status서버상태,xhr)
+                 success:function(data){
+                    $('div').html(data);
+                 }
+    	 });    	 
+      });//버튼
+      
+    });
+  </script>
+</head>
+<!--  1029/ajax_test.html -->
+<body>
+   <form>
+     이름: <input type="text" name="name" id="name"><br>
+     나이: <input type="text" name="age">
+   </form>
+   <button id="btn1">get요청</button>
+   <button id="btn2">post요청</button>
+   <button id="btn3">ajax요청</button><br>
+   <button id="btn4">String fromServer</button>
+   <button id="btn5">XML fromServer</button>
+   <button id="btn6">배열 fromServer</button>
+   <button id="btn7">JSON fromServer</button>
+   <div></div>
+   
+   
+   
+ <!--  <form action="../1028/hello.jsp">
+   <button type="button">get요청</button>
+   <button type="submit">post요청</button>
+  </form> 
+   
+   <br>
+  <form action="../1028/hello.jsp"> 
+   <input type="button" value="나버튼">
+   <input type="submit" value="너버튼" onclick="return gildong()">
+  </form> -->
+</body>
+</html>
+
+
+
+
+
+

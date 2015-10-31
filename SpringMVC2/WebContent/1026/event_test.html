@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript" src="../js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("input").focus(function(){
+				$(this).css("background-color","#dddddd");
+			});
+			$("input").blur(function(){
+				$(this).css("background-color","#ffffff");
+			});
+			$("#p1").on({"click":function(){
+				$(this).css("background-color","red");
+			}, "mouseenter":function(){
+				$(this).css("background-color","green");
+			}, "mouseleave":function(){
+				$(this).css("background-color","blue");
+			}});
+			//$("#p1").on({key:value});
+			$("#bt1").click(function(){
+				// $("p").hide(3000, function(){ alert("숨겻어요") });
+				//toggle 보엿다안보엿다
+				$("p").toggle(3000, function(){});
+			});
+			$("#bt2").click(function(){
+				$("p").show("slow");
+			});
+			$("#p2").click(function(){
+				alert($(this).text());//getText 엘리먼트 내 text얻어오기
+				alert($(this).html());//getHtml 엘리먼트 내 html얻어오기
+				alert($("#name").val());//getValue() 폼 내의 데이터 얻어오기
+			});
+		});
+	</script>
+</head>
+<!-- event_test.html -->
+<body>
+	이름 : <input type="text" name="name" id="name"><br>
+	나이 : <input type="text" name="age">
+	<br>
+	<button id="bt1">숨기기</button>
+	<button id="bt2">보이기</button>
+	<p id="p1">나 피봤어요~!!</p>
+	<p id="p2">동해물과 백두산이 마르고 닳도록<br>하느님이 보우하사</p>
+	<p>남산위에 저 소나무 <br> 철갑을 두른듯</p>
+</body>
+</html>
