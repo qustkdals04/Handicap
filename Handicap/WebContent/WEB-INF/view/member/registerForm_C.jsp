@@ -132,16 +132,7 @@ $(document).ready(function() {
 		})
 		});		
 	$("#findAddress").click(function(){
-		var dong = "dong="+$("#companyceoname").val();
- 	    $.ajax({
- 		  type:'GET',
- 		  url:'addressList',
- 		  data:dong,
- 		  success:function(data){
- 			 $('div').html(data);
- 			 //var address = window.showModalDialog('addressForm', data, 'status:no;;help:no;dialogWidth:350px;dialogHeight:250px;center:yes;scroll:yes');
- 		  }
- 	    });
+ 		var address = window.showModalDialog('addressForm', '', 'status:no;;help:no;dialogWidth:350px;dialogHeight:250px;center:yes;scroll:yes');
 	});
 });
 </script>
@@ -191,7 +182,7 @@ $(document).ready(function() {
 				</tr>
 				<tr>
 					<td>회사주소 :</td>
-					<td><input type="text" name="companyceoname" id="companyceoname"
+					<td><input type="text" name="companyaddress" id="companyaddress"
 						style="width: 150; height: 22"></td>
 					<td><button type="button" id="findAddress">검색</button></td>
 				</tr>

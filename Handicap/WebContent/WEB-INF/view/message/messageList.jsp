@@ -32,7 +32,6 @@ if(pagelink_get==null){
 	pagelink = Integer.parseInt(pagelink_get);
 }
 int rcnt;
-///////////////////////////////메시지검색
 %>
 <body>
 <table width="800" align="center" border="1">           <!-- 메세지 리스트 제목창 -->

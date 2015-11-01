@@ -43,6 +43,12 @@ $(document).ready(function() {
 		<form method="post" name="addressForm" id="addressForm">
 			<table border="1">
 				<tr>
+					<td>주소 : </td>
+					<td><input type="text" name="dong" id="dong"
+						style="width: 100; height: 22">(동/면/읍)</td>
+					<td><button type="button" id="findAddressIn">검색</button></td>
+				</tr>
+				<tr>
 					<%-- <c:set var="testArray" value="${window.dialogArguments}"/> --%>
 					<c:forEach var="address" items="${addressList}">
 						<td>
