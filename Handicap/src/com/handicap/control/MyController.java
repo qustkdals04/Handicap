@@ -1,9 +1,14 @@
 package com.handicap.control;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.catalina.connector.Request;
@@ -56,22 +61,51 @@ public class MyController {
 	}
 
 	//ID.PW찾기
-	@RequestMapping("/findNick") // id로 nickname 찾기
-    public String findNick(@RequestParam String userid, HttpSession Session) {
-       
-	   String nick = dao.findNick(userid);
-      Session.setAttribute("checkNick", nick);
-       return "bbs/idsearchForm";   
-   
+	
+	@RequestMapping("/membersearch")
+	public String membersearch(){
+		return "member/memberSearch";
 	}
 	
-	@RequestMapping("/findPasswd") // id로 pw찾기
-    public String findPasswd(@RequestParam String userid, HttpSession Session) {
-     
-	   String pw = dao.findPasswd(userid);
-      Session.setAttribute("checkpw", pw);
-       return "bbs/pwsearchForm";   
-   
+	@RequestMapping("/findid")//id검색
+	public String findid(HttpServletRequest request, @RequestParam String name, @RequestParam String email, HttpServletResponse response) throws IOException{
+		response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+		PrintWriter writer = response.getWriter();
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("name", name);
+		map.put("email", email);
+		dao.searchId(map);
+		if(dao.searchId(map)==null){
+			writer.println("<script>alert('존재하는 아이디가 없습니다');</script>");
+			writer.flush();
+			return "member/memberSearch";
+		} else{
+			writer.println("<script>alert('"+"찾으신 아이디는 ["+dao.searchId(map)+"] 입니다.');"+"</script>");
+			writer.flush();
+			return "login/login";
+		}		
+	}
+	
+	@RequestMapping("/findpw")//pw검색
+	public String findpw(HttpServletRequest request, @RequestParam String userid, @RequestParam String pquestion, @RequestParam String panswer, HttpServletResponse response) throws IOException{
+		response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+		PrintWriter writer = response.getWriter();
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("userid", userid);
+		map.put("pquestion", pquestion);
+		map.put("panswer", panswer);
+		dao.searchPw(map);
+		if(dao.searchPw(map)==null){
+			writer.println("<script>alert('아이디,비밀번호질문,비밀번호답을 올바르게 입력해주세요..');</script>");
+			writer.flush();
+			return "member/memberSearch";
+		} else{
+			writer.println("<script>alert('"+"찾으신 비밀번호는 ["+dao.searchPw(map)+"] 입니다.');"+"</script>");
+			writer.flush();
+			return "login/login";
+		}		
 	}
 	
 	// 회원가입	 

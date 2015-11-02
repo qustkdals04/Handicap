@@ -68,6 +68,15 @@
    	select * from zipcode where dong=#{dong}
    </select>
    
+   <!-- ID검색 -->
+   <select id="searchId" parameterType="Map" resultType="string">
+   	select userid from member where name=#{name} and email=#{email}
+   </select>
+   <!-- PW검색 -->
+   <select id="searchPw" parameterType="Map" resultType="string">
+   	select passwd from member where userid=#{userid} and pquestion=#{pquestion} and panswer=#{panswer}
+   </select>
+   
 </mapper>
 <!-- user.xml -->
 

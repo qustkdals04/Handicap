@@ -2,6 +2,7 @@ package com.handicap.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import com.handicap.model.beans.UserVO;
 
@@ -15,4 +16,6 @@ public interface UserDAO {
     public List<UserVO> selectAllNick();
     public String selectNick(String userid);
     public String findNick(String userid);
+    public String searchId(Map map);
+    public String searchPw(Map map);
 }

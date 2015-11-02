@@ -2,6 +2,7 @@ package com.handicap.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,5 +68,17 @@ public class UserDAOImpl implements UserDAO {
 	public String findNick(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.findNick", userid);
+	}
+
+	@Override
+	public String searchId(Map map) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.searchId", map);
+	}
+
+	@Override
+	public String searchPw(Map map) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.searchPw", map);
 	}
 }
