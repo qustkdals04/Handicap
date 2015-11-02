@@ -18,8 +18,12 @@ public class MessageDAO {
 		// TODO Auto-generated method stub
 		//메세지 입력 
 		int t = sqlSession.insert("user.messageinsert", mvo);
-		if(t==1) return true;
-		return false;
+		if(t==1){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	

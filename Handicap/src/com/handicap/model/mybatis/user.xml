@@ -34,7 +34,7 @@
    </select>
    
    <!-- 메시지전송 -->
-   <insert id="messageinsert"  parameterType="com.handicap.model.beans.MessageVO">
+   <insert id="messageinsert"  parameterType="com.handicap.model.beans.MessageVO" >
    	insert into message (sender,recipient,contents,senddate)
    	values (#{sender},#{recipient},#{contents},sysdate)
    </insert>

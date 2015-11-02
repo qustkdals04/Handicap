@@ -1575,25 +1575,16 @@ public class MyController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(HttpSession session,Model m, MessageVO mvo, HttpServletResponse response) throws IOException{
+	public String messageinsert(HttpSession session,Model m, MessageVO mvo, HttpServletResponse response) throws IOException, SQLException{
 		String userid = session.getAttribute("memberid").toString();
 		String sender = dao.selectNick(userid);
 		mvo.setSender(sender);		
-		PrintWriter write = response.getWriter();		
-			try {
+		PrintWriter write = response.getWriter();			
 				if (md.insert(mvo)) {
 					m.addAttribute("msg", "메시지 전송 완료!!");
 					return "message/messageList";
-				}else{
-					write.println("<script>alert('존재하지 않는 닉네임입니다.');</script>");
-					write.flush();
-					return "message/messageWrite";
 				}
-			} catch (SQLException e) {
-				write.println(e+"<script>alert('존재하지 않는 닉네임입니다.');</script>");
-				write.flush();
-				return "message/messageWrite";
-			}
+				return "message/messageList";
 		}
 
 	// 메시지 리스트

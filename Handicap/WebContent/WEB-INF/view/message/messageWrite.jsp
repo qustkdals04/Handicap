@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
+var searchNick = false;
 	$(document).ready(function(){
 		$("#send").click(function(){			 //보내기버튼
 			if($("#recipient").val()==""){
@@ -15,9 +16,38 @@
 			} else if($("#contents").val()==""){
 				alert("내용을 입력해주세요..");
 				$("#contents").focus();
+			} else if(searchNick != true){
+				alert("받는사람에 닉네임을 입력하고 검색을 해주세요.");
 			} else{
 				$("#messageWrite").attr({action:'messageWriteAction', method:'post'});
 	            $("#messageWrite").submit();
+			}
+		});
+		$("#findnick").click(function(){
+			var checkNick = "nickname="+$("#recipient").val;
+			if($("#recipient").val()==""){
+				alert("받는사람을 입력해주세요..");
+				$("#recipient").focus();
+			} else{
+				$.ajax({
+		             type:"GET",
+		             url:"nickcheck",
+		             data:checkNick,	             
+		             success:function(data){
+		            	 if($.trim(data)!=""){
+		            		searchNick=true;
+		                    alert("내용을 입력해주세요.");
+		                    $("#recipient").val().html(data);
+		                    $("#contents").focus();
+		                 }else{
+		                 	searchNick=false;
+		                    alert("존재하지 않는 닉네임입니다.");	                   
+		                 }		                
+		             },
+		             error:function(status){
+		            	 alert(status+"error");
+		             }
+				});
 			}
 		});
 	});
@@ -28,7 +58,7 @@
 		<table>
 			<tr>
 				<td>받는사람 : </td>
-				<td><input type="text" name="recipient" id="recipient" style="width: 144px;height:22px; "></td>
+				<td><input type="text" name="recipient" id="recipient" style="width: 144px;height:22px; "></td><td><button type="button" id="findnick">검색</button></td>
 			</tr>
 			<tr>
 				<td>내	용 : </td>

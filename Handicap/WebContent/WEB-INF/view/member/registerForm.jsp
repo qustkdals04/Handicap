@@ -45,9 +45,11 @@ $(document).ready(function() {
              url:"nickcheck",
              data:checkNick,	             
              success:function(data){
-                if($.trim(data)!=""){	                	
+                if($.trim(data)!=""){
+                	chkNick=false;
                    alert("사용불가능합니다");
-                   chkid=false;
+                   $("#nickname").val()=="";
+                   $("#nickname").focus();
                 }else{
                 	chkNick = true;
                    alert("사용가능합니다");	                   
