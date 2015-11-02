@@ -63,7 +63,7 @@
 	    
 			<td width="300" align="right"> 
 		   
-		    <p><font size="2"><a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a href="/Handicap/registerForm" class="a2">회원가입</a>&nbsp;<a href="" class="a3">ID/PW찾기</a></font></p></td>
+		    <p><font size="2"><a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a href="/Handicap/registerForm" class="a2">회원가입</a>&nbsp;<a href="javascrpt:void(0)" class="a3" onclick="window.open('/Handicap/membersearch','popup1','width=400,height=200')">ID/PW찾기</a></font></p></td>
 		</tr> 
 	</table>
 <%

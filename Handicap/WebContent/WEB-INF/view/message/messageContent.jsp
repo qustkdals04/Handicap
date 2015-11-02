@@ -42,8 +42,8 @@
 			<tr>
 
 				<td colspan="3" align="right">
-					<button type="button" style="width:70px;height: 20px;" id="delete">삭제</button>
-					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button>
+					<button type="button" style="width:70px;height: 20px;" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="location.href='/Handicap/messagelist'">취소</button>
 				</td>
 			</tr>
 		</table>

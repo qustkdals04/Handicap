@@ -11,5 +11,5 @@ public interface BbsDAO {
     public boolean delete(int no, int boardno)throws SQLException;
     public boolean update(BbsVO bbs)throws SQLException;
     public BbsVO select(int no, int boardno);//throws SQLException;
-    public List<BbsVO> selectAll();
+    public List<BbsVO> selectAll();    
 }

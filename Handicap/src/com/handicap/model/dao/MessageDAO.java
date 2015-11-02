@@ -2,6 +2,7 @@ package com.handicap.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +48,8 @@ public class MessageDAO {
 	}
 
 	
-	public List<MessageVO> selectAll(String recipient) {//메시지리스트뿌리기
-		return sqlSession.selectList("user.messagelist", recipient);
+	public List<MessageVO> selectAll(Map map) {//메시지리스트뿌리기
+		return sqlSession.selectList("user.messagelist", map);
 	}
 	
 	

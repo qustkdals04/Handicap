@@ -39,7 +39,7 @@
 				<td align="right">
 					
 					<button type="button" style="width:70px;height: 20px;" id="send">보내기</button>
-					<button type="button" style="width:70px;height: 20px;" id="cancel">취소</button>
+					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="location.href='/Handicap/messagelist'">취소</button>
 				</td>
 			</tr>
 		</table>

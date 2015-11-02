@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.MessageVO;
+import com.handicap.model.beans.RowNumVO;
 import com.handicap.model.beans.UserVO;
 import com.handicap.model.beans.ZipcodeVO;
 import com.handicap.model.dao.BbsCommentDAO;
@@ -77,11 +78,11 @@ public class MyController {
 		map.put("email", email);
 		dao.searchId(map);
 		if(dao.searchId(map)==null){
-			writer.println("<script>alert('존재하는 아이디가 없습니다');</script>");
+			writer.println("<script>alert('존재하는 아이디가 없습니다'); </script>");
 			writer.flush();
 			return "member/memberSearch";
 		} else{
-			writer.println("<script>alert('"+"찾으신 아이디는 ["+dao.searchId(map)+"] 입니다.');"+"</script>");
+			writer.println("<script>alert('"+"찾으신 아이디는 ["+dao.searchId(map)+"] 입니다.');"+"self.close();</script>");
 			writer.flush();
 			return "login/login";
 		}		
@@ -102,7 +103,7 @@ public class MyController {
 			writer.flush();
 			return "member/memberSearch";
 		} else{
-			writer.println("<script>alert('"+"찾으신 비밀번호는 ["+dao.searchPw(map)+"] 입니다.');"+"</script>");
+			writer.println("<script>alert('"+"찾으신 비밀번호는 ["+dao.searchPw(map)+"] 입니다.');"+"self.close();</script>");
 			writer.flush();
 			return "login/login";
 		}		
@@ -1574,42 +1575,71 @@ public class MyController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(HttpSession session,Model m, MessageVO mvo) {
+	public String messageinsert(HttpSession session,Model m, MessageVO mvo, HttpServletResponse response) throws IOException{
 		String userid = session.getAttribute("memberid").toString();
 		String sender = dao.selectNick(userid);
-		mvo.setSender(sender);
-		try {
-			if (md.insert(mvo)) {
-				m.addAttribute("msg", "메시지 전송 완료!!");
-				return "message/messageList";
+		mvo.setSender(sender);		
+		PrintWriter write = response.getWriter();		
+			try {
+				if (md.insert(mvo)) {
+					m.addAttribute("msg", "메시지 전송 완료!!");
+					return "message/messageList";
+				}else{
+					write.println("<script>alert('존재하지 않는 닉네임입니다.');</script>");
+					write.flush();
+					return "message/messageWrite";
+				}
+			} catch (SQLException e) {
+				write.println(e+"<script>alert('존재하지 않는 닉네임입니다.');</script>");
+				write.flush();
+				return "message/messageWrite";
 			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
-		return "message/messageList";
-	}
 
 	// 메시지 리스트
 		@RequestMapping("/messagelist")
 		public String messagelist(HttpSession session, Model model,
-								@RequestParam String pageNum) {
+								HttpServletRequest request) {
+			//session에 로그인된 id로 닉네임 찾아오기
 			String userid = session.getAttribute("memberid").toString();
 			String recipient = dao.selectNick(userid);
-			List<MessageVO> list = md.selectAll(recipient);
-			if(pageNum == null){
-				pageNum="1";
-			}
-			int pageSize = 5;
-			int currentPage = Integer.parseInt(pageNum);
-			int startRow = (currentPage  - 1) * pageSize + 1;//한 페이지의 시작글 번호
-			int endRow = currentPage * pageSize;//한 페이지의 마지막 글번호
-			int count = 0;
-			int number = 0;		
 			
+			//페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
+			int pagesize = 5;
+			int pagegroup = 10;
+			
+			//현재 클릭 페이지
+			String pageNumber = request.getParameter("pageNumber");
+			int pageNum = 1;
+			if(pageNumber!= null)pageNum= Integer.parseInt(pageNumber);
+			
+			//발신자가 사용자인 메시지 전체 갯수 초기화 
+			int totalCount = md.selectCount(recipient);
+			//페이지 갯수
+			int totalPageCount = totalCount / pagesize;
+			//0으로 나눠떨어지지 않을경우 페이지 갯수를 +1한다.
+			if(totalCount%pagesize!=0){totalPageCount++;}
+			//startPage or endPage
+			int startPage = (pageNum-1)/pagegroup*pagegroup+1;
+			int endPage = startPage + (pagegroup-1);
+			if(endPage>totalPageCount){endPage=totalPageCount;}
+			//마지막, 처음 rowNumber 선언 및 초기화
+			int endRow = pagesize*pageNum;
+			int startRow = endRow-pagesize+1;
+			
+			RowNumVO rowNumVO = new RowNumVO();
+			rowNumVO.setStartRow(startRow);
+			rowNumVO.setEndRow(endRow);
+			Map map = new HashMap();
+			map.put("recipient", recipient);
+			map.put("startRow", startRow);
+			map.put("endRow", endRow);
+			List<MessageVO> list = md.selectAll(map);			
+			model.addAttribute("messageCount", list.size());
+			model.addAttribute("totalPageCount", totalPageCount);
+			model.addAttribute("startPage", startPage);
+			model.addAttribute("endPage", endPage);
 			model.addAttribute("messageList", list);
-			
-
 			return "message/messageList";
 		}
 		

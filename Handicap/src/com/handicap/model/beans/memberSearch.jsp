@@ -7,9 +7,20 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){	
-		$("#findidForm").hide();
-		$("#findpwForm").hide();
+var domain;
+domain= location.href;
+domain=domain.split("/");
+	$(document).ready(function(){		
+		if(domain[4]=="findid"){
+			$("#findidForm").show();
+			$("#findpwForm").hide();
+		} else if(domain[4]=="findpw"){				
+			$("#findpwForm").show();
+			$("#findidForm").hide();
+		}  else{			
+			$("#findidForm").hide();
+			$("#findpwForm").hide();
+		}		
 		$("#searchid").click(function(){
 			$("#findidForm").show();
 			$("#findpwForm").hide();
@@ -53,24 +64,25 @@
 			}
 		});
 	});
+
 </script>
 </head>
 <body>
 <center>
-	<button type="button" id="searchid" style="width: 150px;height: 50px;">ID찾기</button><button type="button" id="searchpw" style="width: 150px;height: 50px;">PW찾기</button>
+	<button type="button" id="searchid" style="width: 150px;height: 50px; ">ID찾기</button><button type="button" id="searchpw" style="width: 150px;height: 50px;">PW찾기</button>	
 	<form id="findidForm" name="findidForm">
 	<table>
-	<tr><td>이름 :</td><td colspan="2"><input type="text" name="name" id="name" class="findid"></td></tr>
-	<tr><td>이메일 :</td><td><input type="text" name="email" id="email" class="findid"></td><td><button type="button" class="findid" id="btnfindId">찾기</button></td></tr>
+	<tr><td>이름 :</td><td colspan="2"><input type="text" name="name" id="name"></td></tr>
+	<tr><td>이메일 :</td><td><input type="text" name="email" id="email"></td><td><button type="button" id="btnfindId">찾기</button></td></tr>
 	</table>
 	</form>
 	<form id="findpwForm" name="findpwForm">
 	<table>
-	<tr><td>아이디 :</td><td colspan="2"><input type="text" name="userid" id="userid" class="findpw"></td></tr>
-	<tr><td>비밀번호 질문 :</td><td colspan="2"><input type="text" name="pquestion" id="pquestion" class="findpw"></td></tr>
-	<tr><td>비밀번호 답 :</td><td><input type="text" name="panswer" id="panswer" class="findpw"></td><td><button type="button" class="findpw" id="btnfindPw">찾기</button></td></tr>
+	<tr><td>아이디 :</td><td colspan="2"><input type="text" name="userid" id="userid"></td></tr>
+	<tr><td>비밀번호 질문 :</td><td colspan="2"><input type="text" name="pquestion" id="pquestion"></td></tr>
+	<tr><td>비밀번호 답 :</td><td><input type="text" name="panswer" id="panswer"></td><td><button type="button" id="btnfindPw">찾기</button></td></tr>
 	</table>
-	</form>
+	</form>	
 </center>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
-
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 
 
 <title>Insert title here</title>

@@ -11,28 +11,6 @@
 <title>메세지 리스트</title>
 </head>
 <!-- messageList.jsp -->
-<%
-/////////////////////////페이징 준비
-
-int limit = 10;
-int offset = 0;
-int pagelink = 1;
-
-String offset_get = request.getParameter("offset");
-if(offset_get==null){
-	offset = 0;
-} else {
-	offset = Integer.parseInt(offset_get);
-}
-
-String pagelink_get = request.getParameter("pagelink");
-if(pagelink_get==null){
-	pagelink = 1;
-} else {
-	pagelink = Integer.parseInt(pagelink_get);
-}
-int rcnt;
-%>
 <body>
 <table width="800" align="center" border="1">           <!-- 메세지 리스트 제목창 -->
 	<tr>
@@ -54,14 +32,43 @@ int rcnt;
 	 		<c:forEach var="message" items="${messageList}" >
 	 		<tr>  	 		
   	 		<td>${message.sender }</td>
-  	 		<td><a href="/Handicap/messagecontent?messageno=${message.messageno }">${message.contents }</a></td>
+  	 		<td><a href="/Handicap/messagecontent?messageno=${message.messageno }&pageNumber=${pageNumber}">${message.contents }</a></td>
   	 		<td>${message.senddate }</td>
   	 		<td>${message.status }</td>
   	 		</tr>
   	 </c:forEach>
 	</tr>
+	<input type="hidden" name="pageNumber" value="${pageNumber }">
 </table>
- 
-</form>
+<table width="800">
+<tr>
+	<td colspan="5" align="center">
+		<c:if test="${startPage>1 }">
+			<span>
+				<a href="/Handicap/messagelist?pageNumber=${startPage-1}">이전</a>
+			</span>
+		</c:if>
+		<c:forEach var="i" begin="${startPage}" end="${endPage }">
+			<c:choose>
+			<c:when test="${pageNumber==i}">
+			<span>
+				<a href="/Handicap/messagelist?pageNumber=${i}" style="text-decoration:none;color:blue;font-weight:bold;">${i}</a>&nbsp;
+			</span>
+			</c:when>
+			<c:otherwise>
+			<span>
+				<a href="/Handicap/messagelist?pageNumber=${i}" style="text-decoration:none;color:gray;">${i}</a>&nbsp;
+			</span>
+			</c:otherwise>
+			</c:choose>
+		</c:forEach>
+		<c:if test="${endPage<totalPageCount}">
+		<span>
+			<a href="/Handicap/messagelist?pageNumber=${endPage+1 }">다음</a>
+		</span>
+		</c:if>
+	</td>
+</tr>
+</table>
 </body>
 </html>
