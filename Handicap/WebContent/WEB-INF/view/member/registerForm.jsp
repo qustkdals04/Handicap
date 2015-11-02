@@ -46,6 +46,7 @@ $(document).ready(function() {
              data:checkNick,	             
              success:function(data){
                 if($.trim(data)!=""){
+    
                 	chkNick=false;
                    alert("사용불가능합니다");
                    $("#nickname").val()=="";

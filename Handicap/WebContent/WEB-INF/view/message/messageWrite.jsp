@@ -24,7 +24,7 @@ var searchNick = false;
 			}
 		});
 		$("#findnick").click(function(){
-			var checkNick = "nickname="+$("#recipient").val;
+			var checkNick = "nickname="+$("#recipient").val();
 			if($("#recipient").val()==""){
 				alert("받는사람을 입력해주세요..");
 				$("#recipient").focus();
@@ -34,14 +34,15 @@ var searchNick = false;
 		             url:"nickcheck",
 		             data:checkNick,	             
 		             success:function(data){
-		            	 if($.trim(data)!=""){
+		            	 if($.trim(data)!=""){		            		
 		            		searchNick=true;
-		                    alert("내용을 입력해주세요.");
-		                    $("#recipient").val().html(data);
+		                    alert("닉네임이 존재합니다. 내용을 입력해주세요");
 		                    $("#contents").focus();
-		                 }else{
+		                 }else{		                	
 		                 	searchNick=false;
-		                    alert("존재하지 않는 닉네임입니다.");	                   
+		                    alert("존재하지 않는 닉네임입니다.");	
+		                    $("#recipient").val()=="";
+		                    $("#recipient").focus();
 		                 }		                
 		             },
 		             error:function(status){

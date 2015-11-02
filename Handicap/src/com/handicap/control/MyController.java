@@ -147,7 +147,7 @@ public class MyController {
 				model.addAttribute("checkNick", nick);
 				break;			
 			} else{
-				model.addAttribute("checkNick", "");
+				model.addAttribute("checkNick", "");				
 			}
     	}
     	
@@ -1575,16 +1575,19 @@ public class MyController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(HttpSession session,Model m, MessageVO mvo, HttpServletResponse response) throws IOException, SQLException{
+	public String messageinsert(HttpSession session,Model m, MessageVO mvo, HttpServletResponse response, HttpServletRequest request) throws SQLException, IOException{
+		response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
 		String userid = session.getAttribute("memberid").toString();
 		String sender = dao.selectNick(userid);
-		mvo.setSender(sender);		
-		PrintWriter write = response.getWriter();			
-				if (md.insert(mvo)) {
-					m.addAttribute("msg", "메시지 전송 완료!!");
-					return "message/messageList";
+		mvo.setSender(sender);			
+		PrintWriter writer = response.getWriter();
+				if (md.insert(mvo)) {		
+					writer.println("<script>alert('메시지 전송 완료!!');</script>");
+					writer.flush();
+					return "redirect:messagelist";
 				}
-				return "message/messageList";
+				return "redirect:messagelist";
 		}
 
 	// 메시지 리스트
