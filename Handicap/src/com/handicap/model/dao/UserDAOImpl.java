@@ -38,7 +38,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public UserVO select(String userid) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectOne("user.select", userid);
+		return sqlSession.selectOne("user.selectmember", userid);
 	}	
 	@Override
 	public String findPasswd(String userid) {

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -146,62 +147,62 @@ $(document).ready(function() {
 				<tr>
 					<td>아이디 :</td>
 					<td><input type="text" name="userid" id="userid"
-						style="width: 100; height: 22" readonly="readonly"></td>
+						style="width: 100; height: 22" readonly="readonly" value="${user.userid }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>비밀번호 :</td>
 					<td><input type="password" name="passwd" id="passwd"
-						style="width: 100; height: 22"></td>
+						style="width: 100; height: 22" value="${user.passwd }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>비밀번호확인 :</td>
 					<td><input type="password" name="passwd2" id="passwd2"
-						style="width: 100; height: 22"></td>
+						style="width: 100; height: 22" value="${user.passwd }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>이름 :</td>
 					<td><input type="text" name="name" id="name"
-						style="width: 100; height: 22" readonly="readonly"></td>
+						style="width: 100; height: 22" readonly="readonly" value="${user.name }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>닉네임 :</td>
 					<td><input type="text" name="nickname" id="nickname"
-						style="width: 100; height: 22" readonly="readonly"></td>
+						style="width: 100; height: 22" readonly="readonly" value="${user.nickname }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>연락처 :</td>
-					<td><select name="phone1" id="phone1">
+					<td><select name="phone1" id="phone1" >
 							<option value="010">010</option>
 							<option value="011">011</option>
 							<option value="016">016</option>
 							<option value="019">019</option>
 					</select> <input type="text" name="phone2" id="phone2"
-						style="width: 45; height: 22" maxlength="4"> <input
+						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},3,6) }"> <input
 						type="text" name="phone3" id="phone3"
-						style="width: 45; height: 22" maxlength="4"></td>
+						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},6,9) }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>이메일 :</td>
 					<td><input type="text" name="email" id="email"
-						style="width: 150; height: 22"></td>
+						style="width: 150; height: 22" value="${user.email }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>비밀번호질문 :</td>
 					<td><input type="text" name="pquestion" id="pquestion"
-						style="width: 150; height: 22"></td>
+						style="width: 150; height: 22" value="${user.pquestion }"></td>
 					<td></td>
 				</tr>
 				<tr>
 					<td>비밀번호답 :</td>
 					<td><input type="text" name="panswer" id="panswer"
-						style="width: 150; height: 22"></td>
+						style="width: 150; height: 22" value="${user.panswer }"></td>
 					<td></td>
 				</tr>
 				<tr>

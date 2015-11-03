@@ -222,7 +222,7 @@ public class MyController {
 			if (dao.findPasswd(userid).equals(passwd)) {
 				writer.println("<script>alert('비밀번호가 일치합니다.'); self.close();</script>");
 				writer.flush();
-				return "member/mypage/registerupdateForm"; // 비밀번호인증성공 회원정보수정페이지로 이동
+				return "redirect:registerupdateform"; // 비밀번호인증성공 회원정보수정페이지로 이동
 			} else {	
 				writer.println("<script>alert('비밀번호가 일치하지 않습니다.');</script>");
 				writer.flush();
@@ -237,17 +237,17 @@ public class MyController {
 	
 	//회원정보수정 폼띄우기
 	@RequestMapping("/member/mypage/registerupdateform")
-	public String registerupdateform(HttpSession session){
+	public String registerupdateform(HttpSession session, Model model){
 		String userid = session.getAttribute("memberid").toString();
-		int usergrade = dao.searchGrade(userid);
-		if(usergrade==1){
-			
+		int usergrade = dao.searchGrade(userid);		
+		model.addAttribute("user", dao.select(userid));
+		if(usergrade==1){			
+			return "member/mypage/registerupdateForm";
 		}else if(usergrade==2){
-			
+			return "member/mypage/registerupdateForm";
 		}else{
 			return "member/mypage/registerupdateForm";
 		}
-		return "member/mypage/registerupdateForm";
 	}
 	
 	

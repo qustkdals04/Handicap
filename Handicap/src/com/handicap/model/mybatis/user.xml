@@ -93,6 +93,11 @@
    <select id="searchGrade" parameterType="string" resultType="int">
    	select usergrade from member where userid=#{userid}
    </select>
+   
+   <!-- 회원정보 가져오기 -->
+   <select id="selectmember" parameterType="string" resultType="com.handicap.model.beans.UserVO">
+   	select * from member where userid=#{userid}
+   </select>
 </mapper>
 <!-- user.xml -->
 
