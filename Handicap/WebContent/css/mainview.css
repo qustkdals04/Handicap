@@ -1,7 +1,7 @@
 body{
 margin: 0px;
 padding: 0px; 
-background: #ffffff;
+background: #FFFFFF;
 } 
 
 
@@ -17,7 +17,7 @@ margin-left: -538px;
 
 #contents{
 
-width:1000px;
+width:800px;
 float: left;
 padding: 10px;
 }
@@ -29,7 +29,11 @@ float: left;
 padding: 10px;
 }
 
-
+ #CC{
+width:200px;
+float: left;
+padding: 10px;
+} 
 #sidebar{
 
 width:100px;
@@ -38,27 +42,40 @@ padding: 10px;
 margin-left: 1150px;
 }
 
-#leftsubmenu{
-	width :150px;
-	height: 500px;
-	border-top-width:2px; 
-	border-top-style:solid; 
-	border-top-color:gray;
-	border-bottom-color:gray;
-	border-bottom-style:solid;
-	border-bottom-width:2px;
-	
+#news{
 
-
-	background-color: #FFFFFF;
-	
-	
-}
-#mylistTitle2{
-  
-width:200px;
+width:800px;
 float: left;
 padding: 10px;
-    
+}
+
+#Notice{
+
+width:600px;
+float: left;
+padding: 10px;
+}
+
+#JOB{
+
+width:600px;
+float: left;
+padding: 10px;
+}
+
+#bbsmain{
+
+width:1000px;
+float: left;
+padding: 50px;
+
 
 }
+#more{
+	
+width:1000px;
+float: right;
+padding: 10px;
+
+}
+

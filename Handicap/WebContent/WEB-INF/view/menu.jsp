@@ -7,6 +7,13 @@
     <meta name="description" content="The Overflowing church website's main page" />
     <meta name="author" content="unikys@gmail.com" />
     <title></title>
+    <!-- <style>
+
+	 #topMenu2{ background-color:#FFE172;  width:1200px; height:30px; margin-top:30px; float:right;clear:right; }
+	#topMenu{ background-color:#FFE172;  width:1400px; height:50px; margin-top:30px; float:left; clear:left; }
+		</style> -->
+	
+
     <style>
     #topMenu {
               /* 메인 메뉴의 높이 */
@@ -23,8 +30,10 @@
         float: left;                /* 왼쪽으로 나열되도록 설정 */
         line-height: 50px;          /* 텍스트 한 줄의 높이를 30px로 설정 */
         vertical-align: middle;     /* 세로 정렬을 가운데로 설정 */
-        text-align: center;         /* 텍스트를 가운데로 정렬 */
-        position: relative;         /* 해당 li 태그 내부의 top/left 포지션 초기화 */
+       text-align: center;         /* 텍스트를 가운데로 정렬 */
+       position: relative;         /* 해당 li 태그 내부의 top/left 포지션 초기화 */
+   }
+    #topMenu2 ul li{
     }
     .menuLink, .submenuLink {           /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */
         text-decoration:none;               /* a 태그의 꾸밈 효과 제거 */
@@ -39,13 +48,13 @@
 	
     }
     .topMenuLi:hover .menuLink {    /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */
-        color: red;                 /* 글씨 색 빨간색 */
-        background-color: #4d4d4d;  /* 배경색을 밝은 회색으로 설정  메뉴바 색ㄱ깔*/
+        color: write;                 /* 글씨 색 빨간색 */
+        background-color: #FFE172;  /* 배경색을 밝은 회색으로 설정  메뉴바 색깔*/
     }
     .submenuLink {          /* 하위 메뉴의 a 태그 스타일 설정 */
         color: #2d2d2d;             /* 글씨 색을 RGB(2D2D2D)로 설정 */
         background-color: white;    /* 배경색을 흰색으로 설정 */
-        border: solid 1px black;    /* 테두리를 설정 */
+        border: solid 1px write;    /* 테두리를 설정 */
         margin-top: -1px;           /* 위 칸의 하단 테두리와 아래칸의 상단 테두리가 겹쳐지도록 설덩 */
     }
     .longLink {     /* 좀 더 긴 메뉴 스타일 설정 */
@@ -68,6 +77,7 @@
         background-color: #dddddd;  /* 배경을 RGB(DDDDDD)로 설정 */
     }
     </style>
+    
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -76,49 +86,49 @@
 	<div id="topMenu" style="position: relative; z-index: 2; align="center" >
 		<ul>
 			<li class="topMenuLi">
-                <a class="menuLink" href="">소식</a>
+                <a class="menuLink" href="/Handicap/Notice">소식</a>
                 <ul class="submenu">
-                	<li><a href="" class="submenuLink">공지사항</a></li>
-                    <li><a href="" class="submenuLink">뉴스</a><li>
-                    <li><a href="" class="submenuLink">사이트 소개</a></li>
+                	<li><a href="/Handicap/Notice" class="submenuLink" >공지사항</a></li>
+                    <li><a href="/Handicap/News" class="submenuLink">뉴스</a><li>
+                    <li><a href="/Handicap/Introduce" class="submenuLink">사이트 소개</a></li>
                 </ul>
             </li>
-			<li><font size="+4">|</font></li>
+			<li><font size="+1">|</font></li>
             <li class="topMenuLi">
-                <a class="menuLink" href="">일자리 정보</a>
+                <a class="menuLink" href="/Handicap/JOB">일자리 정보</a>
             </li>
-			<li><font size="+4">|</font></li>
+			<li><font size="+1">|</font></li>
             <li class="topMenuLi">
                 <a class="menuLink" href="/Handicap/handicaplaw">장애인 복지법</a>
                 <ul class="submenu">
                     
                 </ul>
             </li>
-			<li><font size="+4">|</font></li>
+			<li><font size="+1">|</font></li>
             <li class="topMenuLi">
-                <a class="menuLink" href="">의료장비</a>
+                <a class="menuLink" href="/Handicap/trade">의료장비</a>
                 <ul class="submenu">
-                	<li><a href="" class="submenuLink">사고팔기</a></li>
-                    <li><a href="" class="submenuLink">질문답변</a></li>
-                    <li><a href="" class="submenuLink">사용후기</a></li>
+                	<li><a href="/Handicap/trade" class="submenuLink">사고팔기</a></li>
+                    <li><a href="/Handicap/question" class="submenuLink">질문답변</a></li>
+                    <li><a href="/Handicap/review" class="submenuLink">사용후기</a></li>
                 </ul>
             </li>
-			<li><font size="+4">|</font></li>
+			<li><font size="+1">|</font></li>
             <li class="topMenuLi">
-                <a class="menuLink" href="">게시판</a>
+                <a class="menuLink" href="/Handicap/body">게시판</a>
                 <ul class="submenu">
-                	<li><a href="" class="submenuLink">신체적장애</a></li>
-                    <li><a href="" class="submenuLink">정신적장애</a></li>
-                    <li><a href="" class="submenuLink">동호회</a></li>
-                    <li><a href="" class="submenuLink">여행</a></li>                   
+                	<li><a href="/Handicap/body" class="submenuLink">신체적장애</a></li>
+                    <li><a href="/Handicap/Mental" class="submenuLink">정신적장애</a></li>
+                    <li><a href="/Handicap/Club" class="submenuLink">동호회</a></li>
+                    <li><a href="/Handicap/travel" class="submenuLink">여행</a></li>                   
                 </ul>
             </li>
-            <li><font size="+4">|</font></li>
+            <li><font size="+1">|</font></li>
             <li class="topMenuLi">
-                <a class="menuLink" href="">고객센터</a>
+                <a class="menuLink" href="/Handicap/QnA">고객센터</a>
                 <ul class="submenu">
-                    <li><a href="" class="submenuLink">Q&A</a></li>
-                    <li><a href="" class="submenuLink">게시판 요청</a></li>
+                    <li><a href="/Handicap/QnA" class="submenuLink">Q&A</a></li>
+                    <li><a href="/Handicap/request" class="submenuLink">게시판 요청</a></li>
                
                 </ul>
             </li>
