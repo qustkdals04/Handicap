@@ -104,6 +104,11 @@
   	update member set passwd=#{passwd}, email=#{email}, pquestion=#{pquestion}, panswer=#{panswer} 
   	where userid=#{userid}
    </update>
+   
+   <!-- 일반회원정보 삭제 -->
+   <delete id="memberdelete" parameterType="string">
+   	delete * from member where userid=#{userid} 
+   </delete>
 </mapper>
 <!-- user.xml -->
 

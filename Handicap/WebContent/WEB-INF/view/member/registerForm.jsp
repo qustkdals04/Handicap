@@ -11,10 +11,15 @@
 $(document).ready(function() {
 	var chkid = false;
 	var chknick = false;
+	var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
+	
 	$("#idCheck").click(function(){	
 		var checkId = "userid="+$("#userid").val();
 		if($("#userid").val()==""){
 			alert("아이디를 입력해주세요");
+			$("#userid").focus();
+		}else if(regId.test($("#userid").val()) == false){
+			alert("아이디는 4자~12자영문과 숫자로 입력해주세요");
 			$("#userid").focus();
 		}else{
 		$.ajax({
@@ -62,7 +67,6 @@ $(document).ready(function() {
 	});
 	
 		$("#register").click(function(){	
-			var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
 			var userid = $("#userid").val();
 			var passwd = $("#passwd").val();
 			var reg_pw = /^[a-z0-9_]{5,12}$/;

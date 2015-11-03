@@ -119,8 +119,7 @@ $(document).ready(function() {
 				<tr>
 					<td></td>
 					<td><button type="button" id="registerupdate">수정</button>
-						<button id="cancel">취소</button></td>
-					
+						<button type="button" onclick="location.href='/Handicap/member/mypage/registerdelete'">회원탈퇴</button></td>
 				</tr>
 			</table>
 			<input type="hidden" name="flag" value="member">
