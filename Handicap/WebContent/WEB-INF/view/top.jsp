@@ -46,7 +46,7 @@
     
 		<td width="300" align="right"> 
 	   
-	    <p><font size="2"><a href="/Handicap/messagelist" class="a1">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
+	    <p><font size="2"><a href="javascrpt:void(0)" class="a1" onclick="window.open('/Handicap/messagelist','popup1','width=800,height=300')">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
 	</tr> 
 </table>
 <%

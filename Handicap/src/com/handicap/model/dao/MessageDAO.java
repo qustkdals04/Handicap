@@ -40,10 +40,15 @@ public class MessageDAO {
 		if(t==1) return true;
 		return false;
 	}
-
+	//받은메시지 갯수
 	public int selectCount(String recipient){		
 		return sqlSession.selectOne("user.messagecount", recipient);
 	}
+	//보낸메시지갯수
+	public int selectsendCount(String recipient){		
+		return sqlSession.selectOne("user.messagesendcount", recipient);
+	}
+	
 	
 	public MessageVO select(int messageno) {
 		// TODO Auto-generated method stub
@@ -51,9 +56,14 @@ public class MessageDAO {
 		return sqlSession.selectOne("user.messagecontent",messageno);
 	}
 
-	
+	//받은메시지 리스트
 	public List<MessageVO> selectAll(Map map) {//메시지리스트뿌리기
 		return sqlSession.selectList("user.messagelist", map);
+	}
+	
+	//보낸메시지 리스트
+	public List<MessageVO> selectsendAll(Map map) {//메시지리스트뿌리기
+		return sqlSession.selectList("user.messagesendlist", map);
 	}
 	
 	

@@ -1582,15 +1582,13 @@ public class MyController {
 		String sender = dao.selectNick(userid);
 		mvo.setSender(sender);			
 		PrintWriter writer = response.getWriter();
-				if (md.insert(mvo)) {		
-					writer.println("<script>alert('메시지 전송 완료!!');</script>");
-					writer.flush();
+				if (md.insert(mvo)) {						
 					return "redirect:messagelist";
 				}
 				return "redirect:messagelist";
 		}
 
-	// 메시지 리스트
+	// 메시지 받은 리스트
 		@RequestMapping("/messagelist")
 		public String messagelist(HttpSession session, Model model,
 								HttpServletRequest request) {
@@ -1636,14 +1634,69 @@ public class MyController {
 			model.addAttribute("messageList", list);
 			return "message/messageList";
 		}
+	
+	//메시지 보낸리스트
+		// 메시지 받은 리스트
+				@RequestMapping("/messagesendlist")
+				public String messagesendlist(HttpSession session, Model model,
+										HttpServletRequest request) {
+					//session에 로그인된 id로 닉네임 찾아오기
+					String userid = session.getAttribute("memberid").toString();
+					String sender = dao.selectNick(userid);
+					
+					//페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
+					int pagesize = 5;
+					int pagegroup = 10;
+					
+					//현재 클릭 페이지
+					String pageNumber = request.getParameter("pageNumber");
+					int pageNum = 1;
+					if(pageNumber!= null)pageNum= Integer.parseInt(pageNumber);
+					
+					//발신자가 사용자인 메시지 전체 갯수 초기화 
+					int totalCount = md.selectsendCount(sender);
+					//페이지 갯수
+					int totalPageCount = totalCount / pagesize;
+					//0으로 나눠떨어지지 않을경우 페이지 갯수를 +1한다.
+					if(totalCount%pagesize!=0){totalPageCount++;}
+					//startPage or endPage
+					int startPage = (pageNum-1)/pagegroup*pagegroup+1;
+					int endPage = startPage + (pagegroup-1);
+					if(endPage>totalPageCount){endPage=totalPageCount;}
+					//마지막, 처음 rowNumber 선언 및 초기화
+					int endRow = pagesize*pageNum;
+					int startRow = endRow-pagesize+1;
+					
+					RowNumVO rowNumVO = new RowNumVO();
+					rowNumVO.setStartRow(startRow);
+					rowNumVO.setEndRow(endRow);
+					Map map = new HashMap();
+					map.put("sender", sender);
+					map.put("startRow", startRow);
+					map.put("endRow", endRow);
+					List<MessageVO> list = md.selectsendAll(map);			
+					model.addAttribute("messageCount", list.size());
+					model.addAttribute("totalPageCount", totalPageCount);
+					model.addAttribute("startPage", startPage);
+					model.addAttribute("endPage", endPage);
+					model.addAttribute("messageList", list);
+					return "message/messagesendList";
+				}	
 		
-	//메시지 상세보기
-	@RequestMapping("messagecontent")
+	//받은메시지 상세보기
+	@RequestMapping("/messagecontent")
 	public String messagecontent(@RequestParam String messageno,Model model){
 		model.addAttribute("messageContent", md.select(Integer.parseInt(messageno)));
 		md.update(Integer.parseInt(messageno));
 		return "message/messageContent";
 	}
+	
+	//보낸메시지 상세보기	
+		@RequestMapping("/messagesendcontent")
+		public String messagesendcontent(@RequestParam String messageno,Model model){
+			model.addAttribute("messagesendContent", md.select(Integer.parseInt(messageno)));
+			return "message/messagesendContent";
+		}
 
 	// 메시지 삭제
 	@RequestMapping("messagedelete")

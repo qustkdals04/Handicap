@@ -28,16 +28,16 @@
 <form id="messageContent" name="messageContent">
 <table style="width: 618px; ">
 			<tr style="width: 495px; ">
-				<td align = "center">보낸사람 : </td>
-				<td style="width: 150px;height:22px;">&nbsp;${messageContent.sender}</td> <!-- 보낸사람 -->
-				<td align="right">${messageContent.senddate }</td>   <!-- 현재시간 -->
+				<td align = "center">받는사람 : </td>
+				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 -->
+				<td align="right">${messagesendContent.senddate }</td>   <!-- 현재시간 -->
 				
 			</tr>
 			
 			<tr>
 				<td align = "center">내	용 : </td>
 				
-				<td  colspan="2"><textarea style="width: 490px; height: 172px" readonly="readonly">${messageContent.contents }</textarea></td>
+				<td  colspan="2"><textarea style="width: 490px; height: 172px" readonly="readonly">${messagesendContent.contents }</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="3" align="right">
@@ -46,7 +46,7 @@
 				</td>
 			</tr>
 		</table>
-		<input type="hidden" name="messageno" value="${messageContent.messageno }">
+		<input type="hidden" name="messageno" value="${messagesendContent.messageno }">
  </form>
 </body>
 </html>

@@ -39,10 +39,16 @@
    	values (#{sender},#{recipient},#{contents},sysdate)
    </insert>
    
-   <!-- 메시지 리스트 -->
+   <!-- 받은메시지 리스트 -->
    <select id="messagelist" parameterType="map" resultType="com.handicap.model.beans.MessageVO">
    	select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
    	from (select * from message where recipient=#{recipient} order by senddate desc)) where r between #{startRow} and #{endRow}
+   </select>
+   
+   <!-- 보낸메시지 리스트 -->
+   <select id="messagesendlist" parameterType="map" resultType="com.handicap.model.beans.MessageVO">
+   	select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
+   	from (select * from message where sender=#{sender} order by senddate desc)) where r between #{startRow} and #{endRow}
    </select>
    
    <!-- select * from message where recipient=#{recipient} order by senddate desc -->
@@ -54,9 +60,14 @@
    	update message set status=2 where messageno=#{messageno}
    </update>
    
-   <!-- 받은사람에따른 총메시지 갯수 구하기 --> 	
+   <!-- 받은메시지리스트 총메시지 갯수 구하기 --> 	
    <select id="messagecount" parameterType="string" resultType="int">
    	select count(*) from message where recipient=#{recipient}
+   </select>
+   
+   <!-- 보낸메시지리스트 총메시지 갯수 구하기 --> 	
+   <select id="messagesendcount" parameterType="string" resultType="int">
+   	select count(*) from message where sender=#{sender}
    </select>
      
    <!-- 메시지 삭제 -->
