@@ -89,6 +89,10 @@
    	select passwd from member where userid=#{userid} and pquestion=#{pquestion} and panswer=#{panswer}
    </select>
    
+   <!-- 로그인한 아이디로 회원등급 가져오기 -->
+   <select id="searchGrade" parameterType="string" resultType="int">
+   	select usergrade from member where userid=#{userid}
+   </select>
 </mapper>
 <!-- user.xml -->
 

@@ -35,18 +35,18 @@
 	if(session.getAttribute("memberid")!=null){
 		memberid = session.getAttribute("memberid").toString();	
 %>
-<table align="top" width="1050" bgcolor="pink" >	
+<table align="top" width="1050">	
 	<tr>
-		<td width="300" height="163"><img src="/Handicap/img/22.png"  onclick="location.href='/Handicap/viewmain'"></td>
+		<td width="300" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157" onclick="location.href='/Handicap/main'"></td>
 	
 		<td width="300" >
 	
 	   
-   		 <p><input type="text"></p></td>
+   		 <p>검색</p></td>
     
 		<td width="300" align="right"> 
 	   
-	    <p><font size="2"><a href="/Handicap/messagelist" class="a1">쪽지함</a>&nbsp;<a href="" class="a2">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
+	    <p><font size="2"><a href="javascrpt:void(0)" class="a1" onclick="window.open('/Handicap/messagelist','popup1','width=800,height=300, top='+(screen.height/2-150)+',left='+(screen.width/2-400)+'')">쪽지함</a>&nbsp;<a href="javascrpt:void(0)" class="a2" onclick="window.open('/Handicap/member/mypage/pwcheck','popup1','width=400,height=200, top='+(screen.height/2-100)+',left='+(screen.width/2-200)+'')">마이페이지</a>&nbsp;<a href="/Handicap/logout" class="a3">로그아웃</a></font></p></td>
 	</tr> 
 </table>
 <%
@@ -54,16 +54,16 @@
 %>
 		<table align="top" width="1050">	
 		<tr>
-			<td width="300" height="163"><img src="/Handicap/img/22.png" width="276" height="157" onclick="location.href='/Handicap/main'"></td>
+			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157" onclick="location.href='/Handicap/main'"></td>
 		
 			<td width="300" >
 		
 		   
-	   		 <p><input type="text"></p></td>
+	   		 <p>검색</p></td>
 	    
 			<td width="300" align="right"> 
 		   
-		    <p><font size="2"><a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a href="/Handicap/registerForm" class="a2">회원가입</a>&nbsp;<a href="" class="a3">ID/PW찾기</a></font></p></td>
+		    <p><font size="2"><a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a href="/Handicap/registerForm" class="a2">회원가입</a>&nbsp;<a href="javascrpt:void(0)" class="a3" onclick="window.open('/Handicap/membersearch','popup1','width=400,height=200, top='+(screen.height/2-100)+',left='+(screen.width/2-200)+'')">ID/PW찾기</a></font></p></td>
 		</tr> 
 	</table>
 <%

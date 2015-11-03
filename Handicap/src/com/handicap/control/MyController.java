@@ -116,14 +116,7 @@ public class MyController {
 	}
 	
 	// 회원가입	 
-	/*// 중복체크팝업
-	   @RequestMapping("IdCheck")
-	   public String IdCheck() {
-	      return "member/IdCheck";
-	   }
-*/
-	
-    
+	    
     @RequestMapping("/idcheck") // 중복확인 (아이디)
     public String idcheck(@RequestParam String userid, Model model) {
        // 있을땐 1 없을땐0 List 형식의 변수에 넣어서 ModelAndView 형태로 나타냄
@@ -185,13 +178,7 @@ public class MyController {
 	@RequestMapping("/addressForm")
 	public String addressForm(){
 		return "member/addressForm";
-	}
-
-	// 로그인폼띄우기
-	@RequestMapping("/loginForm")
-	public String login() {
-		return "login/login";
-	}
+	}	
 
 	@RequestMapping("/register") // 일반회원가입정보 얻어오기
 	public String register(@RequestParam String phone1,
@@ -216,6 +203,63 @@ public class MyController {
 		return "member/registerForm";
 	}
 
+	//회원정보수정
+	
+	//회원정보수정 비밀번호체크폼
+	@RequestMapping("/member/mypage/pwcheck")
+	public String pwcheck(){
+		return "member/mypage/pwCheck";
+	}
+	
+	//회원정보수정 비밀번호체크폼처리
+	@RequestMapping("/member/mypage/pwcheckaction")
+	public String pwcheckaction(HttpSession session,@RequestParam String passwd, HttpServletResponse response, HttpServletRequest request) throws IOException{
+		response.setContentType("text/html; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+		String userid = session.getAttribute("memberid").toString();
+		PrintWriter writer = response.getWriter();
+		if (dao.findPasswd(userid) != null) {
+			if (dao.findPasswd(userid).equals(passwd)) {
+				writer.println("<script>alert('비밀번호가 일치합니다.'); self.close();</script>");
+				writer.flush();
+				return "member/mypage/registerupdateForm"; // 비밀번호인증성공 회원정보수정페이지로 이동
+			} else {	
+				writer.println("<script>alert('비밀번호가 일치하지 않습니다.');</script>");
+				writer.flush();
+				return "member/mypage/pwCheck"; //비밀번호인증실패
+			}
+		} else {
+			writer.println("<script>alert('비밀번호가 일치하지 않습니다.');</script>");
+			writer.flush();
+			return "member/mypage/pwCheck";
+		}
+	}
+	
+	//회원정보수정 폼띄우기
+	@RequestMapping("/member/mypage/registerupdateform")
+	public String registerupdateform(HttpSession session){
+		String userid = session.getAttribute("memberid").toString();
+		int usergrade = dao.searchGrade(userid);
+		if(usergrade==1){
+			
+		}else if(usergrade==2){
+			
+		}else{
+			return "member/mypage/registerupdateForm";
+		}
+		return "member/mypage/registerupdateForm";
+	}
+	
+	
+	
+	//로그인 
+	
+	// 로그인폼띄우기
+		@RequestMapping("/loginForm")
+		public String login() {
+			return "login/login";
+		}
+	
 	@RequestMapping("/memberlogin") // 로그인 처리
 	public String login(@RequestParam String userid,
 			@RequestParam String passwd,
@@ -1585,7 +1629,7 @@ public class MyController {
 		response.setContentType("text/html; charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
 		String userid = session.getAttribute("memberid").toString();
-		String sender = dao.selectNick(userid);
+		String sender = dao.findNick(userid);
 		mvo.setSender(sender);			
 		PrintWriter writer = response.getWriter();
 				if (md.insert(mvo)) {						
@@ -1600,7 +1644,7 @@ public class MyController {
 								HttpServletRequest request) {
 			//session에 로그인된 id로 닉네임 찾아오기
 			String userid = session.getAttribute("memberid").toString();
-			String recipient = dao.selectNick(userid);
+			String recipient = dao.findNick(userid);
 			
 			//페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
 			int pagesize = 5;
@@ -1648,7 +1692,7 @@ public class MyController {
 										HttpServletRequest request) {
 					//session에 로그인된 id로 닉네임 찾아오기
 					String userid = session.getAttribute("memberid").toString();
-					String sender = dao.selectNick(userid);
+					String sender = dao.findNick(userid);
 					
 					//페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
 					int pagesize = 5;

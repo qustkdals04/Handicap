@@ -59,12 +59,6 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public String selectNick(String userid) {
-		// TODO Auto-generated method stub
-		return sqlSession.selectOne("user.findNick", userid);
-	}
-
-	@Override
 	public String findNick(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.findNick", userid);
@@ -80,5 +74,11 @@ public class UserDAOImpl implements UserDAO {
 	public String searchPw(Map map) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.searchPw", map);
+	}
+
+	@Override
+	public int searchGrade(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.searchGrade", userid);
 	}
 }
