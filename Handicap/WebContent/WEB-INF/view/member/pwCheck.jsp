@@ -24,10 +24,11 @@
 </script>
 </head>
 <body>
+<center>
 <table>
-	<tr><td><%@include file="../../viewtop.jsp" %></td><td></td></tr>	
-	<tr><td><%@include file="../../menu.jsp" %></td><td></td></tr>
-	<tr><td>
+	<tr><td><%@include file="../viewtop.jsp" %></td><td></td></tr>	
+	<tr><td><%@include file="../menu.jsp" %></td><td></td></tr>
+	<tr><td valign="top">
 	<h3>비밀번호확인</h3>
 	<form name="pwcheckForm" id="pwcheckForm">
 		<table>
@@ -38,8 +39,9 @@
 			</tr>
 		</table>
 	</form>
-	</td><td><%@include file="../../banner.jsp" %> </td></tr>
+	</td><td><%@include file="../banner.jsp" %> </td></tr>
 	
 	</table>
+	</center>
 </body>
 </html>

@@ -98,6 +98,12 @@
    <select id="selectmember" parameterType="string" resultType="com.handicap.model.beans.UserVO">
    	select * from member where userid=#{userid}
    </select>
+   
+   <!-- 일반회원정보 업데이트 -->
+   <update id="memberupdate" parameterType="com.handicap.model.beans.UserVO">
+  	update member set passwd=#{passwd}, email=#{email}, pquestion=#{pquestion}, panswer=#{panswer} 
+  	where userid=#{userid}
+   </update>
 </mapper>
 <!-- user.xml -->
 

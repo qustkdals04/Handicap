@@ -9,6 +9,8 @@
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+	var chkid = false;
+	var chknick = false;
 	$("#idCheck").click(function(){	
 		var checkId = "userid="+$("#userid").val();
 		if($("#userid").val()==""){
@@ -59,28 +61,25 @@ $(document).ready(function() {
 		}
 	});
 	
-	$("#register").click(function() {
-		var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
-		var userid = $("#userid").val();
-		var passwd = $("#passwd").val();
-		var reg_pw = /^[a-z0-9_]{5,12}$/;
-		var email = $("#email").val();
-		var phone2 = $("#phone2").val();
-		var phone3 = $("#phone3").val();
-		var regPhone2 = /[^0-9]$/g;
-		var regPhone3 = /[^0-9]$/g;
-		var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-		
-		var chkid = false;
-		var chknick = false;
-		$("#register").click(function(){			
-			if (userid == "") {
+		$("#register").click(function(){	
+			var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
+			var userid = $("#userid").val();
+			var passwd = $("#passwd").val();
+			var reg_pw = /^[a-z0-9_]{5,12}$/;
+			var email = $("#email").val();
+			var phone2 = $("#phone2").val();
+			var phone3 = $("#phone3").val();
+			var regPhone2 = /[^0-9]$/g;
+			var regPhone3 = /[^0-9]$/g;
+			var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+			
+			if ($("#userid").val() == "") {
 				alert("아이디를 입력해주세요..");
 				$("#userid").focus();
-			}else if(regId.test(userid) == false){
+			}else if(regId.test($("#userid").val()) == false){
 				alert("아이디는 4자~12자영문과 숫자로 입력해주세요");
 				$("#userid").focus();
-			}else if (reg_pw.test(passwd) == false) {
+			}else if (reg_pw.test($("#passwd").val()) == false) {
 				alert("비밀번호를 입력해주세요..");
 				$("#passwd").focus();
 			} else if ($("#passwd2").val() == "") {
@@ -129,9 +128,7 @@ $(document).ready(function() {
 				$("#registForm").submit();
 				}
 			/* } */
-		})
-		});
-		
+		});		
 });
 </script>
 </head>

@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean update(UserVO user) throws SQLException {
-		int t = sqlSession.update("user.update",user);
+		int t = sqlSession.update("user.memberupdate",user);
 		if(t>0) return true;
 		return false;
 	}

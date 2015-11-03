@@ -208,7 +208,7 @@ public class MyController {
 	//회원정보수정 비밀번호체크폼
 	@RequestMapping("/member/mypage/pwcheck")
 	public String pwcheck(){
-		return "member/mypage/pwCheck";
+		return "member/pwCheck";
 	}
 	
 	//회원정보수정 비밀번호체크폼처리
@@ -220,18 +220,18 @@ public class MyController {
 		PrintWriter writer = response.getWriter();
 		if (dao.findPasswd(userid) != null) {
 			if (dao.findPasswd(userid).equals(passwd)) {
-				writer.println("<script>alert('비밀번호가 일치합니다.'); self.close();</script>");
-				writer.flush();
+				/*writer.println("<script>alert('비밀번호가 일치합니다.'); self.close();</script>");
+				writer.flush();*/
 				return "redirect:registerupdateform"; // 비밀번호인증성공 회원정보수정페이지로 이동
 			} else {	
 				writer.println("<script>alert('비밀번호가 일치하지 않습니다.');</script>");
 				writer.flush();
-				return "member/mypage/pwCheck"; //비밀번호인증실패
+				return "member/pwCheck"; //비밀번호인증실패
 			}
 		} else {
 			writer.println("<script>alert('비밀번호가 일치하지 않습니다.');</script>");
 			writer.flush();
-			return "member/mypage/pwCheck";
+			return "member/pwCheck";
 		}
 	}
 	
@@ -242,15 +242,22 @@ public class MyController {
 		int usergrade = dao.searchGrade(userid);		
 		model.addAttribute("user", dao.select(userid));
 		if(usergrade==1){			
-			return "member/mypage/registerupdateForm";
+			return "member/registerupdateForm";
 		}else if(usergrade==2){
-			return "member/mypage/registerupdateForm";
+			return "member/registerupdateForm";
 		}else{
-			return "member/mypage/registerupdateForm";
+			return "member/registerupdateForm";
 		}
 	}
 	
-	
+	//회원정보수정처리
+	@RequestMapping("/member/mypage/registerupdateformaction")
+	public String registerupdateformaction(UserVO vo) throws SQLException{
+		System.out.println(vo.getUserid());
+		System.out.println(vo.getName());
+		dao.update(vo);
+		return "viewmain";
+	}
 	
 	//로그인 
 	
@@ -1752,8 +1759,8 @@ public class MyController {
 	@RequestMapping("messagedelete")
 	public String messagedeleteForm(@RequestParam String messageno) throws SQLException {
 		if(md.delete(Integer.parseInt(messageno))){
-			return "message/messageList";
+			return "redirect:messagelist";
 		}
-		return "message/messageList";				
+		return "redirect:messagelist";				
 	}
 }
