@@ -11,11 +11,11 @@ var domain;
 domain= location.href;
 domain=domain.split("/");
 	$(document).ready(function(){	
-		$("#findidForm").hide();
-		$("#findpwForm").hide();
 		if(domain[4]=="findid"){
 			$("#findidForm").show();
+			$("#findpwForm").hide();
 		} else if (domain[4]=="findpw"){
+			$("#findidForm").hide();
 			$("#findpwForm").show();
 		} else {
 			$("#findidForm").hide();
