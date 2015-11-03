@@ -49,10 +49,16 @@ public class MyController {
 	@Autowired
 	private ZipcodeDAO zd;
 
-	// 메인페이지
-	@RequestMapping("/main") // main페이지
-	public String main() {
+	
+	//옛날메인
+	@RequestMapping("/oldmain")
+	public String main2(){
 		return "main2";
+	}
+	// 메인페이지
+	@RequestMapping("/main") // 두번째main페이지
+	public String main() {
+		return "viewmain";
 	}
 	
 	//장애인복지법

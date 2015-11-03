@@ -29,11 +29,16 @@
 		});
 	});
 </script>
-
 </head>
 <body>
-	<%@include file="./top.jsp" %>
-	<%@include file="./menu.jsp" %>
+<table width="800">
+	
+	
+	
+
+	<tr><td><%@include file="./top.jsp" %></td><td></td></tr>
+	<tr><td><%@include file="./menu.jsp" %></td><td></td></tr>
+	<tr><td>
 	<!-- 장애인 관련 법 -->
 	-
 	<a id="button1" href="javascript:">제1조(목적)</a>
@@ -350,10 +355,10 @@
 			<td align="center">300</td>
 		</tr>
 	</table>
+</td><td><%@include file="banner.jsp" %>  </td></tr>
 
 
 
-
-
+</table>
 </body>
 </html>

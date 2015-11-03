@@ -8,7 +8,7 @@
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 var domain;
-domain= location.href;
+domain=location.href;
 domain=domain.split("/");
 	$(document).ready(function(){	
 		if(domain[4]=="findid"){
