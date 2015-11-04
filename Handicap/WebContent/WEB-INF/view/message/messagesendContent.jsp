@@ -27,25 +27,36 @@
 <body>
 	<%-- <!-- 상세보기 -->--%>
 <form id="messageContent" name="messageContent">
-<table style="width: 618px; " class="basic">
-			<tr style="width: 495px; ">
-				<td align = "center" width="100px" color = "#678197">받는사람  </td>
-				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 -->
-				<td align="right">${messagesendContent.senddate }</td>   <!-- 현재시간 -->
+<table class="gmlwn">
+		<tr>
+			<td>●상세보기(보낸)</td>
+		</tr>
+	</table>
+<table class="list1">
+			<tr >
+			<td colspan="2" align='left' width="600px">받는사람 : ${messagesendContent.recipient}</td>
+				<%-- <td align = "center" width="100px" color = "#678197">받는사람  </td>
+				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 --> --%>
+				<td align="right" width="200px">${messagesendContent.senddate }</td>   <!-- 현재시간 -->
 				
 			</tr>
 			
 			<tr>
-				<td align = "center" color = "#678197">내	용  </td>
 				
-				<td  colspan="2" ><textarea style="width: 490px; height: 172px" readonly="readonly">${messagesendContent.contents }</textarea></td>
+				
+				<td  colspan="3" >
+				<textarea rows="10" cols="50" readonly="readonly" style="width: 100%; height: 278px;">
+				${messagesendContent.contents }</textarea></td>
 			</tr>
 			<tr>
-				<td colspan="3" align="right">
-					<!-- <button type="button" style="width:70px;height: 20px;" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button> -->
-					<img src = "/Handicap/img/deleteB.png" id="delete" onclick="location.href='/Handicap/messagedelete'" style="width: 95px; height: 38px; ">
-					<!-- <button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button> -->
-					<img src = "/Handicap/img/closeB.png" id="cancel" onclick="history.back()" style="width: 95px; height: 38px; ">
+			<td width="600px">
+			
+			</td>
+				<td colspan="2" align="right" width="200px" >
+					<button id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button  id="cancel" onclick="history.back()">취소</button> 
+
 				</td>
 			</tr>
 		</table>
