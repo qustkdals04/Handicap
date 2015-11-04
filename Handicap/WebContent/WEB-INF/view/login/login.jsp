@@ -75,7 +75,7 @@
 								size="5" style="font-weight: bold;">User Id</font></td>
 							<td width="200px"><pre></pre><input type="text"
 								name="userid" size="10" id="userid" style="width: 200px"></td>
-							<td rowspan="2" > <pre></pre><img src="img/loginok.JPG" width="80" height="60" id="login"></td>
+							<td rowspan="2" > <pre></pre><img src="img/loginok2.jpg" width="80" height="60" id="login"></td>
 
 
 
@@ -102,7 +102,7 @@
 									<pre></pre>
 									<font style="font-size: 10; color: red;">${status}</font>
 									<br>
-									<img src="img/regi.JPG" id="register" style="width: 100px; height: 35px;">
+									<img src="img/regi2.jpg" id="register" style="width: 100px; height: 35px;">
 									<pre></pre>
 								</div> <!-- </th>
 							<th style="width: 100px" align="center" valign="bottom">
