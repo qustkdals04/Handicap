@@ -70,9 +70,9 @@
 </head>
 <body>
 	<center>
-		<img src="img/idsearch .jpg" id="searchid"
+		<img src="/Handicap/img/idsearch.jpg" id="searchid"
 			style="width: 150px; height: 50px;">
-		<img src="img/pwsearch2.jpg" id="searchpw"
+		<img src="/Handicap/img/pwsearch2.jpg" id="searchpw"
 			style="width: 150px; height: 50px;">
 		<form id="findidForm" name="findidForm">
 			<table class="mem">
