@@ -6,6 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+	<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/main.css">
 <script type="text/javascript">
 	$(document).ready(function(){
 		$("#btnOk").click(function(){
@@ -26,22 +30,58 @@
 <body>
 <center>
 <table>
+<div id="wrapper">
 	<tr><td><%@include file="../top.jsp" %></td><td></td></tr>	
 	<tr><td><%@include file="../menu.jsp" %></td><td></td></tr>
 	<tr><td valign="top">
-	<h3>비밀번호확인</h3>
-	<form name="pwcheckForm" id="pwcheckForm">
-		<table>
+
+	<form name="pwcheckForm" id="pwcheckForm" style="width: 249px; ">
+	<div id="dd" align="center">
+	
+	
+	<pre style="height: 69px; "></pre>
+		<table align="center" style="width: 634px; " class="mem"  width="800px">
+		<tr>
+							<!-- 개인정보 메인 -->
+							
+							<td colspan="2" 
+								style="font-size: xx-large; font-weight: bold; color: black;  " align="center"><pre></pre>비밀번호 확인<pre></pre>
+							</td>
+							
+							</tr>
+							<tr>
+									<th style="color:silver; ">  통합회원 정보 수정을 위해  비밀번호 확인 절차를 거칩니다.</th>
+							</tr>
+							
+			
 			<tr>
-				<td>
-					<input type="password" name="passwd" id="passwd"><button type="button" id="btnOk">확인</button>
-				</td>
+				<td align="center">
+				<pre></pre>
+					<input type="password" name="passwd" id="passwd" ></td>
+				
 			</tr>
+			<tr>
+					<td><pre></pre> ※ 회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시한번 입력하시기 바랍니다. </td>
+			</tr>
+			<tr>
+				<td align="center"><pre ></pre><img src="/Handicap/img/ok2.png" width="80" style="height: 25px; " id="btnOk" ><pre></pre></td>
+			</tr>
+			<tr>
+				<th></th>
+			</tr>
+			
 		</table>
+		
+		</div>
+		
 	</form>
+	
 	</td><td><%@include file="../banner.jsp" %> </td></tr>
 	
 	</table>
+	
 	</center>
+	
 </body>
+
 </html>
