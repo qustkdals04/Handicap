@@ -85,7 +85,13 @@ public class MemberController {
 
 		return "member/addressForm3";
 	}
-
+	
+	//회원가입 종류 
+	@RequestMapping("/registertype") 
+	public String retype(){
+		return "member/registerFormSelect";
+	}
+	
 	// 일반회원가입폼띄우기
 	@RequestMapping("/registerForm")
 	public String registerForm() {
@@ -272,9 +278,12 @@ public class MemberController {
 
 	// 회원탈퇴
 	@RequestMapping("/member/mypage/registerdelete")
-	public String registerdelete(@RequestParam String userid) throws SQLException {
-		dao.delete(userid);
-		return "redirect:logout";
+	public String registerdelete(HttpSession session) throws SQLException {
+		String userid = session.getAttribute("memberid").toString();
+		
+		dao.delete(dao.findNick(userid));
+		session.invalidate();//로그인기록삭제
+		return "viewmain";
 	}
 
 	// -------------------------메시지---------------------------------//

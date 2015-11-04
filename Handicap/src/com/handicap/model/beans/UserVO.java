@@ -11,7 +11,7 @@ public class UserVO {
 	private String pquestion;
 	private String panswer;
 	private int usergrade;
-	private int companyno;
+	private String companyno;
 	private String companyceoname;
 	private String companyaddr;
 	private String companytype;
@@ -71,10 +71,10 @@ public class UserVO {
 	public void setUsergrade(int usergrade) {
 		this.usergrade = usergrade;
 	}
-	public int getCompanyno() {
+	public String getCompanyno() {
 		return companyno;
 	}
-	public void setCompanyno(int companyno) {
+	public void setCompanyno(String companyno) {
 		this.companyno = companyno;
 	}
 	public String getCompanyceoname() {

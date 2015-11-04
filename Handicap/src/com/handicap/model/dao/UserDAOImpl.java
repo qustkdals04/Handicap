@@ -22,8 +22,8 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean delete(String userid) throws SQLException {
-		int t = sqlSession.delete("user.memberdelete",userid);
+	public boolean delete(String nickname) throws SQLException {
+		int t = sqlSession.delete("user.memberdelete",nickname);
 		if(t>0) return true;//name�� primary key��� if(t==1)
 		return false;
 	}

@@ -107,7 +107,7 @@
    
    <!-- 일반회원정보 삭제 -->
    <delete id="memberdelete" parameterType="string">
-   	delete * from member where userid=#{userid} 
+   	delete from member where nickname=#{nickname} 
    </delete>
 </mapper>
 <!-- user.xml -->

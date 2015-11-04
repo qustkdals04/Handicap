@@ -8,7 +8,7 @@ import com.handicap.model.beans.UserVO;
 
 public interface UserDAO {
 	public boolean insert(UserVO user)throws SQLException;//일반회원가입
-    public boolean delete(String userid)throws SQLException;//회원탈퇴
+    public boolean delete(String nickname)throws SQLException;//회원탈퇴
     public boolean update(UserVO user)throws SQLException;//회원정보수정
     public UserVO select(String userid);
     public String findPasswd(String userid);//아이디에 맞는 패스워드 찾아오기
