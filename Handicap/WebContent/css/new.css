@@ -74,6 +74,17 @@ table.job td {
     border-bottom: 5px solid #F4B649;
  	 margin : 10px; 
 }  
+
+ table.re2 th{
+  	
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-bottom: 5px solid #F4B649;
+ 	 margin : 10px; 
+ 	 
+}  
 table.mem th{
   	
     border-collapse: separate;

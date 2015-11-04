@@ -282,14 +282,14 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 			<form method="post" name="registForm" id="registForm">
 				<div id="dd" align="center">
-					<table width="800px" class="re">
+					<table  class="re2">
 
 
 
 						<tr>
 							<!-- 개인정보 메인 -->
 
-							<th colspan="3" class="re"
+							<th colspan="3" class="re2"
 								style="font-size: x-large; font-weight: bold; color: silver;">일반회원가입</th>
 						<tr>
 
@@ -298,18 +298,19 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 							<td style="width: 176px; "><pre> </pre> <input type="text" name="userid"
 								id="userid" style="vertical-align:; width: 150; height: 28px">
 								</td>
-								<td style="width: 527px; "><pre> </pre>
-								 <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;" id="idCheck" >
-								
-								<pre> </pre></td>
+								<td ><pre> </pre>
+
+								 <button class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
+							
+								</td>
 
 
 						</tr>
 
 
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*비밀번호</td>
-							<td colspan="2" id="pwExcept"><input type="password" name="passwd" id="passwd"
+							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*비밀번호</td>
+							<td colspan="2" id="pwExcept"><pre>  </pre><input type="password" name="passwd" id="passwd"
 								style="vertical-align:; width: 150; height: 28px"><pre>   </pre> 
 							</td>						
 
@@ -335,14 +336,24 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 						</tr>
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*닉네임</td>
+							<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*닉네임</td>
+
+							<td style="width: 176px; "><pre> </pre> <input type="text"  name="nickname" id="nickname"
+								 style="vertical-align:; width: 150; height: 28px">
+								</td>
+								<td ><pre> </pre>
+								
+								 <button class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
+							
+								</td>
+							<!-- <td width="150" align="left" style="font-weight: bold;">*닉네임</td>
 							<td><input type="text" name="nickname" id="nickname"
 								style="vertical-align:; width: 150; height: 28px">
 								</td>
-								<td style="width: 593px; "><pre></pre>
-								 <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;"  id="nickCheck"> 
-								 <!-- <button type="button" id="nickCheck">닉네임 중복 검사</button>	 -->
-								<pre> </pre></td>
+								<td style="width: 593px; ">
+								 <button class="ml-button"  style="font-weight: bold;" id="nickCheck">중복체크</button>
+								 <button type="button" id="nickCheck">닉네임 중복 검사</button>	
+								</td> -->
 
 						</tr>
 						<tr>
@@ -386,9 +397,9 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<td></td>
 							<td colspan="2"><pre> </pre>
-							<img src="/Handicap/img/regi2.jpg" width="115" style="height: 30px;" id="register"> 
-							<img src="/Handicap/img/cel.jpg" width="115" style="height: 30px;"
-								id="cancel"> <!-- <button type="button" id="register">가입</button>
+							 <button class="ml-button"  style="font-weight: bold;" id="register">가입</button>
+							 <button class="ml-button"  style="font-weight: bold;"
+								id="cancel">취소</button> <!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
 
 						</tr>
