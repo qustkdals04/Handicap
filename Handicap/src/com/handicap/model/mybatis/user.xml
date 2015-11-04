@@ -77,7 +77,12 @@
    
    <!-- 주소찾기 -->
    <select id="findAddress" parameterType="string" resultType="com.handicap.model.beans.ZipcodeVO">
-   	select * from zipcode where dong=#{dong}
+   	select * from zipcode where dong like #{dong}
+   </select>
+
+	<!-- 사업자번호목록 -->
+   <select id="selectNo" resultType="com.handicap.model.beans.UserVO" >
+     select companyno from member
    </select>
    
    <!-- ID검색 -->

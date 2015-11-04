@@ -15,184 +15,242 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$("#idCheck").click(function() {
-							var checkId = "userid=" + $("#userid").val();
-							if ($("#userid").val() == "") {
-								alert("아이디를 입력해주세요");
-								$("#userid").focus();
-							} else {
-								$.ajax({
-									type : "GET",
-									url : "idcheck",
-									data : checkId,
-									success : function(data) {
-										if ($.trim(data) != "") {
-											chkid = false;
-											alert("사용불가능합니다");
-											$("#userid").val() == "";
-											$("#userid").focus();
-										} else {
-											chkid = true;
-											alert("사용가능합니다");
-											$("#userid").readonly = "readonly";
-											$("#passwd").focus();
-										}
-									}
-								});
-							}
-						});
+var chkid = false; //아이디 중복검사 유무
+var chknick = false; //회사명(닉네임) 중복검사 유무
+var chkpw = false;
+var chkname = false;
+var chkphone2 = false;
+var chkphone3 = false;
+var chkemail = false;
+var chkpq = false;
+var chkpa = false;
 
+var regId = /^[A-Za-z]{1}[A-Za-z0-9]{3,11}$/; //아이디 정규식
+var regNonExcept = /[^가-힣A-Za-z0-9]/;
+var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
+var regPhone3 = /^[0-9]{4}$/;
+var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	$(document).ready(function() {
+		//아이디 중복검사
+		$("#idCheck").click(function() {
+			var checkId = "userid=" + $("#userid").val();
+			if ($("#userid").val() == "") {
+				alert("아이디를 입력해주세요.");
+				$("#userid").focus();
+			} else if(!regId.test($("#userid").val())) {
+				alert("아이디는 4자~12자 사이의 영문과 숫자로만 가능하며 첫 글자는 반드시 문자여야 합니다.");
+				$("#userid").val("");
+				$("#userid").focus();
+			} else {
+				$.ajax({
+					type : "GET",
+					url : "idCheck",
+					data : checkId,
+					success : function(data) {
+						if ($.trim(data) != "") {
+							alert("이미 존재하는 회원입니다.");
+							$("#userid").val("");
+							$("#userid").focus();
+						} else {
+							chkid = true;
+							alert("사용 가능한 아이디입니다.");
+							$("#passwd").focus();
+						}
+					}
+				});
+			}
+		});
+		
+		//아이디 변경 시 중복검사 유무 해제
+		$("#userid").change(function() {
+			chkid = false;
+		})
+
+		
+		//비밀번호와 비밀번호 확인 일치 유무
+						$("#passwd").change(function() {
+							$('#messageE').remove();
+							$('#message').remove();
+							if($("#passwd").val().indexOf("'") != -1){
+								$('#pwExcept').append('<font id=\"messageE\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
+								chkpw = false;
+							} else if($("#passwd").val().length < 6){
+								$('#pwExcept').append('<font id=\"messageE\" size=\"2\" color=#FF0000>\최소 6자 이상만 입력이 가능합니다.</font>');
+								chkpw = false;
+							} else if($("#passwd2").val()!=$("#passwd").val()&&$("#passwd2").val()!=""){
+								$('#pwEqual').append('<font id=\"message\" size=\"2\" color=#FF0000>비밀번호가 일치하지 않습니다.</font>');
+								chkpw = false;
+							} else {
+								chkpw = true;
+							}
+						})
+						$("#passwd2").change(function() {
+							$('#message').remove();
+							if($("#passwd2").val()!=$("#passwd").val()&&$("#passwd").val().indexOf("'") == -1&&$("#passwd").val().length >= 6){
+								$('#pwEqual').append('<font id=\"message\" size=\"2\" color=#FF0000>비밀번호가 일치하지 않습니다.</font>');
+								chkpw = false;
+							} else {
+								chkpw = true;
+							}
+						})
+						
+						
+						//회사명(닉네임) 중복검사
 						$("#nickCheck").click(function() {
 							var checkNick = "nickname=" + $("#nickname").val();
 							if ($("#nickname").val() == "") {
 								alert("닉네임을 입력해주세요");
 								$("#nickname").focus();
+							} else if($("#nickname").val().indexOf("'") != -1){
+								alert("\'는 입력할 수 없습니다.");
+							} else if($("#nickname").val().length<2||$("#nickname").val().search(/[ㄱ-ㅎ]/)!=-1){
+								alert("닉네임은 2자~12자 사이의 완성된 글자로만 입력이 가능합니다.");
+								$("#nickname").val("");
+								$("#nickname").focus();
 							} else {
 								$.ajax({
 									type : "GET",
-									url : "nickcheck",
+									url : "nickCheck",
 									data : checkNick,
 									success : function(data) {
 										if ($.trim(data) != "") {
-
-											chkNick = false;
-											alert("사용불가능합니다");
-											$("#nickname").val() == "";
+											alert("이미 존재하는 닉네임입니다.");
+											$("#nickname").val("");
 											$("#nickname").focus();
 										} else {
-											chkNick = true;
-											alert("사용가능합니다");
+											alert("사용 가능한 닉네임입니다.");
+											chknick = true;
+											$("#companyno").focus();
 										}
 									}
 								});
 							}
 						});
+						
+						//회사명(닉네임) 변경 시 중복검사 유무 해제
+						$("#nickname").change(function() {
+							chknick = false;
+						})
+						
+						
+						$("#name").change(function() {
+							$('#messageN').remove();
+							if(regNonExcept.test($("#name").val())){
+								$('#regName').append('<font id=\"messageN\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
+								chkname = false;
+							} else {
+								chkname = true;
+							}						
+						});
+						
+						$("#phone2").change(function() {
+							$('#messageP').remove();
+							if(!regPhone2.test($("#phone2").val())&&$("#phone2").val()!=""){
+								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+								chkphone2 = false;
+							} else {
+								chkphone2 = true;
+							}
+						})
+						$("#phone3").change(function() {
+							$('#messageP').remove();
+							if(!regPhone3.test($("#phone3").val())&&$("#phone3").val()!=""){
+								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+								chkphone3 = false;
+							} else {
+								chkphone3 = true;
+							}
+						})
+						
+						$("#email").change(function() {
+							$('#messageEmail').remove();
+							if(!regEmail.test($("#email").val())){
+								$('#regEmail').append('<font id=\"messageEmail\" size=\"2\" color=#FF0000>이메일을 정확히 입력해 주세요.</font>');
+								chkemail = false;
+							} else {
+								chkemail = true;
+							}
+						})
+						
+						$("#pquestion").change(function() {
+							$('#messagePq').remove();
+							if($("#pquestion").val().indexOf("'") != -1){
+								$('#regPq').append('<font id=\"messagePq\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
+								chkpq = false;
+							} else {
+								chkpq = true;
+							}
+						});
+						
+						$("#panswer").change(function() {
+							$('#messagePa').remove();
+							if($("#panswer").val().indexOf("'") != -1){
+								$('#regPa').append('<font id=\"messagePa\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
+								chkpa = false;
+							} else {
+								chkpa = true;
+							}
+						});
+						
 
-						$("#register")
-								.click(
-										function() {
-											var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
-											var userid = $("#userid").val();
-											var passwd = $("#passwd").val();
-											var reg_pw = /^[a-z0-9_]{5,12}$/;
-											var email = $("#email").val();
-											var phone2 = $("#phone2").val();
-											var phone3 = $("#phone3").val();
-											var regPhone2 = /[^0-9]$/g;
-											var regPhone3 = /[^0-9]$/g;
-											var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-
-											var chkid = false;
-											var chknick = false;
-											$("#register")
-													.click(
-															function() {
-																if (userid == "") {
-																	alert("아이디를 입력해주세요..");
-																	$("#userid")
-																			.focus();
-																} else if (regId
-																		.test(userid) == false) {
-																	alert("아이디는 4자~12자영문과 숫자로 입력해주세요");
-																	$("#userid")
-																			.focus();
-																} else if (reg_pw
-																		.test(passwd) == false) {
-																	alert("비밀번호를 입력해주세요..");
-																	$("#passwd")
-																			.focus();
-																} else if ($(
-																		"#passwd2")
-																		.val() == "") {
-																	$(
-																			"#passwd2")
-																			.focus();
-																	alert("비밀번호확인을 입력해주세요..");
-																} else if ($(
-																		"#passwd")
-																		.val() != $(
-																		"#passwd2")
-																		.val()) {
-																	alert("비밀번호와 비밀번호확인이 일치하지않습니다..")
-																} else if ($(
-																		"#name")
-																		.val() == "") {
-																	alert("이름을 입력해주세요..");
-																	$("#name")
-																			.focus();
-																} else if ($(
-																		"#nickname")
-																		.val() == "") {
-																	alert("닉네임을 입력해주세요..");
-																	$(
-																			"#nickname")
-																			.focus();
-																} else if (phone2 == "") {
-																	alert("연락처를 입력해주세요..");
-																	$("#phone2")
-																			.focus();
-																} else if (regPhone2
-																		.test(phone2) == true) {
-																	alert("전화번호는 숫자만 입력해주세요");
-																	$("#phone2")
-																			.focus();
-																} else if (regPhone3
-																		.test(phone3) == true) {
-																	alert("전화번호는 숫자만 입력해주세요");
-																	$("#phone3")
-																			.focus();
-																} else if ($(
-																		"#phone2")
-																		.val() == "") {
-																	alert("연락처를 입력해주세요..");
-																	$("#phone3")
-																			.focus();
-																} else if ($(
-																		"#email")
-																		.val() == "") {
-																	alert("이메일을 입력해주세요..");
-																	$("#email")
-																			.focus();
-																} else if (regEmail
-																		.test(email) == false) {
-																	alert("이메일 형식이 올바르지 않습니다.");
-																	$("#email")
-																			.focus();
-																} else if ($(
-																		"#pquestion")
-																		.val() == "") {
-																	alert("비밀번호 질문을 입력해주세요..");
-																	$(
-																			"#pquestion")
-																			.focus();
-																} else if ($(
-																		"#panswer")
-																		.val() == "") {
-																	alert("비밀번호답을 입력해주세요..");
-																	$(
-																			"#panswer")
-																			.focus();
-																} else {
-																	/* if(chkid==false || chknick==false){
-																		alert("ID중복체크와 닉네임중복체크를 해주세요");
-																	}else{ */
-																	$(
-																			"#registForm")
-																			.attr(
-																					{
-																						action : "register",
-																						method : 'post'
-																					});
-																	$(
-																			"#registForm")
-																			.submit();
-																}
-																/* } */
-															})
-										});
+						$("#register").click(function() {
+							if($("#userid").val()==""){
+								alert("아이디를 입력해 주세요.");
+								$("#userid").focus();
+							} else if(!chkid){
+								alert("아이디 중복확인을 해 주세요.");
+							} else if($("#passwd").val()==""){
+								alert("비밀번호를 입력해 주세요.");
+								$("#passwd").focus();
+							} else if($("#passwd2").val()==""){
+								alert("비밀번호 확인을 입력해 주세요.");
+								$("#passwd2").focus();
+							} else if(!chkpw){
+								
+							} else if($("#nickname").val()==""){
+								alert("닉네임을 입력해 주세요.");
+								$("#nickname").focus();
+							} else if(!chknick){
+					            alert("닉네임 중복확인을 해 주세요.");           
+					        } else if($("#name").val()==""){
+					        	alert("이름을 입력해 주세요.");
+					        	$("#name").focus();
+					        } else if(!chkname){
+					        	
+					        } else if($("#phone2").val()==""){
+					        	alert("연락처를 입력해 주세요.");
+					        	$("#phone2").focus();
+					        } else if(!chkphone2){
+					        	
+					        } else if($("#phone3").val()==""){
+					        	alert("연락처를 입력해 주세요.");
+					        	$("#phone3").focus();
+					        } else if(!chkphone3){
+					        	
+					        } else if($("#email").val()==""){
+					        	alert("이메일을 입력해 주세요.");
+					        	$("#phone3").focus();
+					        } else if(!chkemail){
+					        	
+					        } else if($("#pquestion").val()==""){
+					        	alert("비밀번호 찾기 질문을 입력해 주세요.");
+					        	$("#pquestion").focus();
+					        } else if(!chkpq){
+					        	
+					        } else if($("#panswer").val()==""){
+					        	alert("비밀번호 찾기 답을 입력해 주세요.");
+					        	$("#panswer").focus();
+					        } else if(!chkpa){
+					        	
+					        } else {
+					        	$("#registForm").attr({
+					                action : "register",
+					                method : 'post'
+					            });
+					            $("#registForm").submit();
+					            alert("회원가입이 완료되었습니다.");
+					        }
+						});
 
 					});
 </script>
@@ -202,44 +260,45 @@
 
 	<center>
 
- <div id="wrapper" align="left">
+		<div id="wrapper" align="left">
 			<%@include file="../top.jsp"%>
 
 
 			<div id="content" align="center">
 				<%@include file="../menu.jsp"%>
-			</div> 
-		
-			
+			</div>
+
+
 
 
 
 			<!-- 시작 -->
-			<div id="DD" align="right" style="width: 1016px; ">
+			<div id="DD" align="right" style="width: 1016px;">
 				<img src="img/bn.jpg" align="right">
-				</div>
-				
-				<div id="EE" align="left"  >※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여 주십시오. </div>
-				
+			</div>
+
+			<div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
+				주십시오.</div>
+
 			<form method="post" name="registForm" id="registForm">
 				<div id="dd" align="center">
 					<table width="800px" class="re">
 
 
-						
-							<tr>
-								<!-- 개인정보 메인 -->
 
-								<th colspan="2" class="re" style="font-size: x-large; font-weight: bold; color: silver; "  >일반회원 로그인정보</th>
-						
 						<tr>
-						
+							<!-- 개인정보 메인 -->
+
+							<th colspan="2" class="re"
+								style="font-size: x-large; font-weight: bold; color: silver;">일반회원가입</th>
+						<tr>
+
 							<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디</td>
 
 							<td><pre> </pre> <input type="text" name="userid"
 								id="userid" style="vertical-align:; width: 150; height: 28px">
-								<input type="button" value="중복체크"  width="115" style="height: 36px; width: 99px"
-								 id="idCheck"> <!-- <button type="button" id="idCheck" >아이디 중복 체크</button> -->
+								<input type="button" value="중복체크" width="115"
+								style="height: 36px; width: 99px" id="idCheck"> <!-- <button type="button" id="idCheck" >아이디 중복 체크</button> -->
 								<font size="3" color="#000000" style="">공백없이 4~12자리 영문+숫자</font>
 								<pre> </pre></td>
 
@@ -249,17 +308,17 @@
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호</td>
-							<td><input type="password" name="passwd" id="passwd"
+							<td id="pwExcept"><input type="password" name="passwd" id="passwd"
 								style="vertical-align:; width: 150; height: 28px"> <font
 								size="3" color="#000000" style="">5~12자리 영문+숫자 (대문자X)</font> <pre> </pre>
-							</td>
+							</td>						
 
 						</tr>
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호확인</td>
 
-							<td><input type="password" name="passwd2" id="passwd2"
+							<td id="pwEqual"><input type="password" name="passwd2" id="passwd2"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -270,7 +329,7 @@
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*이름</td>
-							<td><input type="text" name="name" id="name"
+							<td id="regName"><input type="text" name="name" id="name"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -278,14 +337,15 @@
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*닉네임</td>
 							<td><input type="text" name="nickname" id="nickname"
-								style="vertical-align:; width: 150; height: 28px"> <input type="button" value="중복체크" width="115" style="height: 36px; width: 99px"
-								id="nickCheck"> <!-- <button type="button" id="nickCheck">닉네임 중복 검사</button>	 -->
+								style="vertical-align:; width: 150; height: 28px"> <input
+								type="button" value="중복체크" width="115"
+								style="height: 36px; width: 99px" id="nickCheck"> <!-- <button type="button" id="nickCheck">닉네임 중복 검사</button>	 -->
 								<pre> </pre></td>
 
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*연락처</td>
-							<td><select name="phone1" id="phone1"
+							<td id="regPhone"><select name="phone1" id="phone1"
 								style="width: 50; height: 25">
 									<option value="010">010</option>
 									<option value="011">011</option>
@@ -300,21 +360,23 @@
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*이메일</td>
-							<td><input type="text" name="email" id="email"
+							<td id="regEmail"><input type="text" name="email" id="email"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
 						</tr>
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*비밀번호 질문</td>
-							<td><input type="text" name="pquestion" id="pquestion"
+							<td width="150" align="left" style="font-weight: bold;">*비밀번호
+								질문</td>
+							<td id="regPq"><input type="text" name="pquestion" id="pquestion"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
 						</tr>
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*비밀번호 답</td>
-							<td><input type="text" name="panswer" id="panswer"
+							<td width="150" align="left" style="font-weight: bold;">*비밀번호
+								답</td>
+							<td id="regPa"><input type="text" name="panswer" id="panswer"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -334,17 +396,21 @@
 
 					</table>
 
-					<input type="hidden" name="flag" value="member">
-					</div>
+					<input type="hidden" name="flag" value="member"> <input
+						type="hidden" name="companyno" value=""> <input
+						type="hidden" name="companyceoname" value=""> <input
+						type="hidden" name="companyaddr" value=""> <input
+						type="hidden" name="companytype" value="">
+				</div>
 			</form>
-			
-		
+
+
 		</div>
 		<div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>
 		</div>
 	</center>
-	
+
 
 	<!-- 끝 -->
 

@@ -36,45 +36,55 @@ public class MemberController {
 	private ZipcodeDAO zd;
 
 	// ==================== 회원가입 =========================
-	@RequestMapping("/idcheck") // 아이디중복체크
-	public String idcheck(@RequestParam String userid, Model model) {
-		List<UserVO> list = dao.selectAllId();// 모든회원의 아이디를 리스트에 담음
-		String id = null; // db에서 꺼내온 id를 담을 변수 선언
-		for (int i = 0; i < list.size(); i++) {// 모든회원이 id가 담긴 리스트를 for문으로 돌림
-			id = list.get(i).getUserid(); // id변수 에 한개씩 담음
-			if (id.equals(userid)) { // 회원가입폼에서 가져온 userid와 일치하는것이 있는지 확인
-				model.addAttribute("checkId", id); // 일치하는것이 있다면 request영역에
-													// "checkId"키값으로 id저장
+	@RequestMapping("/idCheck") // 이거 c 대문자로 바꿨음 통일시키려고
+	public String idCheck(@RequestParam String userid, Model model) {
+		List<UserVO> list = dao.selectAllId();
+		String id = null;
+		for (int i = 0; i < list.size(); i++) {
+			id = list.get(i).getUserid();
+			if (id.equals(userid)) {
+				model.addAttribute("checkId", id);
 				break;
 			} else {
-				model.addAttribute("checkId", "");// 없다면 request영역에
-													// "checkId"키값으로 ""저장
+				model.addAttribute("checkId", "");
 			}
 		}
 
-		return "member/idCheck"; // ajax로 불렀기때문에 데이터를 넣어줄 페이지를 호출하고 페이지에 el태그를
-									// 사용해서 결과를 뿌림
+		return "member/idCheck";
 	}
 
-	@RequestMapping("/nickcheck") // 중복확인 (닉네임)
-	public String nickcheck(@RequestParam String nickname, Model model) {
-		List<UserVO> list = dao.selectAllNick();// 모든회원의 닉네임을 리스트에 담음
-		String nick = null; // db에서 꺼내온 nickname을 담을 변수선언
-		for (int i = 0; i < list.size(); i++) {// 모든회원의 nickname이 담긴 리스트를 for문으로
-												// 돌림
-			nick = list.get(i).getNickname(); // nick변수에 한개씩 담음
-			if (nick.equals(nickname)) { // 회원가입폼에서 가져온 nickname과 일치하는것이 있는 지확인
-				model.addAttribute("checkNick", nick);// 일치한다면 request영역에
-														// "checkNick"키값으로
-														// nickname저장
+	@RequestMapping("/nickCheck") // 이것도 c 대문자
+	public String nickCheck(@RequestParam String nickname, Model model) {
+		List<UserVO> list = dao.selectAllNick();
+		String nick = null;
+		for (int i = 0; i < list.size(); i++) {
+			nick = list.get(i).getNickname();
+			if (nick.equals(nickname)) {
+				model.addAttribute("checkNick", nick);
 				break;
 			} else {
-				model.addAttribute("checkNick", "");// 일치하지않는다면 request영역에
-													// "checkNick"키값으로 ""저장
+				model.addAttribute("checkNick", "");
 			}
 		}
-		return "member/nickCheck";// ajax로 불렀기때문에 데이터를 넣어줄 페이지를 호출하고 페이지에 el태그를
-									// 사용해서 결과를 뿌림
+
+		return "member/nickCheck";
+	}
+
+	@RequestMapping("/noCheck") // 추가한거
+	public String noCheck(@RequestParam String companyNo, Model model) {
+		List<UserVO> list = dao.selectAllNo();
+		String no = null;
+		for (int i = 0; i < list.size(); i++) {
+			no = list.get(i).getCompanyno();
+			if (no.equals(companyNo)) {
+				model.addAttribute("checkNo", no);
+				break;
+			} else {
+				model.addAttribute("checkNo", "");
+			}
+		}
+
+		return "member/noCheck";
 	}
 
 	// 주소가저오기
@@ -85,13 +95,13 @@ public class MemberController {
 
 		return "member/addressForm3";
 	}
-	
-	//회원가입 종류 
-	@RequestMapping("/registertype") 
-	public String retype(){
+
+	// 회원가입 종류
+	@RequestMapping("/registertype")
+	public String retype() {
 		return "member/registerFormSelect";
 	}
-	
+
 	// 일반회원가입폼띄우기
 	@RequestMapping("/registerForm")
 	public String registerForm() {
@@ -110,27 +120,40 @@ public class MemberController {
 		return "member/addressForm";
 	}
 
-	@RequestMapping("/register") // 회원가입처리
+	@RequestMapping("/register")
 	public String register(@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3,
-			@RequestParam String flag, UserVO uv) {
-		if (flag.equals("member")) {// 넘어온 flag값이 "member"이면 일반회원가입처리
+			HttpServletRequest request, @RequestParam String flag, UserVO uv) {
+		if (flag.equals("member")) {
 			try {
-				uv.setPhone(phone1 + phone2 + phone3);// 3개로 나뉘어진 연락처를 1개로 통합해서
-														// set
-				if (dao.insert(uv)) {// UserDao에 있는 insert(UserVO)를 통해서 db에
-										// insert
-					return "redirect:login";// 회원가입성공시 로그인페이지로 이동
+				uv.setPhone(phone1 + phone2 + phone3);
+				if (dao.insert(uv)) {
+					return "redirect:loginForm";
 				} else {
-					return "redirect:registerForm";// 회원가입실패시 회원가입폼으로 이동
+					return "member/registerForm";
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				return "member/registerForm";
 			}
-		} else {// flag값이 "member"가 아닌 "company"값이 넘어온경우 기업회원가입으로 처리
-			return "member/registerForm";
+		} else {
+			try {
+				String company1 = request.getParameter("companyaddress1");
+				String company2 = request.getParameter("companyaddress2");
+				String company3 = request.getParameter("companyaddress3");
+				uv.setCompanyaddr(company1 + " " + company2 + " " + company3);
+				uv.setPhone(phone1 + phone2 + phone3);
+				if (dao.insert(uv)) {
+					return "redirect:loginForm";
+				} else {
+					return "member/registerForm";
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return "member/registerForm";
+			}
 		}
-		return "member/registerForm";
 	}
 
 	// ==============================로그인==============================
@@ -280,9 +303,9 @@ public class MemberController {
 	@RequestMapping("/member/mypage/registerdelete")
 	public String registerdelete(HttpSession session) throws SQLException {
 		String userid = session.getAttribute("memberid").toString();
-		
+
 		dao.delete(dao.findNick(userid));
-		session.invalidate();//로그인기록삭제
+		session.invalidate();// 로그인기록삭제
 		return "viewmain";
 	}
 

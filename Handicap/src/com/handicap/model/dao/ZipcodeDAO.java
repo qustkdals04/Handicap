@@ -17,6 +17,6 @@ public class ZipcodeDAO {
 	
 	public List<ZipcodeVO> findAddress(String dong) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("user.findAddress", dong);
+		return sqlSession.selectList("user.findAddress", "%"+dong+"%");
 	}
 }

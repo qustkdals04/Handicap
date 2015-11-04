@@ -16,7 +16,7 @@ public class UserDAOImpl implements UserDAO {
 	
 	@Override
 	public boolean insert(UserVO user) throws SQLException {
-		int t = sqlSession.insert("user.insertuser", user);
+		int t = sqlSession.insert("user.insertcompany", user);
 		if(t==1) return true;
 		return false;
 	}
@@ -57,6 +57,12 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("user.selectId");
 	}
+	
+	@Override
+	   public List<UserVO> selectAllNo() {
+	      // TODO Auto-generated method stub
+	      return sqlSession.selectList("user.selectNo");
+	   }
 
 	@Override
 	public String findNick(String userid) {
