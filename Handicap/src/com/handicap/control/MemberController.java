@@ -75,6 +75,7 @@ public class MemberController {
 		List<UserVO> list = dao.selectAllNo();
 		String no = null;
 		for (int i = 0; i < list.size(); i++) {
+			System.out.println("나와"+list.get(i).getCompanyno());
 			no = list.get(i).getCompanyno();
 			if (no.equals(companyNo)) {
 				model.addAttribute("checkNo", no);
