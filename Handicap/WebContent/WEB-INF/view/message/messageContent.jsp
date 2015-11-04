@@ -3,10 +3,11 @@
     <%@ page import = "com.handicap.model.beans.MessageVO" %>
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.MessageVO"></jsp:useBean>
     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -26,23 +27,27 @@
 <body>
 	<%-- <!-- 상세보기 -->--%>
 <form id="messageContent" name="messageContent">
-<table style="width: 618px; ">
+<table style="width: 618px; " class ="basic">
 			<tr style="width: 495px; ">
-				<td align = "center">보낸사람 : </td>
+				<td align = "center" width="100px" color = "#678197">보낸사람  </td>
 				<td style="width: 150px;height:22px;">&nbsp;${messageContent.sender}</td> <!-- 보낸사람 -->
 				<td align="right">${messageContent.senddate }</td>   <!-- 현재시간 -->
 				
 			</tr>
 			
 			<tr>
-				<td align = "center">내	용 : </td>
+				<td align = "center" color = "#678197">내	용  </td>
 				
 				<td  colspan="2"><textarea style="width: 490px; height: 172px" readonly="readonly">${messageContent.contents }</textarea></td>
 			</tr>
 			<tr>
 				<td colspan="3" align="right">
-					<button type="button" style="width:70px;height: 20px;" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
-					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button>
+					<!-- <button type="button" style="width:70px;height: 20px;" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button> -->
+
+					<img src = "/Handicap/img/deleteB.png" id="delete" onclick="location.href='/Handicap/messagedelete'" style="width: 95px; height: 38px; ">
+					<img src = "/Handicap/img/closeB.png" id="cancel" onclick="history.back()" style="width: 95px; height: 38px; ">
+					
 				</td>
 			</tr>
 		</table>

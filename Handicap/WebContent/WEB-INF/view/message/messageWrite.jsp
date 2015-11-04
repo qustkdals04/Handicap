@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+  <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 var searchNick = false;
@@ -56,21 +57,24 @@ var searchNick = false;
 </head>
 <body>
 	<form name="messageWrite" id="messageWrite">
-		<table>
+		<table class ="basic">
 			<tr>
-				<td>받는사람 : </td>
-				<td><input type="text" name="recipient" id="recipient" style="width: 144px;height:22px; "></td><td><button type="button" id="findnick">검색</button></td>
+				<td align='center' color = "#678197">받는사람  </td>
+				<td ><input type="text" name="recipient" id="recipient" style="width: 100%;height:22px;" ></td>
+				<td align='center' ><img src = "/Handicap/img/searchB.png" id="findnick" style="width: 95px; height: 38px; "><!-- <button type="button" id="findnick">검색</button> --></td>
 			</tr>
 			<tr>
-				<td>내	용 : </td>
-				<td><textarea rows="10" cols="50" name="contents" id="contents"></textarea> </td>
+				<td align="center" style="vertical-align: middle;" color = "#678197">내	용  </td>
+				<td colspan="2" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%"></textarea> </td>
 			</tr>
 			<tr>
 				<td></td>
-				<td align="right">
+				<td align="right" colspan="2">
 					
-					<button type="button" style="width:70px;height: 20px;" id="send">보내기</button>
-					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button>
+					<!-- <button type="button" style="width:70px;height: 20px;" id="send">보내기</button> -->
+					<img src = "/Handicap/img/sendB.png" id="send" style="width: 95px; height: 38px; ">
+					<img src = "/Handicap/img/closeB.png" id="cancel" onclick="history.back()" style="width: 95px; height: 38px; ">
+					<!-- <button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button> -->
 				</td>
 			</tr>
 		</table>
