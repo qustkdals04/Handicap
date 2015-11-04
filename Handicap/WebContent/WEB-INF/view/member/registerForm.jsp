@@ -395,8 +395,9 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						</tr>
 
 					</table>
-
-					<input type="hidden" name="flag" value="member"> <input
+					
+					<input type="hidden" name="usergrade" value="1">
+					<input
 						type="hidden" name="companyno" value=""> <input
 						type="hidden" name="companyceoname" value=""> <input
 						type="hidden" name="companyaddr" value=""> <input

@@ -124,8 +124,9 @@ public class MemberController {
 	@RequestMapping("/register")
 	public String register(@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3,
 			HttpServletRequest request, @RequestParam String flag, UserVO uv) {
-		if (flag.equals("member")) {
+		if (flag.equals("1")) {
 			try {
+				uv.setUsergrade(Integer.parseInt(flag));
 				uv.setPhone(phone1 + phone2 + phone3);
 				if (dao.insert(uv)) {
 					return "redirect:loginForm";
@@ -142,6 +143,7 @@ public class MemberController {
 				String company1 = request.getParameter("companyaddress1");
 				String company2 = request.getParameter("companyaddress2");
 				String company3 = request.getParameter("companyaddress3");
+				uv.setUsergrade(Integer.parseInt(flag));
 				uv.setCompanyaddr(company1 + " " + company2 + " " + company3);
 				uv.setPhone(phone1 + phone2 + phone3);
 				if (dao.insert(uv)) {

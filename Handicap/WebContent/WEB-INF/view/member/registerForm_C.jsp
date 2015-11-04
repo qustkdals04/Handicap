@@ -458,7 +458,8 @@ $(document).ready(function() {
 					<td></td>
 				</tr>
 			</table>
-			<input type="hidden" name="flag" value="company">
+			<input type="hidden" name="usergrade" value="2">
+			
 		</form>
 	</center>
 </body>

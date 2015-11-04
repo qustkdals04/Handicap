@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="user">   
-	 <!-- 회원가입(일반) --> 
+	<!--   회원가입(일반)
    <insert id="insertuser" parameterType="com.handicap.model.beans.UserVO">
      insert into member (userid,passwd,email,name,nickname,phone,pquestion,panswer,usergrade) 
      values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 1)
-   </insert>
+   </insert> -->
    
-   <!-- 회원가입(기업)  -->
+   <!-- 회원가입  -->
    <insert id="insertcompany" parameterType="com.handicap.model.beans.UserVO">
    	insert into member 
-   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, 2,#{companyno},#{companyceoname},#{companyaddr},#{companytype})
+   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade},#{companyno},#{companyceoname},#{companyaddr},#{companytype})
    </insert>   
    
    <!-- 아이디목록 -->
@@ -82,7 +82,7 @@
 
 	<!-- 사업자번호목록 -->
    <select id="selectNo" resultType="com.handicap.model.beans.UserVO" >
-     select companyno from member
+     select companyno from member where companyno is not null
    </select>
    
    <!-- ID검색 -->
