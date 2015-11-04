@@ -143,8 +143,11 @@ public String request(){
 	return "service/RequestForm";
 }
 
-
-
+//회원가입 - 종류
+@RequestMapping("/retype") 
+public String retype(){
+	return "member/registerFormSelect";
+}
 	
 	
 	
