@@ -323,3 +323,23 @@ table.Search br{
 	font-size: 15px;
 	font-family: 돋음;
 }
+
+
+table.basic { 
+width:500px; 
+line-height:21px; 
+border-top: 1px solid #cccccc; 
+border-left: 1px solid #cccccc; 
+border-collapse: collapse; 
+} 
+table.basic th, table.basic td { 
+color:#678197; 
+
+border-right: 1px solid #cccccc; 
+border-bottom: 1px solid #cccccc; 
+padding: 3px 0; 
+ 
+} 
+table.basic th { 
+background-color: #eeeeee; 
+}
