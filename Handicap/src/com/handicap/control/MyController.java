@@ -61,11 +61,103 @@ public class MyController {
 		return "viewmain";
 	}
 	
-	//장애인복지법
-	@RequestMapping("/handicaplaw")
-	public String handicaplaw(){
-		return "handicapLaw";
+	//소식 - 공지사항
+	@RequestMapping("/Notice") 
+	public String Notice() {
+		return "new/NoticeForm";
 	}
+//소식 - 뉴스
+@RequestMapping("/News") 
+public String News() {
+	return "new/NewForm";
+}
+//소식 - 사이트소개
+@RequestMapping("/Introduce") 
+public String Introduce() {
+	return "new/IntroduceForm";
+}
+//일자리 정보
+@RequestMapping("/JOB") 
+public String JOB() {
+	return "job/JobForm";
+}
+
+//장애인복지법
+@RequestMapping("/handicaplaw") 
+public String handicaplaw(){
+	return "Law/HandicapForm";
+}
+
+//의료장비
+@RequestMapping("/trade") 
+public String trade(){
+	return "equipmen/BuySellForm";
+}
+
+//질문답변
+@RequestMapping("/question") 
+public String question(){
+	return "equipmen/QuestionForm";
+}
+
+//사용후기
+@RequestMapping("/review") 
+public String review(){
+	return "equipmen/ReviewForm";
+}
+
+//게시판 - 신체장애
+@RequestMapping("/body") 
+public String body(){
+	return "bbs/BodyForm";
+}
+
+
+//게시판 - 정신적장애
+@RequestMapping("/Mental") 
+public String Mental(){
+	return "bbs/MentalForm";
+}
+
+//게시판 - 동호회
+@RequestMapping("/Club") 
+public String Club(){
+	return "bbs/ClubForm";
+}
+
+//게시판 - 여행
+@RequestMapping("/travel") 
+public String travel(){
+	return "bbs/TravelForm";
+}
+
+//고객센터 - Q&A
+@RequestMapping("/QnA") 
+public String QnA(){
+	return "service/QuestionForm2";
+}
+
+//고객센터 - 게시판요청
+@RequestMapping("/request") 
+public String request(){
+	return "service/RequestForm";
+}
+
+//회원가입 종류 
+@RequestMapping("/retype") 
+public String retype(){
+	return "member/registerFormSelect";
+}
+//기업회원가입 폼
+@RequestMapping("/mm") 
+public String mm(){
+	return "member/registerForm_C";
+}
+//mypage - 회원수정
+@RequestMapping("/dd") 
+public String dd(){
+	return "member/mypage/registerupdateForm";
+}
 
 	
 	

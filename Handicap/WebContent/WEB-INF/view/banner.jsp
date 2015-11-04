@@ -12,7 +12,7 @@
         $(document).ready(function(){
             $("#testbanner").scrollFollow({
                 speed : 300    // 움직이는 속도
-                , offset : 200// 웹페이지 상단에서 부터의 거리
+                , offset : 300// 웹페이지 상단에서 부터의 거리
                 
             });
         });
@@ -37,21 +37,21 @@
         <table >
        	<tr>
        		<!-- 발달 장애인 지원센터 -->
-       		<td><a href="http://www.broso.or.kr/"> <img src="/Handicap/img/cc .png"  ></a></td>
+       		<td><a href="http://www.broso.or.kr/"> <img src="img/55.png"  ></a></td>
        		
        	</tr>
        
        	<tr>
        		<!-- 중증 장애인 직업 재활동 관리 -->
-       		<td><a href="http://vr.koddi.or.kr/"> <img src="/Handicap/img/nou.png"></a></td>
+       		<td><a href="http://vr.koddi.or.kr/"> <img src="img/nou.png"></a></td>
        	</tr>
        	
        	<tr>
        		<!-- 인청전략기금 운영사무국 -->
-       		<td><a href="http://mrr.koddi.or.kr/page/index_kor.jsp"> <img src="/Handicap/img/charter.jpg"  ></a></td>
+       		<td><a href="http://mrr.koddi.or.kr/page/index_kor.jsp"> <img src="img/ee.png"  ></a></td>
        	</tr>
        </table>
- <div style="cursor:pointer;" onclick="window.scrollTo(0,0);"><img src="/Handicap/img/top.JPG"></div>
+ <div style="cursor:pointer;" onclick="window.scrollTo(0,0);"><img src="img/top.png"></div>
   </div>  
 <!--  <ul>
     <li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a<li>a

@@ -64,3 +64,23 @@ table.job td {
     vertical-align: top;
     border-bottom: 1px solid #ccc;
 }
+
+ table.re th{
+  	
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: left;
+    line-height: 1.5;
+    border-bottom: 5px solid #F4B649;
+ 	 margin : 10px; 
+}  
+
+ /* table.re thead tr {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    background: #FFFFFF;
+}  
+ */

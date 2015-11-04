@@ -14,7 +14,7 @@
 
 
 
-	
+
 	<div id="wrapper">
 		<!-- 전체 틀 -->
 		<%@include file="../top.jsp"%>
@@ -26,22 +26,18 @@
 		<div id="contents">
 			<table>
 				<tr>
-				
+
 					<td width="300px"><%@include file="HandicapSubMeun.jsp"%>
 					</td>
 
 					<td width="700px"><%@include file="handicapLaw.jsp"%>
 					</td>
-						
-						
-					
-
 				</tr>
 			</table>
 			<div id="sidebar" align="right">
-							<%@include file="../banner.jsp"%>
-						</div>
-					
+				<%@include file="../banner.jsp"%>
+
+			</div>
 		</div>
 	</div>
 </body>

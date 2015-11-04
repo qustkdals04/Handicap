@@ -26,7 +26,7 @@
 <body>
 <center>
 <table>
-	<tr><td><%@include file="../viewtop.jsp" %></td><td></td></tr>	
+	<tr><td><%@include file="../top.jsp" %></td><td></td></tr>	
 	<tr><td><%@include file="../menu.jsp" %></td><td></td></tr>
 	<tr><td valign="top">
 	<h3>비밀번호확인</h3>

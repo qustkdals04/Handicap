@@ -8,6 +8,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/styles.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -140,91 +147,144 @@ $(document).ready(function() {
 <!-- registerForm_C.jsp -->
 <body>
 	<center>
-		<h3>기업회원가입폼</h3>
+
+ <div id="wrapper" align="left">
+			<%@include file="../top.jsp"%>
+
+
+			<div id="content" align="center">
+				<%@include file="../menu.jsp"%>
+			</div> 
+		
+			
+
+
+
+			<!-- 시작 -->
+			<div id="DD" align="right" style="width: 1016px; ">
+				<img src="img/bn.jpg" align="right">
+				</div>
+				
+				<div id="EE" align="left"  >※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여 주십시오. </div>
 		<form method="post" name="registForm_C" id="registForm_C">
-			<div></div>
-			<table border="1">
-				<tr>
-					<td>아이디 :</td>
-					<td><input type="text" name="userid" id="userid"
-						style="width: 100; height: 22"></td>
-					<td><button type="button" id="idCheck">중복체크</button></td>
+			<div id="dd" align="center">
+			
+			<table  width="800px" class="re">
+				<tr> <!-- 개인정보 메인 -->
+						<th colspan="2" class="re" style="font-size: x-large; font-weight: bold; color: silver; "  >기업회원 로그인정보</th>	
+						
 				</tr>
 				<tr>
-					<td>비밀번호 :</td>
-					<td><input type="password" name="passwd" id="passwd"
-						style="width: 100; height: 22"></td>
-					<td></td>
+					<td width="150" align="left" style="font-weight: bold;"> <pre>   </pre>*아이디  </td>
+
+							<td><pre> </pre> <input type="text" name="userid"
+								id="userid" style="vertical-align:; width: 150; height: 28px">
+								<input type="button" value="중복체크" width="115" style="height: 36px; width: 99px" id="idCheck"> <!-- <button type="button" id="idCheck" >아이디 중복 체크</button> -->
+								<font size="3" color="#000000" style="">공백없이4~12자리 영문+숫자</font>
+								<pre>  </pre></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호확인 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*비밀번호</td>
+					<td width="150"><input type="password" name="passwd" id="passwd"
+						style="vertical-align:; width: 150; height: 28px">
+						<font size="3" color="#000000" style="">5~12자리 영문+숫자 (대문자X)</font> <pre> </pre>	
+					</td>
+					
+				</tr>
+				<tr>
+					<td width="150" align="left" style="font-weight: bold;">*비밀번호확인</td>
 					<td><input type="password" name="passwd2" id="passwd2"
-						style="width: 100; height: 22"></td>
-					<td></td>
+						style="vertical-align:; width: 150; height: 28px"><pre> </pre></td>
+					
 				</tr>
+				
+				<!-- 개인정보 메인 -->
+				
 				<tr>
-					<td>사업자등록번호 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*사업자등록번호 </td>
 					<td><input type="text" name="companyno" id="companyno"
-						style="width: 100; height: 22"></td>
-					<td><button type="button" id="noCheck">중복체크</button></td>
+						style="vertical-align:; width: 150; height: 28px">
+						<input type="button" value="중복체크" width="115" style="height: 36px; width: 99px"  id="noCheck"><pre> </pre> 
+						<!-- <button type="button" id="noCheck">중복체크</button>--></td>
+					
 				</tr>
 				<tr>
-					<td>회사명 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*회사명 <pre> </pre></td>
 					<td><input type="text" name="nickname" id="nickname"
-						style="width: 100; height: 22"></td>
-					<td><button type="button" id="nickCheck">중복체크</button></td>
+						style="vertical-align:; width: 150; height: 28px"> 
+						<!-- <button type="button" id="nickCheck">중복체크</button>-->
+						<input type="button" value="중복체크" width="115" style="height: 36px; width: 99px"  id="nickCheck">
+						<pre> </pre></td> 
+					
 				</tr>
 				<tr>
-					<td>대표자명 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*대표자명 <pre> </pre></td>
 					<td><input type="text" name="companyceoname" id="companyceoname"
-						style="width: 100; height: 22"></td>
-					<td></td>
+						style="vertical-align:; width: 150; height: 28px"><pre> </pre></td>
+					
 				</tr>
 				<tr>
-					<td>회사주소 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*회사주소 <pre> </pre></td>
 					<td><input type="text" name="companyaddress" id="companyaddress"
-						style="width: 150; height: 22"></td>
-					<td><button type="button" id="findAddress">검색</button></td>
+						style="vertical-align:; width: 150; height: 28px"> &nbsp;
+						<input type="button" value="검  색 "  width="70" style="height: 31px;"  id="findAddress">
+						<!-- <button type="button" id="findAddress">검색</button> -->
+						
+						<pre> </pre></td>
+					
 				</tr>
 				<tr>
-					<td>연락처 :</td>
-					<td><select id="phone1">
+					<td width="150" align="left" style="font-weight: bold;">*연락처 <pre> </pre></td>
+					<td><select id="phone1" style="width: 50; height: 25">
 							<option value="010">010</option>
 							<option value="011">011</option>
 							<option value="016">016</option>
 							<option value="019">019</option>
 					</select> <input type="text" name="phone2" id="phone2"
-						style="width: 45; height: 22" maxlength="4"> <input
+						style="width: 50; height: 25" maxlength="4"> <input
 						type="text" name="phone3" id="phone3"
-						style="width: 45; height: 22" maxlength="4"></td>
-					<td></td>
+						style="width: 50; height: 25" maxlength="4"><pre> </pre></td>
+					
 				</tr>
 				<tr>
-					<td>이메일 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*이메일 <pre> </pre></td>
 					<td><input type="text" name="email" id="email"
-						style="width: 150; height: 22"></td>
-					<td></td>
+						style="vertical-align:; width: 150; height: 28px"><pre> </pre></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호질문 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*비밀번호질문 <pre> </pre></td>
 					<td><input type="text" name="pquestion" id="pquestion"
-						style="width: 150; height: 22"></td>
-					<td></td>
+						style="vertical-align:; width: 150; height: 28px"><pre> </pre></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호답 :</td>
+					<td width="150" align="left" style="font-weight: bold;">*비밀번호답 <pre> </pre></td>
 					<td><input type="text" name="panswer" id="panswer"
-						style="width: 150; height: 22"></td>
-					<td></td>
+						style="vertical-align:; width: 150; height: 28px"><pre> </pre></td>
+					
 				</tr>
 				<tr>
 					<td></td>
-					<td><button type="button" id="register">회원가입</button>
-						<button id="cancel">가입취소</button></td>
-					<td></td>
+					<td style="width: 522px; height: 53px; "><pre> </pre>
+						<input type="button" value="가  입 "width="115" style="height: 30px;" id="register">
+						<input type="button" value="취  소"width="115" style="height: 30px;" id="cancel" >
+					</td>
+					
 				</tr>
+			
+				<tr>
+							<th colspan="2"><pre>  </pre></th>
+						</tr>
+						
 			</table>
+			</div>
 		</form>
+		</div>
+		<div id="sidebar" align="right">
+			<%@include file="../banner.jsp"%>
+		</div>
 	</center>
 </body>
 </html>

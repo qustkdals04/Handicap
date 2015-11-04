@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/mainview.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
 
  <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <title>신체적폼</title>
@@ -15,7 +15,7 @@
 </head>
 <body>
 			<div id="wrapper" >
-		<%@include file="../viewtop.jsp" %>
+		<%@include file="../top.jsp" %>
 		
 		
 	<div id="content" align="center">	
@@ -28,18 +28,16 @@
 				<td width = "300px">
 				<div id ="contents">
 			<%@include file = "BbsSubMenu.jsp"%>
-				</td>	
-				</div>
-									
-				
-				<td>
+			</div>
+				</td>
+				</tr>		
+				</table>
+
 					<div id="sidebar"  align="right">
 						<%@include file="../banner.jsp" %>  
 					</div>  
-					
- 				 </td> 
-				</tr>		
-				</table>
+
+				</div>
 </body>
 </html>
 
