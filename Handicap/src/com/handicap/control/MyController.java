@@ -143,21 +143,7 @@ public String request(){
 	return "service/RequestForm";
 }
 
-//회원가입 종류 
-@RequestMapping("/retype") 
-public String retype(){
-	return "member/registerFormSelect";
-}
-//기업회원가입 폼
-@RequestMapping("/mm") 
-public String mm(){
-	return "member/registerForm_C";
-}
-//mypage - 회원수정
-@RequestMapping("/dd") 
-public String dd(){
-	return "member/mypage/registerupdateForm";
-}
+
 
 	
 	
