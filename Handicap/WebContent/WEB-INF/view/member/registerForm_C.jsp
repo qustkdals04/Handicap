@@ -357,72 +357,92 @@ $(document).ready(function() {
 </head>
 <!-- registerForm_C.jsp -->
 <body>
-	<center>
-		<h3>기업회원가입폼</h3>
+
+<center>
+		<div id="wrapper" align="left">
+			<%@include file="../top.jsp"%>
+
+
+			<div id="content" align="center">
+				<%@include file="../menu.jsp"%>
+			</div>
+			
+			<!-- 시작 -->
+			<div id="DD" align="right" style="width: 1016px;">
+				<img src="img/bn.jpg" align="right">
+			</div>
+
+			<div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
+				주십시오.</div>
+		
 		<form method="post" name="registForm_C" id="registForm_C">
-			<div></div>
-			<table border="1">
-				<tr>
-					<td>아이디 :</td>
-					<td><input type="text" name="userid" id="userid"
+			<div id="dd" align="center">
+					<table  class="re">
+			<tr>
+				<th colspan="4" class="re"
+								style="font-size: x-large; font-weight: bold; color: silver;">기업회원가입</th>
+						<tr>
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디 </td>
+					<td><pre> </pre> <input type="text" name="userid" id="userid"
 						style="width: 100; height: 22" maxlength="12"></td>
-					<td><button type="button" id="idCheck">중복확인</button></td>
+					<td colspan="2" style="width: 299px; "><pre> </pre> <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;" id="idCheck"></td>
 				</tr>
 				<tr>
-					<td>비밀번호 :</td>
-					<td id="pwExcept"><input type="password" name="passwd" id="passwd"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*비밀번호 </td>
+					<td colspan="3" id="pwExcept"><pre> </pre> <input type="password" name="passwd" id="passwd"
 						style="width: 100; height: 22" maxlength="12"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호확인 :</td>
-					<td id="pwEqual"><input type="password" name="passwd2" id="passwd2"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*비밀번호확인 </td>
+					<td  colspan="3" id="pwEqual"><pre> </pre> <input type="password" name="passwd2" id="passwd2"
 						style="width: 100; height: 22" maxlength="12" ></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>회사명 :</td>
-					<td><input type="text" name="nickname" id="nickname"
+					<td  width="150" align="left" style="font-weight: bold;"><pre>   </pre>*회사명 </td>
+					<td><pre> </pre> <input type="text" name="nickname" id="nickname"
 						style="width: 100; height: 22" maxlength="12"></td>
-					<td><button type="button" id="nickCheck">중복확인</button></td>
+					<td colspan="2"><pre> </pre> <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;"id="nickCheck"></td>
 				</tr>
 				<tr>
-					<td>업종 :</td>
-					<td id="regType"><input type="text" name="companytype" id="companytype"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*업종 </td>
+					<td colspan="3" id="regType"><pre> </pre> <input type="text" name="companytype" id="companytype"
 						style="width: 100; height: 22" maxlength="12"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>사업자등록번호 :</td>
-					<td><input type="text" name="companyno" id="companyno"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*사업자등록번호 </td>
+					<td><pre> </pre> <input type="text" name="companyno" id="companyno"
 						style="width: 100; height: 22" maxlength="10">('-' 제외)</td>
-					<td><button type="button" id="noCheck">중복확인</button></td>
+						<td colspan="2"><img src="/Handicap/img/check.jpg" width="80" style="height: 30px;" id="noCheck"></td>
+					
 				</tr>				
 				<tr>
-					<td>대표자명 :</td>
-					<td id="regCeo"><input type="text" name="companyceoname" id="companyceoname"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*대표자명 </td>
+					<td colspan="3" id="regCeo"><pre> </pre> <input type="text" name="companyceoname" id="companyceoname"
 						style="width: 100; height: 22" maxlength="10"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>회사주소 :</td>
-					<td id="regA"><input type="text" name="companyaddress1" id="companyaddress1"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*회사주소 </td>
+					<td colspan="2" id="regA"><pre> </pre> <input type="text" name="companyaddress1" id="companyaddress1"
 						style="width: 50px; height: 22" readonly>
 						<input type="text" name="companyaddress2" id="companyaddress2"
 						style="width: 350px; height: 22" readonly><br>　
-						<span style="font-size: 10pt;">상세주소 : </span><input type="text" name="companyaddress3" id="companyaddress3"
+						<pre></pre><span style="font-size: 10pt;">상세주소 : </span><input type="text" name="companyaddress3" id="companyaddress3"
 						style="width: 180px; height: 22" readonly="readonly" maxlength="20"></td>
-					<td><button type="button" id="findAddress">검색</button></td>
+					<td><pre> </pre> <img src="/Handicap/img/searchbtn.png" width="70" style="height: 20px;" id="findAddress"><pre></pre></td>
 				</tr>
 				<tr>
-					<td>담당자명 :</td>
-					<td id="regName"><input type="text" name="name" id="name"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*담당자명 </td>
+					<td  colspan="3" id="regName"><pre> </pre> <input type="text" name="name" id="name"
 						style="width: 100; height: 22" maxlength="10"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>연락처 :</td>
-					<td id="regPhone"><select name="phone1" id="phone1">
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*연락처 </td>
+					<td colspan="3" id="regPhone"><pre> </pre> <select name="phone1" id="phone1">
 							<option value="010" selected>010</option>
 							<option value="011">011</option>
 							<option value="016">016</option>
@@ -431,36 +451,42 @@ $(document).ready(function() {
 						style="width: 45px; height: 22" maxlength="4"> <input
 						type="text" name="phone3" id="phone3"
 						style="width: 45px; height: 22" maxlength="4"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>이메일 :</td>
-					<td id="regEmail"><input type="text" name="email" id="email"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*이메일 </td>
+					<td colspan="3" id="regEmail"><pre> </pre> <input type="text" name="email" id="email"
 						style="width: 150; height: 22" maxlength="25"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호질문 :</td>
-					<td id="regPq"><input type="text" name="pquestion" id="pquestion"
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*비밀번호질문 </td>
+					<td  colspan="3" id="regPq"><pre> </pre> <input type="text" name="pquestion" id="pquestion"
 						style="width: 150; height: 22" maxlength="25"></td>
-					<td></td>
+					
 				</tr>
 				<tr>
-					<td>비밀번호답 :</td>
-					<td id="regPa"><input type="text" name="panswer" id="panswer"
-						style="width: 150; height: 22" maxlength="25"></td>
-					<td></td>
+					<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*비밀번호답 </td>
+					<td colspan="3" id="regPa"><pre> </pre> <input type="text" name="panswer" id="panswer"
+						style="width: 150; height: 22" maxlength="25"><pre> </pre> </td>
+					
 				</tr>
 				<tr>
 					<td></td>
-					<td><button type="button" id="register">회원가입</button>
-						<button id="cancel">가입취소</button></td>
-					<td></td>
+					<td colspan="3"><img src="/Handicap/img/regi2.jpg" width="115" style="height: 30px;" id="register">
+						<img src="/Handicap/img/cel.jpg" width="115" style="height: 30px;" id="cancel">
+				</tr>
+				<tr>
+					<th colspan="4"><pre>  </pre></th>
 				</tr>
 			</table>
-			<input type="hidden" name="usergrade" value="2">
-			
+			</div>
+			<input type="hidden" name="flag" value="company">
 		</form>
+		
+		</div>
+		
 	</center>
+	
 </body>
 </html>

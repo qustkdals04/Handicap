@@ -289,17 +289,18 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<!-- 개인정보 메인 -->
 
-							<th colspan="2" class="re"
+							<th colspan="3" class="re"
 								style="font-size: x-large; font-weight: bold; color: silver;">일반회원가입</th>
 						<tr>
 
 							<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디</td>
 
-							<td><pre> </pre> <input type="text" name="userid"
+							<td style="width: 176px; "><pre> </pre> <input type="text" name="userid"
 								id="userid" style="vertical-align:; width: 150; height: 28px">
-								<input type="button" value="중복체크" width="115"
-								style="height: 36px; width: 99px" id="idCheck"> <!-- <button type="button" id="idCheck" >아이디 중복 체크</button> -->
-								<font size="3" color="#000000" style="">공백없이 4~12자리 영문+숫자</font>
+								</td>
+								<td style="width: 527px; "><pre> </pre>
+								 <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;" id="idCheck" >
+								
 								<pre> </pre></td>
 
 
@@ -308,9 +309,8 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호</td>
-							<td id="pwExcept"><input type="password" name="passwd" id="passwd"
-								style="vertical-align:; width: 150; height: 28px"> <font
-								size="3" color="#000000" style="">5~12자리 영문+숫자 (대문자X)</font> <pre> </pre>
+							<td colspan="2" id="pwExcept"><input type="password" name="passwd" id="passwd"
+								style="vertical-align:; width: 150; height: 28px"><pre>   </pre> 
 							</td>						
 
 						</tr>
@@ -318,7 +318,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호확인</td>
 
-							<td id="pwEqual"><input type="password" name="passwd2" id="passwd2"
+							<td id="pwEqual" colspan="2"><pre></pre><input type="password" name="passwd2" id="passwd2"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -329,7 +329,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*이름</td>
-							<td id="regName"><input type="text" name="name" id="name"
+							<td id="regName" colspan="2"><input type="text" name="name" id="name"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -337,30 +337,32 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*닉네임</td>
 							<td><input type="text" name="nickname" id="nickname"
-								style="vertical-align:; width: 150; height: 28px"> <input
-								type="button" value="중복체크" width="115"
-								style="height: 36px; width: 99px" id="nickCheck"> <!-- <button type="button" id="nickCheck">닉네임 중복 검사</button>	 -->
+								style="vertical-align:; width: 150; height: 28px">
+								</td>
+								<td style="width: 593px; "><pre></pre>
+								 <img src="/Handicap/img/check.jpg" width="80" style="height: 30px;"  id="nickCheck"> 
+								 <!-- <button type="button" id="nickCheck">닉네임 중복 검사</button>	 -->
 								<pre> </pre></td>
 
 						</tr>
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*연락처</td>
-							<td id="regPhone"><select name="phone1" id="phone1"
+							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
+							<td id="regPhone" colspan="2"><pre> </pre><select name="phone1" id="phone1"
 								style="width: 50; height: 25">
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
 							</select> <input type="text" name="phone2" id="phone2"
-								style="width: 50; height: 25" maxlength="4"> <input
+								style="width: 45px; height: 22" maxlength="4"> <input
 								type="text" name="phone3" id="phone3"
-								style="width: 50; height: 25" maxlength="4"> <pre> </pre>
-							</td>
+								style="width: 45px; height: 22" maxlength="4"> <pre> </pre>
+							</td>    
 
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*이메일</td>
-							<td id="regEmail"><input type="text" name="email" id="email"
+							<td id="regEmail" colspan="2"><input type="text" name="email" id="email"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
@@ -368,36 +370,35 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호
 								질문</td>
-							<td id="regPq"><input type="text" name="pquestion" id="pquestion"
+							<td id="regPq" colspan="2"><input type="text" name="pquestion" id="pquestion"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
 						</tr>
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;">*비밀번호
+							<td colspan="1" width="150" align="left" style="font-weight: bold;">*비밀번호
 								답</td>
-							<td id="regPa"><input type="text" name="panswer" id="panswer"
+							<td  colspan="2" id="regPa"><input type="text" name="panswer" id="panswer"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
 						</tr>
 						<tr>
 							<td></td>
-							<td><pre> </pre><input type="button" value="가  입 "
-								width="115" style="height: 30px;" id="register"> <input
-								type="button" value="취   소 " width="115" style="height: 30px;"
+							<td colspan="2"><pre> </pre>
+							<img src="/Handicap/img/regi2.jpg" width="115" style="height: 30px;" id="register"> 
+							<img src="/Handicap/img/cel.jpg" width="115" style="height: 30px;"
 								id="cancel"> <!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
 
 						</tr>
 						<tr>
-							<th colspan="2"><pre>  </pre></th>
+							<th colspan="3" ><pre>  </pre></th>
 						</tr>
 
 					</table>
-					
-					<input type="hidden" name="usergrade" value="1">
-					<input
+
+					<input type="hidden" name="flag" value="member"> <input
 						type="hidden" name="companyno" value=""> <input
 						type="hidden" name="companyceoname" value=""> <input
 						type="hidden" name="companyaddr" value=""> <input
