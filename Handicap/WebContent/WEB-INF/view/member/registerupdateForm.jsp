@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/styles.css">
 <link rel="stylesheet" type="text/css" media="all"
-	href="/Handicap/css/mainview.css">
+	href="/Handicap/css/main.css">
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
 <script type="text/javascript">

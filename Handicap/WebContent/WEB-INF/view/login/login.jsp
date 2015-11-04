@@ -6,6 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -32,7 +34,7 @@
 		});
 		$("#register").click(function() {
 			$("#loginform").attr({
-				action : "/Handicap/registerForm",
+				action : "/Handicap/retype",
 				method : 'post'
 			});
 			$("#loginform").submit();
@@ -53,53 +55,70 @@
 			<br> <br> <br>
 			<div id="dd">
 				<h3>
-					<img src="" width="50" style="width: 306px; height: 79px;">
+					<font color="#888888"
+								style="font-size: xx-large; font-weight: bold; color: black;;">
+								MEMBERSHIP</font>
 				</h3>
 				<form name="login" id="loginform">
-					<table width="200" height="100" style="width: 363px;">
+					<table width="200" height="100" style="width: 363px;" class="re">
 						<tr>
-							<td align="left" width="200px"><font size="5"
-								face="Arial Black">Login</font></td>
-							<td width="200px"><input type="text" name="userid"
-								size="10" id="userid" style="width: 200px"></td>
+							<th colspan="3"><font color="#888888"
+								style="font-size: large; font-weight: bold; color: silver;">로그인
+									후 이용이 가능합니다.</font></th>
 
-							<td rowspan="2" style="width: 100px" align="center"
-								valign="bottom">
-								<!-- <button type="button" id="login" > -->
-								<div id="img">
-									<img src="" width="50" id="login"
-										style="width: 92px; height: 55px;">
-								</div>
-							</td>
 
-							<td rowspan="2" style="width: 100px" align="center"
-								valign="bottom">
-								<!-- <button type="button" id="login" > -->
-								<div id="img">
-									<img src="" width="50" id="register"
-										style="width: 92px; height: 55px;">
-								</div>
-							</td>
+						</tr>
+						<tr>
+
+							<td rowspan="1" align="left" width="200px"><pre></pre><font
+								size="5" style="font-weight: bold;">User Id</font></td>
+							<td width="200px"><pre></pre><input type="text"
+								name="userid" size="10" id="userid" style="width: 200px"></td>
+							<td rowspan="2" > <pre></pre><img src="img/loginok.JPG" width="80" height="60" id="login"></td>
+
+
+
+
 
 							<!-- <button type="button" id="register">회원가입</button> -->
 
 						</tr>
 						<tr>
-							<td align="left"><font size="5">Password</font></td>
+							<td align="left"><font size="5" style="font-weight: bold;">Password</font></td>
 							<td><input type="password" name="passwd" size="10"
 								id="password" style="width: 200px"></td>
+							
 
 						</tr>
-						<tr>
-							<td colspan="4"><font color="#888888">로그인 후 이용이
-									가입합니다.</font></td>
 
 
+			<tr>
+
+							<th colspan="3" style="width: 100px" align="center"
+								valign="bottom">
+								<!-- <button type="button" id="login" > -->
+								<div id="img">
+									<pre></pre>
+									<font style="font-size: 10; color: red;">${status}</font>
+									<br>
+									<img src="img/regi.JPG" id="register" style="width: 100px; height: 35px;">
+									<pre></pre>
+								</div> <!-- </th>
+							<th style="width: 100px" align="center" valign="bottom">
+								<div id="img">
+									<pre></pre>
+									<button id="register" style="width: 100px; height: 35px;">회원가입</button>
+
+								</div>
+							</th> -->
 						</tr>
+
+
+
 
 					</table>
 
-					<font style="font-size: 10; color: red;">${status }</font>
+					
 
 				</form>
 			</div>
