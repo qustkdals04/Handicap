@@ -13,7 +13,8 @@ public class BbsVO {
 	private int bad;
 	private int star;
 	private String region;
-	private int boardno;	
+	private int boardno;
+	
 	public int getBoardno() {
 		return boardno;
 	}

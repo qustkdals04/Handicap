@@ -1,5 +1,9 @@
 package com.handicap.model.beans;
 
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class FileVO {
 
 	/*
@@ -8,9 +12,14 @@ public class FileVO {
 	파일사이즈 – filesize - number
 
 	 */
+	private int no;
+	private int boardno;
 	private int fileid;
 	private String filename;
-	private int filesize;
+	private List<MultipartFile> files;
+	
+	
+	
 	public int getFileid() {
 		return fileid;
 	}
@@ -23,10 +32,22 @@ public class FileVO {
 	public void setFilename(String filename) {
 		this.filename = filename;
 	}
-	public int getFilesize() {
-		return filesize;
+	public List<MultipartFile> getFiles() {
+		return files;
 	}
-	public void setFilesize(int filesize) {
-		this.filesize = filesize;
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public int getBoardno() {
+		return boardno;
+	}
+	public void setBoardno(int boardno) {
+		this.boardno = boardno;
 	}
 }

@@ -8,8 +8,11 @@ import com.handicap.model.beans.BbsVO;
 
 public interface BbsDAO {
 	public boolean insert(BbsVO bbs)throws SQLException;
-    public boolean delete(int no, int boardno)throws SQLException;
+	public boolean delete(int no)throws SQLException;
     public boolean update(BbsVO bbs)throws SQLException;
     public BbsVO select(int no, int boardno);//throws SQLException;
-    public List<BbsVO> selectAll();    
+    public List<BbsVO> selectAll();
+    public boolean hitsupdate(int no);
+    public boolean goodupdate(int good);//throws SQLException;
+    public int noticeno();
 }
