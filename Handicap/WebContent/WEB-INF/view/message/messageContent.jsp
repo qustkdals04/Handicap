@@ -61,7 +61,7 @@
 				
 
 
-				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
+				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 200px;"></textarea> </td>
 			</tr>
 			<tr>
 				<td width="500px" colspan="4"></td>
@@ -69,10 +69,10 @@
 				<td width="300px" align="center">
 				
 					
-					<button class="ml-button2" type="button"  id="send" style="width: 100px">보내기</button>
+					<button class="ml-button" type="button"  id="send" style="width: 70px">보내기</button>
 					
 					
-					<button class="ml-button2" type="button" id="cancel" onclick="history.back()" style="width: 100px">취소</button>
+					<button class="ml-button" type="button" id="cancel" onclick="history.back()" style="width: 70px">취소</button>
 				</td>
 			<!-- 	<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">

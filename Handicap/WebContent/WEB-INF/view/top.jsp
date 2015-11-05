@@ -55,7 +55,7 @@
 				<p>
 					<font size="3" id="rigthfont"><a href="javascrpt:void(0)"
 						class="a1"
-						onclick="window.open('/Handicap/messagelist','popup1','width=800,height=300, top='+(screen.height/2-150)+',left='+(screen.width/2-400)+'')">쪽지함</a>&nbsp;<a
+						onclick="window.open('/Handicap/messagelist','popup1','width=900,height=400, top='+(screen.height/2-200)+',left='+(screen.width/2-450)+'')">쪽지함</a>&nbsp;<a
 						href="/Handicap/member/mypage/pwcheck" class="a2">마이페이지</a>&nbsp;<a
 						href="/Handicap/logout" class="a3">로그아웃</a></font>
 				</p>

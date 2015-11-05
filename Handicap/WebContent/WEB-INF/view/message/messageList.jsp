@@ -1,4 +1,4 @@
-
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <%@ page import = "com.handicap.model.beans.MessageVO" %>
     <%@ page import = "com.handicap.model.dao.MessageDAO" %>
@@ -10,14 +10,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>메세지 리스트</title>
+<title>받은 메세지</title>
 </head>
 <!-- messageList.jsp -->
 <body>
-<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><table class="re">
+<center>
+<table class="re">
 				<tr>
 					  <th colspan="3" class="re2" 
-								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 목록</th>
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">받은 메세지</th>
 				</tr>
 	
 
@@ -25,7 +26,7 @@
 	
 </table>
 <br>
-<table class="list2"> 
+<table class="list2" style="font-size: medium;"> 
 	<tr>		
 		<th width="15%">발 신 자</th>
 		<th width="45%">내     용</th>
@@ -38,7 +39,14 @@
   	 		<td>${message.sender }</td>
   	 		<td><a href="/Handicap/messagecontent?messageno=${message.messageno }&pageNumber=${pageNumber}">${message.contents }</a></td>
   	 		<td>${message.senddate }</td>
-  	 		<td>${message.status }</td>
+  	 		<td>
+			<c:if test="${message.status==1 }">
+						<img alt="안읽음" src="/Handicap/img/1.png" width="25" height="25">
+					</c:if>
+					<c:if test="${message.status==2 }">
+						<img alt="읽음" src="/Handicap/img/2.png" width="25" height="25">
+					</c:if>
+			</td>
   	 		</tr>
   	 </c:forEach>
 	</tr>
@@ -52,9 +60,9 @@
 </table>
 
 
-<table >
+<table align="center">
 <tr>
-	<td>
+	<td style="font-size: large;">
 		<c:if test="${startPage>1 }">
 			<span>
 				<a href="/Handicap/messagelist?pageNumber=${startPage-1}">이전</a>
@@ -91,5 +99,6 @@
 	</tr>
        
 </table>
+</center>
 </body>
 </html>

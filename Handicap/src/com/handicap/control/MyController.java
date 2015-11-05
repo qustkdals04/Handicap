@@ -88,6 +88,12 @@ public String handicaplaw(){
 	return "Law/HandicapForm";
 }
 
+//장애인복지법
+@RequestMapping("/handicaplaw2") 
+public String handicaplaw2(){
+	return "handicaplaw";
+}
+
 //의료장비
 @RequestMapping("/trade") 
 public String trade(){
