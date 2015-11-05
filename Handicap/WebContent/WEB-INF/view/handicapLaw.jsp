@@ -31,13 +31,10 @@
 </script>
 </head>
 <body>
-<table width="800">
-	
-	
-	
-
-	<tr><td><%@include file="./top.jsp" %></td><td></td></tr>
-	<tr><td><%@include file="./menu.jsp" %></td><td></td></tr>
+<table width="1000">
+<tr><td><%@include file="top.jsp" %></td><td></td></tr>
+<tr><td><%@include file="menu.jsp" %></td><td></td></tr>
+<tr><td><table width="800">	
 	<tr><td>
 	<!-- 장애인 관련 법 -->
 	-
@@ -355,10 +352,8 @@
 			<td align="center">300</td>
 		</tr>
 	</table>
-</td><td><%@include file="banner.jsp" %>  </td></tr>
-
-
-
+</table></td><td><%@include file="banner.jsp" %></td></tr>
 </table>
+
 </body>
 </html>
