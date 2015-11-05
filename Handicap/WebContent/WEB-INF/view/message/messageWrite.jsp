@@ -90,8 +90,8 @@ var searchNick = false;
 				<td width="300px" align="center">
 				
 					
-					<button class="ml-button2" type="button" id="send" class="ml-button">보내기</button>
-					<button class="ml-button2" type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
+					<button class="ml-button2" type="button" id="send" >보내기</button>
+					<button class="ml-button2" type="button" id="cancel" onclick="history.back()" >취소</button>
 				</td>
 
 				
