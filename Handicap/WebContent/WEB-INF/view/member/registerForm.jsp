@@ -291,7 +291,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 							<th colspan="3" class="re2"
 								style="font-size: x-large; font-weight: bold; color: silver;">일반회원가입</th>
-						<tr><!--  -->
+						<tr>
 
 							<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디</td>
 
