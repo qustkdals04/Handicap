@@ -61,10 +61,10 @@
 				<td width="300px" align="center">
 				
 					
-					<button  id="send">보내기</button>
+					<button type="button"  id="send">보내기</button>
 					
 					
-					<button id="cancel" onclick="history.back()">취소</button>
+					<button type="button" id="cancel" onclick="history.back()">취소</button>
 				</td>
 			</tr>
 

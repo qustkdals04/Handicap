@@ -64,12 +64,14 @@ var searchNick = false;
 		</table>
 		<table class ="list3" >
 			<tr>
-				<th  align="left" width="500px" colspan="4">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">  </th>
+				<th  align="left" width="500px" colspan="4">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">
+				<img src = "/shop1/img/search.png" id="findnick" width="70px" style="vertical-align: middle;">
+				<!-- <button id="findnick">검색</button> --></th>
 				
 
 				
 				<th width="300px" align="center">
-				<button id="findnick">검색</button>
+				
 				</th>
 			</tr>
 			<tr>
@@ -82,8 +84,8 @@ var searchNick = false;
 				<td width="300px" align="center">
 				
 					
-					<button  id="send">보내기</button>
-					<button id="cancel" onclick="history.back()">취소</button>
+					<button type="button" id="send" class="ml-button">보내기</button>
+					<button type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
 				</td>
 
 				
