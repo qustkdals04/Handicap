@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
   <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
 <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 var searchNick = false;
@@ -57,11 +58,16 @@ var searchNick = false;
 </head>
 <body>
 	<form name="messageWrite" id="messageWrite">
-		<table class="gmlwn">
+		<table class="re">
 				<tr>
-						<td>● 메시지 쓰기</td>
+					  <th colspan="3" class="re2" 
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 쓰기</th>
 				</tr>
-		</table>
+	
+
+     <!-- 메세지 리스트 제목창 -->
+	
+</table>
 		<table class ="list3" >
 			<tr>
 				<th  align="left" width="500px" colspan="4">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">
@@ -84,8 +90,8 @@ var searchNick = false;
 				<td width="300px" align="center">
 				
 					
-					<button type="button" id="send" class="ml-button">보내기</button>
-					<button type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
+					<button class="ml-button2" type="button" id="send" class="ml-button">보내기</button>
+					<button class="ml-button2" type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
 				</td>
 
 				
