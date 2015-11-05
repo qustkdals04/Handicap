@@ -87,7 +87,7 @@
 				<tr>
 					<td style="font-weight: bold;"><pre></pre>이메일 :</td>
 					<td><pre></pre><input type="text" name="email" id="email"></td>
-					<td><pre></pre><img src="/Handicap/img/search.png"  style="width: 80px; height: 30px;" id="btnfindId"></td>
+					<td><pre></pre><button type="button" class="ml-button" id="btnfindId">찾기</button></td>
 				</tr>
 			</table>
 		</form>
@@ -109,7 +109,7 @@
 				<tr>
 					<td style="font-weight: bold;"><pre></pre>비밀번호 답 :</td>
 					<td><pre></pre><input type="text" name="panswer" id="panswer"></td>
-					<td><pre></pre><img src="/Handicap/img/search.png"  style="width: 80px; height: 30px;" id="btnfindId"></td>
+					<td><pre></pre><button type="button" class="ml-button" id="btnfindId">찾기</button></td>
 				</tr>
 			</table>
 		</form>

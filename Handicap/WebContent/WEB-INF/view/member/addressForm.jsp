@@ -58,7 +58,7 @@ function addchoice(address1, address2) {
 					<td >주소 :</td>
 					<td ><input type="text" name="dong" id="dong"
 						style="width: 100; height: 22">(동/면/읍)</td>
-					<td><button type="button" id="findAddressIn">검색</button></td>
+					<td><button type="button" class="ml-button" id="findAddressIn">검색</button></td>
 				</tr>
 			</table>
 		</form>

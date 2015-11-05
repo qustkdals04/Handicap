@@ -64,7 +64,7 @@
 					<td><pre></pre> ※ 회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시한번 입력하시기 바랍니다. </td>
 			</tr>
 			<tr>
-				<td align="center"><pre ></pre><img src="/Handicap/img/ok2.png" width="80" style="height: 25px; " id="btnOk" ><pre></pre></td>
+				<td align="center"><pre ></pre><button type="button" class="ml-button" id="btnOk" >확인</button><pre></pre></td>
 			</tr>
 			<tr>
 				<th></th>

@@ -219,8 +219,8 @@
 						<tr>
 							<td></td>
 							<td><pre> </pre>
-								<button type="button" id="register">수정</button>
-								<button id="cancel">취소</button>
+								<button type="button" class="ml-button" id="register">수정</button>
+								<button type="button" class="ml-button" id="cancel">취소</button>
 								<pre></pre></td>
 
 
