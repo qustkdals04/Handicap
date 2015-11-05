@@ -355,7 +355,7 @@
 			<td align="center">300</td>
 		</tr>
 	</table>
-</td><td><%@include file="banner.jsp" %>  </td></tr>
+</td><td><%@include file="banner2.jsp" %>  </td></tr>
 
 
 

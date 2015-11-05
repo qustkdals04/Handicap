@@ -65,7 +65,7 @@ var searchNick = false;
 		<table class ="list3" >
 			<tr>
 				<th  align="left" width="500px" colspan="4">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">
-				<img src = "/shop1/img/search.png" id="findnick" width="70px" style="vertical-align: middle;">
+				<img src = "/Handicap/img/search.png" id="findnick" width="70px" style="vertical-align: middle;">
 				<!-- <button id="findnick">검색</button> --></th>
 				
 

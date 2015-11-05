@@ -60,7 +60,7 @@
 	
  <td>
  <div id="sidebar"  align="right">
- 	 <%@include file="banner.jsp" %>  
+ 	 <%@include file="banner2.jsp" %>  
   	</div>  
   </td> 
   </tr>
