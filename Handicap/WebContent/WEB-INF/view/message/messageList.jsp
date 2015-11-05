@@ -4,6 +4,8 @@
   <%@ page import = "com.handicap.model.beans.MessageVO" %>
     <%@ page import = "com.handicap.model.dao.MessageDAO" %>
       <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
+      <link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.MessageVO"></jsp:useBean>
 
 <html>
@@ -13,19 +15,15 @@
 </head>
 <!-- messageList.jsp -->
 <body>
-<table class="gmlwn">
+<table class="re">
 				<tr>
-						<td >● 메시지 목록</td>
+					  <th colspan="3" class="re2" 
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 목록</th>
 				</tr>
-		</table>
+	
 
-<table class="btn" style="margin-top: 5px">           <!-- 메세지 리스트 제목창 -->
-	<tr>
-			<td align ="center"width="500px"></td>
-			<td align="right" width = "300px">
-			<button type="button" onclick="location.href='/Handicap/messagesendlist'" style="width: 100px">보낸메시지</button>
-			<button type="button" onclick="location.href='/Handicap/messageWrite'" style="width: 110px">쪽지보내기</button></td>
-	</tr>
+     <!-- 메세지 리스트 제목창 -->
+	
 </table>
 <br>
 <table class="list2"> 
@@ -45,9 +43,17 @@
   	 		</tr>
   	 </c:forEach>
 	</tr>
+	<tr>
+
+	<tr>
+		
 	<input type="hidden" name="pageNumber" value="${pageNumber }">
+	</tr>
+	
 </table>
-<table class="list2">
+
+
+<table >
 <tr>
 	<td>
 		<c:if test="${startPage>1 }">
@@ -76,6 +82,15 @@
 		</c:if>
 	</td>
 </tr>
+</table>
+<table style="margin-top: 5px">
+	<tr>
+		<td align ="center"width="500px"></td>
+			<td align="right" width = "300px">
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messagesendlist'" style="width: 100px">보낸메시지</button>
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messageWrite'" style="width: 100px">쪽지보내기</button></td>
+	</tr>
+
 </table>
 </body>
 </html>

@@ -9,26 +9,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
+    <link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
 <title>메세지 리스트</title>
 </head>
 <!-- messageList.jsp -->
 <!-- messageList.jsp -->
 <body>
-	<table class="gmlwn">
+	<table class="re">
 		<tr>
-			<td>● 메시지 목록</td>
+			  <th colspan="3" class="re2" 
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 목록</th>
 		</tr>
 	</table>
 
-	<table class="btn" style="margin-top: 5px">
-		<!-- 메세지 리스트 제목창 -->
-		<tr>
-			<td align ="center"width="500px"></td>
-			<td align="right" width = "300px">
-			<button type = "button"onclick="location.href='/Handicap/messagelist'"  style="width: 100px">받은 메시지</button>
-					<button type = "button" onclick="location.href='/Handicap/messageWrite'" style="width: 100px">쪽지보내기</button></td>
-		</tr>
-	</table>
+	
 	<br>
 	<table class="list2">
 		<tr>
@@ -50,7 +45,7 @@
 		</tr>
 		<input type="hidden" name="pageNumber" value="${pageNumber }">
 	</table>
-	<table class="list2">
+	<table >
 		<tr>
 			<td><c:if test="${startPage>1 }">
 					<span> <a
@@ -76,5 +71,23 @@
 				</c:if></td>
 		</tr>
 	</table>
+	<table  style="margin-top: 5px">
+		<!-- 메세지 리스트 제목창 -->
+		<tr>
+			<td align ="center"width="500px"></td>
+			<td align="right" width = "300px">
+			<button  class="ml-button2"  type = "button"onclick="location.href='/Handicap/messagelist'"  style="width: 100px">받은 메시지</button>
+					<button class="ml-button2"  type = "button" onclick="location.href='/Handicap/messageWrite'" style="width: 100px">쪽지보내기</button></td>
+		</tr>
+	</table>
+	<!-- <table>
+	<tr>
+		<td align ="center"width="500px"></td>
+			<td align="right" width = "300px">
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messagesendlist'" style="width: 100px">보낸메시지</button>
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messageWrite'" style="width: 110px">쪽지보내기</button></td>
+	</tr> -->
+
+</table>
 </body>
 </html>
