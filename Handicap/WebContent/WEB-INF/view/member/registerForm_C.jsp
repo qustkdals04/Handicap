@@ -478,7 +478,7 @@
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
-						</tr>
+						</tr>  
 						<!-- <td ><pre> </pre>
 
 								 <button class="ml-button"  style="font-weight: bold;" id="nickCheck">중복체크</button>
