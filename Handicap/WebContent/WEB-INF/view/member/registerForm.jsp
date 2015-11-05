@@ -289,7 +289,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<!-- 개인정보 메인 -->
 
-							<th colspan="3" class="re2"
+							  <th colspan="3" class="re2"
 								style="font-size: x-large; font-weight: bold; color: silver;">일반회원가입</th>
 						<tr>
 

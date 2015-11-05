@@ -402,7 +402,7 @@ button {
 	font-family: 'Helvetica';
 	font-weight: bold; 
 	font-size: 11pt;
-	float: left;
+	/* float: left; */
 	margin: 0px 20px;
 }
 .ml-button {
@@ -420,18 +420,8 @@ button {
 	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
-/*Hover*/
-/* .ml-button:hover {
-	background-color: #EAB26C;
-	background-image: -o-linear-gradient(90deg , rgb(248,169,91) 0%, rgb(244,210,170) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(248,169,91) 0%, rgb(244,210,170) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(248,169,91) 0%, rgb(244,210,170) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(248,169,91) 0%, rgb(244,210,170) 100%);
-	background-image: linear-gradient(90deg , rgb(248,169,91) 0%, rgb(244,210,170) 100%);
-}
- */
 /*Active*/
-.ml-button:active {
+/* .ml-button:active {
 	background-color: #E77E21;
 	-moz-box-shadow:inset 0px 0px 5px rgba(184,129,39,1);
 	-webkit-box-shadow:inset 0px 0px 5px rgba(184,129,39,1);
@@ -444,43 +434,6 @@ button {
 	text-shadow: none;
 }
 
-
-/* .ml-button {
-	background-color: #E2E5EC;
-	border: 1px solid #8E98A9;
-	-moz-box-shadow:inset 0px 0px 1px rgba(160,170,184,1);
-	-webkit-box-shadow:inset 0px 0px 1px rgba(160,170,184,1);
-	box-shadow:inset 0px 0px 1px rgba(160,170,184,1);
-	background-image: -o-linear-gradient(90deg , rgb(214,219,223) 0%, rgb(244,244,248) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(214,219,223) 0%, rgb(244,244,248) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(214,219,223) 0%, rgb(244,244,248) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(214,219,223) 0%, rgb(244,244,248) 100%);
-	background-image: linear-gradient(90deg , rgb(214,219,223) 0%, rgb(244,244,248) 100%);
-	color: #ffffff;
-	text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
-}
-
-
-Hover
-.ml-button:hover {
-	background-color: #EAEAF0;
-	background-image: -o-linear-gradient(90deg , rgb(229,235,240) 0%, rgb(249,248,255) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(229,235,240) 0%, rgb(249,248,255) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(229,235,240) 0%, rgb(249,248,255) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(229,235,240) 0%, rgb(249,248,255) 100%);
-	background-image: linear-gradient(90deg , rgb(229,235,240) 0%, rgb(249,248,255) 100%);
-}
-
-Active
-.ml-button:active {
-	background-color: #C6CDD3;
-	background-image: -o-linear-gradient(90deg , rgb(244,244,248) 0%, rgb(214,219,223) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(244,244,248) 0%, rgb(214,219,223) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(244,244,248) 0%, rgb(214,219,223) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(244,244,248) 0%, rgb(214,219,223) 100%);
-	background-image: linear-gradient(90deg , rgb(244,244,248) 0%, rgb(214,219,223) 100%);
-	text-shadow: none;
-}
 
  */
 
