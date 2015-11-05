@@ -104,6 +104,11 @@
    	select * from member where userid=#{userid}
    </select>
    
+   <!-- 평가여부확인 -->
+   <select id="eval" parameterType="Map" resultType="int">
+   	select count(*) from evalinfo where boardno=#{boardno} and no=#{no} and nickname=#{nickname} and commentno=#{commentno}
+   </select>
+   
    <!-- 일반회원정보 업데이트 -->
    <update id="memberupdate" parameterType="com.handicap.model.beans.UserVO">
   	update member set passwd=#{passwd}, email=#{email}, phone=#{phone}, pquestion=#{pquestion}, panswer=#{panswer} 

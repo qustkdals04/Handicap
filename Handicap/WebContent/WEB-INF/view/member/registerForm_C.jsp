@@ -544,7 +544,7 @@
 
 					</table>
 
-					<input type="hidden" name="flag" value="member"> <input
+					<input type="hidden" name="flag" value="2"> <input
 						type="hidden" name="companyno" value=""> <input
 						type="hidden" name="companyceoname" value=""> <input
 						type="hidden" name="companyaddr" value=""> <input

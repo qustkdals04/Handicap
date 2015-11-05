@@ -340,7 +340,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 								</td>
 								<td ><pre> </pre>
 								
-								 <button type="button" class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
+								 <button type="button" class="ml-button"  style="font-weight: bold;" id="nickCheck">중복체크</button>
 							
 								</td>
 							<!-- <td width="150" align="left" style="font-weight: bold;">*닉네임</td>
@@ -406,7 +406,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 					</table>
 
-					<input type="hidden" name="flag" value="member"> <input
+					<input type="hidden" name="flag" value="1"> <input
 						type="hidden" name="companyno" value=""> <input
 						type="hidden" name="companyceoname" value=""> <input
 						type="hidden" name="companyaddr" value=""> <input
