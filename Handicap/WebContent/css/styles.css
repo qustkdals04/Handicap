@@ -497,11 +497,18 @@ table.list th {
 }
 
 table.btn button {
-	height: 50px;
-	widows: 150px;
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 8px;
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
 table.list1 {
@@ -540,12 +547,18 @@ table.list1 th {
 }
 
 table.list1 button {
-	height: 50px;
-	widows: 150px;
-
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 8px;
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
 table.list2 {
@@ -573,7 +586,7 @@ table.list2 td {
 
 table.list2 th {
 	height: 30px;
-	font-size: 15px;
+	font-size: 18px;
 	font-weight: bold;
 	vertical-align: middle;
 	color: #777777;
@@ -583,12 +596,18 @@ table.list2 th {
 }
 
 table.list2 button {
-	height: 50px;
-	widows: 150px;
-
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 8px;
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
 table.list3 {
@@ -628,10 +647,16 @@ table.list3 th {
 }
 
 table.list3 button {
-	height: 50px;
-	widows: 150px;
-	
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 8px;
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }

@@ -60,10 +60,10 @@
 				<td width="300px" align="center">
 				
 					
-					<button id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					<button type="button" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
 					
 					
-					<button id="cancel" onclick="history.back()">취소</button>
+					<button type="button" id="cancel" onclick="history.back()">취소</button>
 				</td>
 			<!-- <td width="600px">
 			

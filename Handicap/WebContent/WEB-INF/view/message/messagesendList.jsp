@@ -25,8 +25,8 @@
 		<tr>
 			<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">
-			<button onclick="location.href='/Handicap/messagelist'" >받은 메시지</button>
-					<button onclick="location.href='/Handicap/messageWrite'">쪽지보내기</button></td>
+			<button type = "button"onclick="location.href='/Handicap/messagelist'"  style="width: 100px">받은 메시지</button>
+					<button type = "button" onclick="location.href='/Handicap/messageWrite'" style="width: 100px">쪽지보내기</button></td>
 		</tr>
 	</table>
 	<br>
@@ -34,8 +34,8 @@
 		<tr>
 			<th width="15%">수 신 자</th>
 			<th width="45%">내 용</th>
-			<th width="35%">보낸날짜</th>
-			<th width="5%">상 태</th>
+			<th width="33%">보낸날짜</th>
+			<th width="7%">상 태</th>
 		</tr>
 		<tr>
 			<c:forEach var="message" items="${messageList}">
