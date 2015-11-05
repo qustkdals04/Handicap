@@ -19,7 +19,7 @@
 				</tr>
 		</table>
 
-<table class="list">           <!-- 메세지 리스트 제목창 -->
+<table class="btn" style="margin-top: 5px">           <!-- 메세지 리스트 제목창 -->
 	<tr>
 			<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">
@@ -31,10 +31,10 @@
 <br>
 <table class="list"> 
 	<tr>		
-		<td color = "#678197" width="17%" bgcolor="#cccccc" align="center">&nbsp;발 신 자</td>
-		<td color = "#678197" width="53%" bgcolor="#cccccc" align="center">&nbsp;내     용</td>
-		<td color = "#678197" width="20%" bgcolor="#cccccc" align="center">&nbsp;보낸날짜</td>
-		<td color = "#678197" width="10%" bgcolor="#cccccc" align="center">&nbsp;상     태</td>
+		<th width="20%">발 신 자</th>
+		<th width="55%">내     용</th>
+		<th width="20%">보낸날짜</th>
+		<th width="5%">상     태</th>
 	</tr>
 	<tr>
 	 		<c:forEach var="message" items="${messageList}" >
