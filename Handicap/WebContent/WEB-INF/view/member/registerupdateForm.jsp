@@ -73,8 +73,7 @@
 						$("#register")
 								.click(
 										function() {
-											var regId = /^[a-z]+[a-z0-9]{4,12}$/g;
-											var userid = $("#userid").val();
+											
 											var passwd = $("#passwd").val();
 											var reg_pw = /^[a-z0-9_]{5,12}$/;
 											var email = $("#email").val();
@@ -82,16 +81,9 @@
 											var regPhone = /[^0-9]$/g;
 											var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 
-											var chkid = false;
-											var chknick = false;
+											
 
-											if (userid == "") {
-												alert("아이디를 입력해주세요..");
-												$("#userid").focus();
-											} else if (regId.test(userid) == false) {
-												alert("아이디는 4자~12자영문과 숫자로 입력해주세요");
-												$("#userid").focus();
-											} else if (reg_pw.test(passwd) == false) {
+											if (reg_pw.test(passwd) == false) {
 												alert("비밀번호를 입력해주세요..");
 												$("#passwd").focus();
 											} else if ($("#passwd2").val() == "") {
@@ -100,12 +92,6 @@
 											} else if ($("#passwd").val() != $(
 													"#passwd2").val()) {
 												alert("비밀번호와 비밀번호확인이 일치하지않습니다..")
-											} else if ($("#name").val() == "") {
-												alert("이름을 입력해주세요..");
-												$("#name").focus();
-											} else if ($("#nickname").val() == "") {
-												alert("닉네임을 입력해주세요..");
-												$("#nickname").focus();
 											} else if (phone == "") {
 												alert("연락처를 입력해주세요..");
 												$("#phone").focus();
@@ -148,12 +134,6 @@
 			<div id="content" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
-
-
-
-
-
-
 			<form method="post" name="registForm" id="registForm">
 				<div id="dd" align="center">
 					<table width="800px" class="re" align="center">
@@ -167,9 +147,7 @@
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*아이디</td>
 							<!-- <td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디</td> -->
 
-							<td><pre>   </pre><input type="text" name="userid"
-								id="userid" style="width: 100; height: 22" readonly="readonly"
-								value="${user.userid }"></td>
+							<td><pre>   </pre><font size="4">${user.userid }</font></td>
 
 						</tr>
 						<tr>
@@ -197,9 +175,7 @@
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*닉네임
 							</td>
-							<td><pre>   </pre><input type="text" name="nickname"
-								id="nickname" style="width: 100; height: 22" readonly="readonly"
-								value="${user.nickname }"></td>
+							<td><pre>   </pre><font size="4">${user.nickname }</font></td>
 
 						</tr>
 						<tr>
