@@ -283,9 +283,6 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 			<form method="post" name="registForm" id="registForm">
 				<div id="dd" align="center">
 					<table  class="re2">
-
-
-
 						<tr>
 							<!-- 개인정보 메인 -->
 
@@ -300,7 +297,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 								</td>
 								<td ><pre> </pre>
 
-								 <button class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
+								 <button type="button" class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
 							
 								</td>
 
@@ -343,7 +340,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 								</td>
 								<td ><pre> </pre>
 								
-								 <button class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
+								 <button type="button" class="ml-button"  style="font-weight: bold;" id="idCheck">중복체크</button>
 							
 								</td>
 							<!-- <td width="150" align="left" style="font-weight: bold;">*닉네임</td>
@@ -397,8 +394,8 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 						<tr>
 							<td></td>
 							<td colspan="2"><pre> </pre>
-							 <button class="ml-button"  style="font-weight: bold;" id="register">가입</button>
-							 <button class="ml-button"  style="font-weight: bold;"
+							 <button type="button" class="ml-button"  style="font-weight: bold;" id="register">가입</button>
+							 <button type="button" class="ml-button"  style="font-weight: bold;"
 								id="cancel">취소</button> <!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
 
