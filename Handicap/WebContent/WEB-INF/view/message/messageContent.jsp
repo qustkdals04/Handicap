@@ -56,15 +56,15 @@
 				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
 			</tr>
 			<tr>
-				<td width="600px" colspan="3"></td>
-				<td></td>
+				<td width="600px" colspan="4" align="center"></td>
+
 				<td>
 				
 					
-					<button  id="send">보내기</button>
+					<button type="button"  id="send">보내기</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					
-					<button id="cancel" onclick="history.back()">취소</button>
+					<button type="button" id="cancel" onclick="history.back()">취소</button>
 				</td>
 			</tr>
 

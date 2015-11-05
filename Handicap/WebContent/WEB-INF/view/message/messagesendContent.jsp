@@ -55,15 +55,15 @@
 				${messagesendContent.contents }</textarea></td>
 			</tr>
 			<tr>
-			<td width="600px" colspan="3"></td>
-				<td></td>
+			<td width="600px" colspan="4" align="center"></td>
+
 				<td>
 				
 					
-					<button id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					<button type="button" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					
-					<button id="cancel" onclick="history.back()">취소</button>
+					<button type="button" id="cancel" onclick="history.back()">취소</button>
 				</td>
 			<!-- <td width="600px">
 			
