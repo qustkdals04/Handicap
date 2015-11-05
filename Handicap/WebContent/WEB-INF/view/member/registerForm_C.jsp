@@ -554,8 +554,8 @@
 
 
 		</div>
-		<div id="sidebar" align="right">
-			<%@include file="../banner.jsp"%>
+		<div id="sidebar2" align="right">
+			<%@include file="../banner2.jsp"%>
 		</div>
 	</center>
 

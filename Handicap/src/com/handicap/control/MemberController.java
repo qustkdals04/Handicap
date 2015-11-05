@@ -463,4 +463,15 @@ public class MemberController {
 		}
 		return "redirect:messagelist";
 	}
+
+
+		// ==============================mypage===============================
+
+	//mypagehome
+	@RequestMapping("/mypagehome")  
+	public String mypagehome() {
+	return "mypage/mypagehome";
 }
+}
+
+

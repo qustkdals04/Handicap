@@ -61,6 +61,14 @@ float: left;
 padding: 10px;
 margin-left: 1150px;
 }
+#sidebar2{
+
+width:100px;
+float: left;
+padding: 500px;
+margin-left: 1150px;
+padding-bottom: 30px;
+}
 #news {
 	width: 800px;
 	float: left;
