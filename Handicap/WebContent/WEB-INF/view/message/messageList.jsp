@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <%@ page import = "com.handicap.model.beans.MessageVO" %>
     <%@ page import = "com.handicap.model.dao.MessageDAO" %>
@@ -15,7 +14,7 @@
 </head>
 <!-- messageList.jsp -->
 <body>
-<table class="re">
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%><table class="re">
 				<tr>
 					  <th colspan="3" class="re2" 
 								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 목록</th>

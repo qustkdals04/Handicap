@@ -2,7 +2,9 @@
     pageEncoding="UTF-8"%>
     <%@ page import = "com.handicap.model.beans.MessageVO" %>
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.MessageVO"></jsp:useBean>
-    
+      <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
+      <link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
 
 <html>
 <head>
@@ -25,14 +27,20 @@
 </script>
 </head>
 <body>
+<table class="re">
+				<tr>
+					  <th colspan="3" class="re2" 
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 상세보기</th>
+				</tr>
+	
+
+     <!-- 메세지 리스트 제목창 -->
+	
+</table>
 	<%-- <!-- 상세보기 -->--%>
 <form id="messageContent" name="messageContent">
 
-<table class="gmlwn">
-				<tr>
-						<td >● 상세보기(받는)</td>
-				</tr>
-		</table>
+
 
 <table  class="list1">
 			<tr >
@@ -61,11 +69,17 @@
 				<td width="300px" align="center">
 				
 					
-					<button type="button"  id="send">보내기</button>
+					<button class="ml-button2" type="button"  id="send" style="width: 100px">보내기</button>
 					
 					
-					<button type="button" id="cancel" onclick="history.back()">취소</button>
+					<button class="ml-button2" type="button" id="cancel" onclick="history.back()" style="width: 100px">취소</button>
 				</td>
+			<!-- 	<td align ="center"width="500px"></td>
+			<td align="right" width = "300px">
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messagesendlist'" style="width: 100px">보낸메시지</button>
+			<button class="ml-button2" type="button" onclick="location.href='/Handicap/messageWrite'" style="width: 100px">쪽지보내기</button></td>
+	</tr> -->
+				
 			</tr>
 
 		</table>
