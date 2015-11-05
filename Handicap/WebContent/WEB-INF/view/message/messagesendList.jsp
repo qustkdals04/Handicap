@@ -29,7 +29,7 @@
 		</tr>
 	</table>
 	<br>
-	<table class="list">
+	<table class="list2">
 		<tr>
 			<th width="20%">수 신 자</th>
 			<th width="55%">내 용</th>
@@ -49,7 +49,7 @@
 		</tr>
 		<input type="hidden" name="pageNumber" value="${pageNumber }">
 	</table>
-	<table class="list">
+	<table class="list2">
 		<tr>
 			<td><c:if test="${startPage>1 }">
 					<span> <a

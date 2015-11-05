@@ -562,3 +562,35 @@
 
 </body>
 </html>
+
+
+//style
+
+button {
+	/* display: block; */
+	width: 80px;
+	height: 30px;
+	border-radius: 4px;
+	text-align: center;
+	line-height: 15px;
+	text-decoration: none;
+	font-family: 'Helvetica';
+	font-weight: bold; 
+	font-size: 11pt;
+	/* float: left; */
+	margin: 0px 20px;
+}
+.ml-button {
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
+}

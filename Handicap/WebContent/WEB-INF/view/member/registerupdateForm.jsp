@@ -256,12 +256,13 @@
 						</tr>
 						<tr>
 							<td style="font-weight: bold;" align="left"> <pre>   </pre>*연락처 </td>
-							<td> <pre>   </pre><select name="phone1" id="phone1">
+							<td> <pre>   </pre><input type="text" name="phone" id="phone" readonly value="${user.phone }">							
+							<!-- <select name="phone1" id="phone1">
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
-							</select>  <%-- </select> <input type="text" name="phone2" id="phone2"
+							</select>  --> <%-- </select> <input type="text" name="phone2" id="phone2"
 						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},3,6) }"> <input
 						type="text" name="phone3" id="phone3"
 						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},6,9) }">></td> --%>
