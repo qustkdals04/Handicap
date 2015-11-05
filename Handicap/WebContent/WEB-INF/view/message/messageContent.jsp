@@ -27,6 +27,7 @@
 </script>
 </head>
 <body>
+<center>
 <table class="re">
 				<tr>
 					  <th colspan="3" class="re2" 
@@ -88,7 +89,7 @@
 
 		<input type="hidden" name="messageno" value="${messageContent.messageno }">
  </form>
-      
+      </center>
 
 </body>
 </html>
