@@ -357,7 +357,7 @@
 				주십시오.</div>
 
 
-			<form method="post" name="registForm" id="registForm">
+			<form name="registForm" id="registForm">
 				<div id="dd" align="center">
 					<table class="re2">
 
@@ -377,7 +377,7 @@
 								style="vertical-align:; width: 150; height: 28px"></td>
 							<td><pre> </pre>
 
-								<button class="ml-button" style="font-weight: bold;"
+								<button type="button" class="ml-button" style="font-weight: bold;"
 									id="idCheck">중복체크</button></td>
 
 
@@ -388,8 +388,7 @@
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*비밀번호</td>
 							<td colspan="2" id="pwExcept"><pre>  </pre><input
 								type="password" name="passwd" id="passwd"
-								style="vertical-align:; width: 150; height: 28px">
-							<pre>   </pre></td>
+								style="vertical-align:; width: 150; height: 28px"> <pre>   </pre></td>
 
 						</tr>
 
@@ -415,27 +414,26 @@
 								style="vertical-align:; width: 150; height: 28px"></td>
 							<td><pre> </pre>
 
-								<button class="ml-button" style="font-weight: bold;"
+								<button type="button" class="ml-button" style="font-weight: bold;"
 									id="nickCheck">중복체크</button></td>
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*업종</td>
 							<td colspan="2" id="regType"><pre>  </pre><input type="text"
 								name="companytype" id="companytype"
-								style="vertical-align:; width: 150; height: 28px">
-							<pre>   </pre></td>
+								style="vertical-align:; width: 150; height: 28px"> <pre>   </pre></td>
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*사업자
-								등록</td>
+								등록번호</td>
 
 							<td style="width: 176px;"><pre> </pre> <input type="text"
 								name="companyno" id="companyno"
 								style="vertical-align:; width: 150; height: 28px"> ('-'
 								제외)</td>
-							<td ><pre> </pre>
+							<td><pre> </pre>
 
-								<button class="ml-button" style="font-weight: bold;"
+								<button type="button" class="ml-button" style="font-weight: bold;"
 									id="noCheck">중복체크</button></td>
 						<tr>
 							<td width="150" align="left"
@@ -456,29 +454,34 @@
 								 <button type="button" id="nickCheck">닉네임 중복 검사</button>	
 								</td> -->
 						<tr>
-							<td valign="middle"  width="150" align="left" style="font-weight: bold;">*회사주소</td>
+							<td valign="middle" width="150" align="left"
+								style="font-weight: bold;">*회사주소</td>
 
-							<td colspan="2" id="regA" style="width: 514px;">
-								<input type="text" name="companyaddress1" id="companyaddress1"
+							<td colspan="2" id="regA" style="width: 514px;"><input
+								type="text" name="companyaddress1" id="companyaddress1"
 								style="width: 50px; height: 22" readonly><input
 								type="text" name="companyaddress2" id="companyaddress2"
-								style="width: 350px; height: 22" readonly><pre></pre>
-							<span style="font-size: 10pt;">상세주소 : </span><input type="text"
-								name="companyaddress3" id="companyaddress3"
+								style="width: 350px; height: 22" readonly>
+							<pre></pre> <span style="font-size: 10pt;">상세주소 : </span><input
+								type="text" name="companyaddress3" id="companyaddress3"
 								style="width: 180px; height: 22" readonly="readonly"
-								maxlength="20"><button class="ml-button" style="font-weight: bold; width: 30; height: 20;" id="findAddress">검색</button></td>
-							
+								maxlength="20">
+							<button type="button" class="ml-button"
+									style="font-weight: bold; width: 30; height: 20;"
+									id="findAddress">검색</button></td>
+
 						</tr>
-						
+
 						<tr>
-							<td width="150" align="left" style="font-weight: bold;" valign="middle"><pre>  </pre>*담당자명</td>
+							<td width="150" align="left" style="font-weight: bold;"
+								valign="middle"><pre>  </pre>*담당자명</td>
 
 							<td id="regName" colspan="2"><pre> </pre><input type="text"
 								name="name" id="name" maxlength="10"
 								style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
 							</td>
 
-						</tr>  
+						</tr>
 						<!-- <td ><pre> </pre>
 
 								 <button class="ml-button"  style="font-weight: bold;" id="nickCheck">중복체크</button>
@@ -528,9 +531,9 @@
 						<tr>
 							<td></td>
 							<td colspan="2"><pre> </pre>
-								<button class="ml-button" style="font-weight: bold;"
+								<button type="button" class="ml-button" style="font-weight: bold;"
 									id="register">가입</button>
-								<button class="ml-button" style="font-weight: bold;" id="cancel">취소</button>
+								<button type="button" class="ml-button" style="font-weight: bold;" id="cancel">취소</button>
 								<!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
 
@@ -564,8 +567,7 @@
 </html>
 
 
-//style
-
+<style>
 button {
 	/* display: block; */
 	width: 80px;
@@ -575,22 +577,24 @@ button {
 	line-height: 15px;
 	text-decoration: none;
 	font-family: 'Helvetica';
-	font-weight: bold; 
+	font-weight: bold;
 	font-size: 11pt;
 	/* float: left; */
 	margin: 0px 20px;
 }
+
 .ml-button {
 	background-color: #F39C45;
 	/* border: 1px solid #A87017; */
-	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
-	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
-	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
+	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
 	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
 	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
 	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
 	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
 	color: #ffffff;
-	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
+	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
 }
+</style>
