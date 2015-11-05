@@ -468,7 +468,7 @@ public class MemberController {
 		// ==============================mypage===============================
 
 	//mypagehome
-	@RequestMapping("/mypagehome")
+	@RequestMapping("/mypagehome")  
 	public String mypagehome() {
 	return "mypage/mypagehome";
 }

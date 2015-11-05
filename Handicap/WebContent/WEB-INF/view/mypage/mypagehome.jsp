@@ -9,4 +9,4 @@
 <body>
 마이페이지임 
 </body>
-</html>
+</html>  
