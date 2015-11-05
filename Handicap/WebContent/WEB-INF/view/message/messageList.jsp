@@ -23,7 +23,7 @@
 	<tr>
 			<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">
-			<button onclick="location.href='/Handicap/messagesendlist'">보낸메시지</button> &nbsp;&nbsp;&nbsp;&nbsp;
+			<button onclick="location.href='/Handicap/messagesendlist'">보낸메시지</button>
 			<button onclick="location.href='/Handicap/messageWrite'">쪽지보내기</button></td>
 			<!-- <a href="/Handicap/messageWrite">쪽지보내기</a> -->
 	</tr>
@@ -31,9 +31,9 @@
 <br>
 <table class="list2"> 
 	<tr>		
-		<th width="20%">발 신 자</th>
-		<th width="55%">내     용</th>
-		<th width="20%">보낸날짜</th>
+		<th width="15%">발 신 자</th>
+		<th width="45%">내     용</th>
+		<th width="35%">보낸날짜</th>
 		<th width="5%">상     태</th>
 	</tr>
 	<tr>

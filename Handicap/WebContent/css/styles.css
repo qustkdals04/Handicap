@@ -456,12 +456,11 @@ table.gmlwn th, table.gmlwn td {
 	height: 50px;
 	font-size: 30px;
 	text-align: left;
-	color: white;
+	color: #D6D5D5;
 	border-right: 1px solid #FFFFFF;
 	border-bottom: 1px solid #FFFFFF;
 	padding: 3px 0;
 	vertical-align: middle;
-	color: white;
 }
 
 table.list {
@@ -479,14 +478,12 @@ table.list td {
 	height: 30px;
 	font-size: 15px;
 	color: #000000;
-	border-right: 1px solid #A7A7A7;
+	
 	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
+	
 	border-top: 1px solid #A7A7A7;
 	padding: 3px 0;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+	
 }
 
 table.list th {
@@ -502,13 +499,9 @@ table.list th {
 table.btn button {
 	height: 50px;
 	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
 	color: #777777;
 	background-color: #F1F1F1;
-	font-size: 10px;
+	font-size: 8px;
 }
 
 table.list1 {
@@ -526,14 +519,12 @@ table.list1 td {
 	height: 30px;
 	font-size: 20px;
 	color: #000000;
-	border-right: 1px solid #A7A7A7;
+
 	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
+
 	border-top: 1px solid #A7A7A7;
 	padding: 3px 0;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+
 }
 
 table.list1 th {
@@ -542,24 +533,19 @@ table.list1 th {
 	font-weight: bold;
 	vertical-align: middle;
 	color: #777777;
-	border-right: 1px solid #A7A7A7; border-bottom : 1px solid #A7A7A7;
-	border-left : 1px solid #A7A7A7; border-top : 1px solid #A7A7A7;
-	padding: 3px 0;
 	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
 	border-top: 1px solid #A7A7A7;
+	padding: 3px 0;
+
 }
 
 table.list1 button {
 	height: 50px;
 	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+
 	color: #777777;
 	background-color: #F1F1F1;
-	font-size: 10px;
+	font-size: 8px;
 }
 
 table.list2 {
@@ -577,15 +563,12 @@ table.list2 td {
 	height: 30px;
 	font-size: 20px;
 	color: #000000;
-	text-align: center; border-right : 1px solid #A7A7A7;
+	text-align: center; 
 	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
+	vertical-align: middle;
 	border-top: 1px solid #A7A7A7;
 	padding: 3px 0;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
-	border-right: 1px solid #A7A7A7;
+
 }
 
 table.list2 th {
@@ -602,13 +585,10 @@ table.list2 th {
 table.list2 button {
 	height: 50px;
 	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+
 	color: #777777;
 	background-color: #F1F1F1;
-	font-size: 10px;
+	font-size: 8px;
 }
 
 table.list3 {
@@ -627,14 +607,12 @@ table.list3 td {
 	font-size: 20px;
 	color: #000000;
 	text-align: center;
-	border-right: 1px solid #A7A7A7;
+	vertical-align: middle;
 	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
+
 	border-top: 1px solid #A7A7A7;
 	padding: 3px 0;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+
 }
 
 table.list3 th {
@@ -643,22 +621,17 @@ table.list3 th {
 	font-weight: bold;
 	vertical-align: middle;
 	color: #777777;
-	border-right: 1px solid #A7A7A7; border-bottom : 1px solid #A7A7A7;
-	border-left : 1px solid #A7A7A7; border-top : 1px solid #A7A7A7;
+	 border-bottom : 1px solid #A7A7A7;
+	 border-top : 1px solid #A7A7A7;
 	padding: 3px 0;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+	
 }
 
 table.list3 button {
 	height: 50px;
 	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
+	
 	color: #777777;
 	background-color: #F1F1F1;
-	font-size: 10px;
+	font-size: 8px;
 }

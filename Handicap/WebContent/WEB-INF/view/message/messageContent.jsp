@@ -38,8 +38,8 @@
 			<tr >
 				<th colspan="2" width="300" align="left">보낸사람 : ${messageContent.sender}</th>
 				 <!-- 보낸사람 -->
-				 <td>
-				 </td>
+				 <th>
+				 </th>
 				<th align="right" width="200px">${messageContent.senddate }</th>   <!-- 현재시간 -->
 				
 				
@@ -56,15 +56,15 @@
 				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
 			</tr>
 			<tr>
-				<td width="600px" colspan="4" align="center"></td>
+				<td width="500px" colspan="4"></td>
 
-				<td>
+				<td width="300px" align="center">
 				
 					
-					<button type="button"  id="send">보내기</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button  id="send">보내기</button>
 					
-					<button type="button" id="cancel" onclick="history.back()">취소</button>
+					
+					<button id="cancel" onclick="history.back()">취소</button>
 				</td>
 			</tr>
 

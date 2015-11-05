@@ -12,6 +12,7 @@
 <title>메세지 리스트</title>
 </head>
 <!-- messageList.jsp -->
+<!-- messageList.jsp -->
 <body>
 	<table class="gmlwn">
 		<tr>
@@ -24,16 +25,16 @@
 		<tr>
 			<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">
-			<button onclick="location.href='/Handicap/messagelist'" >받은 메시지</button> &nbsp;&nbsp;&nbsp;
+			<button onclick="location.href='/Handicap/messagelist'" >받은 메시지</button>
 					<button onclick="location.href='/Handicap/messageWrite'">쪽지보내기</button></td>
 		</tr>
 	</table>
 	<br>
 	<table class="list2">
 		<tr>
-			<th width="20%">수 신 자</th>
-			<th width="55%">내 용</th>
-			<th width="20%">보낸날짜</th>
+			<th width="15%">수 신 자</th>
+			<th width="45%">내 용</th>
+			<th width="35%">보낸날짜</th>
 			<th width="5%">상 태</th>
 		</tr>
 		<tr>
