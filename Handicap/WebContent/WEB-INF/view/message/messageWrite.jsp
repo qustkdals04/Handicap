@@ -64,12 +64,12 @@ var searchNick = false;
 		</table>
 		<table class ="list3" >
 			<tr>
-				<th  align="left" width="600px" colspan="3">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">  </th>
-				<th></th>
+				<th  align="left" width="600px" colspan="4">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">  </th>
+				
 
 				
 				<th width="200px" align="center">
-				<button id="findnick">검색</button>
+				<button type="button" id="findnick">검색</button>
 				</th>
 			</tr>
 			<tr>
