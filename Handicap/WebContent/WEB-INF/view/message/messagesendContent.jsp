@@ -27,11 +27,16 @@
 <body>
 	<%-- <!-- 상세보기 -->--%>
 <form id="messageContent" name="messageContent">
-<table class="gmlwn">
-		<tr>
-			<td>●상세보기(보낸)</td>
-		</tr>
-	</table>
+<table class="re">
+				<tr>
+					  <th colspan="3" class="re2" 
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지 상세보기</th>
+				</tr>
+	
+
+     <!-- 메세지 리스트 제목창 -->
+	
+</table>
 <table class="list1">
 			<tr >
 			<th colspan="2" align='left' width="300px">받는사람 : ${messagesendContent.recipient}</th>
@@ -50,30 +55,34 @@
 			<tr height="200px">
 				
 				
-				<td  colspan="5" >
+				<td  colspan="2" width="800px">
 				<textarea rows="10" cols="50" readonly="readonly" style="width: 100%; height: 278px;">
 				${messagesendContent.contents }</textarea></td>
 			</tr>
 			<tr>
-			<td width="500px" colspan="4"></td>
+			
+
+				
+				<!-- <button type="button" id="delete" onclick="location.href='/Handicap/messagedelete'" class="ml-button" style="float: right;">삭제</button></td>
+				<td width="200px" align="left" >			
+					
+					<button type="button" id="cancel" onclick="history.back()" class="ml-button" style="float: left;">취소</button>
+				</td> -->
+				<!-- <td width="300px"  align="right">			
+					<button type="button" id="send" class="ml-button">보내기</button>
+					<button type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
+				</td> -->
+					<td width="500px"></td>
 
 				<td width="300px" align="center">
-				
-					
-					<button type="button" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
-					
-					
-					<button type="button" id="cancel" onclick="history.back()">취소</button>
-				</td>
-			<!-- <td width="600px">
-			
-			</td>
-				<td colspan="2" align="right" width="200px" >
-					<button id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button  id="cancel" onclick="history.back()">취소</button> 
 
-				</td> -->
+				<button  class="ml-button2"  type = "button"  id="send" style="width: 100px">보내기</button>
+					<button class="ml-button2"  type = "button" onclick="history.back()" id="cancel" style="width: 100px">취소</button></td>
+
+					
+					
+					
+			
 			</tr>
 		</table>
 		<input type="hidden" name="messageno" value="${messagesendContent.messageno }">
