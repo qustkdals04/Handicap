@@ -62,21 +62,24 @@ var searchNick = false;
 						<td>● 메시지 쓰기</td>
 				</tr>
 		</table>
-		<table class ="list1" >
+		<table class ="list3" >
 			<tr>
-				<td  align="left" width="400px">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">&nbsp;&nbsp;&nbsp;<button id="findnick">검색</button><br>  </td>
+				<th  align="left" width="600px" colspan="3">받는사람 입력&nbsp;&nbsp;<input type="text" name="recipient" id="recipient" style="width: 181px;height:22px;">  </th>
+				<th></th>
+
 				
-				<td width="400px" align="right">
-				
-				</td>
+				<th width="200px" align="center">
+				<button id="findnick">검색</button>
+				</th>
 			</tr>
 			<tr>
 
-				<td colspan="3" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
+				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
 			</tr>
 			<tr>
-				<td width="400px"></td>
-				<td  colspan="2" align="right" width="400px">
+				<td width="600px" colspan="3"></td>
+				<td></td>
+				<td width="200px">
 				
 					
 					<button  id="send">보내기</button>
@@ -84,6 +87,8 @@ var searchNick = false;
 					
 					<button id="cancel" onclick="history.back()">취소</button>
 				</td>
+
+				
 			</tr>
 		</table>
 		<input type="hidden" name="userid" value="${userid }">

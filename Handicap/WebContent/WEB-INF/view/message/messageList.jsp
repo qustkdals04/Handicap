@@ -23,13 +23,13 @@
 	<tr>
 			<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">
-			<button onclick="location.href='/Handicap/messagesendlist'">보낸메시지함</button> &nbsp;&nbsp;&nbsp;&nbsp;
+			<button onclick="location.href='/Handicap/messagesendlist'">보낸메시지</button> &nbsp;&nbsp;&nbsp;&nbsp;
 			<button onclick="location.href='/Handicap/messageWrite'">쪽지보내기</button></td>
 			<!-- <a href="/Handicap/messageWrite">쪽지보내기</a> -->
 	</tr>
 </table>
 <br>
-<table class="list"> 
+<table class="list2"> 
 	<tr>		
 		<th width="20%">발 신 자</th>
 		<th width="55%">내     용</th>
@@ -48,7 +48,7 @@
 	</tr>
 	<input type="hidden" name="pageNumber" value="${pageNumber }">
 </table>
-<table class="list">
+<table class="list2">
 <tr>
 	<td>
 		<c:if test="${startPage>1 }">

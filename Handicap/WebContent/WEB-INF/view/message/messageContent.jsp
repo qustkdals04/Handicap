@@ -34,13 +34,15 @@
 				</tr>
 		</table>
 
-<table  class="list1" >
+<table  class="list1">
 			<tr >
-				<td colspan="2" width="300" align="left">보낸사람 : ${messageContent.sender}</td>
+				<th colspan="2" width="300" align="left">보낸사람 : ${messageContent.sender}</th>
 				 <!-- 보낸사람 -->
 				 <td>
 				 </td>
-				<td align="right" width="200px">${messageContent.senddate }</td>   <!-- 현재시간 -->
+				<th align="right" width="200px">${messageContent.senddate }</th>   <!-- 현재시간 -->
+				
+				
 				
 			</tr>
 			
@@ -51,11 +53,12 @@
 				
 
 
-				<td colspan="3" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
+				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 278px;"></textarea> </td>
 			</tr>
 			<tr>
-				<td width="400px"></td>
-				<td  colspan="2" align="right" width="400px">
+				<td width="600px" colspan="3"></td>
+				<td></td>
+				<td>
 				
 					
 					<button  id="send">보내기</button>
@@ -64,20 +67,7 @@
 					<button id="cancel" onclick="history.back()">취소</button>
 				</td>
 			</tr>
-				<%-- <td  colspan="4">
-				<textarea rows="10" cols="50" readonly="readonly" style="width: 100%; height: 278px;">${messageContent.contents }</textarea>
-				<textarea style="width: 100%; height: 100%;" readonly="readonly">${messageContent.contents }</textarea></td>
-			</tr>
-			<tr>
-				<td colspan="3" align="right">
-					<!-- <button type="button" style="width:70px;height: 20px;" id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
-					<button type="button" style="width:70px;height: 20px;" id="cancel" onclick="history.back()">취소</button> --> <!-- 					<img src = "/shop1/img/deleteB.png" id="delete" onclick="location.href='/Handicap/messagedelete'" style="width: 95px; height: 38px; ">
-					<img src = "/shop1/img/closeB.png" id="cancel" onclick="history.back()" style="width: 95px; height: 38px; "> -->
-					<button onclick="location.href='/Handicap/messagedelete'" id="delete" style="width:80px;height: 25px;" >삭제하기</button>
-					
-					<button onclick="history.back()" id="cancel" style="width:80px;height: 25px;" >취소하기</button>
-				</td>
-			</tr> --%>
+
 		</table>
 
 

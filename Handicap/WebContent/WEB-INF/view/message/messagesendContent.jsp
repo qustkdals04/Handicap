@@ -34,22 +34,38 @@
 	</table>
 <table class="list1">
 			<tr >
-			<td colspan="2" align='left' width="600px">받는사람 : ${messagesendContent.recipient}</td>
+			<th colspan="2" align='left' width="300px">받는사람 : ${messagesendContent.recipient}</th>
+
 				<%-- <td align = "center" width="100px" color = "#678197">받는사람  </td>
 				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 --> --%>
-				<td align="right" width="200px">${messagesendContent.senddate }</td>   <!-- 현재시간 -->
+				<th align="right" width="200px">${messagesendContent.senddate }</th>   <!-- 현재시간 -->
+				
+				
 				
 			</tr>
+</table>
+
+<table class="list1">
 			
-			<tr>
+			<tr height="200px">
 				
 				
-				<td  colspan="3" >
+				<td  colspan="5" >
 				<textarea rows="10" cols="50" readonly="readonly" style="width: 100%; height: 278px;">
 				${messagesendContent.contents }</textarea></td>
 			</tr>
 			<tr>
-			<td width="600px">
+			<td width="600px" colspan="3"></td>
+				<td></td>
+				<td>
+				
+					
+					<button id="delete" onclick="location.href='/Handicap/messagedelete'">삭제</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					
+					<button id="cancel" onclick="history.back()">취소</button>
+				</td>
+			<!-- <td width="600px">
 			
 			</td>
 				<td colspan="2" align="right" width="200px" >
@@ -57,7 +73,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<button  id="cancel" onclick="history.back()">취소</button> 
 
-				</td>
+				</td> -->
 			</tr>
 		</table>
 		<input type="hidden" name="messageno" value="${messagesendContent.messageno }">
