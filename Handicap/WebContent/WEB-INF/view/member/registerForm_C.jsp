@@ -165,7 +165,7 @@
 																	alert("사용 가능한 닉네임입니다.");
 																	chknick = true;
 																	$(
-																			"#companyno")
+																			"#companytype")
 																			.focus();
 																}
 															}
@@ -177,7 +177,83 @@
 						$("#nickname").change(function() {
 							chknick = false;
 						})
-
+						
+						
+						
+						$("#companytype").change(function() {
+							$('#messageT').remove();
+							if(regNonExcept.test($("#companytype").val())){
+								$('#regType').append('<font id=\"messageT\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
+								chktype = false;
+							} else {
+								chktype = true;
+							}	
+						})
+						
+						//사업자등록번호 중복검사
+						$("#noCheck").click(function() {
+							var checkNo = "companyNo=" + $("#companyno").val();
+							if ($("#companyno").val() == "") {
+								alert("사업자등록번호를 입력해주세요.");
+								$("#companyno").focus();
+							} else if(!regNo.test($("#companyno").val())) {
+								alert("사업자등록번호는 '-'를 제외한 숫자로만 입력해 주세요.");
+								$("#companyno").val("");
+								$("#companyno").focus();
+							}
+							else {
+								$.ajax({
+									type : "GET",
+									url : "noCheck",
+									data : checkNo,
+									success : function(data) {
+										if ($.trim(data) != "") {
+											alert("이미 존재하는 번호입니다.");
+											$("#companyno").val("");
+											$("#companyno").focus();
+										} else {
+											chkno = true;
+											alert("사용 가능한 번호입니다.");
+											$("#companyceoname").focus();
+										}
+									}
+								});
+							}
+						});
+						
+						$("#companyno").change(function() {
+							chkno = false;
+						})
+						
+						$("#companyceoname").change(function() {
+							$('#messageC').remove();
+							if(regNonExcept.test($("#companyceoname").val())){
+								$('#regCeo').append('<font id=\"messageC\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
+								chkceo = false;
+							} else {
+								chkceo = true;
+							}					
+						});
+						
+						$("#findAddress").click(function() {
+									var address = window.open('addressForm',
+											'', 'top='
+													+ (screen.height / 2 - 125)
+													+ ',left='
+													+ (screen.width / 2 - 310)
+													+ ',width=620,height=250');
+						});
+						
+						$("#companyaddress3").change(function() {
+							$('#messageA').remove();
+							if($("#companyaddress3").val().indexOf("'") != -1){
+								$('#regA').append('<font id=\"messageA\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
+								chkadd = false;
+							} else {
+								chkadd = true;
+							}
+						})
+						
 						$("#name")
 								.change(
 										function() {
@@ -429,7 +505,7 @@
 
 							<td style="width: 176px;"><pre> </pre> <input type="text"
 								name="companyno" id="companyno"
-								style="vertical-align:; width: 150; height: 28px"> ('-'
+								style="vertical-align:; width: 150; height: 28px" maxlength="10"> ('-'
 								제외)</td>
 							<td><pre> </pre>
 

@@ -80,7 +80,7 @@
 
 					<td width="300px" align="center">
 
-						<button class="ml-button" type="button" id="send"
+						<button class="ml-button" type="button" id="delete"
 							style="width: 100px">보내기</button>
 						<button class="ml-button" type="button" onclick="history.back()"
 							id="cancel" style="width: 100px">취소</button>

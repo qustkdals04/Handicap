@@ -18,6 +18,7 @@ import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
@@ -56,7 +57,7 @@ public class MyController {
 		return "main2";
 	}
 	// 메인페이지
-	@RequestMapping("/main") // 두번째main페이지
+	@RequestMapping(value = "/", method = RequestMethod.GET) // 두번째main페이지
 	public String main() {
 		return "viewmain";
 	}

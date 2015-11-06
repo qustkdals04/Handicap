@@ -109,7 +109,7 @@
 				<tr>
 					<td style="font-weight: bold;"><pre></pre>비밀번호 답 :</td>
 					<td><pre></pre><input type="text" name="panswer" id="panswer"></td>
-					<td><pre></pre><button type="button" class="ml-button" id="btnfindId">찾기</button></td>
+					<td><pre></pre><button type="button" class="ml-button" id="btnfindPw">찾기</button></td>
 				</tr>
 			</table>
 		</form>

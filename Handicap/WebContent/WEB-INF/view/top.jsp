@@ -40,7 +40,7 @@
 	<table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
-				width="276" height="157" onclick="location.href='/Handicap/main'"></td>
+				width="276" height="157" onclick="location.href='/Handicap'"></td>
 
 			<td width="300">
 
@@ -74,7 +74,7 @@
 	<table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
-				width="276" height="157" onclick="location.href='/Handicap/main'"></td>
+				width="276" height="157" onclick="location.href='/Handicap'"></td>
 
 			<td width="300px" style="vertical-align: middle;">
 				<div id="appLoadingIndicator">
