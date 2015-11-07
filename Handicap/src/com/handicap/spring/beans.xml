@@ -9,4 +9,5 @@
   <bean class="com.handicap.model.dao.BbsCommentDAO" id="BbsCommentDAO"/>
   <bean class="com.handicap.model.dao.IntergrationDAO" id="IntergrationDAO"/>  
   <bean class="com.handicap.model.dao.ZipcodeDAO" id="ZipcodeDAO"/>
+  <bean class="com.handicap.model.dao.FileDAOImpl" id="FileDAOImpl"/>
 </beans>

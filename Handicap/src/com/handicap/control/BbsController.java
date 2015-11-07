@@ -32,7 +32,8 @@ public class BbsController {
 	private BbsDAO bd;
 	@Autowired
 	private BbsCommentDAO bcd;
-	private FileDAO fd;
+	@Autowired
+	private FileDAO fd;	
 	private FileVO fv;
 	
 	@RequestMapping("/bbsNoticeWriteForm") 

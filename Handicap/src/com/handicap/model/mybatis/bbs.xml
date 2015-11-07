@@ -23,10 +23,10 @@
 		resultType="com.handicap.model.beans.FileVO">		
 		select fileid from bbsfile 
 	</select>
-	<insert id="fileupload" parameterType="com.handicap.model.beans.UploadVO">	
+	<!-- <insert id="fileupload" parameterType="com.handicap.model.beans.UploadVO">	
 		insert into fileupload(fileid)
 		value (fileupload_SEQ.nextval)
-	</insert>
+	</insert> -->
 		<!-- fileupload_SEQ.nextval) -->
 		<!--  value(#{fileid})-->
 		<!-- values(#no:number#, #title:varchar2#, #writedate:date#, #author:varchar2#, 
@@ -44,8 +44,7 @@
 	
 
 	<!-- 공지사항 리스트 -->
-	<select id="bbsNoticeList"
-		resultType="com.handicap.model.beans.BbsVO">
+	<select id="bbsNoticeList" resultType="com.handicap.model.beans.BbsVO">
 		<!-- select no, title, writedate, author, hits from bbsnotice order by 
 			writedate desc -->
 		select * from bbsnotice order by writedate desc
