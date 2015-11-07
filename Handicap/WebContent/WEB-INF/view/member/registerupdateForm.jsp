@@ -232,7 +232,9 @@
 
 					</table>
 				</div>
-				<input type="hidden" name="flag" value="member">
+				<input type="hidden" name="flag" value="1">
+				<input type="hidden" name="userid" value="${user.userid }">
+				<input type="hidden" name="nickname" value="${user.nickname }">
 			</form>
 
 		</div>

@@ -289,7 +289,7 @@ public class MemberController {
 		if (usergrade == 1) {
 			return "member/registerupdateForm";
 		} else if (usergrade == 2) {
-			return "member/registerupdateForm";
+			return "member/registerupdateForm_C";
 		} else {
 			return "member/registerupdateForm";
 		}
@@ -297,9 +297,13 @@ public class MemberController {
 
 	// 회원정보수정처리
 	@RequestMapping("/member/mypage/registerupdateformaction")
-	public String registerupdateformaction(UserVO vo) throws SQLException {
-		dao.update(vo);
+	public String registerupdateformaction(@RequestParam String flag, UserVO vo) throws SQLException {
+		if(flag.equals("1")){
+			dao.update(vo);
+			return "viewmain";
+		}
 		return "viewmain";
+		
 	}
 
 	// 회원탈퇴

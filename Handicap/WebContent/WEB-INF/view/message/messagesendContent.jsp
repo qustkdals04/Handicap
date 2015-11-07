@@ -60,8 +60,7 @@
 
 
 					<td colspan="2" width="800px"><textarea rows="10" cols="50"
-							readonly="readonly" style="width: 100%; height: 200px;">
-				${messagesendContent.contents }</textarea></td>
+							readonly="readonly" style="width: 100%; height: 200px;">${messagesendContent.contents }</textarea></td>
 				</tr>
 				<tr>
 
@@ -81,7 +80,7 @@
 					<td width="300px" align="center">
 
 						<button class="ml-button" type="button" id="delete"
-							style="width: 100px">보내기</button>
+							style="width: 100px">삭제</button>
 						<button class="ml-button" type="button" onclick="history.back()"
 							id="cancel" style="width: 100px">취소</button>
 					</td>
