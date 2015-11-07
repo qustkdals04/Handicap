@@ -1,5 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="bbs">
+	<!-- 공지사항 글 작성 -->
+	<insert id="bbsNoticeWrite" parameterType="com.handicap.model.beans.BbsVO">
+		insert into bbsnotice(title, writedate, author, contents)
+		values(#{title}, sysdate, #{author}, #{contents})
+		<!-- values(#no:number#, #title:varchar2#, #writedate:date#, #author:varchar2#, 
+			#contents:varchar2#, #hits:number#) -->
+	</insert>
+	<!-- 파일올리는 쿼리 -->
+	<insert id="bbsfile" parameterType="com.handicap.model.beans.FileVO">
+		<!-- insert into bbsfile(fileid, filename, filesize) values(BBSFILE_SEQ.nextval,#{filename, 
+			jdbcType=VARCHAR}, 1000000000000) -->		
+		insert into bbsfile(fileid, filename)
+		values(BBSFILE_SEQ.nextval,#{filename, jdbcType=VARCHAR})
+	</insert>
+		<!-- values(#no:number#, #title:varchar2#, #writedate:date#, #author:varchar2#, 
+			#contents:varchar2#, #hits:number#) -->
 	
+	<!-- bbs파일로 올린거 찾아서 파일업로드로 옮기는 쿼리 -->
+	<select id="bbsfilefind" parameterType="int"
+		resultType="com.handicap.model.beans.FileVO">		
+		select fileid from bbsfile 
+	</select>
+	<insert id="fileupload" parameterType="com.handicap.model.beans.UploadVO">	
+		insert into fileupload(fileid)
+		value (fileupload_SEQ.nextval)
+	</insert>
+		<!-- fileupload_SEQ.nextval) -->
+		<!--  value(#{fileid})-->
+		<!-- values(#no:number#, #title:varchar2#, #writedate:date#, #author:varchar2#, 
+			#contents:varchar2#, #hits:number#) -->
+	
+	<!-- 공지 삭제 -->
+	<delete id="bbsNoticeDelete" parameterType="int">
+		delete bbsnotice where no = #{no}
+	</delete>
+   	
+   	<!-- 업로드파일삭제 -->
+	<!-- <delete id="uploaddelete" parameterType="int">
+   	delete fileupload where fileid=#{fileid}
+   	</delete> -->
+	
+
+	<!-- 공지사항 리스트 -->
+	<select id="bbsNoticeList"
+		resultType="com.handicap.model.beans.BbsVO">
+		<!-- select no, title, writedate, author, hits from bbsnotice order by 
+			writedate desc -->
+		select * from bbsnotice order by writedate desc
+	</select>
+	<!-- 공지사항 글보기 -->
+	<select id="bbsNoticeContent" parameterType="int"
+		resultType="com.handicap.model.beans.BbsVO">
+		select * from bbsnotice where no = #{no}
+	</select>
+	
+	<!-- 공지사항 수정 -->
+	<update id="bbsNoticeUpdate" parameterType="com.handicap.model.beans.BbsVO">
+		update bbsnotice set title = #{title}, contents = #{contents} 
+		where no=#{no}
+	</update>
+	
+	<!-- <select id="bbsfilefind" parameterType="com.handicap.model.beans.FileVO">
+		select * from bbsfile where fileid = #{fileid}	
+	</select> -->
+	<!-- 공지사항 조회수 증가 -->
+	<update id="bbsNoticeHitPlus" parameterType="int">
+		update bbsnotice set hits = hits+1 where no = #{no}
+	</update>
+	<!-- 공지사항 추천수 증가 -> 테이블에 good이 없는 관계로 보류 -->
+	<update id="goodupdate" parameterType="int">
+		update bbsnotice set good = good+1 where no = #{no}
+	</update>
 </mapper>
