@@ -15,30 +15,60 @@
 </script>
 </head>
 <body>
+<table class="bbsTitle">
+			<tr>
+					<td align="left"><font size ="50">공지사항</font></td>
+			</tr>
+</table>
 	
-	<table width="800" align="center" border="1">
-		<tr>
-			<td align="center">글번호</td>
-			<td align="center">제  목</td>
-			<td align="center">작성자</td>
-			<td align="center">작성일</td>
-			<td align="center">조회수</td>
-			<td align="center">추천수</td>		
+	<table class="bbsList">
+		<tr height="20px">
+			<th width="10%">글번호</th>
+			<th width="40%">제  목</th>
+			<th width="15%">작성자</th>
+			<th width="20%">작성일</th>
+			<th width="7%">조회수</th>
+			<th width="8%">추천수</th>		
 		</tr>
 		<tr>
-			<c:forEach var="bbs" items="${list}">
+		
+			<%-- <c:forEach var="bbs" items="${list}">
 				<tr>
-					<td align="center">${bbs.no}</td>
-					<td align="center"><a href="bbsNoticeContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.title}</a></td>
-					<td align="center">${bbs.author}</td>
-					<td align="center">${bbs.writedate}</td>
-					<td align="center">${bbs.hits}</td>
-					<td align="center">${bbs.good}</td>
+					<td >${bbs.no}</td>
+					<td ><a href="bbsNoticeContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.title}</a></td>
+					<td >${bbs.author}</td>
+					<td >${bbs.writedate}</td>
+					<td >${bbs.hits}</td>
+					<td >${bbs.good}</td>
 				</tr>
-			</c:forEach>
-		</tr>
-		<tr>
-			<td colspan="6"><a href="bbsNoticeWriteForm">글쓰기</a></td>
+			</c:forEach> --%>
+			<tr>
+					<td>1</td>
+					<td>실험용 창입니다.</td>
+					<td>김희주</td>
+					<td>2015/11/08 18:18:18</td>
+					<td>243</td>
+					<td>5</td>
+			</tr> 
+			<tr>
+					<td>2</td>
+					<td>실험용 창입니다.</td>
+					<td>김희주</td>
+					<td>2015/11/08 18:18:18</td>
+					<td>243</td>
+					<td>5</td>
+			</tr> 
+			<tr>
+					<td>3</td>
+					<td>실험용 창입니다.</td>
+					<td>김희주</td>
+					<td>2015/11/08 18:18:18</td>
+					<td>243</td>
+					<td>5</td>
+			</tr> 
+		
+		<tr align="right">
+			<td colspan="6"><button type="button" class="ml-button" onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
 			
 		
 		</tr>
