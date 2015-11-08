@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding:0;
+}
+body,table,input,textarea,select,button {
+	font-family:dotum,'돋움',sans-serif
+}
+body {
+	color: #666;
+	font-size: 13px;
+	line-height: 22px;
+}
+ul, ol , li {list-style:none;}
+a {
+	color:#666;
+	text-decoration:none;
+}
+a:focus, a:hover, a:active {
+	color:#666;
+}
+
+/*
+	gnb
+*/
+div#gnb {
+	width:100%;
+}
+div#gnb h1 {
+	padding:10px;
+}
+div#gnb ul.menu {
+	position:relative;
+	overflow:hidden;
+	width:900px;
+	height:120px;
+	border-top:2px solid #F3B514; /* 메뉴위에 색깔 */
+	border-bottom:2px solid #ffffff;
+}
+div#gnb ul.menu li {
+	float:left;
+	width:150px;
+}
+div#gnb ul.menu li a {
+	display:block;
+	height:40px;
+	padding:20px 0 0;
+	background:#ffffff;
+	color:#000;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	
+	
+}
+div#gnb ul.menu li a:hover,
+div#gnb ul.menu li a.on {
+	background: #F3B514; <!--마우스오버시 색깔-->
+	
+}
+div#gnb ul.menu li ul {
+	display:none;
+	position:absolute;
+	left:0;
+	width:990px;
+	
+}
+div#gnb ul.menu li ul li a {
+	background:none;
+	color:#000;
+}
+div#gnb ul.menu li ul li a:hover,
+div#gnb ul.menu li ul li a.on {
+	background:#ffffff;
+	color: blue;
+}
+div#gc  a:hover,
+div#gc a.on {
+	background: #F3B514; <!--로그인,회원가입,id찾기 마우스오버시 색깔-->
+	
+} 
+
+
+
+
