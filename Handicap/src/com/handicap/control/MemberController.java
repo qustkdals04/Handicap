@@ -291,7 +291,7 @@ public class MemberController {
 		} else if (usergrade == 2) {
 			return "member/registerupdateForm_C";
 		} else {
-			return "member/registerupdateForm";
+			return "viewmain";
 		}
 	}
 
