@@ -8,21 +8,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="notice" align="left" style="width: 600px; ">
+	<table class="notice"   style="width: 1000px; " align="center" >
+		
 		<tr>
-			<td><img src="img/circle2.png">공지사항</td>
+			<td align="left"><img src="img/me.png"></td>
+			<td align="right"><a href="/Handicap/Notice"><img src="img/more.png"></a></td>
 			
 		</tr>
 		
 		<tr>
-			<td>-(한마음 힐링 나ssssssssssssssssssssssss들이)</td>
+			<td  colspan="2" ><a href="">-장애인 연금에대해 알아보아요!</a></td>
+			
 		</tr>
 		<tr>
-			<td>-(한마음 힐링 나sssssssssssssssssssssssssssssss들이)</td>
+			<td colspan="2">-차량 구입시 혜택!</td>
 		</tr><tr>
-			<td>-(한마음 힐링 나들이)</td>
-		</tr><tr>
-			<td>-(한마음 힐링 나들이)</td>
+			<td colspan="2">-요금제에 대한 혜택!!!</td>
 		</tr>
 	</table>
 </body>

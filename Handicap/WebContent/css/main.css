@@ -4,7 +4,7 @@ padding: 0px;
 background: #ffffff;
 } 
 
-
+<!--전체적인 틀 -->
 #wrapper{
 
 width:1400px; 
@@ -13,7 +13,98 @@ position: absolute;
 top: 10px;
 left: 50%;
 margin-left: -538px;
+
 }
+#content{
+
+width:1200px;
+float: left;
+padding: 10px;
+
+
+
+}
+
+#Foot{
+	
+}
+
+#Foot2{
+	margin-top: 500px;
+}
+
+ <!--작은 로그인 회원가입,색맹모드  -->
+#top{
+width:1400px; 
+height : 300px;
+padding: 10px; 
+position: absolute;
+border: 1px;
+
+}
+
+/* #menu{ 
+
+width:1200px;
+height: 200px; 
+padding: 10px; 
+position: absolute;
+height : 300px;	
+border: 1px;
+}
+
+<!--슬라이드,(축제,행사) -->
+#slide{
+width:1200px; 
+height : 200px;
+padding: 10px; 
+position: absolute;
+border: 1px;
+}
+
+<!--앨범형게시판, 글게시판 보여주기 -->
+#content2{
+width:980px;
+height : 900px; 
+padding: 30px; 
+position: absolute;
+border: 1px;
+float : left;
+}
+
+<!--공지사항 아이콘 -->
+#icon{
+width:150px;
+height : 200px;  
+padding: 10px; 
+position: absolute;
+float : right;
+border: 1px;
+}
+
+<!-- 메인 베너,공지사항 아이콘 아래 -->
+#banner{
+width:980px;
+height : 150px;  
+padding: 10px; 
+position: absolute;
+border: 1px;
+float : right;
+}
+
+*/
+
+/* <!--하단메뉴 --> */
+#Botton1{
+width:1200px;
+height: 200px; 
+padding: 10px; 
+position: absolute;
+
+
+} 
+
+
 
 #contents {
 	width: 800px;
@@ -21,18 +112,7 @@ margin-left: -538px;
 	padding: 10px;
 }
 
-#dd {
-	width: 1000px;
-	float: left;
-	padding: 50px;
-}
 
-#content{
-
-width:1200px;
-float: left;
-padding: 10px;
-}
 
 #CC {
 	width: 200px;
@@ -60,20 +140,14 @@ width:100px;
 float: left;
 padding: 10px;
 margin-left: 1150px;
+ position:fixed;
+    z-index:999;
+    top:0px;
+    left:0px;
+  
 }
-#sidebar2{
 
-width:100px;
-float: left;
-padding: 500px;
-margin-left: 1150px;
-padding-bottom: 30px;
-}
-#news {
-	width: 800px;
-	float: left;
-	padding: 10px;
-}
+
 
 #Notice {
 	width: 600px;
@@ -133,4 +207,8 @@ padding: 10px;
 	width : 1000px;
 	float:left;
 	padding: 50px;
+}
+#danner{
+	margin-top: 30px;
+	margin-left: 50px;
 }

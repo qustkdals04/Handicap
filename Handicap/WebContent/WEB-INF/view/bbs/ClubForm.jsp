@@ -14,26 +14,27 @@
 		<%@include file="../top.jsp"%>
 
 
-		<div id="content" align="center">
+		<div  align="center">
 			<%@include file="../menu.jsp"%>
 		</div>
 		<!-- center 끝 -->
 
 
-		<table>
+		<div id ="contents">
+		<table align="right">
 			<tr>
-				<td width="300px">
-					<div id="contents">
-						<%@include file="BbsSubMenu.jsp"%>
-					</div>
+				<td width = "200px">
+				
+			<%@include file = "BbsSubMenu.jsp"%>
+			
 				</td>
-
-			</tr>
-		</table>
-		<div id="sidebar" align="right">
+				</tr>		
+				</table>
+</div>
+		<%-- <div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>
 
-		</div>
+		</div> --%>
 	</div>
 </body>
 </html>

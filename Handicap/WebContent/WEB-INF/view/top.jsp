@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="Handicap/js/jquery-1.10.2.min.js"></script>
+<link href="/Handicap/css/common.css" rel="stylesheet" type="text/css"  rel="stylesheet"/>
+   <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".a1").mouseenter(function() {
@@ -36,31 +38,36 @@
 		if (session.getAttribute("memberid") != null) {
 			memberid = session.getAttribute("memberid").toString();
 	%>
-
+<center>
 	<table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
-				width="276" height="157" onclick="location.href='/Handicap'"></td>
+				width="276" height="157" onclick="location.href='/Handicap/main'"></td>
 
 			<td width="300">
 
 
 				<p>
-					<input type="text" style="width: 455px;">
+					<pre> <input align="bottom"   type="text" style="width: 60%; border: 4px solid #F3B514;" ><button  class="ml-button"  style="float: right; width: 40px; height: 10;" >검색</button></pre>
 				</p>
 			</td>
 
-			<td width="300" align="center">
+			<td width="300"  align="right" style="vertical-align: top;">
 
 				<p>
+				<div id="gc" >
 					<font size="3" id="rigthfont"><a href="javascrpt:void(0)"
 						class="a1"
-						onclick="window.open('/Handicap/messagelist','popup1','width=900,height=400, top='+(screen.height/2-200)+',left='+(screen.width/2-450)+'')">쪽지함</a>&nbsp;<a
+						onclick="window.open('/Handicap/messagelist','popup1','width=800,height=300, top='+(screen.height/2-150)+',left='+(screen.width/2-400)+'')">쪽지함</a>&nbsp;<a
 						href="/Handicap/member/mypage/pwcheck" class="a2">마이페이지</a>&nbsp;<a
 						href="/Handicap/logout" class="a3">로그아웃</a></font>
+						
 				</p>
+				</div>
 			</td>
+			
 		</tr>
+		
 	</table>
 
 	<%
@@ -74,12 +81,12 @@
 	<table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
-				width="276" height="157" onclick="location.href='/Handicap'"></td>
+				width="276" height="157" onclick="location.href='/Handicap/main'"></td>
 
-			<td width="300px" style="vertical-align: middle;">
+			<td width="300px" align="right" style="vertical-align: bottom;">
 				<div id="appLoadingIndicator">
 					<div id="cell">
-						<input type="text" style="width: 100%">
+						<pre> <input align="bottom"   type="text" style="width: 60%; border: 4px solid #F3B514;" ><button  class="ml-button"  style="float: right; width: 40px; height: 10;" >검색</button></pre>
 					</div>
 				</div>
 			</td>
@@ -87,20 +94,22 @@
 
 
 
-			<td width="300" align="center" style="vertical-align: middle;">
+			<td width="300" align="right" style="vertical-align: top;" >
 				<div id="appLoadingIndicator">
-					<div id="font">
-						<font size="4" face="돋음"> <a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a
+				<div id="gc">
+					<div id="font" >
+						<font size="2" face="돋음" class="menu"  > <a href="/Handicap/loginForm" class="a1">로그인</a>&nbsp;<a
 							href="/Handicap/registertype" class="a2">회원가입</a>&nbsp;<a
 							href="javascrpt:void(0)" class="a3"
 							onclick="window.open('/Handicap/membersearch','popup1','width=400,height=200, top='+(screen.height/2-100)+',left='+(screen.width/2-200)+'')">ID/PW찾기</a></font>
 					</div>
 				</div>
+				</div>
 			</td>
 
 		</tr>
 	</table>
-
+</center>
 
 	<%
 		}

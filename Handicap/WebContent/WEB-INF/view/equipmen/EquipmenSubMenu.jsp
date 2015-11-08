@@ -13,7 +13,7 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li>의료 장비</li>
+								<li>의료장비</li>
 
 						</ul>
 			

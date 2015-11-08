@@ -1,19 +1,22 @@
-table.news {
+table.club {
     border-collapse: separate;
     border-spacing: 1px;
     text-align: left;
     line-height: 1.5;
     border-top: 3px solid #FAB114;
-  margin : 30px 10px;
+ 	margin : 30px 10px;
+  
 }
-table.news th {
+/* table.club th {
     width: 300px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
 }
-table.news td {
+ */
+
+table.club td {
     width: 350px;
     padding: 10px;
     vertical-align: top;
@@ -26,44 +29,48 @@ table.notice {
     border-spacing: 1px;
     text-align: left;
     line-height: 1.5;
-    border-top: 3px solid #FAB114;
-  margin : 20px 10px;
+    border-top: 3px solid #F4B649;
+ 	 margin : 20px 10px;
+   
 }
-table.notice th {
-    width: 150px;
+/* table.notice th {
+    width: 1000px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-}
-table.notice td {
-    width: 350px;
+} */
+ table.notice td {
+ 
     padding: 10px;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-}
-
+    vertical-align: top;
+} 
+ 
 table.job {
      border-collapse: separate;
     border-spacing: 1px;
     text-align: left;
     line-height: 1.5;
-    border-top: 3px solid #FAB114;
-  margin : 20px 10px;
+    border-top: 3px solid #F4B649;
+  	 margin : 20px 10px;
 }
+
+
 table.job th {
     width: 150px;
     padding: 10px;
     font-weight: bold;
     vertical-align: top;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 3px solid #ccc;
 }
-table.job td {
+ table.job td {
     width: 350px;
     padding: 10px;
     vertical-align: top;
     border-bottom: 1px solid #ccc;
-}
+} 
 
  table.re th{
   	
@@ -104,6 +111,17 @@ table.mem2 th{
  	 margin : 5px;
  	 width: 1200px; 
 }  
+
+table.Bott {
+    border-collapse: separate;
+    border-spacing: 1px;
+    border-top: 3px solid #FAB114;
+  	margin : 30px 10px;
+  	margin-left: 20px;
+  	
+}
+
+
 
 
  /* table.re thead tr {

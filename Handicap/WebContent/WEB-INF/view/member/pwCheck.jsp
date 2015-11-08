@@ -29,14 +29,14 @@
 </head>
 <body>
 <center>
-<table>
-<div id="wrapper">
-	<tr><td><%@include file="../top.jsp" %></td><td></td></tr>	
-	<tr><td><%@include file="../menu.jsp" %></td><td></td></tr>
+<table align="center">
+
+	<tr align="center"><td><%@include file="../top.jsp" %></td><td></td></tr>	
+	<tr align="center"><td><%@include file="../menu.jsp" %></td><td></td></tr>
 	<tr><td valign="top">
 
 	<form name="pwcheckForm" id="pwcheckForm" style="width: 249px; ">
-	<div id="dd" align="center">
+	<div  align="center" style="width: 881px; ">
 	
 	
 	<pre style="height: 69px; "></pre>
@@ -76,7 +76,10 @@
 		
 	</form>
 	
-	</td><td><%@include file="../banner.jsp" %> </td></tr>
+	</td>
+	<%-- <td><%@include file="../banner.jsp" %> </td> --%>
+	
+	</tr>
 	
 	</table>
 	

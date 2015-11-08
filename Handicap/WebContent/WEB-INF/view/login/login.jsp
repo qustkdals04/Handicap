@@ -43,17 +43,17 @@
 </script>
 </HEAD>
 <BODY>
-	<div id="wrapper">
+	<div id="wrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
-		<div id="content" align="center">
+		<div align="center">
 			<%@include file="../menu.jsp"%>
 		</div>
 
 
 		<center>
-			<br> <br> <br>
+			<br> <br>
 			<div id="dd">
 				<h3>
 					<font color="#888888"
@@ -71,11 +71,11 @@
 						</tr>
 						<tr>
 
-							<td rowspan="1" align="left" width="200px"><pre></pre><font
+							<td rowspan="1" align="left" width="200px"><pre>  </pre><font
 								size="5" style="font-weight: bold;">User Id</font></td>
-							<td width="200px"><pre></pre><input type="text"
+							<td width="200px"><pre>  </pre><input type="text"
 								name="userid" size="10" id="userid" style="width: 200px"></td>
-							<td rowspan="2" > <pre></pre><button type="button" class="ml-button" id="login">로그인</button></td>
+							<td rowspan="2" > <pre>   </pre><button type="button" class="ml-button" id="login" style="height: 60px; ">로그인</button></td>
 
 
 
@@ -102,7 +102,7 @@
 									<pre></pre>
 									<font style="font-size: 10; color: red;">${status}</font>
 									<br>
-									<button type="button" class="ml-button" id="register" >회원가입</button>
+									<button type="button" class="ml-button" id="register" style="width: 150px; ">회원가입</button><pre> </pre><br>
 									<pre></pre>
 								</div> <!-- </th>
 							<th style="width: 100px" align="center" valign="bottom">

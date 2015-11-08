@@ -10,7 +10,7 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
+						<ul class="mylistTitle" >
 								<li>장애인 법률</li>
 
 						</ul>

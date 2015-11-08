@@ -19,26 +19,39 @@
 		<!-- 전체 틀 -->
 		<%@include file="../top.jsp"%>
 		<!-- 고정 틀 -->
-		<div id="content" align="center">
+		<div  align="center">
 			<%@include file="../menu.jsp"%>
 			<!-- 상단 메뉴 -->
+			
+				<div id="contents">
+			<table align="right">
+			<tr>
+				<td width="200px">
+				
+						<%@include file="HandicapSubMeun.jsp"%>
+					
+				</td>
+			</tr>
+		</table>
+			</div>
 		</div>
-		<div id="contents">
-			<table>
+		<div >
+			<table align="center" >
 				<tr>
+<%-- 
+					<div align="left">
+						<%@include file="HandicapSubMeun.jsp"%>
+					</div> --%>
 
-					<td width="300px"><%@include file="HandicapSubMeun.jsp"%>
-					</td>
-
-					<td width="700px"><%@include file="handicapLaw.jsp"%>
+					<td style="width: 40%; "><%@include file="handicapLaw.jsp"%>
 					</td>
 				</tr>
 			</table>
-			<div id="sidebar" align="right">
+			<%-- <div id="sidebar" align="right">
 				<%@include file="../banner.jsp"%>
 
-			</div>
-		</div>
+			</div> --%>
+		
 	</div>
 </body>
 </html>
