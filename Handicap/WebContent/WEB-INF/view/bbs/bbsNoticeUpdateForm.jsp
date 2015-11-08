@@ -14,7 +14,7 @@
 <script type="text/javascript">
 
 
- $(document).ready(function() {
+$(document).ready(function() {
 	$("#bbsNoticeUpdate").click(function() {				
 		var title = $("#title").val();		
 		var content = $("#contents").val();		
@@ -46,15 +46,28 @@
 </script>
 </head>
 <body>
-	<center>
-		<b>글쓰기</b>
+
 	
 	<br>
 	<form method="post" name="bbsNoticeUpdateForm" id="bbsNoticeUpdateForm" enctype="multipart/form-data">
+	<table class="bbsTitle">
+			<tr>
+				<td align="left"><font size="50">글수정</font></td>
+			</tr>
+		</table>
 	
-		<table width="400" border="1" cellspacing="0" cellpadding="0"
-			align="center" style="width: 570px; ">
-			<tr>		
+		<table class="bbsList">
+		<tr>
+				<td align="center" width ="100px"><font size="3px">작성자</font></td>
+
+				<td width="600px"> ${bbsNoticeUpdateForm.author }<!-- <select name="category" id="category">
+						<option value="공지사항1">공지사항1</option>
+						<option value="공지사항2">공지사항2</option>
+						<option value="공지사항3">흠3</option>
+				</select> --></td>
+			</tr>
+		
+			<!-- <tr>		
 				<td>		
 				<select name="category" id="category">
 						<option value="공지사항1">공지사항1</option>
@@ -62,37 +75,36 @@
 						<option value="공지사항3">흠3</option>						
 				</select> 
 				</td>				
-				<td width="70" align="center">작성자				
-				${bbsNoticeUpdateForm.author }
+				<td>작성자 : 
 				</td>				
-			</tr>			
+			</tr>			 -->
 			<tr>
-							
-				<td width="70" align="center">제 목</td>
-				<td width="330">				
-				<textarea name="title" id="title" style="width: 593px;">${bbsNoticeUpdateForm.title}</textarea></td>
-				
-			</tr>			
-			<tr>
-				<td width="70" align="center">내 용</td>
-				<td width="330" style="width: 483px; ">
-				<textarea name="contents" id="contents"rows="13" cols="40" 
-				style="width: 595px; height: 363px">${bbsNoticeUpdateForm.contents }</textarea></td>
+
+				<td align="center"><font size="3px">제 목</font></td>
+				<td><input type="text" size="40" maxlength="50" name="title"
+					id="title" style="width: 100%"></td>
+
 			</tr>
 			<tr>
-				<td width="70"  align="center">파일 첨부</td>
-				<td><input id="addFile" type="button" value="File Add" />
-				    <table id="fileview" align="right">
-				        <tr>
-				            <td><input name="files[0]" type="file" /></td>
-				        </tr>
-				    </table>	
-				    </td>			    
+				<td align="center" ><font size="3px">내 용</font></td>
+				<td width="700px"><textarea name="contents" id="contents" rows="13" cols="40"
+						style="height: 450px; width: 100%"></textarea></td>
 			</tr>
 			<tr>
-				<td colspan=2  align="center">
-				<input type="button" value="수정" id="bbsNoticeUpdate" > 
-				<input type="button" value="목록보기" id="bbsNoticelist" onclick="location.href='/HandicapUpload/bbsNoticeList'">
+				<td align="center"><font size="3px">파일 첨부</font></td>
+				<td align="left">
+					<table id="fileview" align="left">
+						<tr>
+							<td colspan="2"><input name="files" type="file" /> <input id="addFile"
+								type="button" value="파일첨부" /></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td colspan=2  align="right">
+				<button type="button" id="bbsNoticeUpdate" >수정</button> 
+				<button type="button" id="bbsNoticelist" onclick="location.href='/HandicapUpload/bbsNoticeList'">목록</button>
 				</td>
 			</tr>
 		</table>
@@ -100,6 +112,6 @@
 	<input type="hidden" name="boardno" value="${bbsNoticeUpdateForm.boardno }">
 	<input type="hidden" name="no" value="${bbsNoticeUpdateForm.no }">
 	</form>
-	</center>
+
 </body>
 </html>
