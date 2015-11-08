@@ -42,10 +42,10 @@
 	<table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
-				width="276" height="157" onclick="location.href='/Handicap/main'"></td>
+				width="276" height="157" onclick="location.href='/Handicap/'"></td>
 
 			<td width="300">
-
+  
 
 				<p>
 					<pre> <input align="bottom"   type="text" style="width: 60%; border: 4px solid #F3B514;" ><button  class="ml-button"  style="float: right; width: 40px; height: 10;" >검색</button></pre>
