@@ -48,8 +48,7 @@ div#gnb ul.menu li a {
 	color:#000;
 	font-size:14px;
 	font-weight:bold;
-	text-align:center;
-	
+
 	
 }
 div#gnb ul.menu li a:hover,
@@ -60,10 +59,23 @@ div#gnb ul.menu li a.on {
 div#gnb ul.menu li ul {
 	display:none;
 	position:absolute;
-	left:0;
-	width:990px;
+	left:120;
+	
+	/* width:1200px;  */
 	
 }
+
+
+div#gnb ul.menu li ul.gcb{
+	display:none;
+	position:absolute;
+	right:0;
+	overflow: auto;
+	
+
+	
+}
+
 div#gnb ul.menu li ul li a {
 	background:none;
 	color:#000;
