@@ -87,12 +87,7 @@
 									<td align="center"><font size="3px">작성자</font></td>
 
 									<td width="700px"><input type="text" size="10"
-										maxlength="10" id="author" name="author"> <select
-										name="category" id="category">
-											<option value="공지사항1">공지</option>
-											<option value="공지사항2">긴급</option>
-											<option value="공지사항3">알림</option>
-									</select></td>
+										maxlength="10" id="author" name="author"></td>
 								</tr>
 								<tr>
 
@@ -102,8 +97,7 @@
 								</tr>
 								<tr>
 									<td align="center"><font size="3px">내 용</font></td>
-									<td><textarea name="contents" id="contents" rows="13"
-											cols="40" style="height: 450px; width: 100%"></textarea></td>
+									<td></td>
 								</tr>
 								<tr>
 									<td align="center"><font size="3px">파일 첨부</font></td>

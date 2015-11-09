@@ -98,8 +98,13 @@
 								</tr>
 								<tr>
 
-									<td colspan="4"><textarea readonly="readonly"
-											style="height: 450px; width: 100%">${bbsNoticeContent.contents}</textarea>
+									<td colspan="4">
+											<c:if test="${bbsFileName !=null }">						
+					 <c:forEach var="bbsfile" items="${bbsFileName}">
+					 	<img src="/Handicap/img/${bbsfile.filename}">
+					 </c:forEach>							
+					</c:if>	
+										<br>${bbsNoticeContent.contents}
 									</td>
 								</tr>
 								<tr>
