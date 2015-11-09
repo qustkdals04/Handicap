@@ -297,15 +297,22 @@ public class MemberController {
 	// 회원정보수정처리
 	@RequestMapping("/member/mypage/registerupdateformaction")
 	public String registerupdateformaction(@RequestParam String flag, UserVO vo,
-			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request) throws SQLException {
+			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+		response.setContentType("text/html; charset=UTF-8");
+		request.setCharacterEncoding("UTF-8");
+		PrintWriter writer = response.getWriter();
 		if(flag.equals("1")){
 			vo.setPhone(phone1+phone2+phone3);
 			if (dao.update(vo)) {
+				writer.println("<script>alert('회원정보수정이 완료되었습니다.');</script>");
+				writer.flush();
 				return "viewmain";
 			} else {
-				return "redirect:registerupdateform";
+				writer.println("<script>alert('회원정보수정이 실패하였습니다.');</script>");
+				writer.flush();
+				return "redirect:/member/mypage/registerupdateform";
 			}			
-		}else if(flag.equals("2")){
+		}else {
 			String company1 = request.getParameter("companyaddress1");
 			String company2 = request.getParameter("companyaddress2");
 			String company3 = request.getParameter("companyaddress3");
@@ -313,13 +320,15 @@ public class MemberController {
 			vo.setCompanyaddr(company1 + " " + company2 + ", " + company3);
 			vo.setPhone(phone1 + phone2 + phone3);
 			if (dao.update(vo)) {
-				return "redirect:loginForm";
+				writer.println("<script>alert('회원정보수정이 완료되었습니다.');</script>");
+				writer.flush();
+				return "viewmain";
 			} else {
-				return "member/registerForm";
-			}
-			
+				writer.println("<script>alert('회원정보수정이 실패하였습니다.');</script>");
+				writer.flush();
+				return "redirect:/member/mypage/registerupdateform";
+			}			
 		}
-		return "viewmain";
 		
 	}
 

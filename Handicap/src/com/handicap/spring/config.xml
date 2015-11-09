@@ -57,6 +57,12 @@
       <property name="dataSource" ref="driverManagerDataSource"></property>
    </bean>
    
+   <!-- fileUpload -->
+   <bean id="multipartResolver"
+  class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+  
+   <context:component-scan base-package="onj.board.controller"/>   
+   
 </beans>
 
 

@@ -91,7 +91,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 													action : "registerupdateformaction",
 													method : 'post'
 												});
-												$("#registForm").submit();
+												$("#registForm").submit();												
 											}
 											/* } */
 										})

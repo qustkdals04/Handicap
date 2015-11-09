@@ -46,13 +46,14 @@ public class BbsController {
 	  
 	  // 공지사항 글쓰기
 	@RequestMapping("/bbsNoticeWrite")
-	public String bbsNoticeWrite(BbsVO bv, FileVO fv,HttpServletRequest req, @RequestParam String bbsflag) throws Exception {		
+	public String bbsNoticeWrite(BbsVO bv, FileVO fv,HttpServletRequest req,@RequestParam String bbsflag) throws Exception {		
 		
 		// 먼저 파일 업로드, 폴더는 미리 만드세요
 		// 스프링의 MultipartFile을 이용한 업로드
 		List<MultipartFile> files = fv.getFiles();
 		Map map = new HashMap();		
-		
+		/*String bbsflag = req.getParameter("bbsflag");*/
+		System.out.println(bbsflag);
 		//boardService.insertBoard(uploadForm);
 		if(bbsflag.equals("bbsNoticeWrite")){					
 				if(bd.insert(bv)){

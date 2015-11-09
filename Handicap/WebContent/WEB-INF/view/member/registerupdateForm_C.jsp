@@ -21,13 +21,13 @@
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
-	var chkpw = false;
-	var chkname = false;
-	var chkphone2 = false;
-	var chkphone3 = false;
-	var chkemail = false;
-	var chkpq = false;
-	var chkpa = false;
+	var chkpw = true;
+	var chkname = true;
+	var chkphone2 = true;
+	var chkphone3 = true;
+	var chkemail = true;
+	var chkpq = true;
+	var chkpa = true;
 
 	var regNonExcept = /[^가-힣A-Za-z0-9]/;
 	var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
@@ -114,7 +114,7 @@
 
 						$("#findAddress").click(
 								function() {
-									var address = window.open('addressForm',
+									var address = window.open('/Handicap/addressForm',
 											'', 'top='
 													+ (screen.height / 2 - 125)
 													+ ',left='
@@ -269,11 +269,10 @@
 
 							} else {
 								$("#registForm").attr({
-									action : "register",
+									action : "registerupdateformaction",
 									method : 'post'
 								});
 								$("#registForm").submit();
-								alert("회원가입이 완료되었습니다.");
 							}
 						});
 
@@ -449,7 +448,7 @@
 							<td></td>
 							<td colspan="2"><pre> </pre>
 								<button type="button" class="ml-button"
-									style="font-weight: bold;" id="register">가입</button>
+									style="font-weight: bold;" id="register">수정</button>
 								<button type="button" class="ml-button"
 									style="font-weight: bold;" id="cancel">취소</button> <!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
