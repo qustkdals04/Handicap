@@ -208,6 +208,10 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 				<input type="hidden" name="flag" value="1">
 				<input type="hidden" name="userid" value="${user.userid }">
 				<input type="hidden" name="nickname" value="${user.nickname }">
+				 <input
+						type="hidden" name="companyceoname" value=""> <input
+						type="hidden" name="companyaddr" value=""> <input
+						type="hidden" name="companytype" value="">
 			</form>
 
 		</div>

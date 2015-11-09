@@ -20,8 +20,6 @@
 			.ready(
 					function() {
 						$("#bbsNoticeWrite").click(function() {
-							var title = $("#title").val();
-							var content = $("#contents").val();
 							if ($("#title").val() == "") {
 								alert("제목을 입력해주세요..");
 								$("#title").focus();
@@ -76,8 +74,8 @@
 							file="../new/NewSubMenu.jsp"%></td>
 					<td>
 					<!-- 위에 폼 인쿨루드 -->
-						<form method="post" name="bbsNoticeWriteForm"
-							id="bbsNoticeWriteForm" enctype="multipart/form-data">
+						<form name="bbsNoticeWriteForm"
+							id="bbsNoticeWriteForm" enctype="multipart/form-data" >
 							<table class="bbsTitle">
 								<tr>
 									<td align="center"><font size ="15">글 쓰기</font></td>
@@ -99,8 +97,7 @@
 								<tr>
 
 									<td align="center"><font size="3px">제 목</font></td>
-									<td><input type="text" size="40" maxlength="50"
-										name="title" id="title" style="width: 100%"></td>
+									<td><input type="text" size="40" maxlength="50"	name="title" id="title" style="width: 100%"></td>
 
 								</tr>
 								<tr>
@@ -113,8 +110,8 @@
 									<td align="left">
 										<table id="fileview" align="left">
 											<tr>
-												<td colspan="2"><input name="files" type="file" /> <input
-													id="addFile" type="button" value="파일첨부" /></td>
+												<td colspan="2"><input name="files" type="file" > <input
+													id="addFile" type="button" value="파일첨부" ></td>
 											</tr>
 										</table>
 									</td>
@@ -133,7 +130,8 @@
 									</td>
 								</tr>
 							</table>
-							<input type="hidden" name="flag" value="bbsNoticeWrite">
+							<input type="hidden" name="bbsflag" id="bbsflag" value="bbsNoticeWrite">
+							<!-- <input type="hidden" name="bbsflag" value="bbsNoticeWrite"> -->
 						</form>
 					</td>
 					<!-- 아래 폼 인쿨루드 -->

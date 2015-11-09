@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.multipart.MultipartRequest;
 
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.FileVO;
@@ -43,18 +46,15 @@ public class BbsController {
 	  
 	  // 공지사항 글쓰기
 	@RequestMapping("/bbsNoticeWrite")
-	public String bbsNoticeWrite(BbsVO bv, FileVO fv, // UploadVO uv,			
-			@RequestParam String flag,
-			HttpSession session,
-			HttpServletRequest req) throws Exception {		
+	public String bbsNoticeWrite(BbsVO bv, FileVO fv,HttpServletRequest req, @RequestParam String bbsflag) throws Exception {		
 		
 		// 먼저 파일 업로드, 폴더는 미리 만드세요
 		// 스프링의 MultipartFile을 이용한 업로드
 		List<MultipartFile> files = fv.getFiles();
-		Map map = new HashMap();
+		Map map = new HashMap();		
 		
 		//boardService.insertBoard(uploadForm);
-		if(flag.equals("bbsNoticeWrite")){					
+		if(bbsflag.equals("bbsNoticeWrite")){					
 				if(bd.insert(bv)){
 					
 					if (null != files && files.size() > 0) {

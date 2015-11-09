@@ -5,9 +5,9 @@ public class BbsVO {
 	private int no;
 	private String category;
 	private String title;
-	private String date;
+	private String writedate;
 	private String author;
-	private String content;
+	private String contents;
 	private int hits;
 	private int good;
 	private int bad;
@@ -39,11 +39,11 @@ public class BbsVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDate() {
-		return date;
+	public String getWritedate() {
+		return writedate;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void setWritedate(String writedate) {
+		this.writedate = writedate;
 	}
 	public String getAuthor() {
 		return author;
@@ -51,11 +51,11 @@ public class BbsVO {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public String getContent() {
-		return content;
+	public String getContents() {
+		return contents;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 	public int getHits() {
 		return hits;

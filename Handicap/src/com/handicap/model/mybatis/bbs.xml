@@ -3,8 +3,8 @@
 <mapper namespace="bbs">
 	<!-- 공지사항 글 작성 -->
 	<insert id="bbsNoticeWrite" parameterType="com.handicap.model.beans.BbsVO">
-		insert into bbsnotice(title, writedate, author, contents)
-		values(#{title}, sysdate, #{author}, #{contents})
+		insert into bbsnotice (title, writedate, author, contents)
+		values (#{title}, sysdate, #{author}, #{contents})
 		<!-- values(#no:number#, #title:varchar2#, #writedate:date#, #author:varchar2#, 
 			#contents:varchar2#, #hits:number#) -->
 	</insert>

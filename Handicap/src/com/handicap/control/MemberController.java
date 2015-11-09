@@ -143,7 +143,7 @@ public class MemberController {
 				String company2 = request.getParameter("companyaddress2");
 				String company3 = request.getParameter("companyaddress3");
 				uv.setUsergrade(Integer.parseInt(flag));
-				uv.setCompanyaddr(company1 + " " + company2 + " " + company3);
+				uv.setCompanyaddr(company1 + " " + company2 + ", " + company3);
 				uv.setPhone(phone1 + phone2 + phone3);
 				if (dao.insert(uv)) {
 					return "redirect:loginForm";
@@ -297,7 +297,7 @@ public class MemberController {
 	// 회원정보수정처리
 	@RequestMapping("/member/mypage/registerupdateformaction")
 	public String registerupdateformaction(@RequestParam String flag, UserVO vo,
-			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3) throws SQLException {
+			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request) throws SQLException {
 		if(flag.equals("1")){
 			vo.setPhone(phone1+phone2+phone3);
 			if (dao.update(vo)) {
@@ -306,6 +306,17 @@ public class MemberController {
 				return "redirect:registerupdateform";
 			}			
 		}else if(flag.equals("2")){
+			String company1 = request.getParameter("companyaddress1");
+			String company2 = request.getParameter("companyaddress2");
+			String company3 = request.getParameter("companyaddress3");
+			vo.setUsergrade(Integer.parseInt(flag));
+			vo.setCompanyaddr(company1 + " " + company2 + ", " + company3);
+			vo.setPhone(phone1 + phone2 + phone3);
+			if (dao.update(vo)) {
+				return "redirect:loginForm";
+			} else {
+				return "member/registerForm";
+			}
 			
 		}
 		return "viewmain";
