@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-   <table class="club" align="center"  width="1000" >
+   <table class="club" align="center"  width="900" >
       <tr >
          <td colspan="3"><img src="/Handicap/img/bt.png"></td> 
          <td align="right"><a href="/Handicap/Club"><img src="/Handicap/img/more.png"></a></td>
@@ -18,7 +18,7 @@
          
          <table align="center">      
             <tr align="center">     
-               <td><img src="/Handicap/img/ca.JPG"></td>
+              
                <td><img src="/Handicap/img/ca.JPG"></td>
                <td><img src="/Handicap/img/ca.JPG"></td>
                <td><img src="/Handicap/img/ca.JPG"></td>

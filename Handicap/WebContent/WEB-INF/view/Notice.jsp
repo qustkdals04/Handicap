@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="notice"   style="width: 1000px; " align="center" >
+	<table class="notice"   style="width: 900px; " align="center" >
 		
 		<tr>
 			<td align="left"><img src="img/me.png"></td>
@@ -21,9 +21,9 @@
 			
 		</tr>
 		<tr>
-			<td colspan="2">-차량 구입시 혜택!</td>
+			<td colspan="2"><a href="">-차량 구입시 혜택!</a></td>
 		</tr><tr>
-			<td colspan="2">-요금제에 대한 혜택!!!</td>
+			<td colspan="2"><a href="">-요금제에 대한 혜택!!!</a></td>
 		</tr>
 	</table>
 </body>

@@ -30,7 +30,7 @@
 			} else {
 				return; // 취소
 			}
-		});
+		});hju
 		/* $("#goodupdate").click(function(){
 			if(confirm("추천하였습니다!!")==true){
 				$("#bbsNoticeContent").attr({action:'goodupdate', method:'post'});

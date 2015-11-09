@@ -64,15 +64,15 @@
 		<%@include file="club.jsp"%><table>
 
 
-			<tr>
+			<tr >
 
-				<td><a href="http://fleamarket.seoul.go.kr/"><img src="/Handicap/img/bn1.JPG"></a></td>
+				<td><a href="http://fleamarket.seoul.go.kr/"><img src="/Handicap/img/bn1.JPG" style="width: 225px; "></a></td>
 
-				<td><a href="https://www.jobable.kr/index_knise.jsp"><img src="/Handicap/img/bn2.JPG"></a></td>
+				<td ><a href="https://www.jobable.kr/index_knise.jsp"><img src="/Handicap/img/bn2.JPG" style="width: 225px;"></a></td>
 
-				<td><a href="http://life.knise.kr/main/index.asp"><img src="/Handicap/img/bn3.JPG"></a></td>
+				<td ><a href="http://life.knise.kr/main/index.asp"><img src="/Handicap/img/bn3.JPG" style="width: 225px; height: 76px;"></a></td>
 
-				<td><a href="https://tlc.knise.kr/"><img src="/Handicap/img/bn4.JPG"></a></td>
+				<td ><a href="https://tlc.knise.kr/"><img src="/Handicap/img/bn4.JPG" style="width: 225px;  height: 76px;"></a></td>
 
 			<br><%@include file="Footer.jsp"%>
 
