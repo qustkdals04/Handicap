@@ -35,7 +35,7 @@
 
 </head>
 <body>
-<table>
+<table  style="margin-bottom: 20px;">
 		<tr>
 				<td width="600px" align="left">
 

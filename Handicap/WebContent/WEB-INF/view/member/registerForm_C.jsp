@@ -626,9 +626,6 @@
 			</form>
 
 		</div>
-		<div id="sidebar2" align="right">
-			<%@include file="../banner2.jsp"%>
-		</div>
 	</center>
 
 

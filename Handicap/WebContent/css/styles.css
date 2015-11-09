@@ -681,7 +681,7 @@ table.bbsTitle{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 
@@ -744,7 +744,7 @@ table.bbsAlbum{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 
@@ -801,7 +801,7 @@ table.mypage{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 

@@ -38,7 +38,7 @@
 		</tr>
 
 		<tr>
-			<td align="right" colspan="4"><button type="button">글쓰기</button></td>
+			<td align="right" colspan="4"><button type="button" onclick="location.href='/Handicap/bbs/ClubWriteForm'">글쓰기</button></td>
 		</tr>
 
 		<tr>
