@@ -4,13 +4,20 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>앨범 게시판</title>
+
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/styles.css">
+<title>동호회 게시판</title>
 </head>
 <body>
 
 	<table class="bbsAlbum">
 		<tr>
-			<td align="center"><font size="15">앨범 게시판</font></td>
+			<td align="center"><font size="15">동호회 게시판</font></td>
 		</tr>
 	</table>
 

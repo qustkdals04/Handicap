@@ -6,6 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/styles.css">
 <title>게시판_여행</title>
 </head>
 <body>
