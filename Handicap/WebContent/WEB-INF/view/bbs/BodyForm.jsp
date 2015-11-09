@@ -36,6 +36,9 @@
 				<td>
 						<%@include file="../bbs/bbsNoticeList.jsp"%>
 				</td>
+				<td>
+					<%@include file="../banner.jsp"%>
+				</td>
 			</tr>
 		</table>
 		</div>
