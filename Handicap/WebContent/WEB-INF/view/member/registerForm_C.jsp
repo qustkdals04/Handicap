@@ -133,7 +133,7 @@
 											var checkNick = "nickname="
 													+ $("#nickname").val();
 											if ($("#nickname").val() == "") {
-												alert("닉네임을 입력해주세요");
+												alert("회사명을 입력해주세요");
 												$("#nickname").focus();
 											} else if ($("#nickname").val()
 													.indexOf("'") != -1) {
@@ -141,7 +141,7 @@
 											} else if ($("#nickname").val().length < 2
 													|| $("#nickname").val()
 															.search(/[ㄱ-ㅎ]/) != -1) {
-												alert("닉네임은 2자~12자 사이의 완성된 글자로만 입력이 가능합니다.");
+												alert("회사명은 2자~12자 사이의 완성된 글자로만 입력이 가능합니다.");
 												$("#nickname").val("");
 												$("#nickname").focus();
 											} else {
