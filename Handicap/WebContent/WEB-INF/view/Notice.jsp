@@ -11,8 +11,8 @@
 	<table class="notice"   style="width: 900px; " align="center" >
 		
 		<tr>
-			<td align="left"><img src="img/me.png"></td>
-			<td align="right"><a href="/Handicap/Notice"><img src="img/more.png"></a></td>
+			<td align="left"><img src="/Handicap/img/me.png"></td>
+			<td align="right"><a href="/Handicap/Notice"><img src="/Handicap/img/more.png"></a></td>
 			
 		</tr>
 		
