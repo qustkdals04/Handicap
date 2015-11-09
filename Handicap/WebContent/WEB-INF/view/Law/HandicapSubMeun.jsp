@@ -10,9 +10,10 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle" style="float: center;" >
-								<li  >장애인</li>
-								<li>법률</li>
+						<ul class="mylistTitle">
+								<li style="margin-bottom: 2px;">장애인</li>  
+								<li style="margin-bottom: 2px;">법률</li>
+	
 
 						</ul>
 			
