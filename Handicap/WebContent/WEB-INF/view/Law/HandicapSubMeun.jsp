@@ -11,8 +11,8 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li style="margin-bottom: 2px;">장애인</li>  
-								<li style="margin-bottom: 2px;">법률</li>
+								<li style="margin-bottom: 5px;">장애인</li>  
+								<li style="margin-bottom: 5px;">법률</li>
 	
 
 						</ul>
