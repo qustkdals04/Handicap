@@ -27,7 +27,7 @@
 					
 				</td>
 				<td>
-						<%@include file="../bbs/bbsNoticeList.jsp"%>
+						<%@include file="Calbum.jsp"%>
 				</td>
 			</tr>
 		</table>
