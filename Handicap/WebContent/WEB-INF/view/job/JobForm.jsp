@@ -11,8 +11,9 @@
 
 <title>일자리폼</title>
 </head>
-<body>
-	<div id="wrapper">
+<body>	
+	
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
@@ -20,22 +21,35 @@
 			<%@include file="../menu.jsp"%>
 		</div>
 		<!-- center 끝 -->
-	<div id="contents">
-		<table align="right">
+			<div id="CssContents">
+	<table  align="left">
 			<tr>
-				<td width="200px">
-					
+				<td width="100px" align="center">
+				
 						<%@include file="JobSubMenu.jsp"%>
 					
+				</td>
+				<td>
+						<%@include file="../bbs/bbsNoticeList.jsp"%>
 				</td>
 			</tr>
 		</table>
 		</div>
+		<%@include file ="../Footer.jsp" %>
+		
+		
 		<%-- <div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>
 
-		</div> --%>
-	</div>
+
+		</div>
+ --%>
+	</div>  <!-- 전체 wapper -->
+	
+	
+	
+	
+	
 </body>
 </html>
 

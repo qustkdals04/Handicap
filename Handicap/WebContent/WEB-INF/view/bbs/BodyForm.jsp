@@ -14,7 +14,7 @@
 </script>
 </head>
 <body>
-			<div id="wrapper" >
+			<div id="CssWrapper" >
 		<%@include file="../top.jsp" %>
 		
 		
@@ -22,7 +22,7 @@
 		<%@include file="../menu.jsp" %>
 	</div><!-- center 끝 -->
 
-	<div id ="contents">
+	<div id ="CssContents">
 		<table align="right">
 			<tr>
 				<td width = "200px">

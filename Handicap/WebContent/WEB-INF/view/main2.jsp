@@ -14,12 +14,12 @@
 <table>
 <tr>
 <td>	
-	<div id="wrapper" >
+	<div id="CssWrapper" >
 		<%@include file="top.jsp" %>
-	<div id="content" align="center">	
+	<div id="CssContent" align="center">	
 		<%@include file="menu.jsp" %>
 	</div>
-  <div id="contents">
+  <div id="CssContents">
 	<%@include file="index.html" %>
   </div >   
 </div>

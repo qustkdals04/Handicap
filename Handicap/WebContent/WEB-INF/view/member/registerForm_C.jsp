@@ -413,11 +413,11 @@
 
 	<center>
 
-		<div id="wrapper" align="left">
+		<div id="CssWrapper" align="left">
 			<%@include file="../top.jsp"%>
 
 
-			<div id="content" align="center">
+			<div id="CssContent" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
 

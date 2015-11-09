@@ -5,25 +5,26 @@ background: #ffffff;
 } 
 
 <!--전체적인 틀 -->
-#wrapper{
-
+#CssWrapper{
 width:1400px; 
 padding: 10px; 
 position: absolute;
 top: 10px;
 left: 50%;
 margin-left: -538px;
-
 }
-#content{
-
+#CssContent{
 width:1200px;
 float: left;
 padding: 10px;
-
-
-
 }
+
+
+#CssContents {
+	width: 900px;
+	float: center;
+}
+
 
 #Foot{
 	
@@ -106,13 +107,6 @@ position: absolute;
 
 
 
-#contents {
-	width: 900px;
-	
-	float: center;
-	
-}
-
 
 
 #CC {
@@ -132,9 +126,6 @@ position: absolute;
 	float: right;
 	padding: 20px;
 }
-
-
-
 #sidebar{
 
 width:100px;
@@ -151,12 +142,6 @@ margin-left: 1150px;
 
 
 #Notice {
-	width: 600px;
-	float: left;
-	padding: 10px;
-}
-
-#JOB {
 	width: 600px;
 	float: left;
 	padding: 10px;
@@ -191,12 +176,9 @@ margin-left: 1150px;
 	
 }
 #mylistTitle2{
-  
 width:200px;
 float: left;
 padding: 10px;
-    
-
 }
 #registerFormSelect{
 	width : 1000px;

@@ -102,9 +102,9 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 <!-- registerupdateForm.jsp -->
 <body>
 	<center>
-		<div id="wrapper" align="left">
+		<div id="CssWrapper" align="left">
 			<%@include file="../top.jsp"%>
-			<div id="content" align="center">
+			<div id="CssContent" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
 			<form method="post" name="registForm" id="registForm">

@@ -9,7 +9,7 @@
 <title>소식_공지사항</title>
 </head>
 <body>
-	<div id="wrapper" align="center">
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
@@ -17,7 +17,7 @@
 			<%@include file="../menu.jsp"%>
 		</div>
 		<!-- center 끝 -->
-			<div id="contents">
+			<div id="CssContents">
 	<table  align="left">
 			<tr>
 				<td width="100px" align="center">
@@ -31,6 +31,8 @@
 			</tr>
 		</table>
 		</div>
+		<%@include file ="../Footer.jsp" %>
+		
 		
 		<%-- <div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>
@@ -38,7 +40,7 @@
 
 		</div>
  --%>
-	</div>
+	</div>  <!-- 전체 wapper -->
 
 </body>
 </html>

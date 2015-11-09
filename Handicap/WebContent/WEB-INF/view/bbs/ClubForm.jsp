@@ -10,7 +10,7 @@
 <title>게시판_동호회</title>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="CssWrapper">
 		<%@include file="../top.jsp"%>
 
 
@@ -20,7 +20,7 @@
 		<!-- center 끝 -->
 
 
-		<div id ="contents">
+		<div id ="CssContents">
 		<table align="right">
 			<tr>
 				<td width = "200px">

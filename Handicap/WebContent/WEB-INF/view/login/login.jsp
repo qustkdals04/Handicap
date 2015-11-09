@@ -43,7 +43,7 @@
 </script>
 </HEAD>
 <BODY>
-	<div id="wrapper" align="center">
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 

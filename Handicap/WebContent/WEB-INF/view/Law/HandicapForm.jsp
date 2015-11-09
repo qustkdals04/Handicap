@@ -6,52 +6,46 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/main.css">
-<link rel="stylesheet" type="text/css" media="all"
-	href="/Handicap/css/styles.css">
+
 <title>장애인 복지법</title>
 </head>
 <body>
-
-
-
-
-	<div id="wrapper">
-		<!-- 전체 틀 -->
+	
+	
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
-		<!-- 고정 틀 -->
+
+
 		<div  align="center">
 			<%@include file="../menu.jsp"%>
-			<!-- 상단 메뉴 -->
-			
-				<div id="contents">
-			<table align="right">
+		</div>
+		<!-- center 끝 -->
+			<div id="CssContents">
+	<table  align="left">
 			<tr>
-				<td width="200px">
+				<td width="100px" align="center">
 				
 						<%@include file="HandicapSubMeun.jsp"%>
 					
 				</td>
+				<td><%@include file="handicapLaw.jsp"%>
+					</td>
 			</tr>
 		</table>
-			</div>
 		</div>
-		<div >
-			<table align="center" >
-				<tr>
-<%-- 
-					<div align="left">
-						<%@include file="HandicapSubMeun.jsp"%>
-					</div> --%>
-
-					<td style="width: 40%; "><%@include file="handicapLaw.jsp"%>
-					</td>
-				</tr>
-			</table>
-			<%-- <div id="sidebar" align="right">
-				<%@include file="../banner.jsp"%>
-
-			</div> --%>
+		<%@include file ="../Footer.jsp" %>
 		
-	</div>
+		
+		<%-- <div id="sidebar" align="right">
+			<%@include file="../banner.jsp"%>
+
+
+		</div>
+ --%>
+	</div>  <!-- 전체 wapper -->
+	
+	
+	
+	
 </body>
 </html>
