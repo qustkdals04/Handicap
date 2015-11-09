@@ -7,44 +7,61 @@
 <title>앨범 게시판</title>
 </head>
 <body>
-	<table border="1">
+
+	<table class="bbsAlbum">
 		<tr>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
+			<td align="center"><font size="15">앨범 게시판</font></td>
+		</tr>
+	</table>
+
+	<table border="1" class="bbsAlbumList">
+		<tr>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
 		</tr>
 		<tr>
-			<td>제목<br>작성자
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
 			</td>
-			<td>제목<br>작성자
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
 			</td>
-			<td>제목<br>작성자
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
 			</td>
-			<td>제목<br>작성자
-			</td>
-		</tr>
-		<tr>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
-			<td>[이미지]</td>
-		</tr>
-		<tr>
-			<td>제목<br>작성자
-			</td>
-			<td>제목<br>작성자
-			</td>
-			<td>제목<br>작성자
-			</td>
-			<td>제목<br>작성자
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
 			</td>
 		</tr>
 		<tr>
-			<td>[1][2][3][4][5]</td> <!-- 페이징 -->
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+
 		</tr>
 		<tr>
-			<td colspan="4" align="center"><input type="text"><button type="button">글쓰기</button></td>
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
+			</td>
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
+			</td>
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
+			</td>
+			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4" align="center">[1][2][3][4][5]</td>
+			<!-- 페이징 -->
+		</tr>
+		<tr>
+			<td width="25%"></td>
+			<td align="center" colspan="2" width="50%"><input type="text"
+				style="width: 90%; text-align: right;"></td>
+			<td width="25%" align="left">
+				<button type="button" style="margin-left: 5px;">검색</button>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" colspan="4"><button type="button">글쓰기</button></td>
 		</tr>
 	</table>
 </body>
