@@ -303,8 +303,7 @@ height: 100%;
 #cell {
 
 display: table-cell; 
-text-align: center; 
-vertical-align:middle;
+
 }
 table.Search{
 	
@@ -649,7 +648,7 @@ table.list3 td {
 	height: 30px;
 	font-size: 20px;
 	color: #000000;
-	text-align: center;
+	text-align: right;
 	border-right: 1px solid #A7A7A7;
 	border-bottom: 1px solid #A7A7A7;
 	border-left: 1px solid #A7A7A7;
@@ -682,7 +681,7 @@ table.bbsTitle{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 
@@ -745,7 +744,7 @@ table.bbsAlbum{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 
@@ -754,19 +753,18 @@ table.bbsAlbumList {
    width: 600px;
    margin-left: 50px;
    margin-bottom : 30px;
-   
 }
 
 table.bbsAlbumList th {     /* 이미지  */ 
    width:"200";
    background-color : #FFFFFF;   
    vertical-align: middle;
+   border: 1px dotted #000000;
     
 }
 
 table.bbsAlbumList td {     /* 작성자, 제목 */ 
    font-weight: bold;
-   font-size: 12px;
    text-align: centet;
    vertical-align:middle;
    line-height: 1.0;
@@ -803,7 +801,7 @@ table.mypage{
     text-align: center;
     color:#C7BEBB;
     line-height: 1.5;
-    border-bottom: 5px solid #F4B649;
+    font-size: 30px;
  
 }
 

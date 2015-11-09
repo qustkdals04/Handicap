@@ -9,7 +9,7 @@
 <title>고객센터_게시판요청</title>
 </head>
 <body>
-	<div id="CssWrapper">
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
@@ -17,25 +17,30 @@
 			<%@include file="../menu.jsp"%>
 		</div>
 		<!-- center 끝 -->
-
-
-		<div id="CssContents">
-		<table align="right" >
+			<div id="CssContents">
+	<table  align="left">
 			<tr>
-				<td width="200px">
-					
+				<td width="100px" align="center">
+				
 						<%@include file="ServiceSubMeun.jsp"%>
 					
 				</td>
-
+				<td>
+						<%@include file="../bbs/bbsNoticeList.jsp"%>
+				</td>
 			</tr>
 		</table>
 		</div>
+		<%@include file ="../Footer.jsp" %>
+		
+		
 		<%-- <div id="sidebar" align="right">
-			<%@include file="../banner2.jsp"%>
+			<%@include file="../banner.jsp"%>
 
-		</div> --%>
-	</div>
+
+		</div>
+ --%>
+	</div>  <!-- 전체 wapper -->
 </body>
 </html>
 

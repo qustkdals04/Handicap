@@ -6,11 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/styles.css">
 
 <title>게시판_동호회</title>
 </head>
 <body>
-	<div id="CssWrapper">
+	<div id="CssWrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
@@ -18,24 +22,30 @@
 			<%@include file="../menu.jsp"%>
 		</div>
 		<!-- center 끝 -->
-
-
-		<div id ="CssContents">
-		<table align="right">
+			<div id="CssContents">
+	<table  align="left">
 			<tr>
-				<td width = "200px">
+				<td width="100px" align="center">
 				
-			<%@include file = "BbsSubMenu.jsp"%>
-			
+						<%@include file="BbsSubMenu.jsp"%>
+					
 				</td>
-				</tr>		
-				</table>
-</div>
+				<td>
+						<%@include file="Calbum.jsp"%>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<%@include file ="../Footer.jsp" %>
+		
+		
 		<%-- <div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>
 
-		</div> --%>
-	</div>
+
+		</div>
+ --%>
+	</div>  <!-- 전체 wapper -->
 </body>
 </html>
 

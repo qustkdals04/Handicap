@@ -21,7 +21,7 @@
 <body>
 <table class="bbsTitle">
 			<tr>
-					<td align="center"><font size ="15">공지사항</font></td>
+					<td align="center">공지사항</td>
 			</tr>
 </table>
 	

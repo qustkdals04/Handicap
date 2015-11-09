@@ -75,7 +75,7 @@
 				<tr>
 					<th align="left" width="800px" colspan="5" >받는사람 입력&nbsp;&nbsp;<input
 						type="text" name="recipient" id="recipient"
-						style="width: 181px; height: 22px;"><button type="button" class="ml-button" id="findnick" width="70px" style="vertical-align: middle;">검색</button><!-- <button id="findnick">검색</button> --></th>
+						style="width: 300px; height: 22px; text-align: left;"><button type="button" class="ml-button" id="findnick" width="70px" style="vertical-align: middle;">검색</button><!-- <button id="findnick">검색</button> --></th>
 					
 					
 					
@@ -85,14 +85,9 @@
 				<td colspan="5" ><textarea rows="10" cols="50" name="contents" id="contents" style="width: 100%; height: 200px;"></textarea> </td>
 			</tr>			
 				<tr>
-					<td width="500px" colspan="4"></td>
-
-					<td width="300px" align="center">
-
-
+					<td width="300px" align="left"  colspan="5">
 						<button class="ml-button" type="button" id="send">보내기</button>
-						<button class="ml-button" type="button" id="cancel"
-							onclick="history.back()">취소</button>
+						<button class="ml-button" type="button" id="cancel" onclick="history.back()">취소</button>
 					</td>
 
 

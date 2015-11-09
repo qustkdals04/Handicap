@@ -9,25 +9,40 @@
 <title>의료장비_사용후기</title>
 </head>
 <body>
-   <div id="CssWrapper">
-      <%@include file="../top.jsp"%>
+   
 
 
-      <div  align="center">
-         <%@include file="../menu.jsp"%>
-      </div>
-      <!-- center 끝 -->
+<div id="CssWrapper" align="center">
+		<%@include file="../top.jsp"%>
 
-<div id = "CssContents">
-<table align="right" >
-<tr>
-   <td width="200px"><%@include file="EquipmenSubMenu.jsp"%></td>
-</tr>
-</table>
-      <%-- <div id="sidebar" align="right">
-         <%@include file="../banner.jsp"%>
 
-      </div> --%>
-   </div>
+		<div  align="center">
+			<%@include file="../menu.jsp"%>
+		</div>
+		<!-- center 끝 -->
+			<div id="CssContents">
+	<table  align="left">
+			<tr>
+				<td width="100px" align="center">
+				
+						<%@include file="EquipmenSubMenu.jsp"%>
+					
+				</td>
+				<td>
+						<%@include file="../bbs/bbsNoticeList.jsp"%>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<%@include file ="../Footer.jsp" %>
+		
+		
+		<%-- <div id="sidebar" align="right">
+			<%@include file="../banner.jsp"%>
+
+
+		</div>
+ --%>
+	</div>  <!-- 전체 wapper -->
 </body>
 </html>

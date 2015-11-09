@@ -12,8 +12,8 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li>일자리 정보</li>
-
+								<li style="margin-bottom: 5px;">일자리<li> 
+								<li style="margin-bottom: 5px;">정보</li>
 						</ul>
 			
 						<ul class="mylist">
