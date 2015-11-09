@@ -11,7 +11,7 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle" >
-								<li>장애인 법률</li>
+								<li>장애인 <br>법률</li>
 
 						</ul>
 			

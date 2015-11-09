@@ -12,7 +12,7 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li>일자리 정보</li>
+								<li>일자리 <br>정보</li>
 
 						</ul>
 			
