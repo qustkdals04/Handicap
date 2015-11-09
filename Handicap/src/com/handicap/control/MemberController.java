@@ -74,8 +74,7 @@ public class MemberController {
 	public String noCheck(@RequestParam String companyNo, Model model) {
 		List<UserVO> list = dao.selectAllNo();
 		String no = null;
-		for (int i = 0; i < list.size(); i++) {
-			System.out.println("나와"+list.get(i).getCompanyno());
+		for (int i = 0; i < list.size(); i++) {			
 			no = list.get(i).getCompanyno();
 			if (no.equals(companyNo)) {
 				model.addAttribute("checkNo", no);
@@ -297,10 +296,17 @@ public class MemberController {
 
 	// 회원정보수정처리
 	@RequestMapping("/member/mypage/registerupdateformaction")
-	public String registerupdateformaction(@RequestParam String flag, UserVO vo) throws SQLException {
+	public String registerupdateformaction(@RequestParam String flag, UserVO vo,
+			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3) throws SQLException {
 		if(flag.equals("1")){
-			dao.update(vo);
-			return "viewmain";
+			vo.setPhone(phone1+phone2+phone3);
+			if (dao.update(vo)) {
+				return "viewmain";
+			} else {
+				return "redirect:registerupdateform";
+			}			
+		}else if(flag.equals("2")){
+			
 		}
 		return "viewmain";
 		

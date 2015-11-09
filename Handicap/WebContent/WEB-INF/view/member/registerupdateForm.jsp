@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="phone" value="${user.phone }"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,74 +17,41 @@
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
 <script type="text/javascript">
+var chkphone2 = true;
+var chkphone3 = true;		
+
+var reg_pw = /^[a-z0-9_]{5,12}$/;
+var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
+var regPhone3 = /^[0-9]{4}$/;
+var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	$(document)
-			.ready(
-					function() {
-						$("#idCheck").click(function() {
-							var checkId = "userid=" + $("#userid").val();
-							if ($("#userid").val() == "") {
-								alert("아이디를 입력해주세요");
-								$("#userid").focus();
+			.ready(function() {
+						$("#phone2").change(function() {
+							$('#messageP').remove();
+							if(!regPhone2.test($("#phone2").val())&&$("#phone2").val()!=""){
+								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+								chkphone2 = false;
 							} else {
-								$.ajax({
-									type : "GET",
-									url : "idcheck",
-									data : checkId,
-									success : function(data) {
-										if ($.trim(data) != "") {
-											chkid = false;
-											alert("사용불가능합니다");
-											$("#userid").val() == "";
-											$("#userid").focus();
-										} else {
-											chkid = true;
-											alert("사용가능합니다");
-											$("#passwd").focus();
-										}
-									}
-								});
+								chkphone2 = true;
 							}
-						});
-
-						$("#nickCheck").click(function() {
-							var checkNick = "nickname=" + $("#nickname").val();
-							if ($("#nickname").val() == "") {
-								alert("닉네임을 입력해주세요");
-								$("#nickname").focus();
+						})
+						$("#phone3").change(function() {
+							$('#messageP').remove();
+							if(!regPhone3.test($("#phone3").val())&&$("#phone3").val()!=""){
+								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+								chkphone3 = false;
 							} else {
-								$.ajax({
-									type : "GET",
-									url : "nickcheck",
-									data : checkNick,
-									success : function(data) {
-										if ($.trim(data) != "") {
-
-											chkNick = false;
-											alert("사용불가능합니다");
-											$("#nickname").val() == "";
-											$("#nickname").focus();
-										} else {
-											chkNick = true;
-											alert("사용가능합니다");
-										}
-									}
-								});
+								chkphone3 = true;
 							}
-						});
-
+						})
+						
+						
 						$("#register")
-								.click(
+								.click(					
 										function() {
+											var passwd = $("#passwd").val();											
+											var email = $("#email").val();										
 											
-											var passwd = $("#passwd").val();
-											var reg_pw = /^[a-z0-9_]{5,12}$/;
-											var email = $("#email").val();
-											var phone = $("#phone").val();
-											var regPhone = /[^0-9]$/g;
-											var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-
-											
-
 											if (reg_pw.test(passwd) == false) {
 												alert("비밀번호를 입력해주세요..");
 												$("#passwd").focus();
@@ -92,13 +61,17 @@
 											} else if ($("#passwd").val() != $(
 													"#passwd2").val()) {
 												alert("비밀번호와 비밀번호확인이 일치하지않습니다..")
-											} else if (phone == "") {
-												alert("연락처를 입력해주세요..");
-												$("#phone").focus();
-											} else if (regPhone.test(phone) == true) {
-												alert("전화번호는 숫자만 입력해주세요");
-												$("#phone").focus();
-											} else if ($("#email").val() == "") {
+											} else if($("#phone2").val()==""){
+									        	alert("연락처를 입력해 주세요.");
+									        	$("#phone2").focus();
+									        } else if(!chkphone2){
+									        	
+									        } else if($("#phone3").val()==""){
+									        	alert("연락처를 입력해 주세요.");
+									        	$("#phone3").focus();
+									        } else if(!chkphone3){
+									        	
+									        } else if ($("#email").val() == "") {
 												alert("이메일을 입력해주세요..");
 												$("#email").focus();
 											} else if (regEmail.test(email) == false) {
@@ -126,7 +99,7 @@
 					});
 </script>
 </head>
-<!-- registerForm.jsp -->
+<!-- registerupdateForm.jsp -->
 <body>
 	<center>
 		<div id="wrapper" align="left">
@@ -177,21 +150,21 @@
 							</td>
 							<td><pre>   </pre><font size="4">${user.nickname }</font></td>
 
-						</tr>
+						</tr>						
 						<tr>
-							<td style="font-weight: bold;" align="left"><pre>   </pre>*연락처
-							</td>
-							<td><pre>   </pre><input type="text" name="phone" id="phone"
-								value="${user.phone }"> <%-- <select name="phone1" id="phone1">
+							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
+							<td id="regPhone" colspan="2"><pre> </pre>
+							<select name="phone1" id="phone1" style="width: 50; height: 25">
+									<option value="${fn:substring(phone,0,3)}">${fn:substring(phone,0,3)}</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
-							</select></select> <input type="text" name="phone2" id="phone2"
-						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},3,6) }"> <input
-						type="text" name="phone3" id="phone3"
-						style="width: 45; height: 22" maxlength="4" value="${fn:substring(${user.phone},6,9) }">></td>
-							 --%>
+							</select> <input type="text" name="phone2" id="phone2"
+								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,3,7)}"> <input
+								type="text" name="phone3" id="phone3"
+								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
+							</td>    
 						</tr>
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*이메일

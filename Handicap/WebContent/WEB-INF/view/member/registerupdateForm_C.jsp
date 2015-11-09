@@ -1,6 +1,9 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="phone" value="${user.phone }"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,9 +18,7 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-	var chkid = false; //아이디 중복검사 유무
-	var chknick = false; //회사명(닉네임) 중복검사 유무
+<script type="text/javascript">	
 	var chkpw = false;
 	var chkname = false;
 	var chkphone2 = false;
@@ -25,9 +26,7 @@
 	var chkemail = false;
 	var chkpq = false;
 	var chkpa = false;
-
-	var regNo = /^[0-9]{10}$/;
-	var regId = /^[A-Za-z]{1}[A-Za-z0-9]{3,11}$/; //아이디 정규식
+	
 	var regNonExcept = /[^가-힣A-Za-z0-9]/;
 	var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
 	var regPhone3 = /^[0-9]{4}$/;
@@ -35,51 +34,7 @@
 	$(document)
 			.ready(
 					function() {
-						//아이디 중복검사
-						$("#idCheck")
-								.click(
-										function() {
-											var checkId = "userid="
-													+ $("#userid").val();
-											if ($("#userid").val() == "") {
-												alert("아이디를 입력해주세요.");
-												$("#userid").focus();
-											} else if (!regId.test($("#userid")
-													.val())) {
-												alert("아이디는 4자~12자 사이의 영문과 숫자로만 가능하며 첫 글자는 반드시 문자여야 합니다.");
-												$("#userid").val("");
-												$("#userid").focus();
-											} else {
-												$
-														.ajax({
-															type : "GET",
-															url : "idCheck",
-															data : checkId,
-															success : function(
-																	data) {
-																if ($
-																		.trim(data) != "") {
-																	alert("이미 존재하는 회원입니다.");
-																	$("#userid")
-																			.val(
-																					"");
-																	$("#userid")
-																			.focus();
-																} else {
-																	chkid = true;
-																	alert("사용 가능한 아이디입니다.");
-																	$("#passwd")
-																			.focus();
-																}
-															}
-														});
-											}
-										});
-
-						//아이디 변경 시 중복검사 유무 해제
-						$("#userid").change(function() {
-							chkid = false;
-						})
+						
 
 						//비밀번호와 비밀번호 확인 일치 유무
 						$("#passwd")
@@ -124,137 +79,63 @@
 											} else {
 												chkpw = true;
 											}
+										})						
+
+						$("#companytype")
+								.change(
+										function() {
+											$('#messageT').remove();
+											if (regNonExcept.test($(
+													"#companytype").val())) {
+												$('#regType')
+														.append(
+																'<font id=\"messageT\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
+												chktype = false;
+											} else {
+												chktype = true;
+											}
 										})
 
-						//회사명(닉네임) 중복검사
-						$("#nickCheck")
-								.click(
+						$("#companyceoname")
+								.change(
 										function() {
-											var checkNick = "nickname="
-													+ $("#nickname").val();
-											if ($("#nickname").val() == "") {
-												alert("닉네임을 입력해주세요");
-												$("#nickname").focus();
-											} else if ($("#nickname").val()
-													.indexOf("'") != -1) {
-												alert("\'는 입력할 수 없습니다.");
-											} else if ($("#nickname").val().length < 2
-													|| $("#nickname").val()
-															.search(/[ㄱ-ㅎ]/) != -1) {
-												alert("닉네임은 2자~12자 사이의 완성된 글자로만 입력이 가능합니다.");
-												$("#nickname").val("");
-												$("#nickname").focus();
+											$('#messageC').remove();
+											if (regNonExcept.test($(
+													"#companyceoname").val())) {
+												$('#regCeo')
+														.append(
+																'<font id=\"messageC\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
+												chkceo = false;
 											} else {
-												$
-														.ajax({
-															type : "GET",
-															url : "nickCheck",
-															data : checkNick,
-															success : function(
-																	data) {
-																if ($
-																		.trim(data) != "") {
-																	alert("이미 존재하는 닉네임입니다.");
-																	$(
-																			"#nickname")
-																			.val(
-																					"");
-																	$(
-																			"#nickname")
-																			.focus();
-																} else {
-																	alert("사용 가능한 닉네임입니다.");
-																	chknick = true;
-																	$(
-																			"#companytype")
-																			.focus();
-																}
-															}
-														});
+												chkceo = true;
 											}
 										});
 
-						//회사명(닉네임) 변경 시 중복검사 유무 해제
-						$("#nickname").change(function() {
-							chknick = false;
-						})
-						
-						
-						
-						$("#companytype").change(function() {
-							$('#messageT').remove();
-							if(regNonExcept.test($("#companytype").val())){
-								$('#regType').append('<font id=\"messageT\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
-								chktype = false;
-							} else {
-								chktype = true;
-							}	
-						})
-						
-						//사업자등록번호 중복검사
-						$("#noCheck").click(function() {
-							var checkNo = "companyNo=" + $("#companyno").val();
-							if ($("#companyno").val() == "") {
-								alert("사업자등록번호를 입력해주세요.");
-								$("#companyno").focus();
-							} else if(!regNo.test($("#companyno").val())) {
-								alert("사업자등록번호는 '-'를 제외한 숫자로만 입력해 주세요.");
-								$("#companyno").val("");
-								$("#companyno").focus();
-							}
-							else {
-								$.ajax({
-									type : "GET",
-									url : "noCheck",
-									data : checkNo,
-									success : function(data) {
-										if ($.trim(data) != "") {
-											alert("이미 존재하는 번호입니다.");
-											$("#companyno").val("");
-											$("#companyno").focus();
-										} else {
-											chkno = true;
-											alert("사용 가능한 번호입니다.");
-											$("#companyceoname").focus();
-										}
-									}
-								});
-							}
-						});
-						
-						$("#companyno").change(function() {
-							chkno = false;
-						})
-						
-						$("#companyceoname").change(function() {
-							$('#messageC').remove();
-							if(regNonExcept.test($("#companyceoname").val())){
-								$('#regCeo').append('<font id=\"messageC\" size=\"2\" color=#FF0000>\완성된 글자만 입력이 가능합니다.</font>');
-								chkceo = false;
-							} else {
-								chkceo = true;
-							}					
-						});
-						
-						$("#findAddress").click(function() {
+						$("#findAddress").click(
+								function() {
 									var address = window.open('addressForm',
 											'', 'top='
 													+ (screen.height / 2 - 125)
 													+ ',left='
 													+ (screen.width / 2 - 310)
 													+ ',width=620,height=250');
-						});
-						
-						$("#companyaddress3").change(function() {
-							$('#messageA').remove();
-							if($("#companyaddress3").val().indexOf("'") != -1){
-								$('#regA').append('<font id=\"messageA\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
-								chkadd = false;
-							} else {
-								chkadd = true;
-							}
-						})
-						
+								});
+
+						$("#companyaddress3")
+								.change(
+										function() {
+											$('#messageA').remove();
+											if ($("#companyaddress3").val()
+													.indexOf("'") != -1) {
+												$('#regA')
+														.append(
+																'<font id=\"messageA\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
+												chkadd = false;
+											} else {
+												chkadd = true;
+											}
+										})
+
 						$("#name")
 								.change(
 										function() {
@@ -347,12 +228,7 @@
 										});
 
 						$("#register").click(function() {
-							if ($("#userid").val() == "") {
-								alert("아이디를 입력해 주세요.");
-								$("#userid").focus();
-							} else if (!chkid) {
-								alert("아이디 중복확인을 해 주세요.");
-							} else if ($("#passwd").val() == "") {
+							if ($("#passwd").val() == "") {
 								alert("비밀번호를 입력해 주세요.");
 								$("#passwd").focus();
 							} else if ($("#passwd2").val() == "") {
@@ -360,12 +236,7 @@
 								$("#passwd2").focus();
 							} else if (!chkpw) {
 
-							} else if ($("#nickname").val() == "") {
-								alert("닉네임을 입력해 주세요.");
-								$("#nickname").focus();
-							} else if (!chknick) {
-								alert("닉네임 중복확인을 해 주세요.");
-							} else if ($("#name").val() == "") {
+							}else if ($("#name").val() == "") {
 								alert("이름을 입력해 주세요.");
 								$("#name").focus();
 							} else if (!chkname) {
@@ -420,11 +291,6 @@
 			<div id="content" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
-
-
-
-
-
 			<!-- 시작 -->
 			<div id="DD" align="right" style="width: 1016px;">
 				<img src="img/bn.jpg" align="right">
@@ -441,7 +307,7 @@
 
 
 						<tr>
-							<!-- 개인정보 메인 -->
+							<!-- 기업회원정보 메인 -->
 
 							<th colspan="3" class="re2"
 								style="font-size: x-large; font-weight: bold; color: silver;">기업회원가입</th>
@@ -454,8 +320,8 @@
 								style="vertical-align:; width: 150; height: 28px"></td>
 							<td><pre> </pre>
 
-								<button type="button" class="ml-button" style="font-weight: bold;"
-									id="idCheck">중복체크</button></td>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="idCheck">중복체크</button></td>
 
 
 						</tr>
@@ -491,8 +357,8 @@
 								style="vertical-align:; width: 150; height: 28px"></td>
 							<td><pre> </pre>
 
-								<button type="button" class="ml-button" style="font-weight: bold;"
-									id="nickCheck">중복체크</button></td>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="nickCheck">중복체크</button></td>
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*업종</td>
@@ -506,12 +372,12 @@
 
 							<td style="width: 176px;"><pre> </pre> <input type="text"
 								name="companyno" id="companyno"
-								style="vertical-align:; width: 150; height: 28px" maxlength="10"> ('-'
-								제외)</td>
+								style="vertical-align:; width: 150; height: 28px" maxlength="10">
+								('-' 제외)</td>
 							<td><pre> </pre>
 
-								<button type="button" class="ml-button" style="font-weight: bold;"
-									id="noCheck">중복체크</button></td>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="noCheck">중복체크</button></td>
 						<tr>
 							<td width="150" align="left"
 								style="font-weight: bold; width: 114px">*대표자명</td>
@@ -538,12 +404,12 @@
 								type="text" name="companyaddress1" id="companyaddress1"
 								style="width: 50px; height: 22" readonly><input
 								type="text" name="companyaddress2" id="companyaddress2"
-								style="width: 350px; height: 22" readonly>
-							<pre></pre> <span style="font-size: 10pt;">상세주소 : </span><input
-								type="text" name="companyaddress3" id="companyaddress3"
+								style="width: 350px; height: 22" readonly> <pre></pre> <span
+								style="font-size: 10pt;">상세주소 : </span><input type="text"
+								name="companyaddress3" id="companyaddress3"
 								style="width: 180px; height: 22" readonly="readonly"
 								maxlength="20">
-							<button type="button" class="ml-button"
+								<button type="button" class="ml-button"
 									style="font-weight: bold; width: 30; height: 20;"
 									id="findAddress">검색</button></td>
 
@@ -567,17 +433,18 @@
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
-							<td id="regPhone" colspan="2"><pre> </pre><select
-								name="phone1" id="phone1" style="width: 50; height: 25">
+							<td id="regPhone" colspan="2"><pre> </pre>
+							<select name="phone1" id="phone1" style="width: 50; height: 25">
+									<option value="${fn:substring(phone,0,3)}">${fn:substring(phone,0,3)}</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
 							</select> <input type="text" name="phone2" id="phone2"
-								style="width: 45px; height: 22" maxlength="4"> <input
+								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,3,7)}"> <input
 								type="text" name="phone3" id="phone3"
-								style="width: 45px; height: 22" maxlength="4"> <pre> </pre>
-							</td>
+								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
+							</td>    
 
 						</tr>
 						<tr>
@@ -608,10 +475,10 @@
 						<tr>
 							<td></td>
 							<td colspan="2"><pre> </pre>
-								<button type="button" class="ml-button" style="font-weight: bold;"
-									id="register">가입</button>
-								<button type="button" class="ml-button" style="font-weight: bold;" id="cancel">취소</button>
-								<!-- <button type="button" id="register">가입</button>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="register">가입</button>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="cancel">취소</button> <!-- <button type="button" id="register">가입</button>
 						<button id="cancel">취소</button> --></td>
 
 						</tr>
@@ -621,9 +488,14 @@
 
 					</table>
 
-					<input type="hidden" name="flag" value="2">
+					<input type="hidden" name="flag" value="2"> <input
+						type="hidden" name="companyno" value=""> <input
+						type="hidden" name="companyceoname" value=""> <input
+						type="hidden" name="companyaddr" value=""> <input
+						type="hidden" name="companytype" value="">
 				</div>
 			</form>
+
 
 		</div>
 		<div id="sidebar2" align="right">

@@ -42,10 +42,8 @@ public class BbsController {
 	  }
 	  
 	  // 공지사항 글쓰기
-	@RequestMapping(value = "/bbsNoticeWrite", method = RequestMethod.POST)
-	public String bbsNoticeWrite(
-			@ModelAttribute("bbsNoticeWriteForm") BbsVO bv, FileVO fv, // UploadVO uv,
-			@RequestParam String title,
+	@RequestMapping("/bbsNoticeWrite")
+	public String bbsNoticeWrite(BbsVO bv, FileVO fv, // UploadVO uv,			
 			@RequestParam String flag,
 			HttpSession session,
 			HttpServletRequest req) throws Exception {		
@@ -56,8 +54,7 @@ public class BbsController {
 		Map map = new HashMap();
 		
 		//boardService.insertBoard(uploadForm);
-		if(flag.equals("bbsNoticeWrite")){			
-				bv.setTitle(title);
+		if(flag.equals("bbsNoticeWrite")){					
 				if(bd.insert(bv)){
 					
 					if (null != files && files.size() > 0) {
