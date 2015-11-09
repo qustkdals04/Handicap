@@ -32,7 +32,7 @@ div#gnb ul.menu {
 	position:relative;
 	overflow:hidden;
 	width:900px;
-	height:120px;
+	height:90px;
 	border-top:2px solid #F3B514; /* 메뉴위에 색깔 */
 	border-bottom:2px solid #ffffff;
 }
