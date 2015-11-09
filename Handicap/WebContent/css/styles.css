@@ -759,12 +759,12 @@ table.bbsAlbumList th {     /* 이미지  */
    width:"200";
    background-color : #FFFFFF;   
    vertical-align: middle;
+   border: 1px dotted #000000;
     
 }
 
 table.bbsAlbumList td {     /* 작성자, 제목 */ 
    font-weight: bold;
-   font-size: 12px;
    text-align: centet;
    vertical-align:middle;
    line-height: 1.0;

@@ -21,42 +21,28 @@
 		</tr>
 	</table>
 
-	<table border="1" class="bbsAlbumList">
-		<tr>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-		</tr>
-		<tr>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-		</tr>
-		<tr>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
-			<th width="200px" height="150px" align="center">[이미지]</th>
+	<table class="bbsAlbumList">
 
+		<tr>
+			<th width="200px" height="150px" align="center">[이미지]</th>
+		</tr>
+
+		<tr>
+			<td style="margin-top: 15px;">제목 : ${bbs.title}</td>
 		</tr>
 		<tr>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
-			<td>제목 : [제목입력공간]<br>작성자 : [작성자]
-			</td>
+			<td><font size="1px">조회수 :  [조회]  /  작성날 : [작성날]</font></td>
 		</tr>
 		<tr>
-			<td colspan="4" align="center">[1][2][3][4][5]</td>
+			<td style="margin-top: 15px;">작성자 : ${bbs.author}</td>
+		</tr>
+
+		<tr>
+			<td align="right" colspan="4"><button type="button">글쓰기</button></td>
+		</tr>
+
+		<tr>
+			<td colspan="4" align="center">페이징 처리 부분</td>
 			<!-- 페이징 -->
 		</tr>
 		<tr>
@@ -66,9 +52,6 @@
 			<td width="25%" align="left">
 				<button type="button" style="margin-left: 5px;">검색</button>
 			</td>
-		</tr>
-		<tr>
-			<td align="right" colspan="4"><button type="button">글쓰기</button></td>
 		</tr>
 	</table>
 </body>
