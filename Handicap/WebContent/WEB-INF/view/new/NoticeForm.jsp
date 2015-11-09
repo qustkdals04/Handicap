@@ -9,7 +9,7 @@
 <title>소식_공지사항</title>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="wrapper" align="center">
 		<%@include file="../top.jsp"%>
 
 
@@ -18,16 +18,19 @@
 		</div>
 		<!-- center 끝 -->
 			<div id="contents">
-	<table align="right">
+	<table  align="left">
 			<tr>
-				<td width="200px">
+				<td width="100px" align="center">
 				
 						<%@include file="NewSubMenu.jsp"%>
 					
 				</td>
+				<td>
+						<%@include file="../bbs/bbsNoticeList.jsp"%>
+				</td>
 			</tr>
 		</table>
-</div>
+		</div>
 		
 		<%-- <div id="sidebar" align="right">
 			<%@include file="../banner.jsp"%>

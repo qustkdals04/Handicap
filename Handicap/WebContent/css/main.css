@@ -107,9 +107,10 @@ position: absolute;
 
 
 #contents {
-	width: 800px;
-	float: left;
-	padding: 10px;
+	width: 900px;
+	
+	float: center;
+	
 }
 
 
@@ -176,12 +177,12 @@ margin-left: 1150px;
 #leftsubmenu{
 	width :150px;
 	height: 500px;
-	border-top-width:2px; 
+	/* border-top-width:2px; 
 	border-top-style:solid; 
 	border-top-color:gray;
 	border-bottom-color:gray;
 	border-bottom-style:solid;
-	border-bottom-width:2px;
+	border-bottom-width:2px; */
 	
 
 

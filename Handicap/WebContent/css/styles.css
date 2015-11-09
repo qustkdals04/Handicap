@@ -676,7 +676,7 @@ table.list3 th {
 
 /* ㅋㅋㅋ */
 table.bbsTitle{
-	width :800px;
+	width :700px;
 	border-collapse: separate;
     border-spacing: 1px;
     text-align: center;
@@ -688,8 +688,9 @@ table.bbsTitle{
 
 table.bbsList {
 	margin-top : 30px;
-	width: 700px;
+	width: 600px;
 	margin-left: 50px;
+	margin-bottom : 30px;
 	
 }
 

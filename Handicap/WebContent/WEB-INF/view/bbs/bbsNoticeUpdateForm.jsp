@@ -2,6 +2,10 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "com.handicap.model.beans.BbsVO" %>
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.BbsVO"></jsp:useBean>
+
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -52,7 +56,7 @@ $(document).ready(function() {
 	<form method="post" name="bbsNoticeUpdateForm" id="bbsNoticeUpdateForm" enctype="multipart/form-data">
 	<table class="bbsTitle">
 			<tr>
-				<td align="left"><font size="50">글수정</font></td>
+				<td align="center"><font size ="15">글 수정</font></td>
 			</tr>
 		</table>
 	

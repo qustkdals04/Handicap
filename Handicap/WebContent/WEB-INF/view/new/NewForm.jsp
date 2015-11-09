@@ -18,15 +18,19 @@
 		</div>
 		<!-- center 끝 -->
 			<div id="contents">
-	<table align="right">
+	<table align="left">
 			<tr>
-				<td width="200px">
+				<td width="100px" align="center">
 				
 						<%@include file="NewSubMenu.jsp"%>
 					
 				</td>
+				<td>
+
+				</td>
 			</tr>
 		</table>
+
 </div>
 		
 
