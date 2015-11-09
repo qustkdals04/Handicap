@@ -792,3 +792,50 @@ table.bbsAlbumList button{
 	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
 	margin: 10px 10px 10px 0px;
 }
+
+
+/* 마이페이지 */
+
+table.mypage{
+   width:700px;
+   border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    color:#C7BEBB;
+    line-height: 1.5;
+    border-bottom: 5px solid #F4B649;
+ 
+}
+
+table.mypageList {
+   margin-top : 30px;
+   width: 700px;
+   margin-bottom : 30px;
+   
+}
+
+table.mypageList td {     /* 작성자, 제목 */ 
+   font-weight: bold;
+   font-size: 12px;
+   text-align: centet;
+   vertical-align:middle;
+   line-height: 1.0;
+   
+}
+table.mypageList button{
+	background-color: #F39C45;
+	/* border: 1px solid #A87017; */
+	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
+	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	color: #ffffff;
+	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
+	margin: 10px 10px 10px 10px;
+	font-size: 6px;
+}
+
