@@ -19,6 +19,22 @@
 </script>
 </head>
 <body>
+
+<div id="CssWrapper" align="center">
+		<%@include file="../top.jsp"%>
+
+
+		<div align="center">
+			<%@include file="../menu.jsp"%>
+		</div>
+		<!-- center 끝 -->
+		<div id="CssContents">
+			<table align="left">
+				<tr>
+					<td width="100px" align="center"><%@include
+							file="../new/NewSubMenu.jsp"%></td>
+					<td>
+
 <table class="bbsTitle">
 			<tr>
 					<td align="center">공지사항</td>
@@ -51,6 +67,21 @@
 		
 		</tr>
 	</table>
+	
+	</td>
+
+				</tr>
+			</table>
+		</div>
+		<!-- contents 끝 -->
+		<%@include file="../Footer.jsp"%>
+		<%-- <div id="sidebar" align="right">
+			<%@include file="../banner.jsp"%>
+
+
+		</div>
+ --%>
+	</div>
 
 </body>
 </html>
