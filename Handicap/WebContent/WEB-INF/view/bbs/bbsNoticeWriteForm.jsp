@@ -114,7 +114,7 @@
                            <!-- a href="bbsNoticeWriteForm" -->
                            <td>
                               <button type="button" id="bbsNoticelist"
-                                 onclick="location.href='/HandicapUpload/bbsNoticeList'">목록</button>
+                                 onclick="location.href='/Handicap/bbsNoticeList'">목록</button>
                            </td>
                         </tr>
                         <tr>
@@ -129,8 +129,9 @@
                      <input type="hidden" name="region" id="region" value="">
                      <input type="hidden" name="star" id="star" value="0">
                   </form>
+                   <!-- 아래 폼 인쿨루드 -->
                </td>
-               <!-- 아래 폼 인쿨루드 -->
+              
             </tr>
          </table>
       </div>
