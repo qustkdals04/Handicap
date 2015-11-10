@@ -50,11 +50,11 @@
 
 			<table class="list1">
 				<tr>
-					<th colspan="2" width="300" align="left">보낸사람 :
+					<th colspan="2" width="390" align="left">보낸사람 :
 						${messageContent.sender}</th>
 					<!-- 받는사람 -->
 					<th></th>
-					<th align="right" width="200px">${messageContent.senddate }</th>
+					<th align="right" width="390px">${messageContent.senddate }</th>
 					<!-- 현재시간 -->
 
 
@@ -72,9 +72,9 @@
 							id="contents" style="width: 100%; height: 200px;">${messageContent.contents }</textarea></td>
 				</tr>
 				<tr>
-					<td width="500px" colspan="4"></td>
+					
 
-					<td width="300px" align="center">
+					<td width="800px" align="center">
 
 
 						<button class="ml-button" type="button" id="delete"
