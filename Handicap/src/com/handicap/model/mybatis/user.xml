@@ -109,16 +109,57 @@
    	select count(*) from evalinfo where boardno=#{boardno} and no=#{no} and nickname=#{nickname} and commentno=#{commentno}
    </select>
    
-   <!-- 일반회원정보 업데이트 -->
+   <!-- 회원정보 업데이트 -->
    <update id="memberupdate" parameterType="com.handicap.model.beans.UserVO">
   	update member set passwd=#{passwd}, email=#{email}, name=#{name}, phone=#{phone}, pquestion=#{pquestion}, panswer=#{panswer}, companyceoname=#{companyceoname},companyaddr=#{companyaddr},companytype=#{companytype}
   	where userid=#{userid}
    </update>
    
-   <!-- 일반회원정보 삭제 -->
+   <!-- 회원정보 삭제 -->
    <delete id="memberdelete" parameterType="string">
    	delete from member where nickname=#{nickname} 
    </delete>
+   
+   <!-- 마이페이지 내게시글 -->
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <!-- <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select>
+   <select id="mybbsnotice">
+   	select * from bbsnotice where author=#{author}
+   </select> -->
 </mapper>
 <!-- user.xml -->
 
