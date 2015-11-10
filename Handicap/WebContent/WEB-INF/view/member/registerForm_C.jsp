@@ -413,14 +413,14 @@
 
    <center>
 
-      <div id="CssWrapper" align="left">
+      <div id="CssWrapper" align="center">
          <%@include file="../top.jsp"%>
 
-
+   
          <div id="CssContent" align="center">
             <%@include file="../menu.jsp"%>
          </div>
-
+  
 
 
 
@@ -430,7 +430,7 @@
             <img src="img/bn.jpg" align="right">
          </div>
 
-         <div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
+         <div id="EE" align="center">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
             주십시오.</div>
 
 
@@ -622,7 +622,6 @@
                </table>
 
                <input type="hidden" name="flag" value="2">
-               <input type="hidden" name="image" value="">
             </div>
          </form>
 
