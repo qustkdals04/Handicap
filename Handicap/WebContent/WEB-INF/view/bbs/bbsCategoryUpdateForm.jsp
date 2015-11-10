@@ -71,17 +71,17 @@ $(document).ready(function() {
 				</select> --></td>
 			</tr>
 		
-			<!-- <tr>		
+		 <tr>		
 				<td>		
 				<select name="category" id="category">
-						<option value="공지사항1">공지사항1</option>
-						<option value="공지사항2">공지사항2</option>
-						<option value="공지사항3">흠3</option>						
+						<option value="선택">선택</option>
+						<option value="선택1">1</option>
+						<option value="선택2">2</option>						
 				</select> 
 				</td>				
 				<td>작성자 : 
 				</td>				
-			</tr>			 -->
+			</tr>			
 			<tr>
 
 				<td align="center"><font size="3px">제 목</font></td>

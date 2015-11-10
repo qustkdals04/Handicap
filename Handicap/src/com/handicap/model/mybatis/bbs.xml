@@ -54,7 +54,7 @@
    </select>
    
    <!-- 글 수정 -->
-   <update id="bbsNoticeUpdate" parameterType="com.handicap.model.beans.BbsVO">
+   <update id="bbsUpdate" parameterType="com.handicap.model.beans.BbsVO">
       update bbs set title = #{title}, contents = #{contents} 
       where no=#{no}
    </update>

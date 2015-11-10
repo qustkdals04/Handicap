@@ -86,7 +86,7 @@
 									<td width="50px"><font size="3px"
 										style="font-weight: bold;">제목 :</td>
 									<td width="350px" align="left"><font size="3px"
-										style="font-weight: bold;"> ${bbsContent.title}</font></td>
+										style="font-weight: bold;">[${bbsContent.category}] ${bbsContent.title}</font></td>
 									<td colspan="2" width="300px" align="right"><font
 										size="2px">작성일 : ${bbsContent.writedate}</font></td>
 								</tr>
