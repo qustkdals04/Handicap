@@ -71,7 +71,7 @@
 					<td colspan="5"><textarea rows="10" cols="50" name="contents"
 							id="contents" style="width: 100%; height: 200px;">${messageContent.contents }</textarea></td>
 				</tr>
-				<tr>
+				<tr > 
 					
 
 					<td width="800px" align="center">
