@@ -4,7 +4,7 @@ padding: 0px;
 background: #ffffff;
 } 
 
-<!--전체적인 틀 -->
+<!--�쟾泥댁쟻�씤 �� -->
 #CssWrapper{
 width:1400px; 
 padding: 10px; 
@@ -27,20 +27,20 @@ margin-left: 200px;
 
 
 #CssContents {
-	width: 900px;
-	float: center;
+   width: 900px;
+   float: center;
 }
 
 
 #Foot{
-	
+   
 }
 
 #Foot2{
-	margin-top: 500px;
+   margin-top: 500px;
 }
 
- <!--작은 로그인 회원가입,색맹모드  -->
+ <!--�옉�� 濡쒓렇�씤 �쉶�썝媛��엯,�깋留밸え�뱶  -->
 #top{
 width:1400px; 
 height : 300px;
@@ -56,11 +56,11 @@ width:1200px;
 height: 200px; 
 padding: 10px; 
 position: absolute;
-height : 300px;	
+height : 300px;   
 border: 1px;
 }
 
-<!--슬라이드,(축제,행사) -->
+<!--�뒳�씪�씠�뱶,(異뺤젣,�뻾�궗) -->
 #slide{
 width:1200px; 
 height : 200px;
@@ -69,7 +69,7 @@ position: absolute;
 border: 1px;
 }
 
-<!--앨범형게시판, 글게시판 보여주기 -->
+<!--�븿踰뷀삎寃뚯떆�뙋, 湲�寃뚯떆�뙋 蹂댁뿬二쇨린 -->
 #content2{
 width:980px;
 height : 900px; 
@@ -79,7 +79,7 @@ border: 1px;
 float : left;
 }
 
-<!--공지사항 아이콘 -->
+<!--怨듭��궗�빆 �븘�씠肄� -->
 #icon{
 width:150px;
 height : 200px;  
@@ -89,7 +89,7 @@ float : right;
 border: 1px;
 }
 
-<!-- 메인 베너,공지사항 아이콘 아래 -->
+<!-- 硫붿씤 踰좊꼫,怨듭��궗�빆 �븘�씠肄� �븘�옒 -->
 #banner{
 width:980px;
 height : 150px;  
@@ -101,7 +101,7 @@ float : right;
 
 */
 
-/* <!--하단메뉴 --> */
+/* <!--�븯�떒硫붾돱 --> */
 #Botton1{
 width:1200px;
 height: 200px; 
@@ -116,21 +116,21 @@ position: absolute;
 
 
 #CC {
-	width: 200px;
-	float: left;
-	padding: 10px;
+   width: 200px;
+   float: left;
+   padding: 10px;
 }
 
 #DD {
-	width: 1000px;
-	float: left;
-	padding: 0px;
+   width: 1000px;
+   float: left;
+   padding: 0px;
 }
 
 #EE {
-	width: 1100px;
-	float: right;
-	padding: 20px;
+   width: 1100px;
+   float: right;
+   padding: 20px;
 }
 #sidebar{
 
@@ -148,38 +148,38 @@ margin-left: 1150px;
 
 
 #Notice {
-	width: 600px;
-	float: left;
-	padding: 10px;
+   width: 600px;
+   float: left;
+   padding: 10px;
 }
 
 #bbsmain {
-	width: 1000px;
-	float: left;
-	padding: 50px;
+   width: 1000px;
+   float: left;
+   padding: 50px;
 }
 
 #more {
-	width: 1000px;
-	float: right;
-	padding: 10px;
+   width: 1000px;
+   float: right;
+   padding: 10px;
 }
 
 #leftsubmenu{
-	width :150px;
-	height: 500px;
-	/* border-top-width:2px; 
-	border-top-style:solid; 
-	border-top-color:gray;
-	border-bottom-color:gray;
-	border-bottom-style:solid;
-	border-bottom-width:2px; */
-	
+   width :150px;
+   height: 500px;
+   /* border-top-width:2px; 
+   border-top-style:solid; 
+   border-top-color:gray;
+   border-bottom-color:gray;
+   border-bottom-style:solid;
+   border-bottom-width:2px; */
+   
 
 
-	background-color: #FFFFFF;
-	
-	
+   background-color: #FFFFFF;
+   
+   
 }
 #mylistTitle2{
 width:200px;
@@ -187,17 +187,17 @@ float: left;
 padding: 10px;
 }
 #registerFormSelect{
-	width : 1000px;
-	float:center;
-	padding: 50px;
+   width : 1000px;
+   float:center;
+   padding: 50px;
 
 }
 #registerFormtab{
-	width : 1000px;
-	float:left;
-	padding: 50px;
+   width : 1000px;
+   float:left;
+   padding: 50px;
 }
 #danner{
-	margin-top: 30px;
-	margin-left: 50px;
+   margin-top: 30px;
+   margin-left: 50px;
 }
