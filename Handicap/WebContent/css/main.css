@@ -15,7 +15,7 @@ margin-left: -538px;
 }
 #CssContent{
 width:1200px;
-float: left;
+float: center;
 padding: 10px;
 }
 #CssContent1{
@@ -123,13 +123,13 @@ position: absolute;
 
 #DD {
    width: 1000px;
-   float: left;
-   padding: 0px;
+   float: left; 
+   margin-left: 300px;
 }
 
 #EE {
    width: 1100px;
-   float: right;
+   float: center;
    padding: 20px;
 }
 #sidebar{

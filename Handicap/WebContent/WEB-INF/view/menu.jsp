@@ -30,7 +30,7 @@
 					</ul>
 				</li>
 				<li>
-					<a href="/Handicap/body" >게시판</a>
+					<a href="/Handicap/bbsList?boardno=20" >게시판</a>
 					<ul>
 						<li><a href="/Handicap/bbsList?boardno=20" style="font:12px small; ">신체적장애</a></li>
 						<li><a href="/Handicap/bbsList?boardno=21" style="font:12px small; ">정신적장애</a></li>

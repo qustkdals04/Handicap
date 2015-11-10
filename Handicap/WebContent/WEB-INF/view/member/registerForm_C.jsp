@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" media="all"
    href="/Handicap/css/new.css">
 
-<title>Insert title here</title>
+<title>기업 회원가입 폼</title>
 <script type="text/javascript"
    src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script type="text/javascript">
@@ -416,26 +416,31 @@
       <div id="CssWrapper" align="center">
          <%@include file="../top.jsp"%>
 
-   
-         <div id="CssContent" align="center">
+   			<center>
+         <div id="CssContent1" align="center">
             <%@include file="../menu.jsp"%>
          </div>
+         </center>
   
 
 
 
 
          <!-- 시작 -->
+         <center>
          <div id="DD" align="right" style="width: 1016px;">
             <img src="img/bn.jpg" align="right">
          </div>
-
+</center>
+<center>
          <div id="EE" align="center">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
             주십시오.</div>
-
+</center>
 
          <form name="registForm" id="registForm">
+         <center>
             <div id="dd" align="center">
+            <center>
                <table class="re2">
 
 
@@ -620,10 +625,12 @@
                   </tr>
 
                </table>
+               </center>
 
                <input type="hidden" name="flag" value="2">
                <input type="hidden" name="image" value="">
             </div>
+            </center>
          </form>
 
       </div>

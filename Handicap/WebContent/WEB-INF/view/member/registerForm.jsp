@@ -264,7 +264,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
          <%@include file="../top.jsp"%>
 
 
-         <div id="CssContent" align="center">
+         <div id="CssContent1" align="center">
             <%@include file="../menu.jsp"%>
          </div>
 
@@ -273,15 +273,20 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 
          <!-- 시작 -->
+         <center>
          <div id="DD" align="right" style="width: 1016px;">
             <img src="img/bn.jpg" align="right">
          </div>
-
+         </center>
+		<center>
          <div id="EE" align="center">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
             주십시오.</div>
-   
+   </center>
+ 
          <form method="post" name="registForm" id="registForm">
+			  <center>
             <div id="CssContent" align="center">
+              <center>
               <table  class="re2">
                   <tr>
                      <!-- 개인정보 메인 -->
@@ -405,6 +410,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
                   </tr>
 
                </table>
+                        </center>
 
                <input type="hidden" name="flag" value="1"> <input
                   type="hidden" name="companyno" value=""> <input
@@ -413,8 +419,10 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
                   type="hidden" name="companytype" value="">
                   <input type="hidden" name="image" value="">
             </div>
+            </center>
+   
          </form>
-
+         </center>
 
       </div>
 
