@@ -470,7 +470,7 @@
 
 		</div>
 		<div id="sidebar2" align="right">
-			<%@include file="../banner2.jsp"%>
+			<%@include file="../banner.jsp"%>
 		</div>
 	</center>
 

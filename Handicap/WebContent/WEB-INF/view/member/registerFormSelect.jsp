@@ -15,7 +15,7 @@
       <%@include file="../top.jsp"%>
 
 
-      <div id="CssContent" align="center">
+      <div id="CssContent1" align="center">
          <%@include file="../menu.jsp"%>
       </div>
       <!-- center 끝 -->
