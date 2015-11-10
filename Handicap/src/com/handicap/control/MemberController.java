@@ -243,7 +243,11 @@ public class MemberController {
 			return "login/login";
 		}
 	}
-
+	// ==============================활동내역===============================
+	@RequestMapping("/mypage")
+	public String mypage(){
+		return "mypage/mypagehome";
+	}
 	// ==============================회원정보수정===============================
 
 	// 회원정보수정 비밀번호체크폼띄우기
