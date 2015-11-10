@@ -123,7 +123,7 @@ public class BbsController {
    // 怨듭��궗�빆 �긽�꽭蹂닿린
    
    @RequestMapping("/bbsContent")
-   public String noticecontent(@RequestParam int no,
+   public String bbscontent(@RequestParam int no,
                         @RequestParam int boardno,
                         
                         //@RequestParam int fileid,

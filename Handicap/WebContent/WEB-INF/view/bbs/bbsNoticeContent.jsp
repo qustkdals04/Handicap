@@ -124,11 +124,11 @@
 								<tr>
 									<td align="left" width="400px"><button type="button"
 											id="list"
-											onclick="location.href='/HandicapUpload/bbsNoticeList'">목록</button></td>
+											onclick="location.href='/Handicap/bbsList'">목록</button></td>
 									<td align="right" colspan="3" width="300px">
 										<button type="button" id="goodupdate">추천</button>
 										<button type="button" id="update"
-											onclick="location.href='/HandicapUpload/bbsNoticeUpdateForm?boardno=${bbsNoticeContent.boardno}&no=${bbsNoticeContent.no}'">수정</button>
+											onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsNoticeContent.boardno}&no=${bbsNoticeContent.no}'">수정</button>
 										<button type="button" id="delete">삭제</button>
 
 									</td>

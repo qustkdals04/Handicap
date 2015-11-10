@@ -58,26 +58,26 @@
          <td style="font-size: large;">
             <c:if test="${startPage>1 }">
                <span>
-                  <a href="/Handicap/bbsNoticeList?pageNumber=${startPage-1 }">이전</a>
+                  <a href="/Handicap/bbsList?pageNumber=${startPage-1 }">이전</a>
                </span>
             </c:if>
             <c:forEach var="i" begin="${startPage }" end="${endPage }">
                <c:choose>
                   <c:when test="${pageNumber==i }">
                      <span>
-                        <a href="/Handicap/bbsNoticeList?pageNumber=${i }" style="text-decoration:none;color:blue;font-weight:bold;">${i}</a>&nbsp;
+                        <a href="/Handicap/bbsList?pageNumber=${i }" style="text-decoration:none;color:blue;font-weight:bold;">${i}</a>&nbsp;
                      </span>
                   </c:when>
                   <c:otherwise>
                      <span>
-                        <a href="/Handicap/bbsNoticeList?pageNumber=${i}" style="text-decoration:none;color:gray;">${i}</a>&nbsp;
+                        <a href="/Handicap/bbsList?pageNumber=${i}" style="text-decoration:none;color:gray;">${i}</a>&nbsp;
                      </span>
                   </c:otherwise>
                </c:choose>
             </c:forEach>
             <c:if test="${endPage<totalPageCount}">
                <span>
-                  <a href="/Handicap/bbsNoticeList?pageNumber=${endPage+1 }">다음</a>
+                  <a href="/Handicap/bbsList?pageNumber=${endPage+1 }">다음</a>
                </span>
             </c:if>
          </td>
