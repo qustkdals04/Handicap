@@ -19,69 +19,76 @@
 </script>
 </head>
 <body>
-
-<div id="CssWrapper" align="center">
-		<%@include file="../top.jsp"%>
-
-
-		<div align="center">
-			<%@include file="../menu.jsp"%>
-		</div>
-		<!-- center 끝 -->
-		<div id="CssContents">
-			<table align="left">
-				<tr>
-					<td width="100px" align="center"><%@include
-							file="../new/NewSubMenu.jsp"%></td>
-					<td>
-
 <table class="bbsTitle">
-			<tr>
-					<td align="center">공지사항</td>
-			</tr>
+         <tr>
+               <td align="center">공지사항</td>
+         </tr>
 </table>
-	
-	<table class="bbsList">
-		<tr height="20px">
-			<th width="10%">글번호</th>
-			<th width="40%">제  목</th>
-			<th width="14%">작성자</th>
-			<th width="20%">작성일</th>
-			<th width="8%">조회수</th>
-			<th width="8%">추천수</th>		
-		</tr>		
-		 <c:forEach var="bbs" items="${list}">
-				<tr>
-					<td align="center">${bbs.no}</td>
-					<td align="center" ><a href="bbsNoticeContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.title}</a></td>
-					<td align="center">${bbs.author}</td>
-					<td align="center">${bbs.writedate}</td>
-					<td align="center">${bbs.hits}</td>
-					<td align="center">${bbs.good}</td>
-				</tr>
-			</c:forEach>
-				
-		<tr align="right">
-			<td colspan="6"><button type="button" class="ml-button" onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
-			
-		
-		</tr>
-	</table>
-	
-	</td>
-
-				</tr>
-			</table>
-		</div>
-		<!-- contents 끝 -->
-		<%@include file="../Footer.jsp"%>
-		<%-- <div id="sidebar" align="right">
-			<%@include file="../banner.jsp"%>
-
-
-		</div>
- --%>
-	</div>
+   
+   <table class="bbsList">
+      <tr height="20px">
+         <th width="10%">글번호</th>
+         <th width="40%">제  목</th>
+         <th width="14%">작성자</th>
+         <th width="20%">작성일</th>
+         <th width="8%">조회수</th>
+         <th width="8%">추천수</th>      
+      </tr>
+      <tr>
+      
+       <c:forEach var="bbs" items="${list}">
+            <tr>
+               <td align="center">${bbs.no}</td>
+               <td align="center" ><a href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.title}</a></td>
+               <td align="center">${bbs.author}</td>
+               <td align="center">${bbs.writedate}</td>
+               <td align="center">${bbs.hits}</td>
+               <td align="center">${bbs.good}</td>
+            </tr>
+         </c:forEach>
+         
+         </tr> 
+      <tr>
+         <input type="hidden" name="pageNumber" value="${pageNumber }">
+      </tr>
+      
+   </table>
+   <table align="center">
+      <tr>
+         <td style="font-size: large;">
+            <c:if test="${startPage>1 }">
+               <span>
+                  <a href="/Handicap/bbsNoticeList?pageNumber=${startPage-1 }">이전</a>
+               </span>
+            </c:if>
+            <c:forEach var="i" begin="${startPage }" end="${endPage }">
+               <c:choose>
+                  <c:when test="${pageNumber==i }">
+                     <span>
+                        <a href="/Handicap/bbsNoticeList?pageNumber=${i }" style="text-decoration:none;color:blue;font-weight:bold;">${i}</a>&nbsp;
+                     </span>
+                  </c:when>
+                  <c:otherwise>
+                     <span>
+                        <a href="/Handicap/bbsNoticeList?pageNumber=${i}" style="text-decoration:none;color:gray;">${i}</a>&nbsp;
+                     </span>
+                  </c:otherwise>
+               </c:choose>
+            </c:forEach>
+            <c:if test="${endPage<totalPageCount}">
+               <span>
+                  <a href="/Handicap/bbsNoticeList?pageNumber=${endPage+1 }">다음</a>
+               </span>
+            </c:if>
+         </td>
+      </tr>
+   </table>
+   <table style="margin-top: 5px">
+      <tr align="right">
+         <td colspan="6"><button type="button" class="ml-button" onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>      
+      </tr>
+   </table>
+   
 
 </body>
 </html>

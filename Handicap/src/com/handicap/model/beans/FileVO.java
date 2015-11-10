@@ -17,6 +17,7 @@ public class FileVO {
 	private int fileid;
 	private String filename;
 	private List<MultipartFile> files;
+	private String fileoriginal;
 	
 	
 	
@@ -50,4 +51,12 @@ public class FileVO {
 	public void setBoardno(int boardno) {
 		this.boardno = boardno;
 	}
+	public String getFileoriginal() {
+		return fileoriginal;
+	}
+	public void setFileoriginal(String fileoriginal) {
+		this.fileoriginal = fileoriginal;
+	}
+	
+	
 }

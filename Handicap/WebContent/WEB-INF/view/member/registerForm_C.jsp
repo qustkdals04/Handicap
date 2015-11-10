@@ -622,6 +622,7 @@
                </table>
 
                <input type="hidden" name="flag" value="2">
+               <input type="hidden" name="image" value="">
             </div>
          </form>
 

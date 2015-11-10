@@ -17,6 +17,7 @@
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
 <script type="text/javascript">
+	var chknick = true; //회사명(닉네임) 중복검사 유무
 	var chkphone2 = true;
 	var chkphone3 = true;
 
@@ -38,6 +39,60 @@
 								return; // 취소
 							}
 						});
+
+						//회사명(닉네임) 중복검사
+						$("#nickCheck")
+								.click(
+										function() {
+											var checkNick = "nickname="
+													+ $("#nickname").val();
+											if ($("#nickname").val() == "") {
+												alert("닉네임을 입력해주세요");
+												$("#nickname").focus();
+											} else if ($("#nickname").val()
+													.indexOf("'") != -1) {
+												alert("\'는 입력할 수 없습니다.");
+											} else if ($("#nickname").val().length < 2
+													|| $("#nickname").val()
+															.search(/[ㄱ-ㅎ]/) != -1) {
+												alert("닉네임은 2자~12자 사이의 완성된 글자로만 입력이 가능합니다.");
+												$("#nickname").val("");
+												$("#nickname").focus();
+											} else {
+												$
+														.ajax({
+															type : "GET",
+															url : "nickCheck",
+															data : checkNick,
+															success : function(
+																	data) {
+																if ($
+																		.trim(data) != "") {
+																	alert("이미 존재하는 닉네임입니다.");
+																	$(
+																			"#nickname")
+																			.val(
+																					"");
+																	$(
+																			"#nickname")
+																			.focus();
+																} else {
+																	alert("사용 가능한 닉네임입니다.");
+																	chknick = true;
+																	$(
+																			"#companyno")
+																			.focus();
+																}
+															}
+														});
+											}
+										});
+
+						//회사명(닉네임) 변경 시 중복검사 유무 해제
+						$("#nickname").change(function() {
+							chknick = false;
+						})
+
 						$("#phone2")
 								.change(
 										function() {
@@ -84,6 +139,11 @@
 											} else if ($("#passwd").val() != $(
 													"#passwd2").val()) {
 												alert("비밀번호와 비밀번호확인이 일치하지않습니다..")
+											} else if ($("#nickname").val() == "") {
+												alert("닉네임을 입력해 주세요.");
+												$("#nickname").focus();
+											} else if (!chknick) {
+												alert("닉네임 중복확인을 해 주세요.");
 											} else if ($("#phone2").val() == "") {
 												alert("연락처를 입력해 주세요.");
 												$("#phone2").focus();
@@ -107,18 +167,18 @@
 												alert("비밀번호답을 입력해주세요..");
 												$("#panswer").focus();
 											} else {
-												/* if(chkid==false || chknick==false){
-													alert("ID중복체크와 닉네임중복체크를 해주세요");
-												}else{ */
-												$("#registForm")
-														.attr(
-																{
-																	action : "registerupdateformaction",
-																	method : 'post'
-																});
-												$("#registForm").submit();
+												if (chknick == false) {
+													alert("닉네임중복체크를 해주세요");
+												} else {
+													$("#registForm")
+															.attr(
+																	{
+																		action : "registerupdateformaction",
+																		method : 'post'
+																	});
+													$("#registForm").submit();
+												}
 											}
-											/* } */
 										})
 
 					});
@@ -173,7 +233,13 @@
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*닉네임
 							</td>
-							<td><pre>   </pre><font size="4">${user.nickname }</font></td>
+							<td style="width: 176px;"><pre> </pre> <input type="text"
+                        name="nickname" id="nickname"
+                        style="vertical-align:; width: 150; height: 28px" value="${user.nickname }"></td>
+                     <td><pre> </pre>
+
+                        <button type="button" class="ml-button" style="font-weight: bold;"
+                           id="nickCheck">중복체크</button></td>
 
 						</tr>
 						<tr>
@@ -233,10 +299,12 @@
 				</div>
 				<input type="hidden" name="flag" value="1"> <input
 					type="hidden" name="userid" value="${user.userid }"> <input
-					type="hidden" name="nickname" value="${user.nickname }"> <input
 					type="hidden" name="companyceoname" value=""> <input
 					type="hidden" name="companyaddr" value=""> <input
 					type="hidden" name="companytype" value="">
+					
+                  <input type="hidden" name="image" value="">
+					
 			</form>
 
 		</div>

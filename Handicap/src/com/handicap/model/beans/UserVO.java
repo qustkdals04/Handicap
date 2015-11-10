@@ -15,6 +15,8 @@ public class UserVO {
 	private String companyceoname;
 	private String companyaddr;
 	private String companytype;
+	private String image;
+	private String profile;	
 	
 	
 	public String getUserid() {
@@ -95,5 +97,19 @@ public class UserVO {
 	public void setCompanytype(String companytype) {
 		this.companytype = companytype;
 	}
+	public String getImage() {
+		return image;
+	}
+	public void setImage(String image) {
+		this.image = image;
+	}
+	public String getProfile() {
+		return profile;
+	}
+	public void setProfile(String profile) {
+		this.profile = profile;
+	}
+	
+	
 	
 }

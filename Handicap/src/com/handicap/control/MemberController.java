@@ -169,6 +169,7 @@ public class MemberController {
 
 	@RequestMapping("/memberlogin") // 로그인 처리
 	public String login(@RequestParam String userid, @RequestParam String passwd, HttpSession session, Model model) {
+		String nickname = dao.findNick(userid);
 		if (dao.findPasswd(userid) != null) {// db에서 사용자가 입력한 userid를 조건으로 검색해서
 												// passwd가 있다면
 			if (dao.findPasswd(userid).equals(passwd)) {// db의 passwd와 사용자가 입력한
@@ -176,6 +177,7 @@ public class MemberController {
 				session.setAttribute("memberid", userid); // session에
 															// "memberId"키값으로
 															// userid값을 넘겨주고
+				session.setAttribute("membernick", nickname);
 				return "viewmain"; // 로그인성공하면 main페이지로 이동
 			} else {
 				model.addAttribute("status", "로그인실패");

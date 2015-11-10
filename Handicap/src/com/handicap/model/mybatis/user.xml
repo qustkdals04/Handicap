@@ -9,8 +9,8 @@
    
    <!-- 회원가입  -->
    <insert id="insert" parameterType="com.handicap.model.beans.UserVO">
-   	insert into member 
-   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade},#{companyno},#{companyceoname},#{companyaddr},#{companytype})
+   	insert into member (userid,passwd,email,name,nickname,phone,pquestion,panswer,usergrade,companyno,companyceoname,companyaddr,companytype,image)
+   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade},#{companyno},#{companyceoname},#{companyaddr},#{companytype},#{image})
    </insert>   
    
    <!-- 아이디목록 -->
@@ -111,7 +111,7 @@
    
    <!-- 회원정보 업데이트 -->
    <update id="memberupdate" parameterType="com.handicap.model.beans.UserVO">
-  	update member set passwd=#{passwd}, email=#{email}, name=#{name}, phone=#{phone}, pquestion=#{pquestion}, panswer=#{panswer}, companyceoname=#{companyceoname},companyaddr=#{companyaddr},companytype=#{companytype}
+  	update member set passwd=#{passwd}, nickname=#{nickname},email=#{email}, name=#{name}, phone=#{phone}, pquestion=#{pquestion}, panswer=#{panswer}, companyceoname=#{companyceoname},companyaddr=#{companyaddr},companytype=#{companytype}
   	where userid=#{userid}
    </update>
    
