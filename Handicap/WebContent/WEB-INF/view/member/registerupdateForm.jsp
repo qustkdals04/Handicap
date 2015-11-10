@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="phone" value="${user.phone }"/>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="phone" value="${user.phone }" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,41 +17,64 @@
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
 <script type="text/javascript">
-var chkphone2 = true;
-var chkphone3 = true;		
+	var chkphone2 = true;
+	var chkphone3 = true;
 
-var reg_pw = /^[a-z0-9_]{5,12}$/;
-var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
-var regPhone3 = /^[0-9]{4}$/;
-var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	var reg_pw = /^[a-z0-9_]{5,12}$/;
+	var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
+	var regPhone3 = /^[0-9]{4}$/;
+	var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	$(document)
-			.ready(function() {
-						$("#phone2").change(function() {
-							$('#messageP').remove();
-							if(!regPhone2.test($("#phone2").val())&&$("#phone2").val()!=""){
-								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
-								chkphone2 = false;
+			.ready(
+					function() {
+						$("#delete").click(function() { //삭제버튼
+							if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
+								$("#messageContent").attr({
+									action : 'registerdelete',
+									method : 'post'
+								});
+								$("#messageContent").submit();
 							} else {
-								chkphone2 = true;
+								return; // 취소
 							}
-						})
-						$("#phone3").change(function() {
-							$('#messageP').remove();
-							if(!regPhone3.test($("#phone3").val())&&$("#phone3").val()!=""){
-								$('#regPhone').append('<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
-								chkphone3 = false;
-							} else {
-								chkphone3 = true;
-							}
-						})
-						
-						
-						$("#register")
-								.click(					
+						});
+						$("#phone2")
+								.change(
 										function() {
-											var passwd = $("#passwd").val();											
-											var email = $("#email").val();										
-											
+											$('#messageP').remove();
+											if (!regPhone2.test($("#phone2")
+													.val())
+													&& $("#phone2").val() != "") {
+												$('#regPhone')
+														.append(
+																'<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+												chkphone2 = false;
+											} else {
+												chkphone2 = true;
+											}
+										})
+						$("#phone3")
+								.change(
+										function() {
+											$('#messageP').remove();
+											if (!regPhone3.test($("#phone3")
+													.val())
+													&& $("#phone3").val() != "") {
+												$('#regPhone')
+														.append(
+																'<font id=\"messageP\" size=\"2\" color=#FF0000>연락처를 정확히 입력해 주세요.</font>');
+												chkphone3 = false;
+											} else {
+												chkphone3 = true;
+											}
+										})
+
+						$("#register")
+								.click(
+										function() {
+											var passwd = $("#passwd").val();
+											var email = $("#email").val();
+
 											if (reg_pw.test(passwd) == false) {
 												alert("비밀번호를 입력해주세요..");
 												$("#passwd").focus();
@@ -61,17 +84,17 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 											} else if ($("#passwd").val() != $(
 													"#passwd2").val()) {
 												alert("비밀번호와 비밀번호확인이 일치하지않습니다..")
-											} else if($("#phone2").val()==""){
-									        	alert("연락처를 입력해 주세요.");
-									        	$("#phone2").focus();
-									        } else if(!chkphone2){
-									        	
-									        } else if($("#phone3").val()==""){
-									        	alert("연락처를 입력해 주세요.");
-									        	$("#phone3").focus();
-									        } else if(!chkphone3){
-									        	
-									        } else if ($("#email").val() == "") {
+											} else if ($("#phone2").val() == "") {
+												alert("연락처를 입력해 주세요.");
+												$("#phone2").focus();
+											} else if (!chkphone2) {
+
+											} else if ($("#phone3").val() == "") {
+												alert("연락처를 입력해 주세요.");
+												$("#phone3").focus();
+											} else if (!chkphone3) {
+
+											} else if ($("#email").val() == "") {
 												alert("이메일을 입력해주세요..");
 												$("#email").focus();
 											} else if (regEmail.test(email) == false) {
@@ -87,11 +110,13 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 												/* if(chkid==false || chknick==false){
 													alert("ID중복체크와 닉네임중복체크를 해주세요");
 												}else{ */
-												$("#registForm").attr({
-													action : "registerupdateformaction",
-													method : 'post'
-												});
-												$("#registForm").submit();												
+												$("#registForm")
+														.attr(
+																{
+																	action : "registerupdateformaction",
+																	method : 'post'
+																});
+												$("#registForm").submit();
 											}
 											/* } */
 										})
@@ -150,21 +175,22 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 							</td>
 							<td><pre>   </pre><font size="4">${user.nickname }</font></td>
 
-						</tr>						
+						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
-							<td id="regPhone" colspan="2"><pre> </pre>
-							<select name="phone1" id="phone1" style="width: 50; height: 25">
+							<td id="regPhone" colspan="2"><pre> </pre> <select
+								name="phone1" id="phone1" style="width: 50; height: 25">
 									<option value="${fn:substring(phone,0,3)}">${fn:substring(phone,0,3)}</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
 							</select> <input type="text" name="phone2" id="phone2"
-								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,3,7)}"> <input
-								type="text" name="phone3" id="phone3"
-								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
-							</td>    
+								style="width: 45px; height: 22" maxlength="4"
+								value="${fn:substring(phone,3,7)}"> <input type="text"
+								name="phone3" id="phone3" style="width: 45px; height: 22"
+								maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
+							</td>
 						</tr>
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*이메일
@@ -193,8 +219,9 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 							<td></td>
 							<td><pre> </pre>
 								<button type="button" class="ml-button" id="register">수정</button>
-								<button type="button" class="ml-button" id="cancel">취소</button>
-								<pre></pre></td>
+								<button type="button" class="ml-button" id="delete">회원탈퇴</button>
+								<button type="button" class="ml-button" id="cancel"
+									onclick="location.href='/Handicap/'">취소</button> <pre></pre></td>
 
 
 
@@ -205,13 +232,12 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
 					</table>
 				</div>
-				<input type="hidden" name="flag" value="1">
-				<input type="hidden" name="userid" value="${user.userid }">
-				<input type="hidden" name="nickname" value="${user.nickname }">
-				 <input
-						type="hidden" name="companyceoname" value=""> <input
-						type="hidden" name="companyaddr" value=""> <input
-						type="hidden" name="companytype" value="">
+				<input type="hidden" name="flag" value="1"> <input
+					type="hidden" name="userid" value="${user.userid }"> <input
+					type="hidden" name="nickname" value="${user.nickname }"> <input
+					type="hidden" name="companyceoname" value=""> <input
+					type="hidden" name="companyaddr" value=""> <input
+					type="hidden" name="companytype" value="">
 			</form>
 
 		</div>

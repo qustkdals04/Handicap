@@ -97,7 +97,7 @@
 								</tr>
 								<tr>
 									<td align="center"><font size="3px">내 용</font></td>
-									<td></td>
+									<td><textarea name="contents" id="contents" rows="13" cols="40" style="height: 450px; width: 100%"></textarea></td>
 								</tr>
 								<tr>
 									<td align="center"><font size="3px">파일 첨부</font></td>
