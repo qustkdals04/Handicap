@@ -24,7 +24,7 @@
 					<a href="/Handicap/bbsList?boardno=10" >소 식</a>
 					<ul>
 						<li ><a href="/Handicap/bbsList?boardno=10" style="font:12px small; ">공지사항</a></li>
-						<li><a href="/Handicap/News" style="font:12px small; " >뉴스</a></li>
+						<li><a href="/Handicap/bbsList?boardno=11" style="font:12px small; " >뉴스</a></li>
 						<li><a href="/Handicap/Introduce" style="font:12px small; ">사이트소개</a></li>
 						
 					</ul>
@@ -32,17 +32,17 @@
 				<li>
 					<a href="/Handicap/body" >게시판</a>
 					<ul>
-						<li><a href="/Handicap/body" style="font:12px small; ">신체적장애</a></li>
-						<li><a href="/Handicap/Mental" style="font:12px small; ">정신적장애</a></li>
-						<li><a href="/Handicap/Club" style="font:12px small; ">동호회</a></li>
-						<li><a href="/Handicap/travel" style="font:12px small; ">여행</a></li>
+						<li><a href="/Handicap/bbsList?boardno=20" style="font:12px small; ">신체적장애</a></li>
+						<li><a href="/Handicap/bbsList?boardno=21" style="font:12px small; ">정신적장애</a></li>
+						<li><a href="/Handicap/bbsList?boardno=22" style="font:12px small; ">동호회</a></li>
+						<li><a href="/Handicap/bbsList?boardno=23" style="font:12px small; ">여행</a></li>
 					</ul>
 					<li>
 					<a href="/Handicap/trade">의료장비</a>
 					<ul>
-						<li><a href="/Handicap/trade" style="font:12px small; ">사고팔기</a></li>
-						<li><a href="/Handicap/question" style="font:12px small; ">질문답변</a></li>
-						<li><a href="/Handicap/review" style="font:12px small; ">사용후기</a></li>
+						<li><a href="/Handicap/bbsList?boardno=30" style="font:12px small; ">사고팔기</a></li>
+						<li><a href="/Handicap/bbsList?boardno=31" style="font:12px small; ">질문답변</a></li>
+						<li><a href="/Handicap/bbsList?boardno=32" style="font:12px small; ">사용후기</a></li>
 						
 					</ul>
 					
@@ -65,8 +65,8 @@
 				
 					<a href="/Handicap/QnA"  >고객센터</a>
 					<ul class="gcb">
-						<li ><a href="/Handicap/QnA" style="font:12px small; ">Q&A</a></li>
-						<li><a href="/Handicap/request" style="font:12px small; ">게시판요청</a></li>
+						<li ><a href="/Handicap/bbsList?boardno=40" style="font:12px small; ">Q&A</a></li>
+						<li><a href="/Handicap/bbsList?boardno=41" style="font:12px small; ">게시판요청</a></li>
 						
 					</ul>
 					

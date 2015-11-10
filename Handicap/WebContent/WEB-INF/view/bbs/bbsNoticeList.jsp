@@ -108,7 +108,7 @@
 									</table>
 									<table style="margin-top: 5px">
 										<tr align="right"`>
-											<td colspan="6" width="650px"><button type="button"
+											<td colspan="6" width="650px"><button type="button" 
 													class="ml-button"
 													onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
 										</tr>

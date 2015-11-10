@@ -114,7 +114,7 @@
                            <!-- a href="bbsNoticeWriteForm" -->
                            <td>
                               <button type="button" id="bbsNoticelist"
-                                 onclick="location.href='/Handicap/bbsNoticeList'">목록</button>
+                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
                            </td>
                         </tr>
                         <tr>
@@ -124,7 +124,7 @@
                            </td>
                         </tr>
                      </table>
-                     <input type="hidden" name="boardno" id="boardno" value="10">
+                     <input type="hidden" name="boardno" id="boardno" value="${boardno}">
                      <input type="hidden" name="category" id="category" value="">
                      <input type="hidden" name="region" id="region" value="">
                      <input type="hidden" name="star" id="star" value="0">

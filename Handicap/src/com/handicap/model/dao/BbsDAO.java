@@ -36,14 +36,14 @@ public class BbsDAO {
    }
 
    public boolean update(BbsVO bbs) throws SQLException {      
-      int t = sqlSession.update("bbs.bbsNoticeUpdate", bbs);
+      int t = sqlSession.update("bbs.bbsUpdate", bbs);
       if(t > 0) return true;
       return false;
    }
 
    public BbsVO select(int no, int boardno) {
       // TODO Auto-generated method stub
-      return sqlSession.selectOne("bbs.bbsNoticeContent",no);
+      return sqlSession.selectOne("bbs.bbsContent",no);
    }
    
    public List<BbsVO> selectAll(Map map) {
@@ -63,7 +63,7 @@ public class BbsDAO {
 
    public boolean hitsupdate(int no){
       // TODO Auto-generated method stub
-      int hit = sqlSession.update("bbs.bbsNoticeHitPlus", no);
+      int hit = sqlSession.update("bbs.bbsHitPlus", no);
       
       return false;
    }

@@ -59,12 +59,12 @@
       where no=#{no}
    </update>
       
-   <!-- 공지사항 조회수 증가 -->
-   <update id="bbsNoticeHitPlus" parameterType="int">
+   <!--  조회수 증가 -->
+   <update id="bbsHitPlus" parameterType="int">
       update bbs set hits = hits+1 where no = #{no}
    </update>
    
-   <!-- 공지사항 추천수 증가 -> 테이블에 good이 없는 관계로 보류 -->
+   <!-- 추천수 증가 -> 테이블에 good이 없는 관계로 보류 -->
    <update id="goodupdate" parameterType="int">
       update bbsnotice set good = good+1 where no = #{no}
    </update>

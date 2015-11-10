@@ -22,8 +22,8 @@
 	$(document).ready(function() {
 		$("#delete").click(function() { //삭제버튼
 			if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
-				$("#bbsNoticeContent").attr({
-					action : 'bbsNoticeDelete',
+				$("#bbsContent").attr({
+					action : 'bbsDelete',
 					method : 'post'
 				});
 				$("#bbsNoticeContent").submit();
@@ -74,7 +74,7 @@
 					<td>
 						<!-- 위에 폼 인쿨루드 -->
 
-						<form id="bbsNoticeContent" name="bbsNoticeContent">
+						<form id="bbsContent" name="bbsContent">
 							<table class="bbsTitle">
 								<tr>
 									<td align="center"><font size="15">상세보기</font></td>
@@ -86,9 +86,9 @@
 									<td width="50px"><font size="3px"
 										style="font-weight: bold;">제목 :</td>
 									<td width="350px" align="left"><font size="3px"
-										style="font-weight: bold;"> ${bbsNoticeContent.title}</font></td>
+										style="font-weight: bold;"> ${bbsContent.title}</font></td>
 									<td colspan="2" width="300px" align="right"><font
-										size="2px">작성일 : ${bbsNoticeContent.writedate}</font></td>
+										size="2px">작성일 : ${bbsContent.writedate}</font></td>
 								</tr>
 								<tr>
 									<td colspan="4" align="left"><font size="3px">작성자 :
@@ -104,7 +104,7 @@
 					 	<img src="/Handicap/img/${bbsfile.filename}">
 					 </c:forEach>							
 					</c:if>	
-										<br>${bbsNoticeContent.contents}
+										<br>${bbsNotice.contents}
 									</td>
 								</tr>
 								<tr>
