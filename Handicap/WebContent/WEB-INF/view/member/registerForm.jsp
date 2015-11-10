@@ -411,6 +411,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
                   type="hidden" name="companyceoname" value=""> <input
                   type="hidden" name="companyaddr" value=""> <input
                   type="hidden" name="companytype" value="">
+                  <input type="hidden" name="image" value="">
             </div>
          </form>
 
