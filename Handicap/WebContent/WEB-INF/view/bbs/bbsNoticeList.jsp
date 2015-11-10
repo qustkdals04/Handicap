@@ -45,7 +45,7 @@
 
 									<table class="bbsTitle">
 										<tr>
-											<td align="center">공지사항</td>
+											<td align="center"></td>
 										</tr>
 									</table>
 

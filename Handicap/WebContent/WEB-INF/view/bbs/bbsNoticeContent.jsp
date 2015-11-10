@@ -77,7 +77,7 @@
 						<form id="bbsContent" name="bbsContent">
 							<table class="bbsTitle">
 								<tr>
-									<td align="center"><font size="15">상세보기</font></td>
+									<td align="center"><font size="15"></font></td>
 								</tr>
 							</table>
 
