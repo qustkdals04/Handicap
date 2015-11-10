@@ -21,9 +21,9 @@
 			<h1></h1>
 			<ul id="menu" class="menu">
 				<li>
-					<a href="/Handicap/Notice" >소 식</a>
+					<a href="/Handicap/bbsNoticeList" >소 식</a>
 					<ul>
-						<li ><a href="/Handicap/Notice" style="font:12px small; ">공지사항</a></li>
+						<li ><a href="/Handicap/bbsNoticeList" style="font:12px small; ">공지사항</a></li>
 						<li><a href="/Handicap/News" style="font:12px small; " >뉴스</a></li>
 						<li><a href="/Handicap/Introduce" style="font:12px small; ">사이트소개</a></li>
 						

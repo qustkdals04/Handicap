@@ -33,9 +33,18 @@
 	var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
 	var regPhone3 = /^[0-9]{4}$/;
 	var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {						
+						$("#delete").click(function() { //삭제버튼
+							if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
+								$("#registForm").attr({
+									action : 'registerdelete',
+									method : 'get'
+								});
+								$("#registForm").submit();
+							} else {
+								return; // 취소
+							}
+						});
 
 						//비밀번호와 비밀번호 확인 일치 유무
 						$("#passwd")
@@ -449,9 +458,10 @@
 							<td colspan="2"><pre> </pre>
 								<button type="button" class="ml-button"
 									style="font-weight: bold;" id="register">수정</button>
+								<button type="button" class="ml-button" style="font-weight: bold;" id="delete">회원탈퇴</button>
 								<button type="button" class="ml-button"
-									style="font-weight: bold;" id="cancel">취소</button> <!-- <button type="button" id="register">가입</button>
-						<button id="cancel">취소</button> --></td>
+									style="font-weight: bold;" id="cancel" onclick="location.href='/Handicap/'">취소</button> 
+						</td>
 
 						</tr>
 						<tr>

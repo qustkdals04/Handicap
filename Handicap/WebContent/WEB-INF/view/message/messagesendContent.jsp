@@ -41,12 +41,12 @@
 			</table>
 			<table class="list1" >
 				<tr>
-					<th colspan="2" align='left' width="300px">받는사람 :
+					<th colspan="2" align='left' width="400px">받는사람 :
 						${messagesendContent.recipient}</th>
 
 					<%-- <td align = "center" width="100px" color = "#678197">받는사람  </td>
 				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 --> --%>
-					<th align="right" width="200px">${messagesendContent.senddate }</th>
+					<th align="right" width="400px">${messagesendContent.senddate }</th>
 					<!-- 현재시간 -->
 
 
@@ -75,13 +75,13 @@
 					<button type="button" id="send" class="ml-button">보내기</button>
 					<button type="button" id="cancel" onclick="history.back()" class="ml-button">취소</button>
 				</td> -->
-					<td width="500px"></td>
+					
 
-					<td width="300px" align="center">
+					<td width="800px" align="right">
 
-						<button class="ml-button" type="button" id="delete"
+						<button class="ml-button2" type="button" id="delete"
 							style="width: 100px">삭제</button>
-						<button class="ml-button" type="button" onclick="history.back()"
+						<button class="ml-button2" type="button" onclick="history.back()"
 							id="cancel" style="width: 100px">취소</button>
 					</td>
 

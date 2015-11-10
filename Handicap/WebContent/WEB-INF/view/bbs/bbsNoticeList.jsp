@@ -33,9 +33,7 @@
 			<th width="20%">작성일</th>
 			<th width="8%">조회수</th>
 			<th width="8%">추천수</th>		
-		</tr>
-		<tr>
-		
+		</tr>		
 		 <c:forEach var="bbs" items="${list}">
 				<tr>
 					<td align="center">${bbs.no}</td>
@@ -46,9 +44,7 @@
 					<td align="center">${bbs.good}</td>
 				</tr>
 			</c:forEach>
-			
-			</tr> 
-		
+				
 		<tr align="right">
 			<td colspan="6"><button type="button" class="ml-button" onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
 			

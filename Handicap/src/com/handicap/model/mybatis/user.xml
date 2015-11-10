@@ -121,45 +121,43 @@
    </delete>
    
    <!-- 마이페이지 내게시글 -->
-   <select id="mybbsnotice">
+   <select id="mybbsnotice" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select * from bbsnotice where author=#{author}
    </select>
-   <!-- <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsnews" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsnews where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsbody" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsbody where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsmental" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsmental where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsclub" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsclub where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbstravel" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbstravel where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbstrade" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbstrade where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsquestion" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsquestion where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsreview" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsreview where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsjob" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsjob where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsqna" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsqna where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
+   <select id="mybbsrequest" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbsrequest where author=#{author}
    </select>
-   <select id="mybbsnotice">
-   	select * from bbsnotice where author=#{author}
-   </select> -->
+   
 </mapper>
 <!-- user.xml -->
 

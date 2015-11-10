@@ -29,11 +29,11 @@
 					function() {
 						$("#delete").click(function() { //삭제버튼
 							if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
-								$("#messageContent").attr({
+								$("#registForm").attr({
 									action : 'registerdelete',
-									method : 'post'
+									method : 'get'
 								});
-								$("#messageContent").submit();
+								$("#registForm").submit();
 							} else {
 								return; // 취소
 							}
@@ -213,7 +213,6 @@
 							<td><pre>   </pre><input type="text" name="panswer"
 								id="panswer" style="width: 150; height: 22"
 								value="${user.panswer }"></td>
-
 						</tr>
 						<tr>
 							<td></td>

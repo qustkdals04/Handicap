@@ -50,11 +50,11 @@
 
 			<table class="list1">
 				<tr>
-					<th colspan="2" width="390" align="left">보낸사람 :
+					<th colspan="2" width="400" align="left">보낸사람 :
 						${messageContent.sender}</th>
 					<!-- 받는사람 -->
-					<th></th>
-					<th align="right" width="390px">${messageContent.senddate }</th>
+					
+					<th align="right" width="400px">${messageContent.senddate }</th>
 					<!-- 현재시간 -->
 
 
@@ -68,21 +68,21 @@
 
 
 
-					<td colspan="5"><textarea rows="10" cols="50" name="contents"
+					<td><textarea rows="10" cols="50" name="contents"
 							id="contents" style="width: 100%; height: 200px;">${messageContent.contents }</textarea></td>
 				</tr>
 				<tr > 
 					
 
-					<td width="800px" align="center">
+					<td width="800px" align="right">
 
 
-						<button class="ml-button" type="button" id="delete"
-							style="width: 70px">삭제</button>
+						<button class="ml-button2" type="button" id="delete"
+							style="width: 70px; height: 30px;">삭제</button>
 
 
-						<button class="ml-button" type="button" id="cancel"
-							onclick="history.back()" style="width: 70px">취소</button>
+						<button class="ml-button2" type="button" id="cancel"
+							onclick="history.back()" style="width: 70px; height: 30px;">취소</button>
 					</td>
 					<!-- 	<td align ="center"width="500px"></td>
 			<td align="right" width = "300px">

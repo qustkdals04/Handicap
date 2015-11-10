@@ -2,6 +2,7 @@ package com.handicap.control;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -246,13 +247,13 @@ public class MemberController {
 	// ==============================회원정보수정===============================
 
 	// 회원정보수정 비밀번호체크폼띄우기
-	@RequestMapping("/member/mypage/pwcheck")
+	@RequestMapping("/mypage/pwcheck")
 	public String pwcheck() {
 		return "member/pwCheck";
 	}
 
 	// 회원정보수정 비밀번호체크폼처리
-	@RequestMapping("/member/mypage/pwcheckaction")
+	@RequestMapping("/mypage/pwcheckaction")
 	public String pwcheckaction(HttpSession session, @RequestParam String passwd, HttpServletResponse response,
 			HttpServletRequest request) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -280,7 +281,7 @@ public class MemberController {
 	}
 
 	// 회원정보수정 폼띄우기
-	@RequestMapping("/member/mypage/registerupdateform")
+	@RequestMapping("/mypage/registerupdateform")
 	public String registerupdateform(HttpSession session, Model model) {
 		String userid = session.getAttribute("memberid").toString();
 		int usergrade = dao.searchGrade(userid);
@@ -295,7 +296,7 @@ public class MemberController {
 	}
 
 	// 회원정보수정처리
-	@RequestMapping("/member/mypage/registerupdateformaction")
+	@RequestMapping("/mypage/registerupdateformaction")
 	public String registerupdateformaction(@RequestParam String flag, UserVO vo,
 			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
@@ -333,13 +334,13 @@ public class MemberController {
 	}
 
 	// 회원탈퇴
-	@RequestMapping("/member/mypage/registerdelete")
+	@RequestMapping("/mypage/registerdelete")
 	public String registerdelete(HttpSession session) throws SQLException {
-		String userid = session.getAttribute("memberid").toString();
-
+		String userid = session.getAttribute("memberid").toString();		
 		dao.delete(dao.findNick(userid));
-		session.invalidate();// 로그인기록삭제
-		return "viewmain";
+		// 로그인기록삭제
+		session.invalidate();
+		return "redirect:/";
 	}
 
 	// -------------------------메시지---------------------------------//
