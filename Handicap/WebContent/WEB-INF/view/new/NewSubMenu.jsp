@@ -17,7 +17,7 @@
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsNoticeList'"><img src="img/icon.png" width="15px"> 공지사항</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=10'"><img src="img/icon.png" width="15px"> 공지사항</li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/News'"><img src="img/icon.png" width="15px"> 뉴스</li>
