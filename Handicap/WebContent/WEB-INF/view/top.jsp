@@ -94,7 +94,7 @@
 			<td   width="300px" align="left" style="vertical-align: bottom; width: 641px; margin-left: 0;">
 				<div id="appLoadingIndicator">
 					<div id="cell">
-						<input align="bottom"   type="text" style="width: 407px; border: 3px solid #F3B514; height: 20px ; margin-left: 0;" ><button class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0;">검색</button>
+						<input align="bottom" id="search" placeholder="검색어를 입력해주세요."  type="text" style="width: 407px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" ><button class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0;">검색</button>
 					</div>
 				</div>
 			</td>
@@ -164,7 +164,7 @@
 			<td   width="300px" align="left" style="vertical-align: bottom; width: 641px; margin-left: 0;">
 				<div id="appLoadingIndicator">
 					<div id="cell">
-						<input align="bottom"   type="text" style="width: 407px; border: 3px solid #F3B514; height: 20px ; margin-left: 0;" ><button class="ml-button" style="float: none;  width: 64px; height: 30px; margin-left: 0;">검색</button>
+						<input align="bottom" id="search" placeholder="검색어를 입력해주세요."  type="text" style="width: 407px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" ><button class="ml-button" style="float: none;  width: 64px; height: 30px; margin-left: 0;">검색</button>
 					</div>
 				</div>
 			</td>
