@@ -52,15 +52,17 @@
 											<td align="center"></td>
 										</tr>
 									</table>
-
+									<c:choose>
+									<c:when test="${boardno == '32'}">
 									<table class="bbsList">
 										<tr height="20px">
-											<th width="10%">글번호</th>
-											<th width="40%">제 목</th>
-											<th width="14%">작성자</th>
-											<th width="20%">작성일</th>
-											<th width="8%">조회수</th>
-											<th width="8%">추천수</th>
+											<th width="9%">글번호</th>
+											<th width="35%">제 목</th>
+											<th width="12%">작성자</th>
+											<th width="19%">작성일</th>
+											<th width="9%">조회수</th>
+											<th width="9%">추천수</th>
+											<th width="7%">평  점</th>
 										</tr>
 										<tr>
 											<%-- <% int boardno; 
@@ -76,9 +78,59 @@
 													<td align="center">${bbs.writedate}</td>
 													<td align="center">${bbs.hits}</td>
 													<td align="center">${bbs.good}</td>
+													<td align="center">
+													<c:choose>
+														<c:when test="${bbs.star == '1'}">
+															<img width="50" height="30" src="/Handicap/img/star1.png">
+														</c:when>
+														<c:when test="${bbs.star =='2'}">
+															<img  src="/Handicap/img/stat2.png">
+														</c:when>
+														<c:when test="${bbs.star == '3'}">
+															<img  src="/Handicap/img/stat3.png">
+														</c:when>
+														<c:when test="${bbs.star =='4'}">
+															<img  src="/Handicap/img/stat4.png">
+														</c:when>
+														<c:when test="${bbs.star == '5'}">
+															<img  width="50" height="20" src="/Handicap/img/stat5.png">
+														</c:when>														
+													</c:choose>
+													
+													</td>
 												</tr>
 											</c:forEach>
-												
+										</c:when>
+										<c:otherwise>
+											<table class="bbsList">
+										<tr height="20px">
+											<th width="10%">글번호</th>
+											<th width="38%">제 목</th>
+											<th width="14%">작성자</th>
+											<th width="20%">작성일</th>
+											<th width="9%">조회수</th>
+											<th width="9%">추천수</th>
+											
+										</tr>
+										<tr>
+											<%-- <% int boardno; 
+												boardno = BbsVO.getBoardno();
+												if(boardno==31){
+											%> --%>
+											<c:forEach var="bbs" items="${list}">
+												<tr>
+													<td align="center">${bbs.no}</td>
+													<td align="center"><a
+														href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.title}</a></td>
+													<td align="center">${bbs.author}</td>
+													<td align="center">${bbs.writedate}</td>
+													<td align="center">${bbs.hits}</td>
+													<td align="center">${bbs.good}</td>
+													
+												</tr>
+											</c:forEach>
+										</c:otherwise>
+										</c:choose>
 										</tr>
 										
 										<tr>
@@ -120,12 +172,16 @@
 													class="ml-button"
 													onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
 										</tr>
+										
+										
 									</table> <!-- 아래 폼 인쿨루드 -->
+									
 								</td>
 
 							</tr>
 						</table>
 					</div>
+					
 					<!-- contents 끝 -->
 					<%@include file="../Footer.jsp"%>
 					

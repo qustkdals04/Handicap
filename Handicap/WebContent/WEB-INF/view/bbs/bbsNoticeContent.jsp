@@ -48,7 +48,6 @@
             success : function(data) {
                goodCk = true;
                alert("추천하였습니다!!");
-
             }
          });
          //}
@@ -57,11 +56,8 @@
 </script>
 </head>
 <body>
-
    <div id="CssWrapper" align="center">
       <%@include file="../top.jsp"%>
-
-
       <div align="center">
          <%@include file="../menu.jsp"%>
       </div>
@@ -99,11 +95,12 @@
                         <tr>
 
                            <td colspan="4">
-                                 <c:if test="${bbsFileName !=null }">                  
-                <c:forEach var="bbsfile" items="${bbsFileName}">
-                   <img src="/Handicap/img/${bbsfile.filename}">
-                </c:forEach>                     
-               </c:if>   
+                                <c:if test="${bbsFileName !=null }">						
+					 <c:forEach var="bbsfile" items="${bbsFileName}">					 
+					 	 <img name="img" height="300px" style="width: 300px;" 
+					 	 src="/Handicap/img/${bbsfile.fileoriginal}"> 					 	 
+					</c:forEach>							
+					</c:if>	 
                               <br>${bbsContent.contents}
                            </td>
                         </tr>
@@ -112,12 +109,9 @@
                            <td colspan="4"><c:forEach var="bbsFileName"
                                  items="${bbsFileName}">
                                  <tr>
-
                                     <td>${bbsFileName.filename}</td>
-
                                  </tr>
                               </c:forEach></td>
-
                         </tr>
                      </table>
                      <table class="bbsList">
@@ -130,15 +124,12 @@
                               <button type="button" id="update"
                                  onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
                               <button type="button" id="delete">삭제</button>
-
                            </td>
-
                         </tr>
                      </table>
                      <input type="hidden" name="no" value="${bbsContent.no }">
                   </form> <!-- 아래 폼 인쿨루드 -->
                </td>
-
             </tr>
          </table>
       </div>
@@ -146,14 +137,9 @@
       <%@include file="../Footer.jsp"%>
       <%-- <div id="sidebar" align="right">
          <%@include file="../banner.jsp"%>
-
-
       </div>
  --%>
    </div>
-
    <br>
-
-
 </body>
 </html>
