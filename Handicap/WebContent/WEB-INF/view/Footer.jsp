@@ -16,19 +16,19 @@
 <!--소식-->
 <table width=150 height=90  align="center">
 <tr>
-<th align="center"><a href="/Handicap/Notice" style="font:18px x-large;" >소 식</a></th>
+<th align="center"><a href="/Handicap/bbsList?boardno=10" style="font:18px x-large;" >소 식</a></th>
 </tr>
 <tr>
 
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/Notice" style="font:8px small; " >공지사항</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=10" style="font:8px small; " >공지사항</a></td>
 </tr>
 <tr>
-   <td align="center"><a href="/Handicap/News" style="font:8px small; " >뉴스</a></td>
+   <td align="center"><a href="/Handicap/bbsList?boardno=11" style="font:8px small; " >뉴스</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/Introduce" style="font:8px small; ">사이트소개</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=12" style="font:8px small; ">사이트소개</a></td>
 </tr>
 </table>
 <!--소식 끝-->
@@ -38,19 +38,19 @@
 <!-- 게시판  -->
 <table width=150 height=90 cellspacing=0>
 <tr>
-<th align="center"><a href="/Handicap/body" style="font:18px x-large;">게시판</a></th>
+<th align="center"><a href="/Handicap/bbsList?boardno=20" style="font:18px x-large;">게시판</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/body" style="font:8px small; ">신체적장애</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=20" style="font:8px small; ">신체적장애</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/Mental" style="font:8px small; ">정신적장애</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=21" style="font:8px small; ">정신적장애</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/Club" style="font:8px small; ">동호회</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=22" style="font:8px small; ">동호회</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/travel" style="font:8px small; ">여행</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=23" style="font:8px small; ">여행</a></td>
 </tr>
 </table>
 <!--게시판 끝-->
@@ -59,16 +59,16 @@
 <!-- 의료장비 -->
 <table width=150 height=90 cellspacing=0>
 <tr>
-<th align="center"><a href="/Handicap/trade" style="font:18px x-large;">의료장비</a></th>
+<th align="center"><a href="/Handicap/bbsList?boardno=30" style="font:18px x-large;">의료장비</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/trade" style="font:8px small; ">사고팔기</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=30" style="font:8px small; ">사고팔기</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/question" style="font:8px small; ">질문답변</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=31" style="font:8px small; ">질문답변</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/review" style="font:8px small; ">사용후기</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=32" style="font:8px small; ">사용후기</a></td>
 </tr>
 </table>
 <!--의료장비 끝-->
@@ -109,13 +109,13 @@
 <!-- 고객센터 -->
 <table width=140 height=90 cellspacing=0>
 <tr>
-<th align="center"> <a href="/Handicap/QnA" style="font:18px x-large;">고객센터</a></th>
+<th align="center"> <a href="/Handicap/bbsList?boardno=40" style="font:18px x-large;">고객센터</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/QnA" style="font:8px small; ">Q&A</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=40" style="font:8px small; ">Q&A</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/request" style="font:8px small; ">게시판요청</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=41" style="font:8px small; ">게시판요청</a></td>
 </tr>
 </table>
 <!--고객센터 끝-->

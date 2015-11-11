@@ -25,7 +25,7 @@
 					<ul>
 						<li ><a href="/Handicap/bbsList?boardno=10" style="font:12px small; ">공지사항</a></li>
 						<li><a href="/Handicap/bbsList?boardno=11" style="font:12px small; " >뉴스</a></li>
-						<li><a href="/Handicap/Introduce" style="font:12px small; ">사이트소개</a></li>
+						<li><a href="/Handicap/bbsList?boardno=12" style="font:12px small; ">사이트소개</a></li>
 						
 					</ul>
 				</li>
@@ -63,7 +63,7 @@
 				
 				<li>
 				
-					<a href="/Handicap/QnA"  >고객센터</a>
+					<a href="/Handicap/bbsList?boardno=40"  >고객센터</a>
 					<ul class="gcb">
 						<li ><a href="/Handicap/bbsList?boardno=40" style="font:12px small; ">Q&A</a></li>
 						<li><a href="/Handicap/bbsList?boardno=41" style="font:12px small; ">게시판요청</a></li>
