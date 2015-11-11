@@ -80,7 +80,7 @@ p {
 /** page structure **/
 #w {
   display: block;
-  max-width: 700px; /** 슬라이드 넓이**/
+  max-width: 700px; /** �뒳�씪�씠�뱶 �꼻�씠**/
   min-width: 280px;
   margin: 0 auto;
   padding-bottom: 35px;
@@ -217,7 +217,7 @@ p {
 
 .mylist{
     text-align : left;
-	font-family: 돋움;
+	font-family: �룍��;
 	font-size: 18px;
 	color : #444444;
 	list-style: none;
@@ -231,7 +231,7 @@ p {
 }
 .mylistTitle{
     text-align : center;
-	font-family: 굴림;
+	font-family: 援대┝;
 	font-weight:bold;
 	font-size: 30px;
 	color:#00CCFF;
@@ -252,7 +252,7 @@ p {
 }
  .registerSelect {
 	text-align : center;
-	font-family: 돋음;
+	font-family: �룍�쓬;
 	font-weight:bold;
 	font-size: 50px;
 	color:#F9CA02;
@@ -264,7 +264,7 @@ p {
 }
 .registerSelectA{
 	text-align : center;
-	font-family: 돋음;
+	font-family: �룍�쓬;
 	font-weight:bold;
 	font-size: 15px;
 	color : #BFBEBE;
@@ -273,7 +273,7 @@ p {
 table.registerSelectTable {
 	width : 775px;
 	text-align : center;
-	font-family: 돋음;
+	font-family: �룍�쓬;
 	font-weight:bold;
 	font-size: 50px;
 	color:#80A4FF;
@@ -322,13 +322,13 @@ table.Search td{
 	text-align:center;
 	vertical-align:middle;
 	font-size: 15px;
-	font-family: 돋음;
+	font-family: �룍�쓬;
 }
 table.Search br{
 	width:"300px";
 	text-align:center;
 	font-size: 15px;
-	font-family: 돋음;
+	font-family: �룍�쓬;
 }
 
 
@@ -572,7 +572,7 @@ table.list1 th {
 	border-top: 1px solid #A7A7A7;
 }
 
-table.list1 button {
+/* table.list1 button {
 	height: 50px;
 	widows: 150px;
 	border-right: 1px solid #A7A7A7;
@@ -583,7 +583,7 @@ table.list1 button {
 	background-color: #F1F1F1;
 	font-size: 10px;
 }
-
+ */
 table.list2 {
 	width: 800px;
 	height: 50px;
@@ -673,7 +673,7 @@ table.list3 th {
 	border-top: 1px solid #A7A7A7;
 }
 
-/* ㅋㅋㅋ */
+/* �뀑�뀑�뀑 */
 table.bbsTitle{
 	width :700px;
 	border-collapse: separate;
@@ -693,7 +693,7 @@ table.bbsList {
 	
 }
 
-table.bbsList th {     /* 제목(맨위) */ 
+table.bbsList th {     /* �젣紐�(留⑥쐞) */ 
 	font-weight: bold;
 	font-size: 15px;
 	text-align: centet;
@@ -704,7 +704,7 @@ table.bbsList th {     /* 제목(맨위) */
     
 }
 
-table.bbsList td {     /* 게시판글(내용) */ 
+table.bbsList td {     /* 寃뚯떆�뙋湲�(�궡�슜) */ 
 	
 	font-size: 12px;
 	text-align: centet;
@@ -713,7 +713,7 @@ table.bbsList td {     /* 게시판글(내용) */
 	
 }
 
-table.bbsList tr {     /* 게시판글(내용) */ 
+table.bbsList tr {     /* 寃뚯떆�뙋湲�(�궡�슜) */ 
 	height: 30px;
 
 }
@@ -735,7 +735,7 @@ table.bbsList button{
 }
 
 
-/* 앨범게시판 */
+/* �븿踰붽쾶�떆�뙋 */
 
 table.bbsAlbum{
    width:700px;
@@ -755,7 +755,7 @@ table.bbsAlbumList {
    margin-bottom : 30px;
 }
 
-table.bbsAlbumList th {     /* 이미지  */ 
+table.bbsAlbumList th {     /* �씠誘몄�  */ 
    width:"200";
    background-color : #FFFFFF;   
    vertical-align: middle;
@@ -763,7 +763,7 @@ table.bbsAlbumList th {     /* 이미지  */
     
 }
 
-table.bbsAlbumList td {     /* 작성자, 제목 */ 
+table.bbsAlbumList td {     /* �옉�꽦�옄, �젣紐� */ 
    font-weight: bold;
    text-align: centet;
    vertical-align:middle;
@@ -771,7 +771,7 @@ table.bbsAlbumList td {     /* 작성자, 제목 */
    
 }
 
-table.bbsAlbumList tr {     /* tr 크기 */ 
+table.bbsAlbumList tr {     /* tr �겕湲� */ 
    height: 30px;
 
 }
@@ -792,7 +792,7 @@ table.bbsAlbumList button{
 }
 
 
-/* 마이페이지 */
+/* 留덉씠�럹�씠吏� */
 
 table.mypage{
    width:700px;
@@ -812,7 +812,7 @@ table.mypageList {
    
 }
 
-table.mypageList td {     /* 작성자, 제목 */ 
+table.mypageList td {     /* �옉�꽦�옄, �젣紐� */ 
    font-weight: bold;
    font-size: 12px;
    text-align: centet;

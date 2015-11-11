@@ -10,6 +10,9 @@
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/styles.css">
+	<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+	
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(document).ready(function() {
