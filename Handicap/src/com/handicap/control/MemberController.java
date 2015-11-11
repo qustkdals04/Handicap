@@ -75,7 +75,7 @@ public class MemberController {
 	public String noCheck(@RequestParam String companyNo, Model model) {
 		List<UserVO> list = dao.selectAllNo();
 		String no = null;
-		for (int i = 0; i < list.size(); i++) {			
+		for (int i = 0; i < list.size(); i++) {
 			no = list.get(i).getCompanyno();
 			if (no.equals(companyNo)) {
 				model.addAttribute("checkNo", no);
@@ -245,9 +245,12 @@ public class MemberController {
 			return "login/login";
 		}
 	}
+
 	// ==============================활동내역===============================
 	@RequestMapping("/mypage")
-	public String mypage(){
+	public String mypage(HttpSession session, Model model) {
+		String userid = (String) session.getAttribute("memberid");
+		model.addAttribute("mypage", dao.mypage(userid));
 		return "mypage/mypagehome";
 	}
 	// ==============================회원정보수정===============================
@@ -303,13 +306,14 @@ public class MemberController {
 
 	// 회원정보수정처리
 	@RequestMapping("/mypage/registerupdateformaction")
-	public String registerupdateformaction(@RequestParam String flag, UserVO vo,
-			@RequestParam String phone1, @RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
+	public String registerupdateformaction(@RequestParam String flag, UserVO vo, @RequestParam String phone1,
+			@RequestParam String phone2, @RequestParam String phone3, HttpServletRequest request,
+			HttpServletResponse response) throws SQLException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter writer = response.getWriter();
-		if(flag.equals("1")){
-			vo.setPhone(phone1+phone2+phone3);
+		if (flag.equals("1")) {
+			vo.setPhone(phone1 + phone2 + phone3);
 			if (dao.update(vo)) {
 				writer.println("<script>alert('회원정보수정이 완료되었습니다.');</script>");
 				writer.flush();
@@ -318,8 +322,8 @@ public class MemberController {
 				writer.println("<script>alert('회원정보수정이 실패하였습니다.');</script>");
 				writer.flush();
 				return "redirect:/member/mypage/registerupdateform";
-			}			
-		}else {
+			}
+		} else {
 			String company1 = request.getParameter("companyaddress1");
 			String company2 = request.getParameter("companyaddress2");
 			String company3 = request.getParameter("companyaddress3");
@@ -334,15 +338,15 @@ public class MemberController {
 				writer.println("<script>alert('회원정보수정이 실패하였습니다.');</script>");
 				writer.flush();
 				return "redirect:/member/mypage/registerupdateform";
-			}			
+			}
 		}
-		
+
 	}
 
 	// 회원탈퇴
 	@RequestMapping("/mypage/registerdelete")
 	public String registerdelete(HttpSession session) throws SQLException {
-		String userid = session.getAttribute("memberid").toString();		
+		String userid = session.getAttribute("memberid").toString();
 		dao.delete(userid);
 		// 로그인기록삭제
 		session.invalidate();
@@ -360,10 +364,11 @@ public class MemberController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(HttpSession session, MessageVO mvo, @RequestParam String recipient) throws SQLException, IOException {
-		
-		String userid = session.getAttribute("memberid").toString();		
-		mvo.setSender(userid);		
+	public String messageinsert(HttpSession session, MessageVO mvo, @RequestParam String recipient)
+			throws SQLException, IOException {
+
+		String userid = session.getAttribute("memberid").toString();
+		mvo.setSender(userid);
 		mvo.setRecipient(dao.findId(recipient));
 		if (md.insert(mvo)) {
 			return "redirect:messagelist";
@@ -495,14 +500,5 @@ public class MemberController {
 		return "redirect:messagelist";
 	}
 
-
-		// ==============================mypage===============================
-
-	//mypagehome
-	@RequestMapping("/mypagehome")  
-	public String mypagehome() {
-	return "mypage/mypagehome";
+	
 }
-}
-
-

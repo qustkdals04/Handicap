@@ -16,11 +16,6 @@
 <title>mypage home</title>
 </head>
 <body>
-
-
-
-
-
    <div id="CssWrapper" align="center">
       <%@include file="../top.jsp"%>
 
@@ -39,7 +34,7 @@
          <table border="1" class="mypageList">
             <tr>
                <td width="200px" height="200px" align="center"
-                  style="vertical-align: middle;">[이미지]</td>
+                  style="vertical-align: middle;">${mypage.image }</td>
                <!-- 이미지 공간 -->
                <td rowspan="5">
                   <table border="1" align="center" width="500px">
@@ -62,8 +57,7 @@
                </td>
             </tr>
             <tr>
-               <td align="center" height="100px" style="vertical-align: middle;">[한줄
-                  말]</td>
+               <td align="center" height="100px" style="vertical-align: middle;">${mypage.profile }</td>
                <!-- 한줄말 -->
             </tr>
             <tr>

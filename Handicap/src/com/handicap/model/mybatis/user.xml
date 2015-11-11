@@ -133,6 +133,14 @@
    	delete from member where userid=#{userid} 
    </delete>
    
+   <!-- 마이페이지 -->
+   <select id="myprofile" parameterType="string" resultType="com.handicap.model.beans.UserVO">
+    select image, profile from member where userid=#{userid}
+   </select>
+   <!-- 내가쓴게시글가져오기 -->
+   <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select * from bbs where author=#{author}
+   </select>
 </mapper>
 <!-- user.xml -->
 
