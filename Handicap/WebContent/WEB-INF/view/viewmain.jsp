@@ -9,81 +9,56 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" type="text/css" media="all"
-	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
+    
 
-<link rel="stylesheet" type="text/css" media="all"
-	href="/Handicap/css/new.css">
-
-<title>Insert title here</title>
+<title>메인</title>
 
 </head>
 
 <body>
+<center>
+	<table>
+		<tr>
+			<td>
+				<!-- 가운데 메뉴 전체 화면 공간 -->
+				<div id="CssWrapper">
+					<div id="top" align="center">
+						<%@include file="top.jsp"%>
+					</div>
+					<!-- top 끝 -->
+					<div align="center">
+						<%@include file="menu.jsp"%>
+					</div>
+					<!-- menu 끝 -->
+					<center>
+					<div id="slider" align="center">
+						<%@include file="index.html"%>
+					</div>
+					</center>
+					<!-- 슬라이드 끝 -->
+					<div id="slider" align="center">
+						<%@include file="Notice.jsp"%>
+					</div>
+					<div id="slider" align="center">
+						<%@include file="club.jsp"%>
 
+						<br> <br> <br> <br>
+						<%@include file="Footer.jsp"%>
 
-<div id="CssWrapper" >
+					</div>
+				</div>
+			</td>
 
+			<td><!-- 사이드 메뉴 -->
+					<%@include file="banner.jsp"%>
 
+			</td>
 
-
-	<div id="top" align="center">
-
-		<%@include file="top.jsp"%>
-
-	</div>
-	<!-- top 끝 -->
-
-
-
-	<div  align="center">
-
-	
-
-		<%@include file="menu.jsp"%>
-
-	</div>
-	<!-- menu 끝 -->
-
-	<div id="slider" align="center">
-
-		<%@include file="index.html"%> 
-		
-
-	</div>
-
-	
-
-	<div id="slider" align="center" >
-		<%@include file="Notice.jsp"%>
-		
-	</div>
-	
-
-	<div id="slider" align="center" >
-
-		<%@include file="club.jsp"%>
-		<table>
-
-
-			<tr >
-
-			<!-- 	<td><a href="http://fleamarket.seoul.go.kr/"><img src="/Handicap/img/bn1.JPG" style="width: 225px; "></a></td>
-
-				<td ><a href="https://www.jobable.kr/index_knise.jsp"><img src="/Handicap/img/bn2.JPG" style="width: 225px;"></a></td>
-
-				<td ><a href="http://life.knise.kr/main/index.asp"><img src="/Handicap/img/bn3.JPG" style="width: 225px; height: 76px;"></a></td>
-
-				<td ><a href="https://tlc.knise.kr/"><img src="/Handicap/img/bn4.JPG" style="width: 225px;  height: 76px;"></a> --></td>
-
-			<br><%@include file="Footer.jsp"%>
-
-			</tr></table>
-	</div>
-	
-		</div>
-		
-		
+		</tr>
+	</table>
+</center>
 </body>
-
 </html>

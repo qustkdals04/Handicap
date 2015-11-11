@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script> 
-  <script type="text/javascript" src="js/jquery.scrollfollow.js"></script> 
+<script type="text/javascript" src="/Handicap/js/jquery.scrollfollow.js"></script> 
     
       <script type="text/javascript">
         $(document).ready(function(){
@@ -25,7 +25,7 @@
             position: absolute;
         	border:1px solid #000000;
          
-            top : 50px;
+            top : 0px;
             width: 125px;
             height: 250px;
         }
@@ -65,7 +65,7 @@
   </ul> 
  -->
  <ul>
- 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+ 	<br><br><br><br>
  </ul>
     
 </body>
