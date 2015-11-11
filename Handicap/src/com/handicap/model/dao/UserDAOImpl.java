@@ -91,4 +91,10 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.searchGrade", userid);
 	}
+
+	@Override
+	public String findId(String nickname) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.findId", nickname);
+	}
 }

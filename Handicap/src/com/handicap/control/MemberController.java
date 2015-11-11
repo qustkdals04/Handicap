@@ -360,14 +360,11 @@ public class MemberController {
 
 	// 메시지 글쓰기
 	@RequestMapping("/messageWriteAction")
-	public String messageinsert(HttpSession session, Model m, MessageVO mvo, HttpServletResponse response,
-			HttpServletRequest request) throws SQLException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-		request.setCharacterEncoding("UTF-8");
-		String userid = session.getAttribute("memberid").toString();
-		String sender = dao.findNick(userid);
-		mvo.setSender(sender);
-		PrintWriter writer = response.getWriter();
+	public String messageinsert(HttpSession session, MessageVO mvo, @RequestParam String recipient) throws SQLException, IOException {
+		
+		String userid = session.getAttribute("memberid").toString();		
+		mvo.setSender(userid);		
+		mvo.setRecipient(dao.findId(recipient));
 		if (md.insert(mvo)) {
 			return "redirect:messagelist";
 		}
@@ -379,7 +376,6 @@ public class MemberController {
 	public String messagelist(HttpSession session, Model model, HttpServletRequest request) {
 		// session에 로그인된 id로 닉네임 찾아오기
 		String userid = session.getAttribute("memberid").toString();
-		String recipient = dao.findNick(userid);
 
 		// 페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
 		int pagesize = 5;
@@ -391,8 +387,8 @@ public class MemberController {
 		if (pageNumber != null)
 			pageNum = Integer.parseInt(pageNumber);
 
-		// 발신자가 사용자인 메시지 전체 갯수 초기화
-		int totalCount = md.selectCount(recipient);
+		// 수신자가 사용자인 메시지 전체 갯수 초기화
+		int totalCount = md.selectCount(userid);
 		// 페이지 갯수
 		int totalPageCount = totalCount / pagesize;
 		// 0으로 나눠떨어지지 않을경우 페이지 갯수를 +1한다.
@@ -413,7 +409,7 @@ public class MemberController {
 		rowNumVO.setStartRow(startRow);
 		rowNumVO.setEndRow(endRow);
 		Map map = new HashMap();
-		map.put("recipient", recipient);
+		map.put("recipient", userid);
 		map.put("startRow", startRow);
 		map.put("endRow", endRow);
 		List<MessageVO> list = md.selectAll(map);
@@ -426,12 +422,10 @@ public class MemberController {
 	}
 
 	// 메시지 보낸리스트
-	// 메시지 받은 리스트
 	@RequestMapping("/messagesendlist")
 	public String messagesendlist(HttpSession session, Model model, HttpServletRequest request) {
-		// session에 로그인된 id로 닉네임 찾아오기
-		String userid = session.getAttribute("memberid").toString();
-		String sender = dao.findNick(userid);
+		// session에 로그인된 id 찾아오기
+		String sender = session.getAttribute("memberid").toString();
 
 		// 페이지 사이즈(한페이지에 보일글갯수), 페이지그룹(다음누를시 넘어가는 페이지)
 		int pagesize = 5;

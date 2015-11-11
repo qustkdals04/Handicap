@@ -39,7 +39,7 @@
    <!-- 글 목록 -->
    <select id="bbsList" parameterType="map"
       resultType="com.handicap.model.beans.BbsVO">      
-      select * from (select no, category, title, writedate, author, hits, good, bad, region, status, star, rownum r from (select * from bbs where boardno = #{boardno} order by writedate desc)) where r between #{startRow} and #{endRow}
+      select * from (select boardno, no, category, title, writedate, author, hits, good, bad, region, status, star, rownum r from (select * from bbs where boardno = #{boardno} order by writedate desc)) where r between #{startRow} and #{endRow}
    </select>
    
    <!-- 글 갯수 -->

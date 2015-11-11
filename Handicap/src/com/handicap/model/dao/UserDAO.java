@@ -25,6 +25,8 @@ public interface UserDAO {
 
 	public String findNick(String userid);// 아이디에 맞는 닉네임가져오기
 
+	public String findId(String nickname);
+	
 	public String searchId(Map map);// 아이디 찾기
 
 	public String searchPw(Map map);// 패스워드 찾기

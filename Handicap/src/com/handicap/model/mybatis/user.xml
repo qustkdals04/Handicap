@@ -28,6 +28,11 @@
    	select nickname from member where userid=#{userid}
    </select>
    
+   <!-- 닉네임에 맞는 ID찾기 -->
+   <select id="findId" parameterType="string" resultType="string">
+   	select userid from member where nickname=#{nickname}
+   </select>
+   
    <!-- ID에 맞는 비밀번호찾기 -->
    <select id="findPasswd" parameterType="string" resultType="string">
    	select passwd from member where userid=#{userid}
