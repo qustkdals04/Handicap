@@ -134,7 +134,7 @@ public class BbsController {
       map.put("boardno", boardno);
       List<FileVO> list = fd.bbsFileList(map);
       model.addAttribute("bbsFileName", list);
-      model.addAttribute("bbsContent", bd.select(no, boardno));
+      model.addAttribute("bbsContent", bd.select(map));
       //fv.setFileid(fileid);
       bd.hitsupdate(no);
       //bd.goodupdate(no);
@@ -154,8 +154,9 @@ public class BbsController {
     public String bbsNoticeUpdateForm(@RequestParam int no,
                                @RequestParam int boardno,                             
                                   BbsVO bv,
+                                  Map map,
                                Model model){
-       model.addAttribute("bbsNoticeUpdateForm", bd.select(no, boardno));
+       model.addAttribute("bbsNoticeUpdateForm", bd.select(map));
        return "bbs/bbsNoticeUpdateForm";
     }   
     

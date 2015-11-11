@@ -41,9 +41,9 @@ public class BbsDAO {
       return false;
    }
 
-   public BbsVO select(int no, int boardno) {
+   public BbsVO select(Map map) {
       // TODO Auto-generated method stub
-      return sqlSession.selectOne("bbs.bbsContent",no);
+      return sqlSession.selectOne("bbs.bbsContent",map);
    }
    
    public List<BbsVO> selectAll(Map map) {
