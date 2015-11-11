@@ -38,7 +38,7 @@
 						<li><a href="/Handicap/bbsList?boardno=23" style="font:12px small; ">여행</a></li>
 					</ul>
 					<li>
-					<a href="/Handicap/trade">의료장비</a>
+					<a href="/Handicap/bbsList?boardno=30">의료장비</a>
 					<ul>
 						<li><a href="/Handicap/bbsList?boardno=30" style="font:12px small; ">사고팔기</a></li>
 						<li><a href="/Handicap/bbsList?boardno=31" style="font:12px small; ">질문답변</a></li>
@@ -49,7 +49,7 @@
 					
 				</li>
 					<li>
-					<a href="/Handicap/JOB">일자리 정보 </a>
+					<a href="/Handicap/bbsList?boardno=40">일자리 정보 </a>
 					
 				</li>
 				
@@ -63,10 +63,10 @@
 				
 				<li>
 				
-					<a href="/Handicap/bbsList?boardno=40"  >고객센터</a>
+					<a href="/Handicap/bbsList?boardno=50"  >고객센터</a>
 					<ul class="gcb">
-						<li ><a href="/Handicap/bbsList?boardno=40" style="font:12px small; ">Q&A</a></li>
-						<li><a href="/Handicap/bbsList?boardno=41" style="font:12px small; ">게시판요청</a></li>
+						<li ><a href="/Handicap/bbsList?boardno=50" style="font:12px small; ">Q&A</a></li>
+						<li><a href="/Handicap/bbsList?boardno=51" style="font:12px small; ">게시판요청</a></li>
 						
 					</ul>
 					
