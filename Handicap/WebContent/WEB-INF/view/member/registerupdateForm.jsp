@@ -189,7 +189,7 @@
 	<center>
 		<div id="CssWrapper" align="left">
 			<%@include file="../top.jsp"%>
-			<div id="CssContent" align="center">
+			<div id="CssContent1" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
 			<form method="post" name="registForm" id="registForm">
@@ -198,7 +198,7 @@
 						<tr>
 							<!-- 개인정보 메인 -->
 
-							<th colspan="2"
+							<th colspan="3"
 								style="font-size: x-large; font-weight: bold; color: silver;">회원정보
 								수정</th>
 						<tr>
@@ -218,7 +218,7 @@
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*비밀번호확인
 							</td>
-							<td><pre>   </pre><input type="password" name="passwd2"
+							<td style="width: 282px; "><pre>   </pre><input type="password" name="passwd2"
 								id="passwd2" style="width: 100; height: 22"
 								value="${user.passwd }"></td>
 
@@ -233,18 +233,16 @@
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*닉네임
 							</td>
-							<td style="width: 176px;"><pre> </pre> <input type="text"
-                        name="nickname" id="nickname"
-                        style="vertical-align:; width: 150; height: 28px" value="${user.nickname }"></td>
-                     <td><pre> </pre>
-
-                        <button type="button" class="ml-button" style="font-weight: bold;"
-                           id="nickCheck">중복체크</button></td>
+							<td style="width: 176px; "><pre> 
+							<input type="text"name="nickname" id="nickname"
+                        style="vertical-align:middle; float:left; width: 150;" value="${user.nickname }"><button   type="button" class="ml-button" style="font-weight: bold; float: left; vertical-align: top;"
+                           id="nickCheck">중복체크</button></pre> </td>
+                     
 
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
-							<td id="regPhone" colspan="2"><pre> </pre> <select
+							<td id="regPhone" ><pre> </pre> <select
 								name="phone1" id="phone1" style="width: 50; height: 25">
 									<option value="${fn:substring(phone,0,3)}">${fn:substring(phone,0,3)}</option>
 									<option value="010">010</option>
@@ -306,12 +304,13 @@
                   <input type="hidden" name="image" value="">
 					
 			</form>
+			
+			<br> <br> <br> <br>
+						<%@include file="../Footer.jsp"%>
 
 		</div>
 
-		<div id="sidebar" align="right">
-			<%@include file="../banner.jsp"%>
-		</div>
+		
 
 	</center>
 

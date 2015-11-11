@@ -346,12 +346,15 @@
 			<%@include file="../top.jsp"%>
 
 
-			<div id="CssContent" align="center">
+			<div id="CssContent1" align="center">
 				<%@include file="../menu.jsp"%>
 			</div>
 			<!-- 시작 -->
+			<table>
+			<tr>
+			</table>
 			<div id="DD" align="right" style="width: 1016px;">
-				<img src="img/bn.jpg" align="right">
+				<img src="/Handicap/img/bn.jpg" align="right">
 			</div>
 
 			<!-- <div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
@@ -550,9 +553,6 @@
 			</form>
 
 
-		</div>
-		<div id="sidebar2" align="right">
-			<%@include file="../banner.jsp"%>
 		</div>
 	</center>
 
