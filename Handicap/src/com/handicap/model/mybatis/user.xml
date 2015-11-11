@@ -114,7 +114,7 @@
    
    <!-- 회원정보 가져오기 -->
    <select id="selectmember" parameterType="string" resultType="com.handicap.model.beans.UserVO">
-   	select * from member where userid=#{userid}
+   	select member.*, pq.pquestion from member inner join pq on pq.pqid=member.pqid where userid=#{userid}
    </select>
    
    <!-- 평가여부확인 -->
@@ -124,7 +124,7 @@
    
    <!-- 회원정보 업데이트 -->
    <update id="memberupdate" parameterType="com.handicap.model.beans.UserVO">
-  	update member set passwd=#{passwd}, nickname=#{nickname},email=#{email}, name=#{name}, phone=#{phone}, pquestion=#{pquestion}, panswer=#{panswer}, companyceoname=#{companyceoname},companyaddr=#{companyaddr},companytype=#{companytype}
+  	update member set passwd=#{passwd}, nickname=#{nickname},email=#{email}, name=#{name}, phone=#{phone}, pqid=#{pqid}, panswer=#{panswer}, companyceoname=#{companyceoname},companyaddr=#{companyaddr},companytype=#{companytype}
   	where userid=#{userid}
    </update>
    
@@ -136,6 +136,15 @@
    <!-- 마이페이지 -->
    <select id="myprofile" parameterType="string" resultType="com.handicap.model.beans.UserVO">
     select image, profile from member where userid=#{userid}
+   </select>
+   
+   <!-- 프로필업데이트 -->
+   <update id="profileupdate" parameterType="map">
+   	update member set profile=#{profile} where userid=#{userid}
+   </update>
+   <!-- 프로필가져오기 -->
+   <select id="getprofile" parameterType="string" resultType="string">
+   	select profile from member where userid=#{userid}
    </select>
    <!-- 내가쓴게시글가져오기 -->
    <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">

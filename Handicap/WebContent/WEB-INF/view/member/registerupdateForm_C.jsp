@@ -2,9 +2,9 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<c:set var="phone" value="${user.phone }"/>
-<c:set var="addr" value="${user.companyaddr }"/>
-<c:set var="addr2" value="${fn:indexOf(addr, ',')}"/>
+<c:set var="phone" value="${user.phone }" />
+<c:set var="addr" value="${user.companyaddr }" />
+<c:set var="addr2" value="${fn:indexOf(addr, ',')}" />
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -33,7 +33,9 @@
 	var regPhone2 = /^[0-9]{3,4}$/; //핸드폰번호 정규식
 	var regPhone3 = /^[0-9]{4}$/;
 	var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-	$(document).ready(function() {						
+	$(document)
+			.ready(
+					function() {
 						$("#delete").click(function() { //삭제버튼
 							if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
 								$("#registForm").attr({
@@ -45,7 +47,7 @@
 								return; // 취소
 							}
 						});
-						
+
 						//회사명(닉네임) 중복검사
 						$("#nickCheck")
 								.click(
@@ -176,8 +178,8 @@
 
 						$("#findAddress").click(
 								function() {
-									var address = window.open('/Handicap/addressForm',
-											'', 'top='
+									var address = window.open(
+											'/Handicap/addressForm', '', 'top='
 													+ (screen.height / 2 - 125)
 													+ ',left='
 													+ (screen.width / 2 - 310)
@@ -260,20 +262,15 @@
 											}
 										})
 
-						$("#pquestion")
-								.change(
-										function() {
-											$('#messagePq').remove();
-											if ($("#pquestion").val().indexOf(
-													"'") != -1) {
-												$('#regPq')
-														.append(
-																'<font id=\"messagePq\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
-												chkpq = false;
-											} else {
-												chkpq = true;
-											}
-										});
+						$("#pqid").change(function() {
+							if ($("#pqid").val() == 0) {
+								alert("비밀번호 질문을 선택해주세요.");
+								chkpq = false;
+							} else {
+								chkpq = true;
+								$("#panswer").focus();
+							}
+						});
 
 						$("#panswer")
 								.change(
@@ -319,10 +316,9 @@
 								$("#phone3").focus();
 							} else if (!chkemail) {
 
-							} else if ($("#pquestion").val() == "") {
-								alert("비밀번호 찾기 질문을 입력해 주세요.");
-								$("#pquestion").focus();
-							} else if (!chkpq) {
+							} else if($("#pqid").val()==0){
+		                         alert("비밀번호 찾기 질문을 선택해 주세요.");                          
+		                    } else if (!chkpq) {
 
 							} else if ($("#panswer").val() == "") {
 								alert("비밀번호 찾기 답을 입력해 주세요.");
@@ -358,8 +354,8 @@
 				<img src="img/bn.jpg" align="right">
 			</div>
 
-			<div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
-				주십시오.</div>
+			<!-- <div id="EE" align="left">※ 한번 등록된 ID는 변경할 수 없으므로 신중하게 기입하여
+				주십시오.</div> -->
 
 
 			<form name="registForm" id="registForm">
@@ -384,7 +380,8 @@
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*비밀번호</td>
 							<td colspan="2" id="pwExcept"><pre>  </pre><input
 								type="password" name="passwd" id="passwd"
-								style="vertical-align:; width: 150; height: 28px" value="${user.passwd }"> <pre>   </pre></td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.passwd }"> <pre>   </pre></td>
 
 						</tr>
 
@@ -393,25 +390,27 @@
 
 							<td id="pwEqual" colspan="2"><pre></pre><input
 								type="password" name="passwd2" id="passwd2"
-								style="vertical-align:; width: 150; height: 28px" value="${user.passwd }"> <pre> </pre>
-							</td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.passwd }"> <pre> </pre></td>
 						</tr>
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*회사명
 							</td>
 							<td style="width: 176px;"><pre> </pre> <input type="text"
-                        name="nickname" id="nickname"
-                        style="vertical-align:; width: 150; height: 28px" value="${user.nickname }"></td>
-                     <td><pre> </pre>
+								name="nickname" id="nickname"
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.nickname }"></td>
+							<td><pre> </pre>
 
-                        <button type="button" class="ml-button" style="font-weight: bold;"
-                           id="nickCheck">중복체크</button></td>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="nickCheck">중복체크</button></td>
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*업종</td>
 							<td colspan="2" id="regType"><pre>  </pre><input type="text"
 								name="companytype" id="companytype"
-								style="vertical-align:; width: 150; height: 28px" value="${user.companytype }"> <pre>   </pre></td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.companytype }"> <pre>   </pre></td>
 						</tr>
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*사업자등록번호
@@ -424,8 +423,8 @@
 
 							<td colspan="2" id="pwEqual" colspan="2"><pre></pre><input
 								type="text" name="companyceoname" id="companyceoname"
-								style="vertical-align:; width: 150; height: 28px" value="${user.companyceoname }"> <pre> </pre>
-							</td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.companyceoname }"> <pre> </pre></td>
 
 						</tr>
 						<!-- <td width="150" align="left" style="font-weight: bold;">*닉네임</td>
@@ -441,10 +440,11 @@
 								style="font-weight: bold;">*회사주소</td>
 							<td colspan="2" id="regA" style="width: 514px;"><input
 								type="text" name="companyaddress1" id="companyaddress1"
-								style="width: 50px; height: 22" readonly value="${fn:substring(addr,0, 7)}">
-								<input type="text" name="companyaddress2" id="companyaddress2"
-								style="width: 350px; height: 22" readonly value="${fn:substring(addr,8, addr2)}"
-								> <pre></pre> <span
+								style="width: 50px; height: 22" readonly
+								value="${fn:substring(addr,0, 7)}"> <input type="text"
+								name="companyaddress2" id="companyaddress2"
+								style="width: 350px; height: 22" readonly
+								value="${fn:substring(addr,8, addr2)}"> <pre></pre> <span
 								style="font-size: 10pt;">상세주소 : </span><input type="text"
 								name="companyaddress3" id="companyaddress3"
 								style="width: 180px; height: 22" readonly="readonly"
@@ -461,8 +461,8 @@
 
 							<td id="regName" colspan="2"><pre> </pre><input type="text"
 								name="name" id="name" maxlength="10"
-								style="vertical-align:; width: 150; height: 28px" value="${user.name }"> <pre> </pre>
-							</td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.name }"> <pre> </pre></td>
 
 						</tr>
 						<!-- <td ><pre> </pre>
@@ -473,43 +473,54 @@
 
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
-							<td id="regPhone" colspan="2"><pre> </pre>
-							<select name="phone1" id="phone1" style="width: 50; height: 25">
+							<td id="regPhone" colspan="2"><pre> </pre> <select
+								name="phone1" id="phone1" style="width: 50; height: 25">
 									<option value="${fn:substring(phone,0,3)}">${fn:substring(phone,0,3)}</option>
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
 									<option value="019">019</option>
 							</select> <input type="text" name="phone2" id="phone2"
-								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,3,7)}"> <input
-								type="text" name="phone3" id="phone3"
-								style="width: 45px; height: 22" maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
-							</td>    
+								style="width: 45px; height: 22" maxlength="4"
+								value="${fn:substring(phone,3,7)}"> <input type="text"
+								name="phone3" id="phone3" style="width: 45px; height: 22"
+								maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
+							</td>
 
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*이메일</td>
 							<td id="regEmail" colspan="2"><input type="text"
 								name="email" id="email"
-								style="vertical-align:; width: 150; height: 28px" value="${user.email }"> <pre> </pre>
-							</td>
+								style="vertical-align:; width: 150; height: 28px"
+								value="${user.email }"> <pre> </pre></td>
 
 						</tr>
 						<tr>
 							<td width="150" align="left" style="font-weight: bold;">*비밀번호
 								질문</td>
-							<td id="regPq" colspan="2"><input type="text"
-								name="pquestion" id="pquestion"
-								style="vertical-align:; width: 150; height: 28px" value="${user.pquestion }"> <pre> </pre>
-							</td>
+							<td id="regPq" colspan="2"><select name="pqid" id="pqid">
+									<option value="${user.pquestion }">${user.pquestion }</option>
+									<option value="0">비밀번호 힌트 질문</option>
+									<option value="1">아버지 성함은?</option>
+									<option value="2">어머니 성함은?</option>
+									<option value="3">출신 고등학교 이름은?</option>
+									<option value="4">키우는 애완동물의 이름은?</option>
+									<option value="5">초등학교 시절 담임 선생님의 이름은?</option>
+									<option value="6">가장 기억에 남는 장소는?</option>
+									<option value="7">나의 좌우명은?</option>
+									<option value="8">나의 보물 1호는?</option>
+									<option value="9">오래도록 기억하고 싶은 날짜는?</option>
+									<option value="10">초등학교 시절 나의 꿈은?</option>
+							</select> <pre> </pre></td>
 
 						</tr>
 						<tr>
 							<td colspan="1" width="150" align="left"
 								style="font-weight: bold;">*비밀번호 답</td>
 							<td colspan="2" id="regPa"><input type="text" name="panswer"
-								id="panswer" style="vertical-align:; width: 150; height: 28px" value="${user.panswer }">
-								<pre> </pre></td>
+								id="panswer" style="vertical-align:; width: 150; height: 28px"
+								value="${user.panswer }"> <pre> </pre></td>
 
 						</tr>
 						<tr>
@@ -517,10 +528,11 @@
 							<td colspan="2"><pre> </pre>
 								<button type="button" class="ml-button"
 									style="font-weight: bold;" id="register">수정</button>
-								<button type="button" class="ml-button" style="font-weight: bold;" id="delete">회원탈퇴</button>
 								<button type="button" class="ml-button"
-									style="font-weight: bold;" id="cancel" onclick="location.href='/Handicap/'">취소</button> 
-						</td>
+									style="font-weight: bold;" id="delete">회원탈퇴</button>
+								<button type="button" class="ml-button"
+									style="font-weight: bold;" id="cancel"
+									onclick="location.href='/Handicap/'">취소</button></td>
 
 						</tr>
 						<tr>
@@ -529,11 +541,11 @@
 
 					</table>
 
-					<input type="hidden" name="flag" value="2"> 
-					<input type="hidden" name="userid" value="${user.userid }">
-					<input type="hidden" name="companyno" value="${user.companyno }">
-					
-                  <input type="hidden" name="image" value="">
+					<input type="hidden" name="flag" value="2"> <input
+						type="hidden" name="userid" value="${user.userid }"> <input
+						type="hidden" name="companyno" value="${user.companyno }">
+
+					<input type="hidden" name="image" value="">
 				</div>
 			</form>
 

@@ -103,4 +103,18 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.myprofile", userid);
 	}
+
+	@Override
+	public boolean profileupdate(Map map) {
+		// TODO Auto-generated method stub
+		int t = sqlSession.update("user.profileupdate", map);
+		if (t > 0) return true;
+		return false;
+	}
+
+	@Override
+	public String profile(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.getprofile", userid);
+	}
 }

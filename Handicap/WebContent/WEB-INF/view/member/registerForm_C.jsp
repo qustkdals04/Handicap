@@ -316,20 +316,15 @@
                                  }
                               })
 
-                  $("#pquestion")
-                        .change(
-                              function() {
-                                 $('#messagePq').remove();
-                                 if ($("#pquestion").val().indexOf(
-                                       "'") != -1) {
-                                    $('#regPq')
-                                          .append(
-                                                '<font id=\"messagePq\" size=\"2\" color=#FF0000>\'는 입력할 수 없습니다.</font>');
-                                    chkpq = false;
-                                 } else {
-                                    chkpq = true;
-                                 }
-                              });
+                  $("#pqid").change(function(){
+                	 if($("#pqid").val()==0){
+                		 alert("비밀번호 질문을 선택해주세요.");
+                		 chkpq = false;
+                	 } else {
+                		 chkpq = true;
+                		 $("#panswer").focus();
+                	 }
+                  });
 
                   $("#panswer")
                         .change(
@@ -385,9 +380,8 @@
                         $("#phone3").focus();
                      } else if (!chkemail) {
 
-                     } else if ($("#pquestion").val() == "") {
-                        alert("비밀번호 찾기 질문을 입력해 주세요.");
-                        $("#pquestion").focus();
+                     } else if($("#pqid").val()==0){
+                         alert("비밀번호 찾기 질문을 선택해 주세요.");                          
                      } else if (!chkpq) {
 
                      } else if ($("#panswer").val() == "") {
@@ -596,9 +590,20 @@
                   <tr>
                      <td width="150" align="left" style="font-weight: bold;">*비밀번호
                         질문</td>
-                     <td id="regPq" colspan="2"><input type="text"
-                        name="pquestion" id="pquestion"
-                        style="vertical-align:; width: 150; height: 28px"> <pre> </pre>
+                     <td id="regPq" colspan="2"><select name="pqid" id="pqid">
+                     	<option value="0">비밀번호 힌트 질문</option>
+                     	<option value="1">아버지 성함은?</option>
+                     	<option value="2">어머니 성함은?</option>
+                     	<option value="3">출신 고등학교 이름은?</option>
+                     	<option value="4">키우는 애완동물의 이름은?</option>
+                     	<option value="5">초등학교 시절 담임 선생님의 이름은?</option>
+                     	<option value="6">가장 기억에 남는 장소는?</option>
+                     	<option value="7">나의 좌우명은?</option>
+                     	<option value="8">나의 보물 1호는?</option>
+                     	<option value="9">오래도록 기억하고 싶은 날짜는?</option>
+                     	<option value="10">초등학교 시절 나의 꿈은?</option>
+                     </select>
+                     <pre> </pre>
                      </td>
 
                   </tr>

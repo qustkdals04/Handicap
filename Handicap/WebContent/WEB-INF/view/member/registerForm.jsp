@@ -22,6 +22,7 @@ var chkname = false;
 var chkphone2 = false;
 var chkphone3 = false;
 var chkemail = false;
+var chkpq = false;
 var chkpa = false;
 
 var regId = /^[A-Za-z]{1}[A-Za-z0-9]{3,11}$/; //아이디 정규식
@@ -180,6 +181,15 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
                         chkpq = true;
                      }
                   }); */
+                  $("#pqid").change(function(){
+                	 if($("#pqid").val()==0){
+                		 alert("비밀번호 질문을 선택해주세요.");
+                		 chkpq = false;
+                	 } else {
+                		 chkpq = true;
+                		 $("#panswer").focus();
+                	 }
+                  });
                   
                   $("#panswer").change(function() {
                      $('#messagePa').remove();
@@ -233,6 +243,8 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
                           
                        } else if($("#pqid").val()==0){
                           alert("비밀번호 찾기 질문을 선택해 주세요.");                          
+                       } else if(!chkpq){
+                    	   
                        } else if($("#panswer").val()==""){
                           alert("비밀번호 찾기 답을 입력해 주세요.");
                           $("#panswer").focus();

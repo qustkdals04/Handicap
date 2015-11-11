@@ -34,4 +34,8 @@ public interface UserDAO {
 	public int searchGrade(String userid);// 아이디에 맞는 회원등급 가져오기
 
 	public UserVO mypage(String userid);//마이페이지 초기값
+
+	public boolean profileupdate(Map map);
+	
+	public String profile(String userid);
 }

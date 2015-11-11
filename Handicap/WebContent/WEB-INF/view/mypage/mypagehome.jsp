@@ -16,14 +16,37 @@
 <title>mypage home</title>
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
-	document.ready(function(){
-		if($("#chk_info").val() == "활동내역"){
-			
-		} else if($("#chk_info").val() == "댓글내역"){
-			
-		} else{
-			
-		}
+	$(document).ready(function(){
+		$("#chk_info").change(function(){
+			if($("#chk_info").val() == "활동내역"){
+				
+			} else if($("#chk_info").val() == "댓글내역"){
+				
+			} else{
+				
+			}	
+		})
+		
+		$("#btnprofile").click(function(){
+			var profile = "profile="+$("#profile").val();
+			if($("#profile").val()==""){
+				alert("프로필을 변경하시려면 입력후 버튼을 눌러주세요!!");
+				$("#profile").focus();
+			} else{
+				$.ajax({
+					type : "get",
+					url : "mypage/updateprofile",
+					data : profile,
+					success : function(data){
+						$("#profiletxt").text(data);
+						$("#profile").val("");
+					},
+					error : function(status){
+						alert(status);
+					}
+				})
+			}
+		});
 	});
 </script>
 </head>
@@ -44,7 +67,7 @@
          </table>
 
          <table border="1" class="mypageList"> 
-         	<tr><td colspan="2">닉네임 : ${membernick }</td></tr>
+         	<tr><td>닉네임 : ${membernick }</td><td><button type="button" onclick="location.href='/Handicap/mypage/pwcheck'">회원정보수정</button></td></tr>
             <tr>
                <td width="200px" height="200px" align="center"
                   style="vertical-align: middle;">${mypage.image }</td>
@@ -70,18 +93,15 @@
                </td>
             </tr>
             <tr>
-               <td align="center" height="100px" style="vertical-align: middle;">${mypage.profile }</td>
+               <td align="center" height="100px" style="vertical-align: middle;" id="profiletxt">${mypage.profile }</td>
                <!-- 한줄말 -->
             </tr>
             <tr>
                <td align="center"><input type="text"
-                  style="width: 90%; vertical-align: middle; margin-top: 30px;">
+                  style="width: 90%; vertical-align: middle; margin-top: 30px;" name="profile" id="profile">
                   <button type="button" class="ml-button"
-                     style="vertical-align: middle;">한마디하기</button></td>
-            </tr>
-            <tr>
-               <td align="center" height="50px" style="vertical-align: middle;">[현재시간]</td>
-            </tr>
+                     style="vertical-align: middle;" id="btnprofile">한마디하기</button></td>
+            </tr>            
 
          </table>
       </div>

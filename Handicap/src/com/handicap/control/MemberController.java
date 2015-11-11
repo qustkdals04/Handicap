@@ -253,6 +253,18 @@ public class MemberController {
 		model.addAttribute("mypage", dao.mypage(userid));
 		return "mypage/mypagehome";
 	}
+	
+	//프로필수정
+	@RequestMapping("/mypage/updateprofile")
+	public String updateprofile(@RequestParam String profile, HttpSession session, Model model){
+		String userid = session.getAttribute("memberid").toString();
+		Map map = new HashMap();
+		map.put("userid", userid);
+		map.put("profile", profile);
+		dao.profileupdate(map);	
+		model.addAttribute("profile", dao.profile(userid));
+		return "mypage/profile";
+	}
 	// ==============================회원정보수정===============================
 
 	// 회원정보수정 비밀번호체크폼띄우기
