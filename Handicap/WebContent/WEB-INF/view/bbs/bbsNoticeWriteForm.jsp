@@ -94,11 +94,11 @@
  									 <% 
 										if (session.getAttribute("memberid") != null) { 
  											memberid = session.getAttribute("memberid").toString(); 
-											/* String nickname = session.getAttribute("membernick").toString(); */ 
+										    String nickname = session.getAttribute("membernick").toString();  
  									%>  
  									<td width="700px"><input type="text" size="10" 
- 										maxlength="10" id="author" name="author" 
-										 value="<%=memberid%>"></td> 
+ 										maxlength="10" id="nickname" name="nickname" readonly="readonly"
+										 value="<%=memberid%>"></td>
  								</tr> 
  							   <% 
  									} 
@@ -150,8 +150,10 @@
                         </tr> 
                      </table> 
                       <input type="hidden" name="boardno" id="boardno" value="${boardno}"> 
+                     
+                   <input type="hidden" name="category" id="category" value=""> 
                      <input type="hidden" name="region" id="region" value=""> 
-                      <input type="hidden" name="star" id="star" value="0"> 
+                     
                    </form> 
                    </c:when> 
                    <c:when test="${boardno == '32'}"> 
@@ -161,11 +163,11 @@
 									 <% 
  										if (session.getAttribute("memberid") != null) { 
  											memberid = session.getAttribute("memberid").toString(); 
- 											/* String nickname = session.getAttribute("membernick").toString(); */ 
+ 											String nickname = session.getAttribute("membernick").toString(); 
 									%>  
 									<td width="700px"><input type="text" size="10" 
-										maxlength="10" id="author" name="author" 
-										 value="<%=memberid%>"></td> 
+										maxlength="10" id="author" name="author" readonly="readonly"
+										 value="<%=nickname%>"></td> 
  								</tr> 
  							   <% 
 									} 
@@ -219,9 +221,11 @@
                             </td> 
                          </tr> 
                      </table> 
-                     <input type="hidden" name="boardno" id="boardno" value="${boardno}"> 
+                     <input type="hidden" name="boardno" id="boardno" value="${boardno}">
+                     
                       <input type="hidden" name="category" id="category" value=""> 
-                    <input type="hidden" name="region" id="region" value=""> 
+                     <input type="hidden" name="region" id="region" value=""> 
+                      
                    </form> 
                   </c:when> 
                 	<c:otherwise> 
@@ -231,11 +235,11 @@
  									 <% 
  										if (session.getAttribute("memberid") != null) { 
 											memberid = session.getAttribute("memberid").toString(); 
- 											/* String nickname = session.getAttribute("membernick").toString(); */ 
+ 											String nickname = session.getAttribute("membernick").toString(); 
  									%>  
  									<td width="700px"><input type="text" size="10" 
- 										maxlength="10" id="author" name="author" 
-										 value="<%=memberid%>"></td> 
+ 										maxlength="10" id="nickname" name="nickname" readonly="readonly"
+										 value="<%=nickname%>"><input type="hidden" id="author" name="author" value="<%=memberid %>"></td> 
  								</tr> 
 							   <% 
 									} 
@@ -276,6 +280,7 @@
                          </tr> 
                      </table> 
                       <input type="hidden" name="boardno" id="boardno" value="${boardno}"> 
+                      
                      <input type="hidden" name="category" id="category" value=""> 
                      <input type="hidden" name="region" id="region" value=""> 
                       <input type="hidden" name="star" id="star" value="0"> 

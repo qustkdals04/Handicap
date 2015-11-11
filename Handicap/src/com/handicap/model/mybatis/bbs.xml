@@ -35,11 +35,21 @@
    <delete id="fileDelete" parameterType="map">
       delete bbsfile where no = #{no} and boardno = #{boardno}
    </delete>
+   
+   <!-- 평가 삭제 -->
+   <delete id="evalDelete" parameterType="map">
+      delete bbseval where no = #{no} and boardno = #{boardno}
+   </delete>
+   
+   <!-- 댓글 삭제 -->
+   <delete id="commentDelete" parameterType="map">
+      delete bbscomment where no = #{no} and boardno = #{boardno}
+   </delete>
 
    <!-- 글 목록 -->
    <select id="bbsList" parameterType="map"
       resultType="com.handicap.model.beans.BbsVO">      
-      select * from (select boardno, no, category, title, writedate, author, hits, good, bad, region, status, star, rownum r from (select * from bbs where boardno = #{boardno} order by writedate desc)) where r between #{startRow} and #{endRow}
+      select * from (select boardno, no, category, title, writedate, nickname, hits, good, bad, region, status, star, rownum r from (select * from bbs inner join member on bbs.author=member.userid where boardno = #{boardno} order by writedate desc)) where r between #{startRow} and #{endRow}
    </select>
    
    <!-- 글 갯수 -->
@@ -50,7 +60,7 @@
    <!-- 글 내용 보기 -->
    <select id="bbsContent" parameterType="map"
       resultType="com.handicap.model.beans.BbsVO">
-      select * from bbs where no = #{no} and boardno = #{boardno}
+      select boardno, no, category, title, writedate, nickname, contents, hits, good, bad, region, status, star from bbs inner join member on bbs.author=member.userid where no = #{no} and boardno = #{boardno}
    </select>
    
    <!-- 글 수정 -->

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import = "com.handicap.model.beans.BbsVO" %>
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.BbsVO"></jsp:useBean>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
 <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
@@ -50,6 +51,13 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<div id="CssWrapper" align="center">
+      <%@include file="../top.jsp"%>
+		
+
+      <div align="center">
+         <%@include file="../menu.jsp"%>
+      </div>
 
 	
 	<br>
@@ -64,7 +72,8 @@ $(document).ready(function() {
 		<tr>
 				<td align="center" width ="100px"><font size="3px">작성자</font></td>
 
-				<td width="600px"> ${bbsNoticeUpdateForm.author }<!-- <select name="category" id="category">
+				<td width="600px"> ${bbsNoticeUpdateForm.nickname }
+				<!-- <select name="category" id="category">
 						<option value="공지사항1">공지사항1</option>
 						<option value="공지사항2">공지사항2</option>
 						<option value="공지사항3">흠3</option>
@@ -86,21 +95,33 @@ $(document).ready(function() {
 
 				<td align="center"><font size="3px">제 목</font></td>
 				<td><input type="text" size="40" maxlength="50" name="title"
-					id="title" style="width: 100%"></td>
+					id="title" style="width: 100%" value="${bbsNoticeUpdateForm.title }"></td>
 
 			</tr>
 			<tr>
 				<td align="center" ><font size="3px">내 용</font></td>
 				<td width="700px"><textarea name="contents" id="contents" rows="13" cols="40"
-						style="height: 450px; width: 100%"></textarea></td>
+						style="height: 450px; width: 100%" >${bbsNoticeUpdateForm.contents }</textarea></td>
+					
+						
 			</tr>
 			<tr>
 				<td align="center"><font size="3px">파일 첨부</font></td>
 				<td align="left">
 					<table id="fileview" align="left">
+					
 						<tr>
 							<td colspan="2"><input name="files" type="file" /> <input id="addFile"
 								type="button" value="파일첨부" /></td>
+								<td><c:forEach var="bbsFileName"
+                                 items="${bbsFileName}">
+                                 <tr>
+
+                                    <td>${bbsFileName.filename}</td>
+
+                                 </tr>
+                              </c:forEach></td>
+								
 						</tr>
 					</table>
 				</td>
@@ -116,6 +137,6 @@ $(document).ready(function() {
 	<input type="hidden" name="boardno" value="${bbsNoticeUpdateForm.boardno }">
 	<input type="hidden" name="no" value="${bbsNoticeUpdateForm.no }">
 	</form>
-
+ <%@include file="../Footer.jsp"%>
 </body>
 </html>

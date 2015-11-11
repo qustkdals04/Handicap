@@ -152,10 +152,13 @@ public class BbsController {
    
    @RequestMapping("/bbsUpdateForm")
     public String bbsNoticeUpdateForm(@RequestParam int no,
-                               @RequestParam int boardno,                             
-                                  BbsVO bv,
-                                  Map map,
+                               @RequestParam int boardno,
                                Model model){
+	   Map map = new HashMap();	   
+	   map.put("no", no);
+	   map.put("boardno", boardno);
+	   List<FileVO> list = fd.bbsFileList(map);
+	   model.addAttribute("bbsFileName", list);
        model.addAttribute("bbsNoticeUpdateForm", bd.select(map));
        return "bbs/bbsNoticeUpdateForm";
     }   
@@ -164,6 +167,6 @@ public class BbsController {
     @RequestMapping("/bbsUpdate")
     public String bbsUpdate(BbsVO bv) throws SQLException {
        bd.update(bv);         
-       return "redirect:bbsNoticeList";
+       return "redirect:bbsList";
     }
 }

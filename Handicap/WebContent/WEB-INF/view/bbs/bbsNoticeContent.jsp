@@ -15,7 +15,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript"
-   src="/HandicapUpload/js/jquery-1.10.2.min.js"></script>
+   src="/Handicap/js/jquery-1.10.2.min.js"></script>
 
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -92,7 +92,7 @@
                         </tr>
                         <tr>
                            <td colspan="4" align="left"><font size="3px">작성자 :
-                                 ${bbsContent.author}
+                                  ${bbsContent.nickname}
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
                                  ${bbsContent.hits}
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 추천수 :
@@ -122,7 +122,7 @@
                            <td colspan="4">
                                  <c:if test="${bbsFileName !=null }">                  
                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                   <img src="/Handicap/img/${bbsfile.fileoriginal}">
+                   <img height="300px" style="width: 300px;"  src="/Handicap/img/${bbsfile.fileoriginal}">
                 </c:forEach>                     
                </c:if>   
                               <br>${bbsContent.contents}
@@ -156,7 +156,7 @@
 
                         </tr>
                      </table>
-                     <input type="hidden" name="no" value="${bbsContent.no }">
+                    <input type="hidden" name="no" value="${bbsContent.no }"> 
                   </form> <!-- 아래 폼 인쿨루드 -->
                </td>
 
@@ -176,7 +176,7 @@
                         </tr>
                         <tr>
                            <td colspan="4" align="left"><font size="3px">작성자 :
-                                 ${bbsContent.author}
+                                 ${bbsContent.nickname}
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
                                  ${bbsContent.hits}</font></td>
                         </tr>
@@ -185,7 +185,8 @@
                            <td colspan="4">
                                  <c:if test="${bbsFileName !=null }">                  
                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                   <img src="/Handicap/img/${bbsfile.fileoriginal}">
+                   <img  height="300px" style="width: 300px;" src="/Handicap/img/${bbsfile.fileoriginal}">
+                   
                 </c:forEach>                     
                </c:if>   
                               <br>${bbsContent.contents}
@@ -210,16 +211,20 @@
                                  id="list"
                                  onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button></td>
                            <td align="right" colspan="3" width="300px">
-                              <button type="button" id="goodupdate">추천</button>
-                              <button type="button" id="update"
+                              <c:if test="${boardno!=10 }">
+                                 <button type="button" id="goodupdate">추천</button>
+                              </c:if>
+                              <c:if test="${bbsContent.nickname == membernick }">
+                                 <button type="button" id="update"
                                  onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
-                              <button type="button" id="delete">삭제</button>
-
+                                 <button type="button" id="delete">삭제</button>
+                              </c:if>
                            </td>
 
                         </tr>
                      </table>
-                     <input type="hidden" name="no" value="${bbsContent.no }">
+                      <input type="hidden" name="no" value="${bbsContent.no }">
+                      <input type="hidden" name="boardno" value="${bbsContent.boardno }">
                   </form> <!-- 아래 폼 인쿨루드 -->
                </td>
 

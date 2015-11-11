@@ -29,11 +29,13 @@ public class BbsDAO {
    }
 
    public String delete(Map map) throws SQLException {
-      // TODO Auto-generated method stub
-      sqlSession.delete("bbs.bbsDelete", map);
-      sqlSession.delete("bbs.fileDelete", map);
-      return "redirect:bbsNoticeList";
-   }
+	      // TODO Auto-generated method stub
+	      sqlSession.delete("bbs.bbsDelete", map);
+	      sqlSession.delete("bbs.fileDelete", map);
+	      sqlSession.delete("bbs.evalDelete", map);
+	      sqlSession.delete("bbs.commentDelete", map);
+	      return "bbs/bbsList";
+	   }
 
    public boolean update(BbsVO bbs) throws SQLException {      
       int t = sqlSession.update("bbs.bbsUpdate", bbs);
