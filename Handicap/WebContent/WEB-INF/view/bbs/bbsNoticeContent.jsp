@@ -157,6 +157,7 @@
                         </tr>
                      </table>
                     <input type="hidden" name="no" value="${bbsContent.no }"> 
+                    
                   </form> <!-- 아래 폼 인쿨루드 -->
                </td>
 

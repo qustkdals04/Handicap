@@ -147,7 +147,8 @@ public class BbsController {
       Map map = new HashMap();
       map.put("no", no);
       map.put("boardno", boardno);
-      return bd.delete(map);
+      bd.delete(map);
+      return "redirect:bbsList";
    }
    
    @RequestMapping("/bbsUpdateForm")

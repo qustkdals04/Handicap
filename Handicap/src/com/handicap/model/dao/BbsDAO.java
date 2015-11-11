@@ -28,13 +28,20 @@ public class BbsDAO {
       return false;
    }
 
-   public String delete(Map map) throws SQLException {
+   public boolean delete(Map map) throws SQLException {
 	      // TODO Auto-generated method stub
-	      sqlSession.delete("bbs.bbsDelete", map);
-	      sqlSession.delete("bbs.fileDelete", map);
-	      sqlSession.delete("bbs.evalDelete", map);
-	      sqlSession.delete("bbs.commentDelete", map);
-	      return "bbs/bbsList";
+	   	  try{
+		      sqlSession.delete("bbs.fileDelete", map);
+		      sqlSession.delete("bbs.evalDelete", map);
+		      sqlSession.delete("bbs.commentDelete", map);
+	   	  }
+	   	  catch (Exception e){
+	   		  
+	   	  }
+	   	  finally{
+	   		  sqlSession.delete("bbs.bbsDelete", map);
+	   	  }
+	      return true;
 	   }
 
    public boolean update(BbsVO bbs) throws SQLException {      
