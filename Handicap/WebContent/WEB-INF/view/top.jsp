@@ -71,7 +71,7 @@
 		
 	</table> -->
 	
-	<table>
+	<table  style="background-image: url('/Handicap/img/asd.gif');">
 		<tr>	
 			<td rowspan="2" width="276" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157"  style="vertical-align: middle;"  onclick="location.href='/Handicap/'"></td>
 			<td width="300" align="right" style="vertical-align: top;" >
