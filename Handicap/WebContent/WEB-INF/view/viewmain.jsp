@@ -51,12 +51,15 @@
 					</div>
 				</div>
 			</td>
-
-			<td width="900px"><!-- 사이드 메뉴 -->
+			
+			<td><!-- 사이드 메뉴 -->
 					<%@include file="banner.jsp"%>
 			</td>
-
+			
 		</tr>
+
+			
+
 	</table>
 </center>
 </body>
