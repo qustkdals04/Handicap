@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.UserVO;
 
 public class UserDAOImpl implements UserDAO {
@@ -116,5 +117,11 @@ public class UserDAOImpl implements UserDAO {
 	public String profile(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.getprofile", userid);
+	}
+
+	@Override
+	public List<BbsVO> mybbs(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.mybbs",userid);
 	}
 }

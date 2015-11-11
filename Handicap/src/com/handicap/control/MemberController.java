@@ -18,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.RowNumVO;
 import com.handicap.model.beans.UserVO;
@@ -264,6 +265,14 @@ public class MemberController {
 		dao.profileupdate(map);	
 		model.addAttribute("profile", dao.profile(userid));
 		return "mypage/profile";
+	}
+	
+	//내가쓴게시글 가져오기
+	@RequestMapping("/mypage/mybbs")
+	public String mybbs(@RequestParam String userid, Model model){
+		List<BbsVO> list = dao.mybbs(userid);
+		model.addAttribute("mybbs", list);
+		return "mypage/mybbs";
 	}
 	// ==============================회원정보수정===============================
 

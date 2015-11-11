@@ -19,7 +19,18 @@
 	$(document).ready(function(){
 		$("#chk_info").change(function(){
 			if($("#chk_info").val() == "활동내역"){
-				
+				var userid = "userid=${memberid}"
+				$.ajax({
+					type : "get",
+					url : "mypage/mybbs",
+					data : userid,
+					success : function(data){
+						$("#mypageList").append()
+					},
+					error : function(status){
+						alert(status);
+					}
+				});
 			} else if($("#chk_info").val() == "댓글내역"){
 				
 			} else{
@@ -82,6 +93,9 @@
                      <tr>
                         <td align="center" height="500px">[내역 리스트]</td>
                         <!-- 리스트 -->
+                        <table id="mypageList">
+                        
+                        </table>
                      </tr>
                   </table>
                </td>
