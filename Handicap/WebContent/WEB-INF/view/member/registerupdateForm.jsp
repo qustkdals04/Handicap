@@ -62,7 +62,7 @@
 												$
 														.ajax({
 															type : "GET",
-															url : "nickCheck",
+															url : "../nickCheck",
 															data : checkNick,
 															success : function(
 																	data) {
