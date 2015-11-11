@@ -9,8 +9,8 @@
    
    <!-- 회원가입  -->
    <insert id="insert" parameterType="com.handicap.model.beans.UserVO">
-   	insert into member (userid,passwd,email,name,nickname,phone,pquestion,panswer,usergrade,companyno,companyceoname,companyaddr,companytype,image)
-   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pquestion}, #{panswer}, #{usergrade},#{companyno},#{companyceoname},#{companyaddr},#{companytype},#{image})
+   	insert into member (userid,passwd,email,name,nickname,phone,pqid,panswer,usergrade,companyno,companyceoname,companyaddr,companytype,image)
+   	values (#{userid}, #{passwd}, #{email}, #{name}, #{nickname}, #{phone}, #{pqid}, #{panswer}, #{usergrade},#{companyno},#{companyceoname},#{companyaddr},#{companytype},#{image})
    </insert>   
    
    <!-- 아이디목록 -->

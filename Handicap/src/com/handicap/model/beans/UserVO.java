@@ -8,7 +8,7 @@ public class UserVO {
 	private String nickname;
 	private String phone;
 	private String email;
-	private String pquestion;
+	private int pqid;
 	private String panswer;
 	private int usergrade;
 	private String companyno;
@@ -55,11 +55,13 @@ public class UserVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPquestion() {
-		return pquestion;
+	
+	
+	public int getPqid() {
+		return pqid;
 	}
-	public void setPquestion(String pquestion) {
-		this.pquestion = pquestion;
+	public void setPqid(int pqid) {
+		this.pqid = pqid;
 	}
 	public String getPanswer() {
 		return panswer;

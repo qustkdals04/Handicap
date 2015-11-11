@@ -14,6 +14,18 @@
 	href="/Handicap/css/styles.css">
 
 <title>mypage home</title>
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+	document.ready(function(){
+		if($("#chk_info").val() == "활동내역"){
+			
+		} else if($("#chk_info").val() == "댓글내역"){
+			
+		} else{
+			
+		}
+	});
+</script>
 </head>
 <body>
    <div id="CssWrapper" align="center">
@@ -31,7 +43,8 @@
             </tr>
          </table>
 
-         <table border="1" class="mypageList">
+         <table border="1" class="mypageList"> 
+         	<tr><td colspan="2">닉네임 : ${membernick }</td></tr>
             <tr>
                <td width="200px" height="200px" align="center"
                   style="vertical-align: middle;">${mypage.image }</td>
@@ -40,8 +53,8 @@
                   <table border="1" align="center" width="500px">
                      <tr>
                         <td style="vertical-align: top;" height="20px" align="center">
-                           <input type="radio" name="chk_info" value="활동내역">활동내역 <input
-                           type="radio" name="chk_info" value="댓글내역">댓글내역
+                           <input type="radio" name="chk_info" id="chk_info" value="활동내역">활동내역 <input
+                           type="radio" name="chk_info" id="chk_info" value="댓글내역">댓글내역
                      </tr>
                      <tr>
                         <td align="center" height="500px">[내역 리스트]</td>
@@ -73,14 +86,6 @@
          </table>
       </div>
       <%@include file="../Footer.jsp"%>
-
-
-      <%-- <div id="sidebar" align="right">
-         <%@include file="../banner.jsp"%>
-
-
-      </div>
- --%>
    </div>
    <!-- 전체 wapper -->
 
