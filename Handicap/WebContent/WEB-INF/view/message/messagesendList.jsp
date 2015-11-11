@@ -36,7 +36,7 @@
 		<tr>
 			<c:forEach var="message" items="${messageList}">
 				<tr>
-					<td>${message.recipient }</td>
+					<td>${message.nickname }</td>
 					<td><a
 						href="/Handicap/messagesendcontent?messageno=${message.messageno }&pageNumber=${pageNumber}">${message.contents }</a></td>
 					<td>${message.senddate }</td>

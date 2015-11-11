@@ -55,6 +55,12 @@ public class MessageDAO {
 		//메세지 상세보기
 		return sqlSession.selectOne("user.messagecontent",messageno);
 	}
+	
+	public MessageVO sendselect(int messageno) {
+		// TODO Auto-generated method stub
+		//메세지 상세보기
+		return sqlSession.selectOne("user.messagesendcontent",messageno);
+	}
 
 	//받은메시지 리스트
 	public List<MessageVO> selectAll(Map map) {//메시지리스트뿌리기

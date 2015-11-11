@@ -51,7 +51,7 @@
 			<table class="list1">
 				<tr>
 					<th colspan="2" width="400" align="left">보낸사람 :
-						${messageContent.sender}</th>
+						${messageContent.nickname}</th>
 					<!-- 받는사람 -->
 					
 					<th align="right" width="400px">${messageContent.senddate }</th>

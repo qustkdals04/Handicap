@@ -46,20 +46,28 @@
    
    <!-- 받은메시지 리스트 -->
    <select id="messagelist" parameterType="map" resultType="com.handicap.model.beans.MessageVO">
-   	select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
-   	from (select * from message where recipient=#{recipient} order by senddate desc)) where r between #{startRow} and #{endRow}
+   	<!-- select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
+   	from (select * from message where recipient=#{recipient} order by senddate desc)) where r between #{startRow} and #{endRow} -->
+   	select * from (select messageno, nickname, recipient,contents,status,senddate,rownum r from (select * from message inner join member on message.sender=member.userid where recipient=#{recipient} order by senddate desc)) where r between #{startRow} and #{endRow}
    </select>
    
    <!-- 보낸메시지 리스트 -->
    <select id="messagesendlist" parameterType="map" resultType="com.handicap.model.beans.MessageVO">
-   	select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
-   	from (select * from message where sender=#{sender} order by senddate desc)) where r between #{startRow} and #{endRow}
+   	<!-- select * from (select messageno,sender,recipient,contents,status,senddate,rownum r 
+   	from (select * from message where sender=#{sender} order by senddate desc)) where r between #{startRow} and #{endRow} -->
+   	select * from (select messageno, sender, nickname,contents,status,senddate,rownum r from (select * from message inner join member on message.recipient=member.userid where sender=#{sender} order by senddate desc)) where r between #{startRow} and #{endRow}
    </select>
    
    <!-- select * from message where recipient=#{recipient} order by senddate desc -->
-   <!-- 메시지 상세보기 + 상세보기시 상태 읽음으로 변경-->
+   <!-- 보낸메시지 상세보기 + 상세보기시 상태 읽음으로 변경-->
+   <select id="messagesendcontent" parameterType="int" resultType="com.handicap.model.beans.MessageVO">
+   	select nickname, contents, senddate from message inner join member on message.recipient=member.userid where messageno=#{messageno}   	
+   </select>
+   
+   <!-- select * from message where recipient=#{recipient} order by senddate desc -->
+   <!-- 받은메시지 상세보기 + 상세보기시 상태 읽음으로 변경-->
    <select id="messagecontent" parameterType="int" resultType="com.handicap.model.beans.MessageVO">
-   	select * from message where messageno=#{messageno}   	
+   	select nickname, contents, senddate from message inner join member on message.sender=member.userid where messageno=#{messageno}   	
    </select>
    <update id="messageupdate" parameterType="int">
    	update message set status=2 where messageno=#{messageno}
@@ -122,46 +130,8 @@
    
    <!-- 회원정보 삭제 -->
    <delete id="memberdelete" parameterType="string">
-   	delete from member where nickname=#{nickname} 
+   	delete from member where userid=#{userid} 
    </delete>
-   
-   <!-- 마이페이지 내게시글 -->
-   <select id="mybbsnotice" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsnotice where author=#{author}
-   </select>
-   <select id="mybbsnews" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsnews where author=#{author}
-   </select>
-   <select id="mybbsbody" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsbody where author=#{author}
-   </select>
-   <select id="mybbsmental" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsmental where author=#{author}
-   </select>
-   <select id="mybbsclub" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsclub where author=#{author}
-   </select>
-   <select id="mybbstravel" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbstravel where author=#{author}
-   </select>
-   <select id="mybbstrade" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbstrade where author=#{author}
-   </select>
-   <select id="mybbsquestion" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsquestion where author=#{author}
-   </select>
-   <select id="mybbsreview" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsreview where author=#{author}
-   </select>
-   <select id="mybbsjob" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsjob where author=#{author}
-   </select>
-   <select id="mybbsqna" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsqna where author=#{author}
-   </select>
-   <select id="mybbsrequest" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbsrequest where author=#{author}
-   </select>
    
 </mapper>
 <!-- user.xml -->

@@ -7,6 +7,7 @@ public class MessageVO {
 	String contents;
 	String senddate;
 	int status;
+	String nickname;
 	
 	public int getMessageno() {
 		return messageno;
@@ -44,6 +45,14 @@ public class MessageVO {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	
+	
 	
 	
 }

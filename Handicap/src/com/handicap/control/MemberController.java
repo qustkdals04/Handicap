@@ -343,7 +343,7 @@ public class MemberController {
 	@RequestMapping("/mypage/registerdelete")
 	public String registerdelete(HttpSession session) throws SQLException {
 		String userid = session.getAttribute("memberid").toString();		
-		dao.delete(dao.findNick(userid));
+		dao.delete(userid);
 		// 로그인기록삭제
 		session.invalidate();
 		return "redirect:/";
@@ -482,7 +482,7 @@ public class MemberController {
 	// 보낸메시지 상세보기
 	@RequestMapping("/messagesendcontent")
 	public String messagesendcontent(@RequestParam String messageno, Model model) {
-		model.addAttribute("messagesendContent", md.select(Integer.parseInt(messageno)));
+		model.addAttribute("messagesendContent", md.sendselect(Integer.parseInt(messageno)));
 		return "message/messagesendContent";
 	}
 

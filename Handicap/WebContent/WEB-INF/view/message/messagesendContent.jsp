@@ -42,7 +42,7 @@
 			<table class="list1" >
 				<tr>
 					<th colspan="2" align='left' width="400px">받는사람 :
-						${messagesendContent.recipient}</th>
+						${messagesendContent.nickname}</th>
 
 					<%-- <td align = "center" width="100px" color = "#678197">받는사람  </td>
 				<td style="width: 150px;height:22px;">&nbsp;${messagesendContent.recipient}</td> <!-- 보낸사람 --> --%>
