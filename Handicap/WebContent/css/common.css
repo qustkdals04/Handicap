@@ -3,7 +3,7 @@
 	padding:0;
 }
 body,table,input,textarea,select,button {
-	font-family:dotum,'돋움',sans-serif
+	font-family:dotum,'�룍��',sans-serif
 }
 body {
 	color: #666;
@@ -33,7 +33,7 @@ div#gnb ul.menu {
 	overflow:hidden;
 	width:900px;
 	height:90px;
-	border-top:2px solid #F3B514; /* 메뉴위에 색깔 */
+	border-top:2px solid #F3B514; /* 硫붾돱�쐞�뿉 �깋源� */
 	border-bottom:2px solid #ffffff;
 }
 div#gnb ul.menu li {
@@ -53,22 +53,22 @@ div#gnb ul.menu li a {
 }
 div#gnb ul.menu li a:hover,
 div#gnb ul.menu li a.on {
-	background: #F3B514; <!--마우스오버시 색깔-->
+	background: #F3B514; <!--留덉슦�뒪�삤踰꾩떆 �깋源�-->
 	
 }
 div#gnb ul.menu li ul {
 	display:none;
 	position:absolute;
-	left:120;
 	
-	/* width:1200px;  */
+	
+	 
 	
 }
 
 
 div#gnb ul.menu li ul.gcb{
 	display:none;
-	position:absolute;
+
 	right:0;
 	overflow: auto;
 	
@@ -87,7 +87,7 @@ div#gnb ul.menu li ul li a.on {
 }
 div#gc  a:hover,
 div#gc a.on {
-	background: #F3B514; <!--로그인,회원가입,id찾기 마우스오버시 색깔-->
+	background: #F3B514; <!--濡쒓렇�씤,�쉶�썝媛��엯,id李얘린 留덉슦�뒪�삤踰꾩떆 �깋源�-->
 	
 } 
 

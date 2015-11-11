@@ -26,7 +26,7 @@
         	border:1px solid #000000;
          
             top : 0px;
-            left : 80%;
+            left : 85%;
             width: 125px;
             height: 250px;
         }
