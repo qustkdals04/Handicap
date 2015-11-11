@@ -1,61 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<%@ page import="com.handicap.model.beans.BbsVO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:useBean id="MessageVO" class="com.handicap.model.beans.BbsVO"></jsp:useBean>
 <link rel="stylesheet" type="text/css" media="all"
    href="/Handicap/css/main.css">
 <link rel="stylesheet" type="text/css" media="all"
    href="/Handicap/css/new.css">
 <link rel="stylesheet" type="text/css" media="all"
    href="/Handicap/css/styles.css">
-<title>글쓰기</title>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript"
-   src="http://code.jquery.com/jquery-latest.min.js"></script>
+   src="/HandicapUpload/js/jquery-1.10.2.min.js"></script>
 
+<title>Insert title here</title>
 <script type="text/javascript">
-   $(document)
-         .ready(
-               function() {
-                  $("#bbsWrite").click(function() {
-                     if ($("#title").val() == "") {
-                        alert("제목을 입력해주세요..");
-                        $("#title").focus();
-                     } else if ($("#contents").val() == "") {
-                        alert("내용을 입력해주세요..");
-                        $("#contents").focus();
-                     } else {
-                        $("#bbsWriteForm").attr({
-                           action : "bbsWrite",
-                           method : 'post'
-                        });
-                        $("#bbsWriteForm").submit();
-                     }
-                  })
-
-                  /* $("#bbsNoticelist").click(function(){   
-                     $("#bbsNoticelist").attr({
-                        action : "bbsNoticelist",
-                        method : 'post'
-                     });
-                  }); */
-
-                  $('#addFile')
-                        .click(
-                              function() {
-                                 var fileIndex = $('#fileview tr')
-                                       .children().length;
-                                 $('#fileview')
-                                       .append(
-                                             '<tr><td>'
-                                                   + '   <input type="file" name="files['+ fileIndex +']" />'
-                                                   + '</td></tr>');
-                              });
-
-               });
+   $(document).ready(function() {
+      $("#delete").click(function() { //삭제버튼
+         if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
+            $("#bbsContent").attr({
+               action : 'bbsDelete',
+               method : 'post'
+            });
+            $("#bbsContent").submit();
+         } else {
+            return; // 취소
+         }
+      });
+      /* $("#goodupdate").click(function(){
+         if(confirm("추천하였습니다!!")==true){
+            $("#bbsNoticeContent").attr({action:'goodupdate', method:'post'});
+            $("#bbsNoticeContent").submit();
+         }
+      }) */
+      $("#goodupdate").click(function() {
+         /*  if ($("#goodupdate")) {
+            alert("추천할꺼야?");
+         } else {  */
+         $.ajax({
+            type : "GET",
+            url : "goodupdate",
+            data : goodupdate,
+            success : function(data) {
+               goodCk = true;
+               alert("추천하였습니다!!");
+            }
+         });
+         //}
+      });
+   });
 </script>
 </head>
 <body>
@@ -74,226 +71,167 @@
                <td width="100px" align="center"><%@include
                      file="../new/NewSubMenu.jsp"%></td>
                <td>
-          		  
-               <!-- 위에 폼 인쿨루드 -->
-               
-               
-                  <form name="bbsWriteForm"
-                     id="bbsWriteForm" enctype="multipart/form-data" >
+                  <!-- 위에 폼 인쿨루드 -->
+
+                  <form id="bbsContent" name="bbsContent">
                      <table class="bbsTitle">
                         <tr>
-                           <td align="center"><font size ="15">글 쓰기</font></td>
+                           <td align="center"><font size="15"></font></td>
                         </tr>
                      </table>
 					<c:choose>
-						<c:when test="${boardno == '30'}">
+					<c:when test="${boardno == '32' }">
+						<table class="bbsList">
+                        <tr>
+                           <td width="50px"><font size="3px"
+                              style="font-weight: bold;">제목 :</td>
+                           <td width="350px" align="left"><font size="3px"
+                              style="font-weight: bold;">${bbsContent.category}${bbsContent.title}</font></td>
+                           <td colspan="2" width="300px" align="right"><font
+                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
+                        </tr>
+                        <tr>
+                           <td colspan="4" align="left"><font size="3px">작성자 :
+                                 ${bbsContent.author}
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
+                                 ${bbsContent.hits}
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 추천수 :
+                                 ${bbsContent.good}
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 평점 
+                                  <c:choose>
+														<c:when test="${bbs.star == '1'}">
+															<img width="100" height="25" src="/Handicap/img/star1.png">
+														</c:when>
+														<c:when test="${bbs.star =='2'}">
+															<img width="100" height="25" src="/Handicap/img/stat2.png">
+														</c:when>
+														<c:when test="${bbs.star == '3'}">
+															<img width="100" height="25" src="/Handicap/img/stat3.png">
+														</c:when>
+														<c:when test="${bbs.star =='4'}">
+															<img width="100" height="25" src="/Handicap/img/stat4.png">
+														</c:when>
+														<c:when test="${bbs.star == '5'}">
+															<img width="100" height="25" src="/Handicap/img/stat5.png">
+														</c:when>
+													</c:choose>
+											</font></td>
+                        </tr>
+                        <tr>
+
+                           <td colspan="4">
+                                 <c:if test="${bbsFileName !=null }">                  
+                <c:forEach var="bbsfile" items="${bbsFileName}">
+                   <img src="/Handicap/img/${bbsfile.fileoriginal}">
+                </c:forEach>                     
+               </c:if>   
+                              <br>${bbsContent.contents}
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><font size="1px">첨부파일 : </font></td>
+                           <td colspan="4"><c:forEach var="bbsFileName"
+                                 items="${bbsFileName}">
+                                 <tr>
+
+                                    <td>${bbsFileName.filename}</td>
+
+                                 </tr>
+                              </c:forEach></td>
+
+                        </tr>
+                     </table>
                      <table class="bbsList">
-								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
-									 <%
-										if (session.getAttribute("memberid") != null) {
-											memberid = session.getAttribute("memberid").toString();
-											/* String nickname = session.getAttribute("membernick").toString(); */
-									%> 
-									<td width="700px"><input type="text" size="10"
-										maxlength="10" id="author" name="author"
-										 value="<%=memberid%>"></td>
-								</tr>
-							   <%
-									}
-								%>
-						<tr>
-                        	<td>말머리</td>
-					 		<td>
-					 			<select id="category" name="category">
-					 				<option value="0">선택</option>
-					 				<option value="[삽니다]">삽니다</option>
-					 				<option value="[팝니다]">팝니다</option>					 				
-					 			</select>
-					 		</td>
-					 	</tr> 
-								<tr>
- 							
-                           <td align="center"><font size="3px">제 목</font></td>
-                           <td><input type="text" size="40" maxlength="50"   name="title" id="title" style="width: 100%"></td>
+                        <tr>
+                           <td align="left" width="400px"><button type="button"
+                                 id="list"
+                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button></td>
+                           <td align="right" colspan="3" width="300px">
+                              <button type="button" id="goodupdate">추천</button>
+                              <button type="button" id="update"
+                                 onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
+                              <button type="button" id="delete">삭제</button>
+
+                           </td>
 
                         </tr>
-                        <tr>
-                           <td align="center"><font size="3px">내 용</font></td>
-                           <td><textarea name="contents" id="contents" rows="13" cols="40" style="height: 450px; width: 100%"></textarea></td>
-                        </tr>
-                        <tr>
-                           <td align="center"><font size="3px">파일 첨부</font></td>
-                           <td align="left">
-                              <table id="fileview" align="left">
-                                 <tr>
-                                    <td colspan="2"><input name="files" type="file" > <input
-                                       id="addFile" type="button" value="파일첨부" ></td>
-                                 </tr>
-                              </table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <!-- a href="bbsNoticeWriteForm" -->
-                           <td>
-                              <button type="button" id="bbsNoticelist"
-                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan="2" align="right">
-                              <button type="reset" id="bbsreset">다시작성</button>
-                              <button type="button" id="bbsWrite">확인</button>
-                           </td>
-                        </tr>
                      </table>
-                     <input type="hidden" name="boardno" id="boardno" value="${boardno}">
-                     <input type="hidden" name="region" id="region" value="">
-                     <input type="hidden" name="star" id="star" value="0">
-                  </form>
-                  </c:when>
-                  <c:when test="${boardno == '32'}">
-                  	<table class="bbsList">
-								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
-									 <%
-										if (session.getAttribute("memberid") != null) {
-											memberid = session.getAttribute("memberid").toString();
-											/* String nickname = session.getAttribute("membernick").toString(); */
-									%> 
-									<td width="700px"><input type="text" size="10"
-										maxlength="10" id="author" name="author"
-										 value="<%=memberid%>"></td>
-								</tr>
-							   <%
-									}
-								%>
-						<tr>
- 							
-                           <td align="center"><font size="3px">제 목</font></td>
-                           <td><input type="text" size="40" maxlength="50"   name="title" id="title" style="width: 100%"></td>
-
-                        </tr>
-                        <tr>
-                           <td align="center"><font size="3px">내 용</font></td>
-                           <td><textarea name="contents" id="contents" rows="13" cols="40" style="height: 450px; width: 100%"></textarea></td>
-                        </tr>
-                        <tr>
-                           <td align="center"><font size="3px">파일 첨부</font></td>
-                           <td align="left">
-                              <table id="fileview" align="left">
-                                 <tr>
-                                    <td colspan="2"><input name="files" type="file" > <input
-                                       id="addFile" type="button" value="파일첨부" ></td>
-                                 </tr>
-                                  <tr>
-                        	<td><font size="3px">별점</font></td>
-					 		<td>
-					 			<select id="star" name="star">
-					 				<option value="0">선택</option>
-					 				<option value="1">1</option>
-					 				<option value="2">2</option>
-					 				<option value="3">3</option>
-					 				<option value="4">4</option>
-					 				<option value="5">5</option>
-					 			</select>
-					 		</td>
-					 	</tr>
-                              </table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <!-- a href="bbsNoticeWriteForm" -->
-                           <td>
-                              <button type="button" id="bbsNoticelist"
-                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan="2" align="right">
-                              <button type="reset" id="bbsreset">다시작성</button>
-                              <button type="button" id="bbsWrite">확인</button>
-                           </td>
-                        </tr>
-                     </table>
-                     <input type="hidden" name="boardno" id="boardno" value="${boardno}">
-                     <input type="hidden" name="category" id="category" value="">
-                     <input type="hidden" name="region" id="region" value="">
-                     
-                  </form>
-                  </c:when>
-                 	<c:otherwise>
-                 	<table class="bbsList">
-								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
-									 <%
-										if (session.getAttribute("memberid") != null) {
-											memberid = session.getAttribute("memberid").toString();
-											/* String nickname = session.getAttribute("membernick").toString(); */
-									%> 
-									<td width="700px"><input type="text" size="10"
-										maxlength="10" id="author" name="author"
-										 value="<%=memberid%>"></td>
-								</tr>
-							   <%
-									}
-								%> 
-								<tr>
- 			
-                           <td align="center"><font size="3px">제 목</font></td>
-                           <td><input type="text" size="40" maxlength="50"   name="title" id="title" style="width: 100%"></td>
-
-                        </tr>
-                        <tr>
-                           <td align="center"><font size="3px">내 용</font></td>
-                           <td><textarea name="contents" id="contents" rows="13" cols="40" style="height: 450px; width: 100%"></textarea></td>
-                        </tr>
-                        <tr>
-                           <td align="center"><font size="3px">파일 첨부</font></td>
-                           <td align="left">
-                              <table id="fileview" align="left">
-                                 <tr>
-                                    <td colspan="2"><input name="files" type="file" > <input
-                                       id="addFile" type="button" value="파일첨부" ></td>
-                                 </tr>
-                              </table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <!-- a href="bbsNoticeWriteForm" -->
-                           <td>
-                              <button type="button" id="bbsNoticelist"
-                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td colspan="2" align="right">
-                              <button type="reset" id="bbsreset">다시작성</button>
-                              <button type="button" id="bbsWrite">확인</button>
-                           </td>
-                        </tr>
-                     </table>
-                      <input type="hidden" name="boardno" id="boardno" value="${boardno}">
-                     <input type="hidden" name="category" id="category" value="">
-                     <input type="hidden" name="region" id="region" value="">
-                     <input type="hidden" name="star" id="star" value="0">
-                  </form>
-                 	</c:otherwise>
-                  
-                  </c:choose>
-                   <!-- 아래 폼 인쿨루드 -->
+                     <input type="hidden" name="no" value="${bbsContent.no }">
+                  </form> <!-- 아래 폼 인쿨루드 -->
                </td>
-              
+
             </tr>
          </table>
       </div>
-     
+					</c:when>
+					<c:otherwise>
+                     <table class="bbsList">
+                        <tr>
+                           <td width="50px"><font size="3px"
+                              style="font-weight: bold;">제목 :</td>
+                           <td width="350px" align="left"><font size="3px"
+                              style="font-weight: bold;">${bbsContent.category}${bbsContent.title}</font></td>
+                           <td colspan="2" width="300px" align="right"><font
+                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
+                        </tr>
+                        <tr>
+                           <td colspan="4" align="left"><font size="3px">작성자 :
+                                 ${bbsContent.author}
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
+                                 ${bbsContent.hits}</font></td>
+                        </tr>
+                        <tr>
+
+                           <td colspan="4">
+                                 <c:if test="${bbsFileName !=null }">                  
+                <c:forEach var="bbsfile" items="${bbsFileName}">
+                   <img src="/Handicap/img/${bbsfile.fileoriginal}">
+                </c:forEach>                     
+               </c:if>   
+                              <br>${bbsContent.contents}
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left"><font size="1px">첨부파일 : </font></td>
+                           <td colspan="4"><c:forEach var="bbsFileName"
+                                 items="${bbsFileName}">
+                                 <tr>
+
+                                    <td>${bbsFileName.filename}</td>
+
+                                 </tr>
+                              </c:forEach></td>
+
+                        </tr>
+                     </table>
+                     <table class="bbsList">
+                        <tr>
+                           <td align="left" width="400px"><button type="button"
+                                 id="list"
+                                 onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button></td>
+                           <td align="right" colspan="3" width="300px">
+                              <button type="button" id="goodupdate">추천</button>
+                              <button type="button" id="update"
+                                 onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
+                              <button type="button" id="delete">삭제</button>
+
+                           </td>
+
+                        </tr>
+                     </table>
+                     <input type="hidden" name="no" value="${bbsContent.no }">
+                  </form> <!-- 아래 폼 인쿨루드 -->
+               </td>
+
+            </tr>
+         </table>
+      </div>
+      </c:otherwise>
+      </c:choose>
       <!-- contents 끝 -->
       <%@include file="../Footer.jsp"%>
       <%-- <div id="sidebar" align="right">
          <%@include file="../banner.jsp"%>
-
-
       </div>
  --%>
    </div>

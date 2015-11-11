@@ -21,7 +21,7 @@
    
    <!-- 파일 보기 -->
     <select id="bbsFileList" parameterType="map" resultType="com.handicap.model.beans.FileVO">
-      select filename, fileid
+      select filename, fileid, fileoriginal
       from bbsfile 
       where no = #{no} and boardno = #{boardno}
    </select>

@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/styles.css">
 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -18,11 +19,12 @@
 <title>Insert title here</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
-<script type="text/javascript">
-	
-</script>
+<script type="text/javascript"> 
+ 	 
+ </script>
 </head>
 <body>
+
 
 	<center>
 		<table>
@@ -31,8 +33,12 @@
 					<!-- 게시판 리스트 -->
 
 
+
+
 					<div id="CssWrapper" align="center">
 						<%@include file="../top.jsp"%>
+
+
 
 
 						<div align="center">
@@ -46,6 +52,7 @@
 											file="../new/NewSubMenu.jsp"%></td>
 									<td>
 										<!-- 위에 폼 인쿨루드 -->
+
 
 										<table class="bbsTitle">
 											<tr>
@@ -64,9 +71,9 @@
 														<th width="9%">평 점</th>
 													</tr>
 													<tr>
-														<%-- <% int boardno; 
-												boardno = BbsVO.getBoardno();
-												if(boardno==31){
+														<%-- <% int boardno;  
+											boardno = BbsVO.getBoardno(); 
+ 												if(boardno==31){ 
 											%> --%>
 														<c:forEach var="bbs" items="${list}">
 															<tr>
@@ -83,13 +90,16 @@
 																				src="/Handicap/img/star1.png">
 																		</c:when>
 																		<c:when test="${bbs.star =='2'}">
-																			<img width="60" height="12" src="/Handicap/img/stat2.png">
+																			<img width="60" height="12"
+																				src="/Handicap/img/stat2.png">
 																		</c:when>
 																		<c:when test="${bbs.star == '3'}">
-																			<img  width="60" height="12" src="/Handicap/img/stat3.png">
+																			<img width="60" height="12"
+																				src="/Handicap/img/stat3.png">
 																		</c:when>
 																		<c:when test="${bbs.star =='4'}">
-																			<img width="60" height="12" src="/Handicap/img/stat4.png">
+																			<img width="60" height="12"
+																				src="/Handicap/img/stat4.png">
 																		</c:when>
 																		<c:when test="${bbs.star == '5'}">
 																			<img width="60" height="12"
@@ -109,12 +119,13 @@
 																	<th width="9%">조회수</th>
 																	<th width="9%">추천수</th>
 
+
 																</tr>
 																<tr>
-																	<%-- <% int boardno; 
-												boardno = BbsVO.getBoardno();
-												if(boardno==31){
-											%> --%>
+																	<%-- <% int boardno;  
+ 												boardno = BbsVO.getBoardno(); 
+ 												if(boardno==31){ 
+ 											%> --%>
 																	<c:forEach var="bbs" items="${list}">
 																		<tr>
 																			<td align="center">${bbs.no}</td>
@@ -125,79 +136,86 @@
 																			<td align="center">${bbs.hits}</td>
 																			<td align="center">${bbs.good}</td>
 
+
 																		</tr>
 																	</c:forEach>
+														</c:otherwise>
+														</c:choose>
+													</tr>
+
+
+													<tr>
+														<input type="hidden" name="pageNumber"
+															value="${pageNumber }">
+													</tr>
+
+
+												</table>
+												<table align="center">
+													<tr>
+														<td style="font-size: large;"><c:if
+																test="${startPage>1 }">
+																<span> <a
+																	href="/Handicap/bbsList?pageNumber=${startPage-1 }">이전</a>
+																</span>
+															</c:if> <c:forEach var="i" begin="${startPage }"
+																end="${endPage }">
+																<c:choose>
+																	<c:when test="${pageNumber==i }">
+																		<span> <a
+																			href="/Handicap/bbsList?pageNumber=${i }"
+																			style="text-decoration: none; color: blue; font-weight: bold;">${i}</a>&nbsp;
+																		</span>
+																	</c:when>
+																	<c:otherwise>
+																		<span> <a
+																			href="/Handicap/bbsList?pageNumber=${i}"
+																			style="text-decoration: none; color: gray;">${i}</a>&nbsp;
+																		</span>
 																	</c:otherwise>
-																	</c:choose>
-																</tr>
-
-																<tr>
-																	<input type="hidden" name="pageNumber"
-																		value="${pageNumber }">
-																</tr>
-
-															</table>
-															<table align="center">
-																<tr>
-																	<td style="font-size: large;"><c:if
-																			test="${startPage>1 }">
-																			<span> <a
-																				href="/Handicap/bbsList?pageNumber=${startPage-1 }">이전</a>
-																			</span>
-																		</c:if> <c:forEach var="i" begin="${startPage }"
-																			end="${endPage }">
-																			<c:choose>
-																				<c:when test="${pageNumber==i }">
-																					<span> <a
-																						href="/Handicap/bbsList?pageNumber=${i }"
-																						style="text-decoration: none; color: blue; font-weight: bold;">${i}</a>&nbsp;
-																					</span>
-																				</c:when>
-																				<c:otherwise>
-																					<span> <a
-																						href="/Handicap/bbsList?pageNumber=${i}"
-																						style="text-decoration: none; color: gray;">${i}</a>&nbsp;
-																					</span>
-																				</c:otherwise>
-																			</c:choose>
-																		</c:forEach> <c:if test="${endPage<totalPageCount}">
-																			<span> <a
-																				href="/Handicap/bbsList?pageNumber=${endPage+1 }">다음</a>
-																			</span>
-																		</c:if></td>
-																</tr>
-															</table>
-															<table style="margin-top: 5px">
-																<tr align="right"`>
-																	<td colspan="6" width="650px"><button
-																			type="button" class="ml-button"
-																			onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
-																</tr>
-
-
-															</table>
-															
-															
-															
-															
-															<!-- 아래 폼 인쿨루드 -->
-
-															</td>
+																</c:choose>
+															</c:forEach> <c:if test="${endPage<totalPageCount}">
+																<span> <a
+																	href="/Handicap/bbsList?pageNumber=${endPage+1 }">다음</a>
+																</span>
+															</c:if></td>
 													</tr>
 												</table>
-												</div>
+												<table style="margin-top: 5px">
+													<tr align="right"`>
+														<td colspan="6" width="650px"><button type="button"
+																class="ml-button"
+																onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
+													</tr>
 
-												<!-- contents 끝 -->
-												<%@include file="../Footer.jsp"%>
-												</div>
-									</td>
 
 
-									<td>
-										<!-- 배너 --> <%@include file="../banner.jsp"%>
+
+												</table>
+
+
+
+
+												<!-- 아래 폼 인쿨루드 -->
 									</td>
 								</tr>
 							</table>
-							</center>
+						</div>
+
+
+						<!-- contents 끝 -->
+						<%@include file="../Footer.jsp"%>
+					</div>
+				</td>
+
+
+
+
+				<td>
+					<!-- 배너 --> <%@include file="../banner.jsp"%>
+				</td>
+			</tr>
+		</table>
+	</center>
 </body>
 </html>

@@ -14,6 +14,7 @@ public class BbsVO {
 	private int star;
 	private String region;
 	private int boardno;
+	private String nickname;
 	
 	public int getBoardno() {
 		return boardno;
@@ -86,6 +87,12 @@ public class BbsVO {
 	}
 	public void setRegion(String region) {
 		this.region = region;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 	
 }
