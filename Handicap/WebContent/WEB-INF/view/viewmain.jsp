@@ -43,11 +43,7 @@
 						</div>
 
 					</td>
-					<%-- 	<td><!-- 사이드 메뉴 -->
-					<div id="slider" align="center">
-					<%@include file="banner.jsp"%>
-					</div>
-			</td> --%>
+		
 				</tr>
 
 				<tr>
@@ -81,6 +77,18 @@
 			</table>
 		</div>
 		</div>
+		
+		<%-- <table>
+						<tr>
+							<td> 
+							
+								<div id="slider" align="center">
+					<%@include file="banner.jsp"%>
+					</div>
+							</td>
+						</tr>
+					
+					</table> --%>
 	
 </body>
 </html>
