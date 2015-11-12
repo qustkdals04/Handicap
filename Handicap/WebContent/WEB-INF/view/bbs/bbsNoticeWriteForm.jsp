@@ -253,10 +253,14 @@
 												<td align="center"><font size="3px">말머리</td>
 												<td><select id="category" name="category">
 														<option value="0">선택</option>
-														<c:if test="${membergrade == 2}">
+														<c:if test="${membergrade =='2'}">
 															<option value="[구인]">구인</option>
 														</c:if>
-														<c:if test="${membergrade == 1}">
+														<c:if test="${membergrade == '1'}">
+															<option value="[구직]">구직</option>
+														</c:if>
+														<c:if test="${membergrade =='3' }">
+															<option value="[구인]">구인</option>
 															<option value="[구직]">구직</option>
 														</c:if>
 												</select> <select id="region" name="region">
@@ -381,8 +385,7 @@
 												</td>
 											</tr>
 										</table>
-										<input type="hidden" name="boardno" id="boardno"
-											value="${boardno}">
+										<input type="hidden" name="boardno" id="boardno"value="${boardno}">
 										<input type="hidden" name="category" id="category" value="">
 										<input type="hidden" name="region" id="region" value="">
 										<input type="hidden" name="star" id="star" value="0">
@@ -444,8 +447,7 @@
 												</td>
 											</tr>
 										</table>
-										<input type="hidden" name="boardno" id="boardno"
-											value="${boardno}">
+										<input type="hidden" name="boardno" id="boardno" value="${boardno}">
 										<input type="hidden" name="category" id="category" value="">
 										<input type="hidden" name="region" id="region" value="">
 										<input type="hidden" name="star" id="star" value="0">

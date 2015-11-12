@@ -65,7 +65,7 @@
    
    <!-- 글 수정 -->
    <update id="bbsUpdate" parameterType="com.handicap.model.beans.BbsVO">
-      update bbs set title = #{title}, contents = #{contents} 
+      update bbs set title = #{title}, contents = #{contents}, star = #{star}, region = #{region}, category = #{category}
       where no=#{no} and boardno=#{boardno}
    </update>
       
@@ -99,4 +99,9 @@
    <delete id="commentDelete" parameterType="int">
       delete bbscomment where commentno = #{commentno}
    </delete>
+   
+   <!-- 답글달면 status 2로바꾸기. -->
+   <update id="bbsStatusUpdate" parameterType="int">
+   	update bbs set status=2 where no=#{no}
+   </update>
 </mapper>
