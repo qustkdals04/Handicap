@@ -70,7 +70,7 @@ $(document).ready(function() {
 	
 		<table class="bbsList">
 		<tr>
-				<td align="center" width ="100px"><font size="3px">작성자</font></td>
+				<td align="center" width ="100px" style="width: 117px; "><font size="3px">작성자</font></td>
 
 				<td width="600px"> ${bbsNoticeUpdateForm.nickname }
 				<!-- <select name="category" id="category">
