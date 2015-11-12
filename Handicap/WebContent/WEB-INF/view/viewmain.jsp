@@ -36,7 +36,7 @@
 				<table>
 
 
-					<tr>
+					<tr>   
 						<td>
 							<div id="slider" align="center">
 								<%@include file="index.html"%>
