@@ -812,10 +812,12 @@ table.mypageList {
    
 }
 
-table.mypageList td {     /* �옉�꽦�옄, �젣紐� */ 
+
+table.mypageList {
+	
    font-weight: bold;
    font-size: 12px;
-   text-align: centet;
+   text-align: center;
    vertical-align:middle;
    line-height: 1.0;
    

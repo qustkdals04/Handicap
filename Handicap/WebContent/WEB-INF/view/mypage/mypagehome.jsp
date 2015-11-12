@@ -17,8 +17,8 @@
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#chk_info").change(function(){
-			if($("#chk_info").val() == "활동내역"){
+		$("#chk_info").change(function(){			
+			if($("#chk_info").val() == "활동내역"){					
 				var userid = "userid=${memberid}"
 				$.ajax({
 					type : "get",
@@ -26,8 +26,17 @@
 					data : userid,
 					dataType:'json',
 					success : function(data){
+						$("#mypageList").html("");
+						$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>추천</td></tr>");
 						$.each(data, function(i, dataObj){
-							$("#mypageList").append();
+							$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+							"<td>"+dataObj.no+"</td>"+
+							"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.title+"</a></td>"+
+							"<td>"+dataObj.author+"</td>"+
+							"<td>"+dataObj.writedate+"</td>"+
+							"<td>"+dataObj.hits+"</td>"+
+							"<td>"+dataObj.good+"</td></tr>");
+							
 						})						
 					},
 					error : function(status){
@@ -35,7 +44,7 @@
 					}
 				});
 			} else if($("#chk_info").val() == "댓글내역"){
-				
+				$("#mypageList").html("sex");
 			} else{
 				
 			}	
@@ -94,10 +103,9 @@
                            type="radio" name="chk_info" id="chk_info" value="댓글내역">댓글내역
                      </tr>
                      <tr>
-                        <td align="center" height="500px">
+                        <td align="center" height="500px" style='padding-top: 25px; vertical-align: top'>
                         <!-- 리스트 -->
-                        <table id="mypageList">
-                        
+                        <table id="mypageList" width="430" style="font-size: 12pt;">                        	                   	
                         </table>
                         </td>
                      </tr>

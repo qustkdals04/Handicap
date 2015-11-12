@@ -15,6 +15,7 @@
 		out.print(",\"writedate\":\""+bv.getWritedate()+"\"");
 		out.print(",\"hits\":\""+bv.getHits()+"\"");
 		out.print(",\"good\":\""+bv.getGood()+"\"");
+		out.print(",\"boardno\":\""+bv.getBoardno()+"\"");
 		out.print("}");
 		if(i < list.size()-1) out.print(",");
 	}
