@@ -82,7 +82,7 @@
 					<c:choose>
 					<c:when test="${boardno == '32' }">
 						<table class="bbsList">
-                        <tr>
+                        <tr >
                            <td width="50px"><font size="3px"
                               style="font-weight: bold;">제목 :</td>
                            <td width="350px" align="left"><font size="3px"
@@ -117,7 +117,7 @@
 													</c:choose>
 											</font></td>
                         </tr>
-                        <tr>
+                        <tr style="height: 300px; vertical-align: text-top;">
 
                            <td colspan="4">
                                  <c:if test="${bbsFileName !=null }">                  
@@ -156,6 +156,14 @@
 
                         </tr>
                      </table>
+                     
+                      <table class="bbsList" border="1" style="border-top: 3px;border-left: 3px; border-right :3px; border-bottom: 3px;">
+                       			<tr>
+                       					<td width="700px">
+                       					      댓글 공간
+                       					</td>
+                       			</tr>
+                       </table>
                     <input type="hidden" name="no" value="${bbsContent.no }"> 
                     
                   </form> <!-- 아래 폼 인쿨루드 -->
@@ -181,12 +189,12 @@
                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
                                  ${bbsContent.hits}</font></td>
                         </tr>
-                        <tr>
+                        <tr style="height: 300px; vertical-align: text-top;">
 
                            <td colspan="4">
                                  <c:if test="${bbsFileName !=null }">                  
                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                   <img  height="300px" style="width: 300px;" src="/Handicap/img/${bbsfile.fileoriginal}">
+                   <img  height="150px" style="width: 150px;" src="/Handicap/img/${bbsfile.fileoriginal}">
                    
                 </c:forEach>                     
                </c:if>   
@@ -224,6 +232,14 @@
 
                         </tr>
                      </table>
+                     
+                       <table class="bbsList" border="1" style="border-top: 3px;border-left: 3px; border-right :3px; border-bottom: 3px;">
+                       			<tr>
+                       					<td width="700px">
+                       					      댓글 공간
+                       					</td>
+                       			</tr>
+                       </table>
                       <input type="hidden" name="no" value="${bbsContent.no }">
                       <input type="hidden" name="boardno" value="${bbsContent.boardno }">
                   </form> <!-- 아래 폼 인쿨루드 -->
