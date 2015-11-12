@@ -14,7 +14,7 @@
 			<td align="left"><img src="/Handicap/img/me.png"></td>
 			<td align="right"><a href="/Handicap/bbsList?boardno=10"><img src="/Handicap/img/more.png"></a></td>
 			
-		</tr>
+		</tr>   
 		
 		<tr>
 			<td  colspan="2" ><a href="">-장애인 연금에대해 알아보아요!</a></td>

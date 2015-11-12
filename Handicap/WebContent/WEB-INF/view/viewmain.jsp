@@ -60,7 +60,7 @@
 				</tr>
 
 				<tr>
-					<td>
+					<td>   
 
 						<div id="Foot" align="center">
 							<%@include file="Footer.jsp"%>

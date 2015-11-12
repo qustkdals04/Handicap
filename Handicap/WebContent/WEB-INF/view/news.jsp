@@ -25,7 +25,7 @@
 			<td colspan="2"><a href="">-뉴스</a></td>
 		</tr><tr>
 			<td colspan="2"><a href="">-뉴스</a></td>
-		</tr>
+		</tr>   
          </table>
 </body>
 </html>
