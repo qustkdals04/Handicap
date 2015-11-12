@@ -85,9 +85,10 @@
       values(#{commentno}, contents, #{author}, #{bad})      
    </insert>
    
-   <!-- 댓글찾기 -->
-   <select id="findcomment" parameterType="string" resultType="com.handicap.model.beans.BbsCommentVO">
-      select * from zipcode where dong like #{dong}
+  <!-- 댓글 목록 -->
+   <select id="commentList" parameterType="map"
+      resultType="com.handicap.model.beans.BbsCommentVO">      
+      select * from (select boardno, no, commentno, contents, nickname, bad, rownum r from (select * from bbscomment inner join member on bbscomment.author=member.userid where boardno = #{boardno} and no = #{no} order by commentno asc)) where r between #{startRow} and #{endRow}
    </select>
 
 </mapper>

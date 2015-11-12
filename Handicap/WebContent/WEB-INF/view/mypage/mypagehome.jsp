@@ -18,7 +18,9 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		
-			$("#image").change(function(){
+			$("#img").change(function(){
+				var imagepath = $("#img").val();
+				if(imagepath)
 				var image = "userid=${memberid}&image="+$("#img").val();
 				$.ajax({
 					type : "get",

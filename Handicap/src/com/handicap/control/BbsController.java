@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.MultipartRequest;
 
+import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.FileVO;
 import com.handicap.model.beans.RowNumVO;
@@ -125,7 +126,7 @@ public class BbsController {
    @RequestMapping("/bbsContent")
    public String bbscontent(@RequestParam int no,
                         @RequestParam int boardno,
-                        
+                        HttpServletRequest request,
                         //@RequestParam int fileid,
                         //FileVO fv,                        
                         Model model){
@@ -138,6 +139,36 @@ public class BbsController {
       //fv.setFileid(fileid);
       bd.hitsupdate(no);
       //bd.goodupdate(no);
+      int pagesize = 10;
+      int pagegroup = 10;
+      String pageNumber = request.getParameter("pageNumber");
+      int pageNum = 1;
+      if (pageNumber != null){
+         pageNum = Integer.parseInt(pageNumber);
+      }
+      int totalCount = bd.bbsListCount(boardno);
+      int totalPageCount = totalCount / pagesize;
+      if (totalCount % pagesize != 0){
+         totalPageCount++;
+      }
+      int startPage = (pageNum - 1) / pagegroup * pagegroup + 1;
+      int endPage = startPage + (pagegroup - 1);
+      if (endPage > totalPageCount) {
+         endPage = totalPageCount;
+      }
+      int endRow = pagesize * pageNum;
+      int startRow = endRow - pagesize + 1;
+      RowNumVO rowNumVO = new RowNumVO();
+      rowNumVO.setStartRow(startRow);
+      rowNumVO.setEndRow(endRow);
+      map.put("startRow", startRow);
+      map.put("endRow", endRow);
+      List<BbsCommentVO> commentlist = bcd.selectAll(map);
+      model.addAttribute("messageCount", list.size());
+      model.addAttribute("totalPageCount", totalPageCount);
+      model.addAttribute("startPage", startPage);
+      model.addAttribute("endPage", endPage);
+      model.addAttribute("list", commentlist);
       return "bbs/bbsNoticeContent";
    }
    

@@ -97,23 +97,23 @@
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 추천수 :
 													${bbsContent.good}
 													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 평점 <c:choose>
-														<c:when test="${bbs.star == '1'}">
+														<c:when test="${bbsContent.star == '1'}">
 															<img width="100" height="25"
 																src="/Handicap/img/star1.png">
 														</c:when>
-														<c:when test="${bbs.star =='2'}">
+														<c:when test="${bbsContent.star =='2'}">
 															<img width="100" height="25"
 																src="/Handicap/img/stat2.png">
 														</c:when>
-														<c:when test="${bbs.star == '3'}">
+														<c:when test="${bbsContent.star == '3'}">
 															<img width="100" height="25"
 																src="/Handicap/img/stat3.png">
 														</c:when>
-														<c:when test="${bbs.star =='4'}">
+														<c:when test="${bbsContent.star =='4'}">
 															<img width="100" height="25"
 																src="/Handicap/img/stat4.png">
 														</c:when>
-														<c:when test="${bbs.star == '5'}">
+														<c:when test="${bbsContent.star == '5'}">
 															<img width="100" height="25"
 																src="/Handicap/img/stat5.png">
 														</c:when>
@@ -142,60 +142,10 @@
 
 										</tr>
 									</table>
+									</c:when>
+			
 									
-			
-									<hr width="600px;" align="center">
-			
-			<center>
-			<table width="600px;" style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px; ">
-				<tr>
-						<td colspan="2">
-								[댓글 리스트가 뿌려지는곳]
-						</td>
-				</tr>
-				<tr>
-						<td colspan="2">
-								댓글 이용 제한은 100자입니다.
-						</td>
-				</tr>
-				<tr>
-					<td width="700px" colspan="2">
-					<input type="text" style="width: 500px; height: 50"><input type="button" value ="등록" style="width:70px; height:30px; vertical-align: bottom;"></td>
-					
-				</tr>
-				<tr>
-						<td height="20px;">
-						</td>
-				</tr>
-				<tr>
-			
-					
-					<td width="100px;" align="left">
-						<button type="button" id="list" class ="ml-button"
-							onclick="location.href='/Handicap/bbsList?boardno=${boardno}'" style="margin-bottom: 50px;">목록</button>
-					</td>
-					<td width="600px;" align="right">
-							<c:if
-							test="${boardno!=10 }">
-							<button type="button" id="goodupdate" class ="ml-button">추천</button>
-						</c:if>
-						<c:if test="${bbsContent.nickname == membernick }">
-							<button type="button" id="update" class ="ml-button"
-								onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
-							<button type="button" id="delete" class ="ml-button">삭제</button>
-						</c:if>
-					</td>
-				</tr>
-			</table>
-			</center>
-									<input type="hidden" name="no" value="${bbsContent.no }">
-						</form> <!-- 아래 폼 인쿨루드 -->
-					</td>
-
-				</tr>
-			</table>
-		</div>
-		</c:when>
+		
 		<c:otherwise>
 			<table class="bbsList">
 				<tr>
@@ -234,16 +184,21 @@
 
 				</tr>
 			</table>
-			
+			</c:otherwise>
+			</c:choose>
 			<hr width="600px;">
 			
 			<center>
 			<table width="600px;" style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px; ">
-				<tr>
-						<td colspan="2">
-								[댓글 리스트가 뿌려지는곳]
-						</td>
-				</tr>
+				<c:forEach var="commentList" items="${list}">
+               <tr>
+                  <td align="center">${commentList.nickname}</td>
+                  <td align="center">${commentList.contents}</td>
+               </tr>
+            </c:forEach>
+            <tr>
+               <input type="hidden" name="pageNumber" value="${pageNumber }">
+            </tr>
 				<tr>
 						<td colspan="2">
 								댓글 이용 제한은 100자입니다.
@@ -288,8 +243,8 @@
 			</tr>
 			</table>
 	</div>
-	</c:otherwise>
-	</c:choose>
+	
+	
 	<!-- contents 끝 -->
 	<center>
 	<%@include file="../Footer.jsp"%>

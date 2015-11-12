@@ -8,8 +8,14 @@ public class BbsCommentVO {
 	private String writedate;
 	private int no;
 	private int boardno;
+	private String nickname;
 	
-	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
 	public int getCommentno() {
 		return commentno;
 	}
