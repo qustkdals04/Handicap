@@ -24,8 +24,11 @@
 					type : "get",
 					url : "mypage/mybbs",
 					data : userid,
+					dataType:'json',
 					success : function(data){
-						$("#mypageList").append()
+						$.each(data, function(i, dataObj){
+							$("#mypageList").append();
+						})						
 					},
 					error : function(status){
 						alert(status);
