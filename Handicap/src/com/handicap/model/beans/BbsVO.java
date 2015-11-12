@@ -15,7 +15,13 @@ public class BbsVO {
 	private String region;
 	private int boardno;
 	private String nickname;
-	
+	private int status;
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	public int getBoardno() {
 		return boardno;
 	}

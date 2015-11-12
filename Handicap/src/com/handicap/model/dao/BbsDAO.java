@@ -31,9 +31,9 @@ public class BbsDAO {
    public boolean delete(Map map) throws SQLException {
 	      // TODO Auto-generated method stub
 	   	  try{
-		      sqlSession.delete("bbs.fileDelete", map);
-		      sqlSession.delete("bbs.evalDelete", map);
-		      sqlSession.delete("bbs.commentDelete", map);
+		      sqlSession.delete("bbs.bbsFileDelete", map);
+		      sqlSession.delete("bbs.bbsEvalDelete", map);
+		      sqlSession.delete("bbs.bbsCommentDelete", map);
 	   	  }
 	   	  catch (Exception e){
 	   		  

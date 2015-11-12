@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<table border=0 align="center" bgcolor="#ffffff" width="800" class="Bott" id="Foot">
+<table border=0 align="center" bgcolor="#ffffff" width="800" class="Bott" id="Foot" style="margin-top: 70px;">
 <tr>
 <td>
 
@@ -17,9 +17,6 @@
 <table width=150 height=90  align="center">
 <tr>
 <th align="center"><a href="/Handicap/bbsList?boardno=10" style="font:18px x-large;" >소 식</a></th>
-</tr>
-<tr>
-
 </tr>
 <tr>
 <td align="center"><a href="/Handicap/bbsList?boardno=10" style="font:8px small; " >공지사항</a></td>

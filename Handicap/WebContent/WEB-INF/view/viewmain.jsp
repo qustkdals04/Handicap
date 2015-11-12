@@ -23,66 +23,63 @@
 </head>
 
 <body>
-	<center>
-
-		<div id="CssWrapper">
-			<%@include file="top.jsp"%>
 
 
-			<div id="CssContent1">
-				<%@include file="menu.jsp"%>
-			</div>
-			<!-- 시작 -->
-			<div id="CssContents">
-				<table>
+	<div id="CssWrapper" align="center">
 
+		<table>
 
-					<tr>   
-						<td>
-							<div id="slider" align="center">
-								<%@include file="index.html"%>
-							</div>
+			<tr>
+				<td align="center"><%@include file="top.jsp"%></td>
+			</tr>
 
-						</td>
-						<%-- 	<td><!-- 사이드 메뉴 -->
-					<div id="slider" align="center">
-					<%@include file="banner.jsp"%>
+			<tr>
+				<td align="center">
+					<div id="CssContent1">
+						<%@include file="menu.jsp"%>
 					</div>
-			</td> --%>
-					</tr>
+				</td>
+			</tr>
 
-					<tr>
-						<td>
-							<div id="slider" align="center">
-								<%@include file="Notice.jsp"%>
-							</div>
-						</td>
-					</tr>
+			<tr>
+				<td align="center">
+					<div id="CssContents">
+						<table>
+							<tr>
+								<td>
+									<div id="slider" align="center">
+										<%@include file="index.html"%>
+									</div>
+								</td>
+							</tr>
 
-					<tr>
-						<td><div id="slider" align="center">
-								<%@include file="club.jsp"%></div></td>
-					</tr>
+							<tr>
+								<td>
+									<div id="slider" align="center">
+										<%@include file="Notice.jsp"%>
+									</div>
+								</td>
+							</tr>
 
-					<tr>
-						<td>
+							<tr>
+								<td><div id="slider" align="center">
+										<%@include file="news.jsp"%></div></td>
+							</tr>
 
-							<div id="slider" align="center">
-								<%@include file="Footer.jsp"%>
-							</div>
-						</td>
-					</tr>
+							<tr>
+								<td>
 
+									<div id="Foot" align="center">
+										<%@include file="Footer.jsp"%>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</td>
+			</tr>
 
-
-
-
-
-
-				</table>
-			</div>
-		</div>
-	</center>
-
+		</table>
+	</div>
 </body>
 </html>
