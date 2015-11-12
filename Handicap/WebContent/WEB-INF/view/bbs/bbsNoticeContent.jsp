@@ -249,7 +249,7 @@
 												</table>
 											</c:otherwise>
 										</c:choose>
-										<hr width="600px;">
+										<hr width="700px;">
 
 										<center>
 											<table width="600px;"
@@ -296,24 +296,35 @@
 															<span> <a
 																href="/Handicap/bbsContent?pageNumber=${endPage+1 }&boardno=${bbsContent.boardno}&no=${bbsContent.no}">다음</a>
 															</span>
-														</c:if>
-														</td>
+														</c:if></td>
 												</tr>
 											</table>
+											
 											<table>
 												<tr>
-													<td colspan="2">댓글 이용 제한은 100자입니다.</td>
+													<td colspan="3" ><font style="font-weight: bolder;"  size =3>[댓글 이용 제한은 100자입니다.]</font></td>
+												</tr>
+												<tr height="20px">
+													<td width="100px" align="center">작성자</td>
+													<td width="500px" align="center">내용</td>
+													<td align="left">신고수</td>
+												</tr>
+												<tr height="20px" align="center">
+													<td>[닉네임]</td>
+													<td>[내용]</td>
+													<td align="left">[신고수]</td>
 												</tr>
 												<tr>
+													<td></td>
 													<td width="700px" colspan="2"><input type="text"
-														style="width: 500px; height: 50"><input
+														style="width: 500px; height: 30"><input
 														type="button" value="등록"
 														style="width: 70px; height: 30px; vertical-align: bottom;"></td>
 
 												</tr>
-												<tr>
-													<td height="20px;"></td>
-												</tr>
+											</table>
+
+											<table>
 												<tr>
 
 

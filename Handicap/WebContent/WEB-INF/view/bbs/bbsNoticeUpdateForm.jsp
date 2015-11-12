@@ -62,11 +62,6 @@ $(document).ready(function() {
 	
 	<br>
 	<form method="post" name="bbsNoticeUpdateForm" id="bbsNoticeUpdateForm" enctype="multipart/form-data">
-	<table class="bbsTitle">
-			<tr>
-				<td align="center"><font size ="15">글 수정</font></td>
-			</tr>
-		</table>
 	
 		<table class="bbsList">
 		<tr>
