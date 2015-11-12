@@ -77,8 +77,7 @@
 				}); */
 			/*  */
 		
-			$("#chk_info").click(function(){
-			if($("#chk_info").val() == "내가 쓴 게시글"){					
+			$("#chk_info").click(function(){				
 				var userid = "userid=${memberid}"
 				$.ajax({
 					type : "get",
@@ -103,10 +102,10 @@
 						}
 					}
 				});
-			} 
+			 
 			})
 			$("#chk_info2").click(function(){
-			if($("#chk_info2").val() == "내가 쓴 댓글"){				
+							
 				var userid = "userid=${memberid}"
 					$.ajax({
 						type : "get",
@@ -127,7 +126,7 @@
 							}
 						}
 					});
-			} 
+			
 			})
 		
 		
@@ -138,7 +137,7 @@
 				$("#profile").focus();
 			} else{
 				$.ajax({
-					type : "get",
+					type : "post",
 					url : "mypage/updateprofile",
 					data : profile,
 					success : function(data){
@@ -172,11 +171,11 @@
          </table>
 
          <table border="1" bordercolor="#C58A52" class="mypageList" > 
-         	<tr><td>닉네임 : ${membernick }</td><td><button type="button" onclick="location.href='/Handicap/mypage/pwcheck'">회원정보수정</button></td></tr>
+         	<tr><td>닉네임 : ${membernick }</td><td align="right"><button type="button" class="ml-button" onclick="location.href='/Handicap/mypage/pwcheck'">정보수정</button></td></tr>
             <tr>
                <td width="200px" height="200px" align="center"
                   style="vertical-align: middle;" id="myimagetd">
-                  <img id="myimage" alt="이미지를 등록하세요." src="/Handicap/myimg/${mypage.image }" width="200" height="200"> </td>
+                  <img id="myimage" alt="이미지를 등록하세요." src="/Handicap/myimg/${mypage.image }" width="180" height="180"> </td>
                <!-- 이미지 공간 -->
                <td rowspan="5">
                   <table border="0" align="center" width="500px">
@@ -184,8 +183,8 @@
                         <td style="vertical-align: top;" height="20px" align="center">
                           <!--  <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글
                            <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 댓글">내가 쓴 댓글 -->
-                           <button type="button" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글</button>
-                           <button type="button" name="chk_info2" id="chk_info2" value="내가 쓴 댓글">내가 쓴 댓글</button>
+                           <button type="button" class="ml-button" name="chk_info" id="chk_info" value="게시글">게시글</button>
+                           <button type="button" class="ml-button" name="chk_info2" id="chk_info2" value="댓글">댓글</button>
                      </tr>
                      <tr>
                         <td align="center" height="500px" style='padding-top: 25px; vertical-align: top'>
@@ -211,14 +210,15 @@
                </td>
             </tr>
             <tr>
-               <td align="center" height="100px" style="vertical-align: middle;" id="profiletxt">${mypage.profile }</td>
+               <td align="center" height="200px" style="vertical-align: middle;" id="profiletxt">${mypage.profile }</td>
                <!-- 한줄말 -->
             </tr>
             <tr>
-               <td align="center"><input type="text"
-                  style="width: 90%; vertical-align: middle; margin-top: 30px;" name="profile" id="profile">
+               <td align="center" ><!-- <input type="text"
+                  style="width: 90%; vertical-align: middle; margin-top: 30px;" name="profile" id="profile"> -->
+                  <textarea rows="5" cols="5" name="profile" id="profile" style="width: 180px; height: 50px; margin-top: 20px;" ></textarea>
                   <button type="button" class="ml-button"
-                     style="vertical-align: middle;" id="btnprofile">한마디하기</button></td>
+                     style="vertical-align: middle;" id="btnprofile">소개글</button></td>
             </tr>            
 
          </table>
