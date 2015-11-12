@@ -130,7 +130,7 @@
 																		<tr>
 																			<td align="center">${bbs.no}</td>
 																			<td align="center"><a
-																				href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.title}</a></td>
+																				href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
 																			<td align="center">${bbs.nickname}</td>
 																			<td align="center">${bbs.writedate}</td>
 																			<td align="center">${bbs.hits}</td>
