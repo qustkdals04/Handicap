@@ -56,7 +56,7 @@
 
 				<tr>
 					<td><div id="slider" align="center">
-							<%@include file="club.jsp"%></div></td>
+							<%@include file="news.jsp"%></div></td>
 				</tr>
 
 				<tr>

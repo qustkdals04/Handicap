@@ -8,23 +8,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table class="notice"   style="width: 900px; " align="center" >
-		
-		<tr>
-			<td align="left"><img src="/Handicap/img/me.png"></td>
-			<td align="right"><a href="/Handicap/bbsList?boardno=10"><img src="/Handicap/img/more.png"></a></td>
+   <table class="club" align="center"  width="900" >
+      <tr>
+			<td align="left"><img src="/Handicap/img/news.png"></td>
+			<td align="right"><a href="/Handicap/bbsList?boardno=11"><img src="/Handicap/img/more.png"></a></td>
 			
 		</tr>
-		
-		<tr>
-			<td  colspan="2" ><a href="">-장애인 연금에대해 알아보아요!</a></td>
+      
+      <tr>      
+         
+        <tr>
+			<td  colspan="2" ><a href="">-뉴스</a></td>
 			
 		</tr>
 		<tr>
-			<td colspan="2"><a href="">-차량 구입시 혜택!</a></td>
+			<td colspan="2"><a href="">-뉴스</a></td>
 		</tr><tr>
-			<td colspan="2"><a href="">-요금제에 대한 혜택!!!</a></td>
+			<td colspan="2"><a href="">-뉴스</a></td>
 		</tr>
-	</table>
+         </table>
 </body>
 </html>
