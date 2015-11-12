@@ -20,10 +20,10 @@
 						<li onclick="location.href='/Handicap/bbsList?boardno=10'"><img src="img/icon.png" width="15px"> 공지사항</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/News'"><img src="img/icon.png" width="15px"> 뉴스</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px"> 뉴스</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/Introduce'"><img src="img/icon.png" width="15px"> 사이트 소개</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=12'"><img src="img/icon.png" width="15px"> 사이트 소개</li>
 						</ul>
 			</div>
 </body>
