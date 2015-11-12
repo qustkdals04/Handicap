@@ -2,6 +2,7 @@ package com.handicap.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class BbsCommentDAO {
     public BbsCommentVO select(int commentno, int boardno, int no){//throws SQLException;
     	return null;
     }
-    public List<BbsCommentVO> selectAll(){
-    	return null;
-    }
+    public List<BbsCommentVO> selectAll(Map map){
+        return sqlSession.selectList("bbs.commentList", map) ;
+     }
 }
