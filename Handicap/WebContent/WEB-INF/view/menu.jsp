@@ -64,7 +64,7 @@
 				<li>
 				
 					<a href="/Handicap/bbsList?boardno=50"  >고객센터</a>
-					<ul class="gcb">
+					<ul class="gcb" style="margin-bottom: 20;">
 						<li ><a href="/Handicap/bbsList?boardno=50" style="font:12px small; ">Q&A</a></li>
 						<li><a href="/Handicap/bbsList?boardno=51" style="font:12px small; ">게시판요청</a></li>
 						

@@ -26,61 +26,10 @@ body {
   background: #FFFFFF ; /* http://subtlepatterns.com/squared-metal/ */
 }
 
-/* br { display: block; line-height: 1.6em; } 
 
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
-ol, ul { list-style: none; }
-
-input, textarea { 
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: none; 
-}
-
-blockquote, q { quotes: none; }
-blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
-strong, b { font-weight: bold; }
-em, i { font-style: italic; }
-
-table { border-collapse: collapse; border-spacing: 0; }
-img { border: 0; max-width: 100%; }
-
-h1 { 
-  font-family: 'Alegreya Sans', Tahoma, sans-serif;
-  font-size: 4.2em;
-  line-height: 1.3em;
-  font-weight: bold;
-  margin-bottom: 18px;
-  color: #585858;
-  text-align: center;
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
-}
-h2 {
-  font-family: 'Alegreya Sans', Tahoma, sans-serif;
-  font-size: 3.75em;
-  line-height: 1.2em;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #585858;
-  text-align: center;
-  text-shadow: 1px 1px 0 rgba(255,255,255,0.75);
-}
-
-p {
-  font-size: 1.4em;
-  line-height: 1.2em;
-  color: #777;
-} */
-
-
-/** page structure **/
 #w {
   display: block;
-  max-width: 700px; /** �뒳�씪�씠�뱶 �꼻�씠**/
+  max-width: 700px;
   min-width: 280px;
   margin: 0 auto;
   padding-bottom: 35px;
@@ -185,22 +134,12 @@ p {
 }
 
 .slider-nav__item {
-/*   width: 12px;
-  height: 12px;
-  float: left;
-  clear: none;
-  display: block;
-  margin: 0 5px;
-  background: #fff; */
+
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
   
 }
-/* .slider-nav__item:hover { background: #bababa; }
-.slider-nav__item--current, .slider-nav__item--current:hover { background: #999; } */
-
-
 
 /** responsive styles **/
 @media screen and (max-width: 1050px) {
@@ -217,7 +156,7 @@ p {
 
 .mylist{
     text-align : left;
-	font-family: �룍��;
+	font-family: 占쎈즻占쏙옙;
 	font-size: 18px;
 	color : #444444;
 	list-style: none;
@@ -231,7 +170,7 @@ p {
 }
 .mylistTitle{
     text-align : center;
-	font-family: 援대┝;
+	font-family: �뤃���뵝;
 	font-weight:bold;
 	font-size: 30px;
 	color:#00CCFF;
@@ -252,7 +191,7 @@ p {
 }
  .registerSelect {
 	text-align : center;
-	font-family: �룍�쓬;
+	font-family: 占쎈즻占쎌벉;
 	font-weight:bold;
 	font-size: 50px;
 	color:#F9CA02;
@@ -264,7 +203,7 @@ p {
 }
 .registerSelectA{
 	text-align : center;
-	font-family: �룍�쓬;
+	font-family: 占쎈즻占쎌벉;
 	font-weight:bold;
 	font-size: 15px;
 	color : #BFBEBE;
@@ -273,7 +212,7 @@ p {
 table.registerSelectTable {
 	width : 775px;
 	text-align : center;
-	font-family: �룍�쓬;
+	font-family: 占쎈즻占쎌벉;
 	font-weight:bold;
 	font-size: 50px;
 	color:#80A4FF;
@@ -322,13 +261,13 @@ table.Search td{
 	text-align:center;
 	vertical-align:middle;
 	font-size: 15px;
-	font-family: �룍�쓬;
+	font-family: 占쎈즻占쎌벉;
 }
 table.Search br{
 	width:"300px";
 	text-align:center;
 	font-size: 15px;
-	font-family: �룍�쓬;
+	font-family: 占쎈즻占쎌벉;
 }
 
 
@@ -414,65 +353,27 @@ button {
 }
 .ml-button {
 	background-color: #F39C45;
-	/* border: 1px solid #A87017; */
+	
 	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
-	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+
 	color: #ffffff;
 	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
 .ml-button2 {
 	background-color: #FFFFFF;
-	/* border: 1px solid #A87017; */
+
 	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
-	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	
 	color: #000000;
 	text-shadow: rgba(254,252,252,0.5) 0px 1px 0px;
 }
 
-/*Active*/
-/* .ml-button:active {
-	background-color: #E77E21;
-	-moz-box-shadow:inset 0px 0px 5px rgba(184,129,39,1);
-	-webkit-box-shadow:inset 0px 0px 5px rgba(184,129,39,1);
-	box-shadow:inset 0px 0px 5px rgba(184,129,39,1);
-	background-image: -o-linear-gradient(90deg , rgb(244,197,140) 0%, rgb(250,153,60) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(244,197,140) 0%, rgb(250,153,60) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(244,197,140) 0%, rgb(250,153,60) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(244,197,140) 0%, rgb(250,153,60) 100%);
-	background-image: linear-gradient(90deg , rgb(244,197,140) 0%, rgb(250,153,60) 100%);
-	text-shadow: none;
-}
 
-
- */
-
-/* This button was generated using CSSButtonGenerator.com */
-
-
-/*  table.gmlwn {
-	width: 800px;
-	height: 50px;
-	line-height: 21px;
-	border-top: 1px solid #cccccc;
-	border-left: 1px solid #cccccc;
-	border-collapse: collapse;
-	background-color: #F56025;
-	margin-top: 5px;
-}
-  */
 table.gmlwn th, table.gmlwn td {
 	width: 800px;
 	height: 50px;
@@ -521,19 +422,8 @@ table.list th {
 	padding: 3px 0;
 }
 
-/* table.btn button {
-	height: 50px;
-	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 10px;
-}
- */
-table.list1 { <!-- -->
+
+table.list1 {
 	width: 800px;
 	height: 50px;
 	line-height: 21px;
@@ -572,17 +462,7 @@ table.list1 th {
 	border-top: 1px solid #A7A7A7;
 }
 
-/* table.list1 button {
-	height: 50px;
-	widows: 150px;
-	border-right: 1px solid #A7A7A7;
-	border-bottom: 1px solid #A7A7A7;
-	border-left: 1px solid #A7A7A7;
-	border-top: 1px solid #A7A7A7;
-	color: #777777;
-	background-color: #F1F1F1;
-	font-size: 10px;
-} */
+
 
 table.list2 {
 	width: 800px;
@@ -673,7 +553,7 @@ table.list3 th {
 	border-top: 1px solid #A7A7A7;
 }
 
-/* �뀑�뀑�뀑 */
+
 table.bbsTitle{
 	width :700px;
 	border-collapse: separate;
@@ -693,7 +573,7 @@ table.bbsList {
 	
 }
 
-table.bbsList th {     /* �젣紐�(留⑥쐞) */ 
+table.bbsList th {     
 	font-weight: bold;
 	font-size: 15px;
 	text-align: centet;
@@ -704,7 +584,7 @@ table.bbsList th {     /* �젣紐�(留⑥쐞) */
     
 }
 
-table.bbsList td {     /* 寃뚯떆�뙋湲�(�궡�슜) */ 
+table.bbsList td {     
 	
 	font-size: 12px;
 	text-align: centet;
@@ -713,29 +593,23 @@ table.bbsList td {     /* 寃뚯떆�뙋湲�(�궡�슜) */
 	
 }
 
-table.bbsList tr {     /* 寃뚯떆�뙋湲�(�궡�슜) */ 
+table.bbsList tr {     
 	height: 30px;
 
 }
 
 table.bbsList button{
 	background-color: #F39C45;
-	/* border: 1px solid #A87017; */
+	
 	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
-	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	
 	color: #ffffff;
 	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
 	margin: 0px 0px;
 }
 
-
-/* �븿踰붽쾶�떆�뙋 */
 
 table.bbsAlbum{
    width:700px;
@@ -755,7 +629,7 @@ table.bbsAlbumList {
    margin-bottom : 30px;
 }
 
-table.bbsAlbumList th {     /* �씠誘몄�  */ 
+table.bbsAlbumList th {     
    width:"200";
    background-color : #FFFFFF;   
    vertical-align: middle;
@@ -763,7 +637,7 @@ table.bbsAlbumList th {     /* �씠誘몄�  */
     
 }
 
-table.bbsAlbumList td {     /* �옉�꽦�옄, �젣紐� */ 
+table.bbsAlbumList td {    
    font-weight: bold;
    text-align: centet;
    vertical-align:middle;
@@ -771,28 +645,24 @@ table.bbsAlbumList td {     /* �옉�꽦�옄, �젣紐� */
    
 }
 
-table.bbsAlbumList tr {     /* tr �겕湲� */ 
+table.bbsAlbumList tr {     
    height: 30px;
 
 }
 table.bbsAlbumList button{
 	background-color: #F39C45;
-	/* border: 1px solid #A87017; */
+
 	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
-	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	
 	color: #ffffff;
 	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
 	margin: 10px 10px 10px 0px;
 }
 
 
-/* 留덉씠�럹�씠吏� */
+
 
 table.mypage{
    width:700px;
@@ -824,15 +694,11 @@ table.mypageList {
 }
 table.mypageList button{
 	background-color: #F39C45;
-	/* border: 1px solid #A87017; */
+	
 	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
 	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
-	/* background-image: -o-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -moz-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -webkit-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: -ms-linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%);
-	background-image: linear-gradient(90deg , rgb(250,153,60) 0%, rgb(244,197,140) 100%); */
+	
 	color: #ffffff;
 	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
 	margin: 10px 10px 10px 10px;

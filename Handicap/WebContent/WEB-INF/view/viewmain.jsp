@@ -9,58 +9,79 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
-<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
-<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
-    
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/styles.css">
+
 
 <title>메인</title>
 
 </head>
 
 <body>
-<center>
-	<table>
-		<tr>
-			<td>
-				<!-- 가운데 메뉴 전체 화면 공간 -->
-				<div id="CssWrapper">
-					<div id="top" align="center">
-						<%@include file="top.jsp"%>
-					</div>
-					<!-- top 끝 -->
-					<div align="center">
-						<%@include file="menu.jsp"%>
-					</div>
-					<!-- menu 끝 -->
-					<center>
-					<div id="slider" align="center">
-						<%@include file="index.html"%>
-					</div>
-					</center>
-					<!-- 슬라이드 끝 -->
-					<div id="slider" align="center">
-						<%@include file="Notice.jsp"%>
-					</div>
-					<div id="slider" align="center">
-						<%@include file="club.jsp"%>
+	<center>
 
-						<br> <br> <br> <br>
-						<%@include file="Footer.jsp"%>
+		<div id="CssWrapper">
+			<%@include file="top.jsp"%>
 
-					</div>
-				</div>
-			</td>
-			
-			<td><!-- 사이드 메뉴 -->
+
+			<div id="CssContent1">
+				<%@include file="menu.jsp"%>
+			</div>
+			<!-- 시작 -->
+			<div id="CssContents">
+				<table>
+
+
+					<tr>
+						<td>
+							<div id="slider" align="center">
+								<%@include file="index.html"%>
+							</div>
+
+						</td>
+						<%-- 	<td><!-- 사이드 메뉴 -->
+					<div id="slider" align="center">
 					<%@include file="banner.jsp"%>
-			</td>
-			
-		</tr>
+					</div>
+			</td> --%>
+					</tr>
 
-			
+					<tr>
+						<td>
+							<div id="slider" align="center">
+								<%@include file="Notice.jsp"%>
+							</div>
+						</td>
+					</tr>
 
-	</table>
-</center>
+					<tr>
+						<td><div id="slider" align="center">
+								<%@include file="club.jsp"%></div></td>
+					</tr>
+
+					<tr>
+						<td>
+
+							<div id="Foot" align="center">
+								<%@include file="Footer.jsp"%>
+							</div>
+						</td>
+					</tr>
+
+
+
+
+
+
+
+				</table>
+			</div>
+		</div>
+	</center>
+
 </body>
 </html>

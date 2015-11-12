@@ -33,7 +33,7 @@ div#gnb ul.menu {
 	overflow:hidden;
 	width:900px;
 	height:90px;
-	border-top:2px solid #F3B514; /* 硫붾돱�쐞�뿉 �깋源� */
+	border-top:2px solid #F3B514; 
 	border-bottom:2px solid #ffffff;
 }
 div#gnb ul.menu li {
@@ -53,7 +53,7 @@ div#gnb ul.menu li a {
 }
 div#gnb ul.menu li a:hover,
 div#gnb ul.menu li a.on {
-	background: #F3B514; <!--留덉슦�뒪�삤踰꾩떆 �깋源�-->
+	background: #F3B514; 
 	
 }
 div#gnb ul.menu li ul {
@@ -68,7 +68,6 @@ div#gnb ul.menu li ul {
 
 div#gnb ul.menu li ul.gcb{
 	display:none;
-
 	right:0;
 	overflow: auto;
 	
@@ -87,7 +86,7 @@ div#gnb ul.menu li ul li a.on {
 }
 div#gc  a:hover,
 div#gc a.on {
-	background: #F3B514; <!--濡쒓렇�씤,�쉶�썝媛��엯,id李얘린 留덉슦�뒪�삤踰꾩떆 �깋源�-->
+	background: #F3B514; 
 	
 } 
 
