@@ -124,7 +124,7 @@
 
 											<td colspan="4"><c:if test="${bbsFileName !=null }">
 													<c:forEach var="bbsfile" items="${bbsFileName}">
-														<img height="300px" style="width: 300px;"
+														<img height="150px" style="width: 150px;"
 															src="/Handicap/img/${bbsfile.fileoriginal}">
 													</c:forEach>
 												</c:if> <br>${bbsContent.contents}</td>
@@ -142,41 +142,48 @@
 
 										</tr>
 									</table>
-									<table class="bbsList">
-										<tr>
-											<td align="left" width="400px"></td>
-											<td align="right" colspan="3" width="300px">
-												<button type="button" id="goodupdate">추천</button>
-												<button type="button" id="update"
-													onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
-												<button type="button" id="delete">삭제</button>
-
-											</td>
-
-										</tr>
-									</table>
-
+									
+			
 									<hr width="600px;" align="center">
 			
 			<center>
 			<table width="600px;" style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px; ">
 				<tr>
-						<td>
+						<td colspan="2">
 								[댓글 리스트가 뿌려지는곳]
 						</td>
 				</tr>
 				<tr>
-						<td>
+						<td colspan="2">
 								댓글 이용 제한은 100자입니다.
 						</td>
 				</tr>
 				<tr>
-					<td width="700px"><input type="text" style="width: 500px; height: 50"><input type="button" value ="등록" style="width:70px; height:30px; vertical-align: bottom;"></td>
+					<td width="700px" colspan="2">
+					<input type="text" style="width: 500px; height: 50"><input type="button" value ="등록" style="width:70px; height:30px; vertical-align: bottom;"></td>
+					
 				</tr>
 				<tr>
-					<td>
+						<td height="20px;">
+						</td>
+				</tr>
+				<tr>
+			
+					
+					<td width="100px;" align="left">
 						<button type="button" id="list" class ="ml-button"
-							onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
+							onclick="location.href='/Handicap/bbsList?boardno=${boardno}'" style="margin-bottom: 50px;">목록</button>
+					</td>
+					<td width="600px;" align="right">
+							<c:if
+							test="${boardno!=10 }">
+							<button type="button" id="goodupdate" class ="ml-button">추천</button>
+						</c:if>
+						<c:if test="${bbsContent.nickname == membernick }">
+							<button type="button" id="update" class ="ml-button"
+								onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
+							<button type="button" id="delete" class ="ml-button">삭제</button>
+						</c:if>
 					</td>
 				</tr>
 			</table>
@@ -227,41 +234,47 @@
 
 				</tr>
 			</table>
-			<table class="bbsList">
-				<tr>
-					<td align="left" width="400px"></td>
-					<td align="right" colspan="3" width="300px"><c:if
-							test="${boardno!=10 }">
-							<button type="button" id="goodupdate">추천</button>
-						</c:if> <c:if test="${bbsContent.nickname == membernick }">
-							<button type="button" id="update"
-								onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
-							<button type="button" id="delete">삭제</button>
-						</c:if></td>
-
-				</tr>
-			</table>
+			
 			<hr width="600px;">
 			
 			<center>
 			<table width="600px;" style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px; ">
 				<tr>
-						<td>
+						<td colspan="2">
 								[댓글 리스트가 뿌려지는곳]
 						</td>
 				</tr>
 				<tr>
-						<td>
+						<td colspan="2">
 								댓글 이용 제한은 100자입니다.
 						</td>
 				</tr>
 				<tr>
-					<td width="700px"><input type="text" style="width: 500px; height: 50"><input type="button" value ="등록" style="width:70px; height:30px; vertical-align: bottom;"></td>
+					<td width="700px" colspan="2">
+					<input type="text" style="width: 500px; height: 50"><input type="button" value ="등록" style="width:70px; height:30px; vertical-align: bottom;"></td>
+					
 				</tr>
 				<tr>
-					<td>
+						<td height="20px;">
+						</td>
+				</tr>
+				<tr>
+			
+					
+					<td width="100px;" align="left">
 						<button type="button" id="list" class ="ml-button"
-							onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
+							onclick="location.href='/Handicap/bbsList?boardno=${boardno}'" style="margin-bottom: 50px;">목록</button>
+					</td>
+					<td width="600px;" align="right">
+							<c:if
+							test="${boardno!=10 }">
+							<button type="button" id="goodupdate" class ="ml-button">추천</button>
+						</c:if>
+						<c:if test="${bbsContent.nickname == membernick }">
+							<button type="button" id="update" class ="ml-button"
+								onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
+							<button type="button" id="delete" class ="ml-button">삭제</button>
+						</c:if>
 					</td>
 				</tr>
 			</table>
