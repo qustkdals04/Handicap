@@ -266,7 +266,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 <!-- registerForm.jsp -->
 <body>
 
-   <center>
+
 
       <div id="CssWrapper" align="center">
          <%@include file="../top.jsp"%>
@@ -445,11 +445,11 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
             </center>
    
          </form>
-         </center>
+
 
       </div>
 
-   </center>
+
 
 
    <!-- 끝 -->
