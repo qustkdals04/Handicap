@@ -19,9 +19,6 @@
 <th align="center"><a href="/Handicap/bbsList?boardno=10" style="font:18px x-large;" >소 식</a></th>
 </tr>
 <tr>
-
-</tr>
-<tr>
 <td align="center"><a href="/Handicap/bbsList?boardno=10" style="font:8px small; " >공지사항</a></td>
 </tr>
 <tr>
