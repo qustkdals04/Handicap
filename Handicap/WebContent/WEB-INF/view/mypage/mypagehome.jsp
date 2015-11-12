@@ -156,7 +156,7 @@
 </script>
 </head>
 <body>
-   <div id="CssWrapper" align="center">
+   <div id="top" align="center">
       <%@include file="../top.jsp"%>
 
 

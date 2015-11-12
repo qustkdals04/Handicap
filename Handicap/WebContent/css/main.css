@@ -16,7 +16,7 @@ center;
 #CssContent{
 width:800px;
 cneter;
-padding: 10px;
+margin-top: 200;
 }
 #CssContent1{
 /* width:1200px;
@@ -24,7 +24,7 @@ float: left;
 padding: 10px;
 margin-left: 200px; */
 
-width:1200px;
+width:100%;
 center;
 padding: 10px;
 
@@ -32,28 +32,10 @@ padding: 10px;
 
 
 #CssContents {
-   width: 800px;
+   width: 900px;
    center;
 }
 
-
-#Foot{
-   
-}
-
-#Foot2{
-   margin-top: 500px;
-}
-
-
-#top{
-width:1400px; 
-height : 300px;
-padding: 10px; 
-position: absolute;
-border: 1px;
-
-}
 
 
 #Botton1{
@@ -64,8 +46,6 @@ position: absolute;
 
 
 } 
-
-
 
 
 
@@ -99,6 +79,11 @@ margin-left: 1150px;
   
 }
 
+#top{
+	width:900px;
+center;
+padding: 10px;
+}
 
 
 #Notice {
@@ -122,13 +107,7 @@ margin-left: 1150px;
 #leftsubmenu{
    width :150px;
    height: 500px;
-   /* border-top-width:2px; 
-   border-top-style:solid; 
-   border-top-color:gray;
-   border-bottom-color:gray;
-   border-bottom-style:solid;
-   border-bottom-width:2px; */
-   
+
 
 
    background-color: #FFFFFF;

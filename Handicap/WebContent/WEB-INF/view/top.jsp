@@ -39,7 +39,7 @@
 			memberid = session.getAttribute("memberid").toString();
 			String nickname = session.getAttribute("membernick").toString();
 	%>
-<center>
+
 	<!-- <table>
 		<tr>
 			<td width="300" height="163"><img src="/Handicap/img/logo1.jpg"
@@ -71,9 +71,9 @@
 		
 	</table> -->
 	
-	<table  style="background-image: url('/Handicap/img/asd.gif');">
+	<table align="center" style="background-image: url('/Handicap/img/asd.gif');">
 		<tr>	
-			<td rowspan="2" width="276" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157"  style="vertical-align: middle;"  onclick="location.href='/Handicap/'"></td>
+			<td rowspan="2" width="276" height="163" align="right"><img src="/Handicap/img/logo1.jpg" width="276" height="157"  style="vertical-align: middle;"  onclick="location.href='/Handicap/'"></td>
 			<td width="300" align="right" style="vertical-align: top;" >
 				<div id="appLoadingIndicator">
 				<div id="gc" ><%= nickname %> 님 환영합니다~!!   &nbsp;&nbsp;&nbsp;
@@ -142,7 +142,7 @@
 
 		</tr>
 	</table> -->
-	<table style="background-image: url('/Handicap/img/asd.gif');">
+	<table style="background-image: url('/Handicap/img/asd.gif');" >
 		<tr>	
 			<td rowspan="2" width="276" height="163"><img src="/Handicap/img/logo1.jpg" width="276" height="157"  style="vertical-align: middle;"  onclick="location.href='/Handicap/'"></td>
 			<td width="300" align="right" style="vertical-align: top;" >
@@ -172,7 +172,7 @@
 		
 		</tr>
 	</table>
-</center>
+
 
 	<%
 		}

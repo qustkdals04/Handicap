@@ -30,7 +30,11 @@
 		<table>
 
 			<tr>
-				<td align="center"><%@include file="top.jsp"%></td>
+			<td align="center">
+				<div id="top">
+				<%@include file="top.jsp"%>
+				</div>
+				</td>
 			</tr>
 
 			<tr>
@@ -38,6 +42,7 @@
 					<div id="CssContent1">
 						<%@include file="menu.jsp"%>
 					</div>
+				
 				</td>
 			</tr>
 
@@ -50,7 +55,9 @@
 									<div id="slider" align="center">
 										<%@include file="index.html"%>
 									</div>
+									
 								</td>
+					
 							</tr>
 
 							<tr>
@@ -72,7 +79,9 @@
 									<div id="Foot" align="center">
 										<%@include file="Footer.jsp"%>
 									</div>
-								</td>
+								
+								
+								
 							</tr>
 						</table>
 					</div>
