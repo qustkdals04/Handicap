@@ -37,7 +37,7 @@
 <body>
 <table  style="margin-bottom: 20px;">
 		<tr>
-				<td width="600px" align="left">
+				<td width="800px" align="left">
 
 	<!-- 장애인 관련 법 -->
 	-
