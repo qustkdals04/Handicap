@@ -272,7 +272,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
          <%@include file="../top.jsp"%>
 
 
-         <div id="CssContent1" align="center">
+         <div id="CssContent" align="center">
             <%@include file="../menu.jsp"%>
          </div>
 
