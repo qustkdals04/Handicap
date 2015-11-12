@@ -1,5 +1,6 @@
 package com.handicap.control;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
@@ -7,6 +8,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,7 +19,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.RowNumVO;
@@ -273,6 +277,31 @@ public class MemberController {
 		List<BbsVO> list = dao.mybbs(userid);
 		model.addAttribute("mybbs", list);
 		return "mypage/mybbs";
+	}
+	
+	//내가쓴 댓글가져오기
+	@RequestMapping("/mypage/mycomment")
+	public String mycomment(@RequestParam String userid, Model model){
+		List<BbsCommentVO> list = dao.mycomment(userid);
+		model.addAttribute("mycomment", list);
+		return "mypage/mycomment";
+	}
+	
+	//마이페이지 이미지 수정
+	@RequestMapping("/mypage/image")
+	public String myimage(@RequestParam String userid, @RequestParam String image, HttpServletRequest req, Model model) throws IllegalStateException, IOException{
+		String uuid = UUID.randomUUID().toString().replace("-", "");
+		String path = req.getSession().getServletContext().getRealPath("/img/" + uuid + image);
+        File f = new File(path);
+        MultipartFile multipartFile = null;
+        multipartFile.transferTo(f);
+        String imagepath = uuid + image;
+        Map map = new HashMap();
+        map.put("userid",  userid);
+        map.put("image", imagepath);
+        dao.imageupdate(map);
+        model.addAttribute("myimage",dao.image(userid));		
+		return "mypage/image";
 	}
 	// ==============================회원정보수정===============================
 

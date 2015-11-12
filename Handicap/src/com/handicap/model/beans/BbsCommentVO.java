@@ -2,9 +2,12 @@ package com.handicap.model.beans;
 
 public class BbsCommentVO {
 	private int commentno;
-	private String comment;
+	private String contents;
 	private String author;
 	private int bad;
+	private String writedate;
+	private int no;
+	private int boardno;
 	
 	
 	public int getCommentno() {
@@ -13,11 +16,17 @@ public class BbsCommentVO {
 	public void setCommentno(int commentno) {
 		this.commentno = commentno;
 	}
-	public String getComment() {
-		return comment;
+	public String getContents() {
+		return contents;
 	}
-	public void setComment(String comment) {
-		this.comment = comment;
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public String getWritedate() {
+		return writedate;
+	}
+	public void setWritedate(String writedate) {
+		this.writedate = writedate;
 	}
 	public String getAuthor() {
 		return author;
@@ -31,4 +40,18 @@ public class BbsCommentVO {
 	public void setBad(int bad) {
 		this.bad = bad;
 	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public int getBoardno() {
+		return boardno;
+	}
+	public void setBoardno(int boardno) {
+		this.boardno = boardno;
+	}
+	
+	
 }

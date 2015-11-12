@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
+import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.UserVO;
 
@@ -41,4 +42,10 @@ public interface UserDAO {
 	public String profile(String userid);
 
 	public List<BbsVO> mybbs(String userid);
+
+	public List<BbsCommentVO> mycomment(String userid);
+
+	public boolean imageupdate(Map map);
+	
+	public String image(String userid);
 }

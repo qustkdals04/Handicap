@@ -17,8 +17,24 @@
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$("#chk_info").change(function(){			
-			if($("#chk_info").val() == "활동내역"){					
+		
+			$("#image").change(function(){
+				var image = "userid=${memberid}&image="+$("#img").val();
+				$.ajax({
+					type : "get",
+					url : "mypage/myimage",
+					data : image,
+					success : function(data){
+						alert("성공");
+					},
+					error : function(status){
+						alert(status);
+					}
+				})
+			})
+		
+			$("#chk_info").click(function(){
+			if($("#chk_info").val() == "내가 쓴 게시글"){					
 				var userid = "userid=${memberid}"
 				$.ajax({
 					type : "get",
@@ -26,29 +42,51 @@
 					data : userid,
 					dataType:'json',
 					success : function(data){
-						$("#mypageList").html("");
-						$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>추천</td></tr>");
-						$.each(data, function(i, dataObj){
-							$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
-							"<td>"+dataObj.no+"</td>"+
-							"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.title+"</a></td>"+
-							"<td>"+dataObj.author+"</td>"+
-							"<td>"+dataObj.writedate+"</td>"+
-							"<td>"+dataObj.hits+"</td>"+
-							"<td>"+dataObj.good+"</td></tr>");
-							
-						})						
-					},
-					error : function(status){
-						alert(status);
+						if(data==""){
+							$("#mypageList").html("작성하신 게시글이 없습니다.");
+						} else{
+							$("#mypageList").html("");
+							$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>추천</td></tr>");
+							$.each(data, function(i, dataObj){								
+								$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+								"<td>"+dataObj.no+"</td>"+
+								"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.title+"</a></td>"+
+								"<td>"+dataObj.author+"</td>"+
+								"<td>"+dataObj.writedate+"</td>"+
+								"<td>"+dataObj.hits+"</td>"+
+								"<td>"+dataObj.good+"</td></tr>");
+							})							
+						}
 					}
 				});
-			} else if($("#chk_info").val() == "댓글내역"){
-				$("#mypageList").html("sex");
-			} else{
-				
-			}	
-		})
+			} 
+			})
+			$("#chk_info2").click(function(){
+			if($("#chk_info2").val() == "내가 쓴 댓글"){				
+				var userid = "userid=${memberid}"
+					$.ajax({
+						type : "get",
+						url : "mypage/mycomment",
+						data : userid,
+						dataType:'json',
+						success : function(data){
+							if(data==""){
+								$("#mypageList").html("작성하신 댓글이 없습니다.");
+							} else{
+								$("#mypageList").html("");
+								$("#mypageList").append("<tr><td>댓글내용</td><td>작성일</td><td>신고수</td></tr>");
+								$.each(data, function(i, dataObj){								
+									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
+									"<td>"+dataObj.writedate+"</td>"+
+									"<td>"+dataObj.bad+"</td></tr>");								
+								})								
+							}
+						}
+					});
+			} 
+			})
+		
 		
 		$("#btnprofile").click(function(){
 			var profile = "profile="+$("#profile").val();
@@ -99,13 +137,16 @@
                   <table border="1" align="center" width="500px">
                      <tr>
                         <td style="vertical-align: top;" height="20px" align="center">
-                           <input type="radio" name="chk_info" id="chk_info" value="활동내역">활동내역 <input
-                           type="radio" name="chk_info" id="chk_info" value="댓글내역">댓글내역
+                          <!--  <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글
+                           <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 댓글">내가 쓴 댓글 -->
+                           <button type="button" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글</button>
+                           <button type="button" name="chk_info2" id="chk_info2" value="내가 쓴 댓글">내가 쓴 댓글</button>
                      </tr>
                      <tr>
                         <td align="center" height="500px" style='padding-top: 25px; vertical-align: top'>
                         <!-- 리스트 -->
-                        <table id="mypageList" width="430" style="font-size: 12pt;">                        	                   	
+                        <table id="mypageList" width="430" style="font-size: 12pt;">  
+                        	<tr><td>게시글내역 또는 댓글내역을 선택해주세요..</td></tr>                      	                   	
                         </table>
                         </td>
                      </tr>
@@ -114,8 +155,10 @@
             </tr>
             <tr>
                <td align="center">
-                  <button type="button" class="ml-button"
-                     style="vertical-align: middle;">이미지 선택</button>
+               <input type='file' id="img" name="img" style='display: none'>
+               <label class="ml-button" for='img' id="image">이미지 선택</label>
+                 <!--  <button for='img' type="button" class="ml-button"
+                     style="vertical-align: middle;" id="image">이미지 선택</button> -->
                </td>
             </tr>
             <tr>

@@ -150,6 +150,18 @@
    <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select * from bbs where author=#{author}
    </select>
+   <!-- 내가쓴댓글가져오기 -->
+   <select id="mycomment" parameterType="string" resultType="com.handicap.model.beans.BbsCommentVO">
+   	select * from bbscomment where author=#{author}
+   </select>
+   <!-- 이미지 업데이트 -->
+   <update id="imageupdate" parameterType="map">
+   	update member set image=#{image} where userid=#{userid}
+   </update>
+   <!-- 이미지 가져오기 -->
+   <select id="myimage" parameterType="string" resultType="string">
+  	select image from member where userid=#{userid}
+   </select>
 </mapper>
 <!-- user.xml -->
 

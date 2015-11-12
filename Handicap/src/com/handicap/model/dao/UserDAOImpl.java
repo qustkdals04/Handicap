@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
 import com.handicap.model.beans.UserVO;
 
@@ -123,5 +124,25 @@ public class UserDAOImpl implements UserDAO {
 	public List<BbsVO> mybbs(String userid) {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("user.mybbs",userid);
+	}
+
+	@Override
+	public List<BbsCommentVO> mycomment(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.mycomment",userid);
+	}
+
+	@Override
+	public boolean imageupdate(Map map) {
+		// TODO Auto-generated method stub
+		int t = sqlSession.update("user.imageupdate", map);
+		if (t > 0) return true;
+		return false;
+	}
+
+	@Override
+	public String image(String userid) {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("user.myimage",userid);
 	}
 }
