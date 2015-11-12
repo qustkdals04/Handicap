@@ -94,11 +94,12 @@
                            type="radio" name="chk_info" id="chk_info" value="댓글내역">댓글내역
                      </tr>
                      <tr>
-                        <td align="center" height="500px">[내역 리스트]</td>
+                        <td align="center" height="500px">
                         <!-- 리스트 -->
                         <table id="mypageList">
                         
                         </table>
+                        </td>
                      </tr>
                   </table>
                </td>
