@@ -175,6 +175,7 @@ public class MemberController {
 	@RequestMapping("/memberlogin") // 로그인 처리
 	public String login(@RequestParam String userid, @RequestParam String passwd, HttpSession session, Model model) {
 		String nickname = dao.findNick(userid);
+		int usergrade = dao.searchGrade(userid);
 		if (dao.findPasswd(userid) != null) {// db에서 사용자가 입력한 userid를 조건으로 검색해서
 												// passwd가 있다면
 			if (dao.findPasswd(userid).equals(passwd)) {// db의 passwd와 사용자가 입력한
@@ -183,6 +184,8 @@ public class MemberController {
 															// "memberId"키값으로
 															// userid값을 넘겨주고
 				session.setAttribute("membernick", nickname);
+				session.setAttribute("membergrade", usergrade);
+				
 				return "viewmain"; // 로그인성공하면 main페이지로 이동
 			} else {
 				model.addAttribute("status", "로그인실패");
@@ -288,18 +291,23 @@ public class MemberController {
 	}
 	
 	//마이페이지 이미지 수정
-	@RequestMapping("/mypage/image")
-	public String myimage(@RequestParam String userid, @RequestParam String image, HttpServletRequest req, Model model) throws IllegalStateException, IOException{
-		String uuid = UUID.randomUUID().toString().replace("-", "");
-		String path = req.getSession().getServletContext().getRealPath("/img/" + uuid + image);
-        File f = new File(path);
-        MultipartFile multipartFile = null;
-        multipartFile.transferTo(f);
-        String imagepath = uuid + image;
-        Map map = new HashMap();
-        map.put("userid",  userid);
-        map.put("image", imagepath);
-        dao.imageupdate(map);
+	@RequestMapping("/mypage/myimage")
+	public String myimage(@RequestParam String userid, @RequestParam List<MultipartFile> image, HttpServletRequest req, Model model) throws IllegalStateException, IOException{
+		List<MultipartFile> files = image;
+		for(MultipartFile multipartFile : files){
+			String filename = multipartFile.getOriginalFilename();
+			if(!"".equals(filename)){
+				String uuid = UUID.randomUUID().toString().replace("-","");
+                String path = req.getSession().getServletContext().getRealPath("/img/" + uuid + filename);
+                File f = new File(path);
+                multipartFile.transferTo(f);
+                String imagepath = uuid + filename;
+                Map map = new HashMap();
+                map.put("userid",  userid);
+                map.put("image", imagepath);
+                dao.imageupdate(map);
+			}
+		}       
         model.addAttribute("myimage",dao.image(userid));		
 		return "mypage/image";
 	}
