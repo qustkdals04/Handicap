@@ -14,6 +14,27 @@
 	href="/Handicap/css/styles.css">
 
 <title>mypage home</title>
+
+<style>
+      table#aa {
+        width: 100%;
+       border: 1px solid #C58A52;
+      }
+      
+      table td.t3{
+       width: 100%;
+      margin-top : 10;
+       border-bottom:  1px solid #C58A52;
+      }
+      
+          table td#t4{
+       width: 100%;
+      margin-top : 10;
+       border-top:  1px solid #C58A52;
+      }
+      
+    </style>
+
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="/Handicap/js/jquery.form.min.js"></script>
 
@@ -146,11 +167,11 @@
       <div id="CssContents">
          <table class="mypage">
             <tr>
-               <td align="center"><font size="15">마이 페이지</font></td>
+               <td align="left"><font size="6">mypage</font></td>
             </tr>
          </table>
 
-         <table border="1" class="mypageList"> 
+         <table border="1" bordercolor="#C58A52" class="mypageList" > 
          	<tr><td>닉네임 : ${membernick }</td><td><button type="button" onclick="location.href='/Handicap/mypage/pwcheck'">회원정보수정</button></td></tr>
             <tr>
                <td width="200px" height="200px" align="center"
@@ -158,7 +179,7 @@
                   <img id="myimage" alt="이미지를 등록하세요." src="/Handicap/myimg/${mypage.image }" width="200" height="200"> </td>
                <!-- 이미지 공간 -->
                <td rowspan="5">
-                  <table border="1" align="center" width="500px">
+                  <table border="0" align="center" width="500px">
                      <tr>
                         <td style="vertical-align: top;" height="20px" align="center">
                           <!--  <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글
