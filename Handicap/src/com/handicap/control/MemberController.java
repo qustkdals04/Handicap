@@ -23,6 +23,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
+import com.handicap.model.beans.ImageVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.RowNumVO;
 import com.handicap.model.beans.UserVO;
@@ -292,23 +293,20 @@ public class MemberController {
 	
 	//마이페이지 이미지 수정
 	@RequestMapping("/mypage/myimage")
-	public String myimage(@RequestParam String userid, @RequestParam List<MultipartFile> image, HttpServletRequest req, Model model) throws IllegalStateException, IOException{
-		List<MultipartFile> files = image;
-		for(MultipartFile multipartFile : files){
-			String filename = multipartFile.getOriginalFilename();
-			if(!"".equals(filename)){
-				String uuid = UUID.randomUUID().toString().replace("-","");
-                String path = req.getSession().getServletContext().getRealPath("/img/" + uuid + filename);
-                File f = new File(path);
-                multipartFile.transferTo(f);
-                String imagepath = uuid + filename;
-                Map map = new HashMap();
-                map.put("userid",  userid);
-                map.put("image", imagepath);
-                dao.imageupdate(map);
-			}
-		}       
-        model.addAttribute("myimage",dao.image(userid));		
+	public String myimage(ImageVO iv,HttpServletRequest req, Model model, HttpSession session) throws IllegalStateException, IOException{
+		MultipartFile multiFile = iv.getImg();
+		String fileName = multiFile.getOriginalFilename();
+		String uuid = UUID.randomUUID().toString().replace("-","");
+		String path = req.getSession().getServletContext().getRealPath("/myimg/" + uuid + fileName);
+		File f = new File(path);	
+		multiFile.transferTo(f);
+		String userid = (String) session.getAttribute("memberid");			
+		Map map = new HashMap();
+		map.put("userid", userid);
+		map.put("image", uuid+fileName);
+		dao.imageupdate(map);
+		model.addAttribute("myimage",uuid+fileName);
+		
 		return "mypage/image";
 	}
 	// ==============================회원정보수정===============================

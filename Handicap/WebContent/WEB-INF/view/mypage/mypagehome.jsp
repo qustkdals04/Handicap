@@ -15,25 +15,46 @@
 
 <title>mypage home</title>
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/Handicap/js/jquery.form.min.js"></script>
+
 <script type="text/javascript">
 	$(document).ready(function(){
-		
-			$("#img").change(function(){
-				var imagepath = $("#img").val();
-				if(imagepath)
-				var image = "userid=${memberid}&image="+$("#img").val();
-				$.ajax({
-					type : "get",
-					url : "mypage/myimage",
-					data : image,
-					success : function(data){
-						alert("성공");
-					},
-					error : function(status){
-						alert(status);
-					}
-				})
-			})
+			$("#img").change(function(){					
+				$('#imgform').submit();
+			});//change
+			$('#imgform').ajaxForm({
+	            beforeSubmit: function (data,form,option) {
+	                //validation체크 
+	                //막기위해서는 return false를 잡아주면됨
+	                return true;
+	            },
+	            success: function(response,status){
+	            	//성공후 서버에서 받은 데이터 처리	   
+	            	alert("업로드성공!!!");
+	            	//$("#myimage").attr("src" , "/Handicap/myimg/"+response);
+	            	$("#myimage").attr({src : "", alt : "잠시만 기다려주세요"});
+	            	setInterval(function(){$("#myimage").attr("src" , "/Handicap/myimg/"+response)}, 5000);
+	            }                              
+	        });
+			  /* $(function(){
+					//폼전송
+					$('#ajaxform').ajaxForm({
+					   //보내기전 validation check가 필요할경우
+				            beforeSubmit: function (data, frm, opt) {
+							                alert("전송전!!");
+							                return true;
+							              },
+				            //submit이후의 처리
+				            success: function(responseText, statusText){
+				            	alert("전송성공!!");
+				            },
+				            //ajax error
+				            error: function(){
+				            	alert("에러발생!!");
+				            }                               
+				          });
+				}); */
+			/*  */
 		
 			$("#chk_info").click(function(){
 			if($("#chk_info").val() == "내가 쓴 게시글"){					
@@ -76,12 +97,11 @@
 								$("#mypageList").html("작성하신 댓글이 없습니다.");
 							} else{
 								$("#mypageList").html("");
-								$("#mypageList").append("<tr><td>댓글내용</td><td>작성일</td><td>신고수</td></tr>");
+								$("#mypageList").append("<tr><td>댓글내용</td><td>작성일</td></tr>");
 								$.each(data, function(i, dataObj){								
 									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
-									"<td>"+dataObj.writedate+"</td>"+
-									"<td>"+dataObj.bad+"</td></tr>");								
+									"<td>"+dataObj.writedate+"</td></tr>");								
 								})								
 							}
 						}
@@ -101,6 +121,7 @@
 					url : "mypage/updateprofile",
 					data : profile,
 					success : function(data){
+						$("#profiletxt").text("");
 						$("#profiletxt").text(data);
 						$("#profile").val("");
 					},
@@ -133,7 +154,8 @@
          	<tr><td>닉네임 : ${membernick }</td><td><button type="button" onclick="location.href='/Handicap/mypage/pwcheck'">회원정보수정</button></td></tr>
             <tr>
                <td width="200px" height="200px" align="center"
-                  style="vertical-align: middle;">${mypage.image }</td>
+                  style="vertical-align: middle;" id="myimagetd">
+                  <img id="myimage" alt="이미지를 등록하세요." src="/Handicap/myimg/${mypage.image }" width="200" height="200"> </td>
                <!-- 이미지 공간 -->
                <td rowspan="5">
                   <table border="1" align="center" width="500px">
@@ -157,10 +179,14 @@
             </tr>
             <tr>
                <td align="center">
+               <form id="imgform" action="mypage/myimage" method="post" enctype='multipart/form-data'>
                <input type='file' id="img" name="img" style='display: none'>
                <label class="ml-button" for='img' id="image">이미지 선택</label>
-                 <!--  <button for='img' type="button" class="ml-button"
+               <!-- <button for='img' type="button" class="ml-button"
                      style="vertical-align: middle;" id="image">이미지 선택</button> -->
+               <!-- <input type="button" for="img" class="ml-button" value="이미지선택"> -->
+               </form>
+                
                </td>
             </tr>
             <tr>

@@ -11,7 +11,6 @@
 		out.print("{");
 		out.print("\"contents\":\""+bcv.getContents()+"\"");
 		out.print(",\"writedate\":\""+bcv.getWritedate()+"\"");
-		out.print(",\"bad\":\""+bcv.getBad()+"\"");
 		out.print(",\"no\":\""+bcv.getNo()+"\"");
 		out.print(",\"boarno\":\""+bcv.getBoardno()+"\"");
 		out.print("}");

@@ -18,6 +18,7 @@
 
 
 <title>메인</title>
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 
 </head>
 

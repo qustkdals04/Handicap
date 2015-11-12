@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 
-<script type="text/javascript" src="Handicap/js/jquery-1.10.2.min.js"></script>
+<!-- <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script> -->
 <link href="/Handicap/css/common.css" rel="stylesheet" type="text/css"  rel="stylesheet"/>
    <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
 <script type="text/javascript">

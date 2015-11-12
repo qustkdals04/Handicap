@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link href="/Handicap/css/common.css" rel="stylesheet" type="text/css"  rel="stylesheet"/>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script> -->
 	  <!--   <script type="text/javascript"  src="/Handicap/js/jquery-1.10.2.min.js"></script> -->
 		<script type="text/javascript"  src="/Handicap/js/ui.js"></script>
 </head>
