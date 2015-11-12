@@ -194,10 +194,9 @@
 														<tr>
 															<td colspan="2"><input name="files" type="file">
 																<input id="addFile" type="button" value="파일첨부"></td>
-														</tr>
-														<tr>
-															<td><font size="3px">별점</font></td>
-															<td><select id="star" name="star">
+				
+																		<td width="270px" align="right"><font size="3px">별점</font>
+																	<select id="star" name="star">
 																	<option value="0">선택</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
@@ -205,7 +204,9 @@
 																	<option value="4">4</option>
 																	<option value="5">5</option>
 															</select></td>
+
 														</tr>
+													
 													</table>
 												</td>
 											</tr>
@@ -361,8 +362,7 @@
 														<tr>
 															<td colspan="2"><input name="files" type="file">
 																<input id="addFile" type="button" value="파일첨부"></td>
-															<td align="right" width="300px"><font size="3px">별점
-																	: [별점보여지는곳]</font></td>
+															
 														</tr>
 													</table>
 												</td>

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<table border=0 align="center" bgcolor="#ffffff" width="800" class="Bott" id="Foot">
+<table border=0 align="center" bgcolor="#ffffff" width="800" class="Bott" id="Foot" style="margin-top: 70px;">
 <tr>
 <td>
 

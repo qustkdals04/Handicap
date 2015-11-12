@@ -83,7 +83,8 @@
 															<td align="center">${bbs.writedate}</td>
 															<td align="center">${bbs.hits}</td>
 															<td align="center">${bbs.good}</td>
-															<td align="center"><c:choose>
+															<td align="center">
+															<c:choose>
 																	<c:when test="${bbs.star == '1'}">
 																		<img width="60" height="12"
 																			src="/Handicap/img/star1.png">
@@ -104,7 +105,8 @@
 																		<img width="60" height="12"
 																			src="/Handicap/img/stat5.png">
 																	</c:when>
-																</c:choose></td>
+																</c:choose>
+																</td>
 														</tr>
 													</c:forEach>
 													</c:when>
@@ -185,10 +187,9 @@
 																			<input type="hidden" name="pageNumber"
 																				value="${pageNumber }">
 																		</tr>
-
-
 																	</table>
-																	<table align="center">
+																	<center>
+																	<table>
 																		<tr>
 																			<td style="font-size: large;"><c:if
 																					test="${startPage>1 }">
@@ -218,6 +219,7 @@
 																				</c:if></td>
 																		</tr>
 																	</table>
+																	</center>
 																	<table style="margin-top: 5px">
 																		<tr align="right">
 																			<td colspan="6" width="750px"><button

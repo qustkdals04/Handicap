@@ -130,7 +130,7 @@
 																</c:choose>
 														</font></td>
 													</tr>
-													<tr style="height: 300px; vertical-align: text-top;">
+													<tr style="height: 300px; float: right;">
 
 														<td colspan="4"><c:if test="${bbsFileName !=null }">
 																<c:forEach var="bbsfile" items="${bbsFileName}">
@@ -269,7 +269,7 @@
 														value="${pageNumber }">
 												</tr>
 											</table>
-											<table>
+											<table align="center">
 												<tr>
 													<td style="font-size: large;"><c:if
 															test="${startPage>1 }">
@@ -296,7 +296,8 @@
 															<span> <a
 																href="/Handicap/bbsContent?pageNumber=${endPage+1 }&boardno=${bbsContent.boardno}&no=${bbsContent.no}">다음</a>
 															</span>
-														</c:if></td>
+														</c:if>
+														</td>
 												</tr>
 											</table>
 											<table>
