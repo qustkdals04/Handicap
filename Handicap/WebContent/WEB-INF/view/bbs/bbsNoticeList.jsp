@@ -109,6 +109,46 @@
 															</tr>
 														</c:forEach>
 														</c:when>
+														<c:when test="${boardno == '50' }">
+														<table class="bbsList">
+																<tr height="20px">
+																	<th width="10%">글번호</th>
+																	<th width="38%">제 목</th>
+																	<th width="14%">작성자</th>
+																	<th width="29%">작성일</th>
+																	<th width="8%">조회수</th>
+																	<th width="11%">답변진행</th>
+
+
+																</tr>
+																<tr>
+																	<%-- <% int boardno;  
+ 												boardno = BbsVO.getBoardno(); 
+ 												if(boardno==31){ 
+ 											%> --%>
+																	<c:forEach var="bbs" items="${list}">
+																		<tr>
+																			<td align="center">${bbs.no}</td>
+																			<td align="center"><a
+																				href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
+																			<td align="center">${bbs.nickname}</td>
+																			<td align="center">${bbs.writedate}</td>
+																			<td align="center">${bbs.hits}</td>
+																			<td align="center">
+																				<c:choose>
+																					<c:when test="${bbs.status == '1' }">
+																						미답변
+																					</c:when>
+																					<c:otherwise>
+																						답변
+																					</c:otherwise>
+																				</c:choose>
+																			</td>
+
+
+																		</tr>
+																	</c:forEach>
+														</c:when>
 														<c:otherwise>
 															<table class="bbsList">
 																<tr height="20px">

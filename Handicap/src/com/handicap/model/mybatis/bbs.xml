@@ -31,18 +31,18 @@
       delete bbs where no = #{no} and boardno = #{boardno}
    </delete>
    
-   <!-- 파일 삭제 -->
-   <delete id="fileDelete" parameterType="map">
+   <!-- 글 파일 삭제 -->
+   <delete id="bbsFileDelete" parameterType="map">
       delete bbsfile where no = #{no} and boardno = #{boardno}
    </delete>
    
-   <!-- 평가 삭제 -->
-   <delete id="evalDelete" parameterType="map">
+   <!-- 글 평가 삭제 -->
+   <delete id="bbsEvalDelete" parameterType="map">
       delete bbseval where no = #{no} and boardno = #{boardno}
    </delete>
    
-   <!-- 댓글 삭제 -->
-   <delete id="commentDelete" parameterType="map">
+   <!-- 글 댓글 삭제 -->
+   <delete id="bbsCommentDelete" parameterType="map">
       delete bbscomment where no = #{no} and boardno = #{boardno}
    </delete>
 
@@ -66,7 +66,7 @@
    <!-- 글 수정 -->
    <update id="bbsUpdate" parameterType="com.handicap.model.beans.BbsVO">
       update bbs set title = #{title}, contents = #{contents} 
-      where no=#{no}
+      where no=#{no} and boardno=#{boardno}
    </update>
       
    <!--  조회수 증가 -->
@@ -90,5 +90,13 @@
       resultType="com.handicap.model.beans.BbsCommentVO">      
       select * from (select boardno, no, commentno, contents, nickname, bad, rownum r from (select * from bbscomment inner join member on bbscomment.author=member.userid where boardno = #{boardno} and no = #{no} order by commentno asc)) where r between #{startRow} and #{endRow}
    </select>
-
+<!-- 댓글 갯수 -->
+   <select id="commentListCount" parameterType="map" resultType="int">
+      select count(*) from bbscomment where boardno = #{boardno} and no = #{no}
+   </select>
+   
+   <!-- 글 댓글 삭제 -->
+   <delete id="commentDelete" parameterType="int">
+      delete bbscomment where commentno = #{commentno}
+   </delete>
 </mapper>

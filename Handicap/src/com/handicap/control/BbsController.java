@@ -146,7 +146,7 @@ public class BbsController {
       if (pageNumber != null){
          pageNum = Integer.parseInt(pageNumber);
       }
-      int totalCount = bd.bbsListCount(boardno);
+      int totalCount = bcd.commentListCount(map);
       int totalPageCount = totalCount / pagesize;
       if (totalCount % pagesize != 0){
          totalPageCount++;
@@ -164,7 +164,7 @@ public class BbsController {
       map.put("startRow", startRow);
       map.put("endRow", endRow);
       List<BbsCommentVO> commentlist = bcd.selectAll(map);
-      model.addAttribute("messageCount", list.size());
+      model.addAttribute("messageCount", commentlist.size());
       model.addAttribute("totalPageCount", totalPageCount);
       model.addAttribute("startPage", startPage);
       model.addAttribute("endPage", endPage);
@@ -200,5 +200,13 @@ public class BbsController {
     public String bbsUpdate(BbsVO bv) throws SQLException {
        bd.update(bv);         
        return "redirect:bbsList";
+    }
+    
+    @RequestMapping("/commentDelete")
+    public String commentdelete(@RequestParam int commentno,
+          @RequestParam int no,
+            @RequestParam int boardno) throws SQLException {
+       bcd.delete(commentno);
+       return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
     }
 }

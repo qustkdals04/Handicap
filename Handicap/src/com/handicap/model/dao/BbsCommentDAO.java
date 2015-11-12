@@ -17,10 +17,13 @@ public class BbsCommentDAO {
 	public boolean insert(BbsCommentVO comment)throws SQLException{
 		return false;
 	}
-    public boolean delete(int commentno, int boardno, int no)throws SQLException{
-    	return false;
-    }
-    public boolean update(BbsCommentVO comment)throws SQLException{
+
+	public boolean delete(int commentno) throws SQLException {
+		sqlSession.delete("bbs.commentDelete", commentno);
+		return true;
+	}
+
+	public boolean update(BbsCommentVO comment)throws SQLException{
     	return false;
     }
     public BbsCommentVO select(int commentno, int boardno, int no){//throws SQLException;
@@ -28,5 +31,9 @@ public class BbsCommentDAO {
     }
     public List<BbsCommentVO> selectAll(Map map){
         return sqlSession.selectList("bbs.commentList", map) ;
+     }
+    
+    public int commentListCount(Map map) {
+        return sqlSession.selectOne("bbs.commentListCount", map);
      }
 }
