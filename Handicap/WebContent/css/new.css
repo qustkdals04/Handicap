@@ -78,17 +78,21 @@ table.mem2 th{
 
 table.Bott {
    
-    border-spacing: 1px;
+
     border-top: 3px solid #FAB114;
   	margin : 30px 10px;
-  	margin-left: 20px;
+  
   	
 }
 
 #Foot{
    width: 800;
-   vertical-align: bottom;
+  
    float: center;
+   
+   position: relative;
+	
+	overflow: hidden;
 }
 
 

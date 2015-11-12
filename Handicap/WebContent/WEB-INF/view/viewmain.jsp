@@ -66,7 +66,7 @@
 					<tr>
 						<td>
 
-							<div id="Foot" align="center">
+							<div id="slider" align="center">
 								<%@include file="Footer.jsp"%>
 							</div>
 						</td>
