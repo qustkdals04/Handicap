@@ -355,7 +355,7 @@ button {
 }
 .ml-button {
 	background-color: #F39C45;
-	
+	font-size:12pt;
 	-moz-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	-webkit-box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
 	box-shadow:inset 0px 0px 1px rgba(184,129,39,1);
