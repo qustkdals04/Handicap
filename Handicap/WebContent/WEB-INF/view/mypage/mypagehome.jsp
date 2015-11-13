@@ -121,7 +121,7 @@
 								$.each(data, function(i, dataObj){								
 									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
-									"<td>"+dataObj.writedate+"</td></tr>");								
+									"<td>"+subString(dataObj.writedate, 0, 10)+"</td></tr>");								
 								})								
 							}
 						}
@@ -189,7 +189,7 @@
                      <tr>
                         <td align="center" height="500px" style='padding-top: 25px; vertical-align: top'>
                         <!-- 리스트 -->
-                        <table id="mypageList" width="430" style="font-size: 12pt;">  
+                        <table id="mypageList" width="430" style="font-size: 10pt;">  
                         	<tr><td>게시글내역 또는 댓글내역을 선택해주세요..</td></tr>                      	                   	
                         </table>
                         </td>
@@ -216,7 +216,7 @@
             <tr>
                <td align="center" ><!-- <input type="text"
                   style="width: 90%; vertical-align: middle; margin-top: 30px;" name="profile" id="profile"> -->
-                  <textarea rows="5" cols="5" name="profile" id="profile" style="width: 180px; height: 50px; margin-top: 20px;" ></textarea>
+                  <textarea rows="5" cols="5" name="profile" id="profile" style="width: 180px; height: 50px; margin-top: 20px; font-size: 12pt" ></textarea>
                   <button type="button" class="ml-button"
                      style="vertical-align: middle;" id="btnprofile">소개글</button></td>
             </tr>            

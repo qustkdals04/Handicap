@@ -11,7 +11,7 @@
 		out.print("{");
 		out.print("\"no\":\""+bv.getNo()+"\"");
 		out.print(",\"title\":\""+bv.getTitle()+"\"");
-		out.print(",\"author\":\""+bv.getAuthor()+"\"");
+		out.print(",\"author\":\""+bv.getNickname()+"\"");
 		out.print(",\"writedate\":\""+bv.getWritedate()+"\"");
 		out.print(",\"hits\":\""+bv.getHits()+"\"");
 		out.print(",\"good\":\""+bv.getGood()+"\"");

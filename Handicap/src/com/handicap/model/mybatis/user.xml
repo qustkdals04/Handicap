@@ -148,7 +148,7 @@
    </select>
    <!-- 내가쓴게시글가져오기 -->
    <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
-   	select * from bbs where author=#{author}
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where author=#{author}
    </select>
    <!-- 내가쓴댓글가져오기 -->
    <select id="mycomment" parameterType="string" resultType="com.handicap.model.beans.BbsCommentVO">
