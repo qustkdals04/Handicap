@@ -89,8 +89,6 @@
 					<div id="CssContents">
 						<table align="center">
 							<tr>
-								<td width="100px" align="center"><%@include
-										file="../new/NewSubMenu.jsp"%></td>
 								<td>
 									<!-- 위에 폼 인쿨루드 -->
 
