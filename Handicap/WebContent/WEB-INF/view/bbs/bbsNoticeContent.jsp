@@ -134,7 +134,7 @@
 
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                                                   <img height="150px" style="width: 150px;"
+                                                   <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
                                                 </c:forEach>
                                              </c:if> <br>${bbsContent.contents}</td>
@@ -187,7 +187,7 @@
 
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                                                   <img height="150px" style="width: 150px;"
+                                                   <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
                                                 </c:forEach>
                                              </c:if> <br>${bbsContent.contents}</td>
@@ -228,7 +228,7 @@
 
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
-                                                   <img height="150px" style="width: 150px;"
+                                                   <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
 
                                                 </c:forEach>
