@@ -277,12 +277,14 @@
                                                       			
                                                       		</c:if>                                                      	
                                                       	</c:when>
-                                                      	<c:otherwise>
-                                                      		<td colspan="6" width="750px"><button
+                                                      	<c:when test="${membergrade >= 1 }">
+                                                      	<td colspan="6" width="750px"><button
                                                                type="button" class="ml-button"
                                                                onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
                                                       			
-                                                      	</c:otherwise>
+                                                      	</c:when>
+                                                      		
+                                                      
                                                       </c:choose>
                                                        </tr>
 
