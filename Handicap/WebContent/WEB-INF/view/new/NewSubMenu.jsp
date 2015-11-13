@@ -22,6 +22,9 @@
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px">뉴스</li>
 						</ul>
+						<ul class="mylist">
+						<li onclick="location.href='/Handicap/bbsList?boardno=12'"><img src="img/icon.png" width="15px">사이트소개</li>
+						</ul>
 			</div>
 </body>
 </html>
