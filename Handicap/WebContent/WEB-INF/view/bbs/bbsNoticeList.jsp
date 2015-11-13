@@ -223,7 +223,15 @@
                                                    <table style="margin-top: 5px">
                                                       <tr align="right">
                                                       <c:choose>
-                                                      	<c:when test="${boardno == 10 }">
+                                                      	<c:when test="${boardno == 10}">
+                                                      		<c:if test="${membergrade == 3 }">
+                                                      			<td colspan="6" width="750px"><button
+                                                               type="button" class="ml-button"
+                                                               onclick="location.href='/Handicap/bbsNoticeWriteForm'">글쓰기</button></td>
+                                                      			
+                                                      		</c:if>                                                      	
+                                                      	</c:when>
+                                                      	<c:when test="${boardno == 11}">
                                                       		<c:if test="${membergrade == 3 }">
                                                       			<td colspan="6" width="750px"><button
                                                                type="button" class="ml-button"
