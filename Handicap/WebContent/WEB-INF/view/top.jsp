@@ -12,19 +12,19 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$(".a1").mouseenter(function() {
-			$(".a1").css("background-color", "#dddddd");
+			$(".a1").css("background-color", "#F39C45");
 		});
 		$(".a1").mouseleave(function() {
 			$(".a1").css("background-color", "white");
 		});
 		$(".a2").mouseenter(function() {
-			$(".a2").css("background-color", "#dddddd");
+			$(".a2").css("background-color", "#F39C45");
 		});
 		$(".a2").mouseleave(function() {
 			$(".a2").css("background-color", "white");
 		});
 		$(".a3").mouseenter(function() {
-			$(".a3").css("background-color", "#dddddd");
+			$(".a3").css("background-color", "#F39C45");
 		});
 		$(".a3").mouseleave(function() {
 			$(".a3").css("background-color", "white");
