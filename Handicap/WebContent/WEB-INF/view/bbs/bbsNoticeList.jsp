@@ -57,8 +57,8 @@
                         <c:when test="${boardno == 11 }">
                         <%@include file="../new/NewSubMenu11.jsp"%>
                         </c:when>
-                        <c:when test="${boardno == 11 }">
-                        <%@include file="../new/NewSubMenu11.jsp"%>
+                        <c:when test="${boardno == 12 }">
+                        <%@include file="../new/NewSubMenu12.jsp"%>
                         </c:when>
                         <c:when test="${boardno == 20 }">
                          <%@include file="BbsSubMenu.jsp"%>
