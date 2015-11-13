@@ -49,8 +49,46 @@
                <div id="CssContents">
                   <table align="center">
                      <tr>
-                        <td width="100px" align="center"><%@include
-                              file="../new/NewSubMenu.jsp"%></td>
+                        <td width="100px" align="center">
+                        <c:choose>
+                        <c:when test="${boardno == 10 }">
+                        <%@include file="../new/NewSubMenu.jsp"%>
+                        </c:when>
+                        <c:when test="${boardno == 11 }">
+                        <%@include file="../new/NewSubMenu11.jsp"%>
+                        </c:when>
+                        <c:when test="${boardno == 20 }">
+                        
+                        </c:when>
+                        <c:when test="${boardno == 21 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 22 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 23 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 30 }">
+                        
+                        </c:when>
+                        <c:when test="${boardno == 31 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 32 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 40 }">
+                        
+                        </c:when> 
+                        <c:when test="${boardno == 50 }">
+                        
+                        </c:when> 
+                       	<c:otherwise>
+                       		
+                       	</c:otherwise>                    
+                        </c:choose>
+                        </td>
                         <td>
                            <!-- 위에 폼 인쿨루드 -->
 
