@@ -30,11 +30,6 @@
 					
 				</td>
 				<td>
-						<table class="bbsTitle">
-			<tr>
-					<td align="center">정신적 장애</td>
-			</tr>
-</table>
 	
 	<table class="bbsList">
 		<tr height="20px">

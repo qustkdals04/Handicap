@@ -20,7 +20,7 @@
 						<li onclick="location.href='/Handicap/bbsList?boardno=10'"><img src="img/icon.png" width="15px">공지사항</font></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">뉴스</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">뉴스</font></li>
 						</ul>
 
 			</div>

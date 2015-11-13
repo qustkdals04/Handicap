@@ -18,7 +18,7 @@
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/handicaplaw'"><img src="img/icon.png" width="15px"> 장애인 법률</li>
+						<li onclick="location.href='/Handicap/handicaplaw'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">장애인 법률</font></li>
 						</ul>
 						
 			</div>

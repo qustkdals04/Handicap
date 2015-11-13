@@ -15,11 +15,6 @@
 </head>
 <body>
 
-	<table class="bbsAlbum">
-		<tr>
-			<td align="center"><font size="15">여행 게시판</font></td>
-		</tr>
-	</table>
 
 	<table class="bbsAlbumList">
 

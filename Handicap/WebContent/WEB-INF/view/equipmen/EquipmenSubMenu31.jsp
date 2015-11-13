@@ -21,7 +21,7 @@
 						<li onclick="location.href='/Handicap/trade'"><img src="img/icon.png" width="15px">사고 팔기</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/question'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">질문/답변</font></li>
+						<li onclick="location.href='/Handicap/question'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">질문/답변</font></li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/review'"><img src="img/icon.png" width="15px">사용후기</li>

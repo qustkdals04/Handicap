@@ -70,11 +70,6 @@
 </head>
 <body>
       <form id="bbsReviewContent" name="bbsReviewContent">
-         <table class="ClubContent">
-			<tr>
-				<td align="center">여행 상세보기</td>
-			</tr>
-		</table>
 
 
 		<table border="1" class="ClubContentList">

@@ -18,7 +18,7 @@
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/trade'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">사고 팔기</font></li>
+						<li onclick="location.href='/Handicap/trade'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">사고 팔기</font></li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/question'"><img src="img/icon.png" width="15px">질문/답변</li>

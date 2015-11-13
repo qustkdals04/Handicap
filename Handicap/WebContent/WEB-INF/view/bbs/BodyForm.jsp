@@ -31,11 +31,6 @@
 					<td width="100px" align="center"><%@include
 							file="BbsSubMenu.jsp"%></td>
 					<td>
-						<table class="bbsTitle">
-							<tr>
-								<td align="center">신체적 장애</td>
-							</tr>
-						</table>
 
 						<table class="bbsList">
 							<tr height="20px">

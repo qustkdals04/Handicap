@@ -17,7 +17,7 @@
 						</ul>
 			<!-- /Handicap/messagelist -->
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/QnA'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">Q&A</font></li>
+						<li onclick="location.href='/Handicap/QnA'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">Q&A</font></li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/request'"><img src="img/icon.png" width="15px"> 게시판 요청</li>
