@@ -15,8 +15,9 @@ public class BbsCommentDAO {
 	private SqlSession sqlSession;
 	
 	public boolean insert(BbsCommentVO comment)throws SQLException{
-		return false;
-	}
+	      sqlSession.insert("bbs.commentInsert", comment);
+	      return true;
+	   }
 
 	public boolean delete(int commentno) throws SQLException {
 		sqlSession.delete("bbs.commentDelete", commentno);

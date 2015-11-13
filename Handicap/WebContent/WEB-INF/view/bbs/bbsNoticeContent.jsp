@@ -258,6 +258,7 @@
                                        <tr>
                                           <td align="center">${commentList.nickname}</td>
                                           <td align="center">${commentList.contents}</td>
+                                          <td align="center">${commentList.writedate}</td>
                                           <c:if test="${bbsContent.nickname == membernick }">
                                              <td align="center"><img src="/Handicap/img/temp.jpg"
                                                 onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'"></td>
@@ -330,9 +331,9 @@
                                     <c:otherwise>
                                     <tr>
                                        <td></td>
-                                       <td width="700px" colspan="2"><input type="text"
+                                       <td width="700px" colspan="2"><input type="text" name="contents"
                                           style="width: 500px; height: 30"><input
-                                          type="button" value="등록"
+                                          type="button" value="등록" onclick="location.href='/Handicap/commentWrite'"
                                           style="width: 70px; height: 30px; vertical-align: bottom;"></td>
 
                                     </tr>
