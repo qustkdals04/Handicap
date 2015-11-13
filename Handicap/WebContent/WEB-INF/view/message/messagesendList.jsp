@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
     <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
-<title>보낸 메세지</title>
+<title>보낸 메시지</title>
 </head>
 <!-- messageList.jsp -->
 <!-- messageList.jsp -->
@@ -20,7 +20,7 @@
 	<table class="re">
 		<tr>
 			  <th colspan="3" class="re2" 
-								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">보낸 메세지</th>
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">보낸 메시지</th>
 		</tr>
 	</table>
 

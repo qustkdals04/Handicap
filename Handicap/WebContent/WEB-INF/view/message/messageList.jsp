@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>받은 메세지</title>
+<title>받은 메시지</title>
 </head>
 <!-- messageList.jsp -->
 <body>
@@ -19,7 +19,7 @@
 <table class="re">
 				<tr>
 					  <th colspan="3" class="re2" 
-								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">받은 메세지</th>
+								style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">받은 메시지</th>
 				</tr>
 	
 

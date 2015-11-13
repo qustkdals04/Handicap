@@ -35,7 +35,7 @@
 		<table class="re">
 			<tr>
 				<th colspan="3" class="re2"
-					style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메세지
+					style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메시지
 					상세보기</th>
 			</tr>
 

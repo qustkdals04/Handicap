@@ -76,10 +76,10 @@
 			<td rowspan="2" width="276" height="163" align="right"><img src="/Handicap/img/logo1.jpg" width="276" height="157"  style="vertical-align: middle;"  onclick="location.href='/Handicap/'"></td>
 			<td width="300" align="right" style="vertical-align: top;" >
 				<div id="appLoadingIndicator">
-				<div id="gc" ><%= nickname %> 님 환영합니다~!!   &nbsp;&nbsp;&nbsp;
+				<div id="gc"  style="font:12px larger;bold; "><%= nickname %> 님 환영합니다~!!   &nbsp;&nbsp;&nbsp;
 					<font size="2" id="rigthfont"><a href="javascrpt:void(0)"
 						class="a1"
-						onclick="window.open('/Handicap/messagelist','popup1','width=1000,height=400, top='+(screen.height/2-200)+',left='+(screen.width/2-500)+'')">쪽지함</a>&nbsp;<a
+						onclick="window.open('/Handicap/messagelist','popup1','width=850,height=400, top='+(screen.height/2-200)+',left='+(screen.width/2-500)+'')">쪽지함</a>&nbsp;<a
 						href="/Handicap/mypage" class="a2">마이페이지</a>&nbsp;<a
 						href="/Handicap/logout" class="a3">로그아웃</a></font>
 						
