@@ -25,7 +25,7 @@
             position: absolute;
         	border:1px solid #000000;
          
-            top : 50%;
+            top : 0%;
             left : 91%;
             width: 125px;
             height: 250px;
