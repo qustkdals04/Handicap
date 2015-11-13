@@ -84,7 +84,7 @@
 			</tr>
 
 			<tr>
-				<td>
+				<td align="center">
 					<!-- center 끝 -->
 					<div id="CssContents">
 						<table align="center">
