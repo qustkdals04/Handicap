@@ -18,10 +18,10 @@
 			
 						
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=20'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">신체적 장애</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=20'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">신체적장애</font></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=21'"><img src="img/icon.png" width="15px">정신적 장애</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=21'"><img src="img/icon.png" width="15px">정신적장애</li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/bbsList?boardno=22'"><img src="img/icon.png" width="15px">동호회</li>
