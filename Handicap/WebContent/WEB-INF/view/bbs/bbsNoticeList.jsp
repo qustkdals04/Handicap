@@ -51,42 +51,42 @@
                      <tr>
                         <td width="100px" align="center">
                         <c:choose>
-                        <c:when test="${boardno == 10 }">
+                         <c:when test="${boardno == 10 }">
                         <%@include file="../new/NewSubMenu.jsp"%>
                         </c:when>
                         <c:when test="${boardno == 11 }">
                         <%@include file="../new/NewSubMenu11.jsp"%>
                         </c:when>
                         <c:when test="${boardno == 20 }">
-                        
+                         <%@include file="BbsSubMenu.jsp"%>
                         </c:when>
                         <c:when test="${boardno == 21 }">
-                        
+                        <%@include file="BbsSubMenu21.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 22 }">
-                        
+                        <%@include file="BbsSubMenu22.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 23 }">
-                        
+                        <%@include file="BbsSubMenu23.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 30 }">
-                        
+                        <%@include file="../equipmen/EquipmenSubMenu.jsp"%>
                         </c:when>
                         <c:when test="${boardno == 31 }">
-                        
+                        <%@include file="../equipmen/EquipmenSubMenu31.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 32 }">
-                        
+                        <%@include file="../equipmen/EquipmenSubMenu32.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 40 }">
-                        
+                        <%@include file="../job/JobSubMenu.jsp"%>
                         </c:when> 
                         <c:when test="${boardno == 50 }">
-                        
+                         <%@include file="../service/ServiceSubMeun.jsp"%>
                         </c:when> 
-                       	<c:otherwise>
-                       		
-                       	</c:otherwise>                    
+                          <c:otherwise>
+                             <%@include file="../service/ServiceSubMeun51.jsp"%>
+                          </c:otherwise>                      
                         </c:choose>
                         </td>
                         <td>

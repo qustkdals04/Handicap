@@ -23,7 +23,7 @@
 	$(document)
 			.ready(
 					function() {
-						$("#bbsWrite").click(function() {
+						$("#bbsNoticeUpdate").click(function() {
 							if ($("#title").val() == "") {
 								alert("제목을 입력해주세요..");
 								$("#title").focus();
@@ -329,7 +329,7 @@
 								<td colspan=2 align="right">
 									<button type="button" id="bbsNoticeUpdate">수정</button>
 									<button type="button" id="bbsNoticelist"
-										onclick="location.href='/Handicap/bbsList?boardno=${bbsNoticeUpdateForm.boardno}'">목록</button>
+										onclick="location.href='/Handicap/bbsList?boardno=${bbsNoticeUpdate.boardno}'">목록</button>
 								</td>
 							</tr>
 						</table>
