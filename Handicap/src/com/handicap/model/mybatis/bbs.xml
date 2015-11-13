@@ -80,15 +80,15 @@
    </update>
    
    <!-- 댓글 작성 -->
-   <insert id="bbscomment" parameterType="com.handicap.model.beans.BbsCommentVO">
-      insert into bbscomment(commentno, contents, author, bad)
-      values(#{commentno}, contents, #{author}, #{bad})      
+   <insert id="commentInsert" parameterType="com.handicap.model.beans.BbsCommentVO">
+      insert into bbscomment(commentno, contents, author, boardno, no, writedate)
+      values(#{commentno}, #{contents}, #{author}, #{boardno}, #{no}, sysdate)      
    </insert>
    
   <!-- 댓글 목록 -->
    <select id="commentList" parameterType="map"
       resultType="com.handicap.model.beans.BbsCommentVO">      
-      select * from (select boardno, no, commentno, contents, nickname, bad, rownum r from (select * from bbscomment inner join member on bbscomment.author=member.userid where boardno = #{boardno} and no = #{no} order by commentno asc)) where r between #{startRow} and #{endRow}
+      select * from (select boardno, no, commentno, contents, nickname, bad, writedate, rownum r from (select * from bbscomment inner join member on bbscomment.author=member.userid where boardno = #{boardno} and no = #{no} order by commentno asc)) where r between #{startRow} and #{endRow}
    </select>
 <!-- 댓글 갯수 -->
    <select id="commentListCount" parameterType="map" resultType="int">
@@ -102,6 +102,6 @@
    
    <!-- 답글달면 status 2로바꾸기. -->
    <update id="bbsStatusUpdate" parameterType="int">
-   	update bbs set status=2 where no=#{no}
+   	update bbs set status=2 where no=#{no} and boardno=#{boardno}
    </update>
 </mapper>

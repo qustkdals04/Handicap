@@ -23,16 +23,22 @@
 	$(document)
 			.ready(
 					function() {
-						$("#bbsNoticeUpdate").click(function() {
-							var title = $("#title").val();
-							var content = $("#contents").val();
+						$("#bbsWrite").click(function() {
 							if ($("#title").val() == "") {
 								alert("제목을 입력해주세요..");
 								$("#title").focus();
 							} else if ($("#contents").val() == "") {
 								alert("내용을 입력해주세요..");
-								$("#contents").focus();
-							} else {
+								$("#contents").focus();					
+						    }else if ($("#boardno").val()== 30&&$("#category").val() == ""){
+						    	   alert("말머리를 선택해주세요");
+						    }else if ($("#boardno").val()== 40&&$("#category").val() == ""){
+						    	   alert("말머리를 선택해주세요");
+						    }else if ($("#boardno").val()== 40&&$("#region").val() == ""){
+						    	   alert("지역을 선택해주세요");
+						    }else if ($("#boardno").val()== 32&&$("#star").val() == ""){
+						    	   alert("평점을 선택해주세요");
+						    } else {
 								$("#bbsNoticeUpdateForm").attr({
 									action : "bbsUpdate",
 									method : 'post'
@@ -88,7 +94,7 @@
 							<tr>
 										<td align="center"><font size="3px">말머리</td>
 										<td><select id="category" name="category">
-											<option value="0">선택</option>
+											<option value="">선택</option>
 											<option value="[삽니다]">삽니다</option>
 											<option value="[팝니다]">팝니다</option>
 											</select></td>
@@ -172,7 +178,7 @@
 												</c:forEach></td>
 										<td width="270px" align="right"><font size="3px">별점</font>
 																	<select id="star" name="star">
-																	<option value="0">선택</option>
+																	<option value="">선택</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>
@@ -199,7 +205,7 @@
 							<tr>
 												<td align="center"><font size="3px">말머리</td>
 												<td><select id="category" name="category">
-														<option value="0">선택</option>
+														<option value="">선택</option>
 														<c:if test="${membergrade =='2'}">
 															<option value="[구인]">구인</option>
 														</c:if>
@@ -211,7 +217,7 @@
 															<option value="[구직]">구직</option>
 														</c:if>
 												</select> <select id="region" name="region">
-														<option value="0">선택</option>
+														<option value="">선택</option>
 														<option value="[서울]">서울</option>
 														<option value="[경기]">경기</option>
 														<option value="[인천]">인천</option>
@@ -313,6 +319,7 @@
 									</table>
 								</td>
 							</tr>
+															
 							<input type="hidden" name="category" id="category" value="">
 							<input type="hidden" name="region" id="region" value="">
 							<input type="hidden" name="star" id="star" value="0">
@@ -322,14 +329,13 @@
 								<td colspan=2 align="right">
 									<button type="button" id="bbsNoticeUpdate">수정</button>
 									<button type="button" id="bbsNoticelist"
-										onclick="location.href='/Handicap/bbsList?boardno=${bbsNoticeUpdate.boardno}'">목록</button>
+										onclick="location.href='/Handicap/bbsList?boardno=${bbsNoticeUpdateForm.boardno}'">목록</button>
 								</td>
 							</tr>
 						</table>
 						<%-- bbsNoticeUpdateForm?boardno=${bbsNoticeUpdateForm.boardno}&no=${bbsNoticeUpdateForm.no} --%>
-						<input type="hidden" name="boardno"
-							value="${bbsNoticeUpdateForm.boardno }"> <input
-							type="hidden" name="no" value="${bbsNoticeUpdateForm.no }">
+						<input type="hidden" name="boardno" id="boardno" value="${bbsNoticeUpdateForm.boardno }"> 
+						<input type="hidden" name="no" value="${bbsNoticeUpdateForm.no }">
 					</form></td>
 			</tr>
 

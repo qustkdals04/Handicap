@@ -209,4 +209,11 @@ public class BbsController {
        bcd.delete(commentno);
        return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
     }
+    
+    @RequestMapping("/commentWrite")
+    public String commentWrite(BbsCommentVO bcv, HttpSession session) throws Exception {
+       bcv.setAuthor(session.getAttribute("memberid").toString());
+       bcd.insert(bcv);
+       return "redirect:bbsContent?no=" + bcv.getNo() + "&boardno=" + bcv.getBoardno();
+    }
 }

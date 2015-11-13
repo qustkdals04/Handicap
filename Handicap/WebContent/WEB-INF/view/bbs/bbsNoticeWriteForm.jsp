@@ -29,8 +29,16 @@
 								$("#title").focus();
 							} else if ($("#contents").val() == "") {
 								alert("내용을 입력해주세요..");
-								$("#contents").focus();
-							} else {
+								$("#contents").focus();					
+						    }else if ($("#boardno").val()== 30&&$("#category").val() == ""){
+						    	   alert("말머리를 선택해주세요");
+						    }else if ($("#boardno").val()== 40&&$("#category").val() == ""){
+						    	   alert("말머리를 선택해주세요");
+						    }else if ($("#boardno").val()== 40&&$("#region").val() == ""){
+						    	   alert("지역을 선택해주세요");
+						    }else if ($("#boardno").val()== 32&&$("#star").val() == ""){
+						    	   alert("평점을 선택해주세요");
+						    } else {
 								$("#bbsWriteForm").attr({
 									action : "bbsWrite",
 									method : 'post'
@@ -110,7 +118,7 @@
 													<tr>
 														<td align="center"><font size="3px">말머리</td>
 														<td><select id="category" name="category">
-																<option value="0">선택</option>
+																<option value="">선택</option>
 																<option value="[삽니다]">삽니다</option>
 																<option value="[팝니다]">팝니다</option>
 														</select></td>
@@ -197,7 +205,7 @@
 				
 																		<td width="270px" align="right"><font size="3px">별점</font>
 																	<select id="star" name="star">
-																	<option value="0">선택</option>
+																	<option value="">선택</option>
 																	<option value="1">1</option>
 																	<option value="2">2</option>
 																	<option value="3">3</option>
@@ -252,7 +260,7 @@
 											<tr>
 												<td align="center"><font size="3px">말머리</td>
 												<td><select id="category" name="category">
-														<option value="0">선택</option>
+														<option value="">선택</option>
 														<c:if test="${membergrade =='2'}">
 															<option value="[구인]">구인</option>
 														</c:if>
@@ -264,7 +272,7 @@
 															<option value="[구직]">구직</option>
 														</c:if>
 												</select> <select id="region" name="region">
-														<option value="0">선택</option>
+														<option value="">선택</option>
 														<option value="[서울]">서울</option>
 														<option value="[경기]">경기</option>
 														<option value="[인천]">인천</option>
