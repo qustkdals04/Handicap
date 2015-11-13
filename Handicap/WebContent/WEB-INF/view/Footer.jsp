@@ -19,13 +19,13 @@
 <th align="center"><a href="/Handicap/bbsList?boardno=10" style="font:18px x-large;" >소 식</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=10" style="font:8px small; " >공지사항</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=10" style="font:12px larger; " >공지사항</a></td>
 </tr>
 <tr>
-   <td align="center"><a href="/Handicap/bbsList?boardno=11" style="font:8px small; " >뉴스</a></td>
+   <td align="center"><a href="/Handicap/bbsList?boardno=11" style="font:12px larger; " >뉴스</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=12" style="font:8px small; ">사이트소개</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=12" style="font:12px larger; ">사이트소개</a></td>
 </tr>
 </table>
 <!--소식 끝-->
@@ -38,16 +38,16 @@
 <th align="center"><a href="/Handicap/bbsList?boardno=20" style="font:18px x-large;">게시판</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=20" style="font:8px small; ">신체적장애</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=20" style="font:12px larger; ">신체적장애</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=21" style="font:8px small; ">정신적장애</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=21" style="font:12px larger; ">정신적장애</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=22" style="font:8px small; ">동호회</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=22" style="font:12px larger; ">동호회</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=23" style="font:8px small; ">여행</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=23" style="font:12px larger; ">여행</a></td>
 </tr>
 </table>
 <!--게시판 끝-->
@@ -59,13 +59,13 @@
 <th align="center"><a href="/Handicap/bbsList?boardno=30" style="font:18px x-large;">의료장비</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=30" style="font:8px small; ">사고팔기</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=30" style="font:12px larger; ">사고팔기</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=31" style="font:8px small; ">질문답변</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=31" style="font:12px larger; ">질문답변</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=32" style="font:8px small; ">사용후기</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=32" style="font:12px larger; ">사용후기</a></td>
 </tr>
 </table>
 <!--의료장비 끝-->
@@ -109,10 +109,10 @@
 <th align="center"> <a href="/Handicap/bbsList?boardno=40" style="font:18px x-large;">고객센터</a></th>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=40" style="font:8px small; ">Q&A</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=40" style="font:12px larger; ">Q&A</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=41" style="font:8px small; ">게시판요청</a></td>
+<td align="center"><a href="/Handicap/bbsList?boardno=41" style="font:12px larger; ">게시판요청</a></td>
 </tr>
 </table>
 <!--고객센터 끝-->

@@ -23,26 +23,26 @@
 				<li>
 					<a href="/Handicap/bbsList?boardno=10" >소 식</a>
 					<ul>
-						<li ><a href="/Handicap/bbsList?boardno=10" style="font:12px small; ">공지사항</a></li>
-						<li><a href="/Handicap/bbsList?boardno=11" style="font:12px small; " >뉴스</a></li>
-						<li><a href="/Handicap/bbsList?boardno=12" style="font:12px small; ">사이트소개</a></li>
+						<li ><a href="/Handicap/bbsList?boardno=10" style="font:12px larger; ">공지사항</a></li>
+						<li><a href="/Handicap/bbsList?boardno=11" style="font:12px larger; " >뉴스</a></li>
+						<li><a href="/Handicap/bbsList?boardno=12" style="font:12px larger; ">사이트소개</a></li>
 						
 					</ul>
 				</li>
 				<li>
 					<a href="/Handicap/bbsList?boardno=20" >게시판</a>
 					<ul>
-						<li><a href="/Handicap/bbsList?boardno=20" style="font:12px small; ">신체적장애</a></li>
-						<li><a href="/Handicap/bbsList?boardno=21" style="font:12px small; ">정신적장애</a></li>
-						<li><a href="/Handicap/bbsList?boardno=22" style="font:12px small; ">동호회</a></li>
-						<li><a href="/Handicap/bbsList?boardno=23" style="font:12px small; ">여행</a></li>
+						<li><a href="/Handicap/bbsList?boardno=20" style="font:12px larger; ">신체적장애</a></li>
+						<li><a href="/Handicap/bbsList?boardno=21" style="font:12px larger; ">정신적장애</a></li>
+						<li><a href="/Handicap/bbsList?boardno=22" style="font:12px larger; ">동호회</a></li>
+						<li><a href="/Handicap/bbsList?boardno=23" style="font:12px larger; ">여행</a></li>
 					</ul>
 					<li>
 					<a href="/Handicap/bbsList?boardno=30">의료장비</a>
 					<ul>
-						<li><a href="/Handicap/bbsList?boardno=30" style="font:12px small; ">사고팔기</a></li>
-						<li><a href="/Handicap/bbsList?boardno=31" style="font:12px small; ">질문답변</a></li>
-						<li><a href="/Handicap/bbsList?boardno=32" style="font:12px small; ">사용후기</a></li>
+						<li><a href="/Handicap/bbsList?boardno=30" style="font:12px larger; ">사고팔기</a></li>
+						<li><a href="/Handicap/bbsList?boardno=31" style="font:12px larger; ">질문답변</a></li>
+						<li><a href="/Handicap/bbsList?boardno=32" style="font:12px larger; ">사용후기</a></li>
 						
 					</ul>
 					
@@ -65,8 +65,8 @@
 				
 					<a href="/Handicap/bbsList?boardno=50"  >고객센터</a>
 					<ul class="gcb" style="margin-bottom: 20;">
-						<li ><a href="/Handicap/bbsList?boardno=50" style="font:12px small; ">Q&A</a></li>
-						<li><a href="/Handicap/bbsList?boardno=51" style="font:12px small; ">게시판요청</a></li>
+						<li ><a href="/Handicap/bbsList?boardno=50" style="font:12px larger; ">Q&A</a></li>
+						<li><a href="/Handicap/bbsList?boardno=51" style="font:12px larger; ">게시판요청</a></li>
 						
 					</ul>
 					

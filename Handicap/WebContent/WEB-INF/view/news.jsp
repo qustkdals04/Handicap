@@ -18,13 +18,13 @@
       <tr>      
          
         <tr>
-			<td  colspan="2" ><a href="">-뉴스</a></td>
+			<td  colspan="2" style="font:12px larger; " ><a href="">-뉴스</a></td>
 			
 		</tr>
 		<tr>
-			<td colspan="2"><a href="">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="">-뉴스</a></td>
 		</tr><tr>
-			<td colspan="2"><a href="">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="">-뉴스</a></td>
 		</tr>   
          </table>
 </body>

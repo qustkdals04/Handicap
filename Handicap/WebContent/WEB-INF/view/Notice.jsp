@@ -17,13 +17,13 @@
 		</tr>   
 		
 		<tr>
-			<td  colspan="2" ><a href="">-장애인 연금에대해 알아보아요!</a></td>
+			<td  colspan="2" style="font:12px larger; "><a href="">-장애인 연금에대해 알아보아요!</a></td>
 			
 		</tr>
 		<tr>
-			<td colspan="2"><a href="">-차량 구입시 혜택!</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="">-차량 구입시 혜택!</a></td>
 		</tr><tr>
-			<td colspan="2"><a href="">-요금제에 대한 혜택!!!</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="">-요금제에 대한 혜택!!!</a></td>
 		</tr>
 	</table>
 </body>
