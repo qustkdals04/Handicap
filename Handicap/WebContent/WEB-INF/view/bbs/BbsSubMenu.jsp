@@ -18,7 +18,7 @@
 			
 						
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/body'"><img src="img/icon.png" width="15px"> 신체적 장애</li>
+						<li onclick="location.href='/Handicap/body'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">신체적 장애</font></li>
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/Mental'"><img src="img/icon.png" width="15px"> 정신적 장애</li>

@@ -155,13 +155,32 @@
 </script>
 </head>
 <body>
-   <div id="top" align="center">
-      <%@include file="../top.jsp"%>
 
+<div id="CssWrapper" align="center">
 
-      <div align="center">
-         <%@include file="../menu.jsp"%>
-      </div>
+ 
+<table>
+	<tr>
+		<td>
+				<div id="top">
+				<%@include file="../top.jsp"%>
+				</div>
+		</td>
+	</tr>
+	
+	<tr>
+				<td align="center">
+					<div id="CssContent1">
+						<%@include file="../menu.jsp"%>
+					</div>
+				
+				</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<div id="CssContents">
+					
+      
       <!-- center 끝 -->
       <div id="CssContents">
          <table class="mypage">
@@ -220,11 +239,22 @@
                   <button type="button" class="ml-button"
                      style="vertical-align: middle;" id="btnprofile">소개글</button></td>
             </tr>            
-
+</table>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+	<td>
+		<div id="Foot" align="center">
+										<%@include file="../Footer.jsp"%>
+									</div>
+	
+	</td>
+</tr>
          </table>
       </div>
-      <%@include file="../Footer.jsp"%>
-   </div>
+     
    <!-- 전체 wapper -->
 
 

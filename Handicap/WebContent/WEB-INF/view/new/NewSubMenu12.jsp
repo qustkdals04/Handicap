@@ -12,15 +12,18 @@
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li>고객센터</li>
+								<li>소식</li>
 
 						</ul>
-			<!-- /Handicap/messagelist -->
+			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/QnA'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">Q&A</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=10'"><img src="img/icon.png" width="15px">공지사항</font></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/request'"><img src="img/icon.png" width="15px"> 게시판 요청</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px">뉴스</li>
+						</ul>
+						<ul class="mylist">
+						<li onclick="location.href='/Handicap/bbsList?boardno=12'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">사이트 소개</font></li>
 						</ul>
 			</div>
 </body>

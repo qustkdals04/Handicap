@@ -4,26 +4,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
+ <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/main.css">
+ 
 <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/styles.css">
-<title>Insert title here</title>
+<title>의료장비</title>
 
 </head>
 <body>
 			<div id="leftsubmenu">
 						<ul class="mylistTitle">
-								<li>소식</li>
+								<li>의료장비</li>
 
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=10'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">공지사항</font></li>
+						<li onclick="location.href='/Handicap/trade'"><img src="img/icon.png" width="15px">사고 팔기</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=11'"><img src="img/icon.png" width="15px">뉴스</li>
+						<li onclick="location.href='/Handicap/question'"><img src="img/icon.png" width="15px">질문/답변</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=12'"><img src="img/icon.png" width="15px">사이트 소개</li>
+						<li onclick="location.href='/Handicap/review'"><img src="img/icon.png" width="15px"><font size = "5px;" style="font-weight: bolder; color: #4348B2;">사용후기</font></li>
 						</ul>
 			</div>
 </body>
