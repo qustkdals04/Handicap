@@ -67,6 +67,14 @@
 									</div>
 								</td>
 							</tr>
+							
+							<tr>
+								<td>
+									<div id="slider" align="center">
+										<%@include file="news.jsp"%>
+									</div>
+								</td>
+							</tr>
 
 							
 							<tr>
