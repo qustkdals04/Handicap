@@ -12,6 +12,7 @@
 	href="/Handicap/css/styles.css">
 
 <title>장애인 복지법</title>
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 
