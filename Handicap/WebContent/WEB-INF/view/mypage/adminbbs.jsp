@@ -14,7 +14,7 @@
 		out.print(",\"author\":\""+bv.getNickname()+"\"");
 		out.print(",\"writedate\":\""+bv.getWritedate().substring(0,10)+"\"");
 		out.print(",\"hits\":\""+bv.getHits()+"\"");
-		out.print(",\"bad\":\""+bv.getGood()+"\"");
+		out.print(",\"bad\":\""+bv.getBad()+"\"");
 		out.print(",\"boardno\":\""+bv.getBoardno()+"\"");
 		out.print("}");
 		if(i < list.size()-1) out.print(",");

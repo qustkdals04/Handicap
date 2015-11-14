@@ -148,11 +148,11 @@
    </select>
    <!-- 신고수높은 모든게시글가져오기 -->
    <select id="adminbbs" resultType="com.handicap.model.beans.BbsVO">
-   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid order by bad desc
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where bad <![CDATA[>=]]> 1 order by bad desc
    </select>
    <!-- 신고수높은 모든댓글 가져오기 -->
    <select id="admincomment" resultType="com.handicap.model.beans.BbsCommentVO">
-   	select bbscomment.*, nickname from bbscomment inner join member on bbscomment.author=member.userid order by bad desc;
+   	select bbscomment.*, nickname from bbscomment inner join member on bbscomment.author=member.userid where bad <![CDATA[>=]]> 1 order by bad desc
    </select>
    <!-- 내가쓴게시글가져오기 -->
    <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">

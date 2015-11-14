@@ -40,6 +40,17 @@
 <script type="text/javascript" src="/Handicap/js/jquery.form.min.js"></script>
 
 <script type="text/javascript">
+	function e (i, no, boardno){
+		var del = "no="+no+"&boardno="+boardno;
+		$.ajax({
+			type : "GET",
+			url : "mypage/bbsdelete",
+			data : del,
+			success : function(data){				
+				$("#chk_adminbbs").click();
+			}
+		})
+	}
 	$(document).ready(function(){
 			$("#img").change(function(){					
 				$('#imgform').submit();
@@ -70,26 +81,39 @@
 	            	setInterval(function(){$("#myimage").attr("src" , "/Handicap/myimg/"+response)}, 5000); */
 	            }                              
 	        });
-			  /* $(function(){
-					//폼전송
-					$('#ajaxform').ajaxForm({
-					   //보내기전 validation check가 필요할경우
-				            beforeSubmit: function (data, frm, opt) {
-							                alert("전송전!!");
-							                return true;
-							              },
-				            //submit이후의 처리
-				            success: function(responseText, statusText){
-				            	alert("전송성공!!");
-				            },
-				            //ajax error
-				            error: function(){
-				            	alert("에러발생!!");
-				            }                               
-				          });
-				}); */
-			/*  */
-		
+			
+			/* 신고수가 1 이상인 게시글 */
+			//삭제
+			/* $("button[name=delete]").click(function(){
+				alert("삭제할꺼시야?");
+			}); */
+			
+			$("#chk_adminbbs").click(function(){							
+				$.ajax({
+					type : "get",
+					url : "mypage/adminbbs",
+					dataType:'json',
+					success : function(data){
+						if(data==""){
+							$("#mypageList").html("신고수가 1이상인글이 없습니다.");
+						} else{
+							$("#mypageList").html("");
+							$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>신고</td><td>삭제</td></tr>");
+							$.each(data, function(i, dataObj){								
+								$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+								"<td>"+dataObj.no+"</td>"+
+								"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.title+"</a></td>"+
+								"<td>"+dataObj.author+"</td>"+
+								"<td>"+dataObj.writedate+"</td>"+
+								"<td>"+dataObj.hits+"</td>"+
+								"<td>"+dataObj.bad+"</td><td><button type='button' name='delete' style='width:50px; height:30px' onclick='javascript:e("+i.toString()+","+dataObj.no+","+dataObj.boardno+")'>삭제</button></td></tr>");
+							})							
+						}
+					}
+				});			 
+			})
+			
+			/* 내게시글 */
 			$("#chk_info").click(function(){				
 				var userid = "userid=${memberid}"
 				$.ajax({
@@ -114,9 +138,9 @@
 							})							
 						}
 					}
-				});
-			 
+				});			 
 			})
+			/* 내 댓글 */
 			$("#chk_info2").click(function(){
 							
 				var userid = "userid=${memberid}"
@@ -139,7 +163,6 @@
 							}
 						}
 					});
-			
 			})
 		
 		
@@ -155,11 +178,8 @@
 					data : profile,
 					success : function(data){
 						$("#profiletxt").text("");
-						$("#profiletxt").text(data);
+						$("#profiletxt").text($("#profile").val());
 						$("#profile").val("");
-					},
-					error : function(status){
-						alert(status);
 					}
 				})
 			}
@@ -272,19 +292,6 @@
       </div>
      
    <!-- 전체 wapper -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </body>

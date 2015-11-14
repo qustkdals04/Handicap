@@ -19,15 +19,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
+import com.handicap.model.beans.FileVO;
 import com.handicap.model.beans.ImageVO;
 import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.RowNumVO;
 import com.handicap.model.beans.UserVO;
 import com.handicap.model.beans.ZipcodeVO;
+import com.handicap.model.dao.BbsDAO;
+import com.handicap.model.dao.FileDAO;
 import com.handicap.model.dao.MessageDAO;
 import com.handicap.model.dao.UserDAO;
 import com.handicap.model.dao.ZipcodeDAO;
@@ -41,6 +45,10 @@ public class MemberController {
 	private MessageDAO md;
 	@Autowired
 	private ZipcodeDAO zd;
+	@Autowired
+	private BbsDAO bd;
+	@Autowired
+	private FileDAO fd;
 
 	// ==================== 회원가입 =========================
 	@RequestMapping("/idCheck") // 이거 c 대문자로 바꿨음 통일시키려고
@@ -265,14 +273,13 @@ public class MemberController {
 	
 	//프로필수정
 	@RequestMapping("/mypage/updateprofile")
-	public String updateprofile(@RequestParam String profile, HttpSession session, Model model){
+	public @ResponseBody String updateprofile(@RequestParam String profile, HttpSession session, Model model){
 		String userid = session.getAttribute("memberid").toString();
 		Map map = new HashMap();
 		map.put("userid", userid);
 		map.put("profile", profile);
 		dao.profileupdate(map);	
-		model.addAttribute("profile", dao.profile(userid));
-		return "mypage/profile";
+		return "";
 	}
 	
 	//신고수 높은 모든게시글가져오기
@@ -281,6 +288,23 @@ public class MemberController {
 		List<BbsVO> list = dao.adminbbs();
 		model.addAttribute("adminbbs", list);
 		return "mypage/adminbbs";
+	}
+	//신고글 삭제하기
+	@RequestMapping("/mypage/bbsdelete")
+	public @ResponseBody String bbsdelete(HttpSession session, Model model, @RequestParam String no, @RequestParam String boardno) throws SQLException{
+				
+		Map map = new HashMap();
+		map.put("no", no);
+		map.put("boardno", boardno);
+		List<FileVO> list = fd.bbsFileList(map);
+		for(int i=0;i<list.size();i++){
+			String filename = list.get(i).getFileoriginal();
+			String path = session.getServletContext().getRealPath("/img/" + filename); 
+			File file = new File(path);
+			file.delete();
+		}
+		bd.delete(map);	
+		return "삭제완료";
 	}
 	//신고수 높은 모든댓글가져오기
 	@RequestMapping("/mypage/adminbbscomment")
@@ -308,13 +332,23 @@ public class MemberController {
 	//마이페이지 이미지 수정
 	@RequestMapping("/mypage/myimage")
 	public String myimage(ImageVO iv,HttpServletRequest req, Model model, HttpSession session) throws IllegalStateException, IOException{
+		String userid = (String) session.getAttribute("memberid");
+		String imagename = dao.image(userid);
+		String oldpath = session.getServletContext().getRealPath("/myimg/"+imagename);
+		File oldfile = new File(oldpath);
+		if(imagename.equals("default.jpg")){
+			
+		} else{
+			oldfile.delete();
+		}
+		
 		MultipartFile multiFile = iv.getImg();
 		String fileName = multiFile.getOriginalFilename();
 		String uuid = UUID.randomUUID().toString().replace("-","");
 		String path = req.getSession().getServletContext().getRealPath("/myimg/" + uuid + fileName);
 		File f = new File(path);	
 		multiFile.transferTo(f);
-		String userid = (String) session.getAttribute("memberid");			
+		
 		Map map = new HashMap();
 		map.put("userid", userid);
 		map.put("image", uuid+fileName);
