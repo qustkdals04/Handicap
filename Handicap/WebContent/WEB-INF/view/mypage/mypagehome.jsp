@@ -47,14 +47,26 @@
 	            beforeSubmit: function (data,form,option) {
 	                //validation체크 
 	                //막기위해서는 return false를 잡아주면됨
-	                return true;
+	            	var img = $("#img").val();
+	                img = img.slice(img.indexOf(".") + 1).toLowerCase();
+	                if(img != "jpg" && img!= "png" && img != "gif" && img!="bmp"){
+	                	alert("이미지 파일(jpg,png,gif,bmp)만 등록 가능합니다.");
+	                	return false;
+	                } else{
+	    	            	var reader = new FileReader();
+	    	            	reader.onload = function(e){
+	    	            		$("#myimage").attr('src', e.target.result);
+	    	            	}
+	    	            	reader.readAsDataURL($("input[name=img]")[0].files[0]);	    	            	
+		                return true;
+	                }
 	            },
 	            success: function(response,status){
 	            	//성공후 서버에서 받은 데이터 처리	   
-	            	alert("업로드성공!!!");
+	            	alert("업로드성공!!!");	            	
 	            	//$("#myimage").attr("src" , "/Handicap/myimg/"+response);
-	            	$("#myimage").attr({src : "", alt : "잠시만 기다려주세요"});
-	            	setInterval(function(){$("#myimage").attr("src" , "/Handicap/myimg/"+response)}, 5000);
+	            	/* $("#myimage").attr({src : "", alt : "잠시만 기다려주세요"});
+	            	setInterval(function(){$("#myimage").attr("src" , "/Handicap/myimg/"+response)}, 5000); */
 	            }                              
 	        });
 			  /* $(function(){
