@@ -15,9 +15,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
+<script src="ckeditor/config.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 
 <title>Insert title here</title>
-<script type="text/javascript">
+<script type="text/javascript">	
    $(document).ready(function() {
       $("#delete").click(function() { //삭제버튼
          if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인

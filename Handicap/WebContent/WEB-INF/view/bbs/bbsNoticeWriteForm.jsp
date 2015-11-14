@@ -18,56 +18,60 @@
 <title>글쓰기</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-
+<script src="ckeditor/config.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
-						$("#bbsWrite").click(function() {
-							if ($("#title").val() == "") {
-								alert("제목을 입력해주세요..");
-								$("#title").focus();
-							} else if ($("#contents").val() == "") {
-								alert("내용을 입력해주세요..");
-								$("#contents").focus();					
-						    }else if ($("#boardno").val()== 30&&$("#category").val() == ""){
-						    	   alert("말머리를 선택해주세요");
-						    }else if ($("#boardno").val()== 40&&$("#category").val() == ""){
-						    	   alert("말머리를 선택해주세요");
-						    }else if ($("#boardno").val()== 40&&$("#region").val() == ""){
-						    	   alert("지역을 선택해주세요");
-						    }else if ($("#boardno").val()== 32&&$("#star").val() == ""){
-						    	   alert("평점을 선택해주세요");
-						    } else {
-								$("#bbsWriteForm").attr({
-									action : "bbsWrite",
-									method : 'post'
-								});
-								$("#bbsWriteForm").submit();
-							}
-						})
-
-						/* $("#bbsNoticelist").click(function(){    
-						  $("#bbsNoticelist").attr({ 
-						      action : "bbsNoticelist", 
-						      method : 'post' 
-						   }); 
-						}); */
-
-						$('#addFile')
-								.click(
-										function() {
-											var fileIndex = $('#fileview tr')
-													.children().length;
-											$('#fileview')
-													.append(
-															'<tr><td>'
-																	+ '   <input type="file" name="files['+ fileIndex +']" />'
-																	+ '</td></tr>');
-										});
-
+var editor;
+	CKEDITOR.on( 'instanceReady', function( ev ) {
+	editor = ev.editor;
+	document.getElementById( 'readOnlyOn' ).style.display = '';
+	editor.on( 'readOnly', function() {
+		document.getElementById( 'readOnlyOn' ).style.display = this.readOnly ? 'none' : '';
+		document.getElementById( 'readOnlyOff' ).style.display = this.readOnly ? '' : 'none';
+	});
+});
+	window.onload = function() {
+		CKEDITOR.replace('contents',{
+			enterMode:'3'
+		});		
+	};
+	
+	$(document).ready(
+		function() {
+		$("#bbsWrite").click(function() {
+			if ($("#title").val() == "") {
+				alert("제목을 입력해주세요..");
+				$("#title").focus();
+			}else if (editor.getData() == "") {
+				alert("내용을 입력해주세요..");
+				//$("#contents").focus();					
+		    }else if ($("#boardno").val()== 30&&$("#category").val() == ""){
+			    alert("말머리를 선택해주세요");
+		    }else if ($("#boardno").val()== 40&&$("#category").val() == ""){
+			    alert("말머리를 선택해주세요");
+			}else if ($("#boardno").val()== 40&&$("#region").val() == ""){
+				alert("지역을 선택해주세요");
+			}else if ($("#boardno").val()== 32&&$("#star").val() == ""){
+				alert("평점을 선택해주세요");
+			}else {
+					$("#bbsWriteForm").attr({
+					action : "bbsWrite",
+					method : 'post'
 					});
+			$("#bbsWriteForm").submit();
+				}
+			})
+			
+
+			$('#addFile').click(function() {
+				var fileIndex = $('#fileview tr').children().length;
+				$('#fileview').append(
+					'<tr><td>'
+					+ '   <input type="file" name="files['+ fileIndex +']" />'
+					+ '</td></tr>');
+			});
+		
+	});
 </script>
 </head>
 <body>
