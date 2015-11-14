@@ -30,6 +30,7 @@ import com.handicap.model.beans.MessageVO;
 import com.handicap.model.beans.RowNumVO;
 import com.handicap.model.beans.UserVO;
 import com.handicap.model.beans.ZipcodeVO;
+import com.handicap.model.dao.BbsCommentDAO;
 import com.handicap.model.dao.BbsDAO;
 import com.handicap.model.dao.FileDAO;
 import com.handicap.model.dao.MessageDAO;
@@ -49,6 +50,8 @@ public class MemberController {
 	private BbsDAO bd;
 	@Autowired
 	private FileDAO fd;
+	@Autowired
+	private BbsCommentDAO bcd;
 
 	// ==================== 회원가입 =========================
 	@RequestMapping("/idCheck") // 이거 c 대문자로 바꿨음 통일시키려고
@@ -313,6 +316,14 @@ public class MemberController {
 		model.addAttribute("admincomment", list);
 		return "mypage/admincomment";
 	}
+	
+	//신고댓글 삭제하기
+	@RequestMapping("/mypage/commentdelete")
+	public @ResponseBody String commentdelete(@RequestParam String commentno) throws SQLException{
+		bcd.delete(Integer.parseInt(commentno));
+		return "삭제완료";
+	}
+	
 	//내가쓴게시글 가져오기
 	@RequestMapping("/mypage/mybbs")
 	public String mybbs(@RequestParam String userid, Model model){

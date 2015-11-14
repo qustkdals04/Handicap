@@ -52,6 +52,18 @@
 			}
 		})
 	}
+	
+	function commentdel(commentno){
+		$.ajax({
+			type : "GET",
+			url : "mypage/commentdelete",
+			data : "commentno="+commentno,
+			success : function(data){	
+				alert(data);
+				$("#chk_admincomment").click();
+			}
+		})
+	}
 	$(document).ready(function(){
 			$("#img").change(function(){					
 				$('#imgform').submit();
@@ -120,14 +132,14 @@
 						dataType:'json',
 						success : function(data){
 							if(data==""){
-								$("#mypageList").html("작성하신 댓글이 없습니다.");
+								$("#mypageList").html("신고수가 1이상인 댓글이 없습니다.");
 							} else{
 								$("#mypageList").html("");
-								$("#mypageList").append("<tr><td>댓글내용</td><td>작성자</td><td>작성일</td></tr>");
+								$("#mypageList").append("<tr><td>댓글내용</td><td>작성자</td><td>작성일</td><td>신고</td></tr>");
 								$.each(data, function(i, dataObj){								
 									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
-									"<td>"+dataObj.author+"</td><td>"+dataObj.writedate+"</td></tr>");								
+									"<td>"+dataObj.author+"</td><td>"+dataObj.writedate+"</td><td>"+dataObj.bad+"</td><td><button type='button' name='delete' style='width:50px; height:30px' onclick='javascript: commentdel("+dataObj.commentno+")'>삭제</button></td></tr>");								
 								})								
 							}
 						}
