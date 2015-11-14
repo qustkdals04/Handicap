@@ -95,5 +95,26 @@ table.Bott {
 	overflow: hidden;
 }
 
+ table.re3 th{
+  	
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    border-bottom: 5px solid #F4B649;
+ 	 margin : 10px; 
+}  
+
+table.re3 tr{
+  	
+   height: 60px;
+   vertical-align: middle;
+}  
+table.re3 td{
+	vertical-align: middle;
+}
+
+
+
 
  
