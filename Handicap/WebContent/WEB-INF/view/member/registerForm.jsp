@@ -282,8 +282,8 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
 
          <!-- 시작 -->
          <center>
-         <div id="DD" align="right" style="width: 1016px;">
-            <img src="img/bn.jpg" align="right">
+         <div id="DD" align="right" style="width: 800px;">
+            <img src="img/bn.jpg" align="right"><br><br><br>
          </div>
          </center>
 		<center>

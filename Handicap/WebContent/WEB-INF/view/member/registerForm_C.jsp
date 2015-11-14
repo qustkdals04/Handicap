@@ -435,8 +435,8 @@
 					<td align="center">
 						<div id="CssContents">
 							<center>
-								<div id="DD" align="right" style="width: 1016px;">
-									<img src="img/bn.jpg" align="right">
+								<div id="DD" align="right" style="width: 800px;">
+									<img src="img/bn.jpg" align="right"><br><br><br>
 								</div>
 							</center>
 							<center>
