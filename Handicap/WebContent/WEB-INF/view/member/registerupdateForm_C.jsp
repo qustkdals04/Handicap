@@ -548,7 +548,6 @@
 						type="hidden" name="userid" value="${user.userid }"> <input
 						type="hidden" name="companyno" value="${user.companyno }">
 
-					<input type="hidden" name="image" value="">
 				</div>
 			</form>
 

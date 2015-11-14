@@ -4,10 +4,13 @@
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
 		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/websocket 
+        http://www.springframework.org/schema/websocket/spring-websocket.xsd">
 <!-- kr/ac/doowon/spring/config.xml (설정등록, 빈등록 관리) -->
    <mvc:annotation-driven/>
    
@@ -56,6 +59,16 @@
    class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
       <property name="dataSource" ref="driverManagerDataSource"></property>
    </bean>
+   
+   
+<!-- 스프링 웹소켓 설정 --> 
+   <websocket:handlers>
+   <websocket:mapping handler="echoHandler" path="/echo-ws"/>
+   <!-- 웹소켓 클라이언트가 연결할 때 사용할 앤드포인트(path속성)와
+        WebSocketHandler 객체를 연결  -->   
+ 	</websocket:handlers>
+  
+ <bean id="echoHandler" class="kr.ac.doowon.ws.EchoHandler"/>
    
 </beans>
 

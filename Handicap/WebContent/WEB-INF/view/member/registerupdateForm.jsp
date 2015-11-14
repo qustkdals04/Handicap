@@ -253,7 +253,7 @@
 								style="width: 45px; height: 22" maxlength="4"
 								value="${fn:substring(phone,3,7)}"> <input type="text"
 								name="phone3" id="phone3" style="width: 45px; height: 22"
-								maxlength="4" value="${fn:substring(phone,7,11)}"> <pre> </pre>
+								maxlength="4" value="${fn:substring(phone,7,11)}"> 
 							</td>
 						</tr>
 						<tr>
@@ -266,9 +266,20 @@
 						<tr>
 							<td style="font-weight: bold;" align="left"><pre>   </pre>*비밀번호질문
 							</td>
-							<td><pre>   </pre><input type="text" name="pquestion"
-								id="pquestion" style="width: 150; height: 22"
-								value="${user.pquestion }"></td>
+							<td id="regPq" colspan="2"><pre></pre><select name="pqid" id="pqid">
+									<option value="${user.pquestion }">${user.pquestion }</option>
+									<option value="0">비밀번호 힌트 질문</option>
+									<option value="1">아버지 성함은?</option>
+									<option value="2">어머니 성함은?</option>
+									<option value="3">출신 고등학교 이름은?</option>
+									<option value="4">키우는 애완동물의 이름은?</option>
+									<option value="5">초등학교 시절 담임 선생님의 이름은?</option>
+									<option value="6">가장 기억에 남는 장소는?</option>
+									<option value="7">나의 좌우명은?</option>
+									<option value="8">나의 보물 1호는?</option>
+									<option value="9">오래도록 기억하고 싶은 날짜는?</option>
+									<option value="10">초등학교 시절 나의 꿈은?</option>
+							</select></td>
 
 						</tr>
 						<tr>
@@ -296,12 +307,13 @@
 					</table>
 				</div>
 				<input type="hidden" name="flag" value="1"> <input
-					type="hidden" name="userid" value="${user.userid }"> <input
+					type="hidden" name="userid" value="${user.userid }">
+					<%-- <input type="hidden" name="pqid" value="${user.pqid }"> --%>
+					 <input
 					type="hidden" name="companyceoname" value=""> <input
 					type="hidden" name="companyaddr" value=""> <input
 					type="hidden" name="companytype" value="">
 					
-                  <input type="hidden" name="image" value="">
 					
 			</form>
 			

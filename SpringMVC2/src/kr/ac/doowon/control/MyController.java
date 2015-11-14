@@ -178,6 +178,11 @@ public class MyController {
 	 public String result7(){
 		 return "1029/result7";
 	 }
+	 
+	 @RequestMapping("/ws_test")
+	 public String chat(){
+		 return "1113/ws_test";
+	 }
 }
 
 
