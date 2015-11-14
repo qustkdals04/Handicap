@@ -12,10 +12,22 @@
 		out.print("\"contents\":\""+bcv.getContents()+"\"");
 		out.print(",\"writedate\":\""+bcv.getWritedate().substring(0,10)+"\"");
 		out.print(",\"no\":\""+bcv.getNo()+"\"");
+		out.print(",\"bad\":\""+bcv.getBad()+"\"");
 		out.print(",\"boarno\":\""+bcv.getBoardno()+"\"");
-		out.print(",\"author\":\""+bcv.getNickname()+"\"");
+		out.print(",\"nickname\":\""+bcv.getNickname()+"\"");
 		out.print("}");
 		if(i < list.size()-1) out.print(",");
 	}
 %>
-]
+]<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

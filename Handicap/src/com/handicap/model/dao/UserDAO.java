@@ -45,6 +45,10 @@ public interface UserDAO {
 
 	public List<BbsCommentVO> mycomment(String userid);
 
+	public List<BbsVO> adminbbs();
+	
+	public List<BbsCommentVO> admincomment();
+	
 	public boolean imageupdate(Map map);
 	
 	public String image(String userid);

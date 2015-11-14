@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -129,11 +130,11 @@
 								$("#mypageList").html("작성하신 댓글이 없습니다.");
 							} else{
 								$("#mypageList").html("");
-								$("#mypageList").append("<tr><td>댓글내용</td><td>작성일</td></tr>");
+								$("#mypageList").append("<tr><td>댓글내용</td><td>작성자</td><td>작성일</td></tr>");
 								$.each(data, function(i, dataObj){								
 									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
-									"<td>"+subString(dataObj.writedate, 0, 10)+"</td></tr>");								
+									"<td>"+dataObj.author+"</td><td>"+dataObj.writedate+"</td></tr>");								
 								})								
 							}
 						}
@@ -214,6 +215,9 @@
                         <td style="vertical-align: top;" height="20px" align="center">
                           <!--  <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글
                            <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 댓글">내가 쓴 댓글 -->
+                           <c:if test="${membergrade == 3 }">
+                           <button type="button" class="ml-button" name="chk_adminbbs" id="chk_adminbbs" value="신고글">신고글</button>
+                           <button type="button" class="ml-button" name="chk_admincomment" id="chk_admincomment" value="신고댓글">신고댓글</button>                           </c:if>
                            <button type="button" class="ml-button" name="chk_info" id="chk_info" value="게시글">게시글</button>
                            <button type="button" class="ml-button" name="chk_info2" id="chk_info2" value="댓글">댓글</button>
                      </tr>

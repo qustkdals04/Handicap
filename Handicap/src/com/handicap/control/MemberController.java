@@ -275,6 +275,20 @@ public class MemberController {
 		return "mypage/profile";
 	}
 	
+	//신고수 높은 모든게시글가져오기
+	@RequestMapping("/mypage/adminbbs")
+	public String adminbbs(Model model){
+		List<BbsVO> list = dao.adminbbs();
+		model.addAttribute("adminbbs", list);
+		return "mypage/adminbbs";
+	}
+	//신고수 높은 모든댓글가져오기
+	@RequestMapping("/mypage/adminbbscomment")
+	public String adminbbscomment(Model model){
+		List<BbsCommentVO> list = dao.admincomment();
+		model.addAttribute("admincomment", list);
+		return "mypage/admincomment";
+	}
 	//내가쓴게시글 가져오기
 	@RequestMapping("/mypage/mybbs")
 	public String mybbs(@RequestParam String userid, Model model){

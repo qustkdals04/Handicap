@@ -145,4 +145,16 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectOne("user.myimage",userid);
 	}
+
+	@Override
+	public List<BbsVO> adminbbs() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.adminbbs");
+	}
+
+	@Override
+	public List<BbsCommentVO> admincomment() {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("user.admincomment");
+	}
 }

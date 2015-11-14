@@ -4,7 +4,7 @@
 <%@page import="com.handicap.model.beans.BbsVO"%>
 [
 <%
-	List<BbsVO> list = (List<BbsVO>)request.getAttribute("mybbs");
+	List<BbsVO> list = (List<BbsVO>)request.getAttribute("adminbbs");
 	for(int i=0; i<list.size(); i++){
 		BbsVO bv = list.get(i);
 		String empty = "";
@@ -14,7 +14,7 @@
 		out.print(",\"author\":\""+bv.getNickname()+"\"");
 		out.print(",\"writedate\":\""+bv.getWritedate().substring(0,10)+"\"");
 		out.print(",\"hits\":\""+bv.getHits()+"\"");
-		out.print(",\"good\":\""+bv.getGood()+"\"");
+		out.print(",\"bad\":\""+bv.getGood()+"\"");
 		out.print(",\"boardno\":\""+bv.getBoardno()+"\"");
 		out.print("}");
 		if(i < list.size()-1) out.print(",");
