@@ -448,7 +448,7 @@
 								<center>
 									<div id="dd" align="center">
 										<center>
-											<table class="re2">
+											<table class="re3">
 
 
 
@@ -459,12 +459,12 @@
 														style="font-size: x-large; font-weight: bold; color: silver;">기업회원가입</th>
 												<tr>
 
-													<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*아이디</td>
+													<td width="150" align="left" style="font-weight: bold;">*아이디</td>
 
-													<td style="width: 176px;"><pre> </pre> <input
+													<td style="width: 176px;"> <input
 														type="text" name="userid" id="userid"
 														style="vertical-align:; width: 150; height: 28px"></td>
-													<td><pre> </pre>
+													<td>
 
 														<button type="button" class="ml-button"
 															style="font-weight: bold;" id="idCheck">중복체크</button></td>
@@ -474,21 +474,21 @@
 
 
 												<tr>
-													<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*비밀번호</td>
-													<td colspan="2" id="pwExcept"><pre>  </pre><input
+													<td width="150" align="left" style="font-weight: bold;">*비밀번호</td>
+													<td colspan="2" id="pwExcept"><input
 														type="password" name="passwd" id="passwd"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre>   </pre></td>
+														</td>
 
 												</tr>
 
 												<tr>
 													<td width="150" align="left" style="font-weight: bold;">*비밀번호확인</td>
 
-													<td id="pwEqual" colspan="2"><pre></pre><input
+													<td id="pwEqual" colspan="2"><input
 														type="password" name="passwd2" id="passwd2"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre> </pre></td>
+													</td>
 
 												</tr>
 
@@ -497,32 +497,32 @@
 
 
 												<tr>
-													<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*회사명</td>
+													<td width="150" align="left" style="font-weight: bold;">*회사명</td>
 
-													<td style="width: 176px;"><pre> </pre> <input
+													<td style="width: 176px;"><input
 														type="text" name="nickname" id="nickname"
 														style="vertical-align:; width: 150; height: 28px"></td>
-													<td><pre> </pre>
+													<td>
 
 														<button type="button" class="ml-button"
 															style="font-weight: bold;" id="nickCheck">중복체크</button></td>
 												</tr>
 												<tr>
-													<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*업종</td>
-													<td colspan="2" id="regType"><pre>  </pre><input
+													<td width="150" align="left" style="font-weight: bold;">*업종</td>
+													<td colspan="2" id="regType"><input
 														type="text" name="companytype" id="companytype"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre>   </pre></td>
+														</td>
 												</tr>
 												<tr>
-													<td width="150" align="left" style="font-weight: bold;"><pre>   </pre>*사업자
+													<td width="150" align="left" style="font-weight: bold;">*사업자
 														등록번호</td>
 
-													<td style="width: 176px;"><pre> </pre> <input
+													<td style="width: 176px;"><input
 														type="text" name="companyno" id="companyno"
 														style="vertical-align:; width: 150; height: 28px"
-														maxlength="10"> ('-' 제외)</td>
-													<td><pre> </pre>
+														maxlength="10"><br> ('-' 제외)</td>
+													<td>
 
 														<button type="button" class="ml-button"
 															style="font-weight: bold;" id="noCheck">중복체크</button></td>
@@ -530,10 +530,10 @@
 													<td width="150" align="left"
 														style="font-weight: bold; width: 114px">*대표자명</td>
 
-													<td colspan="2" id="pwEqual" colspan="2"><pre></pre><input
+													<td colspan="2" id="pwEqual" colspan="2"><input
 														type="text" name="companyceoname" id="companyceoname"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre> </pre></td>
+														</td>
 
 												</tr>
 												<!-- <td width="150" align="left" style="font-weight: bold;">*닉네임</td>
@@ -552,7 +552,7 @@
 														type="text" name="companyaddress1" id="companyaddress1"
 														style="width: 50px; height: 22" readonly><input
 														type="text" name="companyaddress2" id="companyaddress2"
-														style="width: 350px; height: 22" readonly> <pre></pre>
+														style="width: 350px; height: 22" readonly>
 														<span style="font-size: 10pt;">상세주소 : </span><input
 														type="text" name="companyaddress3" id="companyaddress3"
 														style="width: 180px; height: 22" readonly="readonly"
@@ -565,12 +565,12 @@
 
 												<tr>
 													<td width="150" align="left" style="font-weight: bold;"
-														valign="middle"><pre>  </pre>*담당자명</td>
+														valign="middle">*담당자명</td>
 
-													<td id="regName" colspan="2"><pre> </pre><input
+													<td id="regName" colspan="2"><input
 														type="text" name="name" id="name" maxlength="10"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre> </pre></td>
+														</td>
 
 												</tr>
 												<!-- <td ><pre> </pre>
@@ -580,8 +580,8 @@
                         </td> -->
 
 												<tr>
-													<td width="150" align="left" style="font-weight: bold;"><pre> </pre>*연락처</td>
-													<td id="regPhone" colspan="2"><pre> </pre><select
+													<td width="150" align="left" style="font-weight: bold;">*연락처</td>
+													<td id="regPhone" colspan="2"><select
 														name="phone1" id="phone1" style="width: 50; height: 25">
 															<option value="010">010</option>
 															<option value="011">011</option>
@@ -590,7 +590,7 @@
 													</select> <input type="text" name="phone2" id="phone2"
 														style="width: 45px; height: 22" maxlength="4"> <input
 														type="text" name="phone3" id="phone3"
-														style="width: 45px; height: 22" maxlength="4"> <pre> </pre>
+														style="width: 45px; height: 22" maxlength="4">
 													</td>
 
 												</tr>
@@ -599,7 +599,7 @@
 													<td id="regEmail" colspan="2"><input type="text"
 														name="email" id="email"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre> </pre></td>
+														</td>
 
 												</tr>
 												<tr>
@@ -618,7 +618,7 @@
 															<option value="8">나의 보물 1호는?</option>
 															<option value="9">오래도록 기억하고 싶은 날짜는?</option>
 															<option value="10">초등학교 시절 나의 꿈은?</option>
-													</select> <pre> </pre></td>
+													</select></td>
 
 												</tr>
 												<tr>
@@ -627,7 +627,7 @@
 													<td colspan="2" id="regPa"><input type="text"
 														name="panswer" id="panswer"
 														style="vertical-align:; width: 150; height: 28px">
-														<pre> </pre></td>
+														</td>
 
 												</tr>
 												<tr>
@@ -641,7 +641,7 @@
 
 												</tr>
 												<tr>
-													<th colspan="3"><pre>  </pre></th>
+													<th colspan="3"></th>
 												</tr>
 
 											</table>
