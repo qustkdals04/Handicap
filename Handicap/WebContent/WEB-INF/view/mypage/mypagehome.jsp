@@ -40,13 +40,14 @@
 <script type="text/javascript" src="/Handicap/js/jquery.form.min.js"></script>
 
 <script type="text/javascript">
-	function e (i, no, boardno){
+	function bbsdel (i, no, boardno){
 		var del = "no="+no+"&boardno="+boardno;
 		$.ajax({
 			type : "GET",
 			url : "mypage/bbsdelete",
 			data : del,
-			success : function(data){				
+			success : function(data){	
+				alert(data);
 				$("#chk_adminbbs").click();
 			}
 		})
@@ -84,9 +85,7 @@
 			
 			/* 신고수가 1 이상인 게시글 */
 			//삭제
-			/* $("button[name=delete]").click(function(){
-				alert("삭제할꺼시야?");
-			}); */
+			
 			
 			$("#chk_adminbbs").click(function(){							
 				$.ajax({
@@ -106,11 +105,33 @@
 								"<td>"+dataObj.author+"</td>"+
 								"<td>"+dataObj.writedate+"</td>"+
 								"<td>"+dataObj.hits+"</td>"+
-								"<td>"+dataObj.bad+"</td><td><button type='button' name='delete' style='width:50px; height:30px' onclick='javascript:e("+i.toString()+","+dataObj.no+","+dataObj.boardno+")'>삭제</button></td></tr>");
+								"<td>"+dataObj.bad+"</td><td><button type='button' name='delete' style='width:50px; height:30px' onclick='javascript: bbsdel("+i.toString()+","+dataObj.no+","+dataObj.boardno+")'>삭제</button></td></tr>");
 							})							
 						}
 					}
 				});			 
+			})
+			
+			/* 신고수가 1이상인 모든 댓글 */
+			$("#chk_admincomment").click(function(){							
+					$.ajax({
+						type : "get",
+						url : "mypage/adminbbscomment",						
+						dataType:'json',
+						success : function(data){
+							if(data==""){
+								$("#mypageList").html("작성하신 댓글이 없습니다.");
+							} else{
+								$("#mypageList").html("");
+								$("#mypageList").append("<tr><td>댓글내용</td><td>작성자</td><td>작성일</td></tr>");
+								$.each(data, function(i, dataObj){								
+									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
+									"<td>"+dataObj.author+"</td><td>"+dataObj.writedate+"</td></tr>");								
+								})								
+							}
+						}
+					});
 			})
 			
 			/* 내게시글 */

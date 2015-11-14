@@ -9,7 +9,16 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 <!-- com/handicap/spring/config.xml (설정등록, 빈등록 관리) -->
-   <mvc:annotation-driven/>
+   <mvc:annotation-driven>
+   	<mvc:message-converters>
+   		<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+   			<property name="supportedMediaTypes">
+   				<value>text/plain;charset=UTF-8</value>
+   			</property>
+   		
+   		</bean>
+   	</mvc:message-converters>
+   </mvc:annotation-driven>
    
    <!-- JSP요청이 들어왔을때 Tomcat이 처리해라 -->
    <mvc:default-servlet-handler/>

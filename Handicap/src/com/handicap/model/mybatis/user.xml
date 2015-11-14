@@ -158,9 +158,17 @@
    <select id="mybbs" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where author=#{author}
    </select>
+   <!-- 내가쓴게시글갯수 -->
+   <select id="mybbscount" parameterType="string" resultType="int">
+   	select count(*) from bbs where author=#{author}
+   </select>
    <!-- 내가쓴댓글가져오기 -->
    <select id="mycomment" parameterType="string" resultType="com.handicap.model.beans.BbsCommentVO">
    	select bbscomment.*, nickname from bbscomment inner join member on bbscomment.author=member.userid where author=#{author}
+   </select>
+   <!-- 내가쓴댓글갯수 -->
+   <select id="mycommentcount" parameterType="string" resultType="int">
+   	select count(*) from bbscomment where author=#{author}
    </select>
    <!-- 이미지 업데이트 -->
    <update id="imageupdate" parameterType="map">

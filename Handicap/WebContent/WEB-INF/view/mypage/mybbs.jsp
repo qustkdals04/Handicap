@@ -18,6 +18,6 @@
 		out.print(",\"boardno\":\""+bv.getBoardno()+"\"");
 		out.print("}");
 		if(i < list.size()-1) out.print(",");
-	}
+	}	
 %>
 ]

@@ -41,10 +41,10 @@ public interface UserDAO {
 	
 	public String profile(String userid);
 
-	public List<BbsVO> mybbs(String userid);
-
+	public List<BbsVO> mybbs(String userid);	
+	
 	public List<BbsCommentVO> mycomment(String userid);
-
+	
 	public List<BbsVO> adminbbs();
 	
 	public List<BbsCommentVO> admincomment();

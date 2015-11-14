@@ -129,7 +129,7 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public List<BbsCommentVO> mycomment(String userid) {
 		// TODO Auto-generated method stub
-		return sqlSession.selectList("user.mycomment",userid);
+		return sqlSession.selectList("user.mycomment", userid);
 	}
 
 	@Override
@@ -157,4 +157,6 @@ public class UserDAOImpl implements UserDAO {
 		// TODO Auto-generated method stub
 		return sqlSession.selectList("user.admincomment");
 	}
+
+	
 }

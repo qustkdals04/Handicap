@@ -316,10 +316,11 @@ public class MemberController {
 	//내가쓴게시글 가져오기
 	@RequestMapping("/mypage/mybbs")
 	public String mybbs(@RequestParam String userid, Model model){
-		List<BbsVO> list = dao.mybbs(userid);
-		model.addAttribute("mybbs", list);
+        List<BbsVO> list = dao.mybbs(userid);
+        model.addAttribute("mybbs", list);
 		return "mypage/mybbs";
 	}
+	
 	
 	//내가쓴 댓글가져오기
 	@RequestMapping("/mypage/mycomment")
