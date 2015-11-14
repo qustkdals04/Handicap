@@ -41,6 +41,7 @@
 
 <script type="text/javascript">
 	function bbsdel (i, no, boardno){
+		if(confirm("정말로 삭제하시겠습니까?")==true){
 		var del = "no="+no+"&boardno="+boardno;
 		$.ajax({
 			type : "GET",
@@ -51,9 +52,13 @@
 				$("#chk_adminbbs").click();
 			}
 		})
+		} else{
+			return;
+		}
 	}
 	
 	function commentdel(commentno){
+		if(confirm("정말로 삭제하시겠습니까?")==true){
 		$.ajax({
 			type : "GET",
 			url : "mypage/commentdelete",
@@ -63,6 +68,9 @@
 				$("#chk_admincomment").click();
 			}
 		})
+		} else{
+			return;
+		}
 	}
 	$(document).ready(function(){
 			$("#img").change(function(){					
