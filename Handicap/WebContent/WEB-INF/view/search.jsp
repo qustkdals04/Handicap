@@ -27,7 +27,7 @@
 					</tr>
 				</table>
 			</c:when>		
-		</c:choose>
+		</c:choose>       
 		<c:choose>
 			<c:when test="${result.boardno == 11 }">		
 				<table>					
