@@ -353,7 +353,7 @@ window.onload = function() {
                                           <br>
                                           	<textarea readonly="readonly" rows="20" 
                                           	cols="100" id="contents" name="contents"
-                                          	>                                          	
+                                          	>                                        	
                                           	${bbsContent.contents}</textarea>
                                           </td>
                                        </tr>

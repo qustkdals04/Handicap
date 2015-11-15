@@ -133,7 +133,9 @@ public class BbsController {
                         HttpServletRequest request,
                         //@RequestParam int fileid,
                         //FileVO fv,                        
-                        Model model){
+                        Model model, HttpSession session){
+	   
+	  session.setAttribute("boardno", request.getParameter("boardno"));
       Map map = new HashMap();
       map.put("no", no);
       map.put("boardno", boardno);
