@@ -92,6 +92,23 @@
 									</c:choose></td>
 								<td>
 									<!-- 위에 폼 인쿨루드 --> <c:choose>
+										<c:when test="${boardno == '12'}">
+											<table border="1" cellpadding="5" cellspacing="0">
+												<tr>
+													<td width="450px" height="300px;" align="center"><img
+														alt="메인1이미지" src="/Handicap/img/S1.JPG" style="width: 100%; height: 100%"></td>
+														<td width="300px" height="300px;" align="center"><img
+														alt="메인2이미지" src="/Handicap/img/S2.JPG"  style="width: 100%; height: 100%;vertical-align: top;"></td>
+												</tr>
+
+												<tr>
+													<td align="right" colspan="2"><img alt="하단 메뉴 이미지"
+														src="/Handicap/img/S3.JPG"  style="width: 400px; height: 50px"></td>
+												</tr>
+											</table>
+										</c:when>
+
+
 										<c:when test="${boardno == '32'}">
 											<table class="bbsList">
 												<tr height="20px">
@@ -106,7 +123,7 @@
 
 												<tr>
 
-													
+
 													<c:forEach var="bbs" items="${list}">
 														<tr>
 															<td align="center">${bbs.no}</td>
@@ -154,7 +171,7 @@
 
 															</tr>
 															<tr>
-																
+
 																<c:forEach var="bbs" items="${list}">
 																	<tr>
 																		<td align="center">${bbs.no}</td>
@@ -191,7 +208,7 @@
 
 																		</tr>
 																		<tr>
-																			
+
 																			<c:forEach var="bbs" items="${list}">
 																				<tr>
 																					<td align="center">${bbs.no}</td>
@@ -277,7 +294,7 @@
 
 
 																	</table>
-														<!-- 아래 폼 인쿨루드 -->
+																	<!-- 아래 폼 인쿨루드 -->
 															</tr>
 														</table>
 														<div>

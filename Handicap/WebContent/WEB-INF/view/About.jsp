@@ -25,7 +25,7 @@
 				</td>
 		</tr>
 		<tr>
-				<td align="center"><font size = "5" color="#FF002A">우리가 달라도 <br><br><br> 일단 위치만 적용 시킴 변경은 추후</font></td>
+				<td align="center"><img src = "/Handicap/img/S1"></td>
 		</tr>
 		<tr>
 				<td align="right" colspan="2">
