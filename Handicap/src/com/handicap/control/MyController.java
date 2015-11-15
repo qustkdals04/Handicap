@@ -150,6 +150,9 @@ public String request(){
 public String retype(){
 	return "member/registerFormSelect";
 }
-	
-	
+//소식 - 사이트소개	
+@RequestMapping("/about") 
+public String about(){
+	return "bbs/About";
+}
 }

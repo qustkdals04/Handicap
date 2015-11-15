@@ -8,6 +8,55 @@
 </head>
 <body>
 
+<div id="CssWrapper" align="center">
+		<table>
+			<tr>
+				<td><%@include file="top.jsp"%></td>
+			</tr>
+			<tr>
+				<td>
+					<div align="center">
+						<%@include file="menu.jsp"%>
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<div id="CssContents">
+							<table>
+									<tr>
+											<td>	
+														<%@include file = "new/NewSubMenu12.jsp" %>
+											</td>
+											<td>
+														사이트 뷰
+											</td>
+									</tr>
+							</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+					<td>
+							<%@include file ="Footer.jsp" %>
+					</td>
+			</tr>
+		</table>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<table cellpadding="5" cellspacing="0" align="center">
 		<tr>
 			<td width="700px" height="300px;" align="center" colspan="3"><img
