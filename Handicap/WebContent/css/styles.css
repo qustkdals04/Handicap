@@ -353,6 +353,7 @@ button {
 	font-size: 11pt;
 	/* float: left; */
 	margin: 0px 20px;
+	outline: none;
 }
 .ml-button {
 	background-color: #F39C45;
