@@ -1,6 +1,9 @@
 package com.handicap.control;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -9,6 +12,7 @@ import java.util.UUID;
 
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -238,17 +242,40 @@ public class BbsController {
     @RequestMapping("/bbsbad")
     public String bbsbad(@RequestParam int no,
             @RequestParam int boardno,
-            BbsVO bv
-            ) throws SQLException
+            @RequestParam String userid,
+            BbsVO bv,
+            HttpServletResponse response,
+            HttpServletRequest request
+            ) throws SQLException, IOException
     {
-        Map map = new HashMap();
-        map.put("no", no);
-        map.put("boardno", boardno);
+    	   	   	
+    	request.setCharacterEncoding("UTF-8");
+		PrintWriter writer = response.getWriter();
+    	 Map map = new HashMap();
+    	 map.put("no", no);
+         map.put("boardno", boardno);
+    	if(userid == bd.gbsearch(bv)){
+    		writer.println("<script>alert('신고할 수 없는 글입니다.'); </script>");
+			writer.flush();
+    		return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+    	} else if(userid != bd.gbsearch(bv)){
+    		 bd.gblimit(bv);
+    	     bd.badupdate(map);  
+    	        
+    	}
+    	return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
         
-                    
-        bd.gblimit(bv);
-        bd.badupdate(map);
-       
-      return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+      
     }
+    
+    @RequestMapping("/statusupdate")
+    public String statusupdate(@RequestParam int no,
+    							@RequestParam int boardno){
+    	Map map = new HashMap();
+   	 	map.put("no", no);
+        map.put("boardno", boardno);
+    	bd.statusupdate(map);
+    	return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+    }
+    
 }

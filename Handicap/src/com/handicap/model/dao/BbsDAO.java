@@ -116,4 +116,16 @@ public class BbsDAO {
        
        return false;
  }
+ public String gbsearch(BbsVO bv){
+	
+	 String result;
+	 result = sqlSession.selectOne("bbs.gbsearch",bv);
+	 return result;
+	  
+ }
+ 
+ public int statusupdate(Map map){
+	 
+	 return sqlSession.update("bbs.bbsStatusUpdate",map);
+ }
 }

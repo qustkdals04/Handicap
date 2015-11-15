@@ -174,7 +174,44 @@
 																	</tr>
 																</c:forEach>
 																</c:when>
+																<c:when test="${boardno == 30 }">
+																<table class="bbsList">
+																		<tr height="20px">
+																			<th width="10%">글번호</th>
+																			<th width="38%">제 목</th>
+																			<th width="14%">작성자</th>
+																			<th width="20%">작성일</th>
+																			<th width="8%">조회수</th>
+																			<th width="10%">진행상태</th>
 
+
+																		</tr>
+																		<tr>
+
+																			<c:forEach var="bbs" items="${list}">
+																				<tr>
+																					<td align="center">${bbs.no}</td>
+																					<td align="center"><a
+																						href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
+																					<td align="center">${bbs.nickname}</td>
+																					<td align="center">${bbs.writedate}</td>
+																					<td align="center">${bbs.hits}</td>
+																					<td align="center">
+																						<c:choose>
+																							<c:when test="${bbs.status == 1}">
+																							거래대기
+																							</c:when>
+																							<c:otherwise>
+																							거래완료
+																							</c:otherwise>
+																						</c:choose>
+																					</td>
+
+
+																				</tr>
+
+																			</c:forEach>
+																</c:when>
 
 																<c:otherwise>
 																	<table class="bbsList">

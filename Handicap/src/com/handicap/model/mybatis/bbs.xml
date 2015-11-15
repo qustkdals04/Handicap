@@ -100,7 +100,7 @@
       delete bbscomment where commentno = #{commentno}
    </delete>
    
-   <!-- 답글달면 status 2로바꾸기. -->
+   <!--  status 2로바꾸기. -->
    <update id="bbsStatusUpdate" parameterType="int">
    	update bbs set status=2 where no=#{no} and boardno=#{boardno}
    </update>

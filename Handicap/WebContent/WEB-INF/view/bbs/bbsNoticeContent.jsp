@@ -33,7 +33,8 @@
       });
     
       $("#goodupdate").click(function() {
-            $("#bbsContent").attr({            
+    	   	  
+    	  $("#bbsContent").attr({            
                   action : "bbsgood",
                method : 'get'
             });
@@ -50,6 +51,18 @@
             alert("신고하였습니다.");
          $("#bbsContent").submit();            
    });
+      
+      $("#tradecomplite").click(function() { //삭제버튼
+          if (confirm("완료처리를 하시겠습니까?") == true) { // 확인
+             $("#bbsContent").attr({
+                action : 'statusupdate',
+                method : 'get'
+             });
+             $("#bbsContent").submit();
+          } else {
+             return; // 취소
+          }
+       });
    });
 </script>
 </head>
@@ -124,6 +137,57 @@
 
 
                               <c:choose>
+                              	<c:when test="${boardno == 30}">
+                              	<table class="bbsList">
+                                       <tr>
+                                          <td width="50px"><font size="3px"
+                                             style="font-weight: bold;">제목 :</td>
+                                          <td width="350px" align="left"><font size="3px"
+                                             style="font-weight: bold;">${bbsContent.category}${bbsContent.region}${bbsContent.title}</font></td>
+                                          <td colspan="2" width="300px" align="right"><font
+                                             size="2px">작성일 : ${bbsContent.writedate}</font></td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="4" align="left"><font size="3px">작성자
+                                                : ${bbsContent.nickname}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 조회수 :
+                                                ${bbsContent.hits}
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 진행상태:
+                                                <c:choose>
+                                                <c:when test="${bbsContent.status ==1 }"> 거래대기</c:when>
+                                                <c:otherwise>거래완료</c:otherwise>
+                                                </c:choose></font></td>
+                                       </tr>
+                                       <tr style="height: 300px; vertical-align: text-top;">
+
+                                          <td colspan="4" >
+                                          <c:if test="${bbsFileName !=null }">
+                                          <c:forEach var="bbsfile" items="${bbsFileName}">
+                                          <img height="250px" style="width: 350px;"
+                                          src="/Handicap/img/${bbsfile.fileoriginal}">
+                                          </c:forEach>
+                                          </c:if> 
+                                          <br>
+                                          	<textarea readonly="readonly" rows="20" 
+                                          	cols="100" id="contents" name="contents"
+                                          	>                                          	
+                                          	${bbsContent.contents}</textarea>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td align="left"><font size="1px">첨부파일 : </font></td>
+                                          <td colspan="4"><c:forEach var="bbsFileName"
+                                                items="${bbsFileName}">
+                                                <tr>
+
+                                                   <td>${bbsFileName.filename}</td>
+
+                                                </tr>
+                                             </c:forEach></td>
+
+                                       </tr>
+                                    </table>
+                              	</c:when>
                                  <c:when test="${boardno == '32' }">
                                     <table class="bbsList">
                                        <tr>
@@ -252,7 +316,7 @@
                                        </tr>
                                     </table>
                                  </c:when>
-
+							
 
                                  <c:otherwise>
                                     <table class="bbsList">
@@ -403,16 +467,32 @@
                                              onclick="location.href='/Handicap/bbsList?boardno=${boardno}'"
                                              style="margin-bottom: 50px;">목록</button>
                                        </td>
-                                       <td width="600px;" align="right"><c:if
-                                             test="${boardno!=10 }">
-                                             <button type="button" id="goodupdate" class="ml-button">추천</button>
-                                             <button type="button" id="badupdate" class="ml-button">신고</button>
-                                          </c:if> <c:if test="${bbsContent.nickname == membernick }">
-                                             <button type="button" id="update" class="ml-button"
-                                                onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
-                                             <button type="button" id="delete" class="ml-button">삭제</button>
-                                          </c:if></td>
-                                    </tr>
+													<td width="600px;" align="right"><c:choose>
+															<c:when test="${boardno!=10}">
+																<c:if test="${membernick !=null}">
+																	<c:choose>
+																		<c:when test="${membernick != bbsContent.nickname}">
+																			<button type="button" id="goodupdate"
+																				class="ml-button">추천</button>
+																			<button type="button" id="badupdate"
+																				class="ml-button">신고</button>
+																		</c:when>
+																	</c:choose>
+																</c:if>
+															</c:when>
+
+														</c:choose> <c:if test="${bbsContent.nickname == membernick }">
+															<button type="button" id="update" class="ml-button"
+																onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
+															<button type="button" id="delete" class="ml-button">삭제</button>
+															<c:choose>
+																<c:when test="${boardno == 30 }">
+																	<button type="button" id="tradecomplite" class="ml-button">완료</button>
+																</c:when>
+															</c:choose>
+														</c:if></td>
+
+												</tr>
                                  </table>
                               </center>
                               <input type="hidden" name="no" value="${bbsContent.no }">
