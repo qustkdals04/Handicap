@@ -156,7 +156,7 @@ body {
 
 .mylist{
     text-align : left;
-	font-family: 占쎈즻占쏙옙;
+	font-family: serif;
 	font-size: 18px;
 	color : #444444;
 	list-style: none;
@@ -166,6 +166,7 @@ body {
     margin-bottom: 10px;
     border-collapse: separate;
     boader-spacimg:1px;
+    vertical-align: top;
 
 }
 .mylistTitle{
