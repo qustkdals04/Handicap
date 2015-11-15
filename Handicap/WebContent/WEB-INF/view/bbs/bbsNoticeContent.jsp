@@ -19,6 +19,11 @@
 <script src="ckeditor/config.js"></script>
 <script src="ckeditor/ckeditor.js"></script> 
 <script type="text/javascript">   
+window.onload = function() {
+	CKEDITOR.replace('contents',{
+		enterMode:'3'
+	});		
+};
    $(document).ready(function() {
       $("#delete").click(function() { //삭제버튼
          if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
@@ -51,6 +56,8 @@
             alert("신고하였습니다.");
          $("#bbsContent").submit();            
    });
+      
+      
       
       $("#tradecomplite").click(function() { //삭제버튼
           if (confirm("완료처리를 하시겠습니까?") == true) { // 확인
