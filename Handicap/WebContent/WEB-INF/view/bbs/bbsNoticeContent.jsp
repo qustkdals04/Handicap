@@ -240,8 +240,13 @@ window.onload = function() {
 
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
+                                               
+                                                
                                                    <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
+                                               
+                                                
+                                                
                                                 </c:forEach>
                                              </c:if> 
                                              <br>
