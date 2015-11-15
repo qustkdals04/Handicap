@@ -46,7 +46,7 @@
 										</tr>
 
 										<tr>
-											<td align="right" colspan="3"><img alt="하단 메뉴 이미지"
+											<td align="left" colspan="3"><img alt="하단 메뉴 이미지"
 												src="/Handicap/img/S3.JPG"
 												style="width: 400px; height: 70px"></td>
 										</tr>

@@ -24,6 +24,7 @@
 						</ul>
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/about"><img src="img/icon.png" width="15px">사이트소개</li>
+
 						</ul>
 			</div>
 </body>
