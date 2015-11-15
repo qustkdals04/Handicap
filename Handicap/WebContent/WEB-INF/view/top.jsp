@@ -30,6 +30,23 @@
 		$(".a3").mouseleave(function() {
 			$(".a3").css("background-color", "white");
 		});
+		
+		//검색
+		$("#btnSearch").click(function(){
+			var category = $("#category").val();
+			var keyword = $("#keyword").val();
+			if(category=="제목"){
+				alert("제목");
+				$.ajax({
+					type : "get",
+					url : ""
+				})
+			} else if(category=="내용"){
+				alert("내용");
+			} else {
+				alert("제목+내용");
+			}
+		});
 	});
 </script>
 </head>
@@ -69,12 +86,13 @@
 			<td   width="300px" align="left" style="vertical-align: bottom; width: 641px; margin-left: 0;">
 				<div id="appLoadingIndicator">
 					<div id="cell">
-						<select>
-							<option>제목</option>
-							<option>내용</option>
-							<option>제목+내용</option>
+						<select name="category" id="category">
+							<option value="제목">제목</option>
+							<option value="내용">내용</option>
+							<option value="제목+내용">제목+내용</option>
 						</select>
-						<input align="bottom" id="search" placeholder="검색어를 입력해주세요."  type="text" style="width: 350px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" ><button class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0;">검색</button>
+						<input align="bottom" id="keyword" placeholder="검색어를 입력해주세요."  type="text" style="width: 350px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" >
+						<button type="button" id="btnSearch" class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0;">검색</button>
 					</div>
 				</div>
 			</td>
