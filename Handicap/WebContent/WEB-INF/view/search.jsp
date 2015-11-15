@@ -9,7 +9,7 @@
 </head>
 <body>
 <c:if test="${list == null }">
-	검색결과가 없습니다.
+	<%= "검색결과가 없습니다." %>
 </c:if>
 <c:if test="${list != null }">
 	<c:forEach var="result" items="${list }">
@@ -21,7 +21,7 @@
 				<td colspan="2">${result.contents }</td>
 			</tr>
 			<tr>
-				<td>${result.hits }</td><td>${result.good }</td>
+				<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
 			</tr>
 		</table>
 	</c:forEach>

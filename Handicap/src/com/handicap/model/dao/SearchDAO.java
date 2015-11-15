@@ -12,12 +12,12 @@ public class SearchDAO {
 	private SqlSession sqlSession;
 	
 	public List<BbsVO> searchTitle(String keyword){
-		return sqlSession.selectList("user.searchtitle", keyword);
+		return sqlSession.selectList("user.searchtitle", "%"+keyword+"%");
 	}
 	public List<BbsVO> searchContents(String keyword){
-		return sqlSession.selectList("user.searchcontents", keyword);
+		return sqlSession.selectList("user.searchcontents", "%"+keyword+"%");
 	}
 	public List<BbsVO> searchTotal(String keyword){
-		return sqlSession.selectList("user.searchtotal", keyword);		
+		return sqlSession.selectList("user.searchtotal", "%"+keyword+"%");		
 	}
 }

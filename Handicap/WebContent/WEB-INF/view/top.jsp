@@ -88,7 +88,7 @@
 							<option value="내용">내용</option>
 							<option value="제목+내용">제목+내용</option>
 						</select>
-						<input align="bottom" id="keyword" placeholder="검색어를 입력해주세요."  type="text" style="width: 350px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" >
+						<input align="bottom" name="keyword" id="keyword" placeholder="검색어를 입력해주세요."  type="text" style="width: 350px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" >
 						<button type="button" id="btnSearch" class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0;">검색</button>
 						</form>
 					</div>
