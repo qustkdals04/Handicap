@@ -9,21 +9,190 @@
 </head>
 <body>
 <c:if test="${list == null }">
-	<%= "검색결과가 없습니다." %>
+	<a>메인으로 돌아가기</a>
 </c:if>
 <c:if test="${list != null }">
 	<c:forEach var="result" items="${list }">
-		<table>
-			<tr>
-				<td>${result.title }</td><td>${result.writedate }</td>
-			</tr>
-			<tr>
-				<td colspan="2">${result.contents }</td>
-			</tr>
-			<tr>
-				<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
-			</tr>
-		</table>
+		<c:choose>
+			<c:when test="${result.boardno == 10 }">
+				<table>		
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>소식 - 공지사항</td>	
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td><td></td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 11 }">		
+				<table>					
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>소식 - 뉴스</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 20 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>게시판 - 신체적장애</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 21 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>게시판 - 정신적장애</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 22 }">		
+				<table>	
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>게시판 - 동호회</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 23 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>게시판 - 여행</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 30 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>의료장비 - 사고팔기</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 31 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>의료장비 - 질문과답변</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 32 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>의료장비 - 사용후기</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 40 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>일자리정보</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 50 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>고객센터 - QnA</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
+		<c:choose>
+			<c:when test="${result.boardno == 51 }">		
+				<table>
+					<tr>
+						<td>${result.title }</td><td>${result.writedate }</td><td>고객센터 - 게시판요청</td>
+					</tr>
+					<tr>
+						<td colspan="2">${result.contents }</td>
+					</tr>
+					<tr>
+						<td>조회 : ${result.hits }</td><td>추천 : ${result.good }</td>
+					</tr>
+				</table>
+			</c:when>		
+		</c:choose>
 	</c:forEach>
 </c:if>
 </body>

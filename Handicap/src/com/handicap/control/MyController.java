@@ -65,7 +65,7 @@ public class MyController {
 	//검색
 	@RequestMapping("/search")
 	public String search(@RequestParam String category, @RequestParam String keyword, Model model){
-		List<BbsVO> list;
+		List<BbsVO> list = null;
 		if(category.equals("제목")){
 			System.out.println(category);
 			list = sd.searchTitle(keyword);
