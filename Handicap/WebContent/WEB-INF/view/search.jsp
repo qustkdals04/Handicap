@@ -44,7 +44,7 @@ a.line {
 							<tr>
 
 
-								<td style="width: 150px;"><a href="http://localhost/Handicap/bbsContent?boardno=10&no=2" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 25px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -53,7 +53,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>소식 - 공지사항  </pre></font></td>
@@ -72,7 +72,7 @@ a.line {
 					<c:when test="${result.boardno == 11 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -81,7 +81,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>소식 - 뉴스  </pre></font></td>
@@ -98,7 +98,7 @@ a.line {
 						<table border="0" width="800px" >
 							<tr>
 
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -107,7 +107,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>게시판 - 신체적장애  </pre></font></td>
@@ -123,7 +123,7 @@ a.line {
 					<c:when test="${result.boardno == 21 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -132,7 +132,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>게시판 - 정신적장애  </pre></font></td>
@@ -148,7 +148,7 @@ a.line {
 					<c:when test="${result.boardno == 22 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -157,7 +157,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>게시판-동호회  </pre></font></td>
@@ -173,7 +173,7 @@ a.line {
 					<c:when test="${result.boardno == 23 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -182,7 +182,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>게시판 - 여행 </pre></font></td>
@@ -198,7 +198,7 @@ a.line {
 					<c:when test="${result.boardno == 30 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -207,7 +207,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" 2 >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>의료장비 - 사고팔기  </pre></font></td>
@@ -223,7 +223,7 @@ a.line {
 					<c:when test="${result.boardno == 31 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -232,7 +232,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" 2 >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>의료장비 - 질문과답변  </pre></font></td>
@@ -248,7 +248,7 @@ a.line {
 					<c:when test="${result.boardno == 32 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -257,7 +257,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" 2 >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>의료장비 - 사용후기  </pre></font></td>
@@ -273,7 +273,7 @@ a.line {
 					<c:when test="${result.boardno == 40 }">
 						<table border="0" width="800px" >
 							<tr>
-							<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+							<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -282,7 +282,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" 2>${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>일자리 정보  </pre></font></td>
@@ -298,7 +298,7 @@ a.line {
 					<c:when test="${result.boardno == 50 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -307,7 +307,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5" 2 >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>고객센터 - QnA  </pre></font></td>
@@ -323,7 +323,7 @@ a.line {
 					<c:when test="${result.boardno == 51 }">
 						<table border="0" width="800px" >
 							<tr>
-								<td style="width: 150px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
@@ -332,7 +332,7 @@ a.line {
 							</tr>
 							<tr >
 									
-								<td colspan="5" style="height: 50px; " >${result.contents }</td>
+								<td colspan="5"  >${result.contents }</td>
 							</tr>
 							<tr>
 								<td ><font color="silver"><pre>고객센터 - 게시판 요청  </pre></font></td>
