@@ -21,20 +21,33 @@
 <script src="ckeditor/config.js"></script>
 <script src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
-var editor;
-	CKEDITOR.on( 'instanceReady', function( ev ) {
-	editor = ev.editor;
-	document.getElementById( 'readOnlyOn' ).style.display = '';
-	editor.on( 'readOnly', function() {
-		document.getElementById( 'readOnlyOn' ).style.display = this.readOnly ? 'none' : '';
-		document.getElementById( 'readOnlyOff' ).style.display = this.readOnly ? '' : 'none';
+	var editor;
+		CKEDITOR.on( 'instanceReady', function( ev ) {
+		editor = ev.editor;
+		document.getElementById( 'readOnlyOn' ).style.display = '';
+		editor.on( 'readOnly', function() {
+			document.getElementById( 'readOnlyOn' ).style.display = this.readOnly ? 'none' : '';
+			document.getElementById( 'readOnlyOff' ).style.display = this.readOnly ? '' : 'none';
+		});
 	});
-});
+		
+	
+		
 	window.onload = function() {
 		CKEDITOR.replace('contents',{
 			enterMode:'3'
 		});		
 	};
+	
+	/* var fileNm = $("#files").val();	 
+	if (fileNm != "") {	 
+	    var ext = fileNm.slice(fileNm.lastIndexOf(".") + 1).toLowerCase();	 
+	    if (!(ext == "gif" || ext == "jpg" || ext == "png")) {
+	        alert("이미지파일 (.jpg, .png, .gif ) 만 업로드 가능합니다.");
+	        return false;
+	    }	 
+	} */
+
 	
 	$(document).ready(
 		function() {
@@ -60,14 +73,43 @@ var editor;
 					});
 			$("#bbsWriteForm").submit();
 				}
-			})
-			
+			})			
+			 $('#files').on("change", function(){
+					//확장자 비교
+					//http://stackoverflow.com/questions/14852090/jquery-check-for-file-extension-before-uploading
+					var filename = $('#files').val();
+					var extension = filename.replace(/^.*\./, '');
+					var fileIndex = $('#fileview tr').length; 
+					
+					//if($('#files').val() == null){
+				if (Number(fileIndex) >= '1') {		
+					
+					if (extension == filename) {
+				        extension = '';
+				    } else {
+				        extension = extension.toLowerCase();
+				    }					
+					
+					//이미지 파일은 JPG, PNG 확장자만 가능
+					if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+						//초기화
+						//http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+						var control = $("#files");
+						control.replaceWith( control = control.clone( true ) );
+						
+						alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+					}
+					alert("1");
+					return;
+				 }
+					
+				
+				});
 
 			$('#addFile').click(function() { 
 	            var fileIndex = $('#fileview tr').length; //<table id="fileview"> 밑에 tr 갯수을 fileIndex에 담음
 	            if (Number(fileIndex) >= '5') { //file Upload 갯수를 5개로 제한
-	               alert('파일은 첨부는 5개만 가능하십니다.');
-	               
+	               alert('파일은 첨부는 5개만 가능하십니다.');	               
 	               return;
 	            }
 	            var i = $('#fileview tr').length;
@@ -76,9 +118,9 @@ var editor;
 	            }
 	            $('#fileview').append(
 	                  '<tr><td>'
-	                     + '   <input type="file" id="files['+ fileIndex +']" name="files['+ fileIndex +']" onchange="imageURL'+(i+1)+'(this)" />'
+	                     + '   <input type="file" id="files['+ fileIndex +']" accept=".gif, .jpg, .png, .bmp" name="files['+ fileIndex +']" onchange="imageURL'+(i+1)+'(this)" />'
 	                     + '</td></tr>'); 
-	            });
+	            });			
 		
 	});
 </script>
@@ -153,7 +195,9 @@ var editor;
 														<td align="left">
 															<table id="fileview" align="left">
 																<tr>
-																	<td colspan="2"><input name="files" type="file">
+																	<td colspan="2">
+																	<input name="files" type="file" id="files" 
+																	accept=".gif, .jpg, .png, .bmp">
 																		<input id="addFile" type="button" value="파일첨부"></td>
 																</tr>
 															</table>
@@ -212,7 +256,8 @@ var editor;
 												<td align="left">
 													<table id="fileview" align="left">
 														<tr>
-															<td colspan="2"><input name="files" type="file">
+															<td colspan="2"><input name="files" type="file" id="files"
+															 accept=".gif, .jpg, .png, .bmp">
 																<input id="addFile" type="button" value="파일첨부"></td>
 				
 																		<td width="270px" align="right"><font size="3px">별점</font>
@@ -323,7 +368,8 @@ var editor;
 												<td align="left">
 													<table id="fileview" align="left">
 														<tr>
-															<td colspan="2"><input name="files" type="file">
+															<td colspan="2"><input name="files" type="file" id="files"
+															 accept=".gif, .jpg, .png, .bmp">
 																<input id="addFile" type="button" value="파일첨부"></td>
 														</tr>
 													</table>
@@ -384,7 +430,8 @@ var editor;
 												<td align="left">
 													<table id="fileview" align="left">
 														<tr>
-															<td colspan="2"><input name="files" type="file">
+															<td colspan="2"><input name="files" type="file" id="files"
+															 accept=".gif, .jpg, .png, .bmp">
 																<input id="addFile" type="button" value="파일첨부"></td>
 															
 														</tr>
@@ -447,7 +494,8 @@ var editor;
 												<td align="left">
 													<table id="fileview" align="left">
 														<tr>
-															<td colspan="2"><input name="files" type="file">
+															<td colspan="2"><input name="files" type="file" id="files"
+															accept=".gif, .jpg, .png, .bmp">
 																<input id="addFile" type="button" value="파일첨부"></td>
 														</tr>
 													</table>
