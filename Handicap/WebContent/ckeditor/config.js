@@ -9,6 +9,8 @@ CKEDITOR.editorConfig = function( config ) {
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
 	// The toolbar groups arrangement, optimized for a single toolbar row.
+	
+	
 	config.toolbarGroups = [
 		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
@@ -35,5 +37,10 @@ CKEDITOR.editorConfig = function( config ) {
 	CKEDITOR.config.contentsCss = '/_src/css/_ckeditor_overwrite.css';
 	CKEDITOR.config.allowedContent = true;	
 	CKEDITOR.instances.contents.getData();
+	CKEDITOR.config.toolbarCanCollapse = true; // 에디터 툴바 숨기기 기능 여부
+	/*CKEDITOR.config.autoUpdateElement = true; // 자동 textarea 업데이트 여부 (안됨)
+*/	
 };
+
+
 

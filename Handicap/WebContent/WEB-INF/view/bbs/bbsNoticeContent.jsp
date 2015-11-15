@@ -11,15 +11,19 @@
    href="/Handicap/css/styles.css">
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script src="ckeditor/config.js"></script>
-<script src="ckeditor/ckeditor.js"></script>
+<script src="ckeditor/ckeditor.js"></script> 
+<script type="text/javascript">
+window.onload = function() {
+	CKEDITOR.replace('contents'
+	);	
+};
 
-<title>Insert title here</title>
-<script type="text/javascript">	
    $(document).ready(function() {
       $("#delete").click(function() { //삭제버튼
          if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
@@ -139,7 +143,13 @@
                                                    <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
                                                 </c:forEach>
-                                             </c:if> <br>${bbsContent.contents}</td>
+                                             </c:if> 
+                                             <br>
+                                            <textarea readonly="readonly" rows="20" 
+                                          	cols="100" id="contents" name="contents"
+                                          	>                                          	
+                                          	${bbsContent.contents}</textarea>
+                                             </td>
                                        </tr>
                                        <tr>
                                           <td align="left"><font size="1px">첨부파일 : </font></td>
@@ -192,7 +202,12 @@
                                                    <img height="250px" style="width: 350px;"
                                                       src="/Handicap/img/${bbsfile.fileoriginal}">
                                                 </c:forEach>
-                                             </c:if> <br>${bbsContent.contents}</td>
+                                             </c:if> <br>
+                                             <textarea readonly="readonly" rows="20" 
+                                          	cols="100" id="contents" name="contents"
+                                          	>                                          	
+                                          	${bbsContent.contents}</textarea>
+                                             </td>
                                        </tr>
                                        <tr>
                                           <td align="left"><font size="1px">첨부파일 : </font></td>
@@ -228,13 +243,19 @@
                                        </tr>
                                        <tr style="height: 300px; vertical-align: text-top;">
 
-                                          <td colspan="4"><c:if test="${bbsFileName !=null }">
-                                                <c:forEach var="bbsfile" items="${bbsFileName}">
-                                                   <img height="250px" style="width: 350px;"
-                                                      src="/Handicap/img/${bbsfile.fileoriginal}">
-
-                                                </c:forEach>
-                                             </c:if> <br>${bbsContent.contents}</td>
+                                          <td colspan="4" >
+                                          <c:if test="${bbsFileName !=null }">
+                                          <c:forEach var="bbsfile" items="${bbsFileName}">
+                                          <img height="250px" style="width: 350px;"
+                                          src="/Handicap/img/${bbsfile.fileoriginal}">
+                                          </c:forEach>
+                                          </c:if> 
+                                          <br>
+                                          	<textarea readonly="readonly" rows="20" 
+                                          	cols="100" id="contents" name="contents"
+                                          	>                                          	
+                                          	${bbsContent.contents}</textarea>
+                                          </td>
                                        </tr>
                                        <tr>
                                           <td align="left"><font size="1px">첨부파일 : </font></td>
@@ -333,7 +354,8 @@
                                     <c:otherwise>
                                     <tr>
                                        <td></td>
-                                       <td width="700px" colspan="2"><input type="text" name="contents"
+                                       <!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
+                                       <td width="700px" colspan="2"><input type="text" name="content" 
                                           style="width: 500px; height: 30"><input
                                           type="button" value="등록" onclick="location.href='/Handicap/commentWrite'"
                                           style="width: 70px; height: 30px; vertical-align: bottom;"></td>

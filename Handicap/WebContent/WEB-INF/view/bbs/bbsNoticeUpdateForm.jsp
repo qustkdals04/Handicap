@@ -18,8 +18,23 @@
 <title>글수정</title>
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-latest.min.js"></script>
-
+<script src="ckeditor/config.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
+var editor;
+	CKEDITOR.on( 'instanceReady', function( ev ) {
+	editor = ev.editor;
+	document.getElementById( 'readOnlyOn' ).style.display = '';
+	editor.on( 'readOnly', function() {
+		document.getElementById( 'readOnlyOn' ).style.display = this.readOnly ? 'none' : '';
+		document.getElementById( 'readOnlyOff' ).style.display = this.readOnly ? '' : 'none';
+		});
+	});
+	window.onload = function() {
+		CKEDITOR.replace('contents',{
+			enterMode:'3'
+	});		
+};
 	$(document)
 			.ready(
 					function() {
@@ -27,9 +42,9 @@
 							if ($("#title").val() == "") {
 								alert("제목을 입력해주세요..");
 								$("#title").focus();
-							} else if ($("#contents").val() == "") {
+							} else if (editor.getData() == "") {
 								alert("내용을 입력해주세요..");
-								$("#contents").focus();					
+								//$("#contents").focus();					
 						    }else if ($("#boardno").val()== 30&&$("#category").val() == ""){
 						    	   alert("말머리를 선택해주세요");
 						    }else if ($("#boardno").val()== 40&&$("#category").val() == ""){
