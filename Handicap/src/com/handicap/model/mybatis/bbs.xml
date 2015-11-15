@@ -104,4 +104,28 @@
    <update id="bbsStatusUpdate" parameterType="int">
    	update bbs set status=2 where no=#{no} and boardno=#{boardno}
    </update>
+   
+   <!-- 추천 신고 추가-->
+   
+   
+  <!--   추천수 증가 -->
+   <update id="good" parameterType="int">
+       update bbs set good = good+1 where boardno= #{boardno} and no = #{no}
+   </update>
+   
+   
+   <!-- 추천 / 신고 제한용  -->
+   <insert id="gblimit" parameterType="com.handicap.model.beans.BbsVO">
+         insert into bbseval (boardno, no, userid)
+         values (#{boardno}, #{no},#{userid})   
+   </insert>
+   
+  <update id="bad" parameterType="int">
+     update bbs set bad = bad+1 where boardno= #{boardno} and no = #{no}
+   </update>  
+   
+   <!-- 추천 / 신고 테이블 아이디검색 -->
+   <select id="gbsearch" parameterType="String">
+         select userid from bbseval where boardno= #{boardno} and no = #{no}
+   </select> 
 </mapper>

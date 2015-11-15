@@ -18,12 +18,7 @@
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script src="ckeditor/config.js"></script>
 <script src="ckeditor/ckeditor.js"></script> 
-<script type="text/javascript">
-window.onload = function() {
-	CKEDITOR.replace('contents'
-	);	
-};
-
+<script type="text/javascript">   
    $(document).ready(function() {
       $("#delete").click(function() { //삭제버튼
          if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
@@ -36,27 +31,25 @@ window.onload = function() {
             return; // 취소
          }
       });
-      /* $("#goodupdate").click(function(){
-         if(confirm("추천하였습니다!!")==true){
-            $("#bbsNoticeContent").attr({action:'goodupdate', method:'post'});
-            $("#bbsNoticeContent").submit();
-         }
-      }) */
+    
       $("#goodupdate").click(function() {
-         /*  if ($("#goodupdate")) {
-            alert("추천할꺼야?");
-         } else {  */
-         $.ajax({
-            type : "GET",
-            url : "goodupdate",
-            data : goodupdate,
-            success : function(data) {
-               goodCk = true;
-               alert("추천하였습니다!!");
-            }
-         });
-         //}
+            $("#bbsContent").attr({            
+                  action : "bbsgood",
+               method : 'get'
+            });
+            alert("추천이 반영됩니다");
+         $("#bbsContent").submit();
+               
       });
+      
+      $("#badupdate").click(function() {         
+         $("#bbsContent").attr({
+               action : "bbsbad",
+               method : 'get'
+         });
+            alert("신고하였습니다.");
+         $("#bbsContent").submit();            
+   });
    });
 </script>
 </head>
@@ -413,6 +406,7 @@ window.onload = function() {
                                        <td width="600px;" align="right"><c:if
                                              test="${boardno!=10 }">
                                              <button type="button" id="goodupdate" class="ml-button">추천</button>
+                                             <button type="button" id="badupdate" class="ml-button">신고</button>
                                           </c:if> <c:if test="${bbsContent.nickname == membernick }">
                                              <button type="button" id="update" class="ml-button"
                                                 onclick="location.href='/Handicap/bbsUpdateForm?boardno=${bbsContent.boardno}&no=${bbsContent.no}'">수정</button>
@@ -422,9 +416,8 @@ window.onload = function() {
                                  </table>
                               </center>
                               <input type="hidden" name="no" value="${bbsContent.no }">
-                              <input type="hidden" name="boardno"
-                                 value="${bbsContent.boardno }">
-
+                              <input type="hidden" name="boardno" value="${bbsContent.boardno }">
+							  <input type="hidden" name="userid" value="${memberid}">
                            </form> <!-- 아래 폼 인쿨루드 -->
                         </td>
 

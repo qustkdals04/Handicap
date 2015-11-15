@@ -216,4 +216,39 @@ public class BbsController {
        bcd.insert(bcv);
        return "redirect:bbsContent?no=" + bcv.getNo() + "&boardno=" + bcv.getBoardno();
     }
+    
+    
+   @RequestMapping("/bbsgood")
+   public String bbsgood(@RequestParam int no,
+           @RequestParam int boardno,
+           BbsVO bv
+           ) throws SQLException
+   {
+       Map map = new HashMap();
+       map.put("no", no);
+       map.put("boardno", boardno);
+       
+                   
+       bd.gblimit(bv);
+       bd.goodupdate(map);
+      
+     return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+   }
+    
+    @RequestMapping("/bbsbad")
+    public String bbsbad(@RequestParam int no,
+            @RequestParam int boardno,
+            BbsVO bv
+            ) throws SQLException
+    {
+        Map map = new HashMap();
+        map.put("no", no);
+        map.put("boardno", boardno);
+        
+                    
+        bd.gblimit(bv);
+        bd.badupdate(map);
+       
+      return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+    }
 }

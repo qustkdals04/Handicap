@@ -16,6 +16,7 @@ public class BbsVO {
 	private int boardno;
 	private String nickname;
 	private int status;
+	private String userid;
 	public int getStatus() {
 		return status;
 	}
@@ -99,6 +100,12 @@ public class BbsVO {
 	}
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 	
 }

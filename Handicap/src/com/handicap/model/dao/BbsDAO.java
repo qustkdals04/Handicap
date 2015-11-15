@@ -76,13 +76,7 @@ public class BbsDAO {
       
       return false;
    }
-
-   public boolean goodupdate(int good){
-      int t = sqlSession.update("bbs.goodupdate", good);
-      
-      return false;
-   }   
-   
+  
    public int writeno(int boardno) {
       int result;
       switch (boardno){
@@ -101,4 +95,25 @@ public class BbsDAO {
       }
       return result;
    }
+   
+	public int goodupdate(Map map) {
+		 
+
+		return sqlSession.update("bbs.good", map);
+	}
+
+   public int badupdate(Map map){
+        
+       
+       return sqlSession.update("bbs.bad", map);
+    }   
+ 
+ public boolean gblimit(BbsVO bv){
+    
+    int result;
+       
+    result = sqlSession.insert("bbs.gblimit", bv);
+       
+       return false;
+ }
 }
