@@ -56,6 +56,16 @@ table.notice {
  	 margin : 10px; 
  	 
 }  
+
+table.re4{
+	border-top :2px solid #F4B649;
+	border-right :2px solid #F4B649;
+	border-left:2px solid #F4B649;
+	 border-bottom: 2px solid #F4B649;
+	 
+ 	 margin : 20px; 
+	
+	}
 table.mem th{
   	
     border-collapse: separate;
