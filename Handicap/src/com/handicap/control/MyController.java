@@ -30,8 +30,8 @@ import com.handicap.model.beans.UserVO;
 import com.handicap.model.beans.ZipcodeVO;
 import com.handicap.model.dao.BbsCommentDAO;
 import com.handicap.model.dao.BbsDAO;
-import com.handicap.model.dao.IntergrationDAO;
 import com.handicap.model.dao.MessageDAO;
+import com.handicap.model.dao.SearchDAO;
 import com.handicap.model.dao.UserDAO;
 import com.handicap.model.dao.ZipcodeDAO;
 
@@ -42,13 +42,13 @@ public class MyController {
 	@Autowired
 	private BbsDAO bd;
 	@Autowired
-	private BbsCommentDAO bcd;
-	@Autowired
-	private IntergrationDAO interdao;
+	private BbsCommentDAO bcd;	
 	@Autowired
 	private MessageDAO md;
 	@Autowired
 	private ZipcodeDAO zd;
+	@Autowired
+	private SearchDAO sd;
 
 	
 	//옛날메인
@@ -60,6 +60,26 @@ public class MyController {
 	@RequestMapping(value = "/", method = RequestMethod.GET) // 두번째main페이지
 	public String main() {
 		return "viewmain";
+	}
+	
+	//검색
+	@RequestMapping("/search")
+	public String search(@RequestParam String category, @RequestParam String keyword, Model model){
+		List<BbsVO> list;
+		if(category.equals("제목")){
+			System.out.println(category);
+			list = sd.searchTitle(keyword);
+			
+		} else if(category.equals("내용")){
+			System.out.println(category);
+			list = sd.searchContents(keyword);
+			
+		} else { //제목+내용
+			System.out.println(category);
+			list = sd.searchTotal(keyword);
+		}
+		model.addAttribute("list", list);
+		return "search";
 	}
 	
 //소식 - 뉴스

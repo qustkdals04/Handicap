@@ -7,7 +7,7 @@
   <bean class="com.handicap.model.dao.UserDAOImpl" id="UserDAO"/>  
   <bean class="com.handicap.model.dao.MessageDAO" id="MessageDAO"/>
   <bean class="com.handicap.model.dao.BbsCommentDAO" id="BbsCommentDAO"/>
-  <bean class="com.handicap.model.dao.IntergrationDAO" id="IntergrationDAO"/>  
   <bean class="com.handicap.model.dao.ZipcodeDAO" id="ZipcodeDAO"/>
   <bean class="com.handicap.model.dao.FileDAOImpl" id="FileDAOImpl"/>
+	<bean class="com.handicap.model.dao.SearchDAO" id="SearchDAO"/>
 </beans>

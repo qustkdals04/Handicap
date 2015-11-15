@@ -348,6 +348,7 @@ public class MemberController {
 		String imagename = dao.image(userid);
 		String oldpath = session.getServletContext().getRealPath("/myimg/"+imagename);
 		File oldfile = new File(oldpath);
+		
 		if(imagename.equals("default.jpg")){
 			
 		} else{
@@ -360,7 +361,6 @@ public class MemberController {
 		String path = req.getSession().getServletContext().getRealPath("/myimg/" + uuid + fileName);
 		File f = new File(path);	
 		multiFile.transferTo(f);
-		
 		Map map = new HashMap();
 		map.put("userid", userid);
 		map.put("image", uuid+fileName);

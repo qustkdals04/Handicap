@@ -178,6 +178,20 @@
    <select id="myimage" parameterType="string" resultType="string">
   	select image from member where userid=#{userid}
    </select>
+   
+   <!-- 통합검색 -->
+   <!-- 제목 -->
+   <select id="searchtitle" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where title like #{keyword}
+   </select>
+   <!-- 내용 -->
+   <select id="searchcontents" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where contents like #{keyword}
+   </select>
+   <!-- 제목+내용 -->
+   <select id="searchtotal" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where title like #{keyword} and contents like #{keyword}
+   </select>
 </mapper>
 <!-- user.xml -->
 
