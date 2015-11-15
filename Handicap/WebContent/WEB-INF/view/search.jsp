@@ -44,7 +44,7 @@ a.line {
 							<tr>
 
 
-								<td style="width: 25px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
+								<td style="width: 250px;"><a href="" class="line"><font size="4px">${result.title }</font></a></td>
 								
 	
 								<td width="20%">${result.writedate }</td>
