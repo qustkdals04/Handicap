@@ -26,7 +26,7 @@
 					<div id="CssContents">
 						<table>
 							<tr>
-								<td><%@include file="../new/NewSubMenu12.jsp"%>
+								<td style="vertical-align: top;"><%@include file="../new/NewSubMenu12.jsp"%>
 								</td>
 								<td>
 									<table cellpadding="5" cellspacing="0" align="center">

@@ -25,7 +25,7 @@
 					<ul>
 						<li ><a href="/Handicap/bbsList?boardno=10" style="font:12px larger; ">공지사항</a></li>
 						<li><a href="/Handicap/bbsList?boardno=11" style="font:12px larger; " >뉴스</a></li>
-						<li><a href="/Handicap/bbsList?boardno=12" style="font:12px larger; ">사이트소개</a></li>
+						<li><a href="/Handicap/about" style="font:12px larger; ">사이트소개</a></li>
 						
 					</ul>
 				</li>
