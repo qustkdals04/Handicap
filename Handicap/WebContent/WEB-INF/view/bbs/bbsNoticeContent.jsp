@@ -21,7 +21,8 @@
 <script type="text/javascript">   
 window.onload = function() {
 	CKEDITOR.replace('contents',{
-		enterMode:'3'
+		
+		toolbar: []
 	});		
 };
    $(document).ready(function() {
