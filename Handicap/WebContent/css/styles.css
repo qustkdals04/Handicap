@@ -615,6 +615,44 @@ table.bbsList button{
 
 }
 
+table.bbsList11 {
+	margin-top : 30px;
+	width: 750px;
+	
+	margin-bottom : 30px;
+	
+}
+
+table.bbsList11 th {     
+	
+    
+}
+
+table.bbsList11 td {     
+	
+	font-size: 12px;
+	text-align: centet;
+	vertical-align:middle;
+
+	
+}
+
+table.bbsList11 tr {     
+	height: 30px;
+
+}
+
+table.bbsList11 button{
+	background-color: #F39C45;
+	
+	-moz-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	-webkit-box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	box-shadow: inset 0px 0px 1px rgba(184, 129, 39, 1);
+	
+	color: #ffffff;
+	text-shadow: rgba(254, 252, 252, 0.5) 0px 1px 0px;
+
+}
 
 table.bbsAlbum{
    width:700px;

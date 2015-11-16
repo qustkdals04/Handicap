@@ -303,9 +303,10 @@
 										enctype="multipart/form-data">
 										<c:choose>
 											<c:when test="${boardno == '30'}">
-												<table class="bbsList">
+											<center>
+												<table class="bbsList11">
 													<tr>
-														<td align="center"><font size="3px">작성자</font></td>
+														<td align="center" width="100px"><font size="3px">작성자</font></td>
 														<%
 															if (session.getAttribute("memberid") != null) {
 																		memberid = session.getAttribute("memberid").toString();
@@ -344,10 +345,10 @@
 													</tr>
 													<tr>
 														<td align="center"><font size="3px">파일 첨부</font></td>
-														<td align="left">
+														<td align="left" >
 															<table id="fileview" align="left">
 																<tr>
-																	<td colspan="2"><input name="files" type="file"
+																	<th colspan="2" valign="middle"><input name="files" type="file"
 																		class="files" id="files1"
 																		accept=".gif, .jpg, .png, .bmp"><br> <input
 																		name="files" type="file" class="files" id="files2"
@@ -357,26 +358,31 @@
 																		name="files" type="file" class="files" id="files4"
 																		accept=".gif, .jpg, .png, .bmp"><br> <input
 																		name="files" type="file" class="files" id="files5"
-																		accept=".gif, .jpg, .png, .bmp"> <input
-																		id="addFile" type="button" value="파일첨부"></td>
+																		accept=".gif, .jpg, .png, .bmp"></th>
+														
+																
+																		<th style="vertical-align: top;">
+																		<input 	id="addFile" type="button" value="파일첨부">
+																		</th>
 																</tr>
 															</table>
 														</td>
 													</tr>
 													<tr>
 														<!-- a href="bbsNoticeWriteForm" -->
-														<td>
+														<td colspan="2" align="left">
 															<button type="button" id="bbsNoticelist"
 																onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
 														</td>
 													</tr>
 													<tr>
 														<td colspan="2" align="right">
-															<button type="reset" id="bbsreset">다시작성</button>
+															<button type="button" id="bbsreset" onclick="history.back()">취소</button>
 															<button type="button" id="bbsWrite">확인</button>
 														</td>
 													</tr>
 												</table>
+												</center>
 												<input type="hidden" name="boardno" id="boardno"
 													value="${boardno}">
 
@@ -388,44 +394,40 @@
 									
 									
 									<c:when test="${boardno == '32'}">
-										<table class="bbsList">
+										<table class="bbsList11">
 											<tr>
-												<td align="center"><font size="3px">작성자</font></td>
+												<td align="center" width="150px;"><font size="3px">작성자</font></td>
 												<%
 													if (session.getAttribute("memberid") != null) {
 																memberid = session.getAttribute("memberid").toString();
 																String nickname = session.getAttribute("membernick").toString();
 												%>
-												<td width="700px"><input type="text" size="10"
+												<td width="700px" colspan="2"><input type="text" size="10"
 													maxlength="10" id="author" name="author"
 													readonly="readonly" value="<%=nickname%>"></td>
-											</tr>
+											</tr>  <!-- 끝남 -->
 											<%
 												}
 											%>
-
 											<tr>
-
-													
-												
 											<td align="center"><font size="3px">제 목</font></td>
-											<td><input type="text" size="40" maxlength="50"
+											<td colspan="2"><input type="text" size="40" maxlength="50"
 												name="title" id="title" style="width: 100%"></td>
 
 
 											</tr>
 											<tr>
-												<td align="center"><font size="3px">내 용</font></td>
-												<td><textarea name="contents" id="contents" rows="13"
+												<td align="center" ><font size="3px">내 용</font></td>
+												<td colspan="2"><textarea name="contents" id="contents" rows="13"
 														cols="40" style="height: 450px; width: 100%"
 														maxlength="3000"></textarea></td>
 											</tr>
 											<tr>
 												<td align="center"><font size="3px">파일 첨부</font></td>
-												<td align="left">
-													<table id="fileview" align="left">
+												<td align="center">
+													<table id="fileview" align="center" >
 														<tr>
-															<td colspan="2"><input name="files" type="file"
+															<th width="350px;" style="vertical-align: top;"><input name="files" type="file"
 																class="files" id="files1"
 																accept=".gif, .jpg, .png, .bmp"><br> <input
 																name="files" type="file" class="files" id="files2"
@@ -435,13 +437,13 @@
 																name="files" type="file" class="files" id="files4"
 																accept=".gif, .jpg, .png, .bmp"><br> <input
 																name="files" type="file" class="files" id="files5"
-																accept=".gif, .jpg, .png, .bmp"> <input
-																id="addFile" type="button" value="파일첨부"></td>
+																accept=".gif, .jpg, .png, .bmp"></th>
+																<th><input 	id="addFile" type="button" value="파일첨부"></th>
 														</tr>
 													</table>
 												</td>
 
-												<td width="270px" align="right"><font size="3px">별점</font>
+												<th width="270px" align="right" valign="top"><font size="3px">별점</font>
 													<select id="star" name="star">
 														<option value="">선택</option>
 														<option value="1">1</option>
@@ -449,7 +451,7 @@
 														<option value="3">3</option>
 														<option value="4">4</option>
 														<option value="5">5</option>
-												</select></td>
+												</select></th>
 
 											</tr>
 
@@ -459,14 +461,14 @@
 							<tr>
 								<!-- a href="bbsNoticeWriteForm" -->
 								<td>
-									<button type="button" id="bbsNoticelist"
+									<button type="button" id="bbsNoticelist" class = "ml-button"
 										onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
 								</td>
 							</tr>
 							<tr>
 								<td colspan="2" align="right">
-									<button type="reset" id="bbsreset">다시작성</button>
-									<button type="button" id="bbsWrite">확인</button>
+									<button type="button" id="bbsreset" class = "ml-button" onclick="history.back()">취소</button>
+									<button type="button" id="bbsWrite" class = "ml-button">확인</button>
 								</td>
 							</tr>
 						</table>
@@ -478,9 +480,10 @@
 						</form>
 						</c:when>
 						<c:when test="${boardno == '40'}">
-							<table class="bbsList">
+						<center>
+							<table class="bbsList11">
 								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
+									<td align="center" width="100px"><font size="3px">작성자</font></td>
 									<%
 										if (session.getAttribute("memberid") != null) {
 													memberid = session.getAttribute("memberid").toString();
@@ -548,7 +551,7 @@
 									<td align="left">
 										<table id="fileview" align="left">
 											<tr>
-												<td colspan="2"><input name="files" type="file"
+												<th colspan="2"><input name="files" type="file"
 													class="files" id="files1" accept=".gif, .jpg, .png, .bmp"><br>
 													<input name="files" type="file" class="files" id="files2"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
@@ -557,26 +560,28 @@
 													name="files" type="file" class="files" id="files4"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
 													name="files" type="file" class="files" id="files5"
-													accept=".gif, .jpg, .png, .bmp"> <input
-													id="addFile" type="button" value="파일첨부"></td>
+													accept=".gif, .jpg, .png, .bmp"></th>
+													<th> <input
+													id="addFile" type="button" value="파일첨부"></th>
 											</tr>
 										</table>
 									</td>
 								</tr>
 								<tr>
 									<!-- a href="bbsNoticeWriteForm" -->
-									<td>
+									<td colspan="2">
 										<button type="button" id="bbsNoticelist"
 											onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-										<button type="reset" id="bbsreset">다시작성</button>
+										<button type="button" id="bbsreset" onclick="history.back()">취소</button>
 										<button type="button" id="bbsWrite">확인</button>
 									</td>
 								</tr>
 							</table>
+							</center>
 							<input type="hidden" name="boardno" id="boardno"
 								value="${boardno}">
 
@@ -584,9 +589,10 @@
 							</form>
 						</c:when>
 						<c:when test="${boardno == '50'}">
-							<table class="bbsList">
+						<center>
+							<table class="bbsList11">
 								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
+									<td align="center" width="100px"><font size="3px">작성자</font></td>
 									<%
 										if (session.getAttribute("memberid") != null) {
 													memberid = session.getAttribute("memberid").toString();
@@ -618,7 +624,7 @@
 									<td align="left">
 										<table id="fileview" align="left">
 											<tr>
-												<td colspan="2"><input name="files" type="file"
+												<th colspan="2"><input name="files" type="file"
 													class="files" id="files1" accept=".gif, .jpg, .png, .bmp"><br>
 													<input name="files" type="file" class="files" id="files2"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
@@ -627,26 +633,30 @@
 													name="files" type="file" class="files" id="files4"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
 													name="files" type="file" class="files" id="files5"
-													accept=".gif, .jpg, .png, .bmp"> <input
-													id="addFile" type="button" value="파일첨부"></td>
+													accept=".gif, .jpg, .png, .bmp"></th>
+													<th>
+														 <input
+													id="addFile" type="button" value="파일첨부">
+													</th>
 											</tr>
 										</table>
 									</td>
 								</tr>
 								<tr>
 									<!-- a href="bbsNoticeWriteForm" -->
-									<td>
+									<td colspan="2">
 										<button type="button" id="bbsNoticelist"
 											onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-										<button type="reset" id="bbsreset">다시작성</button>
+										<button type="button" id="bbsreset" onclick="history.back()">취소</button>
 										<button type="button" id="bbsWrite">확인</button>
 									</td>
 								</tr>
 							</table>
+							</center>
 							<input type="hidden" name="boardno" id="boardno"
 								value="${boardno}">
 							<input type="hidden" name="category" id="category" value="">
@@ -657,9 +667,11 @@
 							</form>
 						</c:when>
 						<c:otherwise>
-							<table class="bbsList">
+						<center>
+						
+							<table class="bbsList11">
 								<tr>
-									<td align="center"><font size="3px">작성자</font></td>
+									<td align="center" width="100px"><font size="3px">작성자</font></td>
 									<%
 										if (session.getAttribute("memberid") != null) {
 													memberid = session.getAttribute("memberid").toString();
@@ -687,7 +699,7 @@
 								</tr>
 								<tr>
 									<td align="center"><font size="3px">파일 첨부</font></td>
-									<td align="left">
+									<td align="left" colspan="2">
 										<table id="fileview" align="left">
 											<tr>
 												<td colspan="2"><input name="files" type="file"
@@ -699,26 +711,30 @@
 													name="files" type="file" class="files" id="files4"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
 													name="files" type="file" class="files" id="files5"
-													accept=".gif, .jpg, .png, .bmp"> <input
-													id="addFile" type="button" value="파일첨부"></td>
+													accept=".gif, .jpg, .png, .bmp"></td>
+													<td style="vertical-align: top;">
+														 <input
+													id="addFile" type="button" value="파일첨부">
+													</td>
 											</tr>
 										</table>
 									</td>
 								</tr>
 								<tr>
 									<!-- a href="bbsNoticeWriteForm" -->
-									<td>
-										<button type="button" id="bbsNoticelist"
+									<td colspan="2">
+										<button type="button" id="bbsNoticelist" 
 											onclick="location.href='/Handicap/bbsList?boardno=${boardno}'">목록</button>
 									</td>
 								</tr>
 								<tr>
 									<td colspan="2" align="right">
-										<button type="reset" id="bbsreset">다시작성</button>
+										<button type="button" id="bbsreset"onclick="history.back()">취소</button>
 										<button type="button" id="bbsWrite">확인</button>
 									</td>
 								</tr>
 							</table>
+							</center>
 							<input type="hidden" name="boardno" id="boardno"
 								value="${boardno}">
 							<input type="hidden" name="category" id="category" value="">
