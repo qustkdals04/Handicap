@@ -63,7 +63,7 @@ public class BbsController {
             //   int fileid = 
                if (!"".equals(fileName)) {               
                   String uuid = UUID.randomUUID().toString().replace("-","");
-                  String path = req.getSession().getServletContext().getRealPath("/img/" + uuid + fileName);
+                  String path = req.getSession().getServletContext().getRealPath("/bbsimg/" + uuid + fileName);
                   File f = new File(path);
                   multipartFile.transferTo(f);
                   fv.setFilename(fileName);
@@ -185,7 +185,7 @@ public class BbsController {
       map.put("no", no);
       map.put("boardno", boardno);
       bd.delete(map);
-      return "redirect:bbsList";
+      return "redirect:bbsList?boardno="+boardno;
    }
    
    @RequestMapping("/bbsUpdateForm")

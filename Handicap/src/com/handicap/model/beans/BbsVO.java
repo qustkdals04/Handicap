@@ -17,6 +17,8 @@ public class BbsVO {
 	private String nickname;
 	private int status;
 	private String userid;
+	private String fileoriginal;
+	
 	public int getStatus() {
 		return status;
 	}
@@ -107,5 +109,13 @@ public class BbsVO {
 	public void setUserid(String userid) {
 		this.userid = userid;
 	}
+	public String getFileoriginal() {
+		return fileoriginal;
+	}
+	public void setFileoriginal(String fileoriginal) {
+		this.fileoriginal = fileoriginal;
+	}
+	
+	
 	
 }
