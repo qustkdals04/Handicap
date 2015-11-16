@@ -101,10 +101,10 @@
    <!-- ID검색 -->
    <select id="searchId" parameterType="Map" resultType="string">
    	select userid from member where name=#{name} and email=#{email}
-   </select>
+   </select>   
    <!-- PW검색 -->
    <select id="searchPw" parameterType="Map" resultType="string">
-   	select passwd from member where userid=#{userid} and pquestion=#{pquestion} and panswer=#{panswer}
+   	select passwd from member where userid=#{userid} and pqid=#{pqid} and panswer=#{panswer}
    </select>
    
    <!-- 로그인한 아이디로 회원등급 가져오기 -->

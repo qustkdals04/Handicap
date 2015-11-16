@@ -241,17 +241,17 @@ public class MemberController {
 			writer.flush();
 			return "login/login";
 		}
-	}
-
+	}	
+	
 	@RequestMapping("/findpw") // pw검색
-	public String findpw(HttpServletRequest request, @RequestParam String userid, @RequestParam String pquestion,
+	public String findpw(HttpServletRequest request, @RequestParam String userid, @RequestParam String pqid,
 			@RequestParam String panswer, HttpServletResponse response) throws IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		request.setCharacterEncoding("UTF-8");
 		PrintWriter writer = response.getWriter();
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("userid", userid);
-		map.put("pquestion", pquestion);
+		map.put("pqid", pqid);
 		map.put("panswer", panswer);
 		dao.searchPw(map);
 		if (dao.searchPw(map) == null) {
