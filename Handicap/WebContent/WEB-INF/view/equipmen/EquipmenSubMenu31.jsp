@@ -18,13 +18,13 @@
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=30'"><img src="img/icon.png" width="15px">사고 팔기</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=30'">▶ 사고 팔기</li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=31'"><img src="img/icon.png" width="15px"><font size = "4px;" style="font-weight: bolder; color: #4348B2;">질문/답변</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=31'"><font size = "4px;" style="font-weight: bolder; color: #FC9F26;">▶ 질문/답변</font></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=32'"><img src="img/icon.png" width="15px">사용후기</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=32'">▶ 사용후기</li>
 						</ul>
 			</div>
 </body>

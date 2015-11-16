@@ -170,16 +170,19 @@ body {
 
 }
 .mylistTitle{
+    
     text-align : center;
-	font-family: �뤃���뵝;
-	font-weight:bold;
+	font-family:serif;
+	font-weight:bolder;
 	font-size: 30px;
-	color:#00CCFF;
+
 	list-style: none;
     margin: 0px;
     padding: 10px;
 	margin-top :15px;
     margin-bottom: 15px;
+    
+
 }
 .lo{
 	width: 200px;
