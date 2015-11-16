@@ -124,6 +124,12 @@ public class BbsDAO {
 	     
 	 }
  
+ public int gbcomment(Map map){
+	    int result;
+	    result = sqlSession.selectOne("bbs.gbcomment",map);
+	    return result;
+	 }
+ 
  public int statusupdate(Map map){
 	 
 	 return sqlSession.update("bbs.bbsStatusUpdate",map);

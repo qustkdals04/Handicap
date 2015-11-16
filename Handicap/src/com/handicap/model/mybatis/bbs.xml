@@ -128,4 +128,10 @@
    <select id="gbsearch" parameterType="map" resultType="int">
          select count(*) from bbseval where boardno= #{boardno} and no = #{no} and userid = #{userid}
    </select>
+   
+       <!-- 댓글 신고 테이블 아이디검색 -->
+   <select id="gbcomment" parameterType="map" resultType="int">
+         select count(*) from bbseval where commentno =#{commentno} and userid = #{userid}
+   </select>
+   
 </mapper>

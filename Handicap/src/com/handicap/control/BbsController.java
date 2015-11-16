@@ -274,6 +274,20 @@ public class BbsController {
          }       
         return "bbs/isgb";
      }
+     
+     @RequestMapping("/gbcomment")
+     public String gbcomment(@RequestParam int commentno, @RequestParam String userid, Model model){
+        Map map = new HashMap();
+       map.put("commentno", commentno);
+         map.put("userid", userid);
+         if (bd.gbcomment(map) == 1){
+            model.addAttribute("isgb", true);
+         }
+         else if(bd.gbcomment(map) == 0){
+            model.addAttribute("isgb", false);
+         }       
+        return "bbs/isgb";
+     }
     
     @RequestMapping("/statusupdate")
     public String statusupdate(@RequestParam int no,
