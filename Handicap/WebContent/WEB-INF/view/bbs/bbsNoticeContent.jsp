@@ -58,29 +58,48 @@ $(document).ready(function() {
            }
         });
    });
-
-    $("#badupdate").click(function() {
-       var param = "no=${bbsContent.no}&boardno=${bbsContent.boardno}&userid=${memberid}";
-       $.ajax({
-            type : "post",
-            url : "gbsearch",
-            data : param,
-            success : function(data) {
-               
-               if (data.trim()=="true") {
-                  alert("이미 평가한 게시글입니다.");
-               } else {
-                  $("#bbsContent").attr({
-                       action : "bbsbad",
-                       method : 'get'
-                 });
-                    alert("신고하였습니다.");
-                 $("#bbsContent").submit();
-               }
-            }
-         });
-                   
- });
+   
+   $("#badupdate").click(function() {
+	      var param = "no=${bbsContent.no}&boardno=${bbsContent.boardno}&userid=${memberid}";
+	      $.ajax({
+	           type : "post",
+	           url : "gbsearch",
+	           data : param,
+	           success : function(data) {
+	              if (data.trim()=="true") {
+	                 alert("이미 평가한 댓글입니다.");
+	              } else {
+	                 $("#bbsContent").attr({
+	                      action : "bbsbad",
+	                      method : 'get'
+	                });
+	                 alert("신고하였습니다.");
+	                 $("#bbsContent").submit();
+	              }
+	           }
+	        });
+	   });
+ 
+   $("#commentbadupdate").click(function() {
+	      var param = "commentno=${commentno}&userid=${memberid}";
+	      $.ajax({
+	           type : "post",
+	           url : "gbcommentsearch",
+	           data : param,
+	           success : function(data) {
+	              if (data.trim()=="true") {
+	                 alert("이미 평가한 댓글입니다.");
+	              } else {
+	                 $("#bbsContent").attr({
+	                      action : "bbscommentbad",
+	                      method : 'get'
+	                });
+	                 alert("신고하였습니다.");
+	                 $("#bbsContent").submit();
+	              }
+	           }
+	        });
+	   });
     
     $("#tradecomplite").click(function() { 
         if (confirm("완료처리를 하시겠습니까?") == true) {
@@ -93,7 +112,17 @@ $(document).ready(function() {
            return; // 취소
         }
      });
-    
+    $("#qnacomplite").click(function() { 
+        if (confirm("완료처리를 하시겠습니까?") == true) {
+           $("#bbsContent").attr({
+              action : 'statusupdate',
+              method : 'get'
+           });
+           $("#bbsContent").submit();
+        } else {
+           return; // 취소
+        }
+     });
     $("#comment").click(function() {
         if (confirm("댓글을 등록하시겠습니까?") == true){
            if ($("#contents").val() == ""){
@@ -432,6 +461,10 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                           <c:if test="${commentList.nickname == membernick }">
                                              <td align="center" ><img src="/Handicap/img/temp.jpg"
                                                 onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'"></td>
+                                           <%--  <c:if test="${commentList.nickname != membernick }"> --%>
+                                             <td align="center"><button type="button" id="commentbadupdate"
+																				class="ml-button">신고</button></td>
+																				<%-- </c:if> --%>
                                           </c:if>
                                        </tr>
                                     </c:forEach>
@@ -519,6 +552,11 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
 															<c:choose>
 																<c:when test="${boardno == 30 }">
 																	<button type="button" id="tradecomplite" class="ml-button">완료</button>
+																</c:when>
+																<c:when test="${boardno==50}">
+																	<c:if test="${membergrade ==3}">
+																<button type="button" id="qnacomplite" class="ml-button">완료</button>
+																	</c:if>
 																</c:when>
 															</c:choose>
 														</c:if></td>

@@ -129,6 +129,16 @@
          select count(*) from bbseval where boardno= #{boardno} and no = #{no} and userid = #{userid}
    </select>
    
+      <!-- 댓글 신고 제한용  -->
+   <insert id="gbcommentlimit" parameterType="com.handicap.model.beans.BbsVO">
+         insert into bbseval (boardno, no, userid, commentno)
+         values (#{boardno}, #{no},#{userid},#{commentno})   
+   </insert>
+   
+   <!-- 댓글 신고수 올리기 -->
+   <update id="commentbad" parameterType="int">
+   	update bbscomment set bad = bad+1 where boardno=#{boardno} and no = #{boardno} and commentno = #{commentno}
+   </update>
        <!-- 댓글 신고 테이블 아이디검색 -->
    <select id="gbcomment" parameterType="map" resultType="int">
          select count(*) from bbseval where commentno =#{commentno} and userid = #{userid}

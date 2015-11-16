@@ -140,7 +140,7 @@
 														</tr>
 													</c:forEach>
 													</c:when>
-													<c:when test="${boardno == '40' }">
+													<c:when test="${boardno == '50' }">
 														<table class="bbsList">
 															<tr height="20px">
 																<th width="10%">글번호</th>
@@ -167,7 +167,7 @@
                                                                   미답변
                                                                </c:when>
 																				<c:otherwise>
-                                                                  답변
+                                                                  답변완료
                                                                </c:otherwise>
 																			</c:choose></td>
 
@@ -231,7 +231,7 @@
 																							<tr>
 																								<td align="center">${bbs.no}</td>
 																								<td align="center"><a
-																									href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
+																									href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${fn:substring(bbs.title,0,20)}...</a></td>
 																								<td align="center">${bbs.nickname}</td>
 																								<td align="center">${bbs.writedate}</td>
 																								<td align="center">${bbs.hits}</td>

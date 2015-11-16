@@ -275,8 +275,26 @@ public class BbsController {
         return "bbs/isgb";
      }
      
+     @RequestMapping("/bbscommentbad")
+     public String bbscommentbad(@RequestParam int no,
+             @RequestParam int boardno, 
+             @RequestParam int commentno,
+             BbsCommentVO bcv) throws SQLException{                 
+        Map map = new HashMap();
+         map.put("commentno", commentno);
+         map.put("no", no);
+         map.put("boardno", boardno);        
+         
+         bd.gbcommentlimit(bcv);
+         bd.commentbadupdate(map);
+         
+        
+       return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+       
+     }
+     
      @RequestMapping("/gbcomment")
-     public String gbcomment(@RequestParam int commentno, @RequestParam String userid, Model model){
+     public String gbcommentsearch(@RequestParam int commentno, @RequestParam String userid, Model model){
         Map map = new HashMap();
        map.put("commentno", commentno);
          map.put("userid", userid);

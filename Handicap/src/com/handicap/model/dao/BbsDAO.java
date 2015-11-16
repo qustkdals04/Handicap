@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.handicap.model.beans.BbsCommentVO;
 import com.handicap.model.beans.BbsVO;
 
 public class BbsDAO {
@@ -130,6 +131,20 @@ public class BbsDAO {
 	    return result;
 	 }
  
+ public int commentbadupdate(Map map) {
+	 
+
+		return sqlSession.update("bbs.commentbad", map);
+	}
+ 
+ public boolean gbcommentlimit(BbsCommentVO bcv){
+	    
+	    int result;
+	       
+	    result = sqlSession.insert("bbs.gbcommentlimit", bcv);
+	       
+	       return false;
+	 }
  public int statusupdate(Map map){
 	 
 	 return sqlSession.update("bbs.bbsStatusUpdate",map);

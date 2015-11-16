@@ -472,11 +472,10 @@
 								</td>
 							</tr>
 						</table>
-						<input type="hidden" name="boardno" id="boardno"
-							value="${boardno}"> <input type="hidden" name="category"
-							id="category" value=""> <input type="hidden"
-							name="region" id="region" value="">
-
+						<input type="hidden" name="boardno" id="boardno" value="${boardno}"> 
+						<input type="hidden" name="category" id="category" value=""> 
+						<input type="hidden" name="region" id="region" value="">
+		
 						</form>
 						</c:when>
 						<c:when test="${boardno == '40'}">
