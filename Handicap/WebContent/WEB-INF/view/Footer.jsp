@@ -25,7 +25,7 @@
    <td align="center"><a href="/Handicap/bbsList?boardno=11" style="font:12px larger; " >뉴스</a></td>
 </tr>
 <tr>
-<td align="center"><a href="/Handicap/bbsList?boardno=12" style="font:12px larger; ">사이트소개</a></td>
+<td align="center"><a href="/Handicap/about" style="font:12px larger; ">사이트소개</a></td>
 </tr>
 </table>
 <!--소식 끝-->
@@ -74,7 +74,7 @@
 <!--일자리 정보-->
 <table width=150 height=90  cellspacing=0>
 <tr>
-<th align="center"><a href="/Handicap/JOB" style="font:18px x-large;">일자리 정보 </a></th>
+<th align="center"><a href="/Handicap/bbsList?boardno=40" style="font:18px x-large;">일자리 정보 </a></th>
 </tr>
 
 </table>
