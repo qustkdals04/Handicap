@@ -119,8 +119,12 @@ table.re3 tr{
 table.re3 td{
 	vertical-align: middle;
 }
-
-
-
+#category{
+	
+    width: 90px;
+    height: 26px;
+    background: url(select.png) 180px center no-repeat; 
+    border: 1px solid #ff925e;
+}
 
  
