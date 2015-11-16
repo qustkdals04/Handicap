@@ -74,6 +74,9 @@ public class MyController {
 			System.out.println(category);
 			list = sd.searchContents(keyword);
 			
+		} else if(category.equals("작성자")){
+			String keyword2 = dao.findId(keyword);
+			list = sd.searchAuthor(keyword2);
 		} else { //제목+내용
 			System.out.println(category);
 			list = sd.searchTotal(keyword);

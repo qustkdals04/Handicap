@@ -200,11 +200,11 @@ public class MemberController {
 				
 				return "viewmain"; // 로그인성공하면 main페이지로 이동
 			} else {
-				model.addAttribute("status", "로그인실패");
+				model.addAttribute("status", "아이디 또는 비밀번호가 올바르지 않습니다.");
 				return "login/login"; // 로그인실패하면 login페이지로 이동
 			}
 		} else {
-			model.addAttribute("status", "로그인실패");
+			model.addAttribute("status", "아이디 또는 비밀번호가 올바르지 않습니다.");
 			return "login/login";
 		}
 	}

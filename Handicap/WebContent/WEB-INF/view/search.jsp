@@ -31,10 +31,13 @@ a.line {
 			<%@include file="menu.jsp"%>
 		</div>
 
-
+		<div>
+			<h3>검색된결과가 없습니다.</h3>
+		</div>
 		<c:if test="${list == null }">
-			<a>메인으로 돌아가기</a>
+			
 		</c:if>
+		
 		<c:if test="${list != null }">
 			<c:forEach var="result" items="${list }">
 				<c:choose>

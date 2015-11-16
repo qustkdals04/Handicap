@@ -20,4 +20,7 @@ public class SearchDAO {
 	public List<BbsVO> searchTotal(String keyword){
 		return sqlSession.selectList("user.searchtotal", "%"+keyword+"%");		
 	}
+	public List<BbsVO> searchAuthor(String keyword){
+		return sqlSession.selectList("user.searchauthor", "%"+keyword+"%");
+	}
 }

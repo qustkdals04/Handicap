@@ -181,16 +181,20 @@
    
    <!-- 통합검색 -->
    <!-- 제목 -->
-   <select id="searchtitle" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   <select id="searchtitle" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where title like #{keyword}
    </select>
    <!-- 내용 -->
-   <select id="searchcontents" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   <select id="searchcontents" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where contents like #{keyword}
    </select>
    <!-- 제목+내용 -->
-   <select id="searchtotal" parameterType="map" resultType="com.handicap.model.beans.BbsVO">
+   <select id="searchtotal" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
    	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where title like #{keyword} and contents like #{keyword}
+   </select>
+   <!-- 작성자 -->
+   <select id="searchauthor" parameterType="string" resultType="com.handicap.model.beans.BbsVO">
+   	select bbs.*, nickname from bbs inner join member on bbs.author=member.userid where author like #{keyword} 
    </select>
 </mapper>
 <!-- user.xml -->
