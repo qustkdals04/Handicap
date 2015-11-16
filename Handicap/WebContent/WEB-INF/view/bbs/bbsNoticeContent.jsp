@@ -455,15 +455,15 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                     style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px;">
                                     <c:forEach var="commentList" items="${list}">
                                        <tr >
-                                          <td align="center" ><font size="3px">${commentList.nickname}</font></td>
-                                          <td align="center" ><font size="3px">${commentList.contents}</font></td>
+                                          <td align="center" ><font size="3px" style="font-weight: bolder;">${commentList.nickname}</font></td>
+                                          <td align="center" ><font size="4px">${commentList.contents}</font></td>
                                           <td align="center"><font size="3px">${commentList.writedate}</font></td>
                                           <c:if test="${commentList.nickname == membernick }">
                                              <td align="center" ><img src="/Handicap/img/temp.jpg"
                                                 onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'"></td>
                                            <%--  <c:if test="${commentList.nickname != membernick }"> --%>
                                              <td align="center"><button type="button" id="commentbadupdate"
-																				class="ml-button">신고</button></td>
+																				class="ml-bu tton">신고</button></td>
 																				<%-- </c:if> --%>
                                           </c:if>
                                        </tr>
