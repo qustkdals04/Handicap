@@ -16,6 +16,11 @@ a.line {
 	text-decoration: underline;
 	color: blue;
 }
+td#searchre{
+
+font: 25px larger;
+
+}
 </style>
 </head>
 <body>
@@ -29,17 +34,26 @@ a.line {
 		<div id="CssContent1">
 			<%@include file="menu.jsp"%>
 		</div>
-		<c:if test="${list.size() == 0 }">			
-			'${searchResult }'에 대한 검색결과가 없습니다.
-			<ul>
-				<li>단어의 철자가 정확한지 확인해 보세요.</li>
-				<li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
-				<li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
-				<li>두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.</li>
-				<li>검색 옵션을 변경해서 다시 검색해 보세요.</li>
-			</ul>			
+		<table width="800px">
+		<c:if test="${list.size() == 0 }">		
+		<tr align="left">
+			<td id="searchre"><font color="orange">'${searchResult }'</font> 에 대한 검색결과가 없습니다.</td>
+			
+		</tr>
+		<tr>
+		<td>
+		<ul>
+				<li>＊ 단어의 철자가 정확한지 확인해 보세요.</li>
+				<li>＊ 한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
+				<li>＊ 검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
+				<li>＊ 두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.</li>
+				<li>＊ 검색 옵션을 변경해서 다시 검색해 보세요.</li>
+			</ul>	
+		</td>
+		</tr>
 		</c:if>
 		
+		</table>
 		<%-- <c:if test="${list != null }"> --%>
 		<c:if test="${list.size() > 0 }">
 			'${searchResult }'에 대한 검색결과 입니다.
