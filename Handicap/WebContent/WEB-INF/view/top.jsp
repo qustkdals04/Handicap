@@ -5,6 +5,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/new.css">
 <title>Insert title here</title>
 
 <!-- <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script> -->
@@ -43,6 +45,17 @@
 			}
 			
 		});
+	});
+	
+	
+	$(document).ready(function(){
+	    
+	    var select = $("select#category");
+	    
+	    select.change(function(){
+	        var selectname = $(this).children("option:selected").text();
+	      
+	    });
 	});
 </script>
 </head>
@@ -83,11 +96,15 @@
 				<div id="appLoadingIndicator">
 					<div id="cell">
 						<form id="searchForm" name="searchForm" method="post">
+						
+						<label id="select"></label>
 						<select name="category" id="category" style="outline: none;">
-							<option value="제목">제목</option>
+						
+							<option value="제목"  >제목</option>
 							<option value="내용">내용</option>
 							<option value="제목+내용">제목+내용</option>
 						</select>
+						
 						<input align="bottom" name="keyword" id="keyword" placeholder="검색어를 입력해주세요."  type="text" style="width: 350px; border: 3px solid #F3B514; height: 20px ; margin-left: 0; outline:none;" >
 						<button type="button" id="btnSearch" class="ml-button" style="float: none; width: 64px; height: 30px; margin-left: 0; outline: none;">검색</button>
 						</form>
