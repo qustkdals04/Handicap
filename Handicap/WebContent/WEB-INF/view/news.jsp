@@ -6,6 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" media="all" href="/Handicap/css/new.css">
 <title>Insert title here</title>
+<style>
+a.line {
+	text-decoration: underline;
+	color: black;
+}
+</style>
 </head>
 <body>
    <table class="club" align="center"  width="900" >
@@ -18,13 +24,13 @@
       <tr>      
          
         <tr>
-			<td  colspan="2" style="font:12px larger; " ><a href="">-뉴스</a></td>
+			<td  colspan="2" style="font:12px larger; " ><a href="" class="line">-뉴스</a></td>
 			
 		</tr>
 		<tr>
-			<td colspan="2" style="font:12px larger; "><a href="">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="" class="line">-뉴스</a></td>
 		</tr><tr>
-			<td colspan="2" style="font:12px larger; "><a href="">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="" class="line">-뉴스</a></td>
 		</tr>   
          </table>
 </body>

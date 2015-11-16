@@ -24,13 +24,13 @@
 
 <body>
 
-
-	<div id="CssWrapper" align="center">
+<center>
+	<div id="CssWrapper" >
 
 		<table>
 
 			<tr>
-			<td align="center">
+			<td >
 				<div id="top">
 				<%@include file="top.jsp"%>
 				</div>
@@ -38,7 +38,7 @@
 			</tr>
 
 			<tr>
-				<td align="center">
+				<td >
 					<div id="CssContent1">
 						<%@include file="menu.jsp"%>
 					</div>
@@ -47,23 +47,24 @@
 			</tr>
 
 			<tr>
-				<td align="center">
+				<td >
 					<div id="CssContents">
 
 						<table>
 							<tr>
 								<td>
 									<div id="slider" align="center">
-										<%@include file="index.html"%>
-									</div>
+										<%@include file="index.html"%>	
+									</div> 
+									
 									
 								</td>
-					
+							
 							</tr>
 
 							<tr>
 								<td>
-									<div id="slider" align="center">
+									<div id="slider" >
 										<%@include file="Notice.jsp"%>
 									</div>
 								</td>
@@ -71,7 +72,7 @@
 							
 							<tr>
 								<td>
-									<div id="slider" align="center">
+									<div id="slider" >
 										<%@include file="news.jsp"%>
 									</div>
 								</td>
@@ -81,7 +82,7 @@
 							<tr>
 								<td>
 
-									<div id="Foot" align="center">
+									<div id="Foot" >
 										<%@include file="Footer.jsp"%>
 									</div>
 								
@@ -95,5 +96,6 @@
 
 		</table>
 	</div>
+	</center>
 </body>
 </html>
