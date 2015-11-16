@@ -224,51 +224,50 @@ public class BbsController {
     }
     
     
-   @RequestMapping("/bbsgood")
-   public String bbsgood(@RequestParam int no,
-           @RequestParam int boardno,
-           BbsVO bv
-           ) throws SQLException
-   {
-       Map map = new HashMap();
-       map.put("no", no);
-       map.put("boardno", boardno);
-       
-                   
-       bd.gblimit(bv);
-       bd.goodupdate(map);
-      
-     return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
-   }
-    
-    @RequestMapping("/bbsbad")
-    public String bbsbad(@RequestParam int no,
+    @RequestMapping("/bbsgood")
+    public String bbsgood(@RequestParam int no,
             @RequestParam int boardno,
-            @RequestParam String userid,
-            BbsVO bv,
-            HttpServletResponse response,
-            HttpServletRequest request
+            BbsVO bv
             ) throws SQLException, IOException
     {
-    	   	   	
-    	request.setCharacterEncoding("UTF-8");
-		PrintWriter writer = response.getWriter();
-    	 Map map = new HashMap();
-    	 map.put("no", no);
-         map.put("boardno", boardno);
-    	if(userid == bd.gbsearch(bv)){
-    		writer.println("<script>alert('신고할 수 없는 글입니다.'); </script>");
-			writer.flush();
-    		return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
-    	} else if(userid != bd.gbsearch(bv)){
-    		 bd.gblimit(bv);
-    	     bd.badupdate(map);  
-    	        
-    	}
-    	return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
-        
-      
+        Map map = new HashMap();
+        map.put("no", no);
+        map.put("boardno", boardno);
+        bd.gblimit(bv);
+        bd.goodupdate(map);
+      return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
     }
+     
+     @RequestMapping("/bbsbad")
+     public String bbsbad(@RequestParam int no,
+             @RequestParam int boardno,           
+             BbsVO bv) throws SQLException{                 
+        Map map = new HashMap();
+         map.put("no", no);
+         map.put("boardno", boardno);        
+                     
+         bd.gblimit(bv);
+         bd.badupdate(map);
+        
+       return "redirect:bbsContent?no=" + no + "&boardno=" + boardno;
+       
+     }
+     
+     @RequestMapping("/gbsearch")
+     public String gbsearch(@RequestParam int no,
+             @RequestParam int boardno, @RequestParam String userid, Model model){
+        Map map = new HashMap();
+        map.put("no", no);
+         map.put("boardno", boardno);
+         map.put("userid", userid);
+         if (bd.gbsearch(map) == 1){
+            model.addAttribute("isgb", true);
+         }
+         else if(bd.gbsearch(map) == 0){
+            model.addAttribute("isgb", false);
+         }       
+        return "bbs/isgb";
+     }
     
     @RequestMapping("/statusupdate")
     public String statusupdate(@RequestParam int no,

@@ -25,53 +25,75 @@ window.onload = function() {
 		toolbar: []
 	});		
 };
-   $(document).ready(function() {
-      $("#delete").click(function() { //삭제버튼
-         if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
-            $("#bbsContent").attr({
-               action : 'bbsDelete',
-               method : 'post'
-            });
-            $("#bbsContent").submit();
-         } else {
-            return; // 취소
-         }
-      });
-    
-      $("#goodupdate").click(function() {
-    	   	  
-    	  $("#bbsContent").attr({            
-                  action : "bbsgood",
-               method : 'get'
-            });
-            alert("추천이 반영됩니다");
-         $("#bbsContent").submit();
+$(document).ready(function() {
+    $("#delete").click(function() { //삭제버튼
+       if (confirm("정말로 삭제하시겠습니까?") == true) { // 확인
+          $("#bbsContent").attr({
+             action : 'bbsDelete',
+             method : 'post'
+          });
+          $("#bbsContent").submit();
+       } else {
+          return; // 취소
+       }
+    });
+  
+   $("#goodupdate").click(function() {
+      var param = "no=${bbsContent.no}&boardno=${bbsContent.boardno}&userid=${memberid}";
+      $.ajax({
+           type : "post",
+           url : "gbsearch",
+           data : param,
+           success : function(data) {
+              if (data.trim()=="true") {
+                 alert("이미 평가한 게시글입니다.");
+              } else {
+                 $("#bbsContent").attr({
+                      action : "bbsgood",
+                      method : 'get'
+                });
+                 alert("추천하였습니다.");
+                 $("#bbsContent").submit();
+              }
+           }
+        });
+   });
+
+    $("#badupdate").click(function() {
+       var param = "no=${bbsContent.no}&boardno=${bbsContent.boardno}&userid=${memberid}";
+       $.ajax({
+            type : "post",
+            url : "gbsearch",
+            data : param,
+            success : function(data) {
                
-      });
-      
-      $("#badupdate").click(function() {         
-         $("#bbsContent").attr({
-               action : "bbsbad",
-               method : 'get'
+               if (data.trim()=="true") {
+                  alert("이미 평가한 게시글입니다.");
+               } else {
+                  $("#bbsContent").attr({
+                       action : "bbsbad",
+                       method : 'get'
+                 });
+                    alert("신고하였습니다.");
+                 $("#bbsContent").submit();
+               }
+            }
          });
-            alert("신고하였습니다.");
-         $("#bbsContent").submit();            
-   });
-      
-      
-      
-      $("#tradecomplite").click(function() { //삭제버튼
-          if (confirm("완료처리를 하시겠습니까?") == true) { // 확인
-             $("#bbsContent").attr({
-                action : 'statusupdate',
-                method : 'get'
-             });
-             $("#bbsContent").submit();
-          } else {
-             return; // 취소
-          }
-       });
-   });
+                   
+ });
+    
+    $("#tradecomplite").click(function() { 
+        if (confirm("완료처리를 하시겠습니까?") == true) {
+           $("#bbsContent").attr({
+              action : 'statusupdate',
+              method : 'get'
+           });
+           $("#bbsContent").submit();
+        } else {
+           return; // 취소
+        }
+     });
+ });
 </script>
 </head>
 <body>

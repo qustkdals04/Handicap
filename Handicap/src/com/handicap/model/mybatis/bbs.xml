@@ -123,9 +123,9 @@
   <update id="bad" parameterType="int">
      update bbs set bad = bad+1 where boardno= #{boardno} and no = #{no}
    </update>  
-   
-   <!-- 추천 / 신고 테이블 아이디검색 -->
-   <select id="gbsearch" parameterType="String">
-         select userid from bbseval where boardno= #{boardno} and no = #{no}
-   </select> 
+  
+      <!-- 추천 / 신고 테이블 아이디검색 -->
+   <select id="gbsearch" parameterType="map" resultType="int">
+         select count(*) from bbseval where boardno= #{boardno} and no = #{no} and userid = #{userid}
+   </select>
 </mapper>
