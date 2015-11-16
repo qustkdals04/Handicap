@@ -111,6 +111,7 @@ $(document).ready(function() {
       });
  });
 </script>
+
 </head>
 <body>
 
@@ -280,9 +281,11 @@ $(document).ready(function() {
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
                                                
-                                                
-                                                   <img height="250px" style="width: 350px;"
-                                                      src="/Handicap/img/${bbsfile.fileoriginal}">
+                                                <a onclick=
+"javascript:window.open('img.html?img=http://phpschool.com/bbs/img/search_list.gif','','height=0,width=0');" 
+style='cursor:hand'> <img height="250px" style="width: 350px;"
+                                                      src="/Handicap/img/${bbsfile.fileoriginal}"></a>
+                                                  
                                                
                                                 
                                                 
@@ -390,8 +393,8 @@ $(document).ready(function() {
                                           <td colspan="4" >
                                           <c:if test="${bbsFileName !=null }">
                                           <c:forEach var="bbsfile" items="${bbsFileName}">
-                                          <img height="250px" style="width: 350px;"
-                                          src="/Handicap/img/${bbsfile.fileoriginal}">
+ 												<img height="250px" style="width: 350px;"
+                                                      src="/Handicap/img/${bbsfile.fileoriginal}">
                                           </c:forEach>
                                           </c:if> 
                                           <br>

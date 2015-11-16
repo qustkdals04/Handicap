@@ -74,53 +74,148 @@
 			$("#bbsWriteForm").submit();
 				}
 			})			
-			 $('#files').on("change", function(){
-					//확장자 비교
-					//http://stackoverflow.com/questions/14852090/jquery-check-for-file-extension-before-uploading
-					var filename = $('#files').val();
-					var extension = filename.replace(/^.*\./, '');
-					var fileIndex = $('#fileview tr').length; 
-					
-					//if($('#files').val() == null){
-				if (Number(fileIndex) >= '1') {		
-					
-					if (extension == filename) {
-				        extension = '';
-				    } else {
-				        extension = extension.toLowerCase();
-				    }					
-					
-					//이미지 파일은 JPG, PNG 확장자만 가능
-					if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
-						//초기화
-						//http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
-						var control = $("#files");
-						control.replaceWith( control = control.clone( true ) );
-						
-						alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
-					}
-					alert("1");
-					return;
-				 }
-					
-				
-				});
-
-			$('#addFile').click(function() { 
-	            var fileIndex = $('#fileview tr').length; //<table id="fileview"> 밑에 tr 갯수을 fileIndex에 담음
-	            if (Number(fileIndex) >= '5') { //file Upload 갯수를 5개로 제한
-	               alert('파일은 첨부는 5개만 가능하십니다.');	               
-	               return;
-	            }
-	            var i = $('#fileview tr').length;
-	            if(Number(i) >= '5'){
-	               return;
-	            }
-	            $('#fileview').append(
-	                  '<tr><td>'
-	                     + '   <input type="file" id="files['+ fileIndex +']" accept=".gif, .jpg, .png, .bmp" name="files['+ fileIndex +']" onchange="imageURL'+(i+1)+'(this)" />'
-	                     + '</td></tr>'); 
-	            });			
+			var fileIndex = 1;
+        $("#files2").hide();
+        $("#files3").hide();
+        $("#files4").hide();
+        $("#files5").hide();
+     $('#addFile').click(function() { 
+           //var fileIndex = $('#fileview tr').length; //<table id="fileview"> 밑에 tr 갯수을 fileIndex에 담음
+           if (Number(fileIndex) >'5') { //file Upload 갯수를 5개로 제한
+              alert('파일은 첨부는 5개만 가능하십니다.');                  
+              return;
+           }
+           var i = $('#fileview tr').length;
+           if(Number(i) > '5'){
+              return;
+           }               
+           
+              $("#files"+fileIndex).show();
+              fileIndex++;
+           /* $('#fileview').append(
+                 '<tr><td>'
+                    + '   <input type="file" id="files['+ fileIndex +']" class="files" accept=".gif, .jpg, .png, .bmp" name="files['+ fileIndex +']" />'
+                    + '</td></tr>'); */
+           
+           });      
+           
+     
+     
+     $("#files1").change(function(){
+        //확장자 비교
+        var filename = $('#files1').val();
+        var extension = filename.replace(/^.*\./, '');
+        //var fileIndex = $('#fileview tr').length; 
+        //if($('#files').val() == null){               
+        if (extension == filename) {
+             extension = '';
+         } else {
+             extension = extension.toLowerCase();
+         }               
+        
+        //이미지 파일은 JPG, PNG 확장자만 가능
+        if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+           //초기화
+           //http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+            var control = $('#files1');
+           control.replaceWith( control = control.clone( true ) ); 
+           
+           alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+        }      
+        
+     });
+     $("#files2").change(function(){
+        //확장자 비교
+        var filename = $('#files2').val();
+        var extension = filename.replace(/^.*\./, '');
+        //var fileIndex = $('#fileview tr').length; 
+        //if($('#files').val() == null){               
+        if (extension == filename) {
+             extension = '';
+         } else {
+             extension = extension.toLowerCase();
+         }               
+        
+        //이미지 파일은 JPG, PNG 확장자만 가능
+        if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+           //초기화
+           //http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+            var control = $('#files2');
+           control.replaceWith( control = control.clone( true ) ); 
+           
+           alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+        }   
+        
+     });
+     $("#files3").change(function(){
+        //확장자 비교
+        var filename = $('#files3').val();
+        var extension = filename.replace(/^.*\./, '');
+        //var fileIndex = $('#fileview tr').length; 
+        //if($('#files').val() == null){               
+        if (extension == filename) {
+             extension = '';
+         } else {
+             extension = extension.toLowerCase();
+         }               
+        
+        //이미지 파일은 JPG, PNG 확장자만 가능
+        if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+           //초기화
+           //http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+            var control = $('#files3');
+           control.replaceWith( control = control.clone( true ) ); 
+           
+           alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+        }   
+        
+     });
+     $("#files4").change(function(){
+        //확장자 비교
+        var filename = $('#files4').val();
+        var extension = filename.replace(/^.*\./, '');
+        //var fileIndex = $('#fileview tr').length; 
+        //if($('#files').val() == null){               
+        if (extension == filename) {
+             extension = '';
+         } else {
+             extension = extension.toLowerCase();
+         }               
+        
+        //이미지 파일은 JPG, PNG 확장자만 가능
+        if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+           //초기화
+           //http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+            var control = $('#files4');
+           control.replaceWith( control = control.clone( true ) ); 
+           
+           alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+        }      
+        
+     });
+     $("#files5").change(function(){
+        //확장자 비교
+        var filename = $('#files5').val();
+        var extension = filename.replace(/^.*\./, '');
+        //var fileIndex = $('#fileview tr').length; 
+        //if($('#files').val() == null){               
+        if (extension == filename) {
+             extension = '';
+         } else {
+             extension = extension.toLowerCase();
+         }               
+        
+        //이미지 파일은 JPG, PNG 확장자만 가능
+        if( (extension != 'jpg') && (extension != 'png') && (extension != 'gif') && (extension != 'bmp')) {
+           //초기화
+           //http://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery
+            var control = $('#files5');
+           control.replaceWith( control = control.clone( true ) ); 
+           
+           alert("이미지 파일은 JPG, PNG, gif, bmp 확장자만 가능합니다.");
+        }      
+        
+     });
 		
 	});
 </script>
@@ -188,20 +283,28 @@
 													<tr>
 														<td align="center"><font size="3px">내 용</font></td>
 														<td><textarea name="contents" id="contents" rows="13"
-																cols="40" style="height: 450px; width: 100%"></textarea></td>
+																cols="40" style="height: 450px; width: 100%" maxlength="3000"></textarea></td>
 													</tr>
 													<tr>
 														<td align="center"><font size="3px">파일 첨부</font></td>
-														<td align="left">
-															<table id="fileview" align="left">
-																<tr>
-																	<td colspan="2">
-																	<input name="files" type="file" id="files" 
-																	accept=".gif, .jpg, .png, .bmp">
-																		<input id="addFile" type="button" value="파일첨부"></td>
-																</tr>
-															</table>
-														</td>
+                                                <td align="left">
+                                                   <table id="fileview" align="left">
+                                                      <tr>
+                                                         <td colspan="2">
+                                                         <input name="files" type="file" class="files" id="files1" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files2" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files3" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files4" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files5" 
+                                                         accept=".gif, .jpg, .png, .bmp">
+                                                            <input id="addFile" type="button" value="파일첨부"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
 													</tr>
 													<tr>
 														<!-- a href="bbsNoticeWriteForm" -->
@@ -249,16 +352,28 @@
 											<tr>
 												<td align="center"><font size="3px">내 용</font></td>
 												<td><textarea name="contents" id="contents" rows="13"
-														cols="40" style="height: 450px; width: 100%"></textarea></td>
+														cols="40" style="height: 450px; width: 100%" maxlength="3000"></textarea></td>
 											</tr>
 											<tr>
 												<td align="center"><font size="3px">파일 첨부</font></td>
-												<td align="left">
-													<table id="fileview" align="left">
-														<tr>
-															<td colspan="2"><input name="files" type="file" id="files"
-															 accept=".gif, .jpg, .png, .bmp">
-																<input id="addFile" type="button" value="파일첨부"></td>
+                                                <td align="left">
+                                                   <table id="fileview" align="left">
+                                                      <tr>
+                                                         <td colspan="2">
+                                                         <input name="files" type="file" class="files" id="files1" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files2" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files3" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files4" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files5" 
+                                                         accept=".gif, .jpg, .png, .bmp">
+                                                            <input id="addFile" type="button" value="파일첨부"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
 				
 																		<td width="270px" align="right"><font size="3px">별점</font>
 																	<select id="star" name="star">
@@ -361,19 +476,28 @@
 											<tr>
 												<td align="center"><font size="3px">내 용</font></td>
 												<td><textarea name="contents" id="contents" rows="13"
-														cols="40" style="height: 450px; width: 100%"></textarea></td>
+														cols="40" style="height: 450px; width: 100%" maxlength="3000"></textarea></td>
 											</tr>
 											<tr>
 												<td align="center"><font size="3px">파일 첨부</font></td>
-												<td align="left">
-													<table id="fileview" align="left">
-														<tr>
-															<td colspan="2"><input name="files" type="file" id="files"
-															 accept=".gif, .jpg, .png, .bmp">
-																<input id="addFile" type="button" value="파일첨부"></td>
-														</tr>
-													</table>
-												</td>
+                                                <td align="left">
+                                                   <table id="fileview" align="left">
+                                                      <tr>
+                                                         <td colspan="2">
+                                                         <input name="files" type="file" class="files" id="files1" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files2" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files3" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files4" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files5" 
+                                                         accept=".gif, .jpg, .png, .bmp">
+                                                            <input id="addFile" type="button" value="파일첨부"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
 											</tr>
 											<tr>
 												<!-- a href="bbsNoticeWriteForm" -->
@@ -423,20 +547,28 @@
 											<tr>
 												<td align="center"><font size="3px">내 용</font></td>
 												<td><textarea name="contents" id="contents" rows="13"
-														cols="40" style="height: 450px; width: 100%"></textarea></td>
+														cols="40" style="height: 450px; width: 100%" maxlength="3000"></textarea></td>
 											</tr>
 											<tr>
 												<td align="center"><font size="3px">파일 첨부</font></td>
-												<td align="left">
-													<table id="fileview" align="left">
-														<tr>
-															<td colspan="2"><input name="files" type="file" id="files"
-															 accept=".gif, .jpg, .png, .bmp">
-																<input id="addFile" type="button" value="파일첨부"></td>
-															
-														</tr>
-													</table>
-												</td>
+                                                <td align="left">
+                                                   <table id="fileview" align="left">
+                                                      <tr>
+                                                         <td colspan="2">
+                                                         <input name="files" type="file" class="files" id="files1" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files2" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files3" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files4" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files5" 
+                                                         accept=".gif, .jpg, .png, .bmp">
+                                                            <input id="addFile" type="button" value="파일첨부"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
 											</tr>
 											<tr>
 												<!-- a href="bbsNoticeWriteForm" -->
@@ -487,19 +619,28 @@
 											</tr>
 											<td align="center"><font size="3px">내 용</font></td>
 											<td><textarea name="contents" id="contents" rows="13"
-													cols="40" style="height: 450px; width: 100%"></textarea></td>
+													cols="40" style="height: 450px; width: 100%" maxlength="3000"></textarea></td>
 											</tr>
 											<tr>
 												<td align="center"><font size="3px">파일 첨부</font></td>
-												<td align="left">
-													<table id="fileview" align="left">
-														<tr>
-															<td colspan="2"><input name="files" type="file" id="files"
-															accept=".gif, .jpg, .png, .bmp">
-																<input id="addFile" type="button" value="파일첨부"></td>
-														</tr>
-													</table>
-												</td>
+                                                <td align="left">
+                                                   <table id="fileview" align="left">
+                                                      <tr>
+                                                         <td colspan="2">
+                                                         <input name="files" type="file" class="files" id="files1" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files2" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files3" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files4" 
+                                                         accept=".gif, .jpg, .png, .bmp"><br>
+                                                         <input name="files" type="file" class="files" id="files5" 
+                                                         accept=".gif, .jpg, .png, .bmp">
+                                                            <input id="addFile" type="button" value="파일첨부"></td>
+                                                      </tr>
+                                                   </table>
+                                                </td>
 											</tr>
 											<tr>
 												<!-- a href="bbsNoticeWriteForm" -->
