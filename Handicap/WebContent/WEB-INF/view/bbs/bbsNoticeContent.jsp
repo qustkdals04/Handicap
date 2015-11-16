@@ -84,7 +84,7 @@ window.onload = function() {
       <table>
 
          <tr>
-            <td><%@include file="../top.jsp"%></td>
+            <td><%@include file="../top2.jsp"%></td>
          </tr>
 
          <tr>
