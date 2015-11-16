@@ -17,7 +17,7 @@
 						</ul>
 			
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=40'"><font size = "4px;" style="font-weight: bolder; color: #FC9F26;">▶ 일자리 정보</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=40'"><img src="/Handicap/img/일자리정보2.png"></li>
 						</ul>
 						
 			</div>

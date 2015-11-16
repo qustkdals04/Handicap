@@ -27,9 +27,9 @@ a.line {
 			
 		</tr>
 		<tr>
-			<td colspan="2" style="font:12px larger; "><a href="" class="line">-차량 구입시 혜택!</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="/Handicap/bbsContent?boardno=10&no=2" class="line">-차량 구입시 혜택!</a></td>
 		</tr><tr>
-			<td colspan="2" style="font:12px larger; "><a href="" class="line">-요금제에 대한 혜택!!!</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="/Handicap/bbsContent?boardno=10&no=6" class="line">-요금제에 대한 혜택!!!</a></td>
 		</tr>
 	</table>
 </body>

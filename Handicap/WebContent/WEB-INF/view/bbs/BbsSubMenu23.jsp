@@ -18,16 +18,16 @@
 			
 						
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=20'">▶ 신체적장애</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=20'"><img src="/Handicap/img/신체적장애2.png"></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=21'">▶ 정신적장애</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=21'"><img src="/Handicap/img/정신적장애2.png"></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=22'">▶ 동호회</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=22'"><img src="/Handicap/img/동호회2.png"></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=23'"><font size = "4px;" style="font-weight: bolder; color: #FC9F26;">▶ 여행</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=23'"><img src="/Handicap/img/여행.png"></li>
 						</ul>
 			</div>
 </body>

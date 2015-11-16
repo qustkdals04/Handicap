@@ -24,13 +24,13 @@ a.line {
       <tr>      
          
         <tr>
-			<td  colspan="2" style="font:12px larger; " ><a href="" class="line">-뉴스</a></td>
+			<td  colspan="2" style="font:12px larger; " ><a href="http://192.168.0.171/Handicap/bbsContent?boardno=11&no=4" class="line">제 28회 전국장애인종합예술제</a></td>
 			
 		</tr>
 		<tr>
-			<td colspan="2" style="font:12px larger; "><a href="" class="line">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="/Handicap/bbsContent?boardno=11&no=3" class="line">-복지가 정치다!</a></td>
 		</tr><tr>
-			<td colspan="2" style="font:12px larger; "><a href="" class="line">-뉴스</a></td>
+			<td colspan="2" style="font:12px larger; "><a href="/Handicap/bbsContent?boardno=11&no=2" class="line">-누눔과 소통의 마학전</a></td>
 		</tr>   
          </table>
 </body>

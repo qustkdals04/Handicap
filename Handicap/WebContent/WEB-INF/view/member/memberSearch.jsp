@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
-	<link rel="stylesheet" type="text/css" media="all"
-	href="/Handicap/css/main.css">
+<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/style.css">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	var domain;
@@ -49,6 +49,7 @@
 			}
 		});
 
+		
 		$("#btnfindPw").click(function() {
 			if ($("#userid").val() == "") {
 				alert("아이디를 입력해주세요..");
@@ -105,8 +106,20 @@
 				</tr>
 				<tr>
 					<td style="font-weight: bold;"><pre></pre>비밀번호 질문 :</td>
-					<td colspan="2"><pre></pre><input type="text" name="pquestion"
-						id="pquestion"></td>
+					<td colspan="2"><pre></pre><select name="pqid"
+														id="pqid">
+															<option value="0">비밀번호 힌트 질문</option>
+															<option value="1">아버지 성함은?</option>
+															<option value="2">어머니 성함은?</option>
+															<option value="3">출신 고등학교 이름은?</option>
+															<option value="4">키우는 애완동물의 이름은?</option>
+															<option value="5">초등학교 시절 담임 선생님의 이름은?</option>
+															<option value="6">가장 기억에 남는 장소는?</option>
+															<option value="7">나의 좌우명은?</option>
+															<option value="8">나의 보물 1호는?</option>
+															<option value="9">오래도록 기억하고 싶은 날짜는?</option>
+															<option value="10">초등학교 시절 나의 꿈은?</option>
+													</select></td>
 				</tr>
 				<tr>
 					<td style="font-weight: bold;"><pre></pre>비밀번호 답 :</td>

@@ -17,10 +17,10 @@
 						</ul>
 			<!-- /Handicap/messagelist -->
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=50'">▶ Q&A</li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=50'"><img src="/Handicap/img/QNA2.png"></li>
 						</ul>
 						<ul class="mylist">
-						<li onclick="location.href='/Handicap/bbsList?boardno=51'"><font size = "4px;" style="font-weight: bolder; color: #FC9F26;">▶ 게시판 요청</font></li>
+						<li onclick="location.href='/Handicap/bbsList?boardno=51'"><img src="/Handicap/img/게시판요청.png"></li>
 						</ul>
 			</div>
 </body>
