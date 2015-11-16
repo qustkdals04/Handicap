@@ -29,29 +29,34 @@
 			<tr>
 				<td valign="top">
 					<div align="center" style="width: 881px;">
-						<table>
-								<tr>
-										<td  colspan="2">
-												<img src="/Handicap/img/Daa.png"><font size = "8">죄송합니다.</font>
+						<table >
+								<tr height="50px">
+										<td  colspan="2" align="center">
+												<img src="/Handicap/img/Daa.png" style="width: 50pt; height: 35pt;padding-left: ">&nbsp;&nbsp;&nbsp;<font size = "9" style="text-align: center;">죄송합니다.</font>
 										</td>
 								</tr>
-								<tr>
-										<td colspan="2">
+								<tr height="100px">
+										<td colspan="2" align="center" style="vertical-align: middle;">
 												오류가 발생하였습니다. <br>
 												현재 페이지 이용이 불가능하게 되었습니다. 
 										</td>
 								</tr>
 								<tr>
 										<td>
-												<button type = "button" class= "ml-button">홈으로 이동</button>
+												<button type = "button" class= "ml-button">홈으로 <br>이동</button>
 										</td>
 										<td>
-												<button type = "button" class= "ml-button">이전 페이지로 이동</button>
+												<button type = "button" class= "ml-button" style="width: 80pt;">이전페이지<br>이동</button>
 										</td>
 								</tr>
 						</table>
 					</div>
 				</td>
+			</tr>
+			<tr>
+					<td>
+						<%@include file = "Footer.jsp" %>
+					</td>
 			</tr>
 		</table>
 	</center>
