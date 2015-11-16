@@ -103,7 +103,7 @@
 													<th width="9%">평 점</th>
 												</tr>
 
-												<tr>
+												
 
 
 													<c:forEach var="bbs" items="${list}">
@@ -152,7 +152,7 @@
 
 
 															</tr>
-															<tr>
+
 
 																<c:forEach var="bbs" items="${list}">
 																	<tr>
@@ -187,7 +187,7 @@
 
 
 																		</tr>
-																		<tr>
+																	
 
 																			<c:forEach var="bbs" items="${list}">
 																				<tr>
@@ -211,33 +211,7 @@
 
 																			</c:forEach>
 																			</c:when>
-																			<%-- <c:when test="${boardno == 22}">
-																	<!-- <tr height="20px">
-																			<th width="10%">글번호</th>
-																			<th width="38%">제 목</th>
-																			<th width="14%">작성자</th>
-																			<th width="20%">작성일</th>
-																			<th width="8%">조회수</th>
-																			<th width="10%">진행상태</th>
-
-
-																		</tr> -->
-																		<table>
-																			<tr>
-																			<td>
-																			<c:forEach var="bbs" items="${list}">																				
-																					<tr>
-																					<td align="center"><img alt="안나와" src="/Handicap/bbsimg/${bbs.fileoriginal }" width="100" height="100"> </td>																					
-																					</tr>																				
-																					<tr>																			
-																					<td align="center"><a
-																						href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.title}</a></td>
-																					</tr>																																								
-																			</c:forEach>
-																			</td>
-																			</tr>
-																		</table>
-																</c:when> --%>
+																			
 
 																			<c:otherwise>
 																				<table class="bbsList">
@@ -251,7 +225,7 @@
 
 
 																					</tr>
-																					<tr>
+																					
 
 																						<c:forEach var="bbs" items="${list}">
 																							<tr>
@@ -269,7 +243,7 @@
 																						</c:forEach>
 																						</c:otherwise>
 																						</c:choose>
-																					</tr>
+																
 																					<input type="hidden" name="pageNumber"
 																						value="${pageNumber }">
 
@@ -339,7 +313,7 @@
 
 																				</table>
 																				<!-- 아래 폼 인쿨루드 -->
-																		</tr>
+																
 																	</table>
 																	<div>
 
@@ -352,7 +326,7 @@
 																	<td>
 																		<!-- 배너 --> <%@include file="../banner.jsp"%>
 																	</td>
-															</tr>
+															
 														</table>
 								</td>
 							</tr>
