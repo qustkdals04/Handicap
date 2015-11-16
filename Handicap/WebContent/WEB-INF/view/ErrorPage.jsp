@@ -32,7 +32,7 @@
 						<table>
 								<tr>
 										<td  colspan="2">
-												<img src="/Handicap/img/xxx.jpg"><font size = "7">죄송합니다. (크게)</font>
+												<img src="/Handicap/img/Daa.png"><font size = "8">죄송합니다.</font>
 										</td>
 								</tr>
 								<tr>
