@@ -71,9 +71,10 @@ font: 25px larger;
 					    
 					
 						</tr>
+						<table border="0" width="800px">
 							<tr>
 
-
+								
 								<td style="width: 400px;"><a href='/Handicap/bbsContent?no=${result.no }&boardno=${result.boardno}' class="line"><font size="4px">${result.title }</font></a></td>
 		
 								
