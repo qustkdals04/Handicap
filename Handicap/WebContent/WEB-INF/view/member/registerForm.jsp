@@ -445,6 +445,7 @@ var regEmail = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)
             </center>
    
          </form>
+         <%@include file = "../Footer.jsp" %>
 
 
       </div>
