@@ -60,7 +60,7 @@ font: 25px larger;
 		<c:if test="${list.size() > 0 }">
 						<tr>
 						<td style="font: 20px larger; ">
-	
+	  
 			<font color="orange">'${searchResult }'</font>에 대한 검색결과 입니다.
 			<br><br>
 			</td>
