@@ -46,9 +46,9 @@ public class BbsController {
    private FileVO fv;
    
    @RequestMapping("/bbsNoticeWriteForm") 
-     public String bbsNoticeWrite() {
-     return "bbs/bbsNoticeWriteForm"; 
-     }
+   public String bbsNoticeWrite() {
+	   return "bbs/bbsNoticeWriteForm"; 
+   }
      
    @RequestMapping("/bbsWrite")
    public String bbsWrite(BbsVO bv, FileVO fv, HttpServletRequest req) throws Exception {
