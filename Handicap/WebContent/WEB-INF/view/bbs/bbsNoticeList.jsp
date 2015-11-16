@@ -34,7 +34,7 @@
 
 		<table>
 			<tr>
-				<td><%@include file="../top.jsp"%></td>
+				<td><%@include file="../top2.jsp"%></td>
 			</tr>
 			<tr>
 				<td>
@@ -79,7 +79,7 @@
 										</c:when>
 										<c:when test="${boardno == 40 }">
 											<%@include file="../job/JobSubMenu.jsp"%>
-										</c:when>
+							  			</c:when>
 										<c:when test="${boardno == 50 }">
 											<%@include file="../service/ServiceSubMeun.jsp"%>
 										</c:when>
@@ -90,7 +90,7 @@
 								<td>
 									<!-- 위에 폼 인쿨루드 --> <c:choose>
 
-										<c:when test="${boardno == '32'}">
+										<c:when test="${boardno == '32'}">   
 											<table class="bbsList">
 												<tr height="20px">
 													<th width="9%">글번호</th>
