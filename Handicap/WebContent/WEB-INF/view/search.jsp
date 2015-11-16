@@ -68,7 +68,7 @@ font: 25px larger;
 			<c:forEach var="result" items="${list }">
 				<c:choose>
 					<c:when test="${result.boardno == 10 }">
-					
+					    
 					
 						</tr>
 							<tr>
