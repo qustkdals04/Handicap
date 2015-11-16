@@ -67,9 +67,8 @@ public class MyController {
 	public String search(@RequestParam String category, @RequestParam String keyword, Model model){
 		List<BbsVO> list = null;
 		if(category.equals("제목")){
-			System.out.println(category);
-			list = sd.searchTitle(keyword);
-			
+			System.out.println(category);			
+			list = sd.searchTitle(keyword);				
 		} else if(category.equals("내용")){
 			System.out.println(category);
 			list = sd.searchContents(keyword);
@@ -81,6 +80,7 @@ public class MyController {
 			System.out.println(category);
 			list = sd.searchTotal(keyword);
 		}
+		model.addAttribute("searchResult", keyword);
 		model.addAttribute("list", list);
 		return "search";
 	}

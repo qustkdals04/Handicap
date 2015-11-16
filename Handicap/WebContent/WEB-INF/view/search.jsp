@@ -9,9 +9,8 @@
 
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
-
-<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <title>검색 결과</title>
+<script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <style>
 a.line {
 	text-decoration: underline;
@@ -30,15 +29,20 @@ a.line {
 		<div id="CssContent1">
 			<%@include file="menu.jsp"%>
 		</div>
-
-		<div>
-			<h3>검색된결과가 없습니다.</h3>
-		</div>
-		<c:if test="${list == null }">
-			
+		<c:if test="${list.size() == 0 }">			
+			'${searchResult }'에 대한 검색결과가 없습니다.
+			<ul>
+				<li>단어의 철자가 정확한지 확인해 보세요.</li>
+				<li>한글을 영어로 혹은 영어를 한글로 입력했는지 확인해 보세요.</li>
+				<li>검색어의 단어 수를 줄이거나, 보다 일반적인 검색어로 다시 검색해 보세요.</li>
+				<li>두 단어 이상의 검색어인 경우, 띄어쓰기를 확인해 보세요.</li>
+				<li>검색 옵션을 변경해서 다시 검색해 보세요.</li>
+			</ul>			
 		</c:if>
 		
-		<c:if test="${list != null }">
+		<%-- <c:if test="${list != null }"> --%>
+		<c:if test="${list.size() > 0 }">
+			'${searchResult }'에 대한 검색결과 입니다.
 			<c:forEach var="result" items="${list }">
 				<c:choose>
 					<c:when test="${result.boardno == 10 }">
@@ -70,11 +74,7 @@ a.line {
 							</tr>
 						</table>
 						<br>
-					</c:when>
-				</c:choose>
-
-
-				<c:choose>
+					</c:when>					
 					<c:when test="${result.boardno == 11 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -98,9 +98,7 @@ a.line {
 							</tr>
 						</table>
 						<br>
-					</c:when>
-				</c:choose>
-				<c:choose>
+					</c:when>				
 					<c:when test="${result.boardno == 20 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -126,8 +124,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 21 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -152,8 +148,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 22 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -178,8 +172,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 23 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -204,8 +196,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 30 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -230,8 +220,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 31 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -256,8 +244,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 32 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -282,8 +268,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 40 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -308,8 +292,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 50 }">
 						<table border="0" width="800px" >
 							<tr>
@@ -334,8 +316,6 @@ a.line {
 						</table>
 						<br>
 					</c:when>
-				</c:choose>
-				<c:choose>
 					<c:when test="${result.boardno == 51 }">
 						<table border="0" width="800px" >
 							<tr>
