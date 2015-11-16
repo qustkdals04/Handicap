@@ -211,7 +211,7 @@ $(document).ready(function() {
                                           <c:if test="${bbsFileName !=null }">
                                           <c:forEach var="bbsfile" items="${bbsFileName}">
                                           <img height="250px" style="width: 350px;"
-                                          src="/Handicap/img/${bbsfile.fileoriginal}" onclick="window.open('img.jsp?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')">
+                                          src="/Handicap/bbsimg/${bbsfile.fileoriginal}" onclick="window.open('img.jsp?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')">
                                           </c:forEach>
                                           </c:if> 
                                           <br>
@@ -284,7 +284,7 @@ $(document).ready(function() {
                                                 <a onclick=
 "javascript:window.open('img.html?img=http://phpschool.com/bbs/img/search_list.gif','','height=0,width=0');" 
 style='cursor:hand'> <img height="250px" style="width: 350px;"
-                                                      src="/Handicap/img/${bbsfile.fileoriginal}"></a>
+                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('img.jsp?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')"></a>
                                                   
                                                
                                                 
@@ -347,7 +347,7 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
                                                    <img height="250px" style="width: 350px;"
-                                                      src="/Handicap/img/${bbsfile.fileoriginal}">
+                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('img.jsp?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')">
                                                 </c:forEach>
                                              </c:if> <br>
                                              <textarea readonly="readonly" rows="20" 

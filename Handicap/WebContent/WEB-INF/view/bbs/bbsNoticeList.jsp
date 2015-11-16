@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ page import="com.handicap.model.beans.BbsVO"%>
 <%@ page import="com.handicap.model.dao.BbsDAO"%>
 <jsp:useBean id="BbsVO" class="com.handicap.model.beans.BbsVO" />
@@ -109,7 +110,7 @@
 														<tr>
 															<td align="center">${bbs.no}</td>
 															<td align="center"><a
-																href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.title}</a></td>
+																href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
 															<td align="center">${bbs.nickname}</td>
 															<td align="center">${bbs.writedate}</td>
 															<td align="center">${bbs.hits}</td>
@@ -139,7 +140,7 @@
 														</tr>
 													</c:forEach>
 													</c:when>
-													<c:when test="${boardno == '50' }">
+													<c:when test="${boardno == '40' }">
 														<table class="bbsList">
 															<tr height="20px">
 																<th width="10%">글번호</th>
@@ -157,7 +158,7 @@
 																	<tr>
 																		<td align="center">${bbs.no}</td>
 																		<td align="center"><a
-																			href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
+																			href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${fn:substring(bbs.title,0,20)}...</a></td>
 																		<td align="center">${bbs.nickname}</td>
 																		<td align="center">${bbs.writedate}</td>
 																		<td align="center">${bbs.hits}</td>
@@ -192,7 +193,7 @@
 																				<tr>
 																					<td align="center">${bbs.no}</td>
 																					<td align="center"><a
-																						href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
+																						href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
 																					<td align="center">${bbs.nickname}</td>
 																					<td align="center">${bbs.writedate}</td>
 																					<td align="center">${bbs.hits}</td>
@@ -256,7 +257,7 @@
 																							<tr>
 																								<td align="center">${bbs.no}</td>
 																								<td align="center"><a
-																									href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${bbs.title}</a></td>
+																									href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
 																								<td align="center">${bbs.nickname}</td>
 																								<td align="center">${bbs.writedate}</td>
 																								<td align="center">${bbs.hits}</td>

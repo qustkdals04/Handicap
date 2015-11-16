@@ -56,7 +56,7 @@ font: 25px larger;
 		
 		</table>
 		<%-- <c:if test="${list != null }"> --%>
-	<table border="0" width="800px" >
+	<table border="0" width="800px">
 		<c:if test="${list.size() > 0 }">
 						<tr>
 						<td style="font: 20px larger; ">
