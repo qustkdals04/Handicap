@@ -178,6 +178,12 @@ public class BbsController {
       return "bbs/bbsNoticeContent";
    }
    
+   @RequestMapping("/img")
+   public String img(@RequestParam String filepath, Model model){
+	   model.addAttribute("filepath", filepath);
+	   return "bbs/img";
+   }
+   
    @RequestMapping("/bbsDelete")
    public String bbsdelete(@RequestParam int no,
          @RequestParam int boardno) throws SQLException {
