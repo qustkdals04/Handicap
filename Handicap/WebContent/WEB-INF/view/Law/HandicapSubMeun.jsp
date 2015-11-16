@@ -10,10 +10,8 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li style="margin-bottom: 5px;">장애인</li>  
-								<li style="margin-bottom: 5px;">법률</li>
-	
+						<ul >
+								<li><img src="/Handicap/img/장애인법률.png"></li>
 
 						</ul>
 			

@@ -12,11 +12,10 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li>의료장비</li>
+							<ul >
+								<li><img src="/Handicap/img/의료장비.png"></li>
 
 						</ul>
-			
 						<ul class="mylist">
 						<li onclick="location.href='/Handicap/bbsList?boardno=30'">▶ 사고 팔기</li>
 						</ul>

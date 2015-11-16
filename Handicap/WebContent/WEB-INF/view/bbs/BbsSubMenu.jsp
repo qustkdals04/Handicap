@@ -11,8 +11,8 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li>게시판</li>
+						<ul >
+								<li><img src="/Handicap/img/게시판.png"></li>
 
 						</ul>
 			

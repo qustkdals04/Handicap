@@ -11,8 +11,8 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li>소식</li>
+						<ul >
+								<li><img src="/Handicap/img/소식.png"></li>
 
 						</ul>
 			

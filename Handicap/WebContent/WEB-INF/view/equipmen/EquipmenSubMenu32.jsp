@@ -12,8 +12,8 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li>의료장비</li>
+							<ul >
+								<li><img src="/Handicap/img/의료장비.png"></li>
 
 						</ul>
 			

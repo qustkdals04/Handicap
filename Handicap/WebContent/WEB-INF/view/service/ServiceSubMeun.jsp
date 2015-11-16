@@ -11,8 +11,8 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li>고객센터</li>
+						<ul >
+								<li><img src="/Handicap/img/고객센터.png"></li>
 
 						</ul>
 			<!-- /Handicap/messagelist -->

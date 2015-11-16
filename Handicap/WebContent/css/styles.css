@@ -162,14 +162,15 @@ body {
 	list-style: none;
     margin: 0px;
     padding: 10px;
-	margin-top :10px;
+	
     margin-bottom: 10px;
     border-collapse: separate;
     boader-spacimg:1px;
     vertical-align: top;
+    
 
 }
-.mylistTitle{
+/* .mylistTitle{
     text-align : center;
 	font-family: 바탕체;
 	font-weight:bolder;
@@ -180,7 +181,7 @@ body {
     padding: 10px;
 	margin-top :15px;
     margin-bottom: 15px;
-}
+} */
 .lo{
 	width: 200px;
 	padding: 10px;

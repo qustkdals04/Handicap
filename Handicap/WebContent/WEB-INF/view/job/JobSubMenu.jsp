@@ -11,9 +11,9 @@
 </head>
 <body>
 			<div id="leftsubmenu">
-						<ul class="mylistTitle">
-								<li style="margin-bottom: 5px;">일자리<li> 
-								<li style="margin-bottom: 5px;">정보</li>
+							<ul >
+								<li><img src="/Handicap/img/일자리정보.png"></li>
+
 						</ul>
 			
 						<ul class="mylist">
