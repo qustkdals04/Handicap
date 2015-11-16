@@ -512,7 +512,7 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                           	<tr>
                                        			<td></td>
                                        			<!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
-                                       			<td align="center" width="700px" colspan="2"><input type="text" id="contents" name="contents" 
+                                       			<td align="center" width="700px" colspan="2" ><input type="text" id="contents" name="contents" 
                                           			style="width: 500px; height: 30"><input
                                          			 type="button" value="등록" id="comment" class="ml-button"
                                          			 style="width: 70px; height: 30px; vertical-align: bottom;"></td>
@@ -522,11 +522,11 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                        </c:if>
                                  </table>
                                  
-                                 <table>
-                                    <tr>
+                                 <table style="margin-top: 50px;">
+                       
 
 
-                                       <td width="100px;" align="left">
+                                       <td width="100px;" align="left" style="top: 30px">
                                           <button type="button" id="list" class="ml-button"
                                              onclick="location.href='/Handicap/bbsList?boardno=${boardno}'"
                                              style="margin-bottom: 50px;">목록</button>
