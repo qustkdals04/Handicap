@@ -16,11 +16,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
-<script src="ckeditor/config.js"></script>
-<script src="ckeditor/ckeditor.js"></script> 
+<script src="ckeditor2/config.js"></script>
+<script src="ckeditor2/ckeditor.js"></script> 
 <script type="text/javascript">   
 window.onload = function() {
-	CKEDITOR.replace('contents',{
+	CKEDITOR.replace('content',{
 		
 		toolbar: []
 	});		
@@ -93,6 +93,22 @@ $(document).ready(function() {
            return; // 취소
         }
      });
+    
+    $("#comment").click(function() {
+        if (confirm("댓글을 등록하시겠습니까?") == true){
+           if ($("#contents").val() == ""){
+              alert("댓글 내용을 입력해 주세요.");
+           }
+           else{
+              $("#bbsContent").attr({
+                    action : 'commentWrite',
+                    method : 'post'
+                 });
+                 $("#bbsContent").submit();
+           }
+        }
+        
+      });
  });
 </script>
 </head>
@@ -199,7 +215,7 @@ $(document).ready(function() {
                                           </c:if> 
                                           <br>
                                           	<textarea readonly="readonly" rows="20" 
-                                          	cols="100" id="contents" name="contents"
+                                          	cols="100" id="content" name="content"
                                           	>                                          	
                                           	${bbsContent.contents}</textarea>
                                           </td>
@@ -274,7 +290,7 @@ $(document).ready(function() {
                                              </c:if> 
                                              <br>
                                             <textarea readonly="readonly" rows="20" 
-                                          	cols="100" id="contents" name="contents"
+                                          	cols="100" id="content" name="content"
                                           	>                                          	
                                           	${bbsContent.contents}</textarea>
                                              </td>
@@ -332,7 +348,7 @@ $(document).ready(function() {
                                                 </c:forEach>
                                              </c:if> <br>
                                              <textarea readonly="readonly" rows="20" 
-                                          	cols="100" id="contents" name="contents"
+                                          	cols="100" id="content" name="content"
                                           	>                                          	
                                           	${bbsContent.contents}</textarea>
                                              </td>
@@ -380,7 +396,7 @@ $(document).ready(function() {
                                           </c:if> 
                                           <br>
                                           	<textarea readonly="readonly" rows="20" 
-                                          	cols="100" id="contents" name="contents"
+                                          	cols="100" id="content" name="content"
                                           	>                                        	
                                           	${bbsContent.contents}</textarea>
                                           </td>
@@ -466,31 +482,17 @@ $(document).ready(function() {
                                        <td>[내용]</td>
                                        <td align="left">[신고수]</td>
                                     </tr>
-                                    <c:choose>
-                                    <c:when test="${boardno == 50}">
-                                    	<c:if test="${memgergrade ==3 }">
-                                    		<tr>
-                                       <td></td>
-                                       <td width="700px" colspan="2"><input type="text"
-                                          style="width: 500px; height: 30"><input
-                                          type="button" value="등록"
-                                          style="width: 70px; height: 30px; vertical-align: bottom;"></td>
-
-                                    </tr>
-                                    	</c:if>
-                                    </c:when>
-                                    <c:otherwise>
-                                    <tr>
+                                    <c:if test="${!(membergrade!=3&&boardno==50) }">
+                                          <tr>
                                        <td></td>
                                        <!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
-                                       <td width="700px" colspan="2"><input type="text" name="content" 
+                                       <td width="700px" colspan="2"><input type="text" id="contents" name="contents" 
                                           style="width: 500px; height: 30"><input
-                                          type="button" value="등록" onclick="location.href='/Handicap/commentWrite'"
+                                          type="button" value="등록" id="comment"
                                           style="width: 70px; height: 30px; vertical-align: bottom;"></td>
 
                                     </tr>
-                                    </c:otherwise>
-									</c:choose>
+                                       </c:if>
                                  </table>
                                  
                                  <table>
