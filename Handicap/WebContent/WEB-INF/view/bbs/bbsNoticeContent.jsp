@@ -513,9 +513,11 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                        			<td></td>
                                        			<!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
                                        			<td align="center" width="700px" colspan="2" ><input type="text" id="contents" name="contents" 
-                                          			style="width: 500px; height: 30"><input
+                                          			style="width: 500px; height: 30; margin-bottom: 20px;" ><input
                                          			 type="button" value="등록" id="comment" class="ml-button"
-                                         			 style="width: 70px; height: 30px; vertical-align: bottom;"></td>
+                                         			 style="width: 70px; height: 30px; vertical-align: bottom; margin-bottom: 20px;"></td>
+
+
 
                                     		</tr>
                                           </c:if>
