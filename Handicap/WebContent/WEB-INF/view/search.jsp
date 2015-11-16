@@ -21,6 +21,7 @@ td#searchre{
 font: 25px larger;
 
 }
+
 </style>
 </head>
 <body>
@@ -55,14 +56,21 @@ font: 25px larger;
 		
 		</table>
 		<%-- <c:if test="${list != null }"> --%>
+	<table border="0" width="800px" >
 		<c:if test="${list.size() > 0 }">
-			'${searchResult }'에 대한 검색결과 입니다.
+						<tr>
+						<td style="font: 20px larger; ">
+	
+			<font color="orange">'${searchResult }'</font>에 대한 검색결과 입니다.
+			<br><br>
+			</td>
+			
 			<c:forEach var="result" items="${list }">
 				<c:choose>
 					<c:when test="${result.boardno == 10 }">
 					
-						<table border="0" width="800px" >
-						
+					
+						</tr>
 							<tr>
 
 
