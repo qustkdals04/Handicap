@@ -292,7 +292,7 @@
 										</td>
 										<td id="regPq" colspan="2"><select name="pqid"
 											id="pqid">
-												<option value="${user.pquestion }">${user.pquestion }</option>
+												<option value="${user.pqid }">${user.pquestion }</option>
 												<option value="0">비밀번호 힌트 질문</option>
 												<option value="1">아버지 성함은?</option>
 												<option value="2">어머니 성함은?</option>

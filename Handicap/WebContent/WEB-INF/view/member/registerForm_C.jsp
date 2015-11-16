@@ -553,7 +553,7 @@
 														style="width: 50px; height: 22" readonly><input
 														type="text" name="companyaddress2" id="companyaddress2"
 														style="width: 350px; height: 22" readonly>
-														<span style="font-size: 10pt;">상세주소 : </span><input
+														<br><span style="font-size: 10pt;">상세주소 : </span><input
 														type="text" name="companyaddress3" id="companyaddress3"
 														style="width: 180px; height: 22" readonly="readonly"
 														maxlength="20">

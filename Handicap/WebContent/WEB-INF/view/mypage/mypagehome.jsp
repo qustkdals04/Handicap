@@ -34,6 +34,12 @@
        border-top:  1px solid #C58A52;
       }
       
+      #mypageList{
+      
+      width: 700px;
+      text-align: center;
+      }
+      
     </style>
 
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
@@ -117,7 +123,7 @@
 							$("#mypageList").html("신고수가 1이상인글이 없습니다.");
 						} else{
 							$("#mypageList").html("");
-							$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>신고</td><td>삭제</td></tr>");
+							$("#mypageList").append("<tr ><td >글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>신고</td><td>삭제</td></tr>");
 							$.each(data, function(i, dataObj){								
 								$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 								"<td>"+dataObj.no+"</td>"+
@@ -167,7 +173,7 @@
 							$("#mypageList").html("작성하신 게시글이 없습니다.");
 						} else{
 							$("#mypageList").html("");
-							$("#mypageList").append("<tr><td>글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>추천</td></tr>");
+							$("#mypageList").append("<tr><td >글번호</td><td>제목</td><td>작성자</td><td>작성일</td><td>조회</td><td>추천</td></tr>");
 							$.each(data, function(i, dataObj){								
 								$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
 								"<td>"+dataObj.no+"</td>"+
@@ -243,7 +249,7 @@
 	</tr>
 	
 	<tr>
-				<td align="center">
+				<td align="left">
 					<div id="CssContent1">
 						<%@include file="../menu.jsp"%>
 					</div>
@@ -271,7 +277,7 @@
                   <img id="myimage" alt="이미지를 등록하세요." src="/Handicap/myimg/${mypage.image }" width="180" height="180"> </td>
                <!-- 이미지 공간 -->
                <td rowspan="5">
-                  <table border="0" align="center" width="500px">
+                  <table border="0"  align="center" width="500px">
                      <tr>
                         <td style="vertical-align: top;" height="20px" align="center">
                           <!--  <input type="radio" name="chk_info" id="chk_info" value="내가 쓴 게시글">내가 쓴 게시글
