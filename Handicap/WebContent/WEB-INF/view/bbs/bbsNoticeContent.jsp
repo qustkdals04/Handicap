@@ -422,15 +422,15 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                               <hr width="700px;">
 
                               <center>
-                                 <table width="600px;"
+                                 <table width="700px;"
                                     style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px;">
                                     <c:forEach var="commentList" items="${list}">
-                                       <tr>
-                                          <td align="center">${commentList.nickname}</td>
-                                          <td align="center">${commentList.contents}</td>
-                                          <td align="center">${commentList.writedate}</td>
-                                          <c:if test="${bbsContent.nickname == membernick }">
-                                             <td align="center"><img src="/Handicap/img/temp.jpg"
+                                       <tr >
+                                          <td align="center" ><font size="3px">${commentList.nickname}</font></td>
+                                          <td align="center" ><font size="3px">${commentList.contents}</font></td>
+                                          <td align="center"><font size="3px">${commentList.writedate}</font></td>
+                                          <c:if test="${commentList.nickname == membernick }">
+                                             <td align="center" ><img src="/Handicap/img/temp.jpg"
                                                 onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'"></td>
                                           </c:if>
                                        </tr>
@@ -472,29 +472,20 @@ style='cursor:hand'> <img height="250px" style="width: 350px;"
                                  </table>
                                  
                                  <table>
-                                    <tr>
-                                       <td colspan="3" ><font style="font-weight: bolder;"  size =3>[댓글 이용 제한은 100자입니다.]</font></td>
-                                    </tr>
-                                    <tr height="20px">
-                                       <td width="100px" align="center">작성자</td>
-                                       <td width="500px" align="center">내용</td>
-                                       <td align="left">신고수</td>
-                                    </tr>
-                                    <tr height="20px" align="center">
-                                       <td>[닉네임]</td>
-                                       <td>[내용]</td>
-                                       <td align="left">[신고수]</td>
-                                    </tr>
+                                    
+                                   
                                     <c:if test="${!(membergrade!=3&&boardno==50) }">
-                                          <tr>
-                                       <td></td>
-                                       <!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
-                                       <td width="700px" colspan="2"><input type="text" id="contents" name="contents" 
-                                          style="width: 500px; height: 30"><input
-                                          type="button" value="등록" id="comment"
-                                          style="width: 70px; height: 30px; vertical-align: bottom;"></td>
+                                          <c:if test="${memberid!=null}">
+                                          	<tr>
+                                       			<td></td>
+                                       			<!-- 재원 contents를 content로 바꿈/진용(저거적용떄매 -->
+                                       			<td align="center" width="700px" colspan="2"><input type="text" id="contents" name="contents" 
+                                          			style="width: 500px; height: 30"><input
+                                         			 type="button" value="등록" id="comment" class="ml-button"
+                                         			 style="width: 70px; height: 30px; vertical-align: bottom;"></td>
 
-                                    </tr>
+                                    		</tr>
+                                          </c:if>
                                        </c:if>
                                  </table>
                                  

@@ -74,7 +74,7 @@ public class BbsController {
             }
          }
          //ModelAndView("main2");
-         return "redirect:bbsList";//由ъ뒪�듃濡�
+         return "redirect:bbsList?boardno="+bv.getBoardno();//由ъ뒪�듃濡�
       }else{            
          //ModelAndView("bbsNoticeWriteForm");
          return "redirect:bbsNoticeWriteForm";

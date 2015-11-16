@@ -81,8 +81,8 @@
    
    <!-- 댓글 작성 -->
    <insert id="commentInsert" parameterType="com.handicap.model.beans.BbsCommentVO">
-      insert into bbscomment(commentno, contents, author, boardno, no, writedate)
-      values(#{commentno}, #{contents}, #{author}, #{boardno}, #{no}, sysdate)      
+      insert into bbscomment(contents, author, boardno, no, writedate)
+      values(#{contents}, #{author}, #{boardno}, #{no}, sysdate)      
    </insert>
    
   <!-- 댓글 목록 -->
