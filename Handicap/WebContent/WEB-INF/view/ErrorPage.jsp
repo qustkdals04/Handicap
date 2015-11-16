@@ -43,10 +43,10 @@
 								</tr>
 								<tr>
 										<td>
-												<button type = "button" class= "ml-button">홈으로 <br>이동</button>
+												<button type = "button" class= "ml-button" style="width: 100pt;" onclick="location.href='/Handicap/'">홈으로 이동</button>
 										</td>
 										<td>
-												<button type = "button" class= "ml-button" style="width: 80pt;">이전페이지<br>이동</button>
+												<button type = "button" class= "ml-button" style="width: 100pt;" onclick="history.back()">이전페이지 이동</button>
 										</td>
 								</tr>
 						</table>

@@ -23,7 +23,7 @@ a.line {
 		</tr>   
 		
 		<tr>
-			<td  colspan="2" style="font:12px larger; "><a href="" class="line">-장애인 연금에대해 알아보아요!</a></td>
+			<td  colspan="2" style="font:12px larger; "><a href="/Handicap/bbsContent?boardno=10&no=1" class="line">-장애인 연금에대해 알아보아요!</a></td>
 			
 		</tr>
 		<tr>
