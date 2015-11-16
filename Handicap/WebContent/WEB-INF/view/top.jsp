@@ -45,18 +45,10 @@
 			}
 			
 		});
+		
+		
 	});
 	
-	
-	$(document).ready(function(){
-	    
-	    var select = $("select#category");
-	    
-	    select.change(function(){
-	        var selectname = $(this).children("option:selected").text();
-	      
-	    });
-	});
 </script>
 </head>
 <body>
