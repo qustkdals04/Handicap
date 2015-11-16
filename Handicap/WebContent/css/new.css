@@ -119,7 +119,7 @@ table.re3 tr{
 table.re3 td{
 	vertical-align: middle;
 }
-#category{
+label#select select#category{
 	
     width: 90px;
     height: 26px;
