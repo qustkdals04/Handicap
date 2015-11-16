@@ -205,7 +205,7 @@ public class BbsController {
     @RequestMapping("/bbsUpdate")
     public String bbsUpdate(BbsVO bv) throws SQLException {
        bd.update(bv);         
-       return "redirect:bbsList";
+       return "redirect:bbsList?boardno="+bv.getBoardno();
     }
     
     @RequestMapping("/commentDelete")
