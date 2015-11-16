@@ -702,7 +702,7 @@
 									<td align="left" colspan="2">
 										<table id="fileview" align="left">
 											<tr>
-												<td colspan="2"><input name="files" type="file"
+												<th colspan="2"><input name="files" type="file"
 													class="files" id="files1" accept=".gif, .jpg, .png, .bmp"><br>
 													<input name="files" type="file" class="files" id="files2"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
@@ -711,11 +711,11 @@
 													name="files" type="file" class="files" id="files4"
 													accept=".gif, .jpg, .png, .bmp"><br> <input
 													name="files" type="file" class="files" id="files5"
-													accept=".gif, .jpg, .png, .bmp"></td>
-													<td style="vertical-align: top;">
+													accept=".gif, .jpg, .png, .bmp"></th>
+													<th style="vertical-align: top;">
 														 <input
 													id="addFile" type="button" value="파일첨부">
-													</td>
+													</th>
 											</tr>
 										</table>
 									</td>
