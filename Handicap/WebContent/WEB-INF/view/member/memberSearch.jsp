@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" media="all"
 	href="/Handicap/css/new.css">
+	<link rel="stylesheet" type="text/css" media="all"
+	href="/Handicap/css/main.css">
 <script type="text/javascript" src="/Handicap/js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
 	var domain;
