@@ -40,7 +40,7 @@
 	
 	
 	<pre style="height: 69px; "></pre>
-		<table align="center" style="width: 634px; " class="mem"  width="800px">
+		<table align="center" style="width: 634px; margin-bottom: 100px;" class="mem"  width="800px">
 		<tr>
 							<!-- 개인정보 메인 -->
 							
@@ -79,6 +79,11 @@
 	</td>
 	<%-- <td><%@include file="../banner.jsp" %> </td> --%>
 	
+	</tr>
+	<tr>
+			<td>
+					<%@include file = "../Footer.jsp" %>
+			</td>
 	</tr>
 	
 	</table>
