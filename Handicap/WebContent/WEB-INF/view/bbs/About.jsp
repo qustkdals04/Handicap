@@ -4,6 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<script type="text/javascript"
+	src="http://code.jquery.com/jquery-latest.min.js"></script>
 <title>사이트 소개</title>
 </head>
 <body>
@@ -29,7 +32,7 @@
 								<td style="vertical-align: top;"><%@include file="../new/NewSubMenu12.jsp"%>
 								</td>
 								<td>
-									<table cellpadding="5" cellspacing="0" align="center">
+									<table cellpadding="5" cellspacing="0" align="center" style="margin-top: 20px;">
 										<tr>
 											<td width="700px" height="300px;" align="center" colspan="3"><img
 												alt="메인1이미지" src="/Handicap/img/S1.JPG"
