@@ -97,7 +97,7 @@
 					<div id="cell">
 						<form id="searchForm" name="searchForm" method="post">
 						
-						<label id="select"></label>
+						
 						<select name="category" id="category" style="outline: none;">
 						
 							<option value="제목">제목</option>
