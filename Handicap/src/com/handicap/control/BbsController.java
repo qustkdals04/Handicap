@@ -123,8 +123,6 @@ public class BbsController {
    }
    
    
-   
-   
    // 怨듭��궗�빆 �긽�꽭蹂닿린
    
    @RequestMapping("/bbsContent")
