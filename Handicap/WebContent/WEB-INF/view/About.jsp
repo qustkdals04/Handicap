@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div id="CssWrapper" align="center">
+	<div id="CssWrapper" align="center">
 		<table>
 			<tr>
 				<td><%@include file="top.jsp"%></td>
@@ -24,59 +24,45 @@
 			<tr>
 				<td>
 					<div id="CssContents">
-							<table>
-									<tr>
-											<td>	
-														<%@include file = "new/NewSubMenu12.jsp" %>
-											</td>
-											<td>
-														사이트 뷰
-											</td>
-									</tr>
-							</table>
+						<table>
+							<tr>
+								<td><%@include file="new/NewSubMenu12.jsp"%>
+								</td>
+								<td>
+									<table cellpadding="5" cellspacing="0" align="center">
+										<tr>
+											<td width="700px" height="300px;" align="center" colspan="3"><img
+												alt="메인1이미지" src="/Handicap/img/S1.JPG"
+												style="width: 100%; height: 100%"></td>
+
+										</tr>
+
+										<tr>
+											<td width="100px"></td>
+											<td width="300px" height="300px;" align="center"><img
+												alt="메인2이미지" src="/Handicap/img/S2.JPG"
+												style="width: 100%; height: 100%; vertical-align: top;"></td>
+											<td width="100px"></td>
+										</tr>
+
+										<tr>
+											<td align="right" colspan="3"><img alt="하단 메뉴 이미지"
+												src="/Handicap/img/S3.JPG"
+												style="width: 400px; height: 70px"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
 					</div>
 				</td>
 			</tr>
 			<tr>
-					<td>
-							<%@include file ="Footer.jsp" %>
-					</td>
+				<td><%@include file="Footer.jsp"%></td>
 			</tr>
 		</table>
 	</div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-	<table cellpadding="5" cellspacing="0" align="center">
-		<tr>
-			<td width="700px" height="300px;" align="center" colspan="3"><img
-				alt="메인1이미지" src="/Handicap/img/S1.JPG"
-				style="width: 100%; height: 100%"></td>
-
-		</tr>
-
-		<tr>
-			<td width="100px"></td>
-			<td width="300px" height="300px;" align="center"><img
-				alt="메인2이미지" src="/Handicap/img/S2.JPG"
-				style="width: 100%; height: 100%; vertical-align: top;"></td>
-			<td width="100px"></td>
-		</tr>
-
-		<tr>
-			<td align="right" colspan="3"><img alt="하단 메뉴 이미지"
-				src="/Handicap/img/S3.JPG" style="width: 400px; height: 70px"></td>
-		</tr>
-	</table>
 </body>
 </html>
