@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<img alt="이미지 없음" src="/Handicap/bbsimg/${filepath }">
+	<img alt="이미지 없음" src="/Handicap/bbsimg/${filepath }" width="470" height="470">
 </body>
 </html>

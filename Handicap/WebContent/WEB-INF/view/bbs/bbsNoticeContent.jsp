@@ -2,6 +2,7 @@
    pageEncoding="UTF-8"%>
 <%@ page import="com.handicap.model.beans.BbsVO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:useBean id="MessageVO" class="com.handicap.model.beans.BbsVO"></jsp:useBean>
 <link rel="stylesheet" type="text/css" media="all"
    href="/Handicap/css/main.css">
@@ -218,9 +219,9 @@ $(document).ready(function() {
                                        <tr>
                                           <td width="50px"><font size="3px"
                                              style="font-weight: bold;">제목 :</td>
-                                          <td width="350px" align="left"><font size="3px"
+                                          <td width="450px" align="left"><font size="3px"
                                              style="font-weight: bold;">${bbsContent.category}${bbsContent.region}${bbsContent.title}</font></td>
-                                          <td colspan="2" width="300px" align="right"><font
+                                          <td colspan="2" width="200px" align="right"><font
                                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
                                        </tr>
                                        <tr>
@@ -240,7 +241,7 @@ $(document).ready(function() {
                                           <c:if test="${bbsFileName !=null }">
                                           <c:forEach var="bbsfile" items="${bbsFileName}">
                                           <img height="130px" style="width: 130px;"
-                                          src="/Handicap/bbsimg/${bbsfile.fileoriginal}" onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')">
+                                          src="/Handicap/bbsimg/${bbsfile.fileoriginal}" onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=500,height=500, top='+(screen.height/2-250)+',left='+(screen.width/2-250)+'')">
                                           </c:forEach>
                                           </c:if> 
                                           <br>
@@ -269,9 +270,9 @@ $(document).ready(function() {
                                        <tr>
                                           <td width="50px"><font size="3px"
                                              style="font-weight: bold;">제목 :</td>
-                                          <td width="350px" align="left"><font size="3px"
+                                          <td width="450px" align="left"><font size="3px"
                                              style="font-weight: bold;">${bbsContent.category}${bbsContent.title}</font></td>
-                                          <td colspan="2" width="300px" align="right"><font
+                                          <td colspan="2" width="200px" align="right"><font
                                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
                                        </tr>
                                        <tr>
@@ -313,7 +314,7 @@ $(document).ready(function() {
                                                 <a onclick=
 "javascript:window.open('img.html?img=http://phpschool.com/bbs/img/search_list.gif','','height=0,width=0');" 
 style='cursor:hand'> <img height="130px" style="width: 130px;"
-                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')"></a>
+                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=500,height=500, top='+(screen.height/2-250)+',left='+(screen.width/2-250)+'')"></a>
                                                   
                                                
                                                 
@@ -349,9 +350,9 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                        <tr>
                                           <td width="50px"><font size="3px"
                                              style="font-weight: bold;">제목 :</td>
-                                          <td width="350px" align="left"><font size="3px"
+                                          <td width="450px" align="left"><font size="3px"
                                              style="font-weight: bold;">${bbsContent.category}${bbsContent.title}</font></td>
-                                          <td colspan="2" width="300px" align="right"><font
+                                          <td colspan="2" width="200px" align="right"><font
                                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
                                        </tr>
                                        <tr>
@@ -376,7 +377,7 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
                                                    <img height="130px" style="width: 130px;"
-                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=1000,height=900, top='+(screen.height/2-450)+',left='+(screen.width/2-500)+'')">
+                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=500,height=500, top='+(screen.height/2-250)+',left='+(screen.width/2-250)+'')">
                                                 </c:forEach>
                                              </c:if> <br>
                                              <textarea readonly="readonly" rows="20" 
@@ -406,9 +407,9 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                        <tr>
                                           <td width="50px"><font size="3px"
                                              style="font-weight: bold;">제목 :</td>
-                                          <td width="350px" align="left"><font size="3px"
+                                          <td width="450px" align="left"><font size="3px"
                                              style="font-weight: bold;">${bbsContent.category}${bbsContent.region}${bbsContent.title}</font></td>
-                                          <td colspan="2" width="300px" align="right"><font
+                                          <td colspan="2" width="200px" align="right"><font
                                              size="2px">작성일 : ${bbsContent.writedate}</font></td>
                                        </tr>
                                        <tr>
@@ -423,7 +424,7 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                           <c:if test="${bbsFileName !=null }">
                                           <c:forEach var="bbsfile" items="${bbsFileName}">
  												<img height="130px" style="width: 130px;"
-                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=700,height=700, top='+(screen.height/2-350)+',left='+(screen.width/2-350)+'')">&nbsp;&nbsp;&nbsp;
+                                                      src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=500,height=500, top='+(screen.height/2-250)+',left='+(screen.width/2-250)+'')">&nbsp;&nbsp;&nbsp;
                                           </c:forEach>
                                           </c:if> 
                                           <br>
@@ -454,16 +455,19 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                  <table width="700px;"
                                     style="border-top: 3px; border-left: 3px; border-right: 3px; border-bottom: 3px;">
                                     <c:forEach var="commentList" items="${list}">
+                                    	<tr>
+                                    		<td align="left" ><font size="3px" style="font-weight: bolder;">${commentList.nickname}</font></td>
+                                    		<td align="right"><font size="3px">${fn:substring(commentList.writedate,0,10)}</font></td>
+                                    	</tr>
                                        <tr >
-                                          <td align="center" ><font size="3px" style="font-weight: bolder;">${commentList.nickname}</font></td>
-                                          <td align="center" ><font size="4px">${commentList.contents}</font></td>
-                                          <td align="center"><font size="3px">${commentList.writedate}</font></td>
-                                          <c:if test="${commentList.nickname == membernick }">
-                                             <td align="center" ><img src="/Handicap/img/temp.jpg"
-                                                onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'"></td>
+                                          
+                                          <td align="left" ><font size="3px">${commentList.contents}</font></td>
+                                          
+                                          <c:if test="${commentList.nickname == membernick }">                                             
                                            <%--  <c:if test="${commentList.nickname != membernick }"> --%>
-                                             <td align="center"><button type="button" id="commentbadupdate"
-																				class="ml-bu tton">신고</button></td>
+                                             <td align="right"><img src="/Handicap/img/temp.jpg"
+                                                onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'">&nbsp;<button type="button" id="commentbadupdate"
+																				class="ml-button" style="width: 50px; height: 30px;">신고</button></td>
 																				<%-- </c:if> --%>
                                           </c:if>
                                        </tr>

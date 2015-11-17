@@ -13,7 +13,7 @@
 		out.print(",\"writedate\":\""+bcv.getWritedate().substring(0,10)+"\"");
 		out.print(",\"no\":\""+bcv.getNo()+"\"");
 		out.print(",\"bad\":\""+bcv.getBad()+"\"");
-		out.print(",\"boarno\":\""+bcv.getBoardno()+"\"");
+		out.print(",\"boardno\":\""+bcv.getBoardno()+"\"");
 		out.print(",\"author\":\""+bcv.getNickname()+"\"");
 		out.print(",\"commentno\":\""+bcv.getCommentno()+"\"");
 		out.print("}");

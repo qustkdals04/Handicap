@@ -109,7 +109,7 @@
 													<c:forEach var="bbs" items="${list}">
 														<tr>
 															<td align="center">${bbs.no}</td>
-															<td align="center"><a
+															<td align="left"><a
 																href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
 															<td align="center">${bbs.nickname}</td>
 															<td align="center">${bbs.writedate}</td>
@@ -157,7 +157,7 @@
 																<c:forEach var="bbs" items="${list}">
 																	<tr>
 																		<td align="center">${bbs.no}</td>
-																		<td align="center"><a
+																		<td align="left"><a
 																			href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${fn:substring(bbs.title,0,20)}...</a></td>
 																		<td align="center">${bbs.nickname}</td>
 																		<td align="center">${bbs.writedate}</td>
@@ -192,7 +192,7 @@
 																			<c:forEach var="bbs" items="${list}">
 																				<tr>
 																					<td align="center">${bbs.no}</td>
-																					<td align="center"><a
+																					<td align="left"><a
 																						href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${fn:substring(bbs.title,0,20)}...</a></td>
 																					<td align="center">${bbs.nickname}</td>
 																					<td align="center">${bbs.writedate}</td>
@@ -230,7 +230,7 @@
 																						<c:forEach var="bbs" items="${list}">
 																							<tr>
 																								<td align="center">${bbs.no}</td>
-																								<td align="center"><a
+																								<td align="left"><a
 																									href="/Handicap/bbsContent?boardno=${bbs.boardno}&no=${bbs.no}">${bbs.category}${bbs.region}${fn:substring(bbs.title,0,20)}...</a></td>
 																								<td align="center">${bbs.nickname}</td>
 																								<td align="center">${bbs.writedate}</td>
