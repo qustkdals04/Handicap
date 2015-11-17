@@ -67,13 +67,13 @@
 			<table class="re">
 				<tr>
 					<th colspan="3" class="re2"
-						style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 800">메시지
+						style="font-size: x-large; font-weight: bold; color: black; padding-top: 30px; width: 525">메시지
 						쓰기</th>
 				</tr>
 			</table>
 			<table class="list3">
 				<tr>
-					<th align="left" width="800px" colspan="5" >받는사람 입력&nbsp;&nbsp;<input
+					<th align="left" width="600px" colspan="5" >받는사람 입력&nbsp;&nbsp;<input
 						type="text" name="recipient" id="recipient"
 						style="width: 300px; height: 22px; text-align: left;"><button type="button" class="ml-button" id="findnick" width="70px" style="vertical-align: middle;">검색</button><!-- <button id="findnick">검색</button> --></th>
 					
