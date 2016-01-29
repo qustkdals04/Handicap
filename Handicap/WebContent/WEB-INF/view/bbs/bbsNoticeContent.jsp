@@ -68,31 +68,10 @@ $(document).ready(function() {
 	           data : param,
 	           success : function(data) {
 	              if (data.trim()=="true") {
-	                 alert("이미 평가한 댓글입니다.");
+	                 alert("이미 평가한 게시글입니다.");
 	              } else {
 	                 $("#bbsContent").attr({
 	                      action : "bbsbad",
-	                      method : 'get'
-	                });
-	                 alert("신고하였습니다.");
-	                 $("#bbsContent").submit();
-	              }
-	           }
-	        });
-	   });
- 
-   $("#commentbadupdate").click(function() {
-	      var param = "commentno=${commentno}&userid=${memberid}";
-	      $.ajax({
-	           type : "post",
-	           url : "gbcommentsearch",
-	           data : param,
-	           success : function(data) {
-	              if (data.trim()=="true") {
-	                 alert("이미 평가한 댓글입니다.");
-	              } else {
-	                 $("#bbsContent").attr({
-	                      action : "bbscommentbad",
 	                      method : 'get'
 	                });
 	                 alert("신고하였습니다.");
@@ -139,7 +118,28 @@ $(document).ready(function() {
         }
         
       });
+    function commentbadupdate1(commentno) {
+    	var param = "commentno=" + commentno + "&userid=${memberid}";
+    	$.ajax({
+            type : "post",
+            url : "gbcommentsearch",
+            data : param,
+            success : function(data) {
+               if (data.trim()=="true") {
+                  alert("이미 평가한 댓글입니다.");
+               } else {
+                  $("#bbsContent").attr({
+                       action : "bbscommentbad",
+                       method : 'get'
+                 });
+                  alert("신고하였습니다.");
+                  $("#bbsContent").submit();
+               }
+            }
+         });
+    }
  });
+
 </script>
 
 </head>
@@ -311,9 +311,9 @@ $(document).ready(function() {
                                           <td colspan="4"><c:if test="${bbsFileName !=null }">
                                                 <c:forEach var="bbsfile" items="${bbsFileName}">
                                                
-                                                <a onclick=
+                                                <!-- <a onclick=
 "javascript:window.open('img.html?img=http://phpschool.com/bbs/img/search_list.gif','','height=0,width=0');" 
-style='cursor:hand'> <img height="130px" style="width: 130px;"
+style='cursor:hand'> --> <img height="130px" style="width: 130px;"
                                                       src="/Handicap/bbsimg/${bbsfile.fileoriginal}"  onclick="window.open('/Handicap/img?filepath=${bbsfile.fileoriginal}','popup1','width=500,height=500, top='+(screen.height/2-250)+',left='+(screen.width/2-250)+'')"></a>
                                                   
                                                
@@ -463,13 +463,17 @@ style='cursor:hand'> <img height="130px" style="width: 130px;"
                                           
                                           <td align="left" ><font size="3px">${commentList.contents}</font></td>
                                           
-                                          <c:if test="${commentList.nickname == membernick }">                                             
-                                           <%--  <c:if test="${commentList.nickname != membernick }"> --%>
-                                             <td align="right"><img src="/Handicap/img/temp.jpg"
-                                                onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'">&nbsp;<button type="button" id="commentbadupdate"
-																				class="ml-button" style="width: 50px; height: 30px;">신고</button></td>
-																				<%-- </c:if> --%>
-                                          </c:if>
+                                          <td align="right">
+                                          	<c:if test="${!(commentList.nickname!=membernick&&membergrade!=3) }">
+                                          		<img src="/Handicap/img/temp.jpg"
+                                                	onclick="location.href='/Handicap/commentDelete?no=${bbsContent.no}&boardno=${bbsContent.boardno}&commentno=${commentList.commentno }'">
+                                          	</c:if>
+                                          </td>
+                                          <td>
+                                          	<c:if test="${commentList.nickname != membernick&&commentList.nickname!='관리자' }">
+                                          	 	<button type="button" id="commentbadupdate" class="ml-button" style="width: 50px; height: 30px;" onclick="commentbadupdate1(${commentList.commentno})">신고</button>
+                                          	</c:if>
+                                          </td>
                                        </tr>
                                     </c:forEach>
                                     <tr>

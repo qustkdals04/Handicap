@@ -203,7 +203,7 @@
 								$("#mypageList").html("");
 								$("#mypageList").append("<tr><td>댓글내용</td><td>작성자</td><td>작성일</td></tr>");
 								$.each(data, function(i, dataObj){								
-									$("#mypageList").append("<tr id="+i.toString()+" valign='top'>"+
+									$("#mypageList").append("<tr id="+i.toString()+" align='left' valign='top'>"+
 									"<td><a href='/Handicap/bbsContent?no="+dataObj.no+"&boardno="+dataObj.boardno+"'>"+dataObj.contents+"</a></td>"+
 									"<td>"+dataObj.author+"</td><td>"+dataObj.writedate+"</td></tr>");								
 								})								
